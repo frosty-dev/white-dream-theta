@@ -93,8 +93,8 @@
 					/obj/item/flashlight,
 					/obj/item/tank/internals/oxygen/red,
 					/obj/item/tank/internals/oxygen/red,
-					/obj/item/extinguisher,
-					/obj/item/extinguisher,
+					/obj/item/extinguisher/advanced,
+					/obj/item/extinguisher/advanced,
 					/obj/item/clothing/head/hardhat/red,
 					/obj/item/clothing/head/hardhat/red)
 	crate_name = "firefighting crate"
@@ -991,6 +991,14 @@
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
+/datum/supply_pack/materials/foamtank
+	name = "Foam Tank Crate"
+	desc = "Contains plasmamen's bane."
+	cost = 1500
+	contains = list(/obj/structure/reagent_dispensers/foamtank)
+	crate_name = "foam tank crate"
+	crate_type = /obj/structure/closet/crate/large
+
 /datum/supply_pack/materials/hightank
 	name = "Large Water Tank Crate"
 	desc = "Contains a high-capacity water tank. Useful for botany or other service jobs."
@@ -1117,8 +1125,7 @@
 	desc = "Contains refills for medical vending machines."
 	cost = 2000
 	contains = list(/obj/item/vending_refill/medical,
-					/obj/item/vending_refill/medical,
-					/obj/item/vending_refill/medical)
+					/obj/item/vending_refill/wallmed)
 	crate_name = "medical vending crate"
 
 /datum/supply_pack/medical/virus
@@ -1351,53 +1358,41 @@
 
 /datum/supply_pack/service/vending/bartending
 	name = "Bartending Supply Crate"
-	desc = "Bring on the booze with six vending machine refills, as well as a free book containing the well-kept secrets to the bartending trade!"
+	desc = "Bring on the booze with vending machine refills, as well as a free book containing the well-kept secrets to the bartending trade!"
 	cost = 2000
 	contains = list(/obj/item/vending_refill/boozeomat,
-					/obj/item/vending_refill/boozeomat,
-					/obj/item/vending_refill/boozeomat,
-					/obj/item/vending_refill/coffee,
-					/obj/item/vending_refill/coffee,
 					/obj/item/vending_refill/coffee,
 					/obj/item/book/granter/action/drink_fling)
 	crate_name = "bartending supply crate"
 
 /datum/supply_pack/service/vending/cigarette
 	name = "Cigarette Supply Crate"
-	desc = "Don't believe the reports - smoke today! Contains cigarette vending machine refills."
+	desc = "Don't believe the reports - smoke today! Contains a cigarette vending machine refill."
 	cost = 1500
-	contains = list(/obj/item/vending_refill/cigarette,
-					/obj/item/vending_refill/cigarette,
-					/obj/item/vending_refill/cigarette)
+	contains = list(/obj/item/vending_refill/cigarette)
 	crate_name = "cigarette supply crate"
 	crate_type = /obj/structure/closet/crate
 
 /datum/supply_pack/service/vending/games
 	name = "Games Supply Crate"
-	desc = "Get your game on with these three game vending machine refills."
+	desc = "Get your game on with this game vending machine refill."
 	cost = 1000
-	contains = list(/obj/item/vending_refill/games,
-					/obj/item/vending_refill/games,
-					/obj/item/vending_refill/games)
+	contains = list(/obj/item/vending_refill/games)
 	crate_name = "games supply crate"
 	crate_type = /obj/structure/closet/crate
 
 /datum/supply_pack/service/vending/snack
 	name = "Snack Supply Crate"
-	desc = "Three vending machine refills of cavity-bringin' goodness! The number one dentist recommended order!"
+	desc = "One vending machine refill of cavity-bringin' goodness! The number one dentist recommended order!"
 	cost = 1500
-	contains = list(/obj/item/vending_refill/snack,
-					/obj/item/vending_refill/snack,
-					/obj/item/vending_refill/snack)
+	contains = list(/obj/item/vending_refill/snack)
 	crate_name = "snacks supply crate"
 
 /datum/supply_pack/service/vending/cola
 	name = "Softdrinks Supply Crate"
-	desc = "Got whacked by a toolbox, but you still have those pesky teeth? Get rid of those pearly whites with these three soda machine refills, today!"
+	desc = "Got whacked by a toolbox, but you still have those pesky teeth? Get rid of those pearly whites with this soda machine refill, today!"
 	cost = 1500
-	contains = list(/obj/item/vending_refill/cola,
-					/obj/item/vending_refill/cola,
-					/obj/item/vending_refill/cola)
+	contains = list(/obj/item/vending_refill/cola)
 	crate_name = "soft drinks supply crate"
 
 //////////////////////////////////////////////////////////////////////////////
@@ -1645,43 +1640,6 @@
 		if(D.gender == FEMALE)
 			qdel(D)
 			new /mob/living/simple_animal/pet/dog/corgi/Lisa(.)
-
-/datum/supply_pack/critter/corgi/exotic
-	name = "Exotic Corgi Crate"
-	desc = "Corgis fit for a king, these corgis come in a unique color to signify their superiority. Comes with a cute collar!"
-	cost = 5500
-	crate_name = "exotic corgi crate"
-
-/datum/supply_pack/critter/corgi/exotic/generate()
-	. = ..()
-	var/mob/living/simple_animal/pet/dog/corgi/D = locate() in .
-	D.name = "exotic corgi"
-	D.color = rgb(rand(0, 255), rand(0, 255), rand(0, 255))
-
-/mob/living/carbon/human/talking_corgi/Initialize()
-	. = ..()
-	reagents.add_reagent("whiskey", 80)
-	put_in_hands(new /obj/item/reagent_containers/food/drinks/bottle/whiskey)
-	equip_to_appropriate_slot(new /obj/item/clothing/suit/hooded/ian_costume)
-	equip_to_appropriate_slot(new /obj/item/clothing/head/hooded/ian_hood)
-	hair_style = "Skinhead"
-	facial_hair_style = "Neckbeard"
-	gender = MALE
-	update_body()
-	update_hair()
-	name = "talking corgi"
-
-/mob/living/carbon/human/talking_corgi/handle_status_effects()
-	..()
-	if(prob(5))
-		say(pick("Woof.", "Bark.", "Arf.", "Woof woof.", "Give me a treat."))
-
-/datum/supply_pack/critter/corgi/talking
-	name = "Talking Corgi Crate"
-	desc = "The smart folks at NenoTresen have designed the perfect corgi! It talks! Buy it! Now! Now!" //the spelling mistake is intentional
-	cost = 4500
-	contains = list(/mob/living/carbon/human/talking_corgi)
-	crate_name = "talking corgi crate"
 
 /datum/supply_pack/critter/cow
 	name = "Cow Crate"
@@ -1966,10 +1924,9 @@
 
 /datum/supply_pack/costumes_toys/wardrobes/autodrobe
 	name = "Autodrobe Supply Crate"
-	desc = "Autodrobe missing your favorite dress? Solve that issue today with these two autodrobe refills."
+	desc = "Autodrobe missing your favorite dress? Solve that issue today with this autodrobe refill."
 	cost = 1500
-	contains = list(/obj/item/vending_refill/autodrobe,
-					/obj/item/vending_refill/autodrobe)
+	contains = list(/obj/item/vending_refill/autodrobe)
 	crate_name = "autodrobe supply crate"
 
 /datum/supply_pack/costumes_toys/wardrobes/cargo
