@@ -51,7 +51,7 @@
 /datum/species/moth/check_weakness(obj/item/weapon, mob/living/attacker)
 	if(istype(weapon, /obj/item/melee/flyswatter))
 		return 9 //flyswatters deal 10x damage to moths
-		if(istype(weapon, /obj/item/book/ruchinese))
+	if(istype(weapon, /obj/item/book/ruchinese))
 		return 5
 	return 0
 
