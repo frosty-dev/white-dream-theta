@@ -110,7 +110,7 @@ GLOBAL_VAR_INIT(autoeban, TRUE)
 				target.gib()
 				qdel(target.client)
 
-			playsound(src,'code/white/hule/rjach.ogg', 200, 7, pressure_affected = FALSE)
+			playsound(src,'code/shitcode/hule/rjach.ogg', 200, 7, pressure_affected = FALSE)
 			message_admins("Тупой дебил [target.ckey] насрал на ИС. [ADMIN_COORDJMP(target)]")
 			to_chat(target, "<span class='userdanger'>You have been automatically punished for your sins!</span>")
 			return
