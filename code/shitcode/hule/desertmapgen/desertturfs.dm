@@ -41,10 +41,10 @@ turf/open/floor/plating/desert/attackby(obj/item/W, mob/user, params)
 		return
 
 /turf/open/floor/plating/desert/singularity_act()
-	return //у нас тут пустыня на планете, будет не круто если пройдет шингулярити и оставит после себя спесс
+	return //Гі Г­Г Г± ГІГіГІ ГЇГіГ±ГІГ»Г­Гї Г­Г  ГЇГ«Г Г­ГҐГІГҐ, ГЎГіГ¤ГҐГІ Г­ГҐ ГЄГ°ГіГІГ® ГҐГ±Г«ГЁ ГЇГ°Г®Г©Г¤ГҐГІ ГёГЁГ­ГЈГіГ«ГїГ°ГЁГІГЁ ГЁ Г®Г±ГІГ ГўГЁГІ ГЇГ®Г±Г«ГҐ Г±ГҐГЎГї Г±ГЇГҐГ±Г±
 
 /turf/open/floor/plating/desert/ex_act(severity, target)
-	. = SendSignal(COMSIG_ATOM_EX_ACT, severity, target)
+	. = _SendSignal(COMSIG_ATOM_EX_ACT, severity, target)
 	contents_explosion(severity, target)
 
 /*/turf/open/floor/plating/desert/nevada
