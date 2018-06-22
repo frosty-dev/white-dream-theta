@@ -23,7 +23,7 @@ matrix:
           - tgui/node_modules
     - env:
       - BUILD_TESTING=true
-      - BUILD_TOOLS=false
+      - BUILD_TOOLS=true
       addons:
         apt:
           packages:
@@ -32,8 +32,8 @@ matrix:
         directories:
           - $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
     - env:
-      - BUILD_TESTING=false
-      - BUILD_TOOLS=false
+      - BUILD_TESTING=true
+      - BUILD_TOOLS=true
       addons:
         mariadb: '10.2'
         apt:
