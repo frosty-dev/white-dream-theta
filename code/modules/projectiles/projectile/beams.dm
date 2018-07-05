@@ -14,6 +14,7 @@
 	ricochets_max = 50	//Honk!
 	ricochet_chance = 80
 	is_reflectable = TRUE
+	speed = 0.5
 
 /obj/item/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -39,6 +40,7 @@
 /obj/item/projectile/beam/weak
 	damage = 15
 	armour_penetration = 50
+	speed = 0.7
 
 /obj/item/projectile/beam/practice
 	name = "practice laser"
@@ -113,6 +115,7 @@
 	damage = 30
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
+	speed = 0.8
 
 /obj/item/projectile/beam/emitter/singularity_pull()
 	return //don't want the emitters to miss
@@ -165,6 +168,7 @@
 	damage_type = BURN
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
 	light_color = LIGHT_COLOR_PURPLE
+	speed = 0.1
 
 /obj/item/projectile/beam/instakill/blue
 	icon_state = "blue_laser"

@@ -3,6 +3,7 @@
 	icon_state = "cbbolt"
 	damage = 6
 	var/piercing = FALSE
+	speed = 0.9
 
 /obj/item/projectile/bullet/dart/Initialize()
 	. = ..()

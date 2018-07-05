@@ -4,6 +4,7 @@
 	var/obj/item/dnainjector/injector
 	damage = 5
 	hitsound_wall = "shatter"
+	speed = 0.2
 
 /obj/item/projectile/bullet/dnainjector/on_hit(atom/target, blocked = FALSE)
 	if(iscarbon(target))
