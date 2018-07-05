@@ -47,9 +47,9 @@
 		var/obj/O = assembly ? assembly : src
 		to_chat(M, "<span class='notice'>[icon2html(O.icon, world, O.icon_state)] [stuff_to_display]</span>")
 	if(assembly)
-		assembly.investigate_log("displayed \"[html_encode(stuff_to_display)]\" with [type].", INVESTIGATE_CIRCUIT)
+		assembly.investigate_log("displayed \"[rhtml_encode(stuff_to_display)]\" with [type].", INVESTIGATE_CIRCUIT)
 	else
-		investigate_log("displayed \"[html_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
+		investigate_log("displayed \"[rhtml_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
 
 /obj/item/integrated_circuit/output/screen/large
 	name = "large screen"
@@ -63,9 +63,9 @@
 	var/obj/O = assembly ? get_turf(assembly) : loc
 	O.visible_message("<span class='notice'>[icon2html(O.icon, world, O.icon_state)]  [stuff_to_display]</span>")
 	if(assembly)
-		assembly.investigate_log("displayed \"[html_encode(stuff_to_display)]\" with [type].", INVESTIGATE_CIRCUIT)
+		assembly.investigate_log("displayed \"[rhtml_encode(stuff_to_display)]\" with [type].", INVESTIGATE_CIRCUIT)
 	else
-		investigate_log("displayed \"[html_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
+		investigate_log("displayed \"[rhtml_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
 
 /obj/item/integrated_circuit/output/light
 	name = "light"
@@ -250,7 +250,7 @@
 		A.say(sanitized_text)
 		if (assembly)
 			log_say("[assembly] [REF(assembly)] : [sanitized_text]")
-		else 
+		else
 			log_say("[name] ([type]) : [sanitized_text]")
 
 /obj/item/integrated_circuit/output/video_camera

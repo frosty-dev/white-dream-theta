@@ -22,7 +22,7 @@
 
 			// Encrypt the passkey.
 			if(!data["encrypted_passkey"] && passkey)
-				data["encrypted_passkey"] = strtohex(XorEncrypt(json_encode(passkey), SScircuit.cipherkey))
+				data["encrypted_passkey"] = strtohex(XorEncrypt(r_json_encode(passkey), SScircuit.cipherkey))
 
 	// If there is no sender ID, set the default one.
 	if(!sender_id && interface)
@@ -40,7 +40,7 @@
 	data |= json_decode(json)
 
 /datum/netdata/proc/data_to_json()
-	return json_encode(data)
+	return r_json_encode(data)
 
 /datum/netdata/proc/json_list_generation_admin()	//for admin logs and such.
 	. = list()
@@ -58,4 +58,4 @@
 	.["data_list"] = data
 
 /datum/netdata/proc/generate_netlog()
-	return "[json_encode(json_list_generation_netlog())]"
+	return "[r_json_encode(json_list_generation_netlog())]"

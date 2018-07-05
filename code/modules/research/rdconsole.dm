@@ -150,9 +150,9 @@ Nothing else in the console has ID requirements.
 		return FALSE
 	var/list/price = TN.get_price(stored_research)
 	if(stored_research.can_afford(price))
-		investigate_log("[key_name(user)] researched [id]([json_encode(price)]) on techweb id [stored_research.id].", INVESTIGATE_RESEARCH)
+		investigate_log("[key_name(user)] researched [id]([r_json_encode(price)]) on techweb id [stored_research.id].", INVESTIGATE_RESEARCH)
 		if(stored_research == SSresearch.science_tech)
-			SSblackbox.record_feedback("associative", "science_techweb_unlock", 1, list("id" = "[id]", "name" = TN.display_name, "price" = "[json_encode(price)]", "time" = SQLtime()))
+			SSblackbox.record_feedback("associative", "science_techweb_unlock", 1, list("id" = "[id]", "name" = TN.display_name, "price" = "[r_json_encode(price)]", "time" = SQLtime()))
 		if(stored_research.research_node(SSresearch.techweb_nodes[id]))
 			say("Successfully researched [TN.display_name].")
 			var/logname = "Unknown"
@@ -169,7 +169,7 @@ Nothing else in the console has ID requirements.
 					var/obj/item/card/id/ID = I.GetID()
 					if(istype(ID))
 						logname = "User: [ID.registered_name]"
-			stored_research.research_logs += "[logname] researched node id [id] with cost [json_encode(price)]."
+			stored_research.research_logs += "[logname] researched node id [id] with cost [r_json_encode(price)]."
 			return TRUE
 		else
 			say("Failed to research node: Internal database error!")

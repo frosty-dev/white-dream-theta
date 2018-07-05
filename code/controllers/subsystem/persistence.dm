@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(persistence)
 					satchels += list(data)
 			var/list/file_data = list()
 			file_data["data"] = satchels
-			WRITE_FILE(json_file, json_encode(file_data))
+			WRITE_FILE(json_file, r_json_encode(file_data))
 		fdel("data/npc_saves/SecretSatchels.sav")
 
 	var/json_file = file("data/npc_saves/SecretSatchels[SSmapping.config.map_name].json")
@@ -230,7 +230,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/file_data = list()
 	fdel(json_file)
 	file_data["data"] = old_secret_satchels + satchels_to_add
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, r_json_encode(file_data))
 
 /datum/controller/subsystem/persistence/proc/CollectChiselMessages()
 	var/json_file = file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
@@ -242,7 +242,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/file_data = list()
 	file_data["data"] = saved_messages
 	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, r_json_encode(file_data))
 
 /datum/controller/subsystem/persistence/proc/SaveChiselMessage(obj/structure/chisel_message/M)
 	saved_messages += list(M.pack()) // dm eats one list
@@ -253,7 +253,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/file_data = list()
 	file_data["data"] = remove_duplicate_trophies(saved_trophies)
 	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, r_json_encode(file_data))
 
 /datum/controller/subsystem/persistence/proc/remove_duplicate_trophies(list/trophies)
 	var/list/ukeys = list()
@@ -282,7 +282,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/file_data = list()
 	file_data["data"] = saved_modes
 	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, r_json_encode(file_data))
 
 /datum/controller/subsystem/persistence/proc/CollectAntagReputation()
 	var/ANTAG_REP_MAXIMUM = CONFIG_GET(number/antag_rep_maximum)
@@ -296,5 +296,5 @@ SUBSYSTEM_DEF(persistence)
 	antag_rep_change = list()
 
 	fdel(FILE_ANTAG_REP)
-	text2file(json_encode(antag_rep), FILE_ANTAG_REP)
+	text2file(r_json_encode(antag_rep), FILE_ANTAG_REP)
 
