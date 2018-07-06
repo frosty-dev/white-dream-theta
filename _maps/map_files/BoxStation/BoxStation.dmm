@@ -728,6 +728,9 @@
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
+/obj/item/gun/ballistic/automatic/proto{
+	pin = "/obj/item/firing_pin/implant/mindshield"
+	},
 /turf/open/floor/carpet,
 /area/crew_quarters/heads/hos)
 "abX" = (
@@ -872,9 +875,6 @@
 	pixel_x = 35
 	},
 /obj/structure/closet/secure_closet/hos,
-/obj/item/gun/ballistic/automatic/proto{
-	pin = "/obj/item/firing_pin/implant/mindshield"
-	},
 /turf/open/floor/carpet,
 /area/crew_quarters/heads/hos)
 "aco" = (
@@ -20472,7 +20472,6 @@
 "baY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/floorgrime,
 /area/quartermaster/warehouse)
 "baZ" = (
@@ -20802,7 +20801,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/floorgrime,
 /area/quartermaster/warehouse)
 "bbT" = (
@@ -21085,7 +21083,6 @@
 	dir = 8
 	},
 /obj/structure/closet/crate/freezer,
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/floorgrime,
 /area/quartermaster/warehouse)
 "bcK" = (
@@ -21540,7 +21537,6 @@
 /area/maintenance/port)
 "bdS" = (
 /obj/structure/closet/crate/internals,
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/floorgrime,
 /area/quartermaster/warehouse)
 "bdT" = (
@@ -21560,7 +21556,6 @@
 /area/maintenance/port)
 "bdU" = (
 /obj/structure/closet/crate/medical,
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/floorgrime,
 /area/quartermaster/warehouse)
 "bdV" = (
@@ -25990,6 +25985,7 @@
 /area/quartermaster/storage)
 "boK" = (
 /obj/effect/turf_decal/bot,
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
 "boL" = (
@@ -29940,6 +29936,7 @@
 	dir = 4
 	},
 /obj/item/stamp/qm,
+/obj/item/storage/fancy/cigarettes/cigars/cohiba,
 /turf/open/floor/plasteel/brown{
 	dir = 2
 	},
@@ -30160,7 +30157,6 @@
 /obj/machinery/airalarm{
 	pixel_y = 23
 	},
-/obj/item/storage/fancy/cigarettes/cigars/cohiba,
 /turf/open/floor/plasteel/brown{
 	dir = 5
 	},
@@ -36404,10 +36400,6 @@
 	name = "Station Intercom (General)";
 	pixel_y = -26
 	},
-/obj/item/paper_bin{
-	pixel_x = -3
-	},
-/obj/item/pen,
 /obj/item/folder/yellow{
 	pixel_x = 4
 	},
@@ -50736,8 +50728,6 @@
 "cBp" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/bot,
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
 "cBq" = (
@@ -54068,7 +54058,6 @@
 /area/security/courtroom)
 "tCu" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
@@ -74225,7 +74214,7 @@ bjp
 bjr
 bjr
 bmh
-boK
+tCu
 bjr
 cBp
 bjr
@@ -74482,9 +74471,9 @@ bjo
 bjr
 bjr
 bmh
-tCu
-bjr
 boK
+bjr
+tCu
 bjr
 bjr
 bub
