@@ -4,7 +4,8 @@
 /data/**/*
 
 #Ignore byond config folder.
-config/dbconfig.txt
+cfg/
+config/
 
 
 
