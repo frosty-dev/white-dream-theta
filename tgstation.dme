@@ -2659,6 +2659,7 @@
 #include "code\shitcode\jammer312\keybindings_rebind.dm"
 #include "code\shitcode\jammer312\text_ru.dm"
 #include "code\shitcode\other\give.dm"
+#include "code\shitcode\qwaszx000\boyar.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
