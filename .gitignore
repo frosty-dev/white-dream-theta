@@ -202,3 +202,4 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 
 #GitHub Atom
 .atom-build.json
+config/game_options.txt
