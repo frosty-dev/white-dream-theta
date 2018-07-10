@@ -1,7 +1,7 @@
 /obj/item/jobanyj_rot
 	name = "Ebaniy rot etogo kazino"
 	desc = "Ebaniy rot etogo kazino blyat. Ti kto takoi suka, chtob eto sdelat?"
-	icon = 'code/white/ClickerOfThings/shitspawn_deck/kazino.dmi'
+	icon = 'code/shitcode/ClickerOfThings/shitspawn_deck/kazino.dmi'
 	icon_state = "kazino"
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -14,7 +14,7 @@
 	icon_state = "deck_nanotrasen_full"
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 1
-	throwhitsound = 'code/white/ClickerOfThings/shitspawn_deck/cardinsult.ogg'
+	throwhitsound = 'code/shitcode/ClickerOfThings/shitspawn_deck/cardinsult.ogg'
 
 
 
@@ -37,7 +37,7 @@
 	src.cards -= choice
 	H.pickup(user)
 	user.put_in_hands(H)
-	playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/pullcard.ogg', 50, 1)
+	playsound(src, 'code/shitcode/ClickerOfThings/shitspawn_deck/pullcard.ogg', 50, 1)
 	user.visible_message("[user] draws a card from the deck. Karta razlozhena v drugom poryadke, blyat!", "<span class='notice'>You draw a card from the deck. Karta razlozhena v drugom poryadke, blyat!</span>")
 	update_icon()
 
@@ -46,7 +46,7 @@
 	if(cooldown < world.time - 50)
 		cards = shuffle(cards)
 		playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
-		playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/cardshuffle2.ogg', 50, 1)
+		playsound(src, 'code/shitcode/ClickerOfThings/shitspawn_deck/cardshuffle2.ogg', 50, 1)
 		user.visible_message("[user] shuffles the deck. Karti razlozheni v drugom poryadke, blyat!", "<span class='notice'>You shuffle the deck. Karti razlozheni v drugom poryadke, blyat!</span>")
 		cooldown = world.time
 
@@ -59,12 +59,12 @@
 				to_chat(user, "<span class='warning'>The card is stuck to your hand, you can't add it to the deck!</span>")
 				return
 			cards += SC.cardname
-			playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/diler_est.ogg', 50, 1)
+			playsound(src, 'code/shitcode/ClickerOfThings/shitspawn_deck/diler_est.ogg', 50, 1)
 			user.visible_message("[user] adds a card to the bottom of the deck. Karta razlozhena v nuzhnom poryadke.","<span class='notice'>You add the card to the bottom of the deck. Karta razlozhena v nuzhnom poryadke.</span>")
 			cooldown = world.time
 			qdel(SC)
 		else
-			playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/durak.ogg', 50, 1)
+			playsound(src, 'code/shitcode/ClickerOfThings/shitspawn_deck/durak.ogg', 50, 1)
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks! Ti che durak blyat?!</span>")
 		update_icon()
 	else if(istype(I, /obj/item/toy/cards/cardhand))
@@ -74,17 +74,17 @@
 				to_chat(user, "<span class='warning'>The hand of cards is stuck to your hand, you can't add it to the deck!</span>")
 				return
 			cards += CH.currenthand
-			playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/diler_est.ogg', 50, 1)
+			playsound(src, 'code/shitcode/ClickerOfThings/shitspawn_deck/diler_est.ogg', 50, 1)
 			user.visible_message("[user] puts [user.p_their()] hand of cards in the deck. Ti to che delaesh?!", "<span class='notice'>You put the hand of cards in the deck. Ti to che delaesh?!</span>")
 			qdel(CH)
 		else
-			playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/durak.ogg', 50, 1)
+			playsound(src, 'code/shitcode/ClickerOfThings/shitspawn_deck/durak.ogg', 50, 1)
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks! Ti che durak blyat?!</span>")
 		update_icon()
 	else if(istype(I, /obj/item/jobanyj_rot))
 		var/obj/item/jobanyj_rot = I
 		del(jobanyj_rot)
-		playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/sluchai_v_kazino_full.ogg', 50, 1)
+		playsound(src, 'code/shitcode/ClickerOfThings/shitspawn_deck/sluchai_v_kazino_full.ogg', 50, 1)
 		user.visible_message("[user] zamechaet, chto koloda raspolozhena v drugom poryadke. Yobaniy rot etogo kazino blyat!")
 	else
 		return ..()
