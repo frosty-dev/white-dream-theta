@@ -48,6 +48,7 @@
 		playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
 		playsound(src, 'code/white/ClickerOfThings/shitspawn_deck/cardshuffle2.ogg', 50, 1)
 		user.visible_message("[user] shuffles the deck. Karti razlozheni v drugom poryadke, blyat!", "<span class='notice'>You shuffle the deck. Karti razlozheni v drugom poryadke, blyat!</span>")
+		cooldown = world.time
 
 
 /obj/item/toy/cards/deck/shitspawn_deck/attackby(obj/item/I, mob/living/user, params)
