@@ -104,3 +104,12 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	back = /obj/item/storage/backpack/doom_slayer
 	l_hand = /obj/item/gun/ballistic/shotgun/automatic/combat
 	l_pocket = /obj/item/flashlight/seclite
+
+
+
+/datum/map_template/ruin/lavaland/doom_slayer
+	name = "Doom Slayer Shuttle"
+	id = "ds_shuttle"
+	description = "Shuttle with Doom Slayer inside. Prepare for hell."
+	suffix = "doom_slayer_lavaland.dmm"
+	always_place = TRUE
