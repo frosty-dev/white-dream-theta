@@ -53739,6 +53739,7 @@
 	},
 /turf/open/floor/plasteel/red/side,
 /area/security/checkpoint/supply)
+"mdr" = (
 /obj/machinery/nuclearbomb/beer,
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
