@@ -210,8 +210,10 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	if(fexists(roundend_report_file()))
 		verbs += /client/proc/show_previous_roundend_report
 
+	var/full_version = "[byond_version].[byond_build ? byond_build : "xxx"]"
 	log_access("Login: [key_name(src)] from [address ? address : "localhost"]-[computer_id] || BYOND v[byond_version].[byond_build ? byond_build : "xxx"]")
 	webhook_send_status_update("client_login","[src.key]")
+
 	var/alert_mob_dupe_login = FALSE
 	if(CONFIG_GET(flag/log_access))
 		for(var/I in GLOB.clients)
@@ -237,8 +239,10 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 	if(GLOB.player_details[ckey])
 		player_details = GLOB.player_details[ckey]
+		player_details.byond_version = full_version
 	else
 		player_details = new
+		player_details.byond_version = full_version
 		GLOB.player_details[ckey] = player_details
 
 
