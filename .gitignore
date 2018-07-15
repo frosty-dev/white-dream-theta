@@ -4,8 +4,8 @@
 /data/**/*
 
 #Ignore byond config folder.
-cfg/
-config/
+cfg/**/*
+config/**/*
 
 
 
