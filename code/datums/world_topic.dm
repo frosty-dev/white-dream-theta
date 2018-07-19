@@ -84,7 +84,7 @@
 /datum/world_topic/comms_console
 	keyword = "Comms_Console"
 	require_comms_key = TRUE
-/*
+
 GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 
 /datum/world_topic/shitspawn_data_update
@@ -95,7 +95,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 	var/ckeys=input["callbackShitspawn"]
 	GLOB.ones_allowed_to_shitspawn = splittext(ckeys, " ")
 	return ckeys
-*/
+
 /datum/world_topic/comms_console/Run(list/input)
 	minor_announce(input["message"], "Incoming message from [input["message_sender"]]")
 	for(var/obj/machinery/computer/communications/CM in GLOB.machines)

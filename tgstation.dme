@@ -2657,6 +2657,7 @@
 #include "code\shitcode\hule\reagents\reagents.dm"
 #include "code\shitcode\hule\weapons\bombshot.dm"
 #include "code\shitcode\hule\weapons\books.dm"
+#include "code\shitcode\hule\weapons\prikol.dm"
 #include "code\shitcode\hule\weapons\ptr.dm"
 #include "code\shitcode\hule\weapons\shotgun.dm"
 #include "code\shitcode\hule\weapons\trap.dm"
