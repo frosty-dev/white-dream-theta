@@ -205,5 +205,5 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 config/game_options.txt
 
 #extra map stuff
-_maps/backup/
-_maps/templates.dm
+/_maps/**/backup/
+/_maps/templates.dm
