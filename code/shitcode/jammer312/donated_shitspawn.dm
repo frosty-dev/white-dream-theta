@@ -3,11 +3,16 @@
 
 //доступ малость костыльный через обращение к боту
 //если кто-нибудь хочет переделать это под серверную Ѕƒ - флаг вам в руки
+GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 /proc/check_shitspawn_rights()
 	if(!GLOB.ones_allowed_to_shitspawn)
 		to_chat(usr, "Wait a bit, updating access list")
-		webhook_send("data_request",list("data"="shitspawn_list"))
-		sleep(50)
+		var/response := world_topic.Export("[CONFIG_GET(string/webhook_address)]?key=[CONFIG_GET(string/webhook_key)]&method=data_request&data={\"data\": \"shitspawn_list\"}")
+		if(!response || response["STATUS"] != 200 || !response["CONTENT"])
+			GLOB.ones_allowed_to_shitspawn = list()
+			log_admin("Failed to receive shitspawn rights list: [response?"[response["STATUS"]] [response["CONTENT"]]":"failed to connect"]")
+			return FALSE
+		GLOB.ones_allowed_to_shitspawn = splittext(file2text(response["CONTENT"])," ")
 	return usr.client && (usr.client.ckey in GLOB.ones_allowed_to_shitspawn)
 
 /*
