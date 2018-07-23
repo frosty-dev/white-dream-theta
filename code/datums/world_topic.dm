@@ -85,17 +85,6 @@
 	keyword = "Comms_Console"
 	require_comms_key = TRUE
 
-GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
-
-/datum/world_topic/shitspawn_data_update
-	keyword = "callbackShitspawn"
-	require_comms_key = TRUE
-
-/datum/world_topic/shitspawn_data_update/Run(list/input)
-	var/ckeys=input["callbackShitspawn"]
-	GLOB.ones_allowed_to_shitspawn = splittext(ckeys, " ")
-	return ckeys
-
 /datum/world_topic/comms_console/Run(list/input)
 	minor_announce(input["message"], "Incoming message from [input["message_sender"]]")
 	for(var/obj/machinery/computer/communications/CM in GLOB.machines)
@@ -137,14 +126,14 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 	user.friendly_name = input["sender"]
 	user.mention = user.friendly_name
 	return NC.Run(user, input["namecheck"])
-
+/*
 /datum/world_topic/adminwho
 	keyword = "adminwho"
 	require_comms_key = TRUE
 
 /datum/world_topic/adminwho/Run(list/input)
 	return ircadminwho()
-
+*/
 /datum/world_topic/status
 	keyword = "status"
 
