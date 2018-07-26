@@ -6,7 +6,9 @@ branches:
 matrix:
   include:
     - env:
-      - BUILD_TOOLS=false
+
+      - BUILD_TOOLS=true
+      name: "Build Tools"
       addons:
         apt:
           packages:
@@ -16,8 +18,9 @@ matrix:
         directories:
           - tgui/node_modules
     - env:
-      - BUILD_TESTING=false
-      - BUILD_TOOLS=false
+      - BUILD_TESTING=true
+      - BUILD_TOOLS=true
+      name: "Build All Maps"
       addons:
         apt:
           packages:
@@ -28,6 +31,7 @@ matrix:
     - env:
       - BUILD_TESTING=true
       - BUILD_TOOLS=true
+      name: "Build and Run Unit Tests"
       addons:
         mariadb: '10.2'
         apt:
