@@ -2,7 +2,7 @@
 	category_text = "Output"
 
 /obj/item/integrated_circuit/output/screen
-	name = "small screen"
+	name = "screen"
 	extended_desc = " use &lt;br&gt; to start a new line"
 	desc = "Takes any data type as an input, and displays it to the user upon examining."
 	icon_state = "screen"
@@ -88,7 +88,7 @@
 /obj/item/integrated_circuit/output/light/proc/update_lighting()
 	if(light_toggled)
 		if(assembly)
-			assembly.set_light(l_range = light_brightness, l_power = light_brightness, l_color = light_rgb)
+			assembly.set_light(l_range = light_brightness, l_power = 1, l_color = light_rgb)
 	else
 		if(assembly)
 			assembly.set_light(0)
@@ -118,7 +118,7 @@
 	var/brightness = get_pin_data(IC_INPUT, 2)
 
 	if(new_color && isnum(brightness))
-		brightness = CLAMP(brightness, 0, 6)
+		brightness = CLAMP(brightness, 0, 4)
 		light_rgb = new_color
 		light_brightness = brightness
 
