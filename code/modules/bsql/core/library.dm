@@ -22,14 +22,14 @@
 		BSQL_DEL_CALL(caller)
 		BSQL_ERROR("BSQL DMAPI version mismatch! Expected [BSQL_VERSION], got [version == null ? "NULL" : version]!")
 		return
-*/
+
 	var/result = _BSQL_Internal_Call("Initialize")
 	if(result)
 		BSQL_DEL_CALL(caller)
 		BSQL_ERROR(result)
 		return
 	_BSQL_Initialized(TRUE)
-
+*/
 /world/proc/_BSQL_Initialized(new_val)
 	var/static/bsql_library_initialized = FALSE
 	if(new_val != null)
