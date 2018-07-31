@@ -16,7 +16,7 @@
 		BSQL_DEL_CALL(caller)
 		BSQL_ERROR("Could not find [libPath]!")
 		return
-
+/*
 	var/version = _BSQL_Internal_Call("Version")
 	if(version != BSQL_VERSION)
 		BSQL_DEL_CALL(caller)
@@ -29,7 +29,7 @@
 		BSQL_ERROR(result)
 		return
 	_BSQL_Initialized(TRUE)
-
+*/
 /world/proc/_BSQL_Initialized(new_val)
 	var/static/bsql_library_initialized = FALSE
 	if(new_val != null)
