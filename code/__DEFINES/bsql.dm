@@ -1,5 +1,5 @@
 //BSQL - DMAPI
-#define BSQL_VERSION "v1.3.0.0"
+#define BSQL_VERSION "10.3.8-MariaDB"
 
 //types of connections
 #define BSQL_CONNECTION_TYPE_MARIADB "MySql"
