@@ -10,6 +10,9 @@
 "j" = (/obj/effect/decal/cleanable/blood/gibs/down,/turf/open/floor/pod/dark,/area/ruin/powered)
 "k" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/pod/dark,/area/ruin/powered)
 "l" = (/obj/item/gun/energy/kinetic_accelerator,/turf/open/floor/pod/dark,/area/ruin/powered)
+"m" = (/obj/item/twohanded/required/kinetic_crusher,/turf/open/floor/pod/dark,/area/ruin/powered)
+"n" = (/obj/item/reagent_containers/hypospray/medipen/survival,/turf/open/floor/pod/dark,/area/ruin/powered)
+"o" = (/obj/item/storage/backpack,/turf/open/floor/pod/dark,/area/ruin/powered)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaa
@@ -20,9 +23,9 @@ abdccgfhbggggffbcccccba
 abbbbbbbbbbbbbbbbbcccba
 abcccdcccbccccdbddcccia
 abcccddccbcffdcbccgglba
-abcccbbbbbcffccbccggcba
-abcjjcddcbcffcdbccggcba
-abcjjcddcbcffccccccccba
+abcccbbbbbcffccbccggmba
+abcjjcddcbcffcdbccggnba
+abcjjcddcbcffcccccccoba
 abcccbbbbbccccckkkkccba
 abccccccdcccccckkkkccba
 abcdggggddbbbbbbbccccba

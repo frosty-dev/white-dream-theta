@@ -18,7 +18,7 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	death = FALSE
 	anchored = FALSE
 	density = FALSE
-	flavour_text = "<span class='big bold'>You are the <b>Doom Guy</b>.</span><span class='big'> Your only mission is to kill every single demon.<p>You landed in the Lavaland Wastes. You see that there are a lot of monsters that needs to be eliminated. You can co-operate with someone who landed there like you but not killing them.</span>"
+	flavour_text = "<span class='big bold'>You are the <b>Doom Guy</b>.</span><span class='big'> Your only mission is to kill every single demon.<p>You landed in the Lavaland Wastes. You see that there are a lot of monsters that needs to be eliminated. You can co-operate with someone who landed there like you but not killing them and entering the station. Your presence is not required on these people's station, you can do it by yourself.</span>"
 	assignedrole = "Doom Slayer"
 
 /obj/effect/mob_spawn/human/doom_slayer/special(mob/living/new_spawn)
@@ -45,7 +45,7 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
 	item_flags = NODROP
 	clothing_flags = THICKMATERIAL | STOPSPRESSUREDAMAGE | NOSLIP | LAVAPROTECT
-	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 90, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 60, "energy" = 60, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | INDESTRUCTIBLE | FREEZE_PROOF
 
 
@@ -61,7 +61,7 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	item_flags = NODROP
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | INDESTRUCTIBLE | FREEZE_PROOF
 	slowdown = 0
-	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 90, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 60, "energy" = 60, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	allowed = list(/obj/item/tank/internals)
 
 /obj/item/clothing/mask/gas/doom_slayer //mask
@@ -74,7 +74,7 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	desc = "Praetor boots that protects from slip and damage"
 	clothing_flags = NOSLIP
 	item_flags = NODROP
-	armor = list("melee" = 90, "bullet" = 90, "laser" = 90, "energy" = 90, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 60, "energy" = 60, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | INDESTRUCTIBLE | FREEZE_PROOF
 	icon = 'icons/obj/clothing/shoes.dmi'
 	icon_state = "jackboots"
