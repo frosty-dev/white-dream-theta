@@ -24,6 +24,9 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 	if(!mob.mind)
 		to_chat(usr,"You have no mind")
 		return
+	if(istype(mob, /mob/dead/new_player)
+		to_chat(usr,"Start playing before being able to do it")
+		return
 
 	mob.mind.donated_traitor_panel()
 
