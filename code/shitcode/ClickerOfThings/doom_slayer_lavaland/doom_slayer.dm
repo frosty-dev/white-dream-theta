@@ -42,7 +42,7 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	icon_state = "hostile_env"
 	item_state = "hostile_env"
 	w_class = WEIGHT_CLASS_NORMAL
-	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
+	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
 	item_flags = NODROP
 	clothing_flags = THICKMATERIAL | STOPSPRESSUREDAMAGE | NOSLIP | LAVAPROTECT
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 60, "energy" = 60, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
@@ -57,7 +57,7 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	icon_state = "hostile_env"
 	item_state = "hostile_env"
 	clothing_flags = THICKMATERIAL | STOPSPRESSUREDAMAGE | NOSLIP | LAVAPROTECT
-	max_heat_protection_temperature = FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	item_flags = NODROP
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | INDESTRUCTIBLE | FREEZE_PROOF
 	slowdown = 0

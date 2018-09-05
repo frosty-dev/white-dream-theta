@@ -62,7 +62,6 @@
 /obj/item/slapper_mark_two/attack(mob/M, mob/living/carbon/human/user)
 	if(ishuman(M))
 		var/mob/living/carbon/human/L = M
-		L.endTailWag()
 		if(user.a_intent != INTENT_HARM)
 			if((user.zone_selected == BODY_ZONE_PRECISE_MOUTH) || (user.zone_selected == BODY_ZONE_PRECISE_EYES) || (user.zone_selected == BODY_ZONE_HEAD))
 				user.do_attack_animation(M)
