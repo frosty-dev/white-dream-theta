@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 	if(!mob.mind)
 		to_chat(usr,"You have no mind")
 		return
-	if(istype(mob, /mob/dead/new_player)
+	if(istype(mob, /mob/dead/new_player))
 		to_chat(usr,"Start playing before being able to do it")
 		return
 
@@ -130,7 +130,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 			has_follower = is_more_fun_allowed
 			spawn(fun_delay)
 				if (is_fun_allowed)
-					log_game("and brought some friends along") 
+					log_game("and brought some friends along")
 					var/spw = makeWizard_adv()
 					if (is_more_fun_allowed && spw)
 						log_game("and not only friends")
