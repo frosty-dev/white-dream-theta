@@ -24,6 +24,9 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 	if(!mob.mind)
 		to_chat(usr,"You have no mind")
 		return
+	if(istype(mob, /mob/dead/new_player)
+		to_chat(usr,"Start playing before being able to do it")
+		return
 
 	mob.mind.donated_traitor_panel()
 
@@ -140,7 +143,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 						has_follower = TRUE
 		else
 			return
-	webhook_send("rolespawn",list("role"=href_list["become"],"add_num"=num_spawned,"has_follower"=has_follower))
+	webhook_send("rolespawn",list("keyname"=usr.key,"role"=href_list["become"],"add_num"=num_spawned,"has_follower"=has_follower))
 
 
 
