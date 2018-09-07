@@ -94,6 +94,8 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 		revvie.key = selected.key
 		message_admins("[ADMIN_LOOKUPFLW(revvie)] has been made into a revenant by a shitspawn.")
 		log_game("[key_name(revvie)] was spawned as a revenant by a shitspawn.")
+		webhook_send("rolespawn",list("keyname"=usr.key,"role"=href_list["become"],"add_num"=0,"has_follower"=0))
+		GLOB.ones_allowed_to_shitspawn = null //kinda dumb way to force reset on next use but who cares
 		return SUCCESSFUL_SPAWN
 	var/is_fun_allowed = prob(66) // 2/3 chance of randomly spawning antags of same type to offset shitspawned antag, halves cooldown
 	var/fun_delay = rand(3000,15000) // delays obvious roles appearance (makes wizard appear some time later to kinda prevent lolkilling), 5 to 15 mins
@@ -144,7 +146,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 		else
 			return
 	webhook_send("rolespawn",list("keyname"=usr.key,"role"=href_list["become"],"add_num"=num_spawned,"has_follower"=has_follower))
-
+	GLOB.ones_allowed_to_shitspawn = null //kinda dumb way to force reset on next use but who cares
 
 
 /proc/makeTraitors_adv()
