@@ -24,8 +24,13 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 	if(!mob.mind)
 		to_chat(usr,"You have no mind")
 		return
-	if(istype(mob, /mob/dead/new_player))
-		to_chat(usr,"Start playing before being able to do it")
+	if(isliving(mob))
+		var/mob/living/L = mob
+		if(L.has_trait(TRAIT_MINDSHIELD))
+			alert("This creature can't become antag")
+			return
+	if(issilicon(mob)||isconstruct(mob)||ispAI(mob)||isbrain(mob)||istype(mob, /mob/dead/new_player))
+		alert("This creature can't become antag")
 		return
 
 	mob.mind.donated_traitor_panel()
@@ -35,7 +40,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 		alert("Not before round-start!", "Alert")
 		return
 	if(QDELETED(src))
-		alert("This mind doesn't have a mob, or is deleted! For some reason!", "Edit Memory")
+		alert("This mind doesn't have a mob, or is deleted! For some reason!")
 		return
 	if(special_role)
 		alert("This mind is antag already")
