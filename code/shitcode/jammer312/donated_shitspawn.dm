@@ -24,8 +24,13 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 	if(!mob.mind)
 		to_chat(usr,"You have no mind")
 		return
-	if(istype(mob, /mob/dead/new_player))
-		to_chat(usr,"Start playing before being able to do it")
+	if(isliving(mob))
+		var/mob/living/L = mob
+		if(L.has_trait(TRAIT_MINDSHIELD))
+			alert("This creature can't become antag")
+			return
+	if(issilicon(mob)||isconstruct(mob)||ispAI(mob)||isbrain(mob)||istype(mob, /mob/dead/new_player))
+		alert("This creature can't become antag")
 		return
 
 	mob.mind.donated_traitor_panel()
@@ -35,7 +40,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 		alert("Not before round-start!", "Alert")
 		return
 	if(QDELETED(src))
-		alert("This mind doesn't have a mob, or is deleted! For some reason!", "Edit Memory")
+		alert("This mind doesn't have a mob, or is deleted! For some reason!")
 		return
 	if(special_role)
 		alert("This mind is antag already")
@@ -94,6 +99,8 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 		revvie.key = selected.key
 		message_admins("[ADMIN_LOOKUPFLW(revvie)] has been made into a revenant by a shitspawn.")
 		log_game("[key_name(revvie)] was spawned as a revenant by a shitspawn.")
+		webhook_send("rolespawn",list("keyname"=usr.key,"role"=href_list["become"],"add_num"=0,"has_follower"=0,"round"=GLOB.round_id))
+		GLOB.ones_allowed_to_shitspawn = null //kinda dumb way to force reset on next use but who cares
 		return SUCCESSFUL_SPAWN
 	var/is_fun_allowed = prob(66) // 2/3 chance of randomly spawning antags of same type to offset shitspawned antag, halves cooldown
 	var/fun_delay = rand(3000,15000) // delays obvious roles appearance (makes wizard appear some time later to kinda prevent lolkilling), 5 to 15 mins
@@ -143,8 +150,8 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 						has_follower = TRUE
 		else
 			return
-	webhook_send("rolespawn",list("keyname"=usr.key,"role"=href_list["become"],"add_num"=num_spawned,"has_follower"=has_follower))
-
+	webhook_send("rolespawn",list("keyname"=usr.key,"role"=href_list["become"],"add_num"=num_spawned,"has_follower"=has_follower,"round"=GLOB.round_id))
+	GLOB.ones_allowed_to_shitspawn = null //kinda dumb way to force reset on next use but who cares
 
 
 /proc/makeTraitors_adv()
