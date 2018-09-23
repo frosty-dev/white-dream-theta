@@ -164,13 +164,13 @@
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
-/*
+
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
 	desc = "A Russian-made revolver for drinking games. Uses .357 ammo, and has a mechanism requiring you to spin the chamber before each trigger pull."
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rus357
-	var/spun = FALSE
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 
+/*
 /obj/item/gun/ballistic/revolver/russian/Initialize()
 	. = ..()
 	do_spin()
@@ -236,11 +236,11 @@
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
 	user.visible_message("<span class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span class='userdanger'>You fire [src] at your head!</span>", "<span class='italics'>You hear a gunshot!</span>")
-
+*/
 /obj/item/gun/ballistic/revolver/russian/soul
 	name = "cursed Russian revolver"
 	desc = "To play with this revolver requires wagering your very soul."
-
+/*
 /obj/item/gun/ballistic/revolver/russian/soul/shoot_self(mob/living/user)
 	..()
 	var/obj/item/soulstone/anybody/SS = new /obj/item/soulstone/anybody(get_turf(src))
