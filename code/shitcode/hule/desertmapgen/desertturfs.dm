@@ -6,7 +6,6 @@
 	icon_plating = "desert"
 	postdig_icon_change = TRUE
 	initial_gas_mix = "o2=22;n2=82;TEMP=350"
-	archdrops = list(/obj/item/stack/ore/glass = 5)
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
 
