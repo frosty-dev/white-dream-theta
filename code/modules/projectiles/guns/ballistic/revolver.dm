@@ -164,7 +164,7 @@
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
-
+/*
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
 	desc = "A Russian-made revolver for drinking games. Uses .357 ammo, and has a mechanism requiring you to spin the chamber before each trigger pull."
@@ -248,7 +248,7 @@
 		qdel(SS)
 		return
 	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
-
+*/
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
