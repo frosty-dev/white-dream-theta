@@ -2,7 +2,6 @@
 	name = "\improper .357 revolver"
 	desc = "A suspicious revolver. Uses .357 ammo." //usually used by syndicates
 	icon_state = "revolver"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	casing_ejector = FALSE
 
 /obj/item/gun/ballistic/revolver/Initialize()
@@ -89,7 +88,6 @@
 	name = "\improper .38 Mars Special"
 	desc = "A cheap Martian knock-off of a classic law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
 						"Leopard Spots" = "detective_leopard",
@@ -159,7 +157,7 @@
 	icon_state = "nagant"
 	can_suppress = TRUE
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
+
 
 
 // A gun to play Russian Roulette!
@@ -168,7 +166,7 @@
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
 	desc = "A Russian-made revolver for drinking games. Uses .357 ammo, and has a mechanism requiring you to spin the chamber before each trigger pull."
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
+
 
 /*
 /obj/item/gun/ballistic/revolver/russian/Initialize()
