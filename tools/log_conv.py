@@ -38,8 +38,6 @@ def conv_log(path):
     f.write(buf)
     f.close()
 
-os.chdir("data/logs")
-
 #path = os.getcwd()
 #f_list = os.listdir(path)
 #dir_list = list(filter(lambda x: x.rfind('.')==-1, f_list))#Получаем все директории с помощью... МАГИИ
