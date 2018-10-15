@@ -494,6 +494,10 @@
 		mind.transfer_to(H)					//won't transfer key since the mind is not active
 
 	H.name = real_name
+	
+	if(client.prefs.be_catman)
+		purrbation_apply(H)
+		//start_wagging_tail(H)
 
 	. = H
 	new_character = .
