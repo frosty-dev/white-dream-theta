@@ -11,6 +11,7 @@
 ###############################################################################################
 <<<<<<< HEAD
 =======
+Gargule = Game Master
 Optimumtact = Host
 CitrusGender = Game Master
 NewSta = Game Master
