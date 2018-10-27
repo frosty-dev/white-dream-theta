@@ -1,13 +1,15 @@
 /*
 Realistic chem by qwaszx000
 */
+
+//TODO set correct valences
 #define LANTAN 19
 #define ACTIN 20
 #define Solid SOLID
-#define true True
-#define false False
+#define true TRUE
+#define false FALSE
 
-/datum/reagent/true
+/datum/reagent/tru
 	var/isMetal = true
 	var/formula = ""
 	var/valence = 1
@@ -44,116 +46,116 @@ Realistic chem by qwaszx000
 //---------------------------------------------------------
 
 //-----------Not metals-------------------
-/datum/reagent/true/Hidrogen
+/datum/reagent/tru/Hidrogen
 	isMetal = false
 	name = "Hidrogen"
-	id = name
+	id = "Hidrogen"
 	formula = "H"
 	group = 1
-	valence = group
+	valence = 1
 	period = 1
 	M = 1
 	reagent_state = GAS
 //-----------
 
-/datum/reagent/true/Boron
+/datum/reagent/tru/Boron
 	isMetal = false
 	name = "Boron"
-	id = name
+	id = "Boron"
 	formula = "B"
 	group = 13
-	valence = group
+	valence = 13
 	period = 2
 	M = 11
 	reagent_state = Solid
 
 //-----------------
 
-/datum/reagent/true/Carbon
+/datum/reagent/tru/Carbon
 	isMetal = false
 	name = "Carbon"
-	id = name
+	id = "Carbon"
 	formula = "C"
 	group = 14
-	valence = group
+	valence = 14
 	period = 2
 	M = 12
 	reagent_state = Solid
 
-/datum/reagent/true/Sillicon
+/datum/reagent/tru/Sillicon
 	isMetal = false
 	name = "Sillicon"
-	id = name
+	id = "Sillicon"
 	formula = "Si"
 	group = 14
-	valence = group
+	valence = 14
 	period = 3
 	M = 28
 	reagent_state = Solid
 
-/datum/reagent/true/Germanium
+/datum/reagent/tru/Germanium
 	isMetal = false
 	name = "Germanium"
-	id = name
+	id = "Germanium"
 	formula = "Ge"
 	group = 14
-	valence = group
+	valence = 14
 	period = 4
 	M = 73
 	reagent_state = Solid
 
 //-----------------
 
-/datum/reagent/true/Nitrogen
+/datum/reagent/tru/Nitrogen
 	isMetal = false
 	name = "Nitrogen"
-	id = name
+	id = "Nitrogen"
 	formula = "N"
 	group = 15
-	valence = group
+	valence = 15
 	period = 2
 	M = 14
 	reagent_state = GAS
 
-/datum/reagent/true/Phosphorus
+/datum/reagent/tru/Phosphorus
 	isMetal = false
 	name = "Phosphorus"
-	id = name
+	id = "Phosphorus"
 	formula = "P"
 	group = 15
-	valence = group
+	valence = 15
 	period = 3
 	M = 31
 	reagent_state = Solid
 
-/datum/reagent/true/Arsenic
+/datum/reagent/tru/Arsenic
 	isMetal = false
 	name = "Arsenic"
-	id = name
+	id = "Arsenic"
 	formula = "As"
 	group = 15
-	valence = group
+	valence = 15
 	period = 4
 	M = 75
 	reagent_state = Solid
 
-/datum/reagent/true/Antimony
+/datum/reagent/tru/Antimony
 	isMetal = false
 	name = "Antimony"
-	id = name
+	id = "Antimony"
 	formula = "Sb"
 	group = 15
-	valence = group
+	valence = 15
 	period = 5
 	M = 122
 	reagent_state = Solid
 
 //------------------
 
-/datum/reagent/true/Oxygen
+/datum/reagent/tru/Oxygen
 	isMetal = false
 	name = "Oxygen"
-	id = name
+	id = "Oxygen"
 	formula = "O"
 	group = 16
 	valence = 2
@@ -161,10 +163,10 @@ Realistic chem by qwaszx000
 	M = 16
 	reagent_state = GAS
 
-/datum/reagent/true/Sulfur
+/datum/reagent/tru/Sulfur
 	isMetal = false
 	name = "Sulfur"
-	id = name
+	id = "Sulfur"
 	formula = "S"
 	group = 16
 	valence = 3
@@ -172,149 +174,149 @@ Realistic chem by qwaszx000
 	M = 32
 	reagent_state = SOLID
 
-/datum/reagent/true/Selenium
+/datum/reagent/tru/Selenium
 	isMetal = false
 	name = "Selenium"
-	id = name
+	id = "Selenium"
 	formula = "Se"
 	group = 16
-	valence = group
+	valence = 16
 	period = 4
 	M = 79
 	reagent_state = SOLID
 
-/datum/reagent/true/Tellurium
+/datum/reagent/tru/Tellurium
 	isMetal = false
 	name = "Tellurium"
-	id = name
+	id = "Tellurium"
 	formula = "Te"
 	group = 16
-	valence = group
+	valence = 16
 	period = 5
 	M = 128
 	reagent_state = SOLID
 
 //-----------------
 
-/datum/reagent/true/Fluorine
+/datum/reagent/tru/Fluorine
 	isMetal = false
 	name = "Fluorine"
-	id = name
+	id = "Fluorine"
 	formula = "F"
 	group = 17
-	valence = group
+	valence = 17
 	period = 2
 	M = 19
 	reagent_state = GAS
 
-/datum/reagent/true/Chlorine
+/datum/reagent/tru/Chlorine
 	isMetal = false
 	name = "Chlorine"
-	id = name
+	id = "Chlorine"
 	formula = "Cl"
 	group = 17
-	valence = group
+	valence = 17
 	period = 2
 	M = 36
 	reagent_state = GAS
 
-/datum/reagent/true/Bromine
+/datum/reagent/tru/Bromine
 	isMetal = false
 	name = "Bromine"
-	id = name
+	id = "Bromine"
 	formula = "Br"
 	group = 17
-	valence = group
+	valence = 17
 	period = 4
 	M = 80
 	reagent_state = LIQUID
 
-/datum/reagent/true/Iodine
+/datum/reagent/tru/Iodine
 	isMetal = false
 	name = "Iodine"
-	id = name
+	id = "Iodine"
 	formula = "I"
 	group = 17
-	valence = group
+	valence = 17
 	period = 5
 	M = 127
 	reagent_state = SOLID
 
-/datum/reagent/true/Astatine
+/datum/reagent/tru/Astatine
 	isMetal = false
 	name = "Astatine"
-	id = name
+	id = "Astatine"
 	formula = "At"
 	group = 17
-	valence = group
+	valence = 17
 	period = 6
 	M = 210
 	reagent_state = SOLID
 
 //----------------
 
-/datum/reagent/true/Helium
+/datum/reagent/tru/Helium
 	isMetal = false
 	name = "Helium"
-	id = name
+	id = "Helium"
 	formula = "He"
 	group = 18
-	valence = group
+	valence = 18
 	period = 1
 	M = 4
 	reagent_state = GAS
 
-/datum/reagent/true/Neon
+/datum/reagent/tru/Neon
 	isMetal = false
 	name = "Neon"
-	id = name
+	id = "Neon"
 	formula = "Ne"
 	group = 18
-	valence = group
+	valence = 18
 	period = 2
 	M = 20
 	reagent_state =  GAS
 
-/datum/reagent/true/Argon
+/datum/reagent/tru/Argon
 	isMetal = false
 	name = "Argon"
-	id = name
+	id = "Argon"
 	formula = "Ar"
 	group = 18
-	valence = group
+	valence = 18
 	period = 3
 	M = 40
 	reagent_state = GAS
 
-/datum/reagent/true/Krypton
+/datum/reagent/tru/Krypton
 	isMetal = false
 	name = "Krypton"
-	id = name
+	id = "Krypton"
 	formula = "Kr"
 	group = 18
-	valence = group
+	valence = 18
 	period = 4
 	M = 84
 	reagent_state = GAS
 
-/datum/reagent/true/Xenon
+/datum/reagent/tru/Xenon
 	isMetal = false
 	name = "Xenon"
-	id = name
+	id = "Xenon"
 	formula = "Xe"
 	group = 18
-	valence = group
+	valence = 18
 	period = 5
 	M = 131
 	reagent_state = GAS
 
-/datum/reagent/true/Radon
+/datum/reagent/tru/Radon
 	isMetal = false
 	name = "Radon"
-	id = name
+	id = "Radon"
 	formula = "Rn"
 	group = 18
-	valence = group
+	valence = 18
 	period = 6
 	M = 222
 	reagent_state = GAS
@@ -322,412 +324,412 @@ Realistic chem by qwaszx000
 //----------------------------------------
 //-----------Metals-----------------------
 
-/datum/reagent/true/Lithium
+/datum/reagent/tru/Lithium
 	isMetal = true
 	name = "Lithium"
-	id = name
+	id = "Lithium"
 	formula = "Li"
 	group = 1
-	valence = group
+	valence = 1
 	period = 2
 	M = 7
 	reagent_state = Solid
 
-/datum/reagent/true/Natrium
+/datum/reagent/tru/Natrium
 	isMetal = true
 	name = "Sodium"
-	id = name
+	id = "Sodium"
 	formula = "Na"
 	group = 1
-	valence = group
+	valence = 1
 	period = 3
 	M = 23
 	reagent_state = Solid
 
-/datum/reagent/true/Kalium
+/datum/reagent/tru/Kalium
 	isMetal = true
 	name = "Potassium"
-	id = name
+	id = "Potassium"
 	formula = "K"
 	group = 1
-	valence = group
+	valence = 1
 	period = 4
 	M = 39
 	reagent_state = Solid
 
-/datum/reagent/true/Rubidium
+/datum/reagent/tru/Rubidium
 	isMetal = true
 	name = "Rubidium"
-	id = name
+	id = "Rubidium"
 	formula = "Rb"
 	group = 1
-	valence = group
+	valence = 1
 	period = 5
 	M = 85
 	reagent_state = Solid
 
-/datum/reagent/true/Caesium
+/datum/reagent/tru/Caesium
 	isMetal = true
 	name = "Caesium"
-	id = name
+	id = "Caesium"
 	formula = "Cs"
 	group = 1
-	valence = group
+	valence = 1
 	period = 6
 	M = 133
 	reagent_state = Solid
 
-/datum/reagent/true/Francium
+/datum/reagent/tru/Francium
 	isMetal = true
 	name = "Francium"
-	id = name
+	id = "Francium"
 	formula = "Fr"
 	group = 1
-	valence = group
+	valence = 1
 	period = 7
 	M = 223
 	reagent_state = Solid
 //-----------
-/datum/reagent/true/Beryllium
+/datum/reagent/tru/Beryllium
 	isMetal = true
 	name = "Beryllium"
-	id = name
+	id = "Beryllium"
 	formula = "Be"
 	group = 2
-	valence = group
+	valence = 2
 	period = 2
 	M = 9
 	reagent_state = Solid
 
-/datum/reagent/true/Magnesium
+/datum/reagent/tru/Magnesium
 	isMetal = true
 	name = "Magnesium"
-	id = name
+	id = "Magnesium"
 	formula = "Mg"
 	group = 2
-	valence = group
+	valence = 2
 	period = 3
 	M = 24
 	reagent_state = Solid
 
-/datum/reagent/true/Calcium
+/datum/reagent/tru/Calcium
 	isMetal = true
 	name = "Calcium"
-	id = name
+	id = "Calcium"
 	formula = "Ca"
 	group = 2
-	valence = group
+	valence = 2
 	period = 4
 	M = 40
 	reagent_state = Solid
 
-/datum/reagent/true/Strontium
+/datum/reagent/tru/Strontium
 	isMetal = true
 	name = "Strontium"
-	id = name
+	id = "Strontium"
 	formula = "Sr"
 	group = 2
-	valence = group
+	valence = 2
 	period = 5
 	M = 88
 	reagent_state = Solid
 
-/datum/reagent/true/Barium
+/datum/reagent/tru/Barium
 	isMetal = true
 	name = "Barium"
-	id = name
+	id = "Barium"
 	formula = "Ba"
 	group = 2
-	valence = group
+	valence = 2
 	period = 6
 	M = 137
 	reagent_state = Solid
 
-/datum/reagent/true/Radium
+/datum/reagent/tru/Radium
 	isMetal = true
 	name = "Radium"
-	id = name
+	id = "Radium"
 	formula = "Ra"
 	group = 2
-	valence = group
+	valence = 2
 	period = 7
 	M = 226
 	reagent_state = Solid
 
 //----------
 
-/datum/reagent/true/Scandium
+/datum/reagent/tru/Scandium
 	isMetal = true
 	name = "Scandium"
-	id = name
+	id = "Scandium"
 	formula = "Sc"
 	group = 3
-	valence = group
+	valence = 3
 	period = 4
 	M = 45
 	reagent_state = Solid
 
-/datum/reagent/true/Yttrium
+/datum/reagent/tru/Yttrium
 	isMetal = true
 	name = "Yttrium"
-	id = name
+	id = "Yttrium"
 	formula = "Y"
 	group = 3
-	valence = group
+	valence = 3
 	period = 5
 	M = 89
 	reagent_state = Solid
 
-/datum/reagent/true/Lanthanum
+/datum/reagent/tru/Lanthanum
 	isMetal = true
 	name = "Lanthanum"
-	id = name
+	id = "Lanthanum"
 	formula = "La"
 	group = 3
-	valence = group
+	valence = 3
 	period = 6
 	M = 139
 	reagent_state = Solid
 
-/datum/reagent/true/Actinium
+/datum/reagent/tru/Actinium
 	isMetal = true
 	name = "Actinium"
-	id = name
+	id = "Actinium"
 	formula = "Ac"
 	group = 3
-	valence = group
+	valence = 3
 	period = 7
 	M = 227
 	reagent_state = Solid
 
 //-------
 
-/datum/reagent/true/Titanium
+/datum/reagent/tru/Titanium
 	isMetal = true
 	name = "Titanium"
-	id = name
+	id = "Titanium"
 	formula = "Ti"
 	group = 4
-	valence = group
+	valence = 4
 	period = 4
 	M = 48
 	reagent_state = Solid
 
-/datum/reagent/true/Zirconium
+/datum/reagent/tru/Zirconium
 	isMetal = true
 	name = "Zirconium"
-	id = name
+	id = "Zirconium"
 	formula = "Zr"
 	group = 4
-	valence = group
+	valence = 4
 	period = 5
 	M = 91
 	reagent_state = Solid
 
-/datum/reagent/true/Hafnium
+/datum/reagent/tru/Hafnium
 	isMetal = true
 	name = "Hafnium"
-	id = name
+	id = "Hafnium"
 	formula = "Hf"
 	group = 4
-	valence = group
+	valence = 4
 	period = 6
 	M = 178
 	reagent_state = Solid
 
-/datum/reagent/true/Rutherfordium
+/datum/reagent/tru/Rutherfordium
 	isMetal = true
 	name = "Rutherfordium"
-	id = name
+	id = "Rutherfordium"
 	formula = "Rf"
 	group = 4
-	valence = group
+	valence = 4
 	period = 7
 	M = 267
 	reagent_state = Solid
 
 //--------
 
-/datum/reagent/true/Vanadium
+/datum/reagent/tru/Vanadium
 	isMetal = true
 	name = "Vanadium"
-	id = name
+	id = "Vanadium"
 	formula = "V"
 	group = 5
-	valence = group
+	valence = 5
 	period = 4
 	M = 51
 	reagent_state = Solid
 
-/datum/reagent/true/Niobium
+/datum/reagent/tru/Niobium
 	isMetal = true
 	name = "Niobium"
-	id = name
+	id = "Niobium"
 	formula = "Nb"
 	group = 5
-	valence = group
+	valence = 5
 	period = 5
 	M = 93
 	reagent_state = Solid
 
-/datum/reagent/true/Tantalum
+/datum/reagent/tru/Tantalum
 	isMetal = true
 	name = "Tantalum"
-	id = name
+	id = "Tantalum"
 	formula = "Ta"
 	group = 5
-	valence = group
+	valence = 5
 	period = 6
 	M = 181
 	reagent_state = Solid
 
-/datum/reagent/true/Dubnium
+/datum/reagent/tru/Dubnium
 	isMetal = true
 	name = "Dubnium"
-	id = name
+	id = "Dubnium"
 	formula = "Db"
 	group = 5
-	valence = group
+	valence = 5
 	period = 7
 	M = 268
 	reagent_state = Solid
 
-/datum/reagent/true/Chromium
+/datum/reagent/tru/Chromium
 	isMetal = true
 	name = "Chromium"
-	id = name
+	id = "Chromium"
 	formula = "Cr"
 	group = 6
-	valence = group
+	valence = 6
 	period = 4
 	M = 52
 	reagent_state = Solid
 
-/datum/reagent/true/Molybdenum
+/datum/reagent/tru/Molybdenum
 	isMetal = true
 	name = "Molybdenum"
-	id = name
+	id = "Molybdenum"
 	formula = "Mo"
 	group = 6
-	valence = group
+	valence = 6
 	period = 5
 	M = 96
 	reagent_state = Solid
 
-/datum/reagent/true/Tungsten
+/datum/reagent/tru/Tungsten
 	isMetal = true
 	name = "Tungsten"
-	id = name
+	id = "Tungsten"
 	formula = "W"
 	group = 6
-	valence = group
+	valence = 6
 	period = 6
 	M = 184
 	reagent_state = Solid
 
-/datum/reagent/true/Seaborgium
+/datum/reagent/tru/Seaborgium
 	isMetal = true
 	name = "Seaborgium"
-	id = name
+	id = "Seaborgium"
 	formula = "Sg"
 	group = 6
-	valence = group
+	valence = 6
 	period = 7
 	M = 269
 	reagent_state = Solid
 
-/datum/reagent/true/Manganese
+/datum/reagent/tru/Manganese
 	isMetal = true
 	name = "Manganese"
-	id = name
+	id = "Manganese"
 	formula = "Mn"
 	group = 7
-	valence = group
+	valence = 7
 	period = 4
 	M = 55
 	reagent_state = Solid
 
-/datum/reagent/true/Technetium
+/datum/reagent/tru/Technetium
 	isMetal = true
 	name = "Technetium"
-	id = name
+	id = "Technetium"
 	formula = "Tc"
 	group = 7
-	valence = group
+	valence = 7
 	period = 5
 	M = 98
 	reagent_state = Solid
 
-/datum/reagent/true/Rhenium
+/datum/reagent/tru/Rhenium
 	isMetal = true
 	name = "Rhenium"
-	id = name
+	id = "Rhenium"
 	formula = "Re"
 	group = 7
-	valence = group
+	valence = 7
 	period = 6
 	M = 186
 	reagent_state = Solid
 
-/datum/reagent/true/Bohrium
+/datum/reagent/tru/Bohrium
 	isMetal = true
 	name = "Bohrium"
-	id = name
+	id = "Bohrium"
 	formula = "Bh"
 	group = 7
-	valence = group
+	valence = 7
 	period = 7
 	M = 270
 	reagent_state = Solid
 
-/datum/reagent/true/Iron
+/datum/reagent/tru/Iron
 	isMetal = true
 	name = "Iron"
-	id = name
+	id = "Iron"
 	formula = "Fe"
 	group = 8
-	valence = group
+	valence = 8
 	period = 4
 	M = 56
 	reagent_state = Solid
 
-/datum/reagent/true/Ruthenium
+/datum/reagent/tru/Ruthenium
 	isMetal = true
 	name = "Ruthenium"
-	id = name
+	id = "Ruthenium"
 	formula = "Ru"
 	group = 8
-	valence = group
+	valence = 8
 	period = 5
 	M = 101
 	reagent_state = Solid
 
-/datum/reagent/true/Osmium
+/datum/reagent/tru/Osmium
 	isMetal = true
 	name = "Osmium"
-	id = name
+	id = "Osmium"
 	formula = "Os"
 	group = 8
-	valence = group
+	valence = 8
 	period = 6
 	M = 190
 	reagent_state = Solid
 
-/datum/reagent/true/Hassium
+/datum/reagent/tru/Hassium
 	isMetal = true
 	name = "Hassium"
-	id = name
+	id = "Hassium"
 	formula = "Hs"
 	group = 8
-	valence = group
+	valence = 8
 	period = 7
 	M = 270
 	reagent_state = Solid
 
-/datum/reagent/true/Cobalt
+/datum/reagent/tru/Cobalt
 	isMetal = true
 	name = "Cobalt"
-	id = name
+	id = "Cobalt"
 	formula = "Co"
 	group = 9
 	valence = 2
@@ -735,590 +737,590 @@ Realistic chem by qwaszx000
 	M = 59
 	reagent_state = Solid
 
-/datum/reagent/true/Rhodium
+/datum/reagent/tru/Rhodium
 	isMetal = true
 	name = "Rhodium"
-	id = name
+	id = "Rhodium"
 	formula = "Rh"
 	group = 9
-	valence = group
+	valence = 9
 	period = 5
 	M = 103
 	reagent_state = Solid
 
-/datum/reagent/true/Iridium
+/datum/reagent/tru/Iridium
 	isMetal = true
 	name = "Iridium"
-	id = name
+	id = "Iridium"
 	formula = "Ir"
 	group = 9
-	valence = group
+	valence = 9
 	period = 6
 	M = 192
 	reagent_state = Solid
 
-/datum/reagent/true/Meitnerium
+/datum/reagent/tru/Meitnerium
 	isMetal = true
 	name = "Meitnerium"
-	id = name
+	id = "Meitnerium"
 	formula = "Mt"
 	group = 9
-	valence = group
+	valence = 9
 	period = 7
 	M = 278
 	reagent_state = Solid
 
 //---------------
 
-/datum/reagent/true/Nickel
+/datum/reagent/tru/Nickel
 	isMetal = true
 	name = "Nickel"
-	id = name
+	id = "Nickel"
 	formula = "Ni"
 	group = 10
-	valence = group
+	valence = 10
 	period = 4
 	M = 59
 	reagent_state = Solid
 
-/datum/reagent/true/Palladium
+/datum/reagent/tru/Palladium
 	isMetal = true
 	name = "Palladium"
-	id = name
+	id = "Palladium"
 	formula = "Pd"
 	group = 10
-	valence = group
+	valence = 10
 	period = 5
 	M = 106
 	reagent_state = Solid
 
-/datum/reagent/true/Platinum
+/datum/reagent/tru/Platinum
 	isMetal = true
 	name = "Platinum"
-	id = name
+	id = "Platinum"
 	formula = "Pt"
 	group = 10
-	valence = group
+	valence = 10
 	period = 6
 	M = 195
 	reagent_state = Solid
 
-/datum/reagent/true/Darmstadtium
+/datum/reagent/tru/Darmstadtium
 	isMetal = true
 	name = "Darmstadtium"
-	id = name
+	id = "Darmstadtium"
 	formula = "Ds"
 	group = 10
-	valence = group
+	valence = 10
 	period = 7
 	M = 281
 	reagent_state = Solid
 
-/datum/reagent/true/Copper
+/datum/reagent/tru/Copper
 	isMetal = true
 	name = "Copper"
-	id = name
+	id = "Copper"
 	formula = "Cu"
 	group = 11
-	valence = group
+	valence = 11
 	period = 4
 	M = 64
 	reagent_state = Solid
 
-/datum/reagent/true/Silver
+/datum/reagent/tru/Silver
 	isMetal = true
 	name = "Silver"
-	id = name
+	id = "Silver"
 	formula = "Ag"
 	group = 11
-	valence = group
+	valence = 11
 	period = 5
 	M = 108
 	reagent_state = Solid
 
-/datum/reagent/true/Gold
+/datum/reagent/tru/Gold
 	isMetal = true
 	name = "Gold"
-	id = name
+	id = "Gold"
 	formula = "Au"
 	group = 11
-	valence = group
+	valence = 11
 	period = 6
 	M = 197
 	reagent_state = Solid
 
-/datum/reagent/true/Roentgenium
+/datum/reagent/tru/Roentgenium
 	isMetal = true
 	name = "Roentgenium"
-	id = name
+	id = "Roentgenium"
 	formula = "Rg"
 	group = 11
-	valence = group
+	valence = 11
 	period = 7
 	M = 282
 	reagent_state = Solid
 
 //----------------
 
-/datum/reagent/true/Zinc
+/datum/reagent/tru/Zinc
 	isMetal = true
 	name = "Zinc"
-	id = name
+	id = "Zinc"
 	formula = "Zn"
 	group = 12
-	valence = group
+	valence = 12
 	period = 4
 	M = 65
 	reagent_state = Solid
 
-/datum/reagent/true/Cadmium
+/datum/reagent/tru/Cadmium
 	isMetal = true
 	name = "Cadmium"
-	id = name
+	id = "Cadmium"
 	formula = "Cd"
 	group = 12
-	valence = group
+	valence = 12
 	period = 5
 	M = 112
 	reagent_state = Solid
 
-/datum/reagent/true/Mercury
+/datum/reagent/tru/Mercury
 	isMetal = true
 	name = "Mercury"
-	id = name
+	id = "Mercury"
 	formula = "Hg"
 	group = 12
-	valence = group
+	valence = 12
 	period = 6
 	M = 201
 	reagent_state = Solid
 
-/datum/reagent/true/Copernicium
+/datum/reagent/tru/Copernicium
 	isMetal = true
 	name = "Copernicium"
-	id = name
+	id = "Copernicium"
 	formula = "Cn"
 	group = 12
-	valence = group
+	valence = 12
 	period = 7
 	M = 285
 	reagent_state = Solid
 
 //---------
 
-/datum/reagent/true/Aluminium
+/datum/reagent/tru/Aluminium
 	isMetal = true
 	name = "Aluminium"
-	id = name
+	id = "Aluminium"
 	formula = "Al"
 	group = 13
-	valence = group
+	valence = 13
 	period = 3
 	M = 27
 	reagent_state = Solid
 
-/datum/reagent/true/Gallium
+/datum/reagent/tru/Gallium
 	isMetal = true
 	name = "Gallium"
-	id = name
+	id = "Gallium"
 	formula = "Ga"
 	group = 13
-	valence = group
+	valence = 13
 	period = 4
 	M = 70
 	reagent_state = Solid
 
-/datum/reagent/true/Indium
+/datum/reagent/tru/Indium
 	isMetal = true
 	name = "Indium"
-	id = name
+	id = "Indium"
 	formula = "In"
 	group = 13
-	valence = group
+	valence = 13
 	period = 5
 	M = 115
 	reagent_state = Solid
 
-/datum/reagent/true/Thallium
+/datum/reagent/tru/Thallium
 	isMetal = true
 	name = "Thallium"
-	id = name
+	id = "Thallium"
 	formula = "Tl"
 	group = 13
-	valence = group
+	valence = 13
 	period = 6
 	M = 204
 	reagent_state = Solid
 
-/datum/reagent/true/Nihonium
+/datum/reagent/tru/Nihonium
 	isMetal = true
 	name = "Nihonium"
-	id = name
+	id = "Nihonium
 	formula = "Nh"
 	group = 13
-	valence = group
+	valence = 13
 	period = 7
 	M = 286
 	reagent_state = Solid
 
 //------------
 
-/datum/reagent/true/Tin
+/datum/reagent/tru/Tin
 	isMetal = true
 	name = "Tin"
-	id = name
+	id = "Tin"
 	formula = "Sn"
 	group = 14
-	valence = group
+	valence = 14
 	period = 5
 	M = 119
 	reagent_state = Solid
 
-/datum/reagent/true/Lead
+/datum/reagent/tru/Lead
 	isMetal = true
 	name = "Lead"
-	id = name
+	id = "Lead"
 	formula = "Pb"
 	group = 14
-	valence = group
+	valence = 14
 	period = 6
 	M = 207
 	reagent_state = Solid
 
 //------------
 
-/datum/reagent/true/Bismuth
+/datum/reagent/tru/Bismuth
 	isMetal = true
 	name = "Bismuth"
-	id = name
+	id = "Bismuth"
 	formula = "Bi"
 	group = 15
-	valence = group
+	valence = 15
 	period = 6
 	M = 209
 	reagent_state = Solid
 
 //----------
 
-/datum/reagent/true/Polonium
+/datum/reagent/tru/Polonium
 	isMetal = true
 	name = "Polonium"
-	id = name
+	id = "Polonium"
 	formula = "Po"
 	group = 16
-	valence = group
+	valence = 16
 	period = 6
 	M = 209
 	reagent_state = Solid
 
 //------------------------------------------------------
 //--------------Lanthanums------------------------------
-/datum/reagent/true/Cerium
+/datum/reagent/tru/Cerium
 	isMetal = true
 	name = "Cerium"
-	id = name
+	id = "Cerium"
 	formula = "Ce"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 140
 	reagent_state = Solid
 
-/datum/reagent/true/Praseodymium
+/datum/reagent/tru/Praseodymium
 	isMetal = true
 	name = "Praseodymium"
-	id = name
+	id = "Praseodymium"
 	formula = "Pr"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 141
 	reagent_state = Solid
 
-/datum/reagent/true/Neodymium
+/datum/reagent/tru/Neodymium
 	isMetal = true
 	name = "Neodymium"
-	id = name
+	id = "Neodymium"
 	formula = "Nd"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 144
 	reagent_state = Solid
 
-/datum/reagent/true/Promethium
+/datum/reagent/tru/Promethium
 	isMetal = true
 	name = "Promethium"
-	id = name
+	id = "Promethium"
 	formula = "Pm"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 145
 	reagent_state = Solid
 
-/datum/reagent/true/Samarium
+/datum/reagent/tru/Samarium
 	isMetal = true
 	name = "Samarium"
-	id = name
+	id = "Samarium"
 	formula = "Sm"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 150
 	reagent_state = Solid
 
-/datum/reagent/true/Europium
+/datum/reagent/tru/Europium
 	isMetal = true
 	name = "Europium"
-	id = name
+	id = "Europium"
 	formula = "Eu"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 152
 	reagent_state = Solid
 
-/datum/reagent/true/Gadolinium
+/datum/reagent/tru/Gadolinium
 	isMetal = true
 	name = "Gadolinium"
-	id = name
+	id = "Gadolinium"
 	formula = "Gd"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 157
 	reagent_state = Solid
 
-/datum/reagent/true/Terbium
+/datum/reagent/tru/Terbium
 	isMetal = true
 	name = "Terbium"
-	id = name
+	id = "Terbium"
 	formula = "Tb"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 159
 	reagent_state = Solid
 
-/datum/reagent/true/Dysposium
+/datum/reagent/tru/Dysposium
 	isMetal = true
 	name = "Dysposium"
-	id = name
+	id = "Dysposium"
 	formula = "Dy"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 163
 	reagent_state = Solid
 
-/datum/reagent/true/Holmium
+/datum/reagent/tru/Holmium
 	isMetal = true
 	name = "Holmium"
-	id = name
+	id = "Holmium"
 	formula = "Ho"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 165
 	reagent_state = Solid
 
-/datum/reagent/true/Erbium
+/datum/reagent/tru/Erbium
 	isMetal = true
 	name = "Erbium"
-	id = name
+	id = "Erbium"
 	formula = "Er"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 167
 	reagent_state = Solid
 
-/datum/reagent/true/Thulium
+/datum/reagent/tru/Thulium
 	isMetal = true
 	name = "Thulium"
-	id = name
+	id = "Thulium"
 	formula = "Tm"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 169
 	reagent_state = Solid
 
-/datum/reagent/true/Ytterbium
+/datum/reagent/tru/Ytterbium
 	isMetal = true
 	name = "Ytterbium"
-	id = name
+	id = "Ytterbium"
 	formula = "Yb"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 173
 	reagent_state = Solid
 
-/datum/reagent/true/Lutetium
+/datum/reagent/tru/Lutetium
 	isMetal = true
 	name = "Lutetium"
-	id = name
+	id = "Lutetium"
 	formula = "Lu"
 	group = LANTAN
-	valence = group
+	valence = LANTAN
 	period = 6
 	M = 175
 	reagent_state = Solid
 
 //------------ACTINIUMS-------------
 
-/datum/reagent/true/Thorium
+/datum/reagent/tru/Thorium
 	isMetal = true
 	name = "Thorium"
-	id = name
+	id = "Thorium"
 	formula = "Th"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 232
 	reagent_state = Solid
 
-/datum/reagent/true/Protactinium
+/datum/reagent/tru/Protactinium
 	isMetal = true
 	name = "Protactinium"
-	id = name
+	id = "Protactinium"
 	formula = "Pa"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 231
 	reagent_state = Solid
 
-/datum/reagent/true/Uranium
+/datum/reagent/tru/Uranium
 	isMetal = true
 	name = "Uranium"
-	id = name
+	id = "Uranium"
 	formula = "U"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 238
 	reagent_state = Solid
 
-/datum/reagent/true/Neptunium
+/datum/reagent/tru/Neptunium
 	isMetal = true
 	name = "Neptunium"
-	id = name
+	id = "Neptunium"
 	formula = "Np"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 237
 	reagent_state = Solid
 
-/datum/reagent/true/Plutonium
+/datum/reagent/tru/Plutonium
 	isMetal = true
 	name = "Plutonium"
-	id = name
+	id = "Plutonium"
 	formula = "Pu"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 244
 	reagent_state = Solid
 
-/datum/reagent/true/Americium
+/datum/reagent/tru/Americium
 	isMetal = true
 	name = "Americium"
-	id = name
+	id = "Americium"
 	formula = "Am"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 243
 	reagent_state = Solid
 
-/datum/reagent/true/Curium
+/datum/reagent/tru/Curium
 	isMetal = true
 	name = "Curium"
-	id = name
+	id = "Curium"
 	formula = "Cm"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 247
 	reagent_state = Solid
 
-/datum/reagent/true/Berkelium
+/datum/reagent/tru/Berkelium
 	isMetal = true
 	name = "Berkelium"
-	id = name
+	id = "Berkelium"
 	formula = "Bk"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 247
 	reagent_state = Solid
 
-/datum/reagent/true/Californium
+/datum/reagent/tru/Californium
 	isMetal = true
 	name = "Californium"
-	id = name
+	id = "Californium"
 	formula = "Cf"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 251
 	reagent_state = Solid
 
-/datum/reagent/true/Einstenium
+/datum/reagent/tru/Einstenium
 	isMetal = true
 	name = "Einstenium"
-	id = name
+	id = "Einstenium"
 	formula = "Es"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 252
 	reagent_state = Solid
 
-/datum/reagent/true/Fermium
+/datum/reagent/tru/Fermium
 	isMetal = true
 	name = "Fermium"
-	id = name
+	id = "Fermium"
 	formula = "Fm"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 257
 	reagent_state = Solid
 
-/datum/reagent/true/Mendelevium
+/datum/reagent/tru/Mendelevium
 	isMetal = true
 	name = "Mendelevium"
-	id = name
+	id = "Mendelevium"
 	formula = "Md"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 258
 	reagent_state = SOLID
 
-/datum/reagent/true/Nobelium
+/datum/reagent/tru/Nobelium
 	isMetal = true
 	name = "Nobelium"
-	id = name
+	id = "Nobelium"
 	formula = "No"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 259
 	reagent_state = SOLID
 
-/datum/reagent/true/Lawrencium
+/datum/reagent/tru/Lawrencium
 	isMetal = true
 	name = "Lawrencium"
-	id = name
+	id = "Lawrencium"
 	formula = "Lr"
 	group = ACTIN
-	valence = group
+	valence = ACTIN
 	period = 7
 	M = 266
 	reagent_state = SOLID
@@ -1326,3 +1328,5 @@ Realistic chem by qwaszx000
 #undef true
 #undef false
 #undef Solid
+#undef LANTAN
+#undef ACTIN
