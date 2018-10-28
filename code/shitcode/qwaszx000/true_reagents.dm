@@ -6,8 +6,6 @@ Realistic chem by qwaszx000
 #define LANTAN 19
 #define ACTIN 20
 #define Solid SOLID
-#define true TRUE
-#define false FALSE
 
 #define NON_OXYDE 0
 #define BASE_OXYDE 1
@@ -18,7 +16,7 @@ Realistic chem by qwaszx000
 #define ACID 2
 /datum/reagent/tru
 	var/isMetal = true
-	var/formula = ""
+	var/list/formula = list()
 	var/valence = 1
 	var/period= 1
 	var/M = 1//gramm/mol
@@ -72,7 +70,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Hidrogen"
 	id = "Hidrogen"
-	formula = "H"
+	formula = list("H" = 1)
 	group = 1
 	valence = 1
 	period = 1
@@ -84,7 +82,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Boron"
 	id = "Boron"
-	formula = "B"
+	formula = list("B" = 1)
 	group = 13
 	valence = 13
 	period = 2
@@ -97,14 +95,14 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Carbon"
 	id = "Carbon"
-	formula = "C"
+	formula = list("C" = 1)
 	group = 14
 	valence = 4
 	period = 2
 	M = 12
 	reagent_state = Solid
 	data = list("isMetal" = false,
-				"formula" = "C",
+				"formula" = list("C" = 1),
 				"valence" = 4,
 				"period" = 2,
 				"M" = 12,
@@ -116,7 +114,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Sillicon"
 	id = "Sillicon"
-	formula = "Si"
+	formula = list("Si" = 1)
 	group = 14
 	valence = 14
 	period = 3
@@ -127,7 +125,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Germanium"
 	id = "Germanium"
-	formula = "Ge"
+	formula = list("Ge" = 1)
 	group = 14
 	valence = 14
 	period = 4
@@ -140,7 +138,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Nitrogen"
 	id = "Nitrogen"
-	formula = "N"
+	formula = list("N" = 1)
 	group = 15
 	valence = 15
 	period = 2
@@ -151,7 +149,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Phosphorus"
 	id = "Phosphorus"
-	formula = "P"
+	formula = list("P" = 1)
 	group = 15
 	valence = 15
 	period = 3
@@ -162,7 +160,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Arsenic"
 	id = "Arsenic"
-	formula = "As"
+	formula = list("As" = 1)
 	group = 15
 	valence = 15
 	period = 4
@@ -173,7 +171,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Antimony"
 	id = "Antimony"
-	formula = "Sb"
+	formula = list("Sb" = 1)
 	group = 15
 	valence = 15
 	period = 5
@@ -186,14 +184,14 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Oxygen"
 	id = "Oxygen"
-	formula = "O"
+	formula = list("O" = 1)
 	group = 16
 	valence = 2
 	period = 2
 	M = 16
 	reagent_state = GAS
 	data = list("isMetal" = false,
-				"formula" = "O",
+				"formula" = list("O" = 1),
 				"valence" = 2,
 				"period" = 2,
 				"M" = 16,
@@ -205,7 +203,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Sulfur"
 	id = "Sulfur"
-	formula = "S"
+	formula = list("S" = 1)
 	group = 16
 	valence = 3
 	period = 3
@@ -216,7 +214,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Selenium"
 	id = "Selenium"
-	formula = "Se"
+	formula = list("Se" = 1)
 	group = 16
 	valence = 16
 	period = 4
@@ -227,7 +225,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Tellurium"
 	id = "Tellurium"
-	formula = "Te"
+	formula = list("Te" = 1)
 	group = 16
 	valence = 16
 	period = 5
@@ -240,7 +238,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Fluorine"
 	id = "Fluorine"
-	formula = "F"
+	formula = list("F" = 1)
 	group = 17
 	valence = 17
 	period = 2
@@ -251,7 +249,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Chlorine"
 	id = "Chlorine"
-	formula = "Cl"
+	formula = list("Cl" = 1)
 	group = 17
 	valence = 17
 	period = 2
@@ -262,7 +260,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Bromine"
 	id = "Bromine"
-	formula = "Br"
+	formula = list("Br" = 1)
 	group = 17
 	valence = 17
 	period = 4
@@ -273,7 +271,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Iodine"
 	id = "Iodine"
-	formula = "I"
+	formula = list("I" = 1)
 	group = 17
 	valence = 17
 	period = 5
@@ -284,7 +282,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Astatine"
 	id = "Astatine"
-	formula = "At"
+	formula = list("At" = 1)
 	group = 17
 	valence = 17
 	period = 6
@@ -297,7 +295,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Helium"
 	id = "Helium"
-	formula = "He"
+	formula = list("He" = 1)
 	group = 18
 	valence = 18
 	period = 1
@@ -308,7 +306,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Neon"
 	id = "Neon"
-	formula = "Ne"
+	formula = list("Ne" = 1)
 	group = 18
 	valence = 18
 	period = 2
@@ -319,7 +317,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Argon"
 	id = "Argon"
-	formula = "Ar"
+	formula = list("Ar" = 1)
 	group = 18
 	valence = 18
 	period = 3
@@ -330,7 +328,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Krypton"
 	id = "Krypton"
-	formula = "Kr"
+	formula = list("Kr" = 1)
 	group = 18
 	valence = 18
 	period = 4
@@ -341,7 +339,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Xenon"
 	id = "Xenon"
-	formula = "Xe"
+	formula = list("Xe" = 1)
 	group = 18
 	valence = 18
 	period = 5
@@ -352,7 +350,7 @@ Realistic chem by qwaszx000
 	isMetal = false
 	name = "Radon"
 	id = "Radon"
-	formula = "Rn"
+	formula = list("Rn" = 1)
 	group = 18
 	valence = 18
 	period = 6
@@ -366,7 +364,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Lithium"
 	id = "Lithium"
-	formula = "Li"
+	formula = list("Li" = 1)
 	group = 1
 	valence = 1
 	period = 2
@@ -377,7 +375,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Sodium"
 	id = "Sodium"
-	formula = "Na"
+	formula = list("Na" = 1)
 	group = 1
 	valence = 1
 	period = 3
@@ -388,7 +386,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Potassium"
 	id = "Potassium"
-	formula = "K"
+	formula = list("K" = 1)
 	group = 1
 	valence = 1
 	period = 4
@@ -399,7 +397,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Rubidium"
 	id = "Rubidium"
-	formula = "Rb"
+	formula = list("Rb" = 1)
 	group = 1
 	valence = 1
 	period = 5
@@ -410,7 +408,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Caesium"
 	id = "Caesium"
-	formula = "Cs"
+	formula = list("Cs" = 1)
 	group = 1
 	valence = 1
 	period = 6
@@ -421,7 +419,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Francium"
 	id = "Francium"
-	formula = "Fr"
+	formula = list("Fr" = 1)
 	group = 1
 	valence = 1
 	period = 7
@@ -432,7 +430,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Beryllium"
 	id = "Beryllium"
-	formula = "Be"
+	formula = list("Be" = 1)
 	group = 2
 	valence = 2
 	period = 2
@@ -443,7 +441,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Magnesium"
 	id = "Magnesium"
-	formula = "Mg"
+	formula = list("Mg" = 1)
 	group = 2
 	valence = 2
 	period = 3
@@ -454,7 +452,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Calcium"
 	id = "Calcium"
-	formula = "Ca"
+	formula = list("Ca" = 1)
 	group = 2
 	valence = 2
 	period = 4
@@ -465,7 +463,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Strontium"
 	id = "Strontium"
-	formula = "Sr"
+	formula = list("Sr" = 1)
 	group = 2
 	valence = 2
 	period = 5
@@ -476,7 +474,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Barium"
 	id = "Barium"
-	formula = "Ba"
+	formula = list("Ba" = 1)
 	group = 2
 	valence = 2
 	period = 6
@@ -487,7 +485,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Radium"
 	id = "Radium"
-	formula = "Ra"
+	formula = list("Ra" = 1)
 	group = 2
 	valence = 2
 	period = 7
@@ -500,7 +498,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Scandium"
 	id = "Scandium"
-	formula = "Sc"
+	formula = list("Sc" = 1)
 	group = 3
 	valence = 3
 	period = 4
@@ -511,7 +509,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Yttrium"
 	id = "Yttrium"
-	formula = "Y"
+	formula = list("Y" = 1)
 	group = 3
 	valence = 3
 	period = 5
@@ -522,7 +520,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Lanthanum"
 	id = "Lanthanum"
-	formula = "La"
+	formula = list("La" = 1)
 	group = 3
 	valence = 3
 	period = 6
@@ -533,7 +531,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Actinium"
 	id = "Actinium"
-	formula = "Ac"
+	formula = list("Ac" = 1)
 	group = 3
 	valence = 3
 	period = 7
@@ -546,7 +544,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Titanium"
 	id = "Titanium"
-	formula = "Ti"
+	formula = list("Ti" = 1)
 	group = 4
 	valence = 4
 	period = 4
@@ -557,7 +555,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Zirconium"
 	id = "Zirconium"
-	formula = "Zr"
+	formula = list("Zr" = 1)
 	group = 4
 	valence = 4
 	period = 5
@@ -568,7 +566,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Hafnium"
 	id = "Hafnium"
-	formula = "Hf"
+	formula = list("Hf" = 1)
 	group = 4
 	valence = 4
 	period = 6
@@ -579,7 +577,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Rutherfordium"
 	id = "Rutherfordium"
-	formula = "Rf"
+	formula = list("Rf" = 1)
 	group = 4
 	valence = 4
 	period = 7
@@ -592,7 +590,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Vanadium"
 	id = "Vanadium"
-	formula = "V"
+	formula = list("V" = 1)
 	group = 5
 	valence = 5
 	period = 4
@@ -603,7 +601,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Niobium"
 	id = "Niobium"
-	formula = "Nb"
+	formula = list("Nb" = 1)
 	group = 5
 	valence = 5
 	period = 5
@@ -614,7 +612,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Tantalum"
 	id = "Tantalum"
-	formula = "Ta"
+	formula = list("Ta" = 1)
 	group = 5
 	valence = 5
 	period = 6
@@ -625,7 +623,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Dubnium"
 	id = "Dubnium"
-	formula = "Db"
+	formula = list("Db" = 1)
 	group = 5
 	valence = 5
 	period = 7
@@ -636,7 +634,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Chromium"
 	id = "Chromium"
-	formula = "Cr"
+	formula = list("Cr" = 1)
 	group = 6
 	valence = 6
 	period = 4
@@ -647,7 +645,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Molybdenum"
 	id = "Molybdenum"
-	formula = "Mo"
+	formula = list("Mo" = 1)
 	group = 6
 	valence = 6
 	period = 5
@@ -658,7 +656,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Tungsten"
 	id = "Tungsten"
-	formula = "W"
+	formula = list("W" = 1)
 	group = 6
 	valence = 6
 	period = 6
@@ -669,7 +667,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Seaborgium"
 	id = "Seaborgium"
-	formula = "Sg"
+	formula = list("Sg" = 1)
 	group = 6
 	valence = 6
 	period = 7
@@ -680,7 +678,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Manganese"
 	id = "Manganese"
-	formula = "Mn"
+	formula = list("Mn" = 1)
 	group = 7
 	valence = 7
 	period = 4
@@ -691,7 +689,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Technetium"
 	id = "Technetium"
-	formula = "Tc"
+	formula = list("Tc" = 1)
 	group = 7
 	valence = 7
 	period = 5
@@ -702,7 +700,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Rhenium"
 	id = "Rhenium"
-	formula = "Re"
+	formula = list("Re" = 1)
 	group = 7
 	valence = 7
 	period = 6
@@ -713,7 +711,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Bohrium"
 	id = "Bohrium"
-	formula = "Bh"
+	formula = list("Bh" = 1)
 	group = 7
 	valence = 7
 	period = 7
@@ -724,7 +722,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Iron"
 	id = "Iron"
-	formula = "Fe"
+	formula = list("Fe" = 1)
 	group = 8
 	valence = 8
 	period = 4
@@ -735,7 +733,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Ruthenium"
 	id = "Ruthenium"
-	formula = "Ru"
+	formula = list("Ru" = 1)
 	group = 8
 	valence = 8
 	period = 5
@@ -746,7 +744,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Osmium"
 	id = "Osmium"
-	formula = "Os"
+	formula = list("Os" = 1)
 	group = 8
 	valence = 8
 	period = 6
@@ -757,7 +755,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Hassium"
 	id = "Hassium"
-	formula = "Hs"
+	formula = list("Hs" = 1)
 	group = 8
 	valence = 8
 	period = 7
@@ -768,7 +766,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Cobalt"
 	id = "Cobalt"
-	formula = "Co"
+	formula = list("Co" = 1)
 	group = 9
 	valence = 2
 	period = 4
@@ -779,7 +777,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Rhodium"
 	id = "Rhodium"
-	formula = "Rh"
+	formula = list("Rh" = 1)
 	group = 9
 	valence = 9
 	period = 5
@@ -790,7 +788,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Iridium"
 	id = "Iridium"
-	formula = "Ir"
+	formula = list("Ir" = 1)
 	group = 9
 	valence = 9
 	period = 6
@@ -801,7 +799,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Meitnerium"
 	id = "Meitnerium"
-	formula = "Mt"
+	formula = list("Mt" = 1)
 	group = 9
 	valence = 9
 	period = 7
@@ -814,7 +812,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Nickel"
 	id = "Nickel"
-	formula = "Ni"
+	formula = list("Ni" = 1)
 	group = 10
 	valence = 10
 	period = 4
@@ -825,7 +823,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Palladium"
 	id = "Palladium"
-	formula = "Pd"
+	formula = list("Pd" = 1)
 	group = 10
 	valence = 10
 	period = 5
@@ -836,7 +834,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Platinum"
 	id = "Platinum"
-	formula = "Pt"
+	formula = list("Pt" = 1)
 	group = 10
 	valence = 10
 	period = 6
@@ -847,7 +845,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Darmstadtium"
 	id = "Darmstadtium"
-	formula = "Ds"
+	formula = list("Ds" = 1)
 	group = 10
 	valence = 10
 	period = 7
@@ -858,7 +856,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Copper"
 	id = "Copper"
-	formula = "Cu"
+	formula = list("Cu" = 1)
 	group = 11
 	valence = 11
 	period = 4
@@ -869,7 +867,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Silver"
 	id = "Silver"
-	formula = "Ag"
+	formula = list("Ag" = 1)
 	group = 11
 	valence = 11
 	period = 5
@@ -880,7 +878,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Gold"
 	id = "Gold"
-	formula = "Au"
+	formula = list("Au" = 1)
 	group = 11
 	valence = 11
 	period = 6
@@ -891,7 +889,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Roentgenium"
 	id = "Roentgenium"
-	formula = "Rg"
+	formula = list("Rg" = 1)
 	group = 11
 	valence = 11
 	period = 7
@@ -904,7 +902,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Zinc"
 	id = "Zinc"
-	formula = "Zn"
+	formula = list("Zn" = 1)
 	group = 12
 	valence = 12
 	period = 4
@@ -915,7 +913,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Cadmium"
 	id = "Cadmium"
-	formula = "Cd"
+	formula = list("Cd" = 1)
 	group = 12
 	valence = 12
 	period = 5
@@ -926,7 +924,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Mercury"
 	id = "Mercury"
-	formula = "Hg"
+	formula = list("Hg" = 1)
 	group = 12
 	valence = 12
 	period = 6
@@ -937,7 +935,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Copernicium"
 	id = "Copernicium"
-	formula = "Cn"
+	formula = list("Cn" = 1)
 	group = 12
 	valence = 12
 	period = 7
@@ -950,7 +948,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Aluminium"
 	id = "Aluminium"
-	formula = "Al"
+	formula = list("Al" = 1)
 	group = 13
 	valence = 13
 	period = 3
@@ -961,7 +959,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Gallium"
 	id = "Gallium"
-	formula = "Ga"
+	formula = list("Ga" = 1)
 	group = 13
 	valence = 13
 	period = 4
@@ -972,7 +970,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Indium"
 	id = "Indium"
-	formula = "In"
+	formula = list("In" = 1)
 	group = 13
 	valence = 13
 	period = 5
@@ -983,7 +981,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Thallium"
 	id = "Thallium"
-	formula = "Tl"
+	formula = list("Tl" = 1)
 	group = 13
 	valence = 13
 	period = 6
@@ -994,7 +992,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Nihonium"
 	id = "Nihonium"
-	formula = "Nh"
+	formula = list("Nh" = 1)
 	group = 13
 	valence = 13
 	period = 7
@@ -1007,7 +1005,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Tin"
 	id = "Tin"
-	formula = "Sn"
+	formula = list("Sn" = 1)
 	group = 14
 	valence = 14
 	period = 5
@@ -1018,7 +1016,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Lead"
 	id = "Lead"
-	formula = "Pb"
+	formula = list("Pb" = 1)
 	group = 14
 	valence = 14
 	period = 6
@@ -1031,7 +1029,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Bismuth"
 	id = "Bismuth"
-	formula = "Bi"
+	formula = list("Bi" = 1)
 	group = 15
 	valence = 15
 	period = 6
@@ -1044,7 +1042,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Polonium"
 	id = "Polonium"
-	formula = "Po"
+	formula = list("Po" = 1)
 	group = 16
 	valence = 16
 	period = 6
@@ -1057,7 +1055,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Cerium"
 	id = "Cerium"
-	formula = "Ce"
+	formula = list("Ce" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1068,7 +1066,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Praseodymium"
 	id = "Praseodymium"
-	formula = "Pr"
+	formula = list("Pr" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1079,7 +1077,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Neodymium"
 	id = "Neodymium"
-	formula = "Nd"
+	formula = list("Nd" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1090,7 +1088,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Promethium"
 	id = "Promethium"
-	formula = "Pm"
+	formula = list("Pm" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1101,7 +1099,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Samarium"
 	id = "Samarium"
-	formula = "Sm"
+	formula = list("Sm" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1112,7 +1110,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Europium"
 	id = "Europium"
-	formula = "Eu"
+	formula = list("Eu" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1123,7 +1121,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Gadolinium"
 	id = "Gadolinium"
-	formula = "Gd"
+	formula = list("Gd" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1134,7 +1132,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Terbium"
 	id = "Terbium"
-	formula = "Tb"
+	formula = list("Tb" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1145,7 +1143,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Dysposium"
 	id = "Dysposium"
-	formula = "Dy"
+	formula = list("Dy" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1156,7 +1154,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Holmium"
 	id = "Holmium"
-	formula = "Ho"
+	formula = list("Ho" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1167,7 +1165,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Erbium"
 	id = "Erbium"
-	formula = "Er"
+	formula = list("Er" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1178,7 +1176,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Thulium"
 	id = "Thulium"
-	formula = "Tm"
+	formula = list("Tm" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1189,7 +1187,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Ytterbium"
 	id = "Ytterbium"
-	formula = "Yb"
+	formula = list("Yb" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1200,7 +1198,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Lutetium"
 	id = "Lutetium"
-	formula = "Lu"
+	formula = list("Lu" = 1)
 	group = LANTAN
 	valence = LANTAN
 	period = 6
@@ -1213,7 +1211,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Thorium"
 	id = "Thorium"
-	formula = "Th"
+	formula = list("Th" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1224,7 +1222,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Protactinium"
 	id = "Protactinium"
-	formula = "Pa"
+	formula = list("Pa" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1235,7 +1233,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Uranium"
 	id = "Uranium"
-	formula = "U"
+	formula = list("U" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1246,7 +1244,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Neptunium"
 	id = "Neptunium"
-	formula = "Np"
+	formula = list("Np" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1257,7 +1255,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Plutonium"
 	id = "Plutonium"
-	formula = "Pu"
+	formula = list("Pu" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1268,7 +1266,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Americium"
 	id = "Americium"
-	formula = "Am"
+	formula = list("Am" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1279,7 +1277,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Curium"
 	id = "Curium"
-	formula = "Cm"
+	formula = list("Cm" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1290,7 +1288,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Berkelium"
 	id = "Berkelium"
-	formula = "Bk"
+	formula = list("Bk" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1301,7 +1299,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Californium"
 	id = "Californium"
-	formula = "Cf"
+	formula = list("Cf" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1312,7 +1310,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Einstenium"
 	id = "Einstenium"
-	formula = "Es"
+	formula = list("Es" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1323,7 +1321,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Fermium"
 	id = "Fermium"
-	formula = "Fm"
+	formula = list("Fm" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1334,7 +1332,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Mendelevium"
 	id = "Mendelevium"
-	formula = "Md"
+	formula = list("Md" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1345,7 +1343,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Nobelium"
 	id = "Nobelium"
-	formula = "No"
+	formula = list("No" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
@@ -1356,7 +1354,7 @@ Realistic chem by qwaszx000
 	isMetal = true
 	name = "Lawrencium"
 	id = "Lawrencium"
-	formula = "Lr"
+	formula = list("Lr" = 1)
 	group = ACTIN
 	valence = ACTIN
 	period = 7
