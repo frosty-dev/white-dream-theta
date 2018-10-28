@@ -4,6 +4,7 @@ By qwaszx000
 #include "formulas_n_constants.dm"
 #include "true_reagents.dm"
 
+/*
 /datum/reagent/tru/on_merge(list/new_data, new_amount)//when adding reagent with data = new_data and with amount = new_amount to this reagent
 	/*if(!islist(new_data) || !new_data.len)
 		return*/
@@ -21,6 +22,13 @@ By qwaszx000
 		name += (" " + new_data["name"])
 	//-------------------------------
 	create_data()
+*/
+/datum/reagent/tru/proc/handle_reactions()
+	for(var/mob/M in seen)
+		to_chat(M, "Reaction!")
+	formula += "123"
+	M += 100
+	create_data()//update data
 /*
 //datum/chemical_reaction/true
 /datum/chemical_reaction/carbon_ox
