@@ -17,8 +17,8 @@ By qwaszx000
 			M += new_data["M"]
 			add_formulas_elements(new_data["formula"])
 			name += (" oxyde")
+		holder.del_reagent(new_data["id"])
 	//-------------------------------
-	holder.del_reagent(new_data["id"])
 	create_data()//update data
 
 //Add formulas reagents to this reagent formulas reagents
