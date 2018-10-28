@@ -30,9 +30,21 @@ By qwaszx000
 			formula[i] = formula_new[i]
 
 //Returns true if reagents can react
-/datum/reagent/tru/proc/can_react_with(/var/list/new_data)
+/datum/reagent/tru/proc/can_react_with(var/list/new_data)
+	if(formula.len != new_data["formula"].len)
+		return TRUE
+
+	if(formula != new_data["formula"])
+		return TRUE
+
 	if(formula == new_data["formula"])
 		return FALSE
+
+	//for(var/i in formula)
+	//	if(formula[i] != new_data["formula"][i])
+	//		return TRUE
+
+
 
 	if(new_data["group"] == 18 || group == 18)//Inert gases
 		return FALSE
