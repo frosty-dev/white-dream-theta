@@ -34,9 +34,6 @@ By qwaszx000
 	if(formula.len != new_data["formula"].len)
 		return TRUE
 
-	if(formula != new_data["formula"])
-		return TRUE
-
 	if(formula == new_data["formula"])
 		return FALSE
 
