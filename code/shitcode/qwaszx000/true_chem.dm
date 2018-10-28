@@ -23,11 +23,15 @@ By qwaszx000
 	//-------------------------------
 	create_data()
 */
-/datum/reagent/tru/proc/handle_reactions()
-	for(var/mob/M in seen)
-		to_chat(M, "Reaction!")
-	formula += "123"
-	M += 100
+/datum/reagent/tru/on_new(list/new_data)
+	to_chat(usr, "Reaction!")
+
+	M += new_data["M"]
+	formula += new_data["formula"]
+	//--------------oxydation--------
+	if(new_data["formula"] == "O")
+		name += (" oxyde")
+	//-------------------------------
 	create_data()//update data
 /*
 //datum/chemical_reaction/true
