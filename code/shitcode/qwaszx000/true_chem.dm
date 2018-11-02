@@ -158,5 +158,29 @@ Computes reaction with this reagent and reagent with data
 	else
 		return FALSE
 
+/*
+"reagent_id" = id
+{
+	"id" 	  = id,
+	"M"  	  = M,
+	"name" 	  = name,
+	"valence" = valence,
+	...
+	see true_reagents.dm
+}
+and
+"reagent_id" = id
+{
+	"id" 	  = id,
+	"M"  	  = M,
+	"name"    = name,
+	"valence" = valence,
+	...
+	see true_reagents.dm
+}
+*/
+/proc/calculate_coefficients(var/list/data0, var/list/data1)
+	return data0//TODO
+
 #undef true
 #undef false
