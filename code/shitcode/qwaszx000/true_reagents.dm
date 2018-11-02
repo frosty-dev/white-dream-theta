@@ -23,6 +23,10 @@ Realistic chem by qwaszx000
 	var/group = 1
 	var/oxyde_type
 	var/non_organic_type
+	var/toxic_rate = 0
+	var/explosive_rate = 0
+	var/isSimple = 1
+	var/isOxydizer = 0
 
 /datum/reagent/tru/proc/create_data()
 	data["isMetal"] 		  = isMetal
@@ -100,6 +104,7 @@ Realistic chem by qwaszx000
 	valence = 4
 	period = 2
 	M = 12
+	isOxydizer = 0
 	reagent_state = Solid
 	data = list("isMetal" = false,
 				"formula" = list("C" = 1),
@@ -108,7 +113,8 @@ Realistic chem by qwaszx000
 				"M" = 12,
 				"group" = 14,
 				"name" = "Carbon",
-				"id" = "Carbon")
+				"id" = "Carbon",
+				"isOxydizer" = 0)
 
 /datum/reagent/tru/Sillicon
 	isMetal = false
@@ -190,6 +196,7 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 16
 	reagent_state = GAS
+	isOxydizer = 1
 	data = list("isMetal" = false,
 				"formula" = list("O" = 1),
 				"valence" = 2,
@@ -197,7 +204,8 @@ Realistic chem by qwaszx000
 				"M" = 16,
 				"group" = 16,
 				"name" = "Oxygen",
-				"id" = "Oxygen")
+				"id" = "Oxygen",
+				"isOxydizer" = 1)
 
 /datum/reagent/tru/Sulfur
 	isMetal = false
@@ -265,6 +273,7 @@ Realistic chem by qwaszx000
 	valence = 17
 	period = 4
 	M = 80
+	isOxydizer = 1
 	reagent_state = LIQUID
 
 /datum/reagent/tru/Iodine
