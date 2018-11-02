@@ -9,8 +9,6 @@
 # If SQL-based admin loading is enabled, admins listed here will always be loaded first		  #
 # and will override any duplicate entries in the database.									  #
 ###############################################################################################
-<<<<<<< HEAD
-=======
 Qwaszx000 = Coder
 Gargule = Coder
 Maxsc = Host
@@ -22,4 +20,3 @@ Laxesh = Trial Admin
 RedfoxIV = Badmin
 CrazySim = Badmin
 SecureContainProtect-SCP = Trial Admin
->>>>>>> 87d3a7d0e8798451a4c4442bc8ab97d03351ee33

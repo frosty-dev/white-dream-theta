@@ -20,8 +20,6 @@
 
 
 /obj/item/toy/cards/deck/shitspawn_deck/attack_hand(mob/user)
-	if(user.lying)
-		return
 	var/choice = null
 	if(cards.len == 0)
 		to_chat(user, "<span class='warning'>There are no more cards to draw!</span>")
