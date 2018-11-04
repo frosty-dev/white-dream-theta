@@ -27,6 +27,7 @@ Realistic chem by qwaszx000
 	var/explosive_rate = 0
 	var/isSimple = 1
 	var/isOxydizer = 0
+	var/ph = 6//neutral
 
 /datum/reagent/tru/proc/create_data()
 	data["isMetal"] 		  = isMetal
@@ -39,6 +40,18 @@ Realistic chem by qwaszx000
 	data["name"]			  = name
 	data["id"]				  = id
 	data["taste_description"] = taste_description
+
+/datum/reagent/tru/proc/update_params()
+	isMetal 		  = data["isMetal"]
+	formula 		  = data["formula"]
+	valence 		  = data["valence"]
+	period 			  = data["period"]
+	M 				  = data["M"]
+	group 			  = data["group"]
+	color 			  = data["color"]
+	name 			  = data["name"]
+	id 				  = data["id"]
+	taste_description = data["taste_description"]
 /*
 /datum/substance
 	var/name = "Reagent"
@@ -114,7 +127,8 @@ Realistic chem by qwaszx000
 				"group" = 14,
 				"name" = "Carbon",
 				"id" = "Carbon",
-				"isOxydizer" = 0)
+				"isOxydizer" = 0,
+				"color" = "#000000")
 
 /datum/reagent/tru/Sillicon
 	isMetal = false
@@ -205,7 +219,8 @@ Realistic chem by qwaszx000
 				"group" = 16,
 				"name" = "Oxygen",
 				"id" = "Oxygen",
-				"isOxydizer" = 1)
+				"isOxydizer" = 1,
+				"color" = "#000000")
 
 /datum/reagent/tru/Sulfur
 	isMetal = false
@@ -1391,6 +1406,12 @@ for(var/datum/reagent/tru/regs in tru_reagents)
 	for(var/datum/reagent/tru/regs in tru_reagents)
 		if(regs.formula == f)
 			return regs
+
+/proc/getIdByFormula(var/f)
+	var/tru_reagents = subtypesof(/datum/reagent/tru)
+	for(var/datum/reagent/tru/regs in tru_reagents)
+		if(regs.formula == f)
+			return regs.id
 
 /proc/getMetalElements()
 	var/tru_reagents = subtypesof(/datum/reagent/tru)
