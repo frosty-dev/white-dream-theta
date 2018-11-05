@@ -248,6 +248,7 @@
 	..()
 	if(stat & BROKEN)
 		return
+	to_chat(user, "Charge: [cell.percent()]%")
 	if(opened)
 		if(has_electronics && terminal)
 			to_chat(user, "The cover is [opened==APC_COVER_REMOVED?"removed":"open"] and the power cell is [ cell ? "installed" : "missing"].")
