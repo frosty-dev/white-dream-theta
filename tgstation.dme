@@ -2756,6 +2756,7 @@
 #include "code\shitcode\qwaszx000\true_reagents.dm"
 #include "code\shitcode\qwaszx000\wah.dm"
 #include "code\shitcode\qwaszx000\weapons.dm"
+#include "code\shitcode\valtos\fun.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
