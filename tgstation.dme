@@ -9,7 +9,7 @@
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
-#define DEBUG
+// #define DEBUG
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
@@ -2756,7 +2756,8 @@
 #include "code\shitcode\qwaszx000\true_reagents.dm"
 #include "code\shitcode\qwaszx000\wah.dm"
 #include "code\shitcode\qwaszx000\weapons.dm"
-#include "code\shitcode\valtos\fun.dm"
+#include "code\shitcode\valtos\miners.dm"
+#include "code\shitcode\valtos\poo.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
