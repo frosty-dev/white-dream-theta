@@ -47131,6 +47131,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
 	},
+/obj/structure/displaycase/winner/engineer,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "cji" = (
@@ -56463,6 +56464,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
+"lqZ" = (
+/obj/structure/displaycase/winner/robust,
+/turf/open/floor/plasteel,
+/area/storage/primary)
 "ltd" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
@@ -76132,7 +76137,7 @@ aAY
 aBQ
 aDn
 aDo
-aDo
+lqZ
 aHD
 aIZ
 aBQ
