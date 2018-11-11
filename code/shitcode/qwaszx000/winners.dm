@@ -25,6 +25,10 @@
 	var/need_key = null
 
 /obj/structure/displaycase/winner/attackby(obj/item/W, mob/user, params)
+	if(W.GetID() && !broken && openable)
+		to_chat(user, "<span class='warning'>Access denied.</span>")
+		return
+
 	if(W.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
 		if(obj_integrity < max_integrity)
 			if(!W.tool_start_check(user, amount=5))
@@ -38,36 +42,25 @@
 		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return
+
 	else if(!alert && W.tool_behaviour == TOOL_CROWBAR && openable) //Only applies to the lab cage and player made display cases
-		if(broken)
-			if(showpiece)
-				to_chat(user, "<span class='notice'>Remove the displayed object first.</span>")
-			else
-				to_chat(user, "<span class='notice'>You remove the destroyed case</span>")
-				qdel(src)
-		else
-			to_chat(user, "<span class='notice'>You start to [open ? "close":"open"] [src].</span>")
-			if(W.use_tool(src, user, 20))
-				to_chat(user,  "<span class='notice'>You [open ? "close":"open"] [src].</span>")
-				toggle_lock(user)
+		return
+
 	else if(open && !showpiece)
 		if(user.transferItemToLoc(W, src))
 			showpiece = W
 			to_chat(user, "<span class='notice'>You put [W] on display</span>")
 			update_icon()
 	else if(istype(W, /obj/item/stack/sheet/glass) && broken)
-		var/obj/item/stack/sheet/glass/G = W
-		if(G.get_amount() < 2)
-			to_chat(user, "<span class='warning'>You need two glass sheets to fix the case!</span>")
-			return
-		to_chat(user, "<span class='notice'>You start fixing [src]...</span>")
-		if(do_after(user, 20, target = src))
-			G.use(2)
-			broken = 0
-			obj_integrity = max_integrity
-			update_icon()
+		return
+
 	else
 		return ..()
+
+/obj/structure/displaycase/winner/obj_break(damage_flag)
+	if(showpiece)
+		QDEL_NULL(showpiece)
+	..()
 
 /obj/structure/displaycase/winner/attack_hand(mob/user)
 	if(lowertext(user.ckey) == lowertext(need_key) && !broken && openable)
@@ -78,9 +71,7 @@
 
 /obj/structure/displaycase/winner/AltClick(mob/user)
 	if(open)
-		var/atom/L = drop_location()
-		showpiece.forceMove(L)
-		showpiece = null
+		dump()
 		update_icon()
 
 /obj/structure/displaycase/winner/robust
