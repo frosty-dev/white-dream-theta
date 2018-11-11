@@ -41,7 +41,7 @@
 
 /obj/structure/displaycase/winner/obj_break(damage_flag)
 	.=..()
-	if(!broken && !(flags_1 & NODECONSTRUCT_1))
+	if(broken && !(flags_1 & NODECONSTRUCT_1))
 		src.Destroy()
 		QDEL_NULL(src)
 
