@@ -43,7 +43,7 @@
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
 		return
 
-	else if(!alert && W.tool_behaviour == TOOL_CROWBAR && openable) //Only applies to the lab cage and player made display cases
+	else if(!alert && W.tool_behaviour == TOOL_CROWBAR && openable)
 		return
 
 	else if(open && !showpiece)
@@ -58,10 +58,8 @@
 		return ..()
 
 /obj/structure/displaycase/winner/obj_break(damage_flag)
-	if(showpiece)
-		QDEL_NULL(showpiece)
 	..()
-
+	Destroy()
 /obj/structure/displaycase/winner/attack_hand(mob/user)
 	if(lowertext(user.ckey) == lowertext(need_key) && !broken && openable)
 		to_chat(user,  "<span class='notice'>You [open ? "close":"open"] [src].</span>")
@@ -76,12 +74,8 @@
 
 /obj/structure/displaycase/winner/robust
 	need_key = ROBUST_WINER_CKEY
-	//showpiece = /obj/item/extinguisher/robust
 	start_showpiece_type = /obj/item/extinguisher/robust
-	//start_showpieces = list("type" = /obj/item/extinguisher/robust, "trophy_message" = "Winner!!!")
 
 /obj/structure/displaycase/winner/engineer
 	need_key = ENGINEER_WINER_CKEY
-	//showpiece = /obj/item/clothing/neck/cloak/engineer_winer
 	start_showpiece_type = /obj/item/clothing/neck/cloak/engineer_winer
-	//start_showpieces = list("type" = /obj/item/clothing/neck/cloak/engineer_winer, "trophy_message" = "Winner!!!")
