@@ -52,18 +52,19 @@
 			to_chat(user, "<span class='notice'>You put [W] on display</span>")
 			update_icon()
 	else if(W.tool_behaviour == TOOL_WELDER && user.a_intent == INTENT_HELP && !broken)
- 		if(obj_integrity < max_integrity)
- 			if(!W.tool_start_check(user, amount=5))
+		if(obj_integrity < max_integrity)
+			if(!W.tool_start_check(user, amount=5))
 				to_chat(user, "<span class='warning'>No fuel!</span>")
- 				return
- 			to_chat(user, "<span class='notice'>You begin repairing [src].</span>")
- 			if(W.use_tool(src, user, 40, amount=5, volume=50))
- 				obj_integrity = max_integrity
- 				update_icon()
- 				to_chat(user, "<span class='notice'>You repair [src].</span>")
- 		else
+				return
+			to_chat(user, "<span class='notice'>You begin repairing [src].</span>")
+			if(W.use_tool(src, user, 40, amount=5, volume=50))
+				obj_integrity = max_integrity
+				update_icon()
+				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				return
+		else
 			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
-		return
+			return
 	else if(W.GetID() && !broken && openable)
 		to_chat(user, "<span class='warning'>It has fingerprint lock! Not ID!</span>")
 		return
