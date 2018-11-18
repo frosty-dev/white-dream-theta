@@ -12,17 +12,20 @@ Realistic chem by qwaszx000
 #define ACID_OXYDE 2
 
 #define IS_ORGANIC 0
+#define SIMPLE 0
 #define BASE 1
 #define ACID 2
 /datum/reagent/tru
+
+	taste_description = "true cheam"
 	var/isMetal = true
 	var/list/formula = list()
 	var/valence = 1
 	var/period= 1
 	var/M = 1//gramm/mol
 	var/group = 1
-	var/oxyde_type
-	var/non_organic_type
+	var/oxyde_type = NON_OXYDE
+	var/non_organic_type = SIMPLE
 	var/toxic_rate = 0
 	var/explosive_rate = 0
 	var/isSimple = 1
