@@ -30,6 +30,7 @@ Realistic chem by qwaszx000
 	var/ph = 6//neutral
 
 /datum/reagent/tru/proc/create_data()
+	/*
 	data["isMetal"] 		  = isMetal
 	data["formula"] 		  = formula
 	data["valence"] 		  = valence
@@ -40,6 +41,11 @@ Realistic chem by qwaszx000
 	data["name"]			  = name
 	data["id"]				  = id
 	data["taste_description"] = taste_description
+	*/
+	data = list("isMetal" = isMetal, "formula" = formula, "valence" = valence, "period" = period, "M" = M, "group" = group,
+			"color" = color, "name" = name, "id" = id, "taste_description" = taste_description, "ph" = ph,
+			"isSimple" = isSimple, "oxyde_type" = oxyde_type, "non_organic_type" = non_organic_type, "toxic_rate" = toxic_rate,
+			"explosive_rate" = explosive_rate)
 
 /datum/reagent/tru/proc/update_params()
 	isMetal 		  = data["isMetal"]
@@ -1401,34 +1407,58 @@ for(var/datum/reagent/tru/regs in tru_reagents)
 		notMetals += regs
 */
 //---------utils----------------
-/proc/getElemByFormula(var/f)
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		if(regs.formula == f)
-			return regs
+//returns object class
+//use new(getElemByFormula(f))
+/proc/getElemByFormula(var/list/f)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new(r)
+		//var/list/rf = R.formula
+		//for(var/i in rf)
+		//	to_chat(usr, "[R.id]:[i]:[rf[i]]")
+		if(AsocListCmp(R.formula, f) == 0)
+			return r
+		del(R)
 
-/proc/getIdByFormula(var/f)
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		if(regs.formula == f)
-			return regs.id
+/proc/getIdByFormula(var/list/f)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new r
+		//var/list/rf = R.formula
+		//for(var/i in rf)
+		//	to_chat(usr, "[R.id]:[i]:[rf[i]]")
+		//if(AsocListCmp(R.formula, f) == 0)
+		if(!AsocListCmp(R.formula, f))
+			//to_chat(usr, "[R.id]")
+			return R.id
+		del(R)
 
+//returns list of string.
+//string is name(/datum/reagent/tru/*)
+//to work with elem do new(name)
 /proc/getMetalElements()
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
 	var/metals = new/list()
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		regs.create_data()
-		if(regs.isMetal)
-			metals += regs
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new r
+		R.create_data()
+		if(R.isMetal)
+			metals += r
+		del(R)
 	return metals
 
+//returns list of string.
+//string is name(/datum/reagent/tru/*)
+//to work with elem do new(name)
 /proc/getNonMetalElements()
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
+	var/list/rl = subtypesof(/datum/reagent/tru)
 	var/nonMetals = new/list()
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		regs.create_data()
-		if(!regs.isMetal)
-			nonMetals += regs
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new(r)
+		R.create_data()
+		if(!R.isMetal)
+			nonMetals += r
+		del(R)
 	return nonMetals
 
 /*/proc/getSubstanceByFormula(var/f)

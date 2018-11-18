@@ -7,10 +7,13 @@ By qwaszx000
 #include "formulas_n_constants.dm"
 #include "true_reagents.dm"
 
-//On new reagent in holder
+//On adding reagent in holder
+/datum/reagent/tru/on_merge(list/new_data)
+	on_new(new_data)
+
 /datum/reagent/tru/on_new(list/new_data)
-	new_data["src"] = src
-	new_data["usr"] = usr
+	//new_data["src"] = src
+	//new_data["usr"] = usr
 
 	var/all_data = list()
 	for(var/datum/reagent/tru/i in holder.reagent_list)
@@ -95,17 +98,19 @@ Computes reaction with this reagent and reagent with data
 
 //Add formulas reagents to this or target reagent formulas reagents
 //creates formula:{
-//1 = "i"
+//"O" = list/ {needAtoms = 1}
 //but need "C" = 1
 //}
 /datum/reagent/tru/proc/addFormulasElementsByCoefs(var/list/formula_new, var/list/formulaTarget, var/list/coefs)
 	for(var/i in formula_new)
-		to_chat(usr, "[i]")
 		//var/datum/reagent/tru/R = getElemByFormula(i)
+		to_chat(usr, "[i] = [formula_new[i]]")
+		var/list/local_formula = list("[i]" = formula_new[i])
+		to_chat(usr, "[i]:[getIdByFormula(local_formula)]:[coefs[getIdByFormula(local_formula)]]")//O:Oxygen:/list - Work good
 		if(i in formulaTarget)
-			formulaTarget[i] = coefs[getIdByFormula(i)]
+			formulaTarget[i] = coefs[getIdByFormula(local_formula)]
 		else
-			formulaTarget += list(i = coefs[getIdByFormula(i)])//Null.id
+			formulaTarget += list("[i]" = coefs[getIdByFormula(local_formula)])
 	return formulaTarget
 
 //Returns true if reagent can react with at last one reagent in all_data
