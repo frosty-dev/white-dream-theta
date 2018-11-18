@@ -12,8 +12,6 @@ By qwaszx000
 	on_new(new_data)
 
 /datum/reagent/tru/on_new(list/new_data)
-	//new_data["src"] = src
-	//new_data["usr"] = usr
 
 	var/all_data = list()
 	for(var/datum/reagent/tru/i in holder.reagent_list)
@@ -80,7 +78,6 @@ Computes reaction with this reagent and reagent with data
 
 //Add formulas reagents to this or target reagent formulas reagents
 /datum/reagent/tru/proc/add_formulas_elements(var/list/formula_new, var/list/formulaTarget)
-	//var/list/coefs = calculateCoefficientsSimple(formula_new, formulaTarget)
 
 	if(formulaTarget.len == 0)
 		for(var/i in formula_new)
@@ -98,22 +95,21 @@ Computes reaction with this reagent and reagent with data
 
 //Add formulas reagents to this or target reagent formulas reagents
 //creates formula:{
-//"O" = list/ {needAtoms = 1}
-//but need "C" = 1
+//"O" = 1
+//but need "C" = 1, "O" = 2
 //}
 /datum/reagent/tru/proc/addFormulasElementsByCoefs(var/list/formula_new, var/list/formulaTarget, var/list/coefs)
 	for(var/i in formula_new)
-		//var/datum/reagent/tru/R = getElemByFormula(i)
 		to_chat(usr, "[i] = [formula_new[i]]")
 		var/list/local_formula = list("[i]" = formula_new[i])
 		var/IdFromFormula = getIdByFormula(local_formula)
-		to_chat(usr, "[i]:[IdFromFormula]:[coefs[IdFromFormula]]")//O:Oxygen:/list - Work good
+		to_chat(usr, "[i]:[IdFromFormula]:[coefs[IdFromFormula]["need_atoms"]]")//O:Oxygen:1 - Work good
 		if(i in formulaTarget)
-			to_chat(usr, "[formulaTarget[i]] = [coefs[IdFromFormula]]")
-			formulaTarget[i] = coefs[IdFromFormula]
+			to_chat(usr, "[formulaTarget[i]] = [coefs[IdFromFormula]["need_atoms"]]")
+			formulaTarget[i] = coefs[IdFromFormula]["need_atoms"]
 		else
-			to_chat(usr, "[formulaTarget] += list([i] = [coefs[IdFromFormula]])")
-			formulaTarget += list("[i]" = coefs[IdFromFormula])// /list += list(O = /list)
+			to_chat(usr, "[formulaTarget]:[i]:[formulaTarget[i]] += list([i] = [coefs[IdFromFormula]["need_atoms"]])")
+			formulaTarget += list("[i]" = coefs[IdFromFormula]["need_atoms"])// /list:O:[null] += list(O = 1)
 	return formulaTarget
 
 //Returns true if reagent can react with at last one reagent in all_data
