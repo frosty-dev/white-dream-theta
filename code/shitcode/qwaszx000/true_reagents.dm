@@ -1391,21 +1391,6 @@ Realistic chem by qwaszx000
 	M = 266
 	reagent_state = SOLID
 
-/*
-Creating list of metals and not.
-This need to create bases and acids
-*/
-//WTF error?!!
-/*
-var/tru_reagents = subtypesof(/datum/reagent/tru/)
-var/metalsList = new/list()
-var/notMetals  = new/list()
-for(var/datum/reagent/tru/regs in tru_reagents)
-	if(regs.isMetal)
-		metalsList += regs
-	if(!regs.isMetal)
-		notMetals += regs
-*/
 //---------utils----------------
 //returns object class
 //use new(getElemByFormula(f))
@@ -1413,9 +1398,6 @@ for(var/datum/reagent/tru/regs in tru_reagents)
 	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
 	for(var/r in rl)
 		var/datum/reagent/tru/R = new(r)
-		//var/list/rf = R.formula
-		//for(var/i in rf)
-		//	to_chat(usr, "[R.id]:[i]:[rf[i]]")
 		if(AsocListCmp(R.formula, f) == 0)
 			return r
 		del(R)
@@ -1424,10 +1406,6 @@ for(var/datum/reagent/tru/regs in tru_reagents)
 	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
 	for(var/r in rl)
 		var/datum/reagent/tru/R = new r
-		//var/list/rf = R.formula
-		//for(var/i in rf)
-		//	to_chat(usr, "[R.id]:[i]:[rf[i]]")
-		//if(AsocListCmp(R.formula, f) == 0)
 		if(!AsocListCmp(R.formula, f))
 			//to_chat(usr, "[R.id]")
 			return R.id
@@ -1461,11 +1439,6 @@ for(var/datum/reagent/tru/regs in tru_reagents)
 		del(R)
 	return nonMetals
 
-/*/proc/getSubstanceByFormula(var/f)
-	var/substances = subtypesof(/datum/substance)
-	for(var/datum/substance/subst in substances)
-		if(subst.formula == f)
-			return subst*/
 //-----------------------------------------------
 var/metals 	  = getMetalElements()
 var/nonMetals = getNonMetalElements()

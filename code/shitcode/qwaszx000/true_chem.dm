@@ -106,11 +106,14 @@ Computes reaction with this reagent and reagent with data
 		//var/datum/reagent/tru/R = getElemByFormula(i)
 		to_chat(usr, "[i] = [formula_new[i]]")
 		var/list/local_formula = list("[i]" = formula_new[i])
-		to_chat(usr, "[i]:[getIdByFormula(local_formula)]:[coefs[getIdByFormula(local_formula)]]")//O:Oxygen:/list - Work good
+		var/IdFromFormula = getIdByFormula(local_formula)
+		to_chat(usr, "[i]:[IdFromFormula]:[coefs[IdFromFormula]]")//O:Oxygen:/list - Work good
 		if(i in formulaTarget)
-			formulaTarget[i] = coefs[getIdByFormula(local_formula)]
+			to_chat(usr, "[formulaTarget[i]] = [coefs[IdFromFormula]]")
+			formulaTarget[i] = coefs[IdFromFormula]
 		else
-			formulaTarget += list("[i]" = coefs[getIdByFormula(local_formula)])
+			to_chat(usr, "[formulaTarget] += list([i] = [coefs[IdFromFormula]])")
+			formulaTarget += list("[i]" = coefs[IdFromFormula])// /list += list(O = /list)
 	return formulaTarget
 
 //Returns true if reagent can react with at last one reagent in all_data
