@@ -61,6 +61,12 @@ Realistic chem by qwaszx000
 	name 			  = data["name"]
 	id 				  = data["id"]
 	taste_description = data["taste_description"]
+	explosive_rate = data["explosive_rate"]
+	isSimple = data["isSimple"]
+	oxyde_type = data["oxyde_type"]
+	non_organic_type = data["non_organic_type"]
+	ph = data["ph"]
+	toxic_rate = data["toxic_rate"]
 /*
 /datum/substance
 	var/name = "Reagent"
@@ -1410,6 +1416,15 @@ Realistic chem by qwaszx000
 	for(var/r in rl)
 		var/datum/reagent/tru/R = new r
 		if(!AsocListCmp(R.formula, f))
+			//to_chat(usr, "[R.id]")
+			return R.id
+		del(R)
+
+/proc/getIdByFormulaInaccurate(var/list/f)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new r
+		if(!AsocListCmpInaccurate(R.formula, f))
 			//to_chat(usr, "[R.id]")
 			return R.id
 		del(R)

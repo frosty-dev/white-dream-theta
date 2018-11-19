@@ -17,3 +17,13 @@ var/const/V_m = 22.4//liters/mol
 				count -= 1
 		return count
 	return 1
+
+//returns 0 if keys of a == keys of b
+/proc/AsocListCmpInaccurate(var/list/a, var/list/b)
+	if(a.len == b.len)
+		var/count = a.len
+		for(var/ia in a)
+			if(b[ia] != null)
+				count -= 1
+		return count
+	return 1

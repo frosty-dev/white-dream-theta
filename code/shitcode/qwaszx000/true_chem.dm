@@ -53,33 +53,64 @@ Computes reaction with this reagent and reagent with data
 
 	if(is_oxyding_reaction(new_data))
 		if(isOxydizer)
+			var/datum/reagent/tru/R = holder.has_reagent(new_id)
+			R.create_data()
 			to_chat(usr, "I am Oxydizer")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
 			new_data[new_id]["M"] += M
 			new_data[new_id]["formula"] = addFormulasElementsByCoefs(formula, new_data[new_id]["formula"], coefs)
 			new_data[new_id]["name"] += " oxyde"
+			new_data[new_id]["isSimple"] = 0
 			holder.set_data(new_id, new_data[new_id])
-			var/datum/reagent/tru/R = holder.has_reagent(new_id)
 			R.update_params()
-			var/_moles = holder.get_reagent_amount(id)
+			var/_moles = count_max_reagent_moles(new_data[new_id]["formula"])//holder.get_reagent_amount(id)
 			holder.remove_reagent(id, coefs[id]["need_atoms"]*_moles)
 		else
-			//M, id and name not sets. Formula sets
+			create_data()
 			to_chat(usr, "Oxydation")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
-			M += new_data[new_id]["M"]
-			formula = addFormulasElementsByCoefs(new_data[new_id]["formula"], formula, coefs)
-			name += " oxyde"
+			to_chat(usr, "New_data M: [new_data[new_id]["M"]]")
+			data["M"] += new_data[new_id]["M"]
+			data["formula"] = addFormulasElementsByCoefs(new_data[new_id]["formula"], formula, coefs)
+			data["name"] += " oxyde"
+			data["isSimple"] = 0
 			update_params()
-			var/_moles = holder.get_reagent_amount(new_id)
+			var/_moles = count_max_reagent_moles(formula)//holder.get_reagent_amount(new_id)
 			holder.remove_reagent(new_id, coefs[new_id]["need_atoms"]*_moles)
-/*
+
+
+//counts max moles of substance in holder.
+//Example:
+//CO2
+//C = 6
+//O = 12
+//Return 6
+
+//note min(6/1, 12/2)
 /datum/reagent/tru/proc/count_max_reagent_moles(var/list/formula)
-	var/list/all_list = list()
+	to_chat(usr, "formula.len = [formula.len]")
+	var/all_list[formula.len]
+	var/n = 1
+	var/pre = 0
+	var/i_c = 1
 	for(var/i in formula)
 		var/list/local_formula = list("[i]" = formula[i])
-		all_list += list("[i]" = holder.get_reagent_amount(getIdByFormula(local_formula)))
-*/
+		to_chat(usr, "i = [i]")
+		to_chat(usr, "getIdByFormulaInaccurate(local_formula) = [getIdByFormulaInaccurate(local_formula)]")
+		to_chat(usr, "holder reagent amount = [holder.get_reagent_amount(getIdByFormulaInaccurate(local_formula))]")
+		all_list[n] = holder.get_reagent_amount(getIdByFormulaInaccurate(local_formula))//list index out of bounds
+		n += 1
+
+	if(all_list.len == 1)
+		return all_list[1]
+
+	pre = min(all_list[1], all_list[2])
+	while(i_c <= all_list.len)
+		pre = min(pre, all_list[i_c])
+		i_c += 1
+
+	return pre
+
 //Add formulas reagents to this or target reagent formulas reagents
 /datum/reagent/tru/proc/add_formulas_elements(var/list/formula_new, var/list/formulaTarget)
 
