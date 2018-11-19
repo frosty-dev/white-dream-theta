@@ -13,8 +13,14 @@ By qwaszx000
 
 /datum/reagent/tru/on_new(list/new_data)
 
+	var/datum/reagent/tru/R = holder.has_reagent(new_data["id"])
+	R.create_data()
+	new_data = R.data
+
 	var/all_data = list()
 	for(var/datum/reagent/tru/i in holder.reagent_list)
+		i.create_data()
+		i.update_params()
 		all_data[i.id] = i.data
 
 	if(canReactWithSome(all_data))
@@ -48,13 +54,14 @@ Computes reaction with this reagent and reagent with data
 	var/list/my_data = list()
 	my_data[id] = data
 	my_data["reagent_id"] = id
+	var/datum/reagent/tru/R = holder.has_reagent(new_id)
+	R.create_data()
+	create_data()
 
-	var/list/coefs = calculateCoefficientsSimple(new_data, my_data)
+	var/list/coefs = calculateCoefficientsAtomaric(new_data, my_data)
 
 	if(is_oxyding_reaction(new_data))
-		if(isOxydizer)
-			var/datum/reagent/tru/R = holder.has_reagent(new_id)
-			R.create_data()
+		if(isOxydizer)//holdere.chem_temp - holder temperature
 			to_chat(usr, "I am Oxydizer")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
 			new_data[new_id]["M"] += M
@@ -66,7 +73,6 @@ Computes reaction with this reagent and reagent with data
 			var/_moles = count_max_reagent_moles(new_data[new_id]["formula"])//holder.get_reagent_amount(id)
 			holder.remove_reagent(id, coefs[id]["need_atoms"]*_moles)
 		else
-			create_data()
 			to_chat(usr, "Oxydation")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
 			to_chat(usr, "New_data M: [new_data[new_id]["M"]]")
@@ -261,7 +267,7 @@ returns:
 	]
 }
 */
-/proc/calculateCoefficientsSimple(var/list/data0, var/list/data1)
+/proc/calculateCoefficientsAtomaric(var/list/data0, var/list/data1)
 	var/list/data = list()
 	var/new_id0 = data0["reagent_id"]
 	var/new_id1 = data1["reagent_id"]
