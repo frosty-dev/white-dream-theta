@@ -2,7 +2,7 @@
 Realistic chem by qwaszx000
 */
 
-//TODO set correct valences
+//TODO set correct valences and other data
 #define LANTAN 19
 #define ACTIN 20
 #define Solid SOLID
@@ -12,17 +12,28 @@ Realistic chem by qwaszx000
 #define ACID_OXYDE 2
 
 #define IS_ORGANIC 0
+#define SIMPLE 0
 #define BASE 1
 #define ACID 2
+
+#define COLOR_SILVER "#c0c0c0"
+#define COLOR_NA "#e6e6e6"
+#define COLOR_YELLOW "#b3b300"
+#define COLOR_GRAY "#a6a6a6"
+#define COLOR_COPPER "#B87333"
+#define COLOR_RED "#cc0000"
+#define COLOR_BLACK "#000000"
 /datum/reagent/tru
+	color = COLOR_SILVER
+	taste_description = "true cheam"
 	var/isMetal = true
 	var/list/formula = list()
 	var/valence = 1
 	var/period= 1
 	var/M = 1//gramm/mol
 	var/group = 1
-	var/oxyde_type
-	var/non_organic_type
+	var/oxyde_type = NON_OXYDE
+	var/non_organic_type = SIMPLE
 	var/toxic_rate = 0
 	var/explosive_rate = 0
 	var/isSimple = 1
@@ -30,6 +41,7 @@ Realistic chem by qwaszx000
 	var/ph = 6//neutral
 
 /datum/reagent/tru/proc/create_data()
+	/*
 	data["isMetal"] 		  = isMetal
 	data["formula"] 		  = formula
 	data["valence"] 		  = valence
@@ -40,6 +52,11 @@ Realistic chem by qwaszx000
 	data["name"]			  = name
 	data["id"]				  = id
 	data["taste_description"] = taste_description
+	*/
+	data = list("isMetal" = isMetal, "formula" = formula, "valence" = valence, "period" = period, "M" = M, "group" = group,
+			"color" = color, "name" = name, "id" = id, "taste_description" = taste_description, "ph" = ph,
+			"isSimple" = isSimple, "oxyde_type" = oxyde_type, "non_organic_type" = non_organic_type, "toxic_rate" = toxic_rate,
+			"explosive_rate" = explosive_rate)
 
 /datum/reagent/tru/proc/update_params()
 	isMetal 		  = data["isMetal"]
@@ -52,6 +69,12 @@ Realistic chem by qwaszx000
 	name 			  = data["name"]
 	id 				  = data["id"]
 	taste_description = data["taste_description"]
+	explosive_rate = data["explosive_rate"]
+	isSimple = data["isSimple"]
+	oxyde_type = data["oxyde_type"]
+	non_organic_type = data["non_organic_type"]
+	ph = data["ph"]
+	toxic_rate = data["toxic_rate"]
 /*
 /datum/substance
 	var/name = "Reagent"
@@ -84,6 +107,7 @@ Realistic chem by qwaszx000
 
 //-----------Not metals-------------------
 /datum/reagent/tru/Hidrogen
+	color = COLOR_NA
 	isMetal = false
 	name = "Hidrogen"
 	id = "Hidrogen"
@@ -93,9 +117,11 @@ Realistic chem by qwaszx000
 	period = 1
 	M = 1
 	reagent_state = GAS
+	data = list("id" = "Hidrogen")
 //-----------
 
 /datum/reagent/tru/Boron
+	color = COLOR_BLACK
 	isMetal = false
 	name = "Boron"
 	id = "Boron"
@@ -105,10 +131,12 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 11
 	reagent_state = Solid
+	data = list("id" = "Boron")
 
 //-----------------
 
 /datum/reagent/tru/Carbon
+	color = COLOR_BLACK
 	isMetal = false
 	name = "Carbon"
 	id = "Carbon"
@@ -131,6 +159,7 @@ Realistic chem by qwaszx000
 				"color" = "#000000")
 
 /datum/reagent/tru/Sillicon
+	color = COLOR_GRAY
 	isMetal = false
 	name = "Sillicon"
 	id = "Sillicon"
@@ -140,8 +169,10 @@ Realistic chem by qwaszx000
 	period = 3
 	M = 28
 	reagent_state = Solid
+	data = list("id" = "Sillicon")
 
 /datum/reagent/tru/Germanium
+	color = COLOR_GRAY
 	isMetal = false
 	name = "Germanium"
 	id = "Germanium"
@@ -151,10 +182,12 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 73
 	reagent_state = Solid
+	data = list("id" = "Germanium")
 
 //-----------------
 
 /datum/reagent/tru/Nitrogen
+	color = COLOR_NA
 	isMetal = false
 	name = "Nitrogen"
 	id = "Nitrogen"
@@ -164,8 +197,10 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 14
 	reagent_state = GAS
+	data = list("id" = "Nitrogen")
 
 /datum/reagent/tru/Phosphorus
+	color = COLOR_NA
 	isMetal = false
 	name = "Phosphorus"
 	id = "Phosphorus"
@@ -175,8 +210,10 @@ Realistic chem by qwaszx000
 	period = 3
 	M = 31
 	reagent_state = Solid
+	data = list("id" = "Phosphorus")
 
 /datum/reagent/tru/Arsenic
+	color = COLOR_SILVER
 	isMetal = false
 	name = "Arsenic"
 	id = "Arsenic"
@@ -186,6 +223,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 75
 	reagent_state = Solid
+	data = list("id" = "Arsenic")
 
 /datum/reagent/tru/Antimony
 	isMetal = false
@@ -197,10 +235,12 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 122
 	reagent_state = Solid
+	data = list("id" = "Antimony")
 
 //------------------
 
 /datum/reagent/tru/Oxygen
+	color = COLOR_NA
 	isMetal = false
 	name = "Oxygen"
 	id = "Oxygen"
@@ -223,6 +263,7 @@ Realistic chem by qwaszx000
 				"color" = "#000000")
 
 /datum/reagent/tru/Sulfur
+	color = COLOR_YELLOW
 	isMetal = false
 	name = "Sulfur"
 	id = "Sulfur"
@@ -232,6 +273,7 @@ Realistic chem by qwaszx000
 	period = 3
 	M = 32
 	reagent_state = SOLID
+	data = list("id" = "Sulfur")
 
 /datum/reagent/tru/Selenium
 	isMetal = false
@@ -243,6 +285,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 79
 	reagent_state = SOLID
+	data = list("id" = "Selenium")
 
 /datum/reagent/tru/Tellurium
 	isMetal = false
@@ -254,10 +297,12 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 128
 	reagent_state = SOLID
+	data = list("id" = "Tellurium")
 
 //-----------------
 
 /datum/reagent/tru/Fluorine
+	color = COLOR_NA
 	isMetal = false
 	name = "Fluorine"
 	id = "Fluorine"
@@ -267,8 +312,11 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 19
 	reagent_state = GAS
+	isOxydizer = 1
+	data = list("id" = "Fluorine")
 
 /datum/reagent/tru/Chlorine
+	color = COLOR_YELLOW
 	isMetal = false
 	name = "Chlorine"
 	id = "Chlorine"
@@ -278,8 +326,11 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 36
 	reagent_state = GAS
+	isOxydizer = 1
+	data = list("id" = "Chlorine")
 
 /datum/reagent/tru/Bromine
+	color = COLOR_RED
 	isMetal = false
 	name = "Bromine"
 	id = "Bromine"
@@ -290,8 +341,11 @@ Realistic chem by qwaszx000
 	M = 80
 	isOxydizer = 1
 	reagent_state = LIQUID
+	isOxydizer = 1
+	data = list("id" = "Bromine")
 
 /datum/reagent/tru/Iodine
+	color = COLOR_GRAY
 	isMetal = false
 	name = "Iodine"
 	id = "Iodine"
@@ -301,6 +355,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 127
 	reagent_state = SOLID
+	data = list("id" = "Iodine")
 
 /datum/reagent/tru/Astatine
 	isMetal = false
@@ -312,10 +367,12 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 210
 	reagent_state = SOLID
+	data = list("id" = "Astatine")
 
 //----------------
 
 /datum/reagent/tru/Helium
+	color = COLOR_NA
 	isMetal = false
 	name = "Helium"
 	id = "Helium"
@@ -325,8 +382,10 @@ Realistic chem by qwaszx000
 	period = 1
 	M = 4
 	reagent_state = GAS
+	data = list("id" = "Helium")
 
 /datum/reagent/tru/Neon
+	color = COLOR_NA
 	isMetal = false
 	name = "Neon"
 	id = "Neon"
@@ -336,8 +395,10 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 20
 	reagent_state =  GAS
+	data = list("id" = "Neon")
 
 /datum/reagent/tru/Argon
+	color = COLOR_NA
 	isMetal = false
 	name = "Argon"
 	id = "Argon"
@@ -347,8 +408,10 @@ Realistic chem by qwaszx000
 	period = 3
 	M = 40
 	reagent_state = GAS
+	data = list("id" = "Argon")
 
 /datum/reagent/tru/Krypton
+	color = COLOR_NA
 	isMetal = false
 	name = "Krypton"
 	id = "Krypton"
@@ -358,8 +421,10 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 84
 	reagent_state = GAS
+	data = list("id" = "Krypton")
 
 /datum/reagent/tru/Xenon
+	color = COLOR_NA
 	isMetal = false
 	name = "Xenon"
 	id = "Xenon"
@@ -369,8 +434,10 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 131
 	reagent_state = GAS
+	data = list("id" = "Xenon")
 
 /datum/reagent/tru/Radon
+	color = COLOR_NA
 	isMetal = false
 	name = "Radon"
 	id = "Radon"
@@ -380,6 +447,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 222
 	reagent_state = GAS
+	data = list("id" = "Radon")
 
 //----------------------------------------
 //-----------Metals-----------------------
@@ -394,6 +462,7 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 7
 	reagent_state = Solid
+	data = list("id" = "Lithium")
 
 /datum/reagent/tru/Natrium
 	isMetal = true
@@ -405,6 +474,7 @@ Realistic chem by qwaszx000
 	period = 3
 	M = 23
 	reagent_state = Solid
+	data = list("id" = "Natrium")
 
 /datum/reagent/tru/Kalium
 	isMetal = true
@@ -416,6 +486,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 39
 	reagent_state = Solid
+	data = list("id" = "Kalium")
 
 /datum/reagent/tru/Rubidium
 	isMetal = true
@@ -427,6 +498,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 85
 	reagent_state = Solid
+	data = list("id" = "Rubidium")
 
 /datum/reagent/tru/Caesium
 	isMetal = true
@@ -438,6 +510,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 133
 	reagent_state = Solid
+	data = list("id" = "Caesium")
 
 /datum/reagent/tru/Francium
 	isMetal = true
@@ -449,6 +522,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 223
 	reagent_state = Solid
+	data = list("id" = "Francium")
 //-----------
 /datum/reagent/tru/Beryllium
 	isMetal = true
@@ -460,6 +534,7 @@ Realistic chem by qwaszx000
 	period = 2
 	M = 9
 	reagent_state = Solid
+	data = list("id" = "Beryllium")
 
 /datum/reagent/tru/Magnesium
 	isMetal = true
@@ -471,6 +546,7 @@ Realistic chem by qwaszx000
 	period = 3
 	M = 24
 	reagent_state = Solid
+	data = list("id" = "Magnesium")
 
 /datum/reagent/tru/Calcium
 	isMetal = true
@@ -482,6 +558,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 40
 	reagent_state = Solid
+	data = list("id" = "Calcium")
 
 /datum/reagent/tru/Strontium
 	isMetal = true
@@ -493,6 +570,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 88
 	reagent_state = Solid
+	data = list("id" = "Strintium")
 
 /datum/reagent/tru/Barium
 	isMetal = true
@@ -504,6 +582,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 137
 	reagent_state = Solid
+	data = list("id" = "Barium")
 
 /datum/reagent/tru/Radium
 	isMetal = true
@@ -515,6 +594,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 226
 	reagent_state = Solid
+	data = list("id" = "Radium")
 
 //----------
 
@@ -528,6 +608,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 45
 	reagent_state = Solid
+	data = list("id" = "Scandium")
 
 /datum/reagent/tru/Yttrium
 	isMetal = true
@@ -539,6 +620,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 89
 	reagent_state = Solid
+	data = list("id" = "Yttrium")
 
 /datum/reagent/tru/Lanthanum
 	isMetal = true
@@ -550,6 +632,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 139
 	reagent_state = Solid
+	data = list("id" = "Lanthanum")
 
 /datum/reagent/tru/Actinium
 	isMetal = true
@@ -561,6 +644,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 227
 	reagent_state = Solid
+	data = list("id" = "Actinum")
 
 //-------
 
@@ -574,6 +658,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 48
 	reagent_state = Solid
+	data = list("id" = "Titanium")
 
 /datum/reagent/tru/Zirconium
 	isMetal = true
@@ -585,6 +670,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 91
 	reagent_state = Solid
+	data = list("id" = "Zirconium")
 
 /datum/reagent/tru/Hafnium
 	isMetal = true
@@ -596,6 +682,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 178
 	reagent_state = Solid
+	data = list("id" = "Hafnium")
 
 /datum/reagent/tru/Rutherfordium
 	isMetal = true
@@ -607,6 +694,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 267
 	reagent_state = Solid
+	data = list("id" = "Rutherfordium")
 
 //--------
 
@@ -620,6 +708,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 51
 	reagent_state = Solid
+	data = list("id" = "Vanadium")
 
 /datum/reagent/tru/Niobium
 	isMetal = true
@@ -631,6 +720,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 93
 	reagent_state = Solid
+	data = list("id" = "Niobium")
 
 /datum/reagent/tru/Tantalum
 	isMetal = true
@@ -642,6 +732,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 181
 	reagent_state = Solid
+	data = list("id" = "Tantalum")
 
 /datum/reagent/tru/Dubnium
 	isMetal = true
@@ -653,6 +744,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 268
 	reagent_state = Solid
+	data = list("id" = "Dubnium")
 
 /datum/reagent/tru/Chromium
 	isMetal = true
@@ -664,6 +756,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 52
 	reagent_state = Solid
+	data = list("id" = "Chromium")
 
 /datum/reagent/tru/Molybdenum
 	isMetal = true
@@ -675,6 +768,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 96
 	reagent_state = Solid
+	data = list("id" = "Molybdenum")
 
 /datum/reagent/tru/Tungsten
 	isMetal = true
@@ -686,6 +780,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 184
 	reagent_state = Solid
+	data = list("id" = "Tungsten")
 
 /datum/reagent/tru/Seaborgium
 	isMetal = true
@@ -697,6 +792,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 269
 	reagent_state = Solid
+	data = list("id" = "Seaborgium")
 
 /datum/reagent/tru/Manganese
 	isMetal = true
@@ -708,6 +804,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 55
 	reagent_state = Solid
+	data = list("id" = "Manganese")
 
 /datum/reagent/tru/Technetium
 	isMetal = true
@@ -719,6 +816,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 98
 	reagent_state = Solid
+	data = list("id" = "Technetium")
 
 /datum/reagent/tru/Rhenium
 	isMetal = true
@@ -730,6 +828,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 186
 	reagent_state = Solid
+	data = list("id" = "Rhenium")
 
 /datum/reagent/tru/Bohrium
 	isMetal = true
@@ -741,6 +840,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 270
 	reagent_state = Solid
+	data = list("id" = "Bohrium")
 
 /datum/reagent/tru/Iron
 	isMetal = true
@@ -752,6 +852,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 56
 	reagent_state = Solid
+	data = list("id" = "Iron")
 
 /datum/reagent/tru/Ruthenium
 	isMetal = true
@@ -763,6 +864,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 101
 	reagent_state = Solid
+	data = list("id" = "Ruthenium")
 
 /datum/reagent/tru/Osmium
 	isMetal = true
@@ -774,6 +876,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 190
 	reagent_state = Solid
+	data = list("id" = "Osmium")
 
 /datum/reagent/tru/Hassium
 	isMetal = true
@@ -785,6 +888,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 270
 	reagent_state = Solid
+	data = list("id" = "Hassium")
 
 /datum/reagent/tru/Cobalt
 	isMetal = true
@@ -796,6 +900,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 59
 	reagent_state = Solid
+	data = list("id" = "Cobalt")
 
 /datum/reagent/tru/Rhodium
 	isMetal = true
@@ -807,6 +912,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 103
 	reagent_state = Solid
+	data = list("id" = "Rhodium")
 
 /datum/reagent/tru/Iridium
 	isMetal = true
@@ -818,6 +924,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 192
 	reagent_state = Solid
+	data = list("id" = "Iridium")
 
 /datum/reagent/tru/Meitnerium
 	isMetal = true
@@ -829,6 +936,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 278
 	reagent_state = Solid
+	data = list("id" = "Meitnerium")
 
 //---------------
 
@@ -842,6 +950,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 59
 	reagent_state = Solid
+	data = list("id" = "Nikel")
 
 /datum/reagent/tru/Palladium
 	isMetal = true
@@ -853,6 +962,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 106
 	reagent_state = Solid
+	data = list("id" = "Palladium")
 
 /datum/reagent/tru/Platinum
 	isMetal = true
@@ -864,6 +974,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 195
 	reagent_state = Solid
+	data = list("id" = "Platinum")
 
 /datum/reagent/tru/Darmstadtium
 	isMetal = true
@@ -875,6 +986,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 281
 	reagent_state = Solid
+	data = list("id" = "Darmstadtium")
 
 /datum/reagent/tru/Copper
 	isMetal = true
@@ -886,6 +998,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 64
 	reagent_state = Solid
+	data = list("id" = "Copper")
 
 /datum/reagent/tru/Silver
 	isMetal = true
@@ -897,8 +1010,10 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 108
 	reagent_state = Solid
+	data = list("id" = "Silver")
 
 /datum/reagent/tru/Gold
+	color = "#FFD700"//gold
 	isMetal = true
 	name = "Gold"
 	id = "Gold"
@@ -908,6 +1023,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 197
 	reagent_state = Solid
+	data = list("id" = "Gold")
 
 /datum/reagent/tru/Roentgenium
 	isMetal = true
@@ -919,6 +1035,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 282
 	reagent_state = Solid
+	data = list("id" = "Roentgenium")
 
 //----------------
 
@@ -932,6 +1049,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 65
 	reagent_state = Solid
+	data = list("id" = "Zinc")
 
 /datum/reagent/tru/Cadmium
 	isMetal = true
@@ -943,6 +1061,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 112
 	reagent_state = Solid
+	data = list("id" = "Cadmium")
 
 /datum/reagent/tru/Mercury
 	isMetal = true
@@ -954,6 +1073,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 201
 	reagent_state = Solid
+	data = list("id" = "Mercury")
 
 /datum/reagent/tru/Copernicium
 	isMetal = true
@@ -965,6 +1085,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 285
 	reagent_state = Solid
+	data = list("id" = "Copernicium")
 
 //---------
 
@@ -978,6 +1099,7 @@ Realistic chem by qwaszx000
 	period = 3
 	M = 27
 	reagent_state = Solid
+	data = list("id" = "Aluminium")
 
 /datum/reagent/tru/Gallium
 	isMetal = true
@@ -989,6 +1111,7 @@ Realistic chem by qwaszx000
 	period = 4
 	M = 70
 	reagent_state = Solid
+	data = list("id" = "Gallium")
 
 /datum/reagent/tru/Indium
 	isMetal = true
@@ -1000,6 +1123,7 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 115
 	reagent_state = Solid
+	data = list("id" = "Indium")
 
 /datum/reagent/tru/Thallium
 	isMetal = true
@@ -1011,6 +1135,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 204
 	reagent_state = Solid
+	data = list("id" = "Thallium")
 
 /datum/reagent/tru/Nihonium
 	isMetal = true
@@ -1022,6 +1147,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 286
 	reagent_state = Solid
+	data = list("id" = "Nihonium")
 
 //------------
 
@@ -1035,8 +1161,10 @@ Realistic chem by qwaszx000
 	period = 5
 	M = 119
 	reagent_state = Solid
+	data = list("id" = "Tin")
 
 /datum/reagent/tru/Lead
+	color = COLOR_GRAY
 	isMetal = true
 	name = "Lead"
 	id = "Lead"
@@ -1046,10 +1174,12 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 207
 	reagent_state = Solid
+	data = list("id" = "Lead")
 
 //------------
 
 /datum/reagent/tru/Bismuth
+	color = COLOR_GRAY
 	isMetal = true
 	name = "Bismuth"
 	id = "Bismuth"
@@ -1059,6 +1189,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 209
 	reagent_state = Solid
+	data = list("id" = "Bismuth")
 
 //----------
 
@@ -1072,6 +1203,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 209
 	reagent_state = Solid
+	data = list("id" = "Polonium")
 
 //------------------------------------------------------
 //--------------Lanthanums------------------------------
@@ -1085,6 +1217,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 140
 	reagent_state = Solid
+	data = list("id" = "Cerium")
 
 /datum/reagent/tru/Praseodymium
 	isMetal = true
@@ -1096,6 +1229,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 141
 	reagent_state = Solid
+	data = list("id" = "Praseodymium")
 
 /datum/reagent/tru/Neodymium
 	isMetal = true
@@ -1107,6 +1241,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 144
 	reagent_state = Solid
+	data = list("id" = "Neodimium")
 
 /datum/reagent/tru/Promethium
 	isMetal = true
@@ -1118,6 +1253,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 145
 	reagent_state = Solid
+	data = list("id" = "Promethium")
 
 /datum/reagent/tru/Samarium
 	isMetal = true
@@ -1129,6 +1265,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 150
 	reagent_state = Solid
+	data = list("id" = "Samarium")
 
 /datum/reagent/tru/Europium
 	isMetal = true
@@ -1140,6 +1277,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 152
 	reagent_state = Solid
+	data = list("id" = "Europium")
 
 /datum/reagent/tru/Gadolinium
 	isMetal = true
@@ -1151,6 +1289,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 157
 	reagent_state = Solid
+	data = list("id" = "Gadolinium")
 
 /datum/reagent/tru/Terbium
 	isMetal = true
@@ -1162,6 +1301,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 159
 	reagent_state = Solid
+	data = list("id" = "Terbium")
 
 /datum/reagent/tru/Dysposium
 	isMetal = true
@@ -1173,6 +1313,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 163
 	reagent_state = Solid
+	data = list("id" = "Dysposium")
 
 /datum/reagent/tru/Holmium
 	isMetal = true
@@ -1184,6 +1325,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 165
 	reagent_state = Solid
+	data = list("id" = "Holmium")
 
 /datum/reagent/tru/Erbium
 	isMetal = true
@@ -1195,6 +1337,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 167
 	reagent_state = Solid
+	data = list("id" = "Erbium")
 
 /datum/reagent/tru/Thulium
 	isMetal = true
@@ -1206,6 +1349,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 169
 	reagent_state = Solid
+	data = list("id" = "Thulium")
 
 /datum/reagent/tru/Ytterbium
 	isMetal = true
@@ -1217,6 +1361,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 173
 	reagent_state = Solid
+	data = list("id" = "Ytterbium")
 
 /datum/reagent/tru/Lutetium
 	isMetal = true
@@ -1228,6 +1373,7 @@ Realistic chem by qwaszx000
 	period = 6
 	M = 175
 	reagent_state = Solid
+	data = list("id" = "Lutetium")
 
 //------------ACTINIUMS-------------
 
@@ -1241,6 +1387,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 232
 	reagent_state = Solid
+	data = list("id" = "Thorium")
 
 /datum/reagent/tru/Protactinium
 	isMetal = true
@@ -1252,6 +1399,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 231
 	reagent_state = Solid
+	data = list("id" = "Protactinium")
 
 /datum/reagent/tru/Uranium
 	isMetal = true
@@ -1263,6 +1411,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 238
 	reagent_state = Solid
+	data = list("id" = "Uranium")
 
 /datum/reagent/tru/Neptunium
 	isMetal = true
@@ -1274,6 +1423,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 237
 	reagent_state = Solid
+	data = list("id" = "Neptunium")
 
 /datum/reagent/tru/Plutonium
 	isMetal = true
@@ -1285,6 +1435,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 244
 	reagent_state = Solid
+	data = list("id" = "Plutonium")
 
 /datum/reagent/tru/Americium
 	isMetal = true
@@ -1296,6 +1447,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 243
 	reagent_state = Solid
+	data = list("id" = "Americium")
 
 /datum/reagent/tru/Curium
 	isMetal = true
@@ -1307,6 +1459,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 247
 	reagent_state = Solid
+	data = list("id" = "Curium")
 
 /datum/reagent/tru/Berkelium
 	isMetal = true
@@ -1318,6 +1471,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 247
 	reagent_state = Solid
+	data = list("id" = "Berkelium")
 
 /datum/reagent/tru/Californium
 	isMetal = true
@@ -1329,6 +1483,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 251
 	reagent_state = Solid
+	data = list("id" = "Californium")
 
 /datum/reagent/tru/Einstenium
 	isMetal = true
@@ -1340,6 +1495,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 252
 	reagent_state = Solid
+	data = list("id" = "Einstenium")
 
 /datum/reagent/tru/Fermium
 	isMetal = true
@@ -1351,6 +1507,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 257
 	reagent_state = Solid
+	data = list("id" = "Fermium")
 
 /datum/reagent/tru/Mendelevium
 	isMetal = true
@@ -1362,6 +1519,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 258
 	reagent_state = SOLID
+	data = list("id" = "Mendelevium")
 
 /datum/reagent/tru/Nobelium
 	isMetal = true
@@ -1373,6 +1531,7 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 259
 	reagent_state = SOLID
+	data = list("id" = "Nobelium")
 
 /datum/reagent/tru/Lawrencium
 	isMetal = true
@@ -1384,58 +1543,65 @@ Realistic chem by qwaszx000
 	period = 7
 	M = 266
 	reagent_state = SOLID
+	data = list("id" = "Lawrencium")
 
-/*
-Creating list of metals and not.
-This need to create bases and acids
-*/
-//WTF error?!!
-/*
-var/tru_reagents = subtypesof(/datum/reagent/tru/)
-var/metalsList = new/list()
-var/notMetals  = new/list()
-for(var/datum/reagent/tru/regs in tru_reagents)
-	if(regs.isMetal)
-		metalsList += regs
-	if(!regs.isMetal)
-		notMetals += regs
-*/
 //---------utils----------------
-/proc/getElemByFormula(var/f)
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		if(regs.formula == f)
-			return regs
+//returns object class
+//use new(getElemByFormula(f))
+/proc/getElemByFormula(var/list/f)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new(r)
+		if(AsocListCmp(R.formula, f) == 0)
+			return r
+		del(R)
 
-/proc/getIdByFormula(var/f)
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		if(regs.formula == f)
-			return regs.id
+/proc/getIdByFormula(var/list/f)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new r
+		if(!AsocListCmp(R.formula, f))
+			//to_chat(usr, "[R.id]")
+			return R.id
+		del(R)
 
+/proc/getIdByFormulaInaccurate(var/list/f)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new r
+		if(!AsocListCmpInaccurate(R.formula, f))
+			//to_chat(usr, "[R.id]")
+			return R.id
+		del(R)
+
+//returns list of string.
+//string is name(/datum/reagent/tru/*)
+//to work with elem do new(name)
 /proc/getMetalElements()
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
+	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
 	var/metals = new/list()
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		regs.create_data()
-		if(regs.isMetal)
-			metals += regs
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new r
+		R.create_data()
+		if(R.isMetal)
+			metals += r
+		del(R)
 	return metals
 
+//returns list of string.
+//string is name(/datum/reagent/tru/*)
+//to work with elem do new(name)
 /proc/getNonMetalElements()
-	var/tru_reagents = subtypesof(/datum/reagent/tru)
+	var/list/rl = subtypesof(/datum/reagent/tru)
 	var/nonMetals = new/list()
-	for(var/datum/reagent/tru/regs in tru_reagents)
-		regs.create_data()
-		if(!regs.isMetal)
-			nonMetals += regs
+	for(var/r in rl)
+		var/datum/reagent/tru/R = new(r)
+		R.create_data()
+		if(!R.isMetal)
+			nonMetals += r
+		del(R)
 	return nonMetals
 
-/*/proc/getSubstanceByFormula(var/f)
-	var/substances = subtypesof(/datum/substance)
-	for(var/datum/substance/subst in substances)
-		if(subst.formula == f)
-			return subst*/
 //-----------------------------------------------
 var/metals 	  = getMetalElements()
 var/nonMetals = getNonMetalElements()

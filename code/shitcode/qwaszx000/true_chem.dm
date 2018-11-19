@@ -7,30 +7,36 @@ By qwaszx000
 #include "formulas_n_constants.dm"
 #include "true_reagents.dm"
 
-//On new reagent in holder
+//On adding reagent in holder
+/datum/reagent/tru/on_merge(list/new_data)
+	on_new(new_data)
+
 /datum/reagent/tru/on_new(list/new_data)
-	new_data["src"] = src
-	new_data["usr"] = usr
+
+	var/datum/reagent/tru/R = holder.has_reagent(new_data["id"])
+	R.create_data()
+	new_data = R.data
 
 	var/all_data = list()
 	for(var/datum/reagent/tru/i in holder.reagent_list)
+		i.create_data()
+		i.update_params()
 		all_data[i.id] = i.data
 
 	if(canReactWithSome(all_data))
 		to_chat(usr, "Reaction!")
-		for(var/datum/reagent/tru/i in holder.reagent_list)
+		for(var/datum/reagent/tru/i in (holder.reagent_list - src))
 			//need to remove some wrong reactions
 			var/list/loc_data = list()
-			//to_chat(usr, "[i.id]")
-			//to_chat(usr, "[i.data["id"]]")//corect data
 			loc_data[i.id] = i.data
 			loc_data["reagent_id"] = i.id
-			//loc_data = i.data
 			to_chat(usr, "[loc_data[i.id]["id"]]")
 			if(can_react_with(loc_data))
 				react_with(loc_data)
+
+				create_data()//update data
+				update_params()
 	//-------------------------------
-	create_data()//update data
 
 /*
 Computes reaction with this reagent and reagent with data
@@ -48,36 +54,72 @@ Computes reaction with this reagent and reagent with data
 	var/list/my_data = list()
 	my_data[id] = data
 	my_data["reagent_id"] = id
+	var/datum/reagent/tru/R = holder.has_reagent(new_id)
+	R.create_data()
+	create_data()
 
-	var/list/coefs = calculateCoefficientsSimple(new_data, my_data)
+	var/list/coefs = calculateCoefficientsAtomaric(new_data, my_data)
 
-	if(is_oxyding_reaction(new_data))
+	if(is_oxyding_reaction(new_data))//holdere.chem_temp - holder temperature
 		if(isOxydizer)
-			//Rework this!
 			to_chat(usr, "I am Oxydizer")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
 			new_data[new_id]["M"] += M
-			new_data[new_id]["formula"] = addFormulasElementsByCoefs(formula, list(), coefs)
-			new_data[new_id]["name"] += (" oxyde")
+			new_data[new_id]["formula"] = addFormulasElementsByCoefs(formula, new_data[new_id]["formula"], coefs)
+			new_data[new_id]["name"] += " oxyde"
+			new_data[new_id]["isSimple"] = 0
 			holder.set_data(new_id, new_data[new_id])
-			var/datum/reagent/tru/R = holder.has_reagent(new_id)
 			R.update_params()
-			var/_moles = holder.get_reagent_amount(new_id)
-			holder.remove_reagent(id, coefs[new_id]["need_atoms"]*_moles)
+			var/_moles = count_max_reagent_moles(new_data[new_id]["formula"])//holder.get_reagent_amount(id)
+			holder.remove_reagent(id, coefs[id]["need_atoms"]*_moles)
 		else
-			//rework
+			//not calls. Need fix
 			to_chat(usr, "Oxydation")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
-			M += new_data[new_id]["M"]
-			formula = addFormulasElementsByCoefs(new_data[new_id]["formula"], list(), coefs)
-			name += (" oxyde")
+			to_chat(usr, "New_data M: [new_data[new_id]["M"]]")
+			data["M"] += new_data[new_id]["M"]
+			data["formula"] = addFormulasElementsByCoefs(new_data[new_id]["formula"], formula, coefs)
+			data["name"] += " oxyde"
+			data["isSimple"] = 0
 			update_params()
-			var/_moles = holder.get_reagent_amount(id)
-			holder.remove_reagent(new_id, coefs[id]["need_atoms"]*_moles)
+			var/_moles = count_max_reagent_moles(formula)//holder.get_reagent_amount(new_id)
+			holder.remove_reagent(new_id, coefs[new_id]["need_atoms"]*_moles)
+
+
+//counts max moles of substance in holder.
+//Example:
+//CO2
+//C = 6
+//O = 12
+//Return 6
+
+//note min(6/1, 12/2)
+/datum/reagent/tru/proc/count_max_reagent_moles(var/list/formula)
+	to_chat(usr, "formula.len = [formula.len]")
+	var/all_list[formula.len]
+	var/n = 1
+	var/pre = 0
+	var/i_c = 1
+	for(var/i in formula)
+		var/list/local_formula = list("[i]" = formula[i])
+		to_chat(usr, "i = [i]")
+		to_chat(usr, "getIdByFormulaInaccurate(local_formula) = [getIdByFormulaInaccurate(local_formula)]")
+		to_chat(usr, "holder reagent amount = [holder.get_reagent_amount(getIdByFormulaInaccurate(local_formula))]")
+		all_list[n] = holder.get_reagent_amount(getIdByFormulaInaccurate(local_formula))//list index out of bounds
+		n += 1
+
+	if(all_list.len == 1)
+		return all_list[1]
+
+	pre = min(all_list[1], all_list[2])
+	while(i_c <= all_list.len)
+		pre = min(pre, all_list[i_c])
+		i_c += 1
+
+	return pre
 
 //Add formulas reagents to this or target reagent formulas reagents
 /datum/reagent/tru/proc/add_formulas_elements(var/list/formula_new, var/list/formulaTarget)
-	//var/list/coefs = calculateCoefficientsSimple(formula_new, formulaTarget)
 
 	if(formulaTarget.len == 0)
 		for(var/i in formula_new)
@@ -95,17 +137,21 @@ Computes reaction with this reagent and reagent with data
 
 //Add formulas reagents to this or target reagent formulas reagents
 //creates formula:{
-//1 = "i"
-//but need "C" = 1
+//"O" = 1, "C" = 1
+//but need "C" = 1, "O" = 2
 //}
 /datum/reagent/tru/proc/addFormulasElementsByCoefs(var/list/formula_new, var/list/formulaTarget, var/list/coefs)
 	for(var/i in formula_new)
-		to_chat(usr, "[i]")
-		//var/datum/reagent/tru/R = getElemByFormula(i)
+		to_chat(usr, "[i] = [formula_new[i]]")
+		var/list/local_formula = list("[i]" = formula_new[i])
+		var/IdFromFormula = getIdByFormula(local_formula)
+		to_chat(usr, "[i]:[IdFromFormula]:[coefs[IdFromFormula]["need_atoms"]]")//O:Oxygen:1 - Work good
 		if(i in formulaTarget)
-			formulaTarget[i] = coefs[getIdByFormula(i)]
+			to_chat(usr, "[formulaTarget[i]] = [coefs[IdFromFormula]["need_atoms"]]")
+			formulaTarget[i] = coefs[IdFromFormula]["need_atoms"]
 		else
-			formulaTarget += list(i = coefs[getIdByFormula(i)])//Null.id
+			to_chat(usr, "[formulaTarget]:[i]:[formulaTarget[i]] += list([i] = [coefs[IdFromFormula]["need_atoms"]])")
+			formulaTarget += list("[i]" = coefs[IdFromFormula]["need_atoms"])// /list:O:[null] += list(O = 1)
 	return formulaTarget
 
 //Returns true if reagent can react with at last one reagent in all_data
@@ -222,21 +268,22 @@ returns:
 	]
 }
 */
-/proc/calculateCoefficientsSimple(var/list/data0, var/list/data1)
+/proc/calculateCoefficientsAtomaric(var/list/data0, var/list/data1)
 	var/list/data = list()
 	var/new_id0 = data0["reagent_id"]
 	var/new_id1 = data1["reagent_id"]
 	var/valence0 = data0[new_id0]["valence"]
 	var/valence1 = data1[new_id1]["valence"]
+
 	if(valence0 % valence1 == 0)//4 2 or etc
 		/*work*/
-		data[new_id0] = list("need_atoms" = valence0/valence1)
-		data[new_id1] = list("need_atoms" = 1)
+		data[new_id1] = list("need_atoms" = valence0/valence1)
+		data[new_id0] = list("need_atoms" = 1)
 
 	else if(valence1 % valence0 == 0)//2 4 or etc
 		/*work*/
-		data[new_id1] = list("need_atoms" = valence1/valence0)
-		data[new_id0] = list("need_atoms" = 1)
+		data[new_id0] = list("need_atoms" = valence1/valence0)
+		data[new_id1] = list("need_atoms" = 1)
 
 	else//4 3 or etc
 		/*work*/
