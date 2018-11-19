@@ -43,6 +43,7 @@ var opts = {
 	'highlightLimit': 5,
 	'highlightColor': '#FFFF00', //The color of the highlighted message
 	'pingDisabled': false, //Has the user disabled the ping counter
+	'theme': 'light', //Держим значение темы
 
 	//Ping display
 	'lastPang': 0, //Timestamp of the last response from the server.
@@ -670,6 +671,7 @@ $(function() {
 		'shighlightColor': getCookie('highlightcolor'),
 		'smusicVolume': getCookie('musicVolume'),
 		'smessagecombining': getCookie('messagecombining'),
+		'stheme': getCookie('theme')
 	};
 
 	if (savedConfig.sfontSize) {
@@ -725,6 +727,13 @@ $(function() {
 		}
 	}
 
+	if (savedConfig.stheme) {
+		if (savedConfig.stheme == 'light') {
+			opts.theme = 'light';
+		} else {
+			opts.theme = 'dark';
+		}
+	}
 
 	(function() {
 		var dataCookie = getCookie('connData');
@@ -954,6 +963,21 @@ $(function() {
 		setCookie('pingdisabled', (opts.pingDisabled ? 'true' : 'false'), 365);
 	});
 
+	$('#toggleTheme').click(function(e) {
+		if (opts.theme == 'dark') {
+			$('link[href="https://byond.space/styles/browserOutputDark.css"]').remove();
+			$('head').append('<link rel="stylesheet" type="text/css" href="browserOutput.css"/>');
+			opts.theme = 'light';
+			setCookie('theme', 'dark', 365);
+		} else {
+			$('link[href="browserOutput.css"]').remove();
+			$('head').append('<link rel="stylesheet" type="text/css" href="https://byond.space/styles/browserOutputDark.css"/>');
+			opts.theme = 'dark';
+			setCookie('theme', 'light', 365);
+		}
+		internalOutput('<span class="internal boldnshit">Switching theme to '+opts.theme+'</span>', 'internal');
+	});
+	
 	$('#saveLog').click(function(e) {
 		// Requires IE 10+ to issue download commands. Just opening a popup
 		// window will cause Ctrl+S to save a blank page, ignoring innerHTML.
