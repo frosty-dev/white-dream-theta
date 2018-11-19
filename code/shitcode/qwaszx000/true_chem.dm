@@ -60,8 +60,8 @@ Computes reaction with this reagent and reagent with data
 
 	var/list/coefs = calculateCoefficientsAtomaric(new_data, my_data)
 
-	if(is_oxyding_reaction(new_data))
-		if(isOxydizer)//holdere.chem_temp - holder temperature
+	if(is_oxyding_reaction(new_data))//holdere.chem_temp - holder temperature
+		if(isOxydizer)
 			to_chat(usr, "I am Oxydizer")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
 			new_data[new_id]["M"] += M
@@ -73,6 +73,7 @@ Computes reaction with this reagent and reagent with data
 			var/_moles = count_max_reagent_moles(new_data[new_id]["formula"])//holder.get_reagent_amount(id)
 			holder.remove_reagent(id, coefs[id]["need_atoms"]*_moles)
 		else
+			//not calls. Need fix
 			to_chat(usr, "Oxydation")
 			to_chat(usr, "New_data id: [new_data[new_id]["id"]]")
 			to_chat(usr, "New_data M: [new_data[new_id]["M"]]")

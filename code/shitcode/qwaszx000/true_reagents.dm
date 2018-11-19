@@ -2,7 +2,7 @@
 Realistic chem by qwaszx000
 */
 
-//TODO set correct valences
+//TODO set correct valences and other data
 #define LANTAN 19
 #define ACTIN 20
 #define Solid SOLID
