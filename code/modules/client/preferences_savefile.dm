@@ -250,6 +250,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		S["feature_human_tail"]				>> features["tail_human"]
 		S["feature_human_ears"]				>> features["ears"]
 	S["be_catman"]			>> be_catman
+	S["be_loly"]			>> be_loly
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -299,6 +300,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
 	be_catman 		= sanitize_integer(be_catman, 0, 1, initial(be_catman))
+	be_loly 		= sanitize_integer(be_loly, 0, 1, initial(be_loly))
 
 	if(gender == MALE)
 		hair_style			= sanitize_inlist(hair_style, GLOB.hair_styles_male_list)
@@ -390,6 +392,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
 	WRITE_FILE(S["be_catman"], be_catman)
+	WRITE_FILE(S["be_loly"], be_loly)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
