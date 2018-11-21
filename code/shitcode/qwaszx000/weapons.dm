@@ -46,7 +46,7 @@ Arrow&bow
 
 	chambered = new /obj/item/ammo_casing/syringegun/bow(src)
 
-/obj/item/gun/syringe/bow/attackby(obj/item/A, mob/user, params, show_msg = TRUE)
+/obj/item/gun/syringe/attackby(obj/item/A, mob/user, params, show_msg = TRUE)
 	if(istype(A, /obj/item/reagent_containers/syringe/arrow))
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(A, src))
@@ -75,3 +75,41 @@ Arrow&bow
 	time = 25
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+
+//M41A
+
+/obj/item/gun/ballistic/automatic/M41A
+	name = "M41A rifle"
+	desc = "Rifle."
+	icon = 'sprites/M41A.dmi'
+	icon_state = "M41A"
+	item_state = "M41A"
+	mag_type = /obj/item/ammo_box/magazine/m41a
+	pin = /obj/item/firing_pin
+	fire_delay = 2
+	can_suppress = FALSE
+	burst_size = 0
+	actions_types = list()
+	can_bayonet = FALSE
+	lefthand_file = 'sprites/left_hand.dmi'
+	righthand_file = 'sprites/right_hand.dmi'
+
+/obj/item/gun/ballistic/automatic/M41A/update_icon()
+	..()
+	if(magazine)
+		icon_state = "M41A"
+	else
+		icon_state = "M41A_noammo"
+
+/obj/item/ammo_box/magazine/m41a
+	name = "m41a magazine"
+	icon = 'sprites/M41A.dmi'
+	icon_state = "ammo"
+	ammo_type = /obj/item/ammo_casing/c46x30mm
+	caliber = "4.6x30mm"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/m41a/update_icon()
+	..()
+	if(ammo_count() <= 0)
+		icon_state = "ammo_e"
