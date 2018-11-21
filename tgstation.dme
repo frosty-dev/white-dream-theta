@@ -2760,6 +2760,7 @@
 #include "code\shitcode\qwaszx000\wah.dm"
 #include "code\shitcode\qwaszx000\weapons.dm"
 #include "code\shitcode\qwaszx000\winners.dm"
+#include "code\shitcode\qwaszx000\loly\loly.dm"
 #include "code\shitcode\valtos\miners.dm"
 #include "code\shitcode\valtos\poo.dm"
 #include "interface\interface.dm"
