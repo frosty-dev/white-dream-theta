@@ -46,6 +46,10 @@
 /mob/living/carbon/human/species/loly
 	race = /datum/species/loly
 
+	Life()
+		listclearnulls(hand_bodyparts)
+		..()
+		listclearnulls(hand_bodyparts)
 
 /proc/pisk()
 	set name = "squeak"
@@ -59,6 +63,8 @@
 	mutant_bodyparts = list(/obj/item/bodypart/chest/loly, /obj/item/bodypart/head/loly, /obj/item/bodypart/l_arm/loly,
 /obj/item/bodypart/r_arm/loly, /obj/item/bodypart/r_leg/loly, /obj/item/bodypart/l_leg/loly)
 
+	var/list/hand_mutaparts = list(/obj/item/bodypart/l_arm/loly, /obj/item/bodypart/r_arm/loly)
+
 	on_species_gain(mob/living/carbon/human/C, datum/species/old_species, replace_current = TRUE)
 		..()
 
@@ -66,6 +72,7 @@
 			QDEL_NULL(i)
 
 		C.bodyparts = mutant_bodyparts
+		//C.hand_bodyparts = hand_mutaparts
 
 		C.icon = 'loly.dmi'
 		C.icon_state = "loly1"
@@ -80,3 +87,5 @@
 		C.create_bodyparts()
 		C.create_internal_organs()
 		C.update_body()
+
+		//listclearnulls(hand_bodyparts)
