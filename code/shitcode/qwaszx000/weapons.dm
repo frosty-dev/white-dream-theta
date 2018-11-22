@@ -88,18 +88,23 @@ Arrow&bow
 	pin = /obj/item/firing_pin
 	fire_delay = 2
 	can_suppress = FALSE
-	burst_size = 0
-	actions_types = list()
+	burst_size = 5
+	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_bayonet = FALSE
 	lefthand_file = 'sprites/left_hand.dmi'
 	righthand_file = 'sprites/right_hand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+	fire_sound = 'sounds/pulse_rifle_01.ogg'
 
 /obj/item/gun/ballistic/automatic/M41A/update_icon()
 	..()
 	if(magazine)
 		icon_state = "M41A"
+		if(magazine.ammo_count() <= 0)
+			icon_state = "M41A_noammo"
 	else
-		icon_state = "M41A_noammo"
+		icon_state = "M41A_withoutmag"
 
 /obj/item/ammo_box/magazine/m41a
 	name = "m41a magazine"
@@ -113,3 +118,5 @@ Arrow&bow
 	..()
 	if(ammo_count() <= 0)
 		icon_state = "ammo_e"
+	else
+		icon_state = "ammo"
