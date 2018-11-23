@@ -1515,9 +1515,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("cat")
 					be_catman = !be_catman
+					be_loly = 0
 
 				if("loly")
 					be_loly = !be_loly//---------------------------------
+					be_catman = 0
 
 	ShowChoices(user)
 	return 1
