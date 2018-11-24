@@ -1515,11 +1515,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("cat")
 					be_catman = !be_catman
-					be_loly = 0
 
 				if("loly")
 					be_loly = !be_loly//---------------------------------
-					be_catman = 0
 
 	ShowChoices(user)
 	return 1
@@ -1575,9 +1573,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	character.dna.features = features.Copy()
 	character.dna.real_name = character.real_name
-
-	if(be_loly)
-		character.set_species(/datum/species/loly)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
