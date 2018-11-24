@@ -46,7 +46,7 @@ Arrow&bow
 
 	chambered = new /obj/item/ammo_casing/syringegun/bow(src)
 
-/obj/item/gun/syringe/attackby(obj/item/A, mob/user, params, show_msg = TRUE)
+/obj/item/gun/syringe/bow/attackby(obj/item/A, mob/user, params, show_msg = TRUE)
 	if(istype(A, /obj/item/reagent_containers/syringe/arrow))
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(A, src))

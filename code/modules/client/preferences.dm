@@ -1574,9 +1574,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.features = features.Copy()
 	character.dna.real_name = character.real_name
 
-	if(be_loly)
-		character.set_species(/datum/species/loly)
-
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
 

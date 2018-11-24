@@ -74,7 +74,7 @@
 		C.bodyparts = mutant_bodyparts
 		//C.hand_bodyparts = hand_mutaparts
 
-		C.icon = 'loly.dmi'
+		C.icon = 'human_3.dmi'//'loly.dmi'
 		C.icon_state = "loly1"
 		C.real_name = "Loly"
 		C.name = "Loly"
