@@ -670,7 +670,6 @@
 	if(creamed) //clean both to prevent a rare bug
 		cut_overlay(mutable_appearance('icons/effects/creampie.dmi', "creampie_lizard"))
 		cut_overlay(mutable_appearance('icons/effects/creampie.dmi', "creampie_human"))
-		cut_overlay(mutable_appearance('code/shitcode/valtos/icons/poo.dmi'))
 		creamed = FALSE
 
 //Turns a mob black, flashes a skeleton overlay

@@ -113,14 +113,14 @@
 		H.adjust_blurriness(1)
 		H.visible_message("<span class='warning'>[H] is pooed by [src]!</span>", "<span class='userdanger'>You've been pooed by [src]!</span>")
 		playsound(H, "desceration", 50, TRUE)
-		if(!H.creamed) // one layer at a time
+		if(!H.pooed) // one layer at a time
 			pooverlay.icon_state = "facepoo"
 			H.add_overlay(pooverlay)
 			pooverlay.icon_state = "uniformpoo"
 			H.add_overlay(pooverlay)
 			pooverlay.icon_state = "suitpoo"
 			H.add_overlay(pooverlay)
-			H.creamed = TRUE
+			H.pooed = TRUE
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "creampie", /datum/mood_event/creampie)
 	qdel(src)
 
@@ -134,17 +134,26 @@
 	if(. && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.dna.species.id == "human")
-			if (H.nutrition >= 300)
-				message = "<font color='red'><b>срётся прямо на пол!</b></font>"
+			if (H.nutrition >= 400)
+				H.visible_message("<span class='notice'>[H] испражнился!</span>", \
+						"<span class='notice'>Ты испражнился на пол.</span>")
 				playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
 				new /obj/item/reagent_containers/food/snacks/poo(H.loc)
-				H.nutrition -= 100
-				return
-			else if (H.nutrition <= 300)
-				message = "<font color='red'><b>люто тужится в попытках выдавить личинку!</b></font>"
-				H.Paralyze(80)
-				H.adjust_blurriness(1)
-				H.adjustBruteLoss(10)
+				H.nutrition -= 75
 				return
 			else
-				retun
+				H.visible_message("<span class='notice'>[H] скрутило в попытках провести акт дефекации!</span>", \
+						"<span class='notice'>Тебя скрутило в попытках провести акт дефекации. Это было очень больно.</span>")
+				H.Paralyze(80)
+				H.adjust_blurriness(1)
+				return
+
+/atom/proc/wash_poo()
+	return TRUE
+
+/mob/living/carbon/human/wash_poo()
+	if(pooed)
+		cut_overlay(mutable_appearance('code/shitcode/valtos/icons/poo.dmi', "facepoo"))
+		cut_overlay(mutable_appearance('code/shitcode/valtos/icons/poo.dmi', "uniformpoo"))
+		cut_overlay(mutable_appearance('code/shitcode/valtos/icons/poo.dmi', "suitpoo"))
+		pooed = FALSE
