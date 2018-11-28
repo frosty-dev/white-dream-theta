@@ -124,11 +124,9 @@
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "creampie", /datum/mood_event/creampie)
 	qdel(src)
 
-
 /datum/emote/living/poo
 	key = "poo"
 	key_third_person = "shits on the floor"
-	message = "<font color='red'><b>срётся прямо на пол!</b></font>"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/poo/run_emote(mob/user, params)
@@ -137,13 +135,16 @@
 		var/mob/living/carbon/human/H = user
 		if(H.dna.species.id == "human")
 			if (H.nutrition >= 300)
+				message = "<font color='red'><b>срётся прямо на пол!</b></font>"
 				playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
 				new /obj/item/reagent_containers/food/snacks/poo(H.loc)
 				H.nutrition -= 100
 				return
-			else
+			else if (H.nutrition <= 300)
 				message = "<font color='red'><b>люто тужится в попытках выдавить личинку!</b></font>"
 				H.Paralyze(80)
 				H.adjust_blurriness(1)
 				H.adjustBruteLoss(10)
 				return
+			else
+				retun
