@@ -1,7 +1,9 @@
+#EXPERIMENTAL SETTINGS
+
 ## HEALTH ###
 
 ##Damage multiplier, effects both weapons and healing on all mobs. For example, 1.25 would result in 25% higher damage.
-DAMAGE_MULTIPLIER 1
+DAMAGE_MULTIPLIER 1.5 
 
 ## REVIVAL ###
 
@@ -16,7 +18,7 @@ REVIVAL_BRAIN_LIFE -1
 
 ## OOC DURING ROUND ###
 ## Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
-OOC_DURING_ROUND
+#OOC_DURING_ROUND
 
 ## EMOJI ###
 ## Comment this out if you want to disable emojis
@@ -157,33 +159,30 @@ MIDROUND_ANTAG WIZARD
 ## VERY low numbers (< 5) can lead to errors if the roundtypes were not designed for that.
 
 MIN_POP TRAITOR 0
-MAX_POP TRAITOR 18
+MAX_POP TRAITOR 10
 
-MIN_POP TRAITORBRO 9
+MIN_POP TRAITORBRO 5
 MAX_POP TRAITORBRO 21
 
-MIN_POP TRAITORCHAN 15
+MIN_POP TRAITORCHAN 5
 MAX_POP TRAITORCHAN -1
 
-MIN_POP DOUBLE_AGENTS 23
-MAX_POP DOUBLE_AGENTS -1
-
-MIN_POP NUCLEAR 35
+MIN_POP NUCLEAR 15
 MAX_POP NUCLEAR -1
 
-MIN_POP REVOLUTION 20
+MIN_POP REVOLUTION 15
 MAX_POP REVOLUTION -1
 
-MIN_POP CULT 22
+MIN_POP CULT 10
 MAX_POP CULT -1
 
-MIN_POP CLOCKWORK_CULT 25
+MIN_POP CLOCKWORK_CULT 12
 MAX_POP CLOCKWORK_CULT -1
 
-MIN_POP CHANGELING 15
+MIN_POP CHANGELING 5
 MAX_POP CHANGELING 35
 
-MIN_POP WIZARD 20
+MIN_POP WIZARD 5
 MAX_POP WIZARD -1
 
 #MIN_POP MONKEY 20
@@ -465,7 +464,7 @@ OVERFLOW_CAP 30
 
 ## Starlight for exterior walls and breaches. Uncomment for starlight!
 ## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
-#STARLIGHT
+STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 GREY_ASSISTANTS

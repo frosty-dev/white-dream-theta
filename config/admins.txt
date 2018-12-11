@@ -11,12 +11,14 @@
 ###############################################################################################
 Qwaszx000 = Coder
 Gargule = Coder
-Maxsc = Host
-Alexs410 = Host
-Valtosin = Host
-ClickerOfThings = Game Admin
-Noname1488 = Game Admin
-Laxesh = Trial Admin
-RedfoxIV = Badmin
-CrazySim = Badmin
-SecureContainProtect-SCP = Trial Admin
+Maxsc = Master
+Alexs410 = Master
+Valtosin = Master
+
+#TGFIX
+
+#Noname1488 = Terrorist
+#Laxesh = Terrorist
+#RedfoxIV = Terrorist
+#SecureContainProtect-SCP = Terrorist
+#hailrakes = AdminObserver
