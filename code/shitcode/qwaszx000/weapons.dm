@@ -75,3 +75,48 @@ Arrow&bow
 	time = 25
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+
+//M41A
+
+/obj/item/gun/ballistic/automatic/M41A
+	name = "M41A rifle"
+	desc = "Rifle."
+	icon = 'code/shitcode/qwaszx000/sprites/M41A.dmi'
+	icon_state = "M41A"
+	item_state = "M41A"
+	mag_type = /obj/item/ammo_box/magazine/m41a
+	pin = /obj/item/firing_pin
+	fire_delay = 2
+	can_suppress = FALSE
+	burst_size = 5
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	can_bayonet = FALSE
+	lefthand_file = 'code/shitcode/qwaszx000/sprites/left_hand.dmi'
+	righthand_file = 'code/shitcode/qwaszx000/sprites/right_hand.dmi'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_MEDIUM
+	fire_sound = 'code/shitcode/qwaszx000/sounds/pulse_rifle_01.ogg'
+
+/obj/item/gun/ballistic/automatic/M41A/update_icon()
+	..()
+	if(magazine)
+		icon_state = "M41A"
+		if(magazine.ammo_count() <= 0)
+			icon_state = "M41A_noammo"
+	else
+		icon_state = "M41A_withoutmag"
+
+/obj/item/ammo_box/magazine/m41a
+	name = "m41a magazine"
+	icon = 'code/shitcode/qwaszx000/sprites/M41A.dmi'
+	icon_state = "ammo"
+	ammo_type = /obj/item/ammo_casing/c46x30mm
+	caliber = "4.6x30mm"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/m41a/update_icon()
+	..()
+	if(ammo_count() <= 0)
+		icon_state = "ammo_e"
+	else
+		icon_state = "ammo"

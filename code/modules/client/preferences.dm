@@ -118,7 +118,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/action_buttons_screen_locs = list()
 	var/be_catman
+	var/be_loly
 
+	var/list/loly_lovers = list("qwaszx000", "shruman", "rebolution228", "bb-8", "hellr0le")
 /datum/preferences/New(client/C)
 	parent = C
 
@@ -198,8 +200,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
 			dat += "<a href='?_src_=prefs;preference=name;task=random'>Random Name</A> "
 			dat += "<a href='?_src_=prefs;preference=name'>Always Random Name: [be_random_name ? "Yes" : "No"]</a><BR>"
-			
-			dat += "<a href='?_src_=prefs;preference=cat'>Be cat man: [be_catman ? "Yes" : "No"]</a><BR>"//<------------------
+			if(lowertext(user.ckey) in loly_lovers)
+				dat += "<a href='?_src_=prefs;preference=loly'>Be loly: [be_loly ? "Yes" : "No"]</a>"//<------------------
+
+			dat += "<a href='?_src_=prefs;preference=cat'>Be cat man: [be_catman ? "Yes" : "No"]</a><BR>"
 
 			dat += "<b>Name:</b> "
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
@@ -1384,7 +1388,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/pickedPDAColor = input(user, "Choose your PDA Interface color.", "Character Preference",pda_color) as color|null
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
-				
+
 
 		else
 			switch(href_list["preference"])
@@ -1515,10 +1519,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("tab")
 					if (href_list["tab"])
 						current_tab = text2num(href_list["tab"])
-				
+
 				if("cat")
-					//____--------------------------------__________________________
 					be_catman = !be_catman
+
+				if("loly")
+					be_loly = !be_loly//---------------------------------
 
 	ShowChoices(user)
 	return 1
