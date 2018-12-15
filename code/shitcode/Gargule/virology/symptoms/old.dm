@@ -110,6 +110,10 @@ Bonus
 //////////////////////////////////////
 */
 
+
+//			NEED REWORK 		    //
+
+/*
 /datum/symptom/heal/dna
 
 	name = "Deoxyribonucleic Acid Restoration"
@@ -155,3 +159,4 @@ Bonus
 
 	return 1
 
+*/
