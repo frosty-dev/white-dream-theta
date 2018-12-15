@@ -109,9 +109,6 @@
 #define EYES_COVERED "eyes_covered"
 #define CULT_EYES "cult_eyes"
 #define SCRYING_ORB "scrying-orb"
-<<<<<<< HEAD
-=======
 #define ABDUCTOR_ANTAGONIST "abductor-antagonist"
 #define NUKEOP_TRAIT "nuke-op"
 #define DEATHSQUAD_TRAIT "deathsquad"
->>>>>>> 5b0f978d599936bc13ced2f90a7f1740962537ad
