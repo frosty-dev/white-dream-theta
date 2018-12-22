@@ -167,6 +167,10 @@
 	port_id = "snowdin"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/partyhard
+	port_id = "partyhard"
+	can_be_bought = FALSE
+
 // Shuttles start here:
 
 /datum/map_template/shuttle/emergency/backup
@@ -524,3 +528,11 @@
 /datum/map_template/shuttle/snowdin/excavation
 	suffix = "excavation"
 	name = "Snowdin Excavation Elevator"
+
+/datum/map_template/shuttle/partyhard/elevator
+	suffix = "elevator"
+	name = "PH Station Elevator"
+
+/datum/map_template/shuttle/cargo/partyhard
+	suffix = "partyhard"
+	name = "cargo ferry (PartyHard)"

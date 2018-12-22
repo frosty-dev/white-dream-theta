@@ -1,0 +1,23 @@
+"a" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/shuttle/supply)
+"b" = (/turf/open/floor/partyhard/steel,/area/shuttle/supply)
+"c" = (/obj/docking_port/mobile/supply{dir = 4; dwidth = 7; height = 5; width = 15},/obj/machinery/door/airlock/titanium{name = "Supply Shuttle Airlock"; req_access_txt = "31"},/turf/open/floor/partyhard/steel,/area/shuttle/supply)
+"d" = (/obj/machinery/light{icon_state = "tube"; dir = 8},/turf/open/floor/partyhard/steel,/area/shuttle/supply)
+"e" = (/obj/machinery/light{dir = 4},/turf/open/floor/partyhard/steel,/area/shuttle/supply)
+
+(1,1,1) = {"
+aaaaa
+abbba
+abbba
+adbea
+abbba
+abbba
+abbba
+cbbba
+abbba
+abbba
+abbba
+adbea
+abbba
+abbba
+aaaaa
+"}
