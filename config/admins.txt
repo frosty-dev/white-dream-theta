@@ -11,14 +11,6 @@
 ###############################################################################################
 Qwaszx000 = Coder
 Gargule = Coder
-Maxsc = Master
-Alexs410 = Master
-Valtosin = Master
-
-#TGFIX
-
-#Noname1488 = Terrorist
-#Laxesh = Terrorist
-#RedfoxIV = Terrorist
-#SecureContainProtect-SCP = Terrorist
-#hailrakes = AdminObserver
+Maxsc = Host
+Alexs410 = Host
+Valtosin = Host
