@@ -14,7 +14,7 @@ Arrow&bow
 	busy = FALSE
 	proj_piercing = 0
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
-	container_type = TRANSPARENT
+	//container_type = TRANSPARENT
 
 /obj/item/reagent_containers/syringe/arrow/update_icon()
 	cut_overlays()
