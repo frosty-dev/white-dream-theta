@@ -965,13 +965,13 @@ $(function() {
 
 	$('#toggleTheme').click(function(e) {
 		if (opts.theme == 'dark') {
-			$('link[href="https://byond.space/styles/browserOutputDark.css"]').remove();
+			$('link[href="https://frosty.space/styles/browserOutputDark.css"]').remove();
 			$('head').append('<link rel="stylesheet" type="text/css" href="browserOutput.css"/>');
 			opts.theme = 'light';
 			setCookie('theme', 'dark', 365);
 		} else {
 			$('link[href="browserOutput.css"]').remove();
-			$('head').append('<link rel="stylesheet" type="text/css" href="https://byond.space/styles/browserOutputDark.css"/>');
+			$('head').append('<link rel="stylesheet" type="text/css" href="https://frosty.space/styles/browserOutputDark.css"/>');
 			opts.theme = 'dark';
 			setCookie('theme', 'light', 365);
 		}

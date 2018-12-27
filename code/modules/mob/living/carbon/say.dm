@@ -6,9 +6,13 @@
 	if(!T) //hoooooouaah!
 		var/regex/tongueless_lower = new("\[gdntke]+", "g")
 		var/regex/tongueless_upper = new("\[GDNTKE]+", "g")
+		var/regex/ru_tongueless_lower = new("\[ãäíòêèåçğ]+", "ã")
+		var/regex/ru_tongueless_upper = new("\[ÃÄÍÒÊÈÅÇĞ]+", "ã")
 		if(copytext(message, 1, 2) != "*")
 			message = tongueless_lower.Replace(message, pick("aa","oo","'"))
 			message = tongueless_upper.Replace(message, pick("AA","OO","'"))
+			message = ru_tongueless_lower.Replace(message, pick("àà","óó","ûû"))
+			message = ru_tongueless_upper.Replace(message, pick("ÀÀ","ÓÓ","ÛÛ"))
 	else
 		message = T.TongueSpeech(message)
 	if(wear_mask)
