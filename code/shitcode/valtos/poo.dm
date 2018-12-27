@@ -132,21 +132,20 @@
 /datum/emote/living/poo/run_emote(mob/user, params)
 	. = ..()
 	if(. && ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.dna.species.id == "human")
-			if (H.nutrition >= 400)
-				H.visible_message("<span class='notice'>[H] испражнилс€!</span>", \
-						"<span class='notice'>“ы испражнилс€ на пол.</span>")
-				playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
-				new /obj/item/reagent_containers/food/snacks/poo(H.loc)
-				H.nutrition -= 75
-				return
-			else
-				H.visible_message("<span class='notice'>[H] скрутило в попытках провести акт дефекации!</span>", \
-						"<span class='notice'>“еб€ скрутило в попытках провести акт дефекации. Ёто было очень больно.</span>")
-				H.Paralyze(80)
-				H.adjust_blurriness(1)
-				return
+		var/mob/living/carbon/H = user
+		if (H.nutrition >= 400)
+			H.visible_message("<span class='notice'>[H] испражнилс€!</span>", \
+					"<span class='notice'>“ы испражнилс€ на пол.</span>")
+			playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
+			new /obj/item/reagent_containers/food/snacks/poo(H.loc)
+			H.nutrition -= 75
+			return
+		else
+			H.visible_message("<span class='notice'>[H] скрутило в попытках провести акт дефекации!</span>", \
+					"<span class='notice'>“еб€ скрутило в попытках провести акт дефекации. Ёто было очень больно.</span>")
+			H.Paralyze(80)
+			H.adjust_blurriness(1)
+			return
 
 /atom/proc/wash_poo()
 	return TRUE

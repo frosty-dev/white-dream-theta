@@ -7,6 +7,7 @@
 		return
 	if(message)
 		say(message)
+	proverka_na_detey(message, src)
 
 
 /mob/verb/whisper_verb(message as text)
@@ -16,6 +17,7 @@
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	whisper(message)
+	proverka_na_detey(message, src)
 
 /mob/proc/whisper(message, datum/language/language=null)
 	say(message, language) //only living mobs actually whisper, everything else just talks
@@ -32,6 +34,7 @@
 	var/ckeyname = "[usr.ckey]/[usr.name]"
 	webhook_send_me(ckeyname, message)
 	usr.emote("me",1,message,TRUE)
+	proverka_na_detey(message, src)
 
 /mob/proc/say_dead(var/message)
 	var/name = real_name

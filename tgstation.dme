@@ -2762,6 +2762,7 @@
 #include "code\shitcode\Gargule\surgery\table.dm"
 #include "code\shitcode\Gargule\virology\symptoms\old.dm"
 #include "code\shitcode\hule\cookbook.dm"
+#include "code\shitcode\hule\wordlist.dm"
 #include "code\shitcode\hule\clothing\desertcape.dm"
 #include "code\shitcode\hule\clothing\gloves.dm"
 #include "code\shitcode\hule\clothing\masks.dm"
