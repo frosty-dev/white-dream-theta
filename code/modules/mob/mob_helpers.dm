@@ -100,18 +100,29 @@
 				newletter="oo"
 			if(lowertext(newletter)=="c")
 				newletter="k"
+			//russian alkashi
+			if(r_lowertext(newletter)=="о")	newletter="у"
+			if(r_lowertext(newletter)=="ы")	newletter="i"
+			if(r_lowertext(newletter)=="р")	newletter="r"
+			if(r_lowertext(newletter)=="л")	newletter="ль"
+			if(r_lowertext(newletter)=="з")	newletter="с"
+			if(r_lowertext(newletter)=="в")	newletter="ф"
+			if(r_lowertext(newletter)=="б")	newletter="п"
+			if(r_lowertext(newletter)=="г")	newletter="х"
+			if(r_lowertext(newletter)=="д")	newletter="т"
 		if(rand(1,20)==20)
 			if(newletter==" ")
-				newletter="...huuuhhh..."
+				newletter="...о-о-ой..."
 			if(newletter==".")
-				newletter=" *BURP*."
-		switch(rand(1,20))
-			if(1)
-				newletter+="'"
-			if(10)
-				newletter+="[newletter]"
-			if(20)
-				newletter+="[newletter][newletter]"
+				newletter=" » !"
+		switch(rand(1,16))
+			if(1,3,5,8)		newletter = "[r_lowertext(newletter)]"
+			if(2,4,6,15)	newletter = "[r_uppertext(newletter)]"
+			if(7)			newletter += "'"
+			if(9,10)		newletter = "<b>[newletter]</b>"
+			if(11,12)		newletter = "<big>[newletter]</big>"
+			if(13)			newletter = "<small>[newletter]</small>"
+			if(16)			newletter+="[newletter][newletter]"
 		newphrase+="[newletter]";counter-=1
 	return newphrase
 
@@ -137,6 +148,20 @@
 				newletter=" NAR "
 			if(lowertext(newletter)=="s")
 				newletter=" SIE "
+			//russian alkashi
+			if(r_lowertext(newletter)=="о")	newletter="у"
+			if(r_lowertext(newletter)=="ы")	newletter="i"
+			if(r_lowertext(newletter)=="р")	newletter="r"
+			if(r_lowertext(newletter)=="л")	newletter="ль"
+			if(r_lowertext(newletter)=="з")	newletter="с"
+			if(r_lowertext(newletter)=="в")	newletter="ф"
+			if(r_lowertext(newletter)=="б")	newletter="п"
+			if(r_lowertext(newletter)=="г")	newletter="х"
+			if(r_lowertext(newletter)=="д")	newletter="т"
+			if(r_lowertext(newletter)=="с")
+				newletter=" Ќј– "
+			if(r_lowertext(newletter)=="т")
+				newletter=" —» "
 		if(rand(1,4)==4)
 			if(newletter==" ")
 				newletter=" no hope... "

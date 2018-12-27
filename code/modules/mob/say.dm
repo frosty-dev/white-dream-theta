@@ -6,7 +6,7 @@
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	if(message)
-		say(message)
+		say(ruscapitalize(message))
 	proverka_na_detey(message, src)
 
 
@@ -16,7 +16,7 @@
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
-	whisper(message)
+	whisper(ruscapitalize(message))
 	proverka_na_detey(message, src)
 
 /mob/proc/whisper(message, datum/language/language=null)
@@ -78,6 +78,7 @@
 	if(key)
 		K = src.key
 
+	message = ruscapitalize(message)
 	var/spanned = src.say_quote(message, get_spans())
 	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>[name]</span>[alt_name] <span class='message'>[emoji_parse(spanned)]</span></span>"
 	log_talk(message, LOG_SAY, tag="DEAD")
