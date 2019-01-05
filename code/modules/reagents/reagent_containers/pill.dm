@@ -160,7 +160,7 @@
 
 /obj/item/reagent_containers/pill/psicodine
 	name = "psicodine pill"
-	desc = "Used to treat mental instability and traumas."
+	desc = "Used to treat mental instability and phobias."
 	list_reagents = list("psicodine" = 10)
 	icon_state = "pill22"
 	roundstart = TRUE
@@ -204,6 +204,13 @@
 	desc = "It has a creepy smiling face on it."
 	icon_state = "pill_happy"
 	list_reagents = list("happiness" = 10)
+
+/obj/item/reagent_containers/pill/neurine
+	name = "neurine pill"
+	desc = "Used to treat non-severe mental traumas."
+	list_reagents = list("neurine" = 10)
+	icon_state = "pill22"
+	roundstart = TRUE
 
 
 /obj/item/reagent_containers/pill/floorpill
