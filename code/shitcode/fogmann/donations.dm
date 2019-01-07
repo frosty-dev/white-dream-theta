@@ -86,18 +86,19 @@ Clown Bedsheet:/obj/item/bedsheet/clown:100
 Mime Bedsheet:/obj/item/bedsheet/mime:100
 Rainbow Bedsheet:/obj/item/bedsheet/rainbow:100
 Captain Bedsheet:/obj/item/bedsheet/captain:120
+Cosmos Bedsheet:/obj/item/bedsheet/cosmos:200
 Toys
 Rubber Duck:/obj/item/bikehorn/rubberducky:200
 Champion Belt:/obj/item/storage/belt/champion:200
 Toy pistol:/obj/item/toy/gun:150
 Toy dualsaber:/obj/item/twohanded/dualsaber/toy:300
+Toy katana:/obj/item/toy/katana:200
 Rainbow crayon:/obj/item/toy/crayon/rainbow:250
 Special Stuff
 Santa Bag:/obj/item/storage/backpack/santabag:600
 Bible:/obj/item/storage/book/bible:100
 Inovations
-Memories Writer:/obj/machinery/party/musicwriter:1200
-Lazer Machine:/obj/machinery/party/lasermachine:500
+Casino Cards:/obj/item/toy/cards/deck/shitspawn_deck:500
 "}
 
 
