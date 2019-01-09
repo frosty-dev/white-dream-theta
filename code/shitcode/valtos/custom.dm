@@ -37,18 +37,29 @@
 	return
 
 /turf/closed/wall/partyhard
-	name = "rusted wall"
-	desc = "A rusted metal wall."
-	icon = 'icons/turf/walls/v_walls.dmi'
+	name = "durawall"
+	desc = "Durable metal wall."
+	icon = 'code/shitcode/valtos/icons/walls.dmi'
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/closed/wall/partyhard, /turf/closed/wall/r_wall/partyhard, /obj/machinery/door/airlock/, /obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile)
 
 /turf/closed/wall/r_wall/partyhard
-	name = "rusted reinforced wall"
-	desc = "A huge chunk of rusted reinforced metal."
-	icon = 'icons/turf/walls/v_walls.dmi'
+	name = "durable reinforced wall"
+	desc = "A huge chunk of durable reinforced metal."
+	icon = 'code/shitcode/valtos/icons/r_walls.dmi'
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/closed/wall/r_wall/partyhard, /turf/closed/wall/partyhard, /obj/machinery/door/airlock/, /obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile)
+
+/obj/structure/window/reinforced/fulltile/partyhard
+	icon = 'code/shitcode/valtos/icons/windows.dmi'
+	icon_state = "smooth"
+	max_integrity = 200
+	canSmoothWith = list(/obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/plasma/fulltile, /obj/structure/window/plasma/reinforced/fulltile, /turf/closed/wall/r_wall/partyhard, /turf/closed/wall/partyhard, /obj/structure/window/reinforced/fulltile/partyhard)
+
+/obj/effect/spawner/structure/window/reinforced/partyhard
+	icon = 'code/shitcode/valtos/icons/windows.dmi'
+	icon_state = "smooth"
+	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/fulltile/partyhard)
 
 /turf/closed/mineral/partyhard
 	name = "rock"
@@ -110,6 +121,15 @@
 /area/partyhard/surface
 	icon_state = "4f"
 	name = "surface"
+	always_unpowered = TRUE
+	poweralm = FALSE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	requires_power = TRUE
+	ambientsounds = RUINS
+	outdoors = TRUE
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 
 /area/shuttle/partyhard
 	name = "Station Elevator"
@@ -122,3 +142,7 @@
 	light_color = LIGHT_COLOR_CYAN
 	shuttleId = "partyhard_elevator"
 	possible_destinations = "ph_station_bottom;ph_station_top"
+
+/obj/effect/turf_decal/partyhard/lines
+	icon = 'code/shitcode/valtos/icons/decals.dmi'
+	icon_state = "s-1"
