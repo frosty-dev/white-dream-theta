@@ -36,5 +36,8 @@ endmap
 map runtimestation
 endmap
 
+map partyhard
+endmap
+
 map multiz_debug
 endmap
