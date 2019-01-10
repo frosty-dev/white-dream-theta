@@ -202,7 +202,7 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 	else
 		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
 		Master.Shutdown()	//run SS shutdowns
-	
+
 	if(!GLOB.bypass_tgs_reboot)
 		TgsReboot()
 
@@ -245,12 +245,13 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 	if (!GLOB.enter_allowed)
 		features += "closed"
 
+	var/map = SSmapping.config?.map_name || "Loading..."
 	var/s = ""
 	var/hostedby
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			s += "<b>[server_name]</b> &#8212; "
+			s += "<center><a href=\"https://frosty.space/\"><big><b>[server_name]</b></big><br>"
 		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
 		if(CONFIG_GET(flag/allow_vote_mode))
 			features += "vote"
@@ -258,28 +259,24 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 			features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>[station_name()]</b>";
-	s += " ("
-	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
-	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
-	s += "</a>"
-	s += ")"
+	s += "<img src=\"https://frosty.space/styles/banner.gif\"></a></center><br>"
+	s += "Station Name: <b>[station_name()]</b><br>";
+	s += "Map: <b>[map]</b><br>"
+	s += "Features: <b>[jointext(features, ", ")]</b><br>"
+	s += "Hosted by: <b>[hostedby]</b><br>"
 
-	var/n = 0
-	for (var/mob/M in GLOB.player_list)
-		if (M.client)
-			n++
+	//var/n = 0
+	//for (var/mob/M in GLOB.player_list)
+	//	if (M.client)
+	//		n++
 
-	if (n > 1)
-		features += "~[n] players"
-	else if (n > 0)
-		features += "~[n] player"
+	//if (n > 1)
+	//	features += "~[n] players"
+	//else if (n > 0)
+	//	features += "~[n] player"
 
-	if (!host && hostedby)
-		features += "hosted by <b>[hostedby]</b>"
-
-	if (features)
-		s += ": [jointext(features, ", ")]"
+	//if (features)
+	//	s += ": [jointext(features, ", ")]"
 
 	status = s
 
