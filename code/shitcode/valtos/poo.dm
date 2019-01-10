@@ -36,7 +36,7 @@
 	taste_description = "poo"
 
 /datum/reagent/toxin/poo/on_mob_life(mob/living/carbon/C)
-	C.adjustPlasma(5)
+	C.adjustPlasma(1)
 	return ..()
 
 /datum/reagent/toxin/poo/reaction_turf(turf/open/T, reac_volume)//splash the poo all over the place
@@ -109,7 +109,7 @@
 	if(ishuman(hit_atom))
 		var/mob/living/carbon/human/H = hit_atom
 		var/mutable_appearance/pooverlay = mutable_appearance('code/shitcode/valtos/icons/poo.dmi')
-		H.Paralyze(20) //splat!
+		H.Paralyze(5) //splat!
 		H.adjust_blurriness(1)
 		H.visible_message("<span class='warning'>[H] is pooed by [src]!</span>", "<span class='userdanger'>You've been pooed by [src]!</span>")
 		playsound(H, "desceration", 50, TRUE)
@@ -121,6 +121,7 @@
 			pooverlay.icon_state = "suitpoo"
 			H.add_overlay(pooverlay)
 			H.pooed = TRUE
+			H.hygiene -= 200
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "creampie", /datum/mood_event/creampie)
 	qdel(src)
 
