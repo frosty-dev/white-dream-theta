@@ -237,13 +237,13 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 
 /world/proc/update_status()
 
-	var/list/features = list()
-
+	//var/list/features = list()
+	var/mode = ""
 	if(GLOB.master_mode)
-		features += GLOB.master_mode
+		mode = GLOB.master_mode
 
-	if (!GLOB.enter_allowed)
-		features += "closed"
+	//if (!GLOB.enter_allowed)
+	//	features += "closed"
 
 	var/map = SSmapping.config?.map_name || "Loading..."
 	var/s = ""
@@ -252,17 +252,17 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
 			s += "<center><a href=\"https://frosty.space/\"><big><b>[server_name]</b></big><br>"
-		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
-		if(CONFIG_GET(flag/allow_vote_mode))
-			features += "vote"
-		if(CONFIG_GET(flag/allow_ai))
-			features += "AI allowed"
+		//features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
+		//if(CONFIG_GET(flag/allow_vote_mode))
+		//	features += "vote"
+		//if(CONFIG_GET(flag/allow_ai))
+		//	features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<img src=\"https://frosty.space/styles/banner.gif\"></a></center><br>"
-	s += "Station Name: <b>[station_name()]</b><br>";
+	s += "<img src=\"https://frosty.space/styles/banner.gif\"></a></center>"
+	//s += "Station Name: <b>[station_name()]</b><br>";
 	s += "Map: <b>[map]</b><br>"
-	s += "Features: <b>[jointext(features, ", ")]</b><br>"
+	s += "Mode: <b>[mode]</b><br>"
 	s += "Hosted by: <b>[hostedby]</b><br>"
 
 	//var/n = 0
