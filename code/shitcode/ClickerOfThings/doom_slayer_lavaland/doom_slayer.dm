@@ -6,13 +6,43 @@ File s kartoy nahoditsya po pyti _maps/RandomRuins/LavaRuins/doom_slayer_lavalan
 VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 */
 
+/datum/species/human/doom_slayer
+	id = "doom_slayer"
+	species_traits = list(NOBLOOD, TRAIT_IGNORESLOWDOWN) // make this shit unstoppable even if it's damaged
+
+
+/mob/living/carbon/human/species/doom_slayer
+	race = /datum/species/human/doom_slayer
+
+/mob/living/carbon/human/species/doom_slayer/Life()
+	..()
+	if (z == 2)
+		to_chat(usr, "<span class='boldannounce'><font size=6>You have been killed by entering the station.<br>You shouldn't done that.</font></span>")
+		gib(1)
+
+// uberu eto govno poka
+/*
+/obj/effect/step_trigger/doom_slayer_slayer
+	mobs_only = TRUE
+
+/obj/effect/step_trigger/doom_slayer_slayer/Trigger(atom/movable/A)
+	var/mob/A1 = A
+	//var/datum/species/human/A2 = A1
+	//to_chat(A, "<span class='notice'>test1</span>")
+	//to_chat(A, A2.id)
+	if (A1.real_name == "Doom Slayer")
+		to_chat(A, "<span class='boldannounce'><font size=6>You have been killed by entering the station.<br>You shouldn't done that.</font></span>")
+		A1.gib()
+*/
+
 /obj/effect/mob_spawn/human/doom_slayer
 	name = "doom slayer sleeper"
 	desc = "Sleeper with the Doom Slayer in it. Prepare for the hell."
 	mob_name = "doom slayer"
 	icon = 'icons/obj/lavaland/spawners.dmi'
 	icon_state = "cryostasis_sleeper"
-	mob_species = /datum/species/human
+	mob_species = /datum/species/human/doom_slayer
+	mob_type = /mob/living/carbon/human/species/doom_slayer
 	outfit = /datum/outfit/doom_slayer
 	roundstart = FALSE
 	death = FALSE
@@ -113,3 +143,4 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	description = "Shuttle with Doom Slayer inside. Prepare for hell."
 	suffix = "doom_slayer_lavaland.dmm"
 	always_place = TRUE
+	allow_duplicates = FALSE
