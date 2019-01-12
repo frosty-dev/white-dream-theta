@@ -8,34 +8,58 @@
 "h" = (/obj/effect/decal/cleanable/blood/gibs/torso,/turf/open/floor/pod/dark,/area/ruin/powered)
 "i" = (/obj/machinery/door/airlock/public,/turf/open/floor/pod/dark,/area/ruin/powered)
 "j" = (/obj/effect/decal/cleanable/blood/gibs/down,/turf/open/floor/pod/dark,/area/ruin/powered)
-"k" = (/obj/effect/decal/cleanable/blood/gibs/body,/turf/open/floor/pod/dark,/area/ruin/powered)
+"k" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "u_dangerous_l"},/turf/open/floor/pod/dark,/area/ruin/powered)
 "l" = (/obj/item/gun/energy/kinetic_accelerator,/turf/open/floor/pod/dark,/area/ruin/powered)
 "m" = (/obj/item/twohanded/required/kinetic_crusher,/turf/open/floor/pod/dark,/area/ruin/powered)
 "n" = (/obj/item/reagent_containers/hypospray/medipen/survival,/turf/open/floor/pod/dark,/area/ruin/powered)
 "o" = (/obj/item/storage/backpack,/turf/open/floor/pod/dark,/area/ruin/powered)
+"p" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "splatter3"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"q" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "drip2"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"r" = (/obj/effect/decal/cleanable/blood/tracks{icon_state = "gib5-old"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"s" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "gibbl2"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"t" = (/obj/effect/decal/cleanable/blood/gibs{icon_state = "gibmid3"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"u" = (/obj/effect/decal/cleanable/blood{icon_state = "gibbl4"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"v" = (/obj/effect/decal/cleanable/blood{icon_state = "floor4"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"w" = (/obj/effect/decal/cleanable/blood{icon_state = "uniformblood"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"x" = (/obj/effect/decal/cleanable/blood{icon_state = "gib3-old"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"y" = (/obj/effect/decal/cleanable/blood{icon_state = "gibbearcore"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"z" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "gib4"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"A" = (/obj/effect/decal/cleanable/blood/splatter,/turf/open/floor/pod/dark,/area/ruin/powered)
+"B" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "gibmid3"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"C" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "gibmid1"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"D" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "gibup1"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"E" = (/obj/effect/decal/cleanable/blood{icon_state = "floor2"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"F" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/pod/dark,/area/ruin/powered)
+"G" = (/obj/effect/decal/cleanable/blood/tracks{icon_state = "floor6"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"H" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/pod/dark,/area/ruin/powered)
+"I" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "floor7"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"J" = (/obj/effect/decal/cleanable/blood/gibs/body{icon_state = "floor4"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"K" = (/obj/effect/decal/cleanable/blood{icon_state = "floor6-old"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"L" = (/obj/effect/decal/cleanable/blood/tracks{icon_state = "gib4"},/turf/open/floor/pod/dark,/area/ruin/powered)
+"M" = (/obj/item/tank/internals/emergency_oxygen/double,/turf/open/floor/pod/dark,/area/ruin/powered)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaa
 abbbbbbbbbbbbbbbbbbbbba
-abcdddcccccccccccccdcba
-abeccccfccggggfbcccdcba
-abdccgfhbggggffbcccccba
+abMdddcckccccccccccdcba
+abecnccpqcgrsgfbcccdcba
+abdMngchbgtccccbccuccba
 abbbbbbbbbbbbbbbbbcccba
-abcccdcccbccccdbddcccia
-abcccddccbcffdcbccgglba
-abcccbbbbbcffccbccggmba
-abcjjcddcbcffcdbccggnba
-abcjjcddcbcffcccccccoba
-abcccbbbbbccccckkkkccba
-abccccccdcccccckkkkccba
-abcdggggddbbbbbbbccccba
-abcdggggddbcccddcccccba
-abcbbbbbbbbccggggccccba
-abccbddcccbccggggccccba
-abccbddcccbbbbbbbccccba
-abccbccjccbccccccccccba
-abccbbbbbcbccggccdddcba
-abccccddcccccccccdddcba
+abcccdccMbvcMcdbddcccia
+abccwddxcbcycdcbcccclba
+abcccbbbbbcccccbczcgmba
+abnjccddcbccccdbccccnba
+abncccddcbctcccccAccoba
+abnccbbbbbccnnccccBncba
+abcCcnncdccDcncccccncba
+abcdgcccddbbbbbbbccccba
+abEdccccddbcccddcncccba
+abcbbbbbbbbccFccccnGcba
+abccbddcccbccccccccHcba
+abccbddcIcbbbbbbbccHcba
+abJcbcccncbccncncccHcba
+abKcbbbbbcbccgcccddLcba
+abccccddcccccccncdddcba
 abbbbbbbbbbbbbbbbbbbbba
 aaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaa
