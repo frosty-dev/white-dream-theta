@@ -28,7 +28,7 @@
 	desc = "TRUE BOYAR."
 	icon_state = "pill5"
 	list_reagents = list("boyar_tr" = 50)
-	roundstart = 1
+	//roundstart = 1
 
 /datum/uplink_item/stealthy_weapons/boyar_t_pill
 	name = "True boyar pill"

@@ -18,7 +18,7 @@
 	desc = "A powerful psychotic toxin. Can cause a personality split."
 	icon_state = "pill17"
 	list_reagents = list("hyperpsy" = 1)
-	roundstart = 1
+	//roundstart = 1
 
 /datum/chemical_reaction/hyperpsy
 	name = "Hyperpsychotic drug"
