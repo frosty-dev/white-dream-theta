@@ -181,7 +181,7 @@ GLOBAL_PROTECT(protected_ranks)
 		if(backup_file == null)
 			log_world("Unable to locate admins backup file.")
 			return FALSE
-		var/list/json = json_decode(backup_file)
+		var/list/json = r_json_decode(backup_file)
 		for(var/J in json["ranks"])
 			var/skip
 			for(var/datum/admin_rank/R in GLOB.admin_ranks)
@@ -260,7 +260,7 @@ GLOBAL_PROTECT(protected_ranks)
 			if(backup_file == null)
 				log_world("Unable to locate admins backup file.")
 				return
-			backup_file_json = json_decode(backup_file)
+			backup_file_json = r_json_decode(backup_file)
 		for(var/J in backup_file_json["admins"])
 			var/skip
 			for(var/A in GLOB.admin_datums + GLOB.deadmins)

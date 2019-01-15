@@ -19,10 +19,10 @@
 	data["encrypted_passkey"] = passkey
 
 /datum/netdata/proc/json_to_data(json)
-	data = json_decode(json)
+	data = r_json_decode(json)
 
 /datum/netdata/proc/json_append_to_data(json)
-	data |= json_decode(json)
+	data |= r_json_decode(json)
 
 /datum/netdata/proc/data_to_json()
 	return r_json_encode(data)

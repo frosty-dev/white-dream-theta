@@ -206,6 +206,13 @@ proc/rhtml_decode(var/t)
 
 	return json
 
+/proc/r_json_decode(text) //now I'm stupid
+	for(var/s in GLOB.rus_unicode_conversion_hex)
+		if (s == "ÿ")
+			text = replacetext(text, "\\u[GLOB.rus_unicode_conversion_hex[s]]", "&#255;")
+		text = replacetext(text, "\\u[GLOB.rus_unicode_conversion_hex[s]]", s)
+	return json_decode(text)
+
 #undef UPC
 #undef PHC
 #undef PHCH
