@@ -30,6 +30,7 @@ img {
 	line-height: 1;
 	-ms-interpolation-mode: nearest-neighbor;
 	image-rendering: pixelated;
+	max-height: 320px;
 }
 img.icon {
 	height: 1em;
