@@ -47,14 +47,14 @@
 		active = TRUE
 		if(active)
 			for(var/obj/item/I in user.held_items)
-				if(!(I.item_flags & NODROP))
+				if(!(I.has_trait(TRAIT_NODROP)))
 					stored_items += I
 		var/list/L = user.get_empty_held_indexes()
 		if(LAZYLEN(L) == user.held_items.len)
 			stored_items = list()
 		else
 			for(var/obj/item/I in stored_items)
-				I.item_flags |= NODROP
+				I.add_trait(TRAIT_NODROP)
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, 1)
 		user.visible_message("<span class='warning'>[usr] dashes forward!</span>")
 		user.throw_at(target, distance, speed, spin = FALSE, diagonals_first = TRUE)
@@ -69,7 +69,7 @@
 
 	if(!active)
 		for(var/obj/item/I in stored_items)
-			I.item_flags &= ~NODROP
+			I.remove_trait(TRAIT_NODROP)
 		stored_items = list()
 
 /datum/action/item_action/dash

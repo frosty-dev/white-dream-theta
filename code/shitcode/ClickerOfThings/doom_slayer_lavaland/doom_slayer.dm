@@ -73,13 +73,14 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	item_state = "hostile_env"
 	w_class = WEIGHT_CLASS_NORMAL
 	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
-	item_flags = NODROP
+	item_flags = DROPDEL
 	clothing_flags = THICKMATERIAL | STOPSPRESSUREDAMAGE | NOSLIP | LAVAPROTECT
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 60, "energy" = 60, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | INDESTRUCTIBLE | FREEZE_PROOF
 
-
-
+/obj/item/clothing/head/helmet/space/hostile_environment/doom_slayer/Initialize()
+	. = ..()
+	add_trait(TRAIT_NODROP)
 
 /obj/item/clothing/suit/space/hostile_environment/doom_slayer //suit
 	name = "Doom Slayer suit"
@@ -88,27 +89,36 @@ VAZHNOE (ili ne osobo) PRIMECHANIE/\/\/\
 	item_state = "hostile_env"
 	clothing_flags = THICKMATERIAL | STOPSPRESSUREDAMAGE | NOSLIP | LAVAPROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	item_flags = NODROP
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | INDESTRUCTIBLE | FREEZE_PROOF
 	slowdown = 0
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 60, "energy" = 60, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	allowed = list(/obj/item/tank/internals)
 
+/obj/item/clothing/suit/space/hostile_environment/doom_slayer/Initialize()
+	. = ..()
+	add_trait(TRAIT_NODROP)
+
 /obj/item/clothing/mask/gas/doom_slayer //mask
 	name = "Doom Slayer mask"
 	desc = "Praetor mask that gives Doom Slayer access to oxygen in space."
-	item_flags = NODROP
+
+/obj/item/clothing/mask/gas/doom_slayer/Initialize()
+	. = ..()
+	add_trait(TRAIT_NODROP)
 
 /obj/item/clothing/shoes/doom_slayer //boots
 	name = "Doom Slayer boots"
 	desc = "Praetor boots that protects from slip and damage"
 	clothing_flags = NOSLIP
-	item_flags = NODROP
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 60, "energy" = 60, "bomb" = 90, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | ACID_PROOF | INDESTRUCTIBLE | FREEZE_PROOF
 	icon = 'icons/obj/clothing/shoes.dmi'
 	icon_state = "jackboots"
 	item_color = "jackboots"
+
+/obj/item/clothing/shoes/doom_slayer/Initialize()
+	. = ..()
+	add_trait(TRAIT_NODROP)
 
 /obj/item/storage/backpack/doom_slayer
 	name = "Doom Slayer backpack"
