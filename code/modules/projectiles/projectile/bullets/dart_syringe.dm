@@ -17,7 +17,7 @@
 				..()
 				reagents.reaction(M, INJECT)
 				reagents.trans_to(M, reagents.total_volume)
-				return TRUE
+				return BULLET_ACT_HIT
 			else
 				blocked = 100
 				target.visible_message("<span class='danger'>\The [src] was deflected!</span>", \
@@ -26,7 +26,7 @@
 	..(target, blocked)
 	DISABLE_BITFIELD(reagents.flags, NO_REACT)
 	reagents.handle_reactions()
-	return TRUE
+	return BULLET_ACT_HIT
 
 /obj/item/projectile/bullet/dart/metalfoam/Initialize()
 	. = ..()
