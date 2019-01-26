@@ -259,7 +259,7 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 		//	features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<img src=\"https://frosty.space/styles/banner.gif\"></a></center>"
+	s += "<img src=\"https://frosty.space/styles/banner_new.gif\"></a></center>"
 	//s += "Station Name: <b>[station_name()]</b><br>";
 	s += "Map: <b>[map]</b><br>"
 	s += "Mode: <b>[mode]</b><br>"
