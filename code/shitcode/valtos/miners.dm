@@ -40,7 +40,7 @@
 		playsound(src, 'code/shitcode/valtos/sounds/ping.ogg', 100, 1)
 		coins += tier * 4
 		if(prob(50))
-			diff -= rand(1, 5) //lol
+			diff -= rand(1, 3) //lol //balanced maybe
 		else
 			diff += rand(1, 5)
 
@@ -120,7 +120,7 @@
 /datum/supply_pack/misc/spaceminer
 	name = "Spacecoin Miner Tier 1"
 	desc = "Ping!"
-	cost = 80000
+	cost = 60000
 	contains = list(/obj/machinery/spaceminer,
 					/obj/item/wrench)
 	crate_name = "coinminer tier 1 crate"
@@ -128,7 +128,7 @@
 /datum/supply_pack/misc/spaceminer2
 	name = "Spacecoin Miner Tier 2"
 	desc = "Ping!"
-	cost = 200000
+	cost = 180000
 	contains = list(/obj/machinery/spaceminer/tier2,
 					/obj/item/wrench)
 	crate_name = "coinminer tier 2 crate"
@@ -136,7 +136,7 @@
 /datum/supply_pack/misc/spaceminer3
 	name = "Spacecoin Miner Tier 3"
 	desc = "Ping!"
-	cost = 400000
+	cost = 300000
 	contains = list(/obj/machinery/spaceminer/tier3,
 					/obj/item/wrench)
 	crate_name = "coinminer tier 3 crate"
@@ -144,7 +144,7 @@
 /datum/supply_pack/misc/spaceminer4
 	name = "Spacecoin Miner Tier 4"
 	desc = "Pong!"
-	cost = 1000000
+	cost = 800000
 	contains = list(/obj/machinery/spaceminer/tier4,
 					/obj/item/wrench)
 	crate_name = "coinminer tier 4 crate"
@@ -152,6 +152,6 @@
 /datum/supply_pack/misc/minerchallenge
 	name = "You can do it! The Miner Challenge"
 	desc = "Pong!"
-	cost = 10000000
+	cost = 7000000
 	contains = list(/obj/item/gun/energy/pulse/prize)
 	crate_name = "coinminer tier 4 crate"
