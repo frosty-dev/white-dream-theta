@@ -37,6 +37,7 @@
 
 /datum/reagent/toxin/poo/on_mob_life(mob/living/carbon/C)
 	C.adjustPlasma(1)
+	SSblackbox.record_feedback("tally", "poo", 1, "Poo Eaten")
 	return ..()
 
 /datum/reagent/toxin/poo/reaction_turf(turf/open/T, reac_volume)//splash the poo all over the place
@@ -123,6 +124,7 @@
 			H.pooed = TRUE
 			H.hygiene -= 200
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "creampie", /datum/mood_event/creampie)
+			SSblackbox.record_feedback("tally", "poo", 1, "Poo Splats")
 	qdel(src)
 
 /datum/emote/living/poo
@@ -140,12 +142,14 @@
 			playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
 			new /obj/item/reagent_containers/food/snacks/poo(H.loc)
 			H.nutrition -= 75
+			SSblackbox.record_feedback("tally", "poo", 1, "Poo Created")
 			return
 		else
 			H.visible_message("<span class='notice'>[H] скрутило в попытках провести акт дефекации!</span>", \
 					"<span class='notice'>“еб€ скрутило в попытках провести акт дефекации. Ёто было очень больно.</span>")
 			H.Paralyze(80)
 			H.adjust_blurriness(1)
+			SSblackbox.record_feedback("tally", "poo", 1, "Poo Creation Failed")
 			return
 
 /atom/proc/wash_poo()
