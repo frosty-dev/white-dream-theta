@@ -180,20 +180,20 @@
 	var/fake_result = roll(sides)//Daredevil isn't as good as he used to be
 	var/comment = ""
 	if(sides == 20 && result == 20)
-		comment = "NAT 20!"
+		comment = "Вау, двадцатка!"
 	else if(sides == 20 && result == 1)
-		comment = "Ouch, bad luck."
+		comment = "Вот это невезение!"
 	update_icon()
 	if(initial(icon_state) == "d00")
 		result = (result - 1)*10
 	if(special_faces.len == sides)
 		result = special_faces[result]
 	if(user != null) //Dice was rolled in someone's hand
-		user.visible_message("[user] has thrown [src]. It lands on [result]. [comment]", \
-							 "<span class='notice'>You throw [src]. It lands on [result]. [comment]</span>", \
-							 "<span class='italics'>You hear [src] rolling, it sounds like a [fake_result].</span>")
+		user.visible_message("[user] кидает [src]. Он приземляется на [result]. [comment]", \
+							 "<span class='notice'>Ты бросаешь [src]. Он приземляется на [result]. [comment]</span>", \
+							 "<span class='italics'>Вы слышите как катится [src], это звучит как [fake_result].</span>")
 	else if(!src.throwing) //Dice was thrown and is coming to rest
-		visible_message("<span class='notice'>[src] rolls to a stop, landing on [result]. [comment]</span>")
+		visible_message("<span class='notice'>[src] останавливается приземлившись на [result]. [comment]</span>")
 
 /obj/item/dice/update_icon()
 	cut_overlays()

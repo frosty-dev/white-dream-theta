@@ -154,7 +154,7 @@
 	if(!message)
 		return
 	src.log_talk(message, LOG_SAY)
-	var/rendered = "<span class='revennotice'><b>[src]</b> says, \"[message]\"</span>"
+	var/rendered = "<span class='revennotice'><b>[src]</b> говорит, \"[message]\"</span>"
 	for(var/mob/M in GLOB.mob_list)
 		if(isrevenant(M))
 			to_chat(M, rendered)

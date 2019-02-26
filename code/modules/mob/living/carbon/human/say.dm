@@ -1,7 +1,7 @@
 /mob/living/carbon/human/say_mod(input, message_mode)
 	verb_say = dna.species.say_mod
 	if(slurring)
-		return "slurs"
+		return "мелет"
 	else
 		. = ..()
 
@@ -18,7 +18,7 @@
 					var/H = pick(pick_list)
 					if(findtext(temp_message[H], "*") || findtext(temp_message[H], ";") || findtext(temp_message[H], ":"))
 						continue
-					temp_message[H] = "HONK"
+					temp_message[H] = "ХОНК"
 					pick_list -= H //Make sure that you dont HONK the same word twice
 				message = jointext(temp_message, " ")
 	message = ..(message)
@@ -100,7 +100,7 @@
 
 /mob/living/carbon/human/get_alt_name()
 	if(name != GetVoice())
-		return " (as [get_id_name("Unknown")])"
+		return " (как [get_id_name("Unknown")])"
 
 /mob/living/carbon/human/proc/forcesay(list/append) //this proc is at the bottom of the file because quote fuckery makes notepad++ cri
 	if(stat == CONSCIOUS)

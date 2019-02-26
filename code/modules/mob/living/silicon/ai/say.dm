@@ -21,7 +21,7 @@
 	if(incapacitated())
 		return FALSE
 	if(!radio_enabled) //AI cannot speak if radio is disabled (via intellicard) or depowered.
-		to_chat(src, "<span class='danger'>Your radio transmitter is offline!</span>")
+		to_chat(src, "<span class='danger'>Ваш радиопередатчик отключен!</span>")
 		return FALSE
 	..()
 
@@ -50,9 +50,9 @@
 			padloc = "(UNKNOWN)"
 		src.log_talk(message, LOG_SAY, tag="HOLOPAD in [padloc]")
 		send_speech(message, 7, T, "robot", get_spans(), language)
-		to_chat(src, "<i><span class='game say'>Holopad transmitted, <span class='name'>[real_name]</span> <span class='message robot'>\"[message]\"</span></span></i>")
+		to_chat(src, "<i><span class='game say'>Голографическая трансляциЯ, <span class='name'>[real_name]</span> <span class='message robot'>\"[message]\"</span></span></i>")
 	else
-		to_chat(src, "No holopad connected.")
+		to_chat(src, "Нет подключенных голостанций.")
 
 
 // Make sure that the code compiles with AI_VOX undefined
@@ -93,7 +93,7 @@
 /mob/living/silicon/ai/proc/announcement()
 	var/static/announcing_vox = 0 // Stores the time of the last announcement
 	if(announcing_vox > world.time)
-		to_chat(src, "<span class='notice'>Please wait [DisplayTimeText(announcing_vox - world.time)].</span>")
+		to_chat(src, "<span class='notice'>Пожалуйста, подождите [DisplayTimeText(announcing_vox - world.time)].</span>")
 		return
 
 	var/message = input(src, "WARNING: Misuse of this verb can result in you being job banned. More help is available in 'Announcement Help'", "Announcement", src.last_announcement) as text
@@ -107,7 +107,7 @@
 		return
 
 	if(control_disabled)
-		to_chat(src, "<span class='warning'>Wireless interface disabled, unable to interact with announcement PA.</span>")
+		to_chat(src, "<span class='warning'>Беспроводной интерфейс отключен, невозможно управлять станцией анонсирования.</span>")
 		return
 
 	var/list/words = splittext(trim(message), " ")
@@ -125,12 +125,12 @@
 			incorrect_words += word
 
 	if(incorrect_words.len)
-		to_chat(src, "<span class='notice'>These words are not available on the announcement system: [english_list(incorrect_words)].</span>")
+		to_chat(src, "<span class='notice'>Эти слова недоступны для анонсирования: [english_list(incorrect_words)].</span>")
 		return
 
 	announcing_vox = world.time + VOX_DELAY
 
-	log_game("[key_name(src)] made a vocal announcement with the following message: [message].")
+	log_game("[key_name(src)] сделал голосовой анонс с текстом: [message].")
 
 	for(var/word in words)
 		play_vox_word(word, src.z, null)

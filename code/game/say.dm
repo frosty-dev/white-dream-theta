@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		else
 			return speaker.say_quote(raw_message, spans, message_mode)
 	else
-		return "makes a strange sound."
+		return "издаёт странный звук."
 
 /proc/get_radio_span(freq)
 	var/returntext = GLOB.freqtospan["[freq]"]

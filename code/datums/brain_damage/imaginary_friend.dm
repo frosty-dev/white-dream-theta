@@ -130,7 +130,7 @@
 
 	if (src.client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "You cannot send IC messages (muted).")
+			to_chat(src, "Вы не можете говорить в IC (мут).")
 			return
 		if (src.client.handle_spam_prevention(message,MUTE_IC))
 			return
@@ -149,7 +149,7 @@
 	src.log_talk(message, LOG_SAY, tag="imaginary friend")
 
 	var/rendered = "<span class='game say'><span class='name'>[name]</span> <span class='message'>[say_quote(message)]</span></span>"
-	var/dead_rendered = "<span class='game say'><span class='name'>[name] (Imaginary friend of [owner])</span> <span class='message'>[say_quote(message)]</span></span>"
+	var/dead_rendered = "<span class='game say'><span class='name'>[name] (Воображаемый друг [owner])</span> <span class='message'>[say_quote(message)]</span></span>"
 
 	to_chat(owner, "[rendered]")
 	to_chat(src, "[rendered]")

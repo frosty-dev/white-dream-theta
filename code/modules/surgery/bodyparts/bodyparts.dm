@@ -1,7 +1,8 @@
 
 /obj/item/bodypart
 	name = "limb"
-	desc = "Why is it detached..."
+	ru_name = "конечность"
+	desc = "Почему это отрезано..."
 	force = 3
 	throwforce = 3
 	icon = 'icons/mob/human_parts.dmi'
@@ -56,20 +57,20 @@
 	var/dmg_overlay_type //the type of damage overlay (if any) to use when this bodypart is bruised/burned.
 
 	//Damage messages used by help_shake_act()
-	var/light_brute_msg = "bruised"
-	var/medium_brute_msg = "battered"
-	var/heavy_brute_msg = "mangled"
+	var/light_brute_msg = "повреждена"
+	var/medium_brute_msg = "разбита"
+	var/heavy_brute_msg = "искромсана"
 
-	var/light_burn_msg = "numb"
-	var/medium_burn_msg = "blistered"
-	var/heavy_burn_msg = "peeling away"
+	var/light_burn_msg = "подгорела"
+	var/medium_burn_msg = "в волдырях"
+	var/heavy_burn_msg = "отслаивается"
 
 /obj/item/bodypart/examine(mob/user)
 	..()
 	if(brute_dam > DAMAGE_PRECISION)
-		to_chat(user, "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>")
+		to_chat(user, "<span class='warning'>Конечность имеет [brute_dam > 30 ? "серьёзные" : "незначительные"] повреждения.</span>")
 	if(burn_dam > DAMAGE_PRECISION)
-		to_chat(user, "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>")
+		to_chat(user, "<span class='warning'>Конечность имеет [burn_dam > 30 ? "серьёзные" : "незначительные"] ожоги.</span>")
 
 /obj/item/bodypart/blob_act()
 	take_damage(max_damage)
@@ -86,11 +87,11 @@
 		if(C.has_trait(TRAIT_LIMBATTACHMENT))
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				if(H == user)
-					H.visible_message("<span class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
-					"<span class='notice'>You force [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message("<span class='warning'>[H] вставляет [src.ru_name] на место!</span>",\
+					"<span class='notice'>Вы вставляете [src.ru_name] на место!</span>")
 				else
-					H.visible_message("<span class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
-					"<span class='notice'>[user] forces [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message("<span class='warning'>[user] ставит [src.ru_name] [H] на место!</span>",\
+					"<span class='notice'>[user] ставим вам [src.ru_name] на место!</span>")
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				attach_limb(C)
 				return
@@ -100,11 +101,11 @@
 	if(W.sharpness)
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, "<span class='warning'>There is nothing left inside [src]!</span>")
+			to_chat(user, "<span class='warning'>Внутри [src] ничего нет!</span>")
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("<span class='warning'>[user] begins to cut open [src].</span>",\
-			"<span class='notice'>You begin to cut open [src]...</span>")
+		user.visible_message("<span class='warning'>[user] пытается разделать [src].</span>",\
+			"<span class='notice'>Вы начинаете разделывать [src]...</span>")
 		if(do_after(user, 54, target = src))
 			drop_organs(user, TRUE)
 	else
@@ -435,7 +436,8 @@
 
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
-	desc = "It's impolite to stare at a person's chest."
+	ru_name = "грудь"
+	desc = "Невежливо пялиться на чью-то грудь."
 	icon_state = "default_human_chest"
 	max_damage = 200
 	body_zone = BODY_ZONE_CHEST
@@ -482,12 +484,13 @@
 
 /obj/item/bodypart/l_arm
 	name = "left arm"
-	desc = "Did you know that the word 'sinister' stems originally from the \
-		Latin 'sinestra' (left hand), because the left hand was supposed to \
-		be possessed by the devil? This arm appears to be possessed by no \
-		one though."
+	ru_name = "левая рука"
+	desc = "Знаете ли вы, что слово «зловещий» происходит от \
+		Латинского 'sinestra' (левая рука), потому что левая рука должна была \
+		быть одержимым дьяволом? Эта рука, кажется, не одержима \
+		пока ещё."
 	icon_state = "default_human_l_arm"
-	attack_verb = list("slapped", "punched")
+	attack_verb = list("шлёпает", "бьёт")
 	max_damage = 50
 	max_stamina_damage = 50
 	body_zone = BODY_ZONE_L_ARM
@@ -513,12 +516,12 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span class='userdanger'>Ваша [ru_name] слишком повреждена, чтобы что-то делать ею!</span>")
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span class='userdanger'>Вы больше не чувствуете свою [ru_name]!</span>")
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -549,10 +552,11 @@
 
 /obj/item/bodypart/r_arm
 	name = "right arm"
-	desc = "Over 87% of humans are right handed. That figure is much lower \
-		among humans missing their right arm."
+	ru_name = "правая рука"
+	desc = "Более 87% людей правши. Эта цифра намного ниже \
+		среди тех людей у кого отсутствует правая рука."
 	icon_state = "default_human_r_arm"
-	attack_verb = list("slapped", "punched")
+	attack_verb = list("шлёпает", "бьёт")
 	max_damage = 50
 	body_zone = BODY_ZONE_R_ARM
 	body_part = ARM_RIGHT
@@ -578,12 +582,12 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span class='userdanger'>Ваша [ru_name] слишком повреждена, чтобы что-то делать ею!</span>")
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span class='userdanger'>Вы больше не чувствуете свою [ru_name]!</span>")
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -614,10 +618,11 @@
 
 /obj/item/bodypart/l_leg
 	name = "left leg"
-	desc = "Some athletes prefer to tie their left shoelaces first for good \
-		luck. In this instance, it probably would not have helped."
+	ru_name = "левая нога"
+	desc = "Некоторые спортсмены предпочитают крепоко завязать шнурки на левой ноге. \
+		В этой ситуации это видимо не помогло."
 	icon_state = "default_human_l_leg"
-	attack_verb = list("kicked", "stomped")
+	attack_verb = list("пинает", "топтает")
 	max_damage = 50
 	body_zone = BODY_ZONE_L_LEG
 	body_part = LEG_LEFT
@@ -640,13 +645,14 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span class='userdanger'>Ваша [ru_name] слишком повреждена, чтобы что-то делать ею!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span class='userdanger'>Вы больше не чувствуете свою [ru_name]!</span>")
 
 /obj/item/bodypart/l_leg/digitigrade
 	name = "left digitigrade leg"
+	ru_name = "левая лапка"
 	use_digitigrade = FULL_DIGITIGRADE
 
 /obj/item/bodypart/l_leg/monkey
@@ -671,12 +677,13 @@
 
 /obj/item/bodypart/r_leg
 	name = "right leg"
-	desc = "You put your right leg in, your right leg out. In, out, in, out, \
-		shake it all about. And apparently then it detaches.\n\
-		The hokey pokey has certainly changed a lot since space colonisation."
-	// alternative spellings of 'pokey' are availible
+	ru_name = "правая нога"
+	desc = "Это просто правая нога. В таком состоянии ею можно \
+		пнуть кого-то, если очень постараться.\n\
+		Такая возможность не часто бывает!"
+	// тут был другой текст, но я не смог понять его смысл
 	icon_state = "default_human_r_leg"
-	attack_verb = list("kicked", "stomped")
+	attack_verb = list("пинает", "топтает")
 	max_damage = 50
 	body_zone = BODY_ZONE_R_LEG
 	body_part = LEG_RIGHT
@@ -699,13 +706,14 @@
 		if(owner.stat > UNCONSCIOUS)
 			owner.emote("scream")
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, "<span class='userdanger'>Ваша [ru_name] слишком повреждена, чтобы что-то делать ею!</span>")
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(. && (owner.stat > DEAD))
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, "<span class='userdanger'>Вы больше не чувствуете свою [ru_name]!</span>")
 
 /obj/item/bodypart/r_leg/digitigrade
 	name = "right digitigrade leg"
+	ru_name = "правая лапка"
 	use_digitigrade = FULL_DIGITIGRADE
 
 /obj/item/bodypart/r_leg/monkey

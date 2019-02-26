@@ -1,52 +1,43 @@
 //pronoun procs, for getting pronouns without using the text macros that only work in certain positions
 //datums don't have gender, but most of their subtypes do!
-/datum/proc/p_they(capitalized, temp_gender)
-	. = "оно"
+/datum/proc/ru_who(capitalized, temp_gender)
+	. = "он"
 	if(capitalized)
 		. = capitalize(.)
 
-/datum/proc/p_their(capitalized, temp_gender)
+/datum/proc/ru_ego(capitalized, temp_gender)
 	. = "его"
 	if(capitalized)
 		. = capitalize(.)
 
-/datum/proc/p_them(capitalized, temp_gender)
-	. = "его"
+/datum/proc/ru_eto(capitalized, temp_gender)
+	. = "это"
 	if(capitalized)
 		. = capitalize(.)
 
-/datum/proc/p_have(temp_gender)
+/datum/proc/ru_have(temp_gender)
 	. = "имеет"
 
-/datum/proc/p_are(temp_gender)
-	. = "€вл€етс€"
+/datum/proc/ru_was(temp_gender)
+	. = "был"
 
-/datum/proc/p_were(temp_gender)
-	. = "было"
-
-/datum/proc/p_do(temp_gender)
+/datum/proc/ru_do(temp_gender)
 	. = "делает"
 
-/datum/proc/p_kon(temp_gender)
-	. = "е"
+/datum/proc/ru_kon(temp_gender)
+	. = "ый"
 
-/datum/proc/p_theyve(capitalized, temp_gender)
-	. = p_they(capitalized, temp_gender) + "'" + copytext(p_have(temp_gender), 3)
+/datum/proc/ru_na(temp_gender)
+	. = "Єм"
 
-/datum/proc/p_theyre(capitalized, temp_gender)
-	. = p_they(capitalized, temp_gender) + "'" + copytext(p_are(temp_gender), 2)
-
-/datum/proc/p_s(temp_gender) //is this a descriptive proc name, or what?
-	. = "s"
-
-/datum/proc/p_es(temp_gender)
-	. = "es"
+/datum/proc/ru_a(temp_gender)
+	. = ""
 
 //like clients, which do have gender.
-/client/p_they(capitalized, temp_gender)
+/client/ru_who(capitalized, temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
-	. = "оно"
+	. = "он"
 	switch(temp_gender)
 		if(FEMALE)
 			. = "она"
@@ -55,75 +46,74 @@
 	if(capitalized)
 		. = capitalize(.)
 
-/client/p_their(capitalized, temp_gender)
+/client/ru_ego(capitalized, temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
 	. = "его"
 	switch(temp_gender)
 		if(FEMALE)
-			. = "она"
+			. = "еЄ"
 		if(MALE)
-			. = "он"
+			. = "его"
 	if(capitalized)
 		. = capitalize(.)
 
-/client/p_them(capitalized, temp_gender)
+/client/ru_was(capitalized, temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
-	. = "оно"
+	. = "был"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "была"
+		if(MALE)
+			. = "был"
+	if(capitalized)
+		. = capitalize(.)
+
+/client/ru_na(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "Єм"
 	switch(temp_gender)
 		if(FEMALE)
 			. = "ей"
 		if(MALE)
-			. = "ему"
+			. = "Єм"
 	if(capitalized)
 		. = capitalize(.)
 
-/client/p_have(temp_gender)
+/client/ru_a(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = ""
+	switch(temp_gender)
+		if(FEMALE)
+			. = "а"
+		if(MALE)
+			. = ""
+	if(capitalized)
+		. = capitalize(.)
+
+/client/ru_eto(temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "это"
+	if(temp_gender == PLURAL || temp_gender == NEUTER)
+		. = "эти"
+
+/client/ru_have(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
 	. = "имеет"
 	if(temp_gender == PLURAL || temp_gender == NEUTER)
 		. = "имеет"
 
-/client/p_are(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	. = "€вл€етс€"
-	if(temp_gender == PLURAL || temp_gender == NEUTER)
-		. = "€вл€етс€"
-
-/client/p_were(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	. = "было"
-	if(temp_gender == PLURAL || temp_gender == NEUTER)
-		. = "было"
-
-/client/p_do(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	. = "does"
-	if(temp_gender == PLURAL || temp_gender == NEUTER)
-		. = "do"
-
-/client/p_s(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	if(temp_gender != PLURAL && temp_gender != NEUTER)
-		. = "s"
-
-/client/p_es(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	if(temp_gender != PLURAL && temp_gender != NEUTER)
-		. = "es"
 
 //mobs(and atoms but atoms don't really matter write your own proc overrides) also have gender!
-/mob/p_they(capitalized, temp_gender)
+/mob/ru_who(capitalized, temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
-	. = "они"
+	. = "он"
 	switch(temp_gender)
 		if(FEMALE)
 			. = "она"
@@ -134,10 +124,10 @@
 	if(capitalized)
 		. = capitalize(.)
 
-/mob/p_their(capitalized, temp_gender)
+/mob/ru_ego(capitalized, temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
-	. = "их"
+	. = "его"
 	switch(temp_gender)
 		if(FEMALE)
 			. = "еЄ"
@@ -148,130 +138,119 @@
 	if(capitalized)
 		. = capitalize(.)
 
-/mob/p_them(capitalized, temp_gender)
+/mob/ru_eto(capitalized, temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
-	. = "их"
+	. = "это"
 	switch(temp_gender)
 		if(FEMALE)
-			. = "еЄ"
+			. = "это"
 		if(MALE)
-			. = "его"
+			. = "это"
 		if(PLURAL)
-			. = "его"
+			. = "это"
 	if(capitalized)
 		. = capitalize(.)
 
-/mob/p_kon(temp_gender)
+/mob/ru_kon(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
-	. = "е"
+	. = "ый"
 	switch(temp_gender)
 		if(FEMALE)
 			. = "ая"
 		if(MALE)
 			. = "ый"
 		if(PLURAL)
-			. = "е"
+			. = "ое"
 
-/mob/p_have(temp_gender)
+/mob/ru_kon(temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = ""
+	switch(temp_gender)
+		if(FEMALE)
+			. = "а"
+		if(MALE)
+			. = ""
+		if(PLURAL)
+			. = "о"
+
+/mob/ru_was(temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "был"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "была"
+		if(MALE)
+			. = "был"
+		if(PLURAL)
+			. = "был"
+
+/mob/ru_was(temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "Єм"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "ей"
+		if(MALE)
+			. = "Єм"
+		if(PLURAL)
+			. = "Єм"
+
+/mob/ru_have(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
 	. = "имеет"
 	if(temp_gender == PLURAL)
-		. = "имеел"
-
-/mob/p_are(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	. = "€вл€етс€"
-	if(temp_gender == PLURAL)
-		. = "€вл€етс€"
-
-/mob/p_were(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	. = "был"
-	if(temp_gender == PLURAL)
-		. = "было"
-
-/mob/p_do(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	. = "делает"
-	if(temp_gender == PLURAL)
-		. = "сделал"
-
-/mob/p_s(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	if(temp_gender != PLURAL)
-		. = "s"
-
-/mob/p_es(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	if(temp_gender != PLURAL)
-		. = "es"
+		. = "имело"
 
 //humans need special handling, because they can have their gender hidden
-/mob/living/carbon/human/p_they(capitalized, temp_gender)
+/mob/living/carbon/human/ru_who(capitalized, temp_gender)
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()
 
-/mob/living/carbon/human/p_their(capitalized, temp_gender)
+/mob/living/carbon/human/ru_ego(capitalized, temp_gender)
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()
 
-/mob/living/carbon/human/p_them(capitalized, temp_gender)
+/mob/living/carbon/human/ru_eto(capitalized, temp_gender)
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()
 
-/mob/living/carbon/human/p_have(temp_gender)
+/mob/living/carbon/human/ru_was(capitalized, temp_gender)
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()
 
-/mob/living/carbon/human/p_are(temp_gender)
+/mob/living/carbon/human/ru_kon(capitalized, temp_gender)
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()
 
-/mob/living/carbon/human/p_were(temp_gender)
+/mob/living/carbon/human/ru_have(capitalized, temp_gender)
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((SLOT_W_UNIFORM in obscured) && skipface)
 		temp_gender = PLURAL
 	return ..()
 
-/mob/living/carbon/human/p_do(temp_gender)
-	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
-	if((SLOT_W_UNIFORM in obscured) && skipface)
-		temp_gender = PLURAL
-	return ..()
-
-/mob/living/carbon/human/p_s(temp_gender)
-	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
-	if((SLOT_W_UNIFORM in obscured) && skipface)
-		temp_gender = PLURAL
-	return ..()
-
-/mob/living/carbon/human/p_es(temp_gender)
+/mob/living/carbon/human/ru_a(capitalized, temp_gender)
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
 	if((SLOT_W_UNIFORM in obscured) && skipface)

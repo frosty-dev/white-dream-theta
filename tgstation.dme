@@ -2800,6 +2800,7 @@
 #include "code\shitcode\valtos\custom.dm"
 #include "code\shitcode\valtos\miners.dm"
 #include "code\shitcode\valtos\poo.dm"
+#include "code\shitcode\valtos\pronouns_ru.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"

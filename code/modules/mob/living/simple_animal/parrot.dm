@@ -1005,9 +1005,9 @@
 	icon_living = "clock_hawk_fly"
 	icon_sit = "clock_hawk_sit"
 	speak = list("Penpxre!", "Ratvar vf n qhzo anzr naljnl!")
-	speak_emote = list("squawks rustily", "says crassly", "yells brassly")
-	emote_hear = list("squawks rustily.", "bawks metallically!")
-	emote_see = list("flutters its metal wings.")
+	speak_emote = list("ржаво чирикает", "говорит несуразно", "восклицает латунно")
+	emote_hear = list("ржаво чирикает.", "кудахчет металлически!")
+	emote_see = list("машет своими металлическими крыльями.")
 	faction = list("ratvar")
 	gold_core_spawnable = NO_SPAWN
 	del_on_death = TRUE

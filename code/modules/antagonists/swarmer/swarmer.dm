@@ -677,7 +677,7 @@
 		set_light(0)
 
 /mob/living/simple_animal/hostile/swarmer/proc/swarmer_chat(msg)
-	var/rendered = "<B>Swarm communication - [src]</b> [say_quote(msg, get_spans())]"
+	var/rendered = "<B>Переговоры роя - [src]</b> [say_quote(msg, get_spans())]"
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
 		if(isswarmer(M))
