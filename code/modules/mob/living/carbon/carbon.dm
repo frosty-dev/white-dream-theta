@@ -324,7 +324,7 @@
 	breakouttime = I.breakouttime
 	if(!cuff_break)
 		visible_message("<span class='warning'>[src] пытается снять [I]!</span>")
-		to_chat(src, "<span class='notice'>Вы пытаетесь снять [I]... (Это займёт примерно [round(buckle_cd/600,1)] минут, если не шевелиться.)</span>")
+		to_chat(src, "<span class='notice'>Вы пытаетесь снять [I]... (Это займёт примерно [round(breakouttime/600,1)] минут, если не шевелиться.)</span>")
 		if(do_after(src, breakouttime, 0, target = src))
 			clear_cuffs(I, cuff_break)
 		else

@@ -1,7 +1,7 @@
 
 /obj/item/bodypart
 	name = "limb"
-	ru_name = "конечность"
+	var/ru_name = "конечность"
 	desc = "ѕочему это отрезано..."
 	force = 3
 	throwforce = 3
