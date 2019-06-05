@@ -99,3 +99,9 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 		return a_sign - b_sign
 	else
 		return sorttext(b_name, a_name)
+<<<<<<< HEAD
+=======
+
+/proc/cmp_job_display_asc(datum/job/A, datum/job/B)
+	return A.display_order - B.display_order
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

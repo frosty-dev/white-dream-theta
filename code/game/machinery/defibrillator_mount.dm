@@ -69,7 +69,11 @@
 		if(defib)
 			to_chat(user, "<span class='warning'>There's already a defibrillator in [src]!</span>")
 			return
+<<<<<<< HEAD
 		if(I.has_trait(TRAIT_NODROP) || !user.transferItemToLoc(I, src))
+=======
+		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] hooks up [I] to [src]!</span>", \
@@ -78,7 +82,11 @@
 		defib = I
 		update_icon()
 		return
+<<<<<<< HEAD
 	else if(I == defib.paddles)
+=======
+	else if(defib && I == defib.paddles)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		defib.paddles.snap_back()
 		return
 	var/obj/item/card/id = I.GetID()

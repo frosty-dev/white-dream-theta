@@ -86,7 +86,11 @@
 /obj/effect/cross_action/spacetime_dist/proc/walk_link(atom/movable/AM)
 	if(ismob(AM))
 		var/mob/M = AM
+<<<<<<< HEAD
 		if(M.anti_magic_check(major = FALSE))
+=======
+		if(M.anti_magic_check(chargecost = 0))
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			return
 	if(linked_dist && walks_left > 0)
 		flick("purplesparkles", src)

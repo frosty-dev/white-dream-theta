@@ -37,8 +37,12 @@
 #define STATUS_EFFECT_GOOD_MUSIC /datum/status_effect/good_music
 
 #define STATUS_EFFECT_REGENERATIVE_CORE /datum/status_effect/regenerative_core
-#define STATUS_EFFECT_CREEP /datum/status_effect/creep //you feel fuckin great around your obsession
 
+<<<<<<< HEAD
+=======
+#define STATUS_EFFECT_ANTIMAGIC /datum/status_effect/antimagic //grants antimagic (and reapplies if lost) for the duration
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /////////////
 // DEBUFFS //
 /////////////
@@ -86,6 +90,17 @@
 #define STATUS_EFFECT_ICHORIAL_STAIN /datum/status_effect/ichorial_stain //Prevents a servant from being revived by vitality matrices for one minute.
 
 #define STATUS_EFFECT_GONBOLAPACIFY /datum/status_effect/gonbolaPacify //Gives the user gondola traits while the gonbola is attached to them.
+<<<<<<< HEAD
+=======
+
+#define STATUS_EFFECT_SPASMS /datum/status_effect/spasms //causes random muscle spasms
+
+#define STATUS_EFFECT_DNA_MELT /datum/status_effect/dna_melt //usually does something horrible to you when you hit 100 genetic instability
+
+#define STATUS_EFFECT_GO_AWAY /datum/status_effect/go_away //makes you launch through walls in a single direction for a while
+
+#define STATUS_EFFECT_STASIS /datum/status_effect/incapacitating/stasis //Halts biological functions like bleeding, chemical processing, blood regeneration, walking, etc
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /////////////
 // NEUTRAL //
@@ -99,13 +114,27 @@
 
 #define STATUS_EFFECT_INLOVE /datum/status_effect/in_love //Displays you as being in love with someone else, and makes hearts appear around them.
 
+<<<<<<< HEAD
+=======
+#define STATUS_EFFECT_BUGGED /datum/status_effect/bugged //Lets other mobs listen in on what it hears
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 #define STATUS_EFFECT_HIVE_TRACKER /datum/status_effect/hive_track
 
 #define STATUS_EFFECT_HIVE_RADAR /datum/status_effect/agent_pinpointer/hivemind
 
+<<<<<<< HEAD
+=======
+#define STATUS_EFFECT_BOUNTY /datum/status_effect/bounty //rewards the person who added this to the target with refreshed spells and a fair heal
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /////////////
 //  SLIME  //
 /////////////
 
 #define STATUS_EFFECT_RAINBOWPROTECTION /datum/status_effect/rainbow_protection //Invulnerable and pacifistic
 #define STATUS_EFFECT_SLIMESKIN /datum/status_effect/slimeskin //Increased armor
+
+// Stasis helpers
+
+#define IS_IN_STASIS(mob) (mob.has_status_effect(STATUS_EFFECT_STASIS))

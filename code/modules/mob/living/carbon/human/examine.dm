@@ -1,4 +1,4 @@
-/mob/living/carbon/human/examine(mob/user) //User is the person being examined
+/mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.
 	var/t_on 	= ru_who(TRUE)
 	var/t_ego 	= ru_ego()
@@ -9,7 +9,7 @@
 
 	if(isliving(user))
 		var/mob/living/L = user
-		if(L.has_trait(TRAIT_PROSOPAGNOSIA))
+		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
 	var/msg = "<span class='info'>*---------*\nЭто же <EM>[!obscure_name ? name : "неизвестный"]</EM>!\n"
@@ -35,7 +35,11 @@
 		msg += "На н[t_na] [wear_suit.get_examine_string(user)].\n"
 		//suit/armor storage
 		if(s_store && !(SLOT_S_STORE in obscured))
+<<<<<<< HEAD
 			msg += "Имеет [s_store.get_examine_string(user)] прикреплённый к [t_ego] [wear_suit.name].\n"
+=======
+			msg += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name].\n"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	//back
 	if(back)
 		msg += "На спине у н[t_ego] [back.get_examine_string(user)].\n"
@@ -45,7 +49,7 @@
 		if(!(I.item_flags & ABSTRACT))
 			msg += "[ru_ego(TRUE)] [get_held_index_name(get_held_index_of_item(I))] держит [I.get_examine_string(user)].\n"
 
-	GET_COMPONENT(FR, /datum/component/forensics)
+	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
 	//gloves
 	if(gloves && !(SLOT_GLOVES in obscured))
 		msg += "На руках у н[t_ego] [gloves.get_examine_string(user)].\n"
@@ -76,14 +80,24 @@
 		msg += "[t_on] имеет [wear_mask.get_examine_string(user)] на [t_ego] лице.\n"
 
 	if(wear_neck && !(SLOT_NECK in obscured))
+<<<<<<< HEAD
 		msg += "На шее у н[t_ego] [wear_neck.get_examine_string(user)].\n"
+=======
+		msg += "[t_He] [t_is] wearing [wear_neck.get_examine_string(user)] around [t_his] neck.\n"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	//eyes
 	if(!(SLOT_GLASSES in obscured))
 		if(glasses)
+<<<<<<< HEAD
 			msg += "На н[t_na] [glasses.get_examine_string(user)].\n"
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && has_trait(CULT_EYES))
 			msg += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>\n"
+=======
+			msg += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes.\n"
+		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
+			msg += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>\n"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	//ears
 	if(ears && !(SLOT_EARS in obscured))
@@ -106,7 +120,7 @@
 			msg += "<span class='warning'>[t_on] дрожит.</span>\n"
 
 	var/appears_dead = 0
-	if(stat == DEAD || (has_trait(TRAIT_FAKEDEATH)))
+	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
 		if(suiciding)
 			msg += "<span class='warning'>[t_on] выглядит как суицидник... это уже невозможно спасти.</span>\n"
@@ -115,7 +129,11 @@
 		msg += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни"
 		if(getorgan(/obj/item/organ/brain))
 			if(!key && !get_ghost(FALSE, TRUE))
+<<<<<<< HEAD
 				msg += " и [t_ego] душа ушла"
+=======
+				msg += " and [t_his] soul has departed"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		msg += "...</span>\n"
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
@@ -142,7 +160,11 @@
 			damage_text = "вялый и безжизненный"
 		else
 			damage_text = (BP.brute_dam >= BP.burn_dam) ? BP.heavy_brute_msg : BP.heavy_burn_msg
+<<<<<<< HEAD
 		msg += "<B>[t_ego] [BP.name] [damage_text]!</B>\n"
+=======
+		msg += "<B>[capitalize(t_his)] [BP.name] is [damage_text]!</B>\n"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	//stores missing limbs
 	var/l_limbs_missing = 0
@@ -223,19 +245,30 @@
 	if(bleedsuppress)
 		msg += "[t_on] перевязан[t_a].\n"
 	else if(bleed_rate)
+<<<<<<< HEAD
 		if(reagents.has_reagent("heparin"))
 			msg += "<b>[t_on] обильно истекает кровью!</b>\n"
+=======
+		if(reagents.has_reagent(/datum/reagent/toxin/heparin))
+			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		else
 			msg += "<B>[t_on] истекает кровью!</B>\n"
 
+<<<<<<< HEAD
 	if(reagents.has_reagent("teslium"))
 		msg += "[t_on] испускает нежное голубое свечение!\n"
+=======
+	if(reagents.has_reagent(/datum/reagent/teslium))
+		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	if(islist(stun_absorption))
 		for(var/i in stun_absorption)
 			if(stun_absorption[i]["end_time"] > world.time && stun_absorption[i]["examine_message"])
 				msg += "[t_on] [stun_absorption[i]["examine_message"]]\n"
 
+<<<<<<< HEAD
 	if(drunkenness && !skipface && !appears_dead) //Drunkenness
 		switch(drunkenness)
 			if(11 to 21)
@@ -253,12 +286,57 @@
 
 	msg += "</span>"
 
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(!appears_dead)
+		if(drunkenness && !skipface) //Drunkenness
+			switch(drunkenness)
+				if(11 to 21)
+					msg += "[t_He] [t_is] slightly flushed.\n"
+				if(21.01 to 41) //.01s are used in case drunkenness ends up to be a small decimal
+					msg += "[t_He] [t_is] flushed.\n"
+				if(41.01 to 51)
+					msg += "[t_He] [t_is] quite flushed and [t_his] breath smells of alcohol.\n"
+				if(51.01 to 61)
+					msg += "[t_He] [t_is] very flushed and [t_his] movements jerky, with breath reeking of alcohol.\n"
+				if(61.01 to 91)
+					msg += "[t_He] look[p_s()] like a drunken mess.\n"
+				if(91.01 to INFINITY)
+					msg += "[t_He] [t_is] a shitfaced, slobbering wreck.\n"
+
+		if(src != user)
+			if(HAS_TRAIT(user, TRAIT_EMPATH))
+				if (a_intent != INTENT_HELP)
+					msg += "[t_He] seem[p_s()] to be on guard.\n"
+				if (getOxyLoss() >= 10)
+					msg += "[t_He] seem[p_s()] winded.\n"
+				if (getToxLoss() >= 10)
+					msg += "[t_He] seem[p_s()] sickly.\n"
+				var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
+				if(mood.sanity <= SANITY_DISTURBED)
+					msg += "[t_He] seem[p_s()] distressed.\n"
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
+				if (HAS_TRAIT(src, TRAIT_BLIND))
+					msg += "[t_He] appear[p_s()] to be staring off into space.\n"
+				if (HAS_TRAIT(src, TRAIT_DEAF))
+					msg += "[t_He] appear[p_s()] to not be responding to noises.\n"
+
+			msg += "</span>"
+
+			if(HAS_TRAIT(user, TRAIT_SPIRITUAL) && mind?.isholy)
+				msg += "[t_He] [t_has] a holy aura about [t_him].\n"
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "religious_comfort", /datum/mood_event/religiously_comforted)
+
 		if(stat == UNCONSCIOUS)
 			msg += "[t_on] не реагирует на происходящее вокруг.\n"
 		else
+<<<<<<< HEAD
 			if(has_trait(TRAIT_DUMB))
 				msg += "[t_on] имеет глупое выражение лица.\n"
+=======
+			if(HAS_TRAIT(src, TRAIT_DUMB))
+				msg += "[t_He] [t_has] a stupid expression on [t_his] face.\n"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if(InCritical())
 				msg += "[t_on] едва в сознании.\n"
 		if(getorgan(/obj/item/organ/brain))

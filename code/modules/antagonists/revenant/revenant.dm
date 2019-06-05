@@ -77,7 +77,11 @@
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/revenant/malfunction(null))
 	random_revenant_name()
 
+<<<<<<< HEAD
 /mob/living/simple_animal/revenant/canUseTopic()
+=======
+/mob/living/simple_animal/revenant/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	return FALSE
 
 /mob/living/simple_animal/revenant/proc/random_revenant_name()

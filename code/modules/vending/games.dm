@@ -9,9 +9,16 @@
 		            /obj/item/toy/cards/deck/cas/black = 3)
 	contraband = list(/obj/item/dice/fudge = 9)
 	refill_canister = /obj/item/vending_refill/games
+<<<<<<< HEAD
 	default_price = 25
 	extra_price = 50
 	payment_department = ACCOUNT_SRV
+=======
+	default_price = 10
+	extra_price = 25
+	payment_department = ACCOUNT_SRV
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/vending_refill/games
 	machine_name = "\improper Good Clean Fun"
 	icon_state = "refill_games"

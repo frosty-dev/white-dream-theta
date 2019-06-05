@@ -57,20 +57,28 @@
 	P.update_icon()
 	return P
 
-/datum/supply_order/proc/generateManifest(obj/structure/closet/crate/C)
-	var/obj/item/paper/fluff/jobs/cargo/manifest/P = new(C, id, pack.cost)
+/datum/supply_order/proc/generateManifest(obj/structure/closet/crate/C, var/owner, var/packname) //generates-the-manifests.
+	var/obj/item/paper/fluff/jobs/cargo/manifest/P = new(C, id, 0)
 
 	var/station_name = (P.errors & MANIFEST_ERROR_NAME) ? new_station_name() : station_name()
 
-	P.name = "shipping manifest - #[id] ([pack.name])"
+	P.name = "shipping manifest - [packname?"#[id] ([pack.name])":"(Grouped Item Crate)"]"
 	P.info += "<h2>[command_name()] Shipping Manifest</h2>"
 	P.info += "<hr/>"
+<<<<<<< HEAD
 	if(paying_account)
 		P.info += "Direct purchase from [paying_account.account_holder]<br/>"
 		P.name += " - Purchased by [paying_account.account_holder]"
 	P.info += "Order #[id]<br/>"
+=======
+	if(owner && !(owner == "Cargo"))
+		P.info += "Direct purchase from [owner]<br/>"
+		P.name += " - Purchased by [owner]"
+	P.info += "Order[packname?"":"s"]: [id]<br/>"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	P.info += "Destination: [station_name]<br/>"
-	P.info += "Item: [pack.name]<br/>"
+	if(packname)
+		P.info += "Item: [packname]<br/>"
 	P.info += "Contents: <br/>"
 	P.info += "<ul>"
 	for(var/atom/movable/AM in C.contents - P)
@@ -83,6 +91,14 @@
 	P.info += "</ul>"
 	P.info += "<h4>Stamp below to confirm receipt of goods:</h4>"
 
+	if(P.errors & MANIFEST_ERROR_ITEM)
+		if(istype(C, /obj/structure/closet/crate/secure) || istype(C, /obj/structure/closet/crate/large))
+			P.errors &= ~MANIFEST_ERROR_ITEM
+		else
+			var/lost = max(round(C.contents.len / 10), 1)
+			while(--lost >= 0)
+				qdel(pick(C.contents))
+
 	P.update_icon()
 	P.forceMove(C)
 	C.manifest = P
@@ -91,7 +107,13 @@
 	return P
 
 /datum/supply_order/proc/generate(atom/A)
+	var/account_holder
+	if(paying_account)
+		account_holder = paying_account.account_holder
+	else
+		account_holder = "Cargo"
 	var/obj/structure/closet/crate/C = pack.generate(A, paying_account)
+<<<<<<< HEAD
 	var/obj/item/paper/fluff/jobs/cargo/manifest/M = generateManifest(C)
 
 	if(M.errors & MANIFEST_ERROR_ITEM)
@@ -101,4 +123,13 @@
 			var/lost = max(round(C.contents.len / 10), 1)
 			while(--lost >= 0)
 				qdel(pick(C.contents))
+=======
+	generateManifest(C, account_holder, pack)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	return C
+
+/datum/supply_order/proc/generateCombo(var/miscbox, var/misc_own, var/misc_contents)
+	for (var/I in misc_contents)
+		new I(miscbox)
+	generateManifest(miscbox, misc_own, "")
+	return

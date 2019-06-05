@@ -159,7 +159,11 @@ GLOBAL_LIST_EMPTY(GPS_list)
 
 /obj/item/gps/cyborg/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	add_trait(TRAIT_NODROP, CYBORG_ITEM_TRAIT)
+=======
+	ADD_TRAIT(src, TRAIT_NODROP, CYBORG_ITEM_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gps/internal
 	icon_state = null

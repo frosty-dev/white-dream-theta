@@ -42,17 +42,29 @@
 		var/obj/item/clothing/C
 		if(!H.w_uniform || H.dropItemToGround(H.w_uniform))
 			C = new /obj/item/clothing/under/rank/clown(H)
+<<<<<<< HEAD
 			C.add_trait(TRAIT_NODROP, CLOWN_NUKE_TRAIT)
+=======
+			ADD_TRAIT(C, TRAIT_NODROP, CLOWN_NUKE_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			H.equip_to_slot_or_del(C, SLOT_W_UNIFORM)
 
 		if(!H.shoes || H.dropItemToGround(H.shoes))
 			C = new /obj/item/clothing/shoes/clown_shoes(H)
+<<<<<<< HEAD
 			C.add_trait(TRAIT_NODROP, CLOWN_NUKE_TRAIT)
+=======
+			ADD_TRAIT(C, TRAIT_NODROP, CLOWN_NUKE_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			H.equip_to_slot_or_del(C, SLOT_SHOES)
 
 		if(!H.wear_mask || H.dropItemToGround(H.wear_mask))
 			C = new /obj/item/clothing/mask/gas/clown_hat(H)
+<<<<<<< HEAD
 			C.add_trait(TRAIT_NODROP, CLOWN_NUKE_TRAIT)
+=======
+			ADD_TRAIT(C, TRAIT_NODROP, CLOWN_NUKE_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			H.equip_to_slot_or_del(C, SLOT_WEAR_MASK)
 
 		H.dna.add_mutation(CLOWNMUT)

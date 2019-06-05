@@ -8,7 +8,7 @@ Contains:
  - NASA Voidsuit
  - Father Christmas' magical clothes
  - Pirate's spacesuit
- - ERT hardsuit: command, sec, engi, med
+ - ERT hardsuit: command, sec, engi, med, janitor
  - EVA spacesuit
  - Freedom's spacesuit (freedom from vacuum's oppression)
  - Carp hardsuit
@@ -171,7 +171,7 @@ Contains:
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/Initialize()
 	. = ..()
-	add_trait(TRAIT_NODROP, LOCKED_HELMET_TRAIT)
+	ADD_TRAIT(src, TRAIT_NODROP, LOCKED_HELMET_TRAIT)
 
 /obj/item/clothing/suit/space/hardsuit/ert
 	name = "emergency response team commander hardsuit"
@@ -232,6 +232,22 @@ Contains:
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/med
 	species_exception = list(/datum/species/angel)
 
+	//ERT Janitor
+/obj/item/clothing/head/helmet/space/hardsuit/ert/jani
+	name = "emergency response team janitorial helmet"
+	desc = "The integrated helmet of an ERT hardsuit, this one has purple highlights."
+	icon_state = "hardsuit0-ert_janitor"
+	item_state = "hardsuit0-ert_janitor"
+	item_color = "ert_janitor"
+
+/obj/item/clothing/suit/space/hardsuit/ert/jani
+	name = "emergency response team janitorial hardsuit"
+	desc = "The standard issue hardsuit of the ERT, this one has purple highlights. Offers superb protection against environmental hazards. This one has extra clips for holding various janitorial tools."
+	icon_state = "ert_janitor"
+	item_state = "ert_janitor"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/jani
+	allowed = list(/obj/item/storage/bag/trash, /obj/item/melee/flyswatter, /obj/item/mop, /obj/item/holosign_creator/janibarrier, /obj/item/reagent_containers/glass/bucket, /obj/item/reagent_containers/spray/chemsprayer/janitor)
+
 /obj/item/clothing/suit/space/eva
 	name = "EVA suit"
 	icon_state = "space"
@@ -281,7 +297,11 @@ Contains:
 
 /obj/item/clothing/head/helmet/space/hardsuit/carp/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	add_trait(TRAIT_NODROP, LOCKED_HELMET_TRAIT)
+=======
+	ADD_TRAIT(src, TRAIT_NODROP, LOCKED_HELMET_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/suit/space/hardsuit/carp
 	name = "carp space suit"
@@ -312,6 +332,10 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize()
+	. = ..()
+	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE)
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	name = "paranormal response team hardsuit"

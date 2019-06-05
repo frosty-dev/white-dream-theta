@@ -24,7 +24,11 @@
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
 	volume = 100
+<<<<<<< HEAD
 	list_reagents = list("weedkiller" = 100)
+=======
+	list_reagents = list(/datum/reagent/toxin/plantbgone/weedkiller = 100)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/reagent_containers/spray/weedspray/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is huffing [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -39,7 +43,11 @@
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/hydroponics_righthand.dmi'
 	volume = 100
+<<<<<<< HEAD
 	list_reagents = list("pestkiller" = 100)
+=======
+	list_reagents = list(/datum/reagent/toxin/pestkiller = 100)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/reagent_containers/spray/pestspray/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is huffing [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -160,17 +168,29 @@
 /obj/item/reagent_containers/glass/bottle/nutrient/ez
 	name = "bottle of E-Z-Nutrient"
 	desc = "Contains a fertilizer that causes mild mutations with each harvest."
+<<<<<<< HEAD
 	list_reagents = list("eznutriment" = 50)
+=======
+	list_reagents = list(/datum/reagent/plantnutriment/eznutriment = 50)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/reagent_containers/glass/bottle/nutrient/l4z
 	name = "bottle of Left 4 Zed"
 	desc = "Contains a fertilizer that limits plant yields to no more than one and causes significant mutations in plants."
+<<<<<<< HEAD
 	list_reagents = list("left4zednutriment" = 50)
+=======
+	list_reagents = list(/datum/reagent/plantnutriment/left4zednutriment = 50)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/reagent_containers/glass/bottle/nutrient/rh
 	name = "bottle of Robust Harvest"
 	desc = "Contains a fertilizer that increases the yield of a plant by 30% while causing no mutations."
+<<<<<<< HEAD
 	list_reagents = list("robustharvestnutriment" = 50)
+=======
+	list_reagents = list(/datum/reagent/plantnutriment/robustharvestnutriment = 50)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/reagent_containers/glass/bottle/nutrient/empty
 	name = "bottle"
@@ -183,9 +203,17 @@
 /obj/item/reagent_containers/glass/bottle/killer/weedkiller
 	name = "bottle of weed killer"
 	desc = "Contains a herbicide."
+<<<<<<< HEAD
 	list_reagents = list("weedkiller" = 50)
+=======
+	list_reagents = list(/datum/reagent/toxin/plantbgone/weedkiller = 50)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/reagent_containers/glass/bottle/killer/pestkiller
 	name = "bottle of pest spray"
 	desc = "Contains a pesticide."
+<<<<<<< HEAD
 	list_reagents = list("pestkiller" = 50)
+=======
+	list_reagents = list(/datum/reagent/toxin/pestkiller = 50)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

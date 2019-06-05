@@ -10,6 +10,7 @@
 	caliber = "40mm"
 	max_ammo = 1
 
+<<<<<<< HEAD
 /obj/item/ammo_box/magazine/rocket
 	name = "84mm HE rocket"
 	desc = "A 84mm rocket."
@@ -28,3 +29,10 @@
 	icon_state = "84mm-hedp"
 	ammo_type = /obj/item/ammo_casing/caseless/a84mm
 
+=======
+/obj/item/ammo_box/magazine/internal/rocketlauncher
+	name = "rocket launcher internal magazine"
+	ammo_type = /obj/item/ammo_casing/caseless/rocket
+	caliber = "84mm"
+	max_ammo = 1
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

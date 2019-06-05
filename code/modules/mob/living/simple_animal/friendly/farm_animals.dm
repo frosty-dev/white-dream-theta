@@ -161,7 +161,11 @@
 		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
 			"<span class='notice'>You tip over [src].</span>")
 		to_chat(src, "<span class='userdanger'>You are tipped over by [M]!</span>")
+<<<<<<< HEAD
 		Paralyze(60,ignore_canknockdown = TRUE)
+=======
+		Paralyze(60, ignore_canstun = TRUE)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		icon_state = icon_dead
 		spawn(rand(20,50))
 			if(!stat && M)
@@ -330,12 +334,12 @@
 
 /obj/item/udder/Initialize()
 	create_reagents(50)
-	reagents.add_reagent("milk", 20)
+	reagents.add_reagent(/datum/reagent/consumable/milk, 20)
 	. = ..()
 
 /obj/item/udder/proc/generateMilk()
 	if(prob(5))
-		reagents.add_reagent("milk", rand(5, 10))
+		reagents.add_reagent(/datum/reagent/consumable/milk, rand(5, 10))
 
 /obj/item/udder/proc/milkAnimal(obj/O, mob/user)
 	var/obj/item/reagent_containers/glass/G = O

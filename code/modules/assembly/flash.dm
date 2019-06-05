@@ -9,21 +9,29 @@
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
 	materials = list(MAT_METAL = 300, MAT_GLASS = 300)
+<<<<<<< HEAD
 	crit_fail = FALSE     //Is the flash burnt out?
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	light_color = LIGHT_COLOR_WHITE
 	light_power = FLASH_LIGHT_POWER
 	var/flashing_overlay = "flash-f"
 	var/times_used = 0 //Number of times it's been used.
+	var/burnt_out = FALSE     //Is the flash burnt out?
 	var/burnout_resistance = 0
 	var/last_used = 0 //last world.time it was used.
 	var/cooldown = 0
 	var/last_trigger = 0 //Last time it was successfully triggered.
 
 /obj/item/assembly/flash/suicide_act(mob/living/user)
+<<<<<<< HEAD
 	if (crit_fail)
+=======
+	if(burnt_out)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but it's burnt out!</span>")
 		return SHAME
-	else if (user.eye_blind)
+	else if(user.eye_blind)
 		user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.p_their()] eyes and activates it ... but [user.p_theyre()] blind!</span>")
 		return SHAME
 	user.visible_message("<span class='suicide'>[user] raises \the [src] up to [user.p_their()] eyes and activates it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -33,7 +41,7 @@
 /obj/item/assembly/flash/update_icon(flash = FALSE)
 	cut_overlays()
 	attached_overlays = list()
-	if(crit_fail)
+	if(burnt_out)
 		add_overlay("flashburnt")
 		attached_overlays += "flashburnt"
 	if(flash)
@@ -44,14 +52,14 @@
 		holder.update_icon()
 
 /obj/item/assembly/flash/proc/clown_check(mob/living/carbon/human/user)
-	if(user.has_trait(TRAIT_CLUMSY) && prob(50))
+	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 		flash_carbon(user, user, 15, 0)
 		return FALSE
 	return TRUE
 
 /obj/item/assembly/flash/proc/burn_out() //Made so you can override it if you want to have an invincible flash from R&D or something.
-	if(!crit_fail)
-		crit_fail = TRUE
+	if(!burnt_out)
+		burnt_out = TRUE
 		update_icon()
 	if(ismob(loc))
 		var/mob/M = loc
@@ -93,7 +101,7 @@
 		return typecache_filter_list(target_loc.GetAllContents(), GLOB.typecache_living)
 
 /obj/item/assembly/flash/proc/try_use_flash(mob/user = null)
-	if(crit_fail || (world.time < last_trigger + cooldown))
+	if(burnt_out || (world.time < last_trigger + cooldown))
 		return FALSE
 	last_trigger = world.time
 	playsound(src, 'sound/weapons/flash.ogg', 100, TRUE)
@@ -249,6 +257,7 @@
 /obj/item/assembly/flash/armimplant/proc/cooldown()
 	overheat = FALSE
 
+<<<<<<< HEAD
 /obj/item/assembly/flash/shield
 	name = "strobe shield"
 	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs."
@@ -313,15 +322,17 @@
 	activate()
 	return ..()
 	
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/assembly/flash/hypnotic
 	desc = "A modified flash device, programmed to emit a sequence of subliminal flashes that can send a vulnerable target into a hypnotic trance."
 	flashing_overlay = "flash-hypno"
 	light_color = LIGHT_COLOR_PINK
 	cooldown = 20
-	
+
 /obj/item/assembly/flash/hypnotic/burn_out()
 	return
-	
+
 /obj/item/assembly/flash/hypnotic/flash_carbon(mob/living/carbon/M, mob/user, power = 15, targeted = TRUE, generic_message = FALSE)
 	if(!istype(M))
 		return
@@ -337,25 +348,29 @@
 			if(M.hypnosis_vulnerable())
 				hypnosis = TRUE
 			if(user)
-				user.visible_message("<span class='disarm'>[user] blinds [M] with the flash!</span>", "<span class='danger'>You hypno-flash [M]!</span>")	
-				
+				user.visible_message("<span class='disarm'>[user] blinds [M] with the flash!</span>", "<span class='danger'>You hypno-flash [M]!</span>")
+
 			if(!hypnosis)
 				to_chat(M, "<span class='notice'>The light makes you feel oddly relaxed...</span>")
 				M.confused += min(M.confused + 10, 20)
 				M.dizziness += min(M.dizziness + 10, 20)
 				M.drowsyness += min(M.drowsyness + 10, 20)
-				M.apply_status_effect(STATUS_EFFECT_PACIFY, 100)			
+				M.apply_status_effect(STATUS_EFFECT_PACIFY, 100)
 			else
-				M.apply_status_effect(/datum/status_effect/trance, 200, TRUE)				
-				
+				M.apply_status_effect(/datum/status_effect/trance, 200, TRUE)
+
 		else if(user)
 			user.visible_message("<span class='disarm'>[user] fails to blind [M] with the flash!</span>", "<span class='warning'>You fail to hypno-flash [M]!</span>")
 		else
 			to_chat(M, "<span class='danger'>[src] fails to blind you!</span>")
-			
+
 	else if(M.flash_act())
 		to_chat(M, "<span class='notice'>Such a pretty light...</span>")
 		M.confused += min(M.confused + 4, 20)
 		M.dizziness += min(M.dizziness + 4, 20)
 		M.drowsyness += min(M.drowsyness + 4, 20)
+<<<<<<< HEAD
 		M.apply_status_effect(STATUS_EFFECT_PACIFY, 40)
+=======
+		M.apply_status_effect(STATUS_EFFECT_PACIFY, 40)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

@@ -65,7 +65,10 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(/datum/gas/oxygen, /datum/g
 	id = "co2"
 	specific_heat = 30
 	name = "Carbon Dioxide"
+<<<<<<< HEAD
 	fusion_power = 1.25
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	rarity = 700
 
 /datum/gas/plasma
@@ -101,6 +104,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(/datum/gas/oxygen, /datum/g
 	name = "Nitrous Oxide"
 	gas_overlay = "nitrous_oxide"
 	moles_visible = MOLES_GAS_VISIBLE * 2
+	fusion_power = 10
 	dangerous = TRUE
 	rarity = 600
 
@@ -143,7 +147,11 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(/datum/gas/oxygen, /datum/g
 	id = "pluox"
 	specific_heat = 80
 	name = "Pluoxium"
+<<<<<<< HEAD
 	fusion_power = 10
+=======
+	fusion_power = -10
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	rarity = 200
 
 /datum/gas/miasma

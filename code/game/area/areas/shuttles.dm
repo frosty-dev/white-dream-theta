@@ -60,6 +60,17 @@
 	requires_power = TRUE
 	canSmoothWithAreas = /area/shuttle/pirate
 
+<<<<<<< HEAD
+=======
+////////////////////////////Bounty Hunter Shuttles////////////////////////////
+
+/area/shuttle/hunter
+	name = "Hunter Shuttle"
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+	blob_allowed = FALSE
+	canSmoothWithAreas = /area/shuttle/hunter
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 ////////////////////////////White Ship////////////////////////////
 
 /area/shuttle/abandoned
@@ -118,6 +129,11 @@
 /area/shuttle/mining
 	name = "Mining Shuttle"
 	blob_allowed = FALSE
+
+/area/shuttle/mining/large
+	name = "Mining Shuttle"
+	blob_allowed = FALSE
+	requires_power = TRUE
 
 /area/shuttle/labor
 	name = "Labor Camp Shuttle"

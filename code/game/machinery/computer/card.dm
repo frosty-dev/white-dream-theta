@@ -436,8 +436,11 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						return
 					if(modify.registered_account)
 						modify.registered_account.account_job = jobdatum // this is a terrible idea and people will grief but sure whatever
+<<<<<<< HEAD
 						if(modify.registered_account.welfare)
 							modify.registered_account.add_neetbux()
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 					modify.access = ( istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access() )
 				if (modify)

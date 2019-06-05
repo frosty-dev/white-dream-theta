@@ -22,4 +22,8 @@
 	if(user.has_dna())
 		var/mob/living/carbon/C = user
 		C.dna.remove_mutation(CHAMELEON)
+<<<<<<< HEAD
 	..()
+=======
+	..()
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

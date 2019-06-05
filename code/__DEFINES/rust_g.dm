@@ -6,5 +6,9 @@
 #define rustg_git_revparse(rev) call(RUST_G, "rg_git_revparse")(rev)
 #define rustg_git_commit_date(rev) call(RUST_G, "rg_git_commit_date")(rev)
 
+<<<<<<< HEAD
 #define rustg_log_write(fname, text) call(RUST_G, "log_write")(fname, up2ph(text))
+=======
+#define rustg_log_write(fname, text) call(RUST_G, "log_write")(fname, text)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /proc/rustg_log_close_all() return call(RUST_G, "log_close_all")()

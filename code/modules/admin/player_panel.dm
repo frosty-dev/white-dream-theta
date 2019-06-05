@@ -82,7 +82,7 @@
 					body += "<a href='?_src_=holder;[HrefToken()];adminplayerobservefollow="+ref+"'>FLW</a> - "
 					body += "<a href='?_src_=holder;[HrefToken()];individuallog="+ref+"'>LOGS</a><br>"
 					if(antagonist > 0)
-						body += "<font size='2'><a href='?_src_=holder;[HrefToken()];secrets=check_antagonist'><font color='red'><b>Antagonist</b></font></a></font>";
+						body += "<font size='2'><a href='?_src_=holder;[HrefToken()];check_antagonist=1'><font color='red'><b>Antagonist</b></font></a></font>";
 
 					body += "</td></tr></table>";
 
@@ -264,9 +264,15 @@
 				else
 					M_job = "Ghost"
 
+<<<<<<< HEAD
 			var/M_name = rhtml_encode(M.name)
 			var/M_rname = rhtml_encode(M.real_name)
 			var/M_key = rhtml_encode(M.key)
+=======
+			var/M_name = html_encode(M.name)
+			var/M_rname = html_encode(M.real_name)
+			var/M_key = html_encode(M.key)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			var/previous_names = ""
 			if(M_key)
 				var/datum/player_details/P = GLOB.player_details[ckey(M_key)]

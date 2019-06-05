@@ -46,7 +46,7 @@
 /obj/item/projectile/beam/practice
 	name = "practice laser"
 	damage = 0
-	nodamage = 1
+	nodamage = TRUE
 
 /obj/item/projectile/beam/scatter
 	name = "laser pellet"
@@ -70,7 +70,11 @@
 /obj/item/projectile/beam/disabler
 	name = "disabler beam"
 	icon_state = "omnilaser"
+<<<<<<< HEAD
 	damage = 40
+=======
+	damage = 30
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'

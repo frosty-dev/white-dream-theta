@@ -1,9 +1,7 @@
-/*
-Captain
-*/
 /datum/job/captain
 	title = "Captain"
 	flag = CAPTAIN
+	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	department_head = list("CentCom")
 	department_flag = ENGSEC
 	faction = "Station"
@@ -15,6 +13,7 @@ Captain
 	minimal_player_age = 14
 	exp_requirements = 180
 	exp_type = EXP_TYPE_CREW
+	exp_type_department = EXP_TYPE_COMMAND
 
 	outfit = /datum/outfit/job/captain
 
@@ -24,6 +23,11 @@ Captain
 	paycheck_department = ACCOUNT_SEC
 
 	mind_traits = list(TRAIT_DISK_VERIFIER)
+<<<<<<< HEAD
+=======
+
+	display_order = JOB_DISPLAY_ORDER_CAPTAIN
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/job/captain/get_access()
 	return get_all_accesses()
@@ -62,6 +66,7 @@ Captain
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/space/hardsuit/swat/captain
 	suit_store = /obj/item/tank/internals/oxygen
+<<<<<<< HEAD
 
 /*
 Head of Personnel
@@ -116,3 +121,5 @@ Head of Personnel
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/card/id/departmental_budget/srv=1)
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/hop)
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

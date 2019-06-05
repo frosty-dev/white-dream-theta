@@ -44,6 +44,14 @@
 	..()
 	for(var/i = 0, i < 4, i++)
 		new /obj/item/reagent_containers/food/snacks/meat/slab/monkey(src)
+<<<<<<< HEAD
+=======
+
+/obj/structure/closet/secure_closet/freezer/meat/open
+	req_access = null
+	locked = FALSE
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
@@ -57,6 +65,10 @@
 		new /obj/item/reagent_containers/food/condiment/soymilk(src)
 	for(var/i = 0, i < 2, i++)
 		new /obj/item/storage/fancy/egg_box(src)
+
+/obj/structure/closet/secure_closet/freezer/fridge/open
+	req_access = null
+	locked = FALSE
 
 /obj/structure/closet/secure_closet/freezer/money
 	name = "freezer"

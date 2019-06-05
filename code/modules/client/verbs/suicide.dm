@@ -39,17 +39,27 @@
 	if(!canSuicide())
 		return
 	if(confirm == "Yes")
+<<<<<<< HEAD
 		set_suicide(TRUE)
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/obj/item/held_item = get_active_held_item()
 		if(held_item)
 			var/damagetype = held_item.suicide_act(src)
 			if(damagetype)
 				if(damagetype & SHAME)
 					adjustStaminaLoss(200)
+<<<<<<< HEAD
 					set_suicide(FALSE)
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "shameful_suicide", /datum/mood_event/shameful_suicide)
 					return
 
+				if(damagetype & MANUAL_SUICIDE_NONLETHAL) //Make sure to call the necessary procs if it does kill later
+					return
+
+				set_suicide(TRUE)
 				suicide_log()
 
 				var/damage_mod = 0
@@ -103,6 +113,7 @@
 
 		visible_message("<span class='danger'>[suicide_message]</span>", "<span class='userdanger'>[suicide_message]</span>")
 
+		set_suicide(TRUE)
 		suicide_log()
 
 		adjustOxyLoss(max(200 - getToxLoss() - getFireLoss() - getBruteLoss() - getOxyLoss(), 0))

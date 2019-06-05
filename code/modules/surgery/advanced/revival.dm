@@ -18,7 +18,11 @@
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
+<<<<<<< HEAD
 	if(target.suiciding || target.hellbound || target.has_trait(TRAIT_HUSK))
+=======
+	if(target.suiciding || target.hellbound || HAS_TRAIT(target, TRAIT_HUSK))
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return FALSE
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)
@@ -26,7 +30,7 @@
 	return TRUE
 
 /datum/surgery_step/revive
-	name = "repair body"
+	name = "shock body"
 	implements = list(/obj/item/twohanded/shockpaddles = 100, /obj/item/melee/baton = 75, /obj/item/gun/energy = 60)
 	time = 120
 

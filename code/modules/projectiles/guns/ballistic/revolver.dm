@@ -4,26 +4,29 @@
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	fire_sound = 'sound/weapons/revolver357shot.ogg'
+	load_sound = 'sound/weapons/revolverload.ogg'
+	eject_sound = 'sound/weapons/revolverempty.ogg'
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
 	dry_fire_sound = 'sound/weapons/revolverdry.ogg'
 	casing_ejector = FALSE
+	internal_magazine = TRUE
+	bolt_type = BOLT_TYPE_NO_BOLT
+	tac_reloads = FALSE
+	var/spin_delay = 10
+	var/recent_spin = 0
 
-/obj/item/gun/ballistic/revolver/Initialize()
-	. = ..()
-	if(!istype(magazine, /obj/item/ammo_box/magazine/internal/cylinder))
-		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
-
-/obj/item/gun/ballistic/revolver/chamber_round(spin = 1)
-	if(spin)
-		chambered = magazine.get_round(1)
+/obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE)
+	if(spin_cylinder)
+		chambered = magazine.get_round(TRUE)
 	else
 		chambered = magazine.stored_ammo[1]
 
 /obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	..()
-	chamber_round(1)
+	chamber_round(TRUE)
 
+<<<<<<< HEAD
 /obj/item/gun/ballistic/revolver/attackby(obj/item/A, mob/user, params)
 	. = ..()
 	if(.)
@@ -51,6 +54,11 @@
 		playsound(user, 'sound/weapons/revolverempty.ogg', 40, FALSE)
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+=======
+/obj/item/gun/ballistic/revolver/AltClick(mob/user)
+	..()
+	spin()
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/ballistic/revolver/verb/spin()
 	set name = "Spin Chamber"
@@ -61,6 +69,10 @@
 
 	if(M.stat || !in_range(M,src))
 		return
+
+	if (recent_spin > world.time)
+		return
+	recent_spin = world.time + spin_delay
 
 	if(do_spin())
 		playsound(usr, "revolver_spin", 30, FALSE)
@@ -73,10 +85,14 @@
 	. = istype(C)
 	if(.)
 		C.spin()
+<<<<<<< HEAD
 		chamber_round(0)
 
 /obj/item/gun/ballistic/revolver/can_shoot()
 	return get_ammo(FALSE, FALSE)
+=======
+		chamber_round(FALSE)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/ballistic/revolver/get_ammo(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //mature var names for mature people
@@ -90,19 +106,32 @@
 	..()
 	var/live_ammo = get_ammo(FALSE, FALSE)
 	to_chat(user, "[live_ammo ? live_ammo : "None"] of those are live rounds.")
+<<<<<<< HEAD
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper .38 Mars Special"
 	desc = "A cheap Martian knock-off of a classic law enforcement firearm. Uses .38-special rounds."
+=======
+	if (current_skin)
+		to_chat(user, "It can be spun with <b>alt+click</b>")
+
+/obj/item/gun/ballistic/revolver/detective
+	name = "\improper Colt Detective Special"
+	desc = "A classic, if not outdated, law enforcement firearm. Uses .38-special rounds."
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	fire_sound = 'sound/weapons/revolver38shot.ogg'
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
-						"Leopard Spots" = "detective_leopard",
-						"Black Panther" = "detective_panther",
+						"Fitz Special" = "detective_fitz",
+						"Police Positive Special" = "detective_police",
+						"Blued Steel" = "detective_blued",
+						"Stainless Steel" = "detective_stainless",
 						"Gold Trim" = "detective_gold",
-						"The Peacemaker" = "detective_peacemaker"
+						"Leopard Spots" = "detective_leopard",
+						"The Peacemaker" = "detective_peacemaker",
+						"Black Panther" = "detective_panther"
 						)
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
@@ -177,26 +206,33 @@
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
 	desc = "A Russian-made revolver for drinking games. Uses .357 ammo, and has a mechanism requiring you to spin the chamber before each trigger pull."
+<<<<<<< HEAD
 
 
 /*
 /obj/item/gun/ballistic/revolver/russian/Initialize()
 	. = ..()
 	do_spin()
+=======
+	icon_state = "russianrevolver"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rus357
+	var/spun = FALSE
+
+/obj/item/gun/ballistic/revolver/russian/do_spin()
+	..()
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	spun = TRUE
-	update_icon()
 
 /obj/item/gun/ballistic/revolver/russian/attackby(obj/item/A, mob/user, params)
 	..()
 	if(get_ammo() > 0)
 		spin()
-		spun = TRUE
 	update_icon()
 	A.update_icon()
 	return
 
 /obj/item/gun/ballistic/revolver/russian/attack_self(mob/user)
-	if(!spun && can_shoot())
+	if(!spun)
 		spin()
 		spun = TRUE
 		return
@@ -221,7 +257,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(!spun)
-			to_chat(user, "<span class='warning'>You need to spin the revolver's chamber first!</span>")
+			to_chat(user, "<span class='warning'>You need to spin \the [src]'s chamber first!</span>")
 			return
 
 		spun = FALSE
@@ -241,6 +277,14 @@
 
 		user.visible_message("<span class='danger'>*click*</span>")
 		playsound(src, dry_fire_sound, 30, TRUE)
+<<<<<<< HEAD
+=======
+
+/obj/item/gun/ballistic/revolver/russian/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	add_fingerprint(user)
+	playsound(src, dry_fire_sound, 30, TRUE)
+	user.visible_message("<span class='danger'>[user.name] tries to fire \the [src] at the same time, but only succeeds at looking like an idiot.</span>", "<span class='danger'>\The [src]'s anti-combat mechanism prevents you from firing it at the same time!</span>")
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
@@ -257,6 +301,7 @@
 		qdel(SS)
 		return
 	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
+<<<<<<< HEAD
 */
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -359,12 +404,14 @@
 	sawn_off = TRUE
 	slot_flags = ITEM_SLOT_BELT
 
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/ballistic/revolver/reverse //Fires directly at its user... unless the user is a clown, of course.
 	clumsy_check = 0
 
 /obj/item/gun/ballistic/revolver/reverse/can_trigger_gun(mob/living/user)
-	if((user.has_trait(TRAIT_CLUMSY)) || (user.mind && user.mind.assigned_role == "Clown"))
+	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && user.mind.assigned_role == "Clown"))
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
 		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")

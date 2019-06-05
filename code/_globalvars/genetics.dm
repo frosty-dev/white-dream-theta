@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	//////////////
 GLOBAL_VAR_INIT(NEARSIGHTBLOCK, 0)
 GLOBAL_VAR_INIT(EPILEPSYBLOCK, 0)
@@ -26,5 +27,14 @@ GLOBAL_LIST_EMPTY(full_sequences)
 GLOBAL_LIST_EMPTY(bad_mutations)
 GLOBAL_LIST_EMPTY(good_mutations)
 GLOBAL_LIST_EMPTY(not_good_mutations)
+=======
+//faster than having to constantly loop for them
+GLOBAL_LIST_EMPTY(all_mutations) //type = initialized mutation
+GLOBAL_LIST_EMPTY(full_sequences) //type = correct sequence
+GLOBAL_LIST_EMPTY(bad_mutations) //bad initialized mutations
+GLOBAL_LIST_EMPTY(good_mutations) //good initialized mutations
+GLOBAL_LIST_EMPTY(not_good_mutations) //neutral initialized mutations
+GLOBAL_LIST_EMPTY(alias_mutations) //alias = type
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 GLOBAL_LIST_EMPTY(mutation_recipes)

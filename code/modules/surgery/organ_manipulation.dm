@@ -1,5 +1,9 @@
 /datum/surgery/organ_manipulation
+<<<<<<< HEAD
 	name = "organ manipulation"
+=======
+	name = "Organ manipulation"
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
 	requires_real_bodypart = 1
@@ -26,7 +30,7 @@
 		)
 
 /datum/surgery/organ_manipulation/alien
-	name = "alien organ manipulation"
+	name = "Alien organ manipulation"
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
 	target_mobtypes = list(/mob/living/carbon/alien/humanoid)
 	steps = list(
@@ -39,7 +43,7 @@
 		)
 
 /datum/surgery/organ_manipulation/mechanic
-	name = "prosthesis organ manipulation"
+	name = "Prosthesis organ manipulation"
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
 	requires_bodypart_type = BODYPART_ROBOTIC
 	lying_required = FALSE

@@ -26,7 +26,11 @@
 
 /obj/item/clothing/under/color/black/ghost/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	add_trait(TRAIT_NODROP, CULT_TRAIT)
+=======
+	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/under/color/grey
 	name = "grey jumpsuit"

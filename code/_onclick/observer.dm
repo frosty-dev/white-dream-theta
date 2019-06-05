@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 /mob/dead/observer/DblClickOn(var/atom/A, var/params)
+=======
+/mob/dead/observer/DblClickOn(atom/A, params)
+	if(check_click_intercept(params, A))
+		return	
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(can_reenter_corpse && mind && mind.current)
 		if(A == mind.current || (mind.current in A)) // double click your corpse or whatever holds it
 			reenter_corpse()						// (cloning scanner, body bag, closet, mech, etc)
@@ -48,7 +55,9 @@
 	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_GHOST, user) & COMPONENT_NO_ATTACK_HAND)
 		return TRUE
 	if(user.client)
-		if(IsAdminGhost(user))
+		if(user.gas_scan && atmosanalyzer_scan(user, src))
+			return TRUE
+		else if(IsAdminGhost(user))
 			attack_ai(user)
 		else if(user.client.prefs.inquisitive_ghost)
 			user.examinate(src)

@@ -65,7 +65,11 @@
 			if(!isitem(A))
 				continue
 			var/obj/item/I = A
+<<<<<<< HEAD
 			if(!(I.has_trait(TRAIT_NODROP)))
+=======
+			if(!(HAS_TRAIT(I, TRAIT_NODROP)))
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				say("Subject may not have abiotic items on.")
 				playsound(src, 'sound/machines/buzz-sigh.ogg', 30, 1)
 				return
@@ -73,7 +77,7 @@
 		say("Subject is not organic.")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 30, 1)
 		return
-	if(!allow_living && !(C.stat == DEAD || C.has_trait(TRAIT_FAKEDEATH)))     //I mean, the machines scanners arent advanced enough to tell you're alive
+	if(!allow_living && !(C.stat == DEAD || HAS_TRAIT(C, TRAIT_FAKEDEATH)))     //I mean, the machines scanners arent advanced enough to tell you're alive
 		say("Subject is still alive.")
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 30, 1)
 		return

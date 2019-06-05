@@ -11,8 +11,11 @@
 
 	var/list/passkey
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/netdata/proc/standard_format_data(primary, secondary, passkey)
 	data["data"] = primary
 	data["data_secondary"] = secondary

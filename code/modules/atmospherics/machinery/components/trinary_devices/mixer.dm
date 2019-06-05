@@ -16,6 +16,21 @@
 
 	//node 3 is the outlet, nodes 1 & 2 are intakes
 
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/components/trinary/mixer/CtrlClick(mob/user)
+	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		on = !on
+		update_icon()
+	return ..()
+
+/obj/machinery/atmospherics/components/trinary/mixer/AltClick(mob/user)
+	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		target_pressure = MAX_OUTPUT_PRESSURE
+		update_icon()
+	return ..()
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/machinery/atmospherics/components/trinary/mixer/update_icon()
 	cut_overlays()
 	for(var/direction in GLOB.cardinals)
@@ -80,12 +95,12 @@
 
 	if(!node2_concentration)
 		if(air1.temperature <= 0)
-			return	
+			return
 		transfer_moles1 = min(transfer_moles1, air1_moles)
 		transfer_moles2 = 0
 	else if(!node1_concentration)
 		if(air2.temperature <= 0)
-			return	
+			return
 		transfer_moles2 = min(transfer_moles2, air2_moles)
 		transfer_moles1 = 0
 	else

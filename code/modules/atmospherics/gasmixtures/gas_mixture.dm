@@ -46,7 +46,7 @@ GLOBAL_LIST_INIT(gaslist_cache, init_gaslist_cache())
 	ASSERT_GAS(gas_id, src)
 
 	//assert_gases(args) - shorthand for calling ASSERT_GAS() once for each gas type.
-/datum/gas_mixture/proc/assert_gases()
+/datum/gas_mixture/proc/assert_gases(...)
 	for(var/id in args)
 		ASSERT_GAS(id, src)
 
@@ -57,7 +57,7 @@ GLOBAL_LIST_INIT(gaslist_cache, init_gaslist_cache())
 	ADD_GAS(gas_id, gases)
 
 	//add_gases(args) - shorthand for calling add_gas() once for each gas_type.
-/datum/gas_mixture/proc/add_gases()
+/datum/gas_mixture/proc/add_gases(...)
 	var/cached_gases = gases
 	for(var/id in args)
 		ADD_GAS(id, cached_gases)
@@ -428,8 +428,8 @@ GLOBAL_LIST_INIT(gaslist_cache, init_gaslist_cache())
 					continue
 				if(!cached_gases[id] || cached_gases[id][MOLES] < min_reqs[id])
 					continue reaction_loop
-			//at this point, all minimum requirements for the reaction are satisfied.
 
+<<<<<<< HEAD
 			/*	currently no reactions have maximum requirements, so we can leave the checks commented out for a slight performance boost
 				PLEASE DO NOT REMOVE THIS CODE. the commenting is here only for a performance increase.
 				enabling these checks should be as easy as possible and the fact that they are disabled should be as clear as possible
@@ -445,6 +445,10 @@ GLOBAL_LIST_INIT(gaslist_cache, init_gaslist_cache())
 					continue reaction_loop
 			//at this point, all requirements for the reaction are satisfied. we can now react()
 			*/
+=======
+			//at this point, all requirements for the reaction are satisfied. we can now react()
+			
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			. |= reaction.react(src, holder)
 			if (. & STOP_REACTIONS)
 				break

@@ -2,10 +2,13 @@
 	mob_type_allowed_typecache = list(/mob/living/silicon)
 	emote_type = EMOTE_AUDIBLE
 
+<<<<<<< HEAD
 /datum/emote/silicon
 	mob_type_allowed_typecache = list(/mob/living/silicon)
 	emote_type = EMOTE_AUDIBLE
 
+=======
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/emote/silicon/boop
 	key = "boop"
 	key_third_person = "boops"

@@ -16,6 +16,7 @@
 	value = 0
 	gain_text = "<span class='notice'>You feel repulsion at the idea of eating meat.</span>"
 	lose_text = "<span class='notice'>You feel like eating meat isn't that bad.</span>"
+	medical_record_text = "Patient reports a vegetarian diet."
 
 /datum/quirk/vegetarian/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -31,13 +32,18 @@
 			species.liked_food |= MEAT
 		if(!initial(species.disliked_food) & MEAT)
 			species.disliked_food &= ~MEAT
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
 	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"
 	value = 0
 	gain_text = "<span class='notice'>You feel an intense craving for pineapple.</span>"
 	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
+	medical_record_text = "Patient demonstrates a pathological love of pineapple."
 
 /datum/quirk/pineapple_liker/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -56,6 +62,7 @@
 	value = 0
 	gain_text = "<span class='notice'>You find yourself pondering what kind of idiot actually enjoys pineapples...</span>"
 	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
+	medical_record_text = "Patient is correct to think that pineapple is disgusting."
 
 /datum/quirk/pineapple_hater/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -74,6 +81,7 @@
 	value = 0
 	gain_text = "<span class='notice'>You start craving something that tastes strange.</span>"
 	lose_text = "<span class='notice'>You feel like eating normal food again.</span>"
+	medical_record_text = "Patient demonstrates irregular nutrition preferences."
 
 /datum/quirk/deviant_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -96,6 +104,17 @@
 	gain_text = "<span class='notice'>You feel like you have to stay clean.</span>"
 	lose_text = "<span class='danger'>You no longer feel the need to always be clean.</span>"
 	mood_quirk = TRUE
+	medical_record_text = "While waiting for the exam to begin, patient cleaned the examination room."
+
+/datum/quirk/neat/on_process()
+	var/mob/living/carbon/human/H = quirk_holder
+	switch (H.hygiene)
+		if(0 to HYGIENE_LEVEL_DIRTY)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "neat", /datum/mood_event/dirty)
+		if(HYGIENE_LEVEL_DIRTY to HYGIENE_LEVEL_NORMAL)
+			SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "neat")
+		if(HYGIENE_LEVEL_NORMAL to HYGIENE_LEVEL_CLEAN)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "neat", /datum/mood_event/neat)
 
 /datum/quirk/monochromatic
 	name = "Monochromacy"

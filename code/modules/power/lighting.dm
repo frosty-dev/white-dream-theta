@@ -9,8 +9,13 @@
 #define LIGHT_BROKEN 2
 #define LIGHT_BURNED 3
 
+<<<<<<< HEAD
 #define BROKEN_SPARKS_MIN 15 SECONDS
 #define BROKEN_SPARKS_MAX 30 SECONDS
+=======
+#define BROKEN_SPARKS_MIN (30 SECONDS)
+#define BROKEN_SPARKS_MAX (90 SECONDS)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/wallframe/light_fixture
 	name = "light fixture frame"
@@ -105,7 +110,11 @@
 		if(!cell_connectors)
 			to_chat(user, "<span class='warning'>This [name] can't support a power cell!</span>")
 			return
+<<<<<<< HEAD
 		if(W.has_trait(TRAIT_NODROP))
+=======
+		if(HAS_TRAIT(W, TRAIT_NODROP))
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			to_chat(user, "<span class='warning'>[W] is stuck to your hand!</span>")
 			return
 		if(cell)
@@ -345,13 +354,16 @@
 		var/BR = brightness
 		var/PO = bulb_power
 		var/CO = bulb_colour
+		if(color)
+			CO = color
 		var/area/A = get_area(src)
 		if (A && A.fire)
 			CO = bulb_emergency_colour
 		else if (nightshift_enabled)
 			BR = nightshift_brightness
 			PO = nightshift_light_power
-			CO = nightshift_light_color
+			if(!color)
+				CO = nightshift_light_color
 		var/matching = light && BR == light.light_range && PO == light.light_power && CO == light.light_color
 		if(!matching)
 			switchcount++
@@ -383,6 +395,10 @@
 			removeStaticPower(static_power_used, STATIC_LIGHT)
 
 	broken_sparks(start_only=TRUE)
+
+/obj/machinery/light/update_atom_colour()
+	..()
+	update()
 
 /obj/machinery/light/proc/broken_sparks(start_only=FALSE)
 	if(status == LIGHT_BROKEN && has_power())
@@ -642,7 +658,11 @@
 		else
 			prot = 1
 
+<<<<<<< HEAD
 		if(prot > 0 || user.has_trait(TRAIT_RESISTHEAT) || user.has_trait(TRAIT_RESISTHEATHANDS))
+=======
+		if(prot > 0 || HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			to_chat(user, "<span class='notice'>You remove the light [fitting].</span>")
 		else if(istype(user) && user.dna.check_mutation(TK))
 			to_chat(user, "<span class='notice'>You telekinetically remove the light [fitting].</span>")
@@ -754,7 +774,11 @@
 	var/base_state
 	var/switchcount = 0	// number of times switched
 	materials = list(MAT_GLASS=100)
+<<<<<<< HEAD
 	grind_results = list("silicon" = 5, "nitrogen" = 10) //Nitrogen is used as a cheaper alternative to argon in incandescent lighbulbs
+=======
+	grind_results = list(/datum/reagent/silicon = 5, /datum/reagent/nitrogen = 10) //Nitrogen is used as a cheaper alternative to argon in incandescent lighbulbs
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/rigged = FALSE		// true if rigged to explode
 	var/brightness = 2 //how much light it gives off
 
@@ -820,7 +844,7 @@
 /obj/item/light/Crossed(mob/living/L)
 	. = ..()
 	if(istype(L) && has_gravity(loc))
-		if(L.has_trait(TRAIT_LIGHT_STEP))
+		if(HAS_TRAIT(L, TRAIT_LIGHT_STEP))
 			playsound(loc, 'sound/effects/glass_step.ogg', 30, 1)
 		else
 			playsound(loc, 'sound/effects/glass_step.ogg', 50, 1)
@@ -836,7 +860,7 @@
 
 		to_chat(user, "<span class='notice'>You inject the solution into \the [src].</span>")
 
-		if(S.reagents.has_reagent("plasma", 5))
+		if(S.reagents.has_reagent(/datum/reagent/toxin/plasma, 5))
 
 			rigged = TRUE
 

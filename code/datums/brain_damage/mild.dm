@@ -42,7 +42,7 @@
 	lose_text = "<span class='notice'>You feel smart again.</span>"
 
 /datum/brain_trauma/mild/dumbness/on_gain()
-	owner.add_trait(TRAIT_DUMB, TRAUMA_TRAIT)
+	ADD_TRAIT(owner, TRAIT_DUMB, TRAUMA_TRAIT)
 	SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "dumb", /datum/mood_event/oblivious)
 	..()
 
@@ -55,7 +55,7 @@
 	..()
 
 /datum/brain_trauma/mild/dumbness/on_lose()
-	owner.remove_trait(TRAIT_DUMB, TRAUMA_TRAIT)
+	REMOVE_TRAIT(owner, TRAIT_DUMB, TRAUMA_TRAIT)
 	owner.derpspeech = 0
 	SEND_SIGNAL(owner, COMSIG_CLEAR_MOOD_EVENT, "dumb")
 	..()
@@ -68,11 +68,15 @@
 	lose_text = "<span class='danger'>Your mind feels more clear.</span>"
 
 /datum/brain_trauma/mild/speech_impediment/on_gain()
-	owner.add_trait(TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
+	ADD_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
 	..()
 
 /datum/brain_trauma/mild/speech_impediment/on_lose()
+<<<<<<< HEAD
 	owner.remove_trait(TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
+=======
+	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/brain_trauma/mild/concussion
@@ -157,6 +161,7 @@
 	gain_text = "<span class='warning'>Your muscles feel oddly faint.</span>"
 	lose_text = "<span class='notice'>You feel in control of your muscles again.</span>"
 
+<<<<<<< HEAD
 /datum/brain_trauma/mild/muscle_spasms/on_life()
 	if(prob(7))
 		switch(rand(1,5))
@@ -207,6 +212,14 @@
 					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
 					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
 					owner.throw_item(pick(targets))
+=======
+/datum/brain_trauma/mild/muscle_spasms/on_gain()
+	owner.apply_status_effect(STATUS_EFFECT_SPASMS)
+	..()
+
+/datum/brain_trauma/mild/muscle_spasms/on_lose()
+	owner.remove_status_effect(STATUS_EFFECT_SPASMS)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/brain_trauma/mild/nervous_cough
@@ -217,7 +230,7 @@
 	lose_text = "<span class='notice'>Your throat stops itching.</span>"
 
 /datum/brain_trauma/mild/nervous_cough/on_life()
-	if(prob(12) && !owner.has_trait(TRAIT_SOOTHED_THROAT))
+	if(prob(12) && !HAS_TRAIT(owner, TRAIT_SOOTHED_THROAT))
 		if(prob(5))
 			to_chat(owner, "<span notice='warning'>[pick("You have a coughing fit!", "You can't stop coughing!")]</span>")
 			owner.Immobilize(20)
@@ -226,3 +239,47 @@
 			addtimer(CALLBACK(owner, /mob/.proc/emote, "cough"), 12)
 		owner.emote("cough")
 	..()
+<<<<<<< HEAD
+=======
+
+/datum/brain_trauma/mild/expressive_aphasia
+	name = "Expressive Aphasia"
+	desc = "Patient is affected by partial loss of speech leading to a reduced vocabulary."
+	scan_desc = "inability to form complex sentences"
+	gain_text = "<span class='warning'>You lose your grasp on complex words.</span>"
+	lose_text = "<span class='notice'>You feel your vocabulary returning to normal again.</span>"
+
+	var/static/list/common_words = world.file2list("strings/1000_most_common.txt")
+
+/datum/brain_trauma/mild/expressive_aphasia/on_say(message)
+	if(message)
+		var/list/message_split = splittext(message, " ")
+		var/list/new_message = list()
+
+		for(var/word in message_split)
+			var/suffix = copytext(word,-1)
+
+			// Check if we have a suffix and break it out of the word
+			if(suffix in list("." , "," , ";" , "!" , ":" , "?"))  
+				word = copytext(word,1,-1)
+			else
+				suffix = ""
+
+			word = html_decode(word)
+		
+			if(lowertext(word) in common_words)
+				new_message += word + suffix
+			else
+				if(prob(30) && message_split.len > 2)
+					new_message += pick("uh","erm")
+					break
+				else
+					var/list/charlist = string2charlist(word) // Stupid shit code
+					shuffle_inplace(charlist)
+					charlist.len = round(charlist.len * 0.5,1)
+					new_message += html_encode(jointext(charlist,"")) + suffix
+					
+		message = jointext(new_message, " ")
+		
+	return trim(message)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

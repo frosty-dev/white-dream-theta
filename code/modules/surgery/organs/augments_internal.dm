@@ -60,7 +60,11 @@
 		else
 			for(var/obj/item/I in stored_items)
 				to_chat(owner, "<span class='notice'>Your [owner.get_held_index_name(owner.get_held_index_of_item(I))]'s grip tightens.</span>")
+<<<<<<< HEAD
 				I.add_trait(TRAIT_NODROP, ANTI_DROP_IMPLANT_TRAIT)
+=======
+				ADD_TRAIT(I, TRAIT_NODROP, ANTI_DROP_IMPLANT_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	else
 		release_items()
@@ -84,7 +88,11 @@
 
 /obj/item/organ/cyberimp/brain/anti_drop/proc/release_items()
 	for(var/obj/item/I in stored_items)
+<<<<<<< HEAD
 		I.remove_trait(TRAIT_NODROP, ANTI_DROP_IMPLANT_TRAIT)
+=======
+		REMOVE_TRAIT(I, TRAIT_NODROP, ANTI_DROP_IMPLANT_TRAIT)
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	stored_items = list()
 
 
@@ -112,7 +120,7 @@
 		return
 	CB = CALLBACK(src, .proc/on_signal)
 
-/obj/item/organ/cyberimp/brain/anti_stun/Remove()
+/obj/item/organ/cyberimp/brain/anti_stun/Remove(mob/living/carbon/M, special = FALSE)
 	. = ..()
 	QDEL_NULL(listener)
 
@@ -128,7 +136,7 @@
 	))
 
 /obj/item/organ/cyberimp/brain/anti_stun/proc/on_signal()
-	if(crit_fail || working)
+	if(broken_cyber_organ || working)
 		return
 	working = TRUE
 	if(owner.AmountStun() > stun_cap_amount)
@@ -143,13 +151,17 @@
 
 /obj/item/organ/cyberimp/brain/anti_stun/emp_act(severity)
 	. = ..()
-	if(crit_fail || . & EMP_PROTECT_SELF)
+	if(broken_cyber_organ || . & EMP_PROTECT_SELF)
 		return
-	crit_fail = TRUE
+	broken_cyber_organ = TRUE
 	addtimer(CALLBACK(src, .proc/reboot), 90 / severity)
 
 /obj/item/organ/cyberimp/brain/anti_stun/proc/reboot()
+<<<<<<< HEAD
 	crit_fail = FALSE
+=======
+	broken_cyber_organ = FALSE
+>>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //[[[[MOUTH]]]]
 /obj/item/organ/cyberimp/mouth
