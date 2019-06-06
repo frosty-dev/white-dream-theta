@@ -252,11 +252,7 @@
 	..()
 
 /datum/brain_trauma/severe/pacifism/on_lose()
-<<<<<<< HEAD
-	owner.remove_trait(TRAIT_PACIFISM, TRAUMA_TRAIT)
-=======
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, TRAUMA_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/brain_trauma/severe/hypnotic_stupor

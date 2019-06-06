@@ -138,7 +138,7 @@
 
 	if (src.client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "Вы не можете говорить в IC (мут).")
+			to_chat(src, "пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ IC (пїЅпїЅпїЅ).")
 			return
 		if (src.client.handle_spam_prevention(message,MUTE_IC))
 			return
@@ -157,7 +157,7 @@
 	src.log_talk(message, LOG_SAY, tag="imaginary friend")
 
 	var/rendered = "<span class='game say'><span class='name'>[name]</span> <span class='message'>[say_quote(message)]</span></span>"
-	var/dead_rendered = "<span class='game say'><span class='name'>[name] (Воображаемый друг [owner])</span> <span class='message'>[say_quote(message)]</span></span>"
+	var/dead_rendered = "<span class='game say'><span class='name'>[name] (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ [owner])</span> <span class='message'>[say_quote(message)]</span></span>"
 
 	to_chat(owner, "[rendered]")
 	to_chat(src, "[rendered]")
@@ -227,8 +227,6 @@
 	I.hidden = !I.hidden
 	I.Show()
 	update_status()
-<<<<<<< HEAD
-=======
 
 //down here is the trapped mind
 //like imaginary friend but a lot less imagination and more like mind prison//
@@ -267,4 +265,3 @@
 	real_name = "[owner.real_name]?"
 	name = real_name
 	human_image = icon('icons/mob/lavaland/lavaland_monsters.dmi', icon_state = "curseblob")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

@@ -72,11 +72,7 @@
 	..()
 
 /datum/brain_trauma/mild/speech_impediment/on_lose()
-<<<<<<< HEAD
-	owner.remove_trait(TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
-=======
 	REMOVE_TRAIT(owner, TRAIT_UNINTELLIGIBLE_SPEECH, TRAUMA_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/brain_trauma/mild/concussion
@@ -161,65 +157,12 @@
 	gain_text = "<span class='warning'>Your muscles feel oddly faint.</span>"
 	lose_text = "<span class='notice'>You feel in control of your muscles again.</span>"
 
-<<<<<<< HEAD
-/datum/brain_trauma/mild/muscle_spasms/on_life()
-	if(prob(7))
-		switch(rand(1,5))
-			if(1)
-				if((owner.mobility_flags & MOBILITY_MOVE) && !isspaceturf(owner.loc))
-					to_chat(owner, "<span class='warning'>Your leg spasms!</span>")
-					step(owner, pick(GLOB.cardinals))
-			if(2)
-				if(owner.incapacitated())
-					return
-				var/obj/item/I = owner.get_active_held_item()
-				if(I)
-					to_chat(owner, "<span class='warning'>Your fingers spasm!</span>")
-					owner.log_message("used [I] due to a Muscle Spasm", LOG_ATTACK)
-					I.attack_self(owner)
-			if(3)
-				var/prev_intent = owner.a_intent
-				owner.a_intent = INTENT_HARM
-
-				var/range = 1
-				if(istype(owner.get_active_held_item(), /obj/item/gun)) //get targets to shoot at
-					range = 7
-
-				var/list/mob/living/targets = list()
-				for(var/mob/M in oview(owner, range))
-					if(isliving(M))
-						targets += M
-				if(LAZYLEN(targets))
-					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
-					owner.log_message(" attacked someone due to a Muscle Spasm", LOG_ATTACK) //the following attack will log itself
-					owner.ClickOn(pick(targets))
-				owner.a_intent = prev_intent
-			if(4)
-				var/prev_intent = owner.a_intent
-				owner.a_intent = INTENT_HARM
-				to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
-				owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
-				owner.ClickOn(owner)
-				owner.a_intent = prev_intent
-			if(5)
-				if(owner.incapacitated())
-					return
-				var/obj/item/I = owner.get_active_held_item()
-				var/list/turf/targets = list()
-				for(var/turf/T in oview(owner, 3))
-					targets += T
-				if(LAZYLEN(targets) && I)
-					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
-					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
-					owner.throw_item(pick(targets))
-=======
 /datum/brain_trauma/mild/muscle_spasms/on_gain()
 	owner.apply_status_effect(STATUS_EFFECT_SPASMS)
 	..()
 
 /datum/brain_trauma/mild/muscle_spasms/on_lose()
 	owner.remove_status_effect(STATUS_EFFECT_SPASMS)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/brain_trauma/mild/nervous_cough
@@ -239,8 +182,6 @@
 			addtimer(CALLBACK(owner, /mob/.proc/emote, "cough"), 12)
 		owner.emote("cough")
 	..()
-<<<<<<< HEAD
-=======
 
 /datum/brain_trauma/mild/expressive_aphasia
 	name = "Expressive Aphasia"
@@ -282,4 +223,3 @@
 		message = jointext(new_message, " ")
 		
 	return trim(message)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

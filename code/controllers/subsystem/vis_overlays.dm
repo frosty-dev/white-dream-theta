@@ -33,21 +33,6 @@ SUBSYSTEM_DEF(vis_overlays)
 			return
 
 //the "thing" var can be anything with vis_contents which includes images
-<<<<<<< HEAD
-/datum/controller/subsystem/vis_overlays/proc/add_vis_overlay(atom/movable/thing, icon, iconstate, layer, plane, dir, alpha = 255, add_appearance_flags = NONE)
-	. = "[icon]|[iconstate]|[layer]|[plane]|[dir]|[alpha]|[add_appearance_flags]"
-	var/obj/effect/overlay/vis/overlay = vis_overlay_cache[.]
-	if(!overlay)
-		overlay = new
-		overlay.icon = icon
-		overlay.icon_state = iconstate
-		overlay.layer = layer
-		overlay.plane = plane
-		overlay.dir = dir
-		overlay.alpha = alpha
-		overlay.appearance_flags |= add_appearance_flags
-		vis_overlay_cache[.] = overlay
-=======
 /datum/controller/subsystem/vis_overlays/proc/add_vis_overlay(atom/movable/thing, icon, iconstate, layer, plane, dir, alpha = 255, add_appearance_flags = NONE, unique = FALSE)
 	var/obj/effect/overlay/vis/overlay
 	if(!unique)
@@ -58,7 +43,6 @@ SUBSYSTEM_DEF(vis_overlays)
 			vis_overlay_cache[.] = overlay
 		else
 			overlay.unused = 0
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	else
 		overlay = _create_new_vis_overlay(icon, iconstate, layer, plane, dir, alpha, add_appearance_flags)
 		overlay.cache_expiration = -1

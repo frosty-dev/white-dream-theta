@@ -28,8 +28,6 @@ GLOBAL_VAR(world_job_debug_log)
 GLOBAL_PROTECT(world_job_debug_log)
 GLOBAL_VAR(world_mecha_log)
 GLOBAL_PROTECT(world_mecha_log)
-<<<<<<< HEAD
-=======
 GLOBAL_VAR(world_virus_log)
 GLOBAL_PROTECT(world_virus_log)
 GLOBAL_VAR(world_asset_log)
@@ -40,7 +38,6 @@ GLOBAL_VAR(world_map_error_log)
 GLOBAL_PROTECT(world_map_error_log)
 GLOBAL_VAR(world_paper_log)
 GLOBAL_PROTECT(world_paper_log)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 GLOBAL_LIST_EMPTY(bombers)
 GLOBAL_PROTECT(bombers)

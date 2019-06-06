@@ -411,11 +411,7 @@ SUBSYSTEM_DEF(ticker)
 			m = pick(memetips)
 
 	if(m)
-<<<<<<< HEAD
 		to_chat(world, "<font color='purple'><b>Tip of the round: </b>[rhtml_encode(m)]</font>")
-=======
-		to_chat(world, "<span class='purple'><b>Tip of the round: </b>[html_encode(m)]</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	if(!queued_players.len)
@@ -648,12 +644,8 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/leavingtg.ogg',
 		'sound/roundend/its_only_game.ogg',
 		'sound/roundend/yeehaw.ogg',
-<<<<<<< HEAD
-		'sound/roundend/disappointed.ogg'\
-=======
 		'sound/roundend/disappointed.ogg',
 		'sound/roundend/scrunglartiy.ogg'\
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		)
 
 	SEND_SOUND(world, sound(round_end_sound))

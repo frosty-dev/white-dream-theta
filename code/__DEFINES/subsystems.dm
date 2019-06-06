@@ -1,12 +1,8 @@
 //Update this whenever the db schema changes
 //make sure you add an update to the schema_version stable in the db changelog
 #define DB_MAJOR_VERSION 5
-<<<<<<< HEAD
-#define DB_MINOR_VERSION 0
-=======
 #define DB_MINOR_VERSION 1
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //Timing subsystem
 //Don't run if there is an identical unique timer active
@@ -50,27 +46,6 @@
 // Subsystems shutdown in the reverse of the order they initialize in
 // The numbers just define the ordering, they are meaningless otherwise.
 
-<<<<<<< HEAD
-#define INIT_ORDER_TITLE 21
-#define INIT_ORDER_GARBAGE			20
-#define INIT_ORDER_DBCORE			19
-#define INIT_ORDER_BLACKBOX			18
-#define INIT_ORDER_SERVER_MAINT		17
-#define INIT_ORDER_INPUT			16
-#define INIT_ORDER_VIS				15
-#define INIT_ORDER_RESEARCH			14
-#define INIT_ORDER_EVENTS			13
-#define INIT_ORDER_JOBS				12
-#define INIT_ORDER_QUIRKS			11
-#define INIT_ORDER_TICKER			10
-#define INIT_ORDER_MAPPING			9
-#define INIT_ORDER_NETWORKS			8
-#define INIT_ORDER_ECONOMY			7
-#define INIT_ORDER_ATOMS			6
-#define INIT_ORDER_LANGUAGE			5
-#define INIT_ORDER_MACHINES			4
-#define INIT_ORDER_CIRCUIT			3
-=======
 #define INIT_ORDER_TITLE			100
 #define INIT_ORDER_GARBAGE			99
 #define INIT_ORDER_DBCORE			95
@@ -91,7 +66,6 @@
 #define INIT_ORDER_LANGUAGE			25
 #define INIT_ORDER_MACHINES			20
 #define INIT_ORDER_CIRCUIT			15
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 #define INIT_ORDER_TIMER			1
 #define INIT_ORDER_DEFAULT			0
 #define INIT_ORDER_AIR				-1

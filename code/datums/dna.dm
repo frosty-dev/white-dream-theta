@@ -253,49 +253,6 @@
 		if(message)
 			to_chat(holder, message)
 
-<<<<<<< HEAD
-/datum/dna/proc/something_horrible()
-	if(!holder || (stability > 0))
-		return
-	var/instability = -stability
-	remove_all_mutations()
-	stability = 100
-	if(!ishuman(holder))
-		holder.gib()
-		return
-	var/mob/living/carbon/human/H = holder
-	if(prob(max(70-instability,0)))
-		switch(rand(0,3)) //not complete and utter death
-			if(0)
-				H.monkeyize()
-			if(1)
-				H.gain_trauma(/datum/brain_trauma/severe/paralysis)
-			if(2)
-				H.corgize()
-			if(3)
-				to_chat(H, "<span class='notice'>Oh, we actually feel quite alright!</span>")
-	else
-		switch(rand(0,3))
-			if(0)
-				H.gib()
-			if(1)
-				H.dust()
-
-			if(2)
-				H.death()
-				H.petrify(INFINITY)
-			if(3)
-				if(prob(90))
-					var/obj/item/bodypart/BP = H.get_bodypart(pick(BODY_ZONE_CHEST,BODY_ZONE_HEAD))
-					if(BP)
-						BP.dismember()
-					else
-						H.gib()
-				else
-					H.set_species(/datum/species/dullahan)
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 //used to update dna UI, UE, and dna.real_name.
 /datum/dna/proc/update_dna_identity()
 	uni_identity = generate_uni_identity()
@@ -306,12 +263,8 @@
 		blood_type = newblood_type
 	unique_enzymes = generate_unique_enzymes()
 	uni_identity = generate_uni_identity()
-<<<<<<< HEAD
-	generate_dna_blocks()
-=======
 	if(!skip_index) //I hate this
 		generate_dna_blocks()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	features = random_features()
 
 
@@ -376,13 +329,8 @@
 	return dna
 
 
-<<<<<<< HEAD
-/mob/living/carbon/human/proc/hardset_dna(ui, list/mutation_index, newreal_name, newblood_type, datum/species/mrace, newfeatures)
-
-=======
 /mob/living/carbon/human/proc/hardset_dna(ui, list/mutation_index, newreal_name, newblood_type, datum/species/mrace, newfeatures, list/mutations, force_transfer_mutations)
 //Do not use force_transfer_mutations for stuff like cloners without some precautions, otherwise some conditional mutations could break (timers, drill hat etc)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(newfeatures)
 		dna.features = newfeatures
 
@@ -522,8 +470,6 @@
 		return 0
 	return getleftblocks(istring, blocknumber, blocksize) + replacement + getrightblocks(istring, blocknumber, blocksize)
 
-<<<<<<< HEAD
-=======
 /datum/dna/proc/mutation_in_sequence(mutation)
 	if(!mutation)
 		return
@@ -535,7 +481,6 @@
 		return TRUE
 
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /mob/living/carbon/proc/randmut(list/candidates, difficulty = 2)
 	if(!has_dna())
 		return

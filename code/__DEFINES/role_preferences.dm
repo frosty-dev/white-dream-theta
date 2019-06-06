@@ -53,11 +53,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_CULTIST = /datum/game_mode/cult,
 	ROLE_BLOB,
 	ROLE_NINJA,
-<<<<<<< HEAD
-	ROLE_CREEP,
-=======
 	ROLE_OBSESSED,
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	ROLE_MONKEY = /datum/game_mode/monkey,
 	ROLE_REVENANT,
 	ROLE_ABDUCTOR,

@@ -165,11 +165,8 @@
 #define TRAIT_PHOTOGRAPHER		"photographer"
 #define TRAIT_MUSICIAN			"musician"
 #define TRAIT_LIGHT_DRINKER		"light_drinker"
-<<<<<<< HEAD
-=======
 #define TRAIT_EMPATH			"empath"
 #define TRAIT_FRIENDLY			"friendly"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 // common trait sources
 #define TRAIT_GENERIC "generic"
@@ -228,8 +225,5 @@
 #define LOCKED_HELMET_TRAIT "locked-helmet"
 #define NINJA_SUIT_TRAIT "ninja-suit"
 #define ANTI_DROP_IMPLANT_TRAIT "anti-drop-implant"
-<<<<<<< HEAD
-=======
 #define HIVEMIND_ONE_MIND_TRAIT "one_mind"
 #define VR_ZONE_TRAIT "vr_zone_trait"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

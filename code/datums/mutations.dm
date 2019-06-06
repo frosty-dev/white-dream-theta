@@ -179,8 +179,6 @@
 	else
 		qdel(src)
 
-<<<<<<< HEAD
-=======
 /datum/mutation/human/proc/grant_spell()
 	if(!ispath(power) || !owner)
 		return FALSE
@@ -190,4 +188,3 @@
 	power.panel = "Genetic"
 	owner.AddSpell(power)
 	return TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

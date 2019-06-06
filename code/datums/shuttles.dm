@@ -226,11 +226,7 @@
 	name = "Asteroid With Engines Strapped To It"
 	description = "A hollowed out asteroid with engines strapped to it, the hollowing procedure makes it very difficult to hijack but is very expensive. Due to its size and difficulty in steering it, this shuttle may damage the docking area."
 	admin_notes = "This shuttle will likely crush escape, killing anyone there."
-<<<<<<< HEAD
-	credit_cost = -5000
-=======
 	credit_cost = 15000
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	movement_force = list("KNOCKDOWN" = 3, "THROW" = 2)
 
 /datum/map_template/shuttle/emergency/luxury
@@ -416,14 +412,11 @@
 	suffix = "fancy"
 	name = "fancy transport ferry"
 	description = "At some point, someone upgraded the ferry to have fancier flooring... and fewer seats."
-<<<<<<< HEAD
-=======
 
 /datum/map_template/shuttle/ferry/kilo
 	suffix = "kilo"
 	name = "kilo transport ferry"
 	description = "Standard issue CentCom Ferry for Kilo pattern stations. Includes additional equipment and rechargers."
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/map_template/shuttle/whiteship/box
 	suffix = "box"

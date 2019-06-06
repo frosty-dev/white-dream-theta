@@ -203,11 +203,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/loop = 1
 	var/safety = 0
 
-<<<<<<< HEAD
-	var/banned = is_banned_from(C.ckey, "Appearance")
-=======
 	var/banned = C ? is_banned_from(C.ckey, "Appearance") : null
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	while(loop && safety < 5)
 		if(C && C.prefs.custom_names[role] && !safety && !banned)

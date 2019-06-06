@@ -79,11 +79,7 @@
 /datum/brain_trauma/mild/phobia/on_hear(message, speaker, message_language, raw_message, radio_freq)
 	if(!owner.can_hear() || world.time < next_scare) //words can't trigger you if you can't hear them *taps head*
 		return message
-<<<<<<< HEAD
-	if(owner.has_trait(TRAIT_FEARLESS))
-=======
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return message
 	for(var/word in trigger_words)
 		var/regex/reg = regex("(\\b|\\A)[REGEX_QUOTE(word)]'?s*(\\b|\\Z)", "i")
@@ -95,11 +91,7 @@
 	return message
 
 /datum/brain_trauma/mild/phobia/on_say(message)
-<<<<<<< HEAD
-	if(owner.has_trait(TRAIT_FEARLESS))
-=======
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return message
 	for(var/word in trigger_words)
 		var/regex/reg = regex("(\\b|\\A)[REGEX_QUOTE(word)]'?s*(\\b|\\Z)", "i")

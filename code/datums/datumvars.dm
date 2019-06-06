@@ -1372,11 +1372,7 @@
 				var/log_msg = "[key_name(usr)] dealt [amount] amount of [Text] damage to [key_name(L)]"
 				message_admins("[key_name(usr)] dealt [amount] amount of [Text] damage to [ADMIN_LOOKUPFLW(L)]")
 				log_admin(log_msg)
-<<<<<<< HEAD
-				admin_ticket_log(L, "<span class='notice'>[log_msg]</span>")
-=======
 				admin_ticket_log(L, "<font color='blue'>[log_msg]</font>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				vv_update_display(L, Text, "[newamt]")
 		else if(href_list["copyoutfit"])
 			if(!check_rights(R_SPAWN))
@@ -1384,8 +1380,6 @@
 			var/mob/living/carbon/human/H = locate(href_list["copyoutfit"]) in GLOB.carbon_list
 			if(istype(H))
 				H.copy_outfit()
-<<<<<<< HEAD
-=======
 		else if(href_list["modquirks"])
 			if(!check_rights(R_SPAWN))
 				return
@@ -1412,4 +1406,3 @@
 						H.remove_quirk(T)
 					else
 						H.add_quirk(T,TRUE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

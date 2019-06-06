@@ -292,8 +292,6 @@
 #define GRAB_PIXEL_SHIFT_PASSIVE 6
 #define GRAB_PIXEL_SHIFT_AGGRESSIVE 12
 #define GRAB_PIXEL_SHIFT_NECK 16
-<<<<<<< HEAD
-=======
 
 //Flags that control what things can spawn species (whitelist)
 //Badmin magic mirror
@@ -312,4 +310,3 @@
 #define WABBAJACK     (1<<6)
 
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

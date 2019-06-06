@@ -282,17 +282,14 @@ SUBSYSTEM_DEF(persistence)
 	antag_rep_change = list()
 
 	fdel(FILE_ANTAG_REP)
-<<<<<<< HEAD
 	text2file(r_json_encode(antag_rep), FILE_ANTAG_REP)
-=======
-	text2file(json_encode(antag_rep), FILE_ANTAG_REP)
 
 
 /datum/controller/subsystem/persistence/proc/LoadRandomizedRecipes()
 	var/json_file = file("data/RandomizedChemRecipes.json")
 	var/json
 	if(fexists(json_file))
-		json = json_decode(file2text(json_file))
+		json = r_json_decode(file2text(json_file))
 
 	for(var/randomized_type in subtypesof(/datum/chemical_reaction/randomized))
 		var/datum/chemical_reaction/randomized/R = new randomized_type
@@ -330,4 +327,3 @@ SUBSYSTEM_DEF(persistence)
 	
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

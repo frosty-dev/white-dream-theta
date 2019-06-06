@@ -28,13 +28,9 @@ GLOBAL_LIST_INIT(huds, list(
 	ANTAG_HUD_CLOCKWORK = new/datum/atom_hud/antag(),
 	ANTAG_HUD_BROTHER = new/datum/atom_hud/antag/hidden(),
 	ANTAG_HUD_HIVE = new/datum/atom_hud/antag/hidden(),
-<<<<<<< HEAD
-	ANTAG_HUD_CREEP = new/datum/atom_hud/antag/hidden()
-=======
 	ANTAG_HUD_OBSESSED = new/datum/atom_hud/antag/hidden(),
 	ANTAG_HUD_FUGITIVE = new/datum/atom_hud/antag(),
 	ANTAG_HUD_HIVEAWAKE = new/datum/atom_hud/antag()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	))
 
 /datum/atom_hud

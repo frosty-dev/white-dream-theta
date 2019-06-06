@@ -51,8 +51,6 @@
 
 #define DEFAULT_RELIGION "Christianity"
 #define DEFAULT_DEITY "Space Jesus"
-<<<<<<< HEAD
-=======
 
 #define JOB_DISPLAY_ORDER_DEFAULT 0
 
@@ -88,4 +86,3 @@
 #define JOB_DISPLAY_ORDER_SECURITY_OFFICER 30
 #define JOB_DISPLAY_ORDER_AI 31
 #define JOB_DISPLAY_ORDER_CYBORG 32
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

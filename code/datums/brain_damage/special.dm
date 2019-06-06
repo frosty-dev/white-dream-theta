@@ -27,15 +27,9 @@
 	..()
 
 /datum/brain_trauma/special/godwoken/on_lose()
-<<<<<<< HEAD
-	owner.remove_trait(TRAIT_HOLY, TRAUMA_TRAIT)
-	..()			
-			
-=======
 	REMOVE_TRAIT(owner, TRAIT_HOLY, TRAUMA_TRAIT)
 	..()
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/brain_trauma/special/godwoken/proc/speak(type, include_owner = FALSE)
 	var/message
 	switch(type)
@@ -148,12 +142,8 @@
 
 /datum/brain_trauma/special/psychotic_brawling/bath_salts
 	name = "Chemical Violent Psychosis"
-<<<<<<< HEAD
-	
-=======
 	clonable = FALSE
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/brain_trauma/special/tenacity
 	name = "Tenacity"
 	desc = "Patient is psychologically unaffected by pain and injuries, and can remain standing far longer than a normal person."
@@ -198,8 +188,6 @@
 	REMOVE_TRAIT(owner, TRAIT_SIXTHSENSE, TRAUMA_TRAIT)
 	active = FALSE
 
-<<<<<<< HEAD
-=======
 /datum/brain_trauma/special/beepsky
 	name = "Criminal"
 	desc = "Patient seems to be a criminal."
@@ -264,4 +252,3 @@
 /obj/effect/hallucination/simple/securitron/Destroy()
 	STOP_PROCESSING(SSfastprocess,src)
 	return ..()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

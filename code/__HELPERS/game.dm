@@ -500,11 +500,8 @@
 			return
 		A = A.loc
 
-<<<<<<< HEAD
-=======
 	return A.loc
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /proc/AnnounceArrival(var/mob/living/carbon/human/character, var/rank)
 	if(!SSticker.IsRoundInProgress() || QDELETED(character))
 		return

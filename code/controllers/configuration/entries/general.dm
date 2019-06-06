@@ -56,13 +56,10 @@
 
 /datum/config_entry/flag/log_mecha	// log mech data
 
-<<<<<<< HEAD
-=======
 /datum/config_entry/flag/log_virus	// log virology data
 
 /datum/config_entry/flag/log_cloning // log cloning actions.
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/config_entry/flag/log_vote	// log voting
 
 /datum/config_entry/flag/log_whisper	// log client whisper
