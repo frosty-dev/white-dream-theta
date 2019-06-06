@@ -386,7 +386,7 @@
 		var/json_file = file("data/npc_saves/Ian.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = json_decode(file2text(json_file))
+		var/list/json = r_json_decode(file2text(json_file))
 		age = json["age"]
 		record_age = json["record_age"]
 		saved_head = json["saved_head"]
@@ -415,7 +415,7 @@
 		file_data["record_age"] = record_age
 		file_data["saved_head"] = null
 	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, r_json_encode(file_data))
 
 /mob/living/simple_animal/pet/dog/corgi/Ian/Life()
 	..()

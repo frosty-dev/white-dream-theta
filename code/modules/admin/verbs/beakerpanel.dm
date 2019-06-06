@@ -4,7 +4,7 @@
 		var/datum/reagent/R = t
 		. += list(list("id" = t, "text" = initial(R.name)))
 
-	. = json_encode(.)
+	. = r_json_encode(.)
 
 /proc/beakersforbeakers()
 	. = list()
@@ -12,23 +12,23 @@
 		var/obj/item/reagent_containers/C = t
 		. += list(list("id" = t, "text" = initial(C.name), "volume" = initial(C.volume)))
 
-	. = json_encode(.)
+	. = r_json_encode(.)
 
 /datum/admins/proc/beaker_panel_act(list/href_list)
 	switch (href_list["beakerpanel"])
 		if ("spawncontainer")
-			var/containerdata = json_decode(href_list["container"])
+			var/containerdata = r_json_decode(href_list["container"])
 			var/obj/item/reagent_containers/container = beaker_panel_create_container(containerdata, get_turf(usr))
 			log_game("[key_name(usr)] spawned a [container] containing [pretty_string_from_reagent_list(container.reagents.reagent_list)]")
 		if ("spawngrenade")
 			var/obj/item/grenade/chem_grenade/grenade = new(get_turf(usr))
-			var/containersdata = json_decode(href_list["containers"])
+			var/containersdata = r_json_decode(href_list["containers"])
 			var/reagent_string
 			for (var/i in 1 to 2)
 				grenade.beakers += beaker_panel_create_container(containersdata[i], grenade)
 				reagent_string += " ([grenade.beakers[i].name] [i] : " + pretty_string_from_reagent_list(grenade.beakers[i].reagents.reagent_list) + ");"
 			grenade.stage_change(3) // ready stage
-			var/grenadedata = json_decode(href_list["grenadedata"])
+			var/grenadedata = r_json_decode(href_list["grenadedata"])
 			switch (href_list["grenadetype"])
 				if ("normal") // Regular cable coil-timed grenade
 					var/det_time = text2num(grenadedata["grenade-timer"])

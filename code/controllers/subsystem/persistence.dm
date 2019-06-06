@@ -163,7 +163,7 @@ SUBSYSTEM_DEF(persistence)
 	var/album_path = file("data/photo_albums.json")
 	var/frame_path = file("data/photo_frames.json")
 	if(fexists(album_path))
-		var/list/json = json_decode(file2text(album_path))
+		var/list/json = r_json_decode(file2text(album_path))
 		if(json.len)
 			for(var/i in photo_albums)
 				var/obj/item/storage/photo_album/A = i
@@ -173,7 +173,7 @@ SUBSYSTEM_DEF(persistence)
 					A.populate_from_id_list(json[A.persistence_id])
 
 	if(fexists(frame_path))
-		var/list/json = json_decode(file2text(frame_path))
+		var/list/json = r_json_decode(file2text(frame_path))
 		if(json.len)
 			for(var/i in photo_frames)
 				var/obj/structure/sign/picture_frame/PF = i
@@ -200,7 +200,7 @@ SUBSYSTEM_DEF(persistence)
 		var/list/L = A.get_picture_id_list()
 		album_json[A.persistence_id] = L
 
-	album_json = json_encode(album_json)
+	album_json = r_json_encode(album_json)
 
 	WRITE_FILE(album_path, album_json)
 
@@ -214,7 +214,7 @@ SUBSYSTEM_DEF(persistence)
 			continue
 		frame_json[F.persistence_id] = F.get_photo_id()
 
-	frame_json = json_encode(frame_json)
+	frame_json = r_json_encode(frame_json)
 
 	WRITE_FILE(frame_path, frame_json)
 
@@ -326,4 +326,4 @@ SUBSYSTEM_DEF(persistence)
 			file_data["[R.id]"] = recipe_data
 	
 	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, r_json_encode(file_data))

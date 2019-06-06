@@ -131,7 +131,7 @@
 		var/json_file = file("data/npc_saves/Runtime.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = json_decode(file2text(json_file))
+		var/list/json = r_json_decode(file2text(json_file))
 		family = json["family"]
 	if(isnull(family))
 		family = list()
@@ -150,7 +150,7 @@
 				family[C.type] = 1
 	file_data["family"] = family
 	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	WRITE_FILE(json_file, r_json_encode(file_data))
 
 /mob/living/simple_animal/pet/cat/Runtime/proc/Deploy_The_Cats()
 	cats_deployed = 1
