@@ -5,7 +5,7 @@
 
 /obj/item/reagent_containers/food/snacks/poo
 	name = "poo"
-	desc = "Пахнет классикой."
+	desc = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
 	icon = 'code/shitcode/valtos/icons/poo.dmi'
 	icon_state = "poo1"
 	tastes = list("shit" = 1, "poo" = 1)
@@ -29,7 +29,6 @@
 
 /datum/reagent/toxin/poo
 	name = "Poo"
-	id = "poo"
 	description = "Govno?"
 	color = "#4B3320"
 	toxpwr = 2.5
@@ -90,7 +89,7 @@
 
 /obj/effect/decal/cleanable/poo
 	name = "poo"
-	desc = "Кто размазал это по полу блядь?"
+	desc = "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ?"
 	icon = 'code/shitcode/valtos/icons/poo.dmi'
 	icon_state = "splat1"
 	random_icon_states = list("splat1", "splat2", "splat3", "splat4", "splat5", "splat6", "splat7", "splat8")
@@ -137,16 +136,16 @@
 	if(. && ishuman(user))
 		var/mob/living/carbon/H = user
 		if (H.nutrition >= 400)
-			H.visible_message("<span class='notice'>[H] испражнился!</span>", \
-					"<span class='notice'>Ты испражнился на пол.</span>")
+			H.visible_message("<span class='notice'>[H] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>", \
+					"<span class='notice'>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ.</span>")
 			playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
 			new /obj/item/reagent_containers/food/snacks/poo(H.loc)
 			H.nutrition -= 75
 			SSblackbox.record_feedback("tally", "poo", 1, "Poo Created")
 			return
 		else
-			H.visible_message("<span class='notice'>[H] скрутило в попытках провести акт дефекации!</span>", \
-					"<span class='notice'>Тебя скрутило в попытках провести акт дефекации. Это было очень больно.</span>")
+			H.visible_message("<span class='notice'>[H] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>", \
+					"<span class='notice'>пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.</span>")
 			H.Paralyze(80)
 			H.adjust_blurriness(1)
 			SSblackbox.record_feedback("tally", "poo", 1, "Poo Creation Failed")

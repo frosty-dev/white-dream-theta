@@ -240,7 +240,7 @@
 
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC) // ooc ignore
-			if(!(C.prefs.chat_toggles & CHAT_MUTED_DISCORD_OOC)||input["isadmin"]) // discord ooc ignore, bypassed by admins
+			if(!(C.prefs.chat_toggles)||input["isadmin"]) // discord ooc ignore, bypassed by admins
 				if(!(input["ckey"] in C.prefs.ignoring)) //ckey ignore
 					to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>DISCORD OOC:</span> <EM>[input["ckey"]]:</EM> <span class='message'>[input["ooc"]]</span></span></font>")
 
