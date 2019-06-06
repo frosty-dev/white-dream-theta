@@ -160,11 +160,7 @@
 			to_chat(user, "<span class='warning'>You don't have enough salt to make a pile!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] shakes some salt onto [target].</span>", "<span class='notice'>You shake some salt onto [target].</span>")
-<<<<<<< HEAD
-		reagents.remove_reagent("sodiumchloride", 2)
-=======
 		reagents.remove_reagent(/datum/reagent/consumable/sodiumchloride, 2)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		new/obj/effect/decal/cleanable/food/salt(target)
 		return
 

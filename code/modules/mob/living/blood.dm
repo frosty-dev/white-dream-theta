@@ -16,11 +16,7 @@
 
 
 /mob/living/carbon/monkey/handle_blood()
-<<<<<<< HEAD
-	if(bodytemperature >= TCRYO && !(has_trait(TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
-=======
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		//Blood regeneration if there is some space
 		if(blood_volume < BLOOD_VOLUME_NORMAL)
 			blood_volume += 0.1 // regenerate blood VERY slowly
@@ -34,11 +30,7 @@
 		bleed_rate = 0
 		return
 
-<<<<<<< HEAD
-	if(bodytemperature >= TCRYO && !(has_trait(TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
-=======
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 		//Blood regeneration if there is some space
 		if(blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(src, TRAIT_NOHUNGER))
@@ -217,19 +209,11 @@
 		return /datum/reagent/blood
 
 /mob/living/carbon/monkey/get_blood_id()
-<<<<<<< HEAD
-	if(!(has_trait(TRAIT_HUSK)))
-		return "blood"
-
-/mob/living/carbon/human/get_blood_id()
-	if(has_trait(TRAIT_HUSK))
-=======
 	if(!(HAS_TRAIT(src, TRAIT_HUSK)))
 		return /datum/reagent/blood
 
 /mob/living/carbon/human/get_blood_id()
 	if(HAS_TRAIT(src, TRAIT_HUSK))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return
 	if(dna.species.exotic_blood)
 		return dna.species.exotic_blood

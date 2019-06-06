@@ -41,12 +41,7 @@
 	sprite_name = "miniFE"
 	dog_fashion = null
 
-<<<<<<< HEAD
-/obj/item/extinguisher/Initialize()
-	. = ..()
-=======
 /obj/item/extinguisher/proc/refill()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	create_reagents(max_water, AMOUNT_VISIBLE)
 	reagents.add_reagent(chem, max_water)
 
@@ -58,7 +53,7 @@
 	name = "advanced fire extinguisher"
 	desc = "Used to stop thermonuclear fires from spreading inside your engine."
 	icon_state = "foam_extinguisher0"
-	item_state = "foam_extinguisher"
+	//item_state = "foam_extinguisher" needs sprite
 	dog_fashion = null
 	chem = /datum/reagent/firefighting_foam
 	tanktype = /obj/structure/reagent_dispensers/foamtank

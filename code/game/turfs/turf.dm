@@ -507,12 +507,6 @@
 	return
 
 /turf/handle_fall(mob/faller, forced)
-<<<<<<< HEAD
-	if(isliving(faller))
-		var/mob/living/L = faller
-		L.lying = pick(90, 270)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(!forced)
 		return
 	if(has_gravity(src))

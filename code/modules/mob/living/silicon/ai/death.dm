@@ -15,11 +15,8 @@
 	cameraFollow = null
 
 	anchored = FALSE //unbolt floorbolts
-<<<<<<< HEAD
-=======
 	move_resist = MOVE_FORCE_NORMAL
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(eyeobj)
 		eyeobj.setLoc(get_turf(src))
 		set_eyeobj_visible(FALSE)

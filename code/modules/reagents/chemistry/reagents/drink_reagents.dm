@@ -200,11 +200,7 @@
 	glass_desc = "White and nutritious goodness!"
 
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
-<<<<<<< HEAD
-	if(M.has_trait(TRAIT_CALCIUM_HEALER))
-=======
 	if(HAS_TRAIT(M, TRAIT_CALCIUM_HEALER))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		M.heal_bodypart_damage(1.5,0, 0)
 		. = 1
 	else
@@ -384,17 +380,10 @@
 
 /datum/reagent/consumable/nuka_cola/on_mob_add(mob/living/L)
 	..()
-<<<<<<< HEAD
-	L.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-0.75, blacklisted_movetypes=(FLYING|FLOATING))
-
-/datum/reagent/consumable/nuka_cola/on_mob_delete(mob/living/L)
-	L.remove_movespeed_modifier(id)
-=======
 	L.add_movespeed_modifier(type, update=TRUE, priority=100, multiplicative_slowdown=-0.75, blacklisted_movetypes=(FLYING|FLOATING))
 
 /datum/reagent/consumable/nuka_cola/on_mob_delete(mob/living/L)
 	L.remove_movespeed_modifier(type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)

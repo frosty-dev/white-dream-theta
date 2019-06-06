@@ -287,8 +287,6 @@
 /obj/item/clothing/head/welding,
 /turf/open/floor/plasteel,
 /area/science/robotics/mechbay)
-<<<<<<< HEAD
-=======
 "aaH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
@@ -304,7 +302,6 @@
 /obj/effect/mapping_helpers/dead_body_placer,
 /turf/open/floor/plasteel,
 /area/medical/morgue)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "aaO" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -5563,11 +5560,7 @@
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "aoZ" = (
-<<<<<<< HEAD
-/obj/structure/chair/office/dark,
-=======
 /obj/structure/chair/office,
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /turf/open/floor/plasteel/grimy,
 /area/vacant_room/office)
 "apa" = (
@@ -6177,11 +6170,7 @@
 	dir = 2;
 	name = "Auxiliary Office APC";
 	areastring = "/area/vacant_room/office";
-<<<<<<< HEAD
-	pixel_y = -26
-=======
 	pixel_y = -23
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/white,
@@ -28678,11 +28667,7 @@
 /area/quartermaster/miningoffice)
 "baW" = (
 /obj/effect/decal/cleanable/dirt,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -30932,11 +30917,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
 "beW" = (
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/delivery,
@@ -44580,11 +44561,7 @@
 "bAT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/power/apc/auto_name/east,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "0-2"
 	},
 /obj/effect/turf_decal/bot,
@@ -84009,11 +83986,7 @@
 	req_access_txt = "12"
 	},
 /obj/effect/mapping_helpers/airlock/abandoned,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -86743,11 +86716,7 @@
 	req_access_txt = "12"
 	},
 /obj/effect/mapping_helpers/airlock/abandoned,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -95811,10 +95780,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-<<<<<<< HEAD
-=======
 /obj/machinery/stasis,
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "deG" = (
@@ -96506,11 +96472,7 @@
 	req_access_txt = "12"
 	},
 /obj/effect/mapping_helpers/airlock/abandoned,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -103605,11 +103567,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/tile/blue,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
@@ -104474,11 +104432,7 @@
 	req_access_txt = "12"
 	},
 /obj/effect/mapping_helpers/airlock/abandoned,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -106586,11 +106540,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel,
@@ -107591,11 +107541,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
@@ -108202,11 +108148,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
@@ -112787,11 +112729,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 2
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel,
@@ -112815,11 +112753,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
@@ -112838,11 +112772,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
@@ -112858,11 +112788,7 @@
 /obj/item/beacon,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /obj/effect/turf_decal/bot,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel,
@@ -113526,11 +113452,7 @@
 	req_access_txt = "12"
 	},
 /obj/effect/mapping_helpers/airlock/abandoned,
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -115544,11 +115466,7 @@
 /obj/effect/turf_decal/tile/green{
 	dir = 8
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/white,
@@ -126440,11 +126358,7 @@
 /obj/machinery/airalarm/mixingchamber{
 	pixel_y = 24
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
@@ -126978,23 +126892,6 @@
 	},
 /turf/open/floor/engine,
 /area/science/explab)
-<<<<<<< HEAD
-"jBE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/medical/morgue)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "jEz" = (
 /obj/machinery/camera{
 	c_tag = "Science - Lab Access";
@@ -127359,11 +127256,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-<<<<<<< HEAD
-/obj/structure/cable/white{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
@@ -160821,15 +160714,9 @@ dtl
 dtl
 dCd
 dDq
-<<<<<<< HEAD
 dDq
 dDq
 dDq
-=======
-dDq
-dDq
-dDq
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 dIx
 dJW
 drP

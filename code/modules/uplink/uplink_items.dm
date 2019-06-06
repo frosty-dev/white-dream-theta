@@ -454,11 +454,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
 			deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	item = /obj/item/melee/powerfist
-<<<<<<< HEAD
-	cost = 8
-=======
 	cost = 6
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/uplink_item/dangerous/sniper
 	name = "Sniper Rifle"
@@ -1133,16 +1129,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/flashlight/emp
 	cost = 2
 	surplus = 30
-<<<<<<< HEAD
-
-/datum/uplink_item/stealthy_tools/mulligan
-	name = "Mulligan"
-	desc = "Screwed up and have security on your tail? This handy syringe will give you a completely new identity \
-			and appearance."
-	item = /obj/item/reagent_containers/syringe/mulligan
-	cost = 4
-	surplus = 30
-=======
 
 /datum/uplink_item/stealthy_tools/mulligan
 	name = "Mulligan"
@@ -1159,22 +1145,9 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			They do not work on heavily lubricated surfaces."
 	item = /obj/item/clothing/shoes/chameleon/noslip
 	cost = 2
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	player_minimum = 20
 
-<<<<<<< HEAD
-/datum/uplink_item/stealthy_tools/syndigaloshes
-	name = "No-Slip Chameleon Shoes"
-	desc = "These shoes will allow the wearer to run on wet floors and slippery objects without falling down. \
-			They do not work on heavily lubricated surfaces."
-	item = /obj/item/clothing/shoes/chameleon/noslip
-	cost = 2
-	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
-	player_minimum = 20
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/uplink_item/stealthy_tools/syndigaloshes/nuke
 	item = /obj/item/clothing/shoes/chameleon/noslip
 	cost = 4
@@ -1284,12 +1257,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	surplus = 0
 	item = /obj/item/storage/briefcase/launchpad
 	cost = 6
-	
-/datum/uplink_item/device_tools/hypnotic_flash
-	name = "Hypnotic Flash"
-	desc = "A modified flash able to hypnotize targets. If the target is not in a mentally vulnerable state, it will only confuse and pacify them temporarily."
-	item = /obj/item/assembly/flash/hypnotic
-	cost = 7
 
 /datum/uplink_item/device_tools/camera_bug
 	name = "Camera Bug"
@@ -1385,11 +1352,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			in containment. Because of its size, it cannot be carried. Ordering this \
 			sends you a small beacon that will teleport the larger beacon to your location upon activation."
 	item = /obj/item/sbeacondrop
-<<<<<<< HEAD
-	cost = 14
-=======
 	cost = 10
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/uplink_item/device_tools/powersink
 	name = "Power Sink"
@@ -1397,11 +1360,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			load on the grid, causing a station-wide blackout. The sink is large and cannot be stored in most \
 			traditional bags and boxes. Caution: Will explode if the powernet contains sufficient amounts of energy."
 	item = /obj/item/powersink
-<<<<<<< HEAD
-	cost = 6
-=======
 	cost = 10
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/uplink_item/device_tools/rad_laser
 	name = "Radioactive Microlaser"
@@ -1480,8 +1439,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	include_modes = list(/datum/game_mode/nuclear, /datum/game_mode/nuclear/clown_ops)
 	restricted = TRUE
 
-<<<<<<< HEAD
-=======
 
 /datum/uplink_item/device_tools/suspiciousphone
 	name = "Protocol CRAB-17 Phone"
@@ -1492,7 +1449,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 7
 	limited_stock = 1
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 // Implants
 /datum/uplink_item/implants
 	category = "Implants"
@@ -1528,6 +1484,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			This will permanently destroy your body, however."
 	item = /obj/item/storage/box/syndie_kit/imp_microbomb
 	cost = 2
+	include_modes = list(/datum/game_mode/nuclear)
 
 /datum/uplink_item/implants/macrobomb
 	name = "Macrobomb Implant"
@@ -1676,7 +1633,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 15
 	restricted_roles = list("Clown")
 
-/*/datum/uplink_item/role_restricted/clowncar
+/datum/uplink_item/role_restricted/clowncar
 	name = "Clown Car"
 	desc = "The Clown Car is the ultimate transportation method for any worthy clown! \
 			Simply insert your bikehorn and get in, and get ready to have the funniest ride of your life! \
@@ -1685,9 +1642,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			are very sensitive. Now with our included lube defense mechanism which will protect you against any angry shitcurity! \
 			Premium features can be unlocked with a cryptographic sequencer!"
 	item = /obj/vehicle/sealed/car/clowncar
-
-	cost = 15
-	restricted_roles = list("Clown")*/
+	cost = 20
+	restricted_roles = list("Clown")
 
 /datum/uplink_item/role_restricted/concealed_weapon_bay
 	name = "Concealed Weapon Bay"

@@ -3,16 +3,6 @@
 </ui-notice>
 
 <ui-display title='Centcom Pod Customization (to be used against helen weinstein)'>
-<<<<<<< HEAD
-</ui-display>
-<ui-display>
-    <ui-section label='Which supplypod bay will you use?'></ui-section>
-    <ui-section label=' ' candystripe right> <ui-button style='{{data.bay == 1 ? "selected" : null}}' action='bay1'>Bay #1</ui-button> </ui-section>
-    <ui-section label=' ' candystripe right> <ui-button style='{{data.bay == 2 ? "selected" : null}}' action='bay2'>Bay #2</ui-button> </ui-section>
-    <ui-section label=' ' candystripe right> <ui-button style='{{data.bay == 3 ? "selected" : null}}' action='bay3'>Bay #3</ui-button> </ui-section>
-    <ui-section label=' ' candystripe right> <ui-button style='{{data.bay == 4 ? "selected" : null}}' action='bay4'>Bay #4</ui-button> </ui-section>
-</ui-display>
-=======
 
 
     <ui-section label='Which supplypod bay will you use?'>
@@ -59,7 +49,6 @@
     <ui-button style='{{data.damageChoice == 2 ? "selected" : null}}' action='damageGib' tooltip-side='left'
     tooltip='This will attempt to gib any mob caught under the pod when it lands, as well as dealing a nice 5000 brute damage. Ya know, just to be sure!'>Gib</ui-button> </ui-section>
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 
     <ui-section label='Damaging effects?'>

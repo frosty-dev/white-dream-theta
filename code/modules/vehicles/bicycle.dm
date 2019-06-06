@@ -2,12 +2,8 @@
 	name = "bicycle"
 	desc = "Keep away from electricity."
 	icon_state = "bicycle"
-<<<<<<< HEAD
-	
-=======
 	fall_off_if_missing_arms = TRUE
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/vehicle/ridden/bicycle/Initialize()
 	. = ..()
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)

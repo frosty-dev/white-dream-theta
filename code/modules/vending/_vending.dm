@@ -23,10 +23,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/product_path = null
 	var/amount = 0
 	var/max_amount = 0
-<<<<<<< HEAD
-	var/display_color = "blue"
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/custom_price
 	var/custom_premium_price
 
@@ -80,10 +76,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	var/default_price = 25
 	var/extra_price = 50
 	var/onstation = TRUE //if it doesn't originate from off-station during mapload, everything is free
-<<<<<<< HEAD
-=======
 	var/list/canload_access_list
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	var/list/vending_machine_input = list()
 	var/input_display_header = "Custom Compartment"
@@ -194,10 +187,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 		if(!start_empty)
 			R.amount = amount
 		R.max_amount = amount
-<<<<<<< HEAD
-		R.display_color = pick("#ff8080","#80ff80","#8080ff")
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		R.custom_price = initial(temp.custom_price)
 		R.custom_premium_price = initial(temp.custom_premium_price)
 		recordlist += R
@@ -365,11 +354,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	return ..()
 
 /obj/machinery/vending/ui_interact(mob/user)
-<<<<<<< HEAD
-	var/dat = ""
-=======
 	var/list/dat = list()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/datum/bank_account/account
 	var/mob/living/carbon/human/H
 	var/obj/item/card/id/C
@@ -383,13 +368,8 @@ GLOBAL_LIST_EMPTY(vending_products)
 		dat += "<font color = 'red'><h3>No account on registered ID card!</h3></font>"
 	if(onstation && C && C.registered_account)
 		account = C.registered_account
-<<<<<<< HEAD
-	dat += "<h3>Select an item</h3>"
-	dat += "<div class='statusDisplay'>"
-=======
 	dat += {"<h3>Select an item</h3>
 					<div class='statusDisplay'>"}
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(!product_records.len)
 		dat += "<font color = 'red'>No product loaded!</font>"
 	else
@@ -411,20 +391,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 			dat += {"<tr><td><span class="vending32x32 [replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-")]"></td>
 							<td style=\"width: 100%\"><b>[sanitize(R.name)]  ([price_listed])</b></td>"}
 			if(R.amount > 0 && ((C && C.registered_account && onstation) || (!onstation && isliving(user))))
-<<<<<<< HEAD
-				dat += "<a href='byond://?src=[REF(src)];vend=[REF(R)]'>Vend</a> "
-			else
-				dat += "<span class='linkOff'>Not Available</span> "
-			dat += "<font color = '[R.display_color]'><b>[sanitize(R.name)] ([price_listed])</b>:</font>"
-			dat += " <b>[R.amount]</b>"
-			dat += "</li>"
-		dat += "</ul>"
-	dat += "</div>"
-	if(onstation && C && C.registered_account)
-		dat += "<b>Balance: $[account.account_balance]</b>"
-	if(istype(src, /obj/machinery/vending/snack))
-		dat += "<h3>Chef's Food Selection</h3>"
-=======
 				dat += "<td align='right'><b>[R.amount]&nbsp;</b><a href='byond://?src=[REF(src)];vend=[REF(R)]'>Vend</a></td>"
 			else
 				dat += "<td align='right'><span class='linkOff'>Not&nbsp;Available</span></td>"
@@ -435,7 +401,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 		dat += "<b>Balance: $[account.account_balance]</b>"
 	if(vending_machine_input.len)
 		dat += "<h3>[input_display_header]</h3>"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		dat += "<div class='statusDisplay'>"
 		for (var/O in vending_machine_input)
 			if(vending_machine_input[O] > 0)
@@ -551,14 +516,10 @@ GLOBAL_LIST_EMPTY(vending_products)
 			var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
 			if(D)
 				D.adjust_money(price_to_use)
-<<<<<<< HEAD
-		say("Thank you for shopping with [src]!")
-=======
 		if(last_shopper != usr || purchase_message_cooldown < world.time)
 			say("Thank you for shopping with [src]!")
 			purchase_message_cooldown = world.time + 5 SECONDS
 			last_shopper = usr
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		use_power(5)
 		if(icon_vend) //Show the vending animation if needed
 			flick(icon_vend,src)

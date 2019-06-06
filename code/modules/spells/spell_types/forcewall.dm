@@ -35,10 +35,6 @@
 		return TRUE
 	if(ismob(mover))
 		var/mob/M = mover
-<<<<<<< HEAD
-		if(M.anti_magic_check(major = FALSE))
-=======
 		if(M.anti_magic_check(chargecost = 0))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			return TRUE
 	return FALSE

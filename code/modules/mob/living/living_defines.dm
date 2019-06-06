@@ -29,10 +29,7 @@
 	var/lying = 0			//number of degrees. DO NOT USE THIS IN CHECKS. CHECK FOR MOBILITY FLAGS INSTEAD!!
 	var/lying_prev = 0		//last value of lying on update_mobility
 
-<<<<<<< HEAD
-=======
 	var/audiolocation = FALSE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/confused = 0	//Makes the mob move in random directions.
 	var/hallucination = 0 //Directly affects how long a mob will hallucinate for
 

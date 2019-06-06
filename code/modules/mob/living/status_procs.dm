@@ -17,11 +17,7 @@
 /mob/living/proc/Stun(amount, updating = TRUE, ignore_canstun = FALSE) //Can't go below remaining duration
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_STUN, amount, updating, ignore_canstun) & COMPONENT_NO_STUN)
 		return
-<<<<<<< HEAD
-	if(((status_flags & CANSTUN) && !has_trait(TRAIT_STUNIMMUNE)) || ignore_canstun)
-=======
 	if(((status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE)) || ignore_canstun)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(absorb_stun(amount, ignore_canstun))
 			return
 		var/datum/status_effect/incapacitating/stun/S = IsStun()
@@ -34,11 +30,7 @@
 /mob/living/proc/SetStun(amount, updating = TRUE, ignore_canstun = FALSE) //Sets remaining duration
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_STUN, amount, updating, ignore_canstun) & COMPONENT_NO_STUN)
 		return
-<<<<<<< HEAD
-	if(((status_flags & CANSTUN) && !has_trait(TRAIT_STUNIMMUNE)) || ignore_canstun)
-=======
 	if(((status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE)) || ignore_canstun)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/datum/status_effect/incapacitating/stun/S = IsStun()
 		if(amount <= 0)
 			if(S)
@@ -55,11 +47,7 @@
 /mob/living/proc/AdjustStun(amount, updating = TRUE, ignore_canstun = FALSE) //Adds to remaining duration
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_STUN, amount, updating, ignore_canstun) & COMPONENT_NO_STUN)
 		return
-<<<<<<< HEAD
-	if(((status_flags & CANSTUN) && !has_trait(TRAIT_STUNIMMUNE)) || ignore_canstun)
-=======
 	if(((status_flags & CANSTUN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE)) || ignore_canstun)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(absorb_stun(amount, ignore_canstun))
 			return
 		var/datum/status_effect/incapacitating/stun/S = IsStun()
@@ -96,11 +84,7 @@
 /mob/living/proc/SetKnockdown(amount, updating = TRUE, ignore_canstun = FALSE) //Sets remaining duration
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_KNOCKDOWN, amount, updating, ignore_canstun) & COMPONENT_NO_STUN)
 		return
-<<<<<<< HEAD
-	if(((status_flags & CANKNOCKDOWN) && !has_trait(TRAIT_STUNIMMUNE)) || ignore_canstun)
-=======
 	if(((status_flags & CANKNOCKDOWN) && !HAS_TRAIT(src, TRAIT_STUNIMMUNE)) || ignore_canstun)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/datum/status_effect/incapacitating/knockdown/K = IsKnockdown()
 		if(amount <= 0)
 			if(K)
@@ -391,13 +375,8 @@
 		return TRUE
 
 /////////////////////////////////// DISABILITIES ////////////////////////////////////
-<<<<<<< HEAD
-/mob/living/proc/add_quirk(quirk, spawn_effects) //separate proc due to the way these ones are handled
-	if(has_trait(quirk))
-=======
 /mob/living/proc/add_quirk(quirktype, spawn_effects) //separate proc due to the way these ones are handled
 	if(HAS_TRAIT(src, quirktype))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return
 	var/datum/quirk/T = quirktype
 	var/qname = initial(T.name)
@@ -406,17 +385,6 @@
 	new quirktype (src, spawn_effects)
 	return TRUE
 
-<<<<<<< HEAD
-/mob/living/proc/remove_quirk(quirk)
-	var/datum/quirk/T = roundstart_quirks[quirk]
-	if(T)
-		qdel(T)
-		return TRUE
-
-/mob/living/proc/has_quirk(quirk)
-	return roundstart_quirks[quirk]
-
-=======
 /mob/living/proc/remove_quirk(quirktype)
 	for(var/datum/quirk/Q in roundstart_quirks)
 		if(Q.type == quirktype)
@@ -430,7 +398,6 @@
 			return TRUE
 	return FALSE
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /////////////////////////////////// TRAIT PROCS ////////////////////////////////////
 
 /mob/living/proc/cure_blind(source)
@@ -484,15 +451,6 @@
 	tod = station_time_timestamp()
 	update_stat()
 
-<<<<<<< HEAD
-/mob/living/proc/unignore_slowdown(list/sources)
-	remove_trait(TRAIT_IGNORESLOWDOWN, sources)
-	update_movespeed(FALSE)
-
-/mob/living/proc/ignore_slowdown(source)
-	add_trait(TRAIT_IGNORESLOWDOWN, source)
-	update_movespeed(FALSE)
-=======
 /mob/living/proc/unignore_slowdown(source)
 	REMOVE_TRAIT(src, TRAIT_IGNORESLOWDOWN, source)
 	update_movespeed(FALSE)
@@ -500,4 +458,3 @@
 /mob/living/proc/ignore_slowdown(source)
 	ADD_TRAIT(src, TRAIT_IGNORESLOWDOWN, source)
 	update_movespeed(FALSE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

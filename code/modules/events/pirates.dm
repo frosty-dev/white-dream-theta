@@ -447,8 +447,4 @@
 
 /datum/export/pirate/holochip/get_cost(atom/movable/AM)
 	var/obj/item/holochip/H = AM
-<<<<<<< HEAD
 	return H.credits
-=======
-	return H.credits
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

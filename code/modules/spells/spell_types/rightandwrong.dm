@@ -19,11 +19,7 @@ GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/ballistic/shotgun/automatic/combat,
 	/obj/item/gun/ballistic/automatic/ar,
 	/obj/item/gun/ballistic/revolver/mateba,
-<<<<<<< HEAD
-	/obj/item/gun/ballistic/shotgun/boltaction,
-=======
 	/obj/item/gun/ballistic/rifle/boltaction,
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	/obj/item/pneumatic_cannon/speargun,
 	/obj/item/gun/ballistic/automatic/mini_uzi,
 	/obj/item/gun/energy/lasercannon,

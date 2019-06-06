@@ -113,12 +113,6 @@
 		return TRUE
 	var/turf/location = get_turf(src)
 	location.hotspot_expose(700, 50, 1)
-<<<<<<< HEAD
-
-/mob/living/proc/handle_stomach()
-	return
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //this updates all special effects: knockdown, druggy, stuttering, etc..
 /mob/living/proc/handle_status_effects()

@@ -6,55 +6,20 @@
 	fire_sound = "sound/weapons/shotgunshot.ogg"
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
-<<<<<<< HEAD
-=======
 	rack_sound = "sound/weapons/shotgunpump.ogg"
 	load_sound = "sound/weapons/shotguninsert.ogg"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	weapon_weight = WEAPON_MEDIUM
-<<<<<<< HEAD
-
-/obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if(.)
-		return
-	var/num_loaded = magazine.attackby(A, user, params, 1)
-	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-		playsound(user, 'sound/weapons/shotguninsert.ogg', 40, 1)
-		A.update_icon()
-		update_icon()
-
-/obj/item/gun/ballistic/shotgun/process_chamber(empty_chamber = 0)
-	return ..() //changed argument value
-
-/obj/item/gun/ballistic/shotgun/chamber_round()
-	return
-
-/obj/item/gun/ballistic/shotgun/can_shoot()
-	if(!chambered)
-		return 0
-	return (chambered.BB ? 1 : 0)
-
-/obj/item/gun/ballistic/shotgun/attack_self(mob/living/user)
-	if(recentpump > world.time)
-		return
-	pump(user)
-	recentpump = world.time + 10
-	return
-=======
 	semi_auto = FALSE
 	internal_magazine = TRUE
 	casing_ejector = FALSE
 	bolt_wording = "pump"
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -62,34 +27,6 @@
 		process_fire(user, user, FALSE)
 		. = 1
 
-<<<<<<< HEAD
-/obj/item/gun/ballistic/shotgun/proc/pump(mob/M)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 40, 1)
-	pump_unload(M)
-	pump_reload(M)
-	update_icon()	//I.E. fix the desc
-	return 1
-
-/obj/item/gun/ballistic/shotgun/proc/pump_unload(mob/M)
-	if(chambered)//We have a shell in the chamber
-		chambered.forceMove(drop_location())//Eject casing
-		chambered.bounce_away()
-		chambered = null
-
-/obj/item/gun/ballistic/shotgun/proc/pump_reload(mob/M)
-	if(!magazine.ammo_count())
-		return 0
-	var/obj/item/ammo_casing/AC = magazine.get_round() //load next casing.
-	chambered = AC
-
-
-/obj/item/gun/ballistic/shotgun/examine(mob/user)
-	..()
-	if (chambered)
-		to_chat(user, "A [chambered.BB ? "live" : "spent"] one is in the chamber.")
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/gun/ballistic/shotgun/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 

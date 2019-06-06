@@ -93,12 +93,9 @@
 	var/list/all_eyes = list()
 	var/max_multicams = 6
 	var/display_icon_override
-<<<<<<< HEAD
-=======
 
 	var/list/cam_hotkeys = new/list(9)
 	var/cam_prev
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
 	. = ..()
@@ -336,15 +333,12 @@
 		return // stop
 	if(stat == DEAD)
 		return
-<<<<<<< HEAD
-=======
 	if(incapacitated())
 		if(battery < 50)
 			to_chat(src, "<span class='warning'>Insufficient backup power!</span>")
 			return
 		battery = battery - 50
 		to_chat(src, "<span class='notice'>You route power from your backup battery to move the bolts.</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/is_anchored = FALSE
 	if(move_resist == MOVE_FORCE_VERY_STRONG)
 		move_resist = MOVE_FORCE_NORMAL
@@ -859,7 +853,7 @@
 	raw_message = lang_treat(speaker, message_language, raw_message, spans, message_mode)
 	var/start = "Relayed Speech: "
 	var/namepart = "[speaker.GetVoice()][speaker.get_alt_name()]"
-	var/hrefpart = "<a href='?src=[REF(src)];track=[rhtml_encode(namepart)]'>"
+	var/hrefpart = "<a href='?src=[REF(src)];track=[html_encode(namepart)]'>"
 	var/jobpart
 
 	if (iscarbon(speaker))

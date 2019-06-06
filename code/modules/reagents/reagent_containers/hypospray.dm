@@ -74,11 +74,7 @@
 	icon_state = "combat_hypo"
 	volume = 5
 	reagent_flags = NONE
-<<<<<<< HEAD
-	list_reagents = list("magillitis" = 5)
-=======
 	list_reagents = list(/datum/reagent/magillitis = 5)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //MediPens
 
@@ -183,9 +179,6 @@
 /obj/item/reagent_containers/hypospray/medipen/atropine
 	name = "atropine autoinjector"
 	desc = "A rapid way to save a person from a critical injury state!"
-<<<<<<< HEAD
-	list_reagents = list("atropine" = 10)
-=======
 	list_reagents = list(/datum/reagent/medicine/atropine = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/snail
@@ -193,4 +186,3 @@
 	desc = "All-purpose snail medicine! Do not use on non-snails!"
 	list_reagents = list(/datum/reagent/snail = 10)
 	icon_state = "snail"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

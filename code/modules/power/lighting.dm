@@ -9,13 +9,8 @@
 #define LIGHT_BROKEN 2
 #define LIGHT_BURNED 3
 
-<<<<<<< HEAD
-#define BROKEN_SPARKS_MIN 15 SECONDS
-#define BROKEN_SPARKS_MAX 30 SECONDS
-=======
 #define BROKEN_SPARKS_MIN (30 SECONDS)
 #define BROKEN_SPARKS_MAX (90 SECONDS)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/wallframe/light_fixture
 	name = "light fixture frame"
@@ -110,11 +105,7 @@
 		if(!cell_connectors)
 			to_chat(user, "<span class='warning'>This [name] can't support a power cell!</span>")
 			return
-<<<<<<< HEAD
-		if(W.has_trait(TRAIT_NODROP))
-=======
 		if(HAS_TRAIT(W, TRAIT_NODROP))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			to_chat(user, "<span class='warning'>[W] is stuck to your hand!</span>")
 			return
 		if(cell)
@@ -658,11 +649,7 @@
 		else
 			prot = 1
 
-<<<<<<< HEAD
-		if(prot > 0 || user.has_trait(TRAIT_RESISTHEAT) || user.has_trait(TRAIT_RESISTHEATHANDS))
-=======
 		if(prot > 0 || HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			to_chat(user, "<span class='notice'>You remove the light [fitting].</span>")
 		else if(istype(user) && user.dna.check_mutation(TK))
 			to_chat(user, "<span class='notice'>You telekinetically remove the light [fitting].</span>")
@@ -774,11 +761,7 @@
 	var/base_state
 	var/switchcount = 0	// number of times switched
 	materials = list(MAT_GLASS=100)
-<<<<<<< HEAD
-	grind_results = list("silicon" = 5, "nitrogen" = 10) //Nitrogen is used as a cheaper alternative to argon in incandescent lighbulbs
-=======
 	grind_results = list(/datum/reagent/silicon = 5, /datum/reagent/nitrogen = 10) //Nitrogen is used as a cheaper alternative to argon in incandescent lighbulbs
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/rigged = FALSE		// true if rigged to explode
 	var/brightness = 2 //how much light it gives off
 

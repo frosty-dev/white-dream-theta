@@ -130,15 +130,12 @@
 		if(bullet && (bullet.BB || countempties))
 			boolets++
 	return boolets
-<<<<<<< HEAD
-=======
 
 /obj/item/ammo_box/magazine/proc/ammo_list(drop_list = FALSE)
 	var/list/L = stored_ammo.Copy()
 	if(drop_list)
 		stored_ammo.Cut()
 	return L
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/ammo_box/magazine/proc/empty_magazine()
 	var/turf_mag = get_turf(src)

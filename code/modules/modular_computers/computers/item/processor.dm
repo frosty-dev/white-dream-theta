@@ -78,8 +78,4 @@
 			machinery_computer.verbs -= /obj/machinery/modular_computer/proc/eject_card
 
 /obj/item/modular_computer/processor/attack_ghost(mob/user)
-<<<<<<< HEAD
 	ui_interact(user)
-=======
-	ui_interact(user)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

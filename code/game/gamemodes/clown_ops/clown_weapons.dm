@@ -79,21 +79,13 @@
 /obj/item/melee/transforming/energy/sword/bananium/attack(mob/living/M, mob/living/user)
 	..()
 	if(active)
-<<<<<<< HEAD
-		GET_COMPONENT(slipper, /datum/component/slippery)
-=======
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		slipper.Slip(src, M)
 
 /obj/item/melee/transforming/energy/sword/bananium/throw_impact(atom/hit_atom, throwingdatum)
 	. = ..()
 	if(active)
-<<<<<<< HEAD
-		GET_COMPONENT(slipper, /datum/component/slippery)
-=======
 		var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		slipper.Slip(src, hit_atom)
 
 /obj/item/melee/transforming/energy/sword/bananium/attackby(obj/item/I, mob/living/user, params)
@@ -116,11 +108,7 @@
 	if(!active)
 		transform_weapon(user, TRUE)
 	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku, but the blade slips off of [user.p_them()] harmlessly!</span>")
-<<<<<<< HEAD
-	GET_COMPONENT(slipper, /datum/component/slippery)
-=======
 	var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	slipper.Slip(src, user)
 	return SHAME
 
@@ -232,19 +220,11 @@
 
 /obj/item/clothing/mask/fakemoustache/sticky/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
-	addtimer(CALLBACK(src, .proc/unstick), unstick_time)
-
-/obj/item/clothing/mask/fakemoustache/sticky/proc/unstick()
-	remove_trait(TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
 	addtimer(CALLBACK(src, .proc/unstick), unstick_time)
 
 /obj/item/clothing/mask/fakemoustache/sticky/proc/unstick()
 	REMOVE_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //DARK H.O.N.K. AND CLOWN MECH WEAPONS
 

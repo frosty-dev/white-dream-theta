@@ -580,9 +580,6 @@
 	return TRUE
 
 /datum/status_effect/regenerative_core/on_remove()
-<<<<<<< HEAD
-	owner.remove_trait(TRAIT_IGNOREDAMAGESLOWDOWN, "regenerative_core")
-=======
 	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
 
 /datum/status_effect/antimagic
@@ -600,4 +597,3 @@
 /datum/status_effect/antimagic/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, MAGIC_TRAIT)
 	owner.visible_message("<span class='warning'>[owner]'s dull aura fades away...</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

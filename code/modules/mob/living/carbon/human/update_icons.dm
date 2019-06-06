@@ -485,11 +485,7 @@ There are several things that need to be remembered:
 	if(hygiene <= HYGIENE_LEVEL_DIRTY)
 		var/mutable_appearance/new_smell_overlay = mutable_appearance('icons/mob/smelly.dmi', smelly_icon, -SMELL_LAYER)
 		overlays_standing[SMELL_LAYER] = new_smell_overlay
-<<<<<<< HEAD
- 	apply_overlay(SMELL_LAYER)
-=======
 		apply_overlay(SMELL_LAYER)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /*
 Does everything in relation to building the /mutable_appearance used in the mob's overlays list

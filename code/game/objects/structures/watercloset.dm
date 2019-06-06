@@ -199,11 +199,7 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "urinalcake"
 	w_class = WEIGHT_CLASS_TINY
-<<<<<<< HEAD
-	list_reagents = list("chlorine" = 3, "ammonia" = 1)
-=======
 	list_reagents = list(/datum/reagent/chlorine = 3, /datum/reagent/ammonia = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	foodtype = TOXIC | GROSS
 
 /obj/item/reagent_containers/food/snacks/urinalcake/attack_self(mob/living/user)
@@ -226,11 +222,7 @@
 	desc = "A sink used for washing one's hands and face."
 	anchored = TRUE
 	var/busy = FALSE 	//Something's being washed at the moment
-<<<<<<< HEAD
-	var/dispensedreagent = "water" // for whenever plumbing happens
-=======
 	var/dispensedreagent = /datum/reagent/water // for whenever plumbing happens
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/structure/sink/attack_hand(mob/living/user)
 	. = ..()

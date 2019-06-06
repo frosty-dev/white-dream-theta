@@ -106,8 +106,6 @@
 	new /obj/item/toy/crayon/spraycan(src)
 	new /obj/item/clothing/shoes/sandal(src)
 
-<<<<<<< HEAD
-=======
 /obj/item/choice_beacon/augments
 	name = "augment beacon"
 	desc = "Summons augmentations. Can be used 3 times!"
@@ -133,7 +131,6 @@
 	new choice(get_turf(M))
 	to_chat(M, "You hear something crackle from the beacon for a moment before a voice speaks.  \"Please stand by for a message from S.E.L.F. Message as follows: <span class='bold'>Item request received. Your package has been transported, use the autosurgeon supplied to apply the upgrade.</span> Message ends.\"")
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/skub
 	desc = "It's skub."
 	name = "skub"
@@ -147,8 +144,4 @@
 
 	user.gib()
 	playsound(src, 'sound/items/eatfood.ogg', 50, 1, -1)
-<<<<<<< HEAD
 	return MANUAL_SUICIDE
-=======
-	return MANUAL_SUICIDE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

@@ -354,13 +354,8 @@
 		say("Initiating scan...")
 
 		spawn(20)
-<<<<<<< HEAD
-			scan_occupant(scanner.occupant)
-				
-=======
 			scan_occupant(scanner.occupant, usr)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			loading = FALSE
 			updateUsrDialog()
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
@@ -415,11 +410,7 @@
 	else if (href_list["disk"]) //Load or eject.
 		switch(href_list["disk"])
 			if("load")
-<<<<<<< HEAD
-						
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 				if (!diskette || !istype(diskette.fields))
 					temp = "<font class='bad'>Load error.</font>"
@@ -544,11 +535,7 @@
 		scantemp = "<font class='bad'>Subject's brain is not responding to scanning stimuli.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return
-<<<<<<< HEAD
-	if((mob_occupant.has_trait(TRAIT_HUSK)) && (src.scanner.scan_level < 2))
-=======
 	if((HAS_TRAIT(mob_occupant, TRAIT_HUSK)) && (src.scanner.scan_level < 2))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		scantemp = "<font class='bad'>Subject's body is too damaged to scan properly.</font>"
 		playsound(src, 'sound/machines/terminal_alert.ogg', 50, 0)
 		return
@@ -608,11 +595,7 @@
 		imp = new /obj/item/implant/health(mob_occupant)
 		imp.implant(mob_occupant)
 	R.fields["imp"] = "[REF(imp)]"
-<<<<<<< HEAD
-	var/old_record = find_record("mind", REF(mob_occupant.mind), records)
-=======
 	var/old_record = find_record("mindref", REF(mob_occupant.mind), records)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(old_record)
 		records -= old_record
 		scantemp = "Record updated."

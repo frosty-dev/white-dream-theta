@@ -41,12 +41,6 @@ endmap
 
 map runtimestation
 endmap
-<<<<<<< HEAD
-
-map partyhard
-endmap
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 map multiz_debug
 endmap

@@ -270,11 +270,7 @@
 		scantemp = "<font class='bad'>Unable to locate valid genetic data.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 		return
-<<<<<<< HEAD
-	if((mob_occupant.has_trait(TRAIT_HUSK)) && (src.scanner.scan_level < 2))
-=======
 	if((HAS_TRAIT(mob_occupant, TRAIT_HUSK)) && (src.scanner.scan_level < 2))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		scantemp = "<font class='bad'>Subject's body is too damaged to scan properly.</font>"
 		playsound(src, 'sound/machines/terminal_alert.ogg', 50, 0)
 		return

@@ -179,11 +179,7 @@
 	// For code, see grown.dm
 	name = "Liquid Contents"
 	examine_line = "<span class='info'>It has a lot of liquid contents inside.</span>"
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/plant_gene/trait/squash/on_slip(obj/item/reagent_containers/food/snacks/grown/G, mob/living/carbon/C)
 	// Squash the plant on slip.
 	G.squash(C)
@@ -364,11 +360,7 @@
 
 /datum/plant_gene/trait/stinging/on_slip(obj/item/reagent_containers/food/snacks/grown/G, atom/target)
 	on_throw_impact(G, target)
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/plant_gene/trait/stinging/on_throw_impact(obj/item/reagent_containers/food/snacks/grown/G, atom/target)
 	if(isliving(target) && G.reagents && G.reagents.total_volume)
 		var/mob/living/L = target

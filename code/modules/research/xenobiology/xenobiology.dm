@@ -702,11 +702,7 @@
 	imp.implant(SM, user)
 
 	SM.access_card = new /obj/item/card/id/syndicate(SM)
-<<<<<<< HEAD
-	SM.access_card.add_trait(TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
-=======
 	ADD_TRAIT(SM.access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/slimepotion/transference
 	name = "consciousness transference potion"

@@ -60,8 +60,6 @@
 	requires_power = TRUE
 	canSmoothWithAreas = /area/shuttle/pirate
 
-<<<<<<< HEAD
-=======
 ////////////////////////////Bounty Hunter Shuttles////////////////////////////
 
 /area/shuttle/hunter
@@ -70,7 +68,6 @@
 	blob_allowed = FALSE
 	canSmoothWithAreas = /area/shuttle/hunter
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 ////////////////////////////White Ship////////////////////////////
 
 /area/shuttle/abandoned

@@ -256,11 +256,7 @@
 	var/linelength = get_lines()
 
 	if(reels[1][2] + reels[2][2] + reels[3][2] + reels[4][2] + reels[5][2] == "[SEVEN][SEVEN][SEVEN][SEVEN][SEVEN]")
-<<<<<<< HEAD
-		visible_message("<b>[src]</b> говорит, 'JACKPOT! You win [money] credits worth of coins!'")
-=======
 		visible_message("<b>[src]</b> says, 'JACKPOT! You win [money] credits!'")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		priority_announce("Congratulations to [user ? user.real_name : usrname] for winning the jackpot at the slot machine in [get_area(src)]!")
 		jackpots += 1
 		balance += money - give_payout(JACKPOT)
@@ -274,19 +270,11 @@
 				random_step(C, 2, 50)
 
 	else if(linelength == 5)
-<<<<<<< HEAD
-		visible_message("<b>[src]</b> говорит, 'Big Winner! You win a thousand credits worth of coins!'")
-		give_money(BIG_PRIZE)
-
-	else if(linelength == 4)
-		visible_message("<b>[src]</b> говорит, 'Winner! You win four hundred credits worth of coins!'")
-=======
 		visible_message("<b>[src]</b> says, 'Big Winner! You win a thousand credits!'")
 		give_money(BIG_PRIZE)
 
 	else if(linelength == 4)
 		visible_message("<b>[src]</b> says, 'Winner! You win four hundred credits!'")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		give_money(SMALL_PRIZE)
 
 	else if(linelength == 3)

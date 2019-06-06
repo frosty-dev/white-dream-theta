@@ -44,11 +44,7 @@
 		target.adjustToxLoss(amt_dam_tox)
 		target.adjustOxyLoss(amt_dam_oxy)
 		//disabling
-<<<<<<< HEAD
-		target.Paralyze(amt_knockdown)
-=======
 		target.Paralyze(amt_paralyze)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		target.Unconscious(amt_unconscious)
 		target.Stun(amt_stun)
 

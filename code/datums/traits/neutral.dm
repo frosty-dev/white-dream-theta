@@ -32,11 +32,7 @@
 			species.liked_food |= MEAT
 		if(!initial(species.disliked_food) & MEAT)
 			species.disliked_food &= ~MEAT
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
 	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"

@@ -1182,11 +1182,7 @@
 /area/shuttle/abandoned/medbay)
 "bW" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white/side{
@@ -1442,12 +1438,6 @@
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "cr" = (
-<<<<<<< HEAD
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -1459,12 +1449,6 @@
 /area/shuttle/abandoned/engine)
 "cs" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},
@@ -1493,11 +1477,7 @@
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
 	},
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1561,10 +1541,6 @@
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
-<<<<<<< HEAD
-/obj/structure/cable,
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/bot,
@@ -1598,11 +1574,7 @@
 /area/shuttle/abandoned/engine)
 "cC" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/engineering{

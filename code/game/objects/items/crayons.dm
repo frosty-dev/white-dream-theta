@@ -562,11 +562,7 @@
 	self_contained = FALSE // Don't disappear when they're empty
 	can_change_colour = TRUE
 
-<<<<<<< HEAD
-	reagent_contents = list("welding_fuel" = 1, "ethanol" = 1)
-=======
 	reagent_contents = list(/datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	pre_noise = TRUE
 	post_noise = FALSE
@@ -658,18 +654,11 @@
 	if(isobj(target))
 		if(actually_paints)
 			target.add_atom_colour(paint_color, WASHABLE_COLOUR_PRIORITY)
-<<<<<<< HEAD
-			if(color_hex2num(paint_color) < 255 && istype(target, /obj/structure/window))
-				target.set_opacity(255)
-			else
-				target.set_opacity(initial(target.opacity))
-=======
 			if(istype(target, /obj/structure/window))
 				if(color_hex2num(paint_color) < 255)
 					target.set_opacity(255)
 				else
 					target.set_opacity(initial(target.opacity))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		. = use_charges(user, 2)
 		var/fraction = min(1, . / reagents.maximum_volume)
 		reagents.reaction(target, TOUCH, fraction * volume_multiplier)

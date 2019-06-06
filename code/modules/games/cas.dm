@@ -57,14 +57,7 @@
 		cards += P
 	shuffle_inplace(cards) // distribute blank cards throughout deck
 
-<<<<<<< HEAD
-/obj/item/toy/cards/deck/cas/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-=======
 /obj/item/toy/cards/deck/cas/draw_card(mob/user)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(isliving(user))
 		var/mob/living/L = user
 		if(!(L.mobility_flags & MOBILITY_PICKUP))

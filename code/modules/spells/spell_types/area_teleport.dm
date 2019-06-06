@@ -71,11 +71,7 @@
 			do_teleport(target, L, forceMove = TRUE, channel = TELEPORT_CHANNEL_MAGIC)
 			playsound(get_turf(user), sound2, 50,1)
 
-<<<<<<< HEAD
-/obj/effect/proc_holder/spell/targeted/area_teleport/invocation(area/chosenarea = null,mob/user = usr)
-=======
 /obj/effect/proc_holder/spell/targeted/area_teleport/invocation(area/chosenarea = null,mob/living/user = usr)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(!invocation_area || !chosenarea)
 		..()
 	else

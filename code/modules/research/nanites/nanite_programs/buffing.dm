@@ -33,11 +33,7 @@
 	host_mob.adjustStaminaLoss(-75)
 	host_mob.set_resting(FALSE)
 	host_mob.update_mobility()
-<<<<<<< HEAD
-	host_mob.reagents.add_reagent("stimulants", 1.5)
-=======
 	host_mob.reagents.add_reagent(/datum/reagent/medicine/stimulants, 1.5)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/nanite_program/hardening
 	name = "Dermal Hardening"
@@ -122,13 +118,8 @@
 
 /datum/nanite_program/mindshield/enable_passive_effect()
 	. = ..()
-<<<<<<< HEAD
-	if(!host_mob.mind.has_antag_datum(/datum/antagonist/rev) && !is_hivemember(host_mob)) //won't work if on a rev, to avoid having implanted revs. same applies for hivemind members.
-		host_mob.add_trait(TRAIT_MINDSHIELD, "nanites")
-=======
 	if(!host_mob.mind.has_antag_datum(/datum/antagonist/rev, TRUE) && !is_hivemember(host_mob) && !host_mob.is_wokevessel()) //won't work if on a rev, to avoid having implanted revs. same applies for hivemind members.
 		ADD_TRAIT(host_mob, TRAIT_MINDSHIELD, "nanites")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		host_mob.sec_hud_set_implants()
 
 /datum/nanite_program/mindshield/disable_passive_effect()

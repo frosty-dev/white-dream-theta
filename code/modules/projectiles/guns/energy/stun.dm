@@ -27,13 +27,8 @@
 	name = "cyborg taser"
 	desc = "An integrated hybrid taser that draws directly from a cyborg's power cell. The weapon contains a limiter to prevent the cyborg's power cell from overheating."
 	can_flashlight = FALSE
-<<<<<<< HEAD
-	can_charge = 0
-	use_cyborg_cell = 1
-=======
 	can_charge = FALSE
 	use_cyborg_cell = TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/energy/disabler
 	name = "disabler"

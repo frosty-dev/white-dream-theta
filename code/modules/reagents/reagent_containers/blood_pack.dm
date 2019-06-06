@@ -11,11 +11,7 @@
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
 	if(blood_type != null)
-<<<<<<< HEAD
-		reagents.add_reagent(unique_blood ? unique_blood : "blood", 200, list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
-=======
 		reagents.add_reagent(unique_blood ? unique_blood : /datum/reagent/blood, 200, list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		update_icon()
 
 /obj/item/reagent_containers/blood/on_reagent_change(changetype)

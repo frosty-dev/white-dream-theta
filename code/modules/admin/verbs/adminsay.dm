@@ -10,10 +10,6 @@
 		return
 
 	mob.log_talk(msg, LOG_ASAY)
-<<<<<<< HEAD
-	webhook_send_asay(key_name(src), msg)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	msg = keywords_lookup(msg)
 	var/custom_asay_color = (CONFIG_GET(flag/allow_admin_asaycolor) && prefs.asaycolor) ? "<font color=[prefs.asaycolor]>" : "<font color='#FF4500'>"
 	msg = "<span class='adminsay'><span class='prefix'>ADMIN:</span> <EM>[key_name(usr, 1)]</EM> [ADMIN_FLW(mob)]: [custom_asay_color]<span class='message linkify'>[msg]</span></span>[custom_asay_color ? "</font>":null]"

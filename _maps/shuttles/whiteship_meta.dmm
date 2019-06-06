@@ -440,11 +440,7 @@
 /area/shuttle/abandoned/engine)
 "aP" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -469,11 +465,7 @@
 /area/shuttle/abandoned/engine)
 "aR" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -987,11 +979,7 @@
 /area/shuttle/abandoned/crew)
 "by" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/engineering{
@@ -1114,11 +1102,7 @@
 /area/shuttle/abandoned/engine)
 "bI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1229,11 +1213,7 @@
 	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -1432,11 +1412,7 @@
 /obj/item/pen{
 	pixel_x = -4
 	},
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
@@ -1529,22 +1505,14 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "ck" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
@@ -1971,11 +1939,7 @@
 	pixel_x = -25;
 	req_access = null
 	},
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
@@ -2184,11 +2148,7 @@
 /area/shuttle/abandoned/engine)
 "cY" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "2-8"
 	},
 /obj/machinery/firealarm{
@@ -2242,11 +2202,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
@@ -2350,11 +2306,7 @@
 /area/shuttle/abandoned/bar)
 "dj" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/closet/secure_closet/freezer/fridge,
-=======
 /obj/structure/closet/secure_closet/freezer/fridge/open,
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/reagent_containers/food/condiment/flour{
 	pixel_x = -3;
 	pixel_y = 3
@@ -2421,12 +2373,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -2446,11 +2392,7 @@
 /area/shuttle/abandoned/cargo)
 "dr" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/structure/cable/yellow{
@@ -2461,11 +2403,7 @@
 /area/shuttle/abandoned/engine)
 "ds" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "4-8"
 	},
 /obj/structure/cable/yellow{
@@ -2717,11 +2655,7 @@
 /area/shuttle/abandoned/engine)
 "dI" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
@@ -2884,10 +2818,6 @@
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
-<<<<<<< HEAD
-/obj/structure/cable,
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/bot,
 /obj/item/wrench,
@@ -3050,11 +2980,7 @@
 /area/shuttle/abandoned/bar)
 "el" = (
 /obj/effect/decal/cleanable/dirt/dust,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "1-4"
 	},
 /obj/structure/cable/yellow{

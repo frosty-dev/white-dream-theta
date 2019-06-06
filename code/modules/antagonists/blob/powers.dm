@@ -110,11 +110,7 @@
 		to_chat(src, "<span class='warning'>You now require a nearby node or core to place factory and resource blobs.</span>")
 	else
 		to_chat(src, "<span class='warning'>You no longer require a nearby node or core to place factory and resource blobs.</span>")
-<<<<<<< HEAD:code/modules/antagonists/blob/blob/powers.dm
-	
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c:code/modules/antagonists/blob/powers.dm
 /mob/camera/blob/verb/create_shield_power()
 	set category = "Blob"
 	set name = "Create/Upgrade Shield Blob (15)"
@@ -342,14 +338,6 @@
 
 /mob/camera/blob/verb/strain_reroll()
 	set category = "Blob"
-<<<<<<< HEAD:code/modules/antagonists/blob/blob/powers.dm
-	set name = "Reactive Chemical Adaptation (40)"
-	set desc = "Replaces your chemical with a random, different one."
-	if(free_chem_rerolls || can_buy(40))
-		set_chemical()
-		if(free_chem_rerolls)
-			free_chem_rerolls--
-=======
 	set name = "Reactive Strain Adaptation (40)"
 	set desc = "Replaces your strain with a random, different one."
 	if(!rerolling && (free_strain_rerolls || can_buy(40)))
@@ -358,7 +346,6 @@
 		rerolling = FALSE
 		if(free_strain_rerolls)
 			free_strain_rerolls--
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c:code/modules/antagonists/blob/powers.dm
 		last_reroll_time = world.time
 
 /mob/camera/blob/proc/reroll_strain()

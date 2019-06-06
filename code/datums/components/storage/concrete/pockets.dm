@@ -43,12 +43,7 @@
 
 /datum/component/storage/concrete/pockets/shoes/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	cant_hold = typecacheof(list(/obj/item/screwdriver/power)) //Must be specifically called out since normal screwdrivers can fit but not the wrench form of the drill
-	can_hold = typecacheof(list(
-=======
 	set_holdable(list(
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		/obj/item/kitchen/knife, /obj/item/switchblade, /obj/item/pen,
 		/obj/item/scalpel, /obj/item/reagent_containers/syringe, /obj/item/dnainjector,
 		/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/dropper,
@@ -60,12 +55,7 @@
 
 /datum/component/storage/concrete/pockets/shoes/clown/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	cant_hold = typecacheof(list(/obj/item/screwdriver/power)) //Must be specifically called out since normal screwdrivers can fit but not the wrench form of the drill
-	can_hold = typecacheof(list(
-=======
 	set_holdable(list(
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		/obj/item/kitchen/knife, /obj/item/switchblade, /obj/item/pen,
 		/obj/item/scalpel, /obj/item/reagent_containers/syringe, /obj/item/dnainjector,
 		/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/dropper,

@@ -10,23 +10,7 @@
 	range = 7
 	cooldown_min = 60 //35 deciseconds reduction per rank
 	max_targets = 0
-<<<<<<< HEAD
-
-	proj_icon_state = "magicm"
-	proj_name = "a magic missile"
-	proj_lingering = 1
-	proj_type = "/obj/effect/proc_holder/spell/targeted/inflict_handler/magic_missile"
-
-	proj_lifespan = 20
-	proj_step_delay = 5
-
-	proj_trail = TRUE
-	proj_trail_lifespan = 5
-	proj_trail_icon_state = "magicmd"
-
-=======
 	proj_type = /obj/item/projectile/magic/spell/magic_missile
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	action_icon_state = "magicm"
 	sound = 'sound/magic/magic_missile.ogg'
 

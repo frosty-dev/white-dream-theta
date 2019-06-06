@@ -324,11 +324,7 @@
 
 /obj/structure/blob/proc/get_chem_name()
 	if(overmind)
-<<<<<<< HEAD:code/modules/antagonists/blob/blob/theblob.dm
-		return overmind.blob_reagent_datum.name
-=======
 		return overmind.blobstrain.name
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c:code/modules/antagonists/blob/structures/_blob.dm
 	return "some kind of organic tissue"
 
 /obj/structure/blob/normal

@@ -28,8 +28,6 @@
 	construction_type = /obj/item/pipe/directional
 	pipe_state = "volumepump"
 
-<<<<<<< HEAD
-=======
 /obj/machinery/atmospherics/components/binary/volume_pump/CtrlClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		on = !on
@@ -42,7 +40,6 @@
 		update_icon()
 	return ..()
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/machinery/atmospherics/components/binary/volume_pump/Destroy()
 	SSradio.remove_object(src,frequency)
 	return ..()
@@ -188,8 +185,6 @@
 	if(. && on && is_operational())
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
-<<<<<<< HEAD
-=======
 
 /obj/machinery/atmospherics/components/binary/volume_pump/multitool_act(mob/living/user, obj/item/I)
 	if(!overclocked)
@@ -199,7 +194,6 @@
 		overclocked = FALSE
 		to_chat(user, "The pump quiets down as you turn its limiters back on.")
 	return TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 // mapping
 

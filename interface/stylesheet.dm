@@ -136,10 +136,7 @@ h1.alert, h2.alert		{color: #000000;}
 .alertalien				{color: #00c000;	font-weight: bold;}
 .changeling				{color: #800080;	font-style: italic;}
 .assimilator			{color: #800080;	font-size: 2 ; font-weight: bold;}
-<<<<<<< HEAD
-=======
 .bigassimilator			{color: #800080;	font-size: 4 ; font-weight: bold;}
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 .spider					{color: #4d004d;}
 

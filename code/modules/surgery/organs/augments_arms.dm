@@ -89,11 +89,7 @@
 
 	holder = item
 
-<<<<<<< HEAD
-	holder.add_trait(TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-=======
 	ADD_TRAIT(holder, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	holder.resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	holder.slot_flags = null
 	holder.materials = null

@@ -85,11 +85,7 @@
 /datum/mood_event/nice_shower
 	description = "<span class='nicegreen'>I have recently had a nice shower.</span>\n"
 	mood_change = 2
-<<<<<<< HEAD
-	timeout = 1800
-=======
 	timeout = 3 MINUTES
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/mood_event/fresh_laundry
 	description = "<span class='nicegreen'>There's nothing like the feeling of a freshly laundered jumpsuit.</span>\n"

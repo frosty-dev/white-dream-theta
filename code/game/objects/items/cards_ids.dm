@@ -125,8 +125,6 @@
 	if(mapload && access_txt)
 		access = text2access(access_txt)
 
-<<<<<<< HEAD
-=======
 /obj/item/card/id/Destroy()
 	if (registered_account)
 		registered_account.bank_cards -= src
@@ -134,7 +132,6 @@
 		my_store.my_card = null
 	return ..()
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
 		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] [src.name].</span>", "<span class='notice'>You show \the [src.name].</span>")
@@ -196,11 +193,7 @@
 		if(!alt_click_can_use_id(user))
 			return
 		if(!new_bank_id || new_bank_id < 111111 || new_bank_id > 999999)
-<<<<<<< HEAD
-			to_chat(user, "<span class='warning'>The account ID number needs to be between 111111 and 999999.</span")
-=======
 			to_chat(user, "<span class='warning'>The account ID number needs to be between 111111 and 999999.</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			return
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A
@@ -211,10 +204,6 @@
 				return
 		to_chat(user, "<span class='warning'>The account ID number provided is invalid.</span>")
 		return
-<<<<<<< HEAD
-	var/amount_to_remove = input(user, "How much do you want to withdraw?", "Account Reclamation", 5) as num
-	if(!amount_to_remove || amount_to_remove < 0)
-=======
 
 	if (world.time < registered_account.withdrawDelay)
 		registered_account.bank_card_talk("<span class='warning'>ERROR: UNABLE TO LOGIN DUE TO SCHEDULED MAINTENANCE. MAINTENANCE IS SCHEDULED TO COMPLETE IN [(registered_account.withdrawDelay - world.time)/10] SECONDS.</span>", TRUE)
@@ -224,7 +213,6 @@
 
 	if(!amount_to_remove || amount_to_remove < 0)
 		to_chat(user, "<span class='warning'>You're pretty sure that's not how money works.</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return
 	if(!alt_click_can_use_id(user))
 		return
@@ -247,11 +235,7 @@
 			var/datum/bank_account/D = SSeconomy.get_dep_account(registered_account.account_job.paycheck_department)
 			if(D)
 				to_chat(user, "The [D.account_holder] reports a balance of $[D.account_balance].")
-<<<<<<< HEAD
-		to_chat(user, "<span class='info'>Alt-Click the ID while holding it to pull money from the linked account in the form of holochips.</span>")
-=======
 		to_chat(user, "<span class='info'>Alt-Click the ID to pull money from the linked account in the form of holochips.</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		to_chat(user, "<span class='info'>You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.</span>")
 		if(registered_account.account_holder == user.real_name)
 			to_chat(user, "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>")

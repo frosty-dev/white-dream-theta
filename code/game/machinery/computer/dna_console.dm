@@ -104,11 +104,7 @@
 	if(jokerready < world.time)
 		to_chat(user, "<span class='notice'>JOKER algorithm available.</span>")
 	else
-<<<<<<< HEAD
-		to_chat(user, "<span class='notice'>JOKER algorithm available in about [round(0.00166666667 * (jokerready - world.time))] minutes.")
-=======
 		to_chat(user, "<span class='notice'>JOKER algorithm available in about [round(0.00166666667 * (jokerready - world.time))] minutes.</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/machinery/computer/scan_consolenew/ui_interact(mob/user, last_change)
 	. = ..()
@@ -130,11 +126,7 @@
 	if(connected && connected.is_operational())
 		if(connected.occupant)	//set occupant_status message
 			viable_occupant = connected.occupant
-<<<<<<< HEAD
-			if(viable_occupant.has_dna() && !viable_occupant.has_trait(TRAIT_RADIMMUNE) && !viable_occupant.has_trait(TRAIT_BADDNA) || (connected.scan_level == 3)) //occupant is viable for dna modification
-=======
 			if(viable_occupant.has_dna() && !HAS_TRAIT(viable_occupant, TRAIT_RADIMMUNE) && !HAS_TRAIT(viable_occupant, TRAIT_BADDNA) || (connected.scan_level == 3)) //occupant is viable for dna modification
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				occupant_status += "[viable_occupant.name] => "
 				switch(viable_occupant.stat)
 					if(CONSCIOUS)
@@ -249,11 +241,7 @@
 						temp_html += "<div class='dnaBlockNumber'>[(i / DNA_BLOCK_SIZE) + 1]</div>"
 			else
 				temp_html += "---------"
-<<<<<<< HEAD
-			temp_html += "</div></div><h1>Buffer Menu</h1>"
-=======
 			temp_html += "</div></div><br><h1>Buffer Menu</h1>"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 			if(istype(buffer))
 				for(var/i=1, i<=buffer.len, i++)
@@ -813,8 +801,6 @@
 						to_chat(usr,"<span class='notice'>Selected [A.name] for combining</span>")
 				else
 					to_chat(usr, "<span class='warning'>Not enough space to store potential mutation.</span>")
-<<<<<<< HEAD
-=======
 		if("ejectchromosome")
 			if(LAZYLEN(stored_chromosomes) <= num)
 				var/obj/item/chromosome/CM = stored_chromosomes[num]
@@ -835,7 +821,6 @@
 						stored_chromosomes -= CM
 						CM.apply(HM)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	ui_interact(usr,last_change)
 
 /obj/machinery/computer/scan_consolenew/proc/scramble(input,rs,rd) //hexadecimal genetics. dont confuse with scramble button
@@ -857,11 +842,7 @@
 	var/mob/living/carbon/viable_occupant = null
 	if(connected)
 		viable_occupant = connected.occupant
-<<<<<<< HEAD
-		if(!istype(viable_occupant) || !viable_occupant.dna || viable_occupant.has_trait(TRAIT_RADIMMUNE) || viable_occupant.has_trait(TRAIT_BADDNA))
-=======
 		if(!istype(viable_occupant) || !viable_occupant.dna || HAS_TRAIT(viable_occupant, TRAIT_RADIMMUNE) || HAS_TRAIT(viable_occupant, TRAIT_BADDNA))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			viable_occupant = null
 	return viable_occupant
 

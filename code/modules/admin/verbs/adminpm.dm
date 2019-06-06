@@ -91,10 +91,6 @@
 			return
 		if(!msg)
 			msg = input(src,"Message:", "Private message to Administrator") as message|null
-<<<<<<< HEAD
-			msg = sanitize_russian(msg)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 		if(!msg)
 			return
@@ -116,11 +112,7 @@
 
 		//get message text, limit it's length.and clean/escape html
 		if(!msg)
-<<<<<<< HEAD
-			msg = input(src,"Message:", "Private message to [key_name(recipient, 0, 0)]") as message|null
-=======
 			msg = input(src,"Message:", "Private message to [recipient.holder?.fakekey ? "an Administrator" : key_name(recipient, 0, 0)].") as message|null
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			msg = trim(msg)
 			if(!msg)
 				return
@@ -145,7 +137,6 @@
 		if(!msg)
 			return
 
-	msg = sanitize_russian(msg)
 	var/rawmsg = msg
 
 	if(holder)
@@ -222,13 +213,8 @@
 		//we don't use message_admins here because the sender/receiver might get it too
 		for(var/client/X in GLOB.admins)
 			if(X.key!=key && X.key!=recipient.key)	//check client/X is an admin and isn't the sender or recipient
-<<<<<<< HEAD
-				to_chat(X, "<font color='blue'><B>PM: [key_name(src, X, 0)]-&gt;[key_name(recipient, X, 0)]:</B> [keywordparsedmsg]</font>" )
-	webhook_send_ahelp("PM: [key_name(src)]->[key_name(recipient)]", msg)
-=======
 				to_chat(X, "<span class='notice'><B>PM: [key_name(src, X, 0)]-&gt;[key_name(recipient, X, 0)]:</B> [keywordparsedmsg]</span>" )
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 
 #define IRC_AHELP_USAGE "Usage: ticket <close|resolve|icissue|reject|reopen \[ticket #\]|list>"

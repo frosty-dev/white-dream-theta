@@ -698,28 +698,16 @@
 			mob_spell_list -= S
 			qdel(S)
 
-<<<<<<< HEAD
-/mob/proc/anti_magic_check(magic = TRUE, holy = FALSE, major = TRUE, self = FALSE)
-	if(!magic && !holy)
-		return
-	var/list/protection_sources = list()
-	if(SEND_SIGNAL(src, COMSIG_MOB_RECEIVE_MAGIC, src, magic, holy, major, self, protection_sources) & COMPONENT_BLOCK_MAGIC)
-=======
 /mob/proc/anti_magic_check(magic = TRUE, holy = FALSE, tinfoil = FALSE, chargecost = 1, self = FALSE)
 	if(!magic && !holy && !tinfoil)
 		return
 	var/list/protection_sources = list()
 	if(SEND_SIGNAL(src, COMSIG_MOB_RECEIVE_MAGIC, src, magic, holy, tinfoil, chargecost, self, protection_sources) & COMPONENT_BLOCK_MAGIC)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(protection_sources.len)
 			return pick(protection_sources)
 		else
 			return src
-<<<<<<< HEAD
-	if((magic && has_trait(TRAIT_ANTIMAGIC)) || (holy && has_trait(TRAIT_HOLY)))
-=======
 	if((magic && HAS_TRAIT(src, TRAIT_ANTIMAGIC)) || (holy && HAS_TRAIT(src, TRAIT_HOLY)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return src
 
 //You can buckle on mobs if you're next to them since most are dense

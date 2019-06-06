@@ -259,14 +259,6 @@
 
 /obj/item/circuitboard/machine/vendor/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-<<<<<<< HEAD
-		var/position = vending_names_paths.Find(build_path)
-		position = (position == vending_names_paths.len) ? 1 : (position + 1)
-		var/typepath = vending_names_paths[position]
-
-		to_chat(user, "<span class='notice'>You set the board to \"[vending_names_paths[typepath]]\".</span>")
-		set_type(typepath)
-=======
 		var/static/list/display_vending_names_paths
 		if(!display_vending_names_paths)
 			display_vending_names_paths = list()
@@ -274,7 +266,6 @@
 				display_vending_names_paths[vending_names_paths[path]] = path
 		var/choice =  input(user,"Choose a new brand","Select an Item") as null|anything in display_vending_names_paths
 		set_type(display_vending_names_paths[choice])
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	else
 		return ..()
 
@@ -1005,8 +996,6 @@
 	name = "Pay Stand (Machine Board)"
 	build_path = /obj/machinery/paystand
 	req_components = list()
-<<<<<<< HEAD
-=======
 
 /obj/item/circuitboard/machine/fat_sucker
 	name = "Lipid Extractor (Machine Board)"
@@ -1021,4 +1010,3 @@
 		/obj/item/stack/cable_coil = 3,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/capacitor = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

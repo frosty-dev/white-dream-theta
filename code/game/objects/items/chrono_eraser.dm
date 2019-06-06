@@ -58,11 +58,7 @@
 
 /obj/item/gun/energy/chrono_gun/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CHRONO_GUN_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CHRONO_GUN_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(istype(loc, /obj/item/chrono_eraser))
 		TED = loc
 	else //admin must have spawned it

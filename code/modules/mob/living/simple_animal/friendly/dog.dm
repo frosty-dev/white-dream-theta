@@ -267,13 +267,9 @@
 		return
 	if(!item_to_add)
 		user.visible_message("[user] pets [src].","<span class='notice'>You rest your hand on [src]'s head for a moment.</span>")
-<<<<<<< HEAD
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, name, /datum/mood_event/pet_animal, name)
-=======
 		if(flags_1 & HOLOGRAM_1)
 			return
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, src, /datum/mood_event/pet_animal, src)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return
 
 	if(user && !user.temporarilyRemoveItemFromInventory(item_to_add))
@@ -390,7 +386,7 @@
 		var/json_file = file("data/npc_saves/Ian.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = r_json_decode(file2text(json_file))
+		var/list/json = json_decode(file2text(json_file))
 		age = json["age"]
 		record_age = json["record_age"]
 		saved_head = json["saved_head"]
@@ -419,7 +415,7 @@
 		file_data["record_age"] = record_age
 		file_data["saved_head"] = null
 	fdel(json_file)
-	WRITE_FILE(json_file, r_json_encode(file_data))
+	WRITE_FILE(json_file, json_encode(file_data))
 
 /mob/living/simple_animal/pet/dog/corgi/Ian/Life()
 	..()
@@ -656,11 +652,7 @@
 			if(M && stat != DEAD) // Added check to see if this mob (the dog) is dead to fix issue 2454
 				new /obj/effect/temp_visual/heart(loc)
 				emote("me", 1, "yaps happily!")
-<<<<<<< HEAD
-				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, name, /datum/mood_event/pet_animal, name)
-=======
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, src, /datum/mood_event/pet_animal, src)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		else
 			if(M && stat != DEAD) // Same check here, even though emote checks it as well (poor form to check it only in the help case)
 				emote("me", 1, "growls!")

@@ -284,28 +284,6 @@
 			. = 1
 	..()
 
-<<<<<<< HEAD
-/datum/reagent/toxin/chloralhydratedelayed //sedates half as quickly and does not cause toxloss. same name/desc so it doesn't give away sleepypens
-	name = "Chloral Hydrate"
-	id = "chloralhydratedelayed"
-	description = "A powerful sedative that induces confusion and drowsiness before putting its target to sleep."
-	silent_toxin = TRUE
-	reagent_state = SOLID
-	color = "#000067" // rgb: 0, 0, 103
-	toxpwr = 0
-	metabolization_rate = 1.5 * REAGENTS_METABOLISM
-
-/datum/reagent/toxin/chloralhydratedelayed/on_mob_life(mob/living/carbon/M)
-	switch(current_cycle)
-		if(10 to 20)
-			M.confused += 1
-			M.drowsyness += 1
-		if(20 to INFINITY)
-			M.Sleeping(40, 0)
-	..()
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/reagent/toxin/fakebeer	//disguised as normal beer for use by emagged brobots
 	name = "Beer"
 	description = "A specially-engineered sedative disguised as beer. It induces instant sleep in its target."
@@ -859,11 +837,7 @@
 	ADD_TRAIT(L, TRAIT_EMOTEMUTE, type)
 
 /datum/reagent/toxin/mimesbane/on_mob_delete(mob/living/L)
-<<<<<<< HEAD
-	L.remove_trait(TRAIT_EMOTEMUTE, id)
-=======
 	REMOVE_TRAIT(L, TRAIT_EMOTEMUTE, type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/reagent/toxin/bonehurtingjuice //oof ouch
 	name = "Bone Hurting Juice"
@@ -878,13 +852,8 @@
 	M.say("oof ouch my bones", forced = /datum/reagent/toxin/bonehurtingjuice)
 
 /datum/reagent/toxin/bonehurtingjuice/on_mob_life(mob/living/carbon/M)
-<<<<<<< HEAD
-	M.adjustStaminaLoss(15, 0)
-	if(M.has_trait(TRAIT_CALCIUM_HEALER))
-=======
 	M.adjustStaminaLoss(7.5, 0)
 	if(HAS_TRAIT(M, TRAIT_CALCIUM_HEALER))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		M.adjustBruteLoss(0.5, 0)
 	if(prob(20))
 		switch(rand(1, 3))
@@ -893,11 +862,7 @@
 				M.say(pick(possible_says), forced = /datum/reagent/toxin/bonehurtingjuice)
 			if(2)
 				var/list/possible_mes = list("oofs softly.", "looks like their bones hurt.", "grimaces, as though their bones hurt.")
-<<<<<<< HEAD
-				M.say("*custom " + pick(possible_mes), forced = "bonehurtingjuice")
-=======
 				M.say("*custom " + pick(possible_mes), forced = /datum/reagent/toxin/bonehurtingjuice)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if(3)
 				to_chat(M, "<span class='warning'>Your bones hurt!</span>")
 	return ..()

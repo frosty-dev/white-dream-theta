@@ -15,11 +15,7 @@
 	amount = dna.species.spec_stun(src, amount)
 	return ..()
 
-<<<<<<< HEAD
-/mob/living/carbon/human/Unconscious(amount, updating = 1, ignore_canunconscious = 0)
-=======
 /mob/living/carbon/human/Unconscious(amount, updating = 1, ignore_canstun = 0)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	amount = dna.species.spec_stun(src,amount)
 	if(HAS_TRAIT(src, TRAIT_HEAVY_SLEEPER))
 		amount *= rand(1.25, 1.3)

@@ -48,16 +48,12 @@
 	var/semi_auto = TRUE //Whether the gun has to be racked each shot or not.
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
-<<<<<<< HEAD
-	var/magazine_wording = "magazine"
-=======
 	var/internal_magazine = FALSE //Whether the gun has an internal magazine or a detatchable one. Overridden by BOLT_TYPE_NO_BOLT.
 	var/magazine_wording = "magazine"
 	var/cartridge_wording = "bullet"
 	var/rack_delay = 5
 	var/recent_rack = 0
 	var/tac_reloads = TRUE //Snowflake mechanic no more.
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -200,13 +196,7 @@
 	update_icon()
 
 /obj/item/gun/ballistic/can_shoot()
-<<<<<<< HEAD
-	if(!magazine || !magazine.ammo_count(FALSE))
-		return 0
-	return 1
-=======
 	return chambered
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
@@ -214,27 +204,6 @@
 		return
 	if (!internal_magazine && istype(A, /obj/item/ammo_box/magazine))
 		var/obj/item/ammo_box/magazine/AM = A
-<<<<<<< HEAD
-		if (!magazine && istype(AM, mag_type))
-			if(user.transferItemToLoc(AM, src))
-				magazine = AM
-				to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
-				if(magazine.ammo_count())
-					playsound(src, "gun_insert_full_magazine", 70, 1)
-					if(!chambered)
-						chamber_round()
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
-				else
-					playsound(src, "gun_insert_empty_magazine", 70, 1)
-				A.update_icon()
-				update_icon()
-				return 1
-			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
-				return
-		else if (magazine)
-			to_chat(user, "<span class='notice'>There's already a [magazine_wording] in \the [src].</span>")
-=======
 		if (!magazine)
 			insert_magazine(user, AM)
 		else
@@ -257,7 +226,6 @@
 				A.update_icon()
 				update_icon()
 			return
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
 		if(!can_suppress)

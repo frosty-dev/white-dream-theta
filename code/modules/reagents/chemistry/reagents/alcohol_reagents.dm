@@ -39,11 +39,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		var/booze_power = boozepwr
 		if(HAS_TRAIT(C, TRAIT_ALCOHOL_TOLERANCE)) //we're an accomplished drinker
 			booze_power *= 0.7
-<<<<<<< HEAD
-		if(C.has_trait(TRAIT_LIGHT_DRINKER))
-=======
 		if(HAS_TRAIT(C, TRAIT_LIGHT_DRINKER))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			booze_power *= 2
 		C.drunkenness = max((C.drunkenness + (sqrt(volume) * booze_power * ALCOHOL_RATE)), 0) //Volume, power, and server alcohol rate effect how quickly one gets drunk
 		var/obj/item/organ/liver/L = C.getorganslot(ORGAN_SLOT_LIVER)
@@ -1289,11 +1285,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	return (pick(TRAIT_PARALYSIS_L_ARM,TRAIT_PARALYSIS_R_ARM,TRAIT_PARALYSIS_R_LEG,TRAIT_PARALYSIS_L_LEG))
 
 /datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M)
-<<<<<<< HEAD
-	M.Paralyze(60, 1, 0)
-=======
 	M.set_drugginess(50)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	M.dizziness +=2
 	M.adjustBrainLoss(1*REM, 150)
 	if(prob(20))
@@ -1440,11 +1432,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/quadruple_sec/on_mob_life(mob/living/carbon/M)
 	//Securidrink in line with the Screwdriver for engineers or Nothing for mimes
-<<<<<<< HEAD
-	if(M.has_trait(TRAIT_LAW_ENFORCEMENT_METABOLISM))
-=======
 	if(HAS_TRAIT(M, TRAIT_LAW_ENFORCEMENT_METABOLISM))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		M.heal_bodypart_damage(1, 1)
 		M.adjustBruteLoss(-2,0)
 		. = 1
@@ -1463,11 +1451,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/quintuple_sec/on_mob_life(mob/living/carbon/M)
 	//Securidrink in line with the Screwdriver for engineers or Nothing for mimes but STRONG..
-<<<<<<< HEAD
-	if(M.has_trait(TRAIT_LAW_ENFORCEMENT_METABOLISM))
-=======
 	if(HAS_TRAIT(M, TRAIT_LAW_ENFORCEMENT_METABOLISM))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		M.heal_bodypart_damage(2,2,2)
 		M.adjustBruteLoss(-5,0)
 		M.adjustOxyLoss(-5,0)

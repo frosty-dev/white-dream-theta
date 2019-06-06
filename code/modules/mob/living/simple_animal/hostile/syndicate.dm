@@ -84,11 +84,7 @@
 	attacktext = "slashes"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	status_flags = 0
-<<<<<<< HEAD
-	var/projectile_deflect_chance = 50
-=======
 	var/projectile_deflect_chance = 0
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /mob/living/simple_animal/hostile/syndicate/melee/space
 	icon_state = "syndicate_space_knife"
@@ -139,10 +135,7 @@
 	if(prob(projectile_deflect_chance))
 		visible_message("<span class='danger'>[src] blocks [Proj] with its shield!</span>")
 		return BULLET_ACT_BLOCK
-<<<<<<< HEAD
-=======
 	return ..()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space
 	icon_state = "syndicate_space_sword"

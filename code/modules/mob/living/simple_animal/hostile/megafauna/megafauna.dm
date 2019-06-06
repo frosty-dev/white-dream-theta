@@ -43,22 +43,12 @@
 	if(internal_type && true_spawn)
 		internal = new internal_type(src)
 	apply_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
-<<<<<<< HEAD
-	add_trait(TRAIT_NO_TELEPORT, MEGAFAUNA_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NO_TELEPORT, MEGAFAUNA_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /mob/living/simple_animal/hostile/megafauna/Destroy()
 	QDEL_NULL(internal)
 	. = ..()
 
-<<<<<<< HEAD
-/mob/living/simple_animal/hostile/megafauna/prevent_content_explosion()
-	return TRUE
-
-/mob/living/simple_animal/hostile/megafauna/death(gibbed)
-=======
 /mob/living/simple_animal/hostile/megafauna/Moved()
 	if(nest && nest.parent && get_dist(nest.parent, src) > nest_range)
 		var/turf/closest = get_turf(nest.parent)
@@ -73,7 +63,6 @@
 	return TRUE
 
 /mob/living/simple_animal/hostile/megafauna/death(gibbed, var/list/force_grant)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(health > 0)
 		return
 	else

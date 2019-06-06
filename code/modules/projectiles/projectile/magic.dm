@@ -6,7 +6,6 @@
 	nodamage = TRUE
 	armour_penetration = 100
 	flag = "magic"
-	speed = 0.6
 
 /obj/item/projectile/magic/death
 	name = "bolt of death"
@@ -67,11 +66,7 @@
 	if(!isturf(target))
 		teleloc = target.loc
 	for(var/atom/movable/stuff in teleloc)
-<<<<<<< HEAD
-		if(!stuff.anchored && stuff.loc)
-=======
 		if(!stuff.anchored && stuff.loc && !isobserver(stuff))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if(do_teleport(stuff, stuff, 10, channel = TELEPORT_CHANNEL_MAGIC))
 				teleammount++
 				var/datum/effect_system/smoke_spread/smoke = new
@@ -390,18 +385,6 @@
 	locker_temp_instance = new(src)
 
 /obj/item/projectile/magic/locker/prehit(atom/A)
-<<<<<<< HEAD
-	if(ismob(A) && locker_suck)
-		var/mob/M = A
-		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [A]!</span>")
-			qdel(src)
-			return BULLET_ACT_BLOCK
-		if(M.anchored)
-			return ..()
-		M.forceMove(src)
-		return BULLET_ACT_HIT
-=======
 	if(isliving(A) && locker_suck)
 		var/mob/living/M = A
 		if(M.anti_magic_check())
@@ -412,7 +395,6 @@
 			return ..()
 		M.forceMove(src)
 		return FALSE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	return ..()
 
 /obj/item/projectile/magic/locker/on_hit(target)
@@ -699,8 +681,6 @@
 	var/turf/T = get_turf(target)
 	for(var/i=0, i<50, i+=10)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/explosion, T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
-<<<<<<< HEAD
-=======
 
 //still magic related, but a different path
 
@@ -713,4 +693,3 @@
 	armour_penetration = 100
 	temperature = 50
 	flag = "magic"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

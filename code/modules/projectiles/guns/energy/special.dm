@@ -283,11 +283,7 @@
 /obj/item/gun/energy/printer
 	name = "cyborg lmg"
 	desc = "An LMG that fires 3D-printed flechettes. They are slowly resupplied using the cyborg's internal power source."
-<<<<<<< HEAD
-	icon_state = "l6closed0"
-=======
 	icon_state = "l6_cyborg"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon = 'icons/obj/guns/projectile.dmi'
 	cell_type = "/obj/item/stock_parts/cell/secborg"
 	ammo_type = list(/obj/item/ammo_casing/energy/c3dbullet)

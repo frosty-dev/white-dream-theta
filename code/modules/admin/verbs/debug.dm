@@ -38,23 +38,6 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	var/targetselected = FALSE
 	var/returnval = null
 
-<<<<<<< HEAD
-	switch(alert("Proc owned by something?",,"Yes","No"))
-		if("Yes")
-			targetselected = 1
-			var/list/value = vv_get_value(default_class = VV_ATOM_REFERENCE, classes = list(VV_ATOM_REFERENCE, VV_DATUM_REFERENCE, VV_MOB_REFERENCE, VV_CLIENT))
-			if (!value["class"] || !value["value"])
-				return
-			target = value["value"]
-		if("No")
-			target = null
-			targetselected = 0
-
-	var/procname = input("Proc path, eg: /proc/fake_blood","Path:", null) as text|null
-	if(!procname)
-		return
-	
-=======
 	if(alert("Proc owned by something?",,"Yes","No") == "Yes")
 		targetselected = TRUE
 		var/list/value = vv_get_value(default_class = VV_ATOM_REFERENCE, classes = list(VV_ATOM_REFERENCE, VV_DATUM_REFERENCE, VV_MOB_REFERENCE, VV_CLIENT))
@@ -66,7 +49,6 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	if(!procpath)
 		return
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	//strip away everything but the proc name
 	var/list/proclist = splittext(procpath, "/")
 	if (!length(proclist))
@@ -80,15 +62,9 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			to_chat(usr, "<span class='warning'>Error: callproc(): type [target.type] has no [proctype] named [procpath].</span>")
 			return
 	else
-<<<<<<< HEAD
-		var/procpath = text2path("[proctype]/[procname]")
-		if (!procpath)
-			to_chat(usr, "<font color='red'>Error: callproc(): proc [procname] does not exist. (Did you forget the /proc/ part?)</font>")
-=======
 		procpath = "/[proctype]/[procname]"
 		if(!text2path(procpath))
 			to_chat(usr, "<span class='warning'>Error: callproc(): [procpath] does not exist.</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			return
 
 	var/list/lst = get_callproc_args()

@@ -165,21 +165,12 @@
 	results = list(/datum/reagent/medicine/mannitol = 3)
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/hydrogen = 1, /datum/reagent/water = 1)
 	mix_message = "The solution slightly bubbles, becoming thicker."
-<<<<<<< HEAD
-	
-/datum/chemical_reaction/neurine
-	name = "Neurine"
-	id = "neurine"
-	results = list("neurine" = 3)
-	required_reagents = list("mannitol" = 1, "acetone" = 1, "oxygen" = 1)
-=======
 
 /datum/chemical_reaction/neurine
 	name = "Neurine"
 	id = /datum/reagent/medicine/neurine
 	results = list(/datum/reagent/medicine/neurine = 3)
 	required_reagents = list(/datum/reagent/medicine/mannitol = 1, /datum/reagent/acetone = 1, /datum/reagent/oxygen = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/chemical_reaction/mutadone
 	name = "Mutadone"
@@ -263,18 +254,6 @@
 
 /datum/chemical_reaction/modafinil
 	name = "Modafinil"
-<<<<<<< HEAD
-	id = "modafinil"
-	results = list("modafinil" = 5)
-	required_reagents = list("diethylamine" = 1, "ammonia" = 1, "phenol" = 1, "acetone" = 1, "sacid" = 1)
-	required_catalysts = list("bromine" = 1) // as close to the real world synthesis as possible
-
-/datum/chemical_reaction/psicodine
-	name = "Psicodine"
-	id = "psicodine"
-	results = list("psicodine" = 5)
-	required_reagents = list( "mannitol" = 2, "water" = 2, "impedrezene" = 1)
-=======
 	id = /datum/reagent/medicine/modafinil
 	results = list(/datum/reagent/medicine/modafinil = 5)
 	required_reagents = list(/datum/reagent/diethylamine = 1, /datum/reagent/ammonia = 1, /datum/reagent/phenol = 1, /datum/reagent/acetone = 1, /datum/reagent/toxin/acid = 1)
@@ -285,4 +264,3 @@
 	id = /datum/reagent/medicine/psicodine
 	results = list(/datum/reagent/medicine/psicodine = 5)
 	required_reagents = list( /datum/reagent/medicine/mannitol = 2, /datum/reagent/water = 2, /datum/reagent/impedrezene = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

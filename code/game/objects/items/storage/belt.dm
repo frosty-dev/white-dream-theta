@@ -61,12 +61,8 @@
 		/obj/item/holosign_creator/atmos,
 		/obj/item/holosign_creator/engineering,
 		/obj/item/forcefield_projector,
-<<<<<<< HEAD
-		/obj/item/assembly/signaler
-=======
 		/obj/item/assembly/signaler,
 		/obj/item/lightreplacer
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		))
 
 /obj/item/storage/belt/utility/chief

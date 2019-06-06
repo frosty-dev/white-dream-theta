@@ -562,12 +562,8 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"none_button.png" = 'html/none_button.png',
 	)
 
-<<<<<<< HEAD
-/datum/asset/simple/pills
-=======
 /datum/asset/spritesheet/simple/pills
 	name ="pills"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	assets = list(
 		"pill1" = 'icons/UI_Icons/Pills/pill1.png',
 		"pill2" = 'icons/UI_Icons/Pills/pill2.png',
@@ -666,8 +662,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 		Insert(initial(D.id), I)
 	return ..()
-<<<<<<< HEAD
-=======
 
 /datum/asset/spritesheet/vending
 	name = "vending"
@@ -702,7 +696,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 		Insert(imgid, I)
 	return ..()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/asset/simple/genetics
 	assets = list(

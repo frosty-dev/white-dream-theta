@@ -19,11 +19,7 @@
 	else
 		to_chat(user, "We can't adjust our eyes if we don't have any!")
 
-<<<<<<< HEAD
-/datum/action/changeling/augmented_eyesight/sting_action(mob/living/carbon/human/user)
-=======
 /datum/action/changeling/augmented_eyesight/sting_action(mob/living/carbon/user)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(!istype(user))
 		return
 	..()

@@ -373,7 +373,6 @@
 		humanc = character	//Let's retypecast the var to be human,
 
 	if(humanc)	//These procs all expect humans
-	/*
 		GLOB.data_core.manifest_inject(humanc)
 		if(SSshuttle.arrivals)
 			SSshuttle.arrivals.QueueAnnounce(humanc, rank)
@@ -388,57 +387,9 @@
 			give_guns(humanc)
 		if(GLOB.summon_magic_triggered)
 			give_magic(humanc)
-<<<<<<< HEAD
-	*/
-		//////////////////////////////////////
-		if(humanc.client.prefs.be_loly)
-			var/mob/living/carbon/human/species/loly/l = new(humanc.loc)
-			l.ckey = humanc.ckey
-
-			if(GLOB.summon_guns_triggered)
-				give_guns(l)
-			if(GLOB.summon_magic_triggered)
-				give_magic(l)
-			//
-			QDEL_NULL(humanc)
-
-			equip = SSjob.EquipRank(l, rank, TRUE)
-			l = equip
-
-			if(CONFIG_GET(flag/allow_latejoin_antagonists) && l)	//Borgs aren't allowed to be antags. Will need to be tweaked if we get true latejoin ais.
-				if(SSshuttle.emergency)
-					switch(SSshuttle.emergency.mode)
-						if(SHUTTLE_RECALL, SHUTTLE_IDLE)
-							SSticker.mode.make_antag_chance(l)
-					if(SHUTTLE_CALL)
-						if(SSshuttle.emergency.timeLeft(1) > initial(SSshuttle.emergencyCallTime)*0.5)
-							SSticker.mode.make_antag_chance(l)
-
-			if(l && CONFIG_GET(flag/roundstart_traits))
-				SSquirks.AssignQuirks(l, l.client, TRUE)
-		else
-			GLOB.data_core.manifest_inject(humanc)
-			if(SSshuttle.arrivals)
-				SSshuttle.arrivals.QueueAnnounce(humanc, rank)
-			else
-				AnnounceArrival(humanc, rank)
-			AddEmploymentContract(humanc)
-			if(GLOB.highlander)
-				to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
-				humanc.make_scottish()
-
-			if(GLOB.summon_guns_triggered)
-				give_guns(humanc)
-			if(GLOB.summon_magic_triggered)
-				give_magic(humanc)
-			if(GLOB.curse_of_madness_triggered)
-				give_madness(humanc, GLOB.curse_of_madness_triggered)
-		//////////////////////////////////////
-=======
 		if(GLOB.curse_of_madness_triggered)
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	GLOB.joined_player_list += character.ckey
 
 	if(CONFIG_GET(flag/allow_latejoin_antagonists) && humanc)	//Borgs aren't allowed to be antags. Will need to be tweaked if we get true latejoin ais.
@@ -548,9 +499,6 @@
 
 	H.name = real_name
 
-	if(client.prefs.be_catman)
-		purrbation_apply(H)
-		//start_wagging_tail(H)
 	. = H
 	new_character = .
 	if(transfer_after)

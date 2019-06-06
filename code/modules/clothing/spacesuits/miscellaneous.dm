@@ -297,11 +297,7 @@ Contains:
 
 /obj/item/clothing/head/helmet/space/hardsuit/carp/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, LOCKED_HELMET_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, LOCKED_HELMET_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/suit/space/hardsuit/carp
 	name = "carp space suit"

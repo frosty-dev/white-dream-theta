@@ -515,11 +515,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(user.stat && !stat_allowed)
 		return FALSE
 
-<<<<<<< HEAD
-	if(!antimagic_allowed && user.anti_magic_check(TRUE, FALSE, major = FALSE, self = TRUE))
-=======
 	if(!antimagic_allowed && user.anti_magic_check(TRUE, FALSE, FALSE, 0, TRUE))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return FALSE
 
 	if(!ishuman(user))

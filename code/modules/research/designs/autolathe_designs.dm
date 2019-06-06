@@ -10,8 +10,6 @@
 	build_path = /obj/item/reagent_containers/glass/bucket
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
-<<<<<<< HEAD
-=======
 	
 /datum/design/mop
 	name = "Mop"
@@ -21,7 +19,6 @@
 	build_path = /obj/item/mop
 	category = list("initial","Tools","Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/design/crowbar
 	name = "Pocket Crowbar"

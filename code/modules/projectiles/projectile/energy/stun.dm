@@ -2,17 +2,12 @@
 	name = "electrode"
 	icon_state = "spark"
 	color = "#FFFF00"
-<<<<<<< HEAD
-	nodamage = 1
-=======
 	nodamage = TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	paralyze = 100
 	stutter = 5
 	jitter = 20
 	hitsound = 'sound/weapons/taserhit.ogg'
 	range = 7
-	speed = 0.4
 	tracer_type = /obj/effect/projectile/tracer/stun
 	muzzle_type = /obj/effect/projectile/muzzle/stun
 	impact_type = /obj/effect/projectile/impact/stun

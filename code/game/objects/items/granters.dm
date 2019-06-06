@@ -44,8 +44,6 @@
 		return FALSE
 	if(!user.can_read(src))
 		return FALSE
-<<<<<<< HEAD
-=======
 	if(already_known(user))
 		return FALSE
 	if(used && oneuse)
@@ -61,7 +59,6 @@
 		if(do_after(user,50, user))
 			on_reading_finished(user)
 		reading = FALSE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	return TRUE
 
 ///ACTION BUTTONS///
@@ -79,8 +76,6 @@
 			return TRUE
 	return FALSE
 
-<<<<<<< HEAD
-=======
 /obj/item/book/granter/action/on_reading_start(mob/user)
 	to_chat(user, "<span class='notice'>You start reading about [actionname]...</span>")
 
@@ -90,7 +85,6 @@
 	G.Grant(user)
 	onlearned(user)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/book/granter/action/origami
 	granted_action = /datum/action/innate/origami
 	name = "The Art of Origami"
@@ -134,26 +128,6 @@
 					to_chat(user,"<span class='notice'>You're already far more versed in this spell than this flimsy how-to book can provide.</span>")
 				else
 					to_chat(user,"<span class='notice'>You've already read this one.</span>")
-<<<<<<< HEAD
-			return FALSE
-	if(used == TRUE && oneuse == TRUE)
-		recoil(user)
-	else
-		to_chat(user, "<span class='notice'>You start reading about casting [spellname]...</span>")
-		reading = TRUE
-		for(var/i=1, i<=pages_to_mastery, i++)
-			if(!turn_page(user))
-				to_chat(user, "<span class='notice'>You stop reading...</span>")
-				reading = FALSE
-				qdel(S)
-				return FALSE
-		if(do_after(user,50, user))
-			to_chat(user, "<span class='notice'>You feel like you've experienced enough to cast [spellname]!</span>")
-			user.mind.AddSpell(S)
-			user.log_message("learned the spell [spellname] ([S])", LOG_ATTACK, color="orange")
-			onlearned(user)
-		reading = FALSE
-=======
 			return TRUE
 	return FALSE
 
@@ -166,7 +140,6 @@
 	user.mind.AddSpell(S)
 	user.log_message("learned the spell [spellname] ([S])", LOG_ATTACK, color="orange")
 	onlearned(user)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/book/granter/spell/recoil(mob/user)
 	user.visible_message("<span class='warning'>[src] glows in a black light!</span>")
@@ -346,30 +319,6 @@
 
 /obj/item/book/granter/martial/already_known(mob/user)
 	if(!martial)
-<<<<<<< HEAD
-		return
-	var/datum/martial_art/MA = new martial
-	if(user.mind.has_martialart(MA.id))
-		to_chat(user,"<span class='warning'>You already know [martialname]!</span>")
-		return
-	if(used == TRUE && oneuse == TRUE)
-		recoil(user)
-	else
-		to_chat(user, "<span class='notice'>You start reading about [martialname]...</span>")
-		reading = TRUE
-		for(var/i=1, i<=pages_to_mastery, i++)
-			if(!turn_page(user))
-				to_chat(user, "<span class='notice'>You stop reading...</span>")
-				reading = FALSE
-				qdel(MA)
-				return
-		if(do_after(user,50, user))
-			to_chat(user, "[greet]")
-			MA.teach(user)
-			user.log_message("learned the martial art [martialname] ([MA])", LOG_ATTACK, color="orange")
-			onlearned(user)
-		reading = FALSE
-=======
 		return TRUE
 	var/datum/martial_art/MA = martial
 	if(user.mind.has_martialart(initial(MA.id)))
@@ -386,7 +335,6 @@
 	MA.teach(user)
 	user.log_message("learned the martial art [martialname] ([MA])", LOG_ATTACK, color="orange")
 	onlearned(user)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/book/granter/martial/cqc
 	martial = /datum/martial_art/cqc

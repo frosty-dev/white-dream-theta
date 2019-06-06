@@ -56,14 +56,10 @@
 	name = "Bay #3"
 
 /area/centcom/supplypod/loading/four
-<<<<<<< HEAD
-	name = "Supplypod Loading Bay #4"
-=======
 	name = "Bay #4"
 
 /area/centcom/supplypod/loading/ert
 	name = "ERT Bay"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 //THUNDERDOME
 
 /area/tdome

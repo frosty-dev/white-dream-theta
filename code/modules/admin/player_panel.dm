@@ -264,15 +264,9 @@
 				else
 					M_job = "Ghost"
 
-<<<<<<< HEAD
-			var/M_name = rhtml_encode(M.name)
-			var/M_rname = rhtml_encode(M.real_name)
-			var/M_key = rhtml_encode(M.key)
-=======
 			var/M_name = html_encode(M.name)
 			var/M_rname = html_encode(M.real_name)
 			var/M_key = html_encode(M.key)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			var/previous_names = ""
 			if(M_key)
 				var/datum/player_details/P = GLOB.player_details[ckey(M_key)]

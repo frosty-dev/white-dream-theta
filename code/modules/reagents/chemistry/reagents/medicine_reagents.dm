@@ -87,13 +87,8 @@
 	M.AdjustUnconscious(-20, FALSE)
 	M.AdjustImmobilized(-20, FALSE)
 	M.AdjustParalyzed(-20, FALSE)
-<<<<<<< HEAD
-	if(holder.has_reagent("mindbreaker"))
-		holder.remove_reagent("mindbreaker", 5)
-=======
 	if(holder.has_reagent(/datum/reagent/toxin/mindbreaker))
 		holder.remove_reagent(/datum/reagent/toxin/mindbreaker, 5)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	M.hallucination = max(0, M.hallucination - 10)
 	if(prob(30))
 		M.adjustToxLoss(1, 0)
@@ -517,13 +512,7 @@
 
 /datum/reagent/medicine/perfluorodecalin/on_mob_life(mob/living/carbon/human/M)
 	M.adjustOxyLoss(-12*REM, 0)
-<<<<<<< HEAD
-	M.adjustToxLoss(2.5*REM, 0)
-	M.adjustBruteLoss(-0.5*REM, 0)
-	M.adjustFireLoss(-0.5*REM, 0)
-=======
 	M.adjustToxLoss(0.3*REM, 0)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 	return TRUE
 
@@ -538,13 +527,6 @@
 
 /datum/reagent/medicine/ephedrine/on_mob_add(mob/living/L)
 	..()
-<<<<<<< HEAD
-	L.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
-
-/datum/reagent/medicine/ephedrine/on_mob_delete(mob/living/L)
-	L.remove_movespeed_modifier(id)
-	..()
-=======
 	L.add_movespeed_modifier(type, update=TRUE, priority=100, multiplicative_slowdown=-0.85, blacklisted_movetypes=(FLYING|FLOATING))
 
 /datum/reagent/medicine/ephedrine/on_mob_delete(mob/living/L)
@@ -557,7 +539,6 @@
 		if(I && M.dropItemToGround(I))
 			to_chat(M, "<span class ='notice'>Your hands spaz out and you drop what you were holding!</span>")
 			M.Jitter(10)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	M.AdjustAllImmobility(-20, FALSE)
 	M.adjustStaminaLoss(-1*REM, FALSE)
@@ -653,17 +634,10 @@
 
 /datum/reagent/medicine/morphine/on_mob_add(mob/living/L)
 	..()
-<<<<<<< HEAD
-	L.ignore_slowdown(id)
-
-/datum/reagent/medicine/morphine/on_mob_delete(mob/living/L)
-	L.unignore_slowdown(id)
-=======
 	L.ignore_slowdown(type)
 
 /datum/reagent/medicine/morphine/on_mob_delete(mob/living/L)
 	L.unignore_slowdown(type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
@@ -817,10 +791,6 @@
 
 /datum/reagent/medicine/strange_reagent
 	name = "Strange Reagent"
-<<<<<<< HEAD
-	id = "strange_reagent"
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	description = "A miracle drug capable of bringing the dead back to life. Only functions when applied by patch or spray, if the target has less than 100 brute and burn damage (independent of one another) and hasn't been husked. Causes slight damage to the living."
 	reagent_state = LIQUID
 	color = "#A0E85E"
@@ -919,17 +889,10 @@
 
 /datum/reagent/medicine/stimulants/on_mob_add(mob/living/L)
 	..()
-<<<<<<< HEAD
-	L.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
-
-/datum/reagent/medicine/stimulants/on_mob_delete(mob/living/L)
-	L.remove_movespeed_modifier(id)
-=======
 	L.add_movespeed_modifier(type, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
 
 /datum/reagent/medicine/stimulants/on_mob_delete(mob/living/L)
 	L.remove_movespeed_modifier(type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/reagent/medicine/stimulants/on_mob_life(mob/living/carbon/M)
@@ -1202,17 +1165,10 @@
 
 /datum/reagent/medicine/changelinghaste/on_mob_add(mob/living/L)
 	..()
-<<<<<<< HEAD
-	L.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-2, blacklisted_movetypes=(FLYING|FLOATING))
-
-/datum/reagent/medicine/changelinghaste/on_mob_delete(mob/living/L)
-	L.remove_movespeed_modifier(id)
-=======
 	L.add_movespeed_modifier(type, update=TRUE, priority=100, multiplicative_slowdown=-2, blacklisted_movetypes=(FLYING|FLOATING))
 
 /datum/reagent/medicine/changelinghaste/on_mob_delete(mob/living/L)
 	L.remove_movespeed_modifier(type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/reagent/medicine/changelinghaste/on_mob_life(mob/living/carbon/M)
@@ -1242,19 +1198,11 @@
 
 /datum/reagent/medicine/muscle_stimulant/on_mob_add(mob/living/M)
 	. = ..()
-<<<<<<< HEAD
-	M.ignore_slowdown(id)
-
-/datum/reagent/medicine/muscle_stimulant/on_mob_delete(mob/living/M)
-	. = ..()
-	M.unignore_slowdown(id)
-=======
 	M.ignore_slowdown(type)
 
 /datum/reagent/medicine/muscle_stimulant/on_mob_delete(mob/living/M)
 	. = ..()
 	M.unignore_slowdown(type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/reagent/medicine/modafinil
 	name = "Modafinil"

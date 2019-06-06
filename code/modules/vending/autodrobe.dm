@@ -131,12 +131,9 @@
 				   /obj/item/clothing/suit/chaplainsuit/clownpriest = 1,
 				   /obj/item/clothing/head/clownmitre = 1,
 		           /obj/item/skub = 1,)
-<<<<<<< HEAD
-=======
 
 /obj/machinery/vending/autodrobe/canLoadItem(obj/item/I,mob/user)
 	return (I.type in products)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 50

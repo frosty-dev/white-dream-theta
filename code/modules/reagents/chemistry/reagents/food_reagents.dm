@@ -20,11 +20,7 @@
 		var/mob/living/carbon/human/H = M
 		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
 			H.adjust_nutrition(nutriment_factor)
-<<<<<<< HEAD
-	holder.remove_reagent(src.id, metabolization_rate)
-=======
 	holder.remove_reagent(type, metabolization_rate)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/reagent/consumable/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == INGEST)
@@ -430,11 +426,7 @@
 	taste_description = "childhood whimsy"
 
 /datum/reagent/consumable/sprinkles/on_mob_life(mob/living/carbon/M)
-<<<<<<< HEAD
-	if(M.has_trait(TRAIT_LAW_ENFORCEMENT_METABOLISM))
-=======
 	if(HAS_TRAIT(M, TRAIT_LAW_ENFORCEMENT_METABOLISM))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		M.heal_bodypart_damage(1,1, 0)
 		. = 1
 	..()
@@ -711,8 +703,6 @@
 		M.electrocute_act(rand(10,15), "Liquid Electricity in their body", 1) //lmao at the newbs who eat energy bars
 		playsound(M, "sparks", 50, 1)
 	return ..()
-<<<<<<< HEAD
-=======
 
 /datum/reagent/consumable/astrotame
 	name = "Astrotame"
@@ -740,4 +730,3 @@
 	quality = FOOD_AMAZING
 	taste_mult = 100
 	can_synth = FALSE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

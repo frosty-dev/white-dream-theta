@@ -109,15 +109,10 @@ Difficulty: Hard
 		blinking = TRUE //we do a fancy animation, release a huge burst(), and leave our staff.
 		visible_message("<span class='hierophant'>\"Mrmxmexmrk wipj-hiwxvygx wiuyirgi...\"</span>")
 		visible_message("<span class='hierophant_warning'>[src] shrinks, releasing a massive burst of energy!</span>")
-<<<<<<< HEAD
-		INVOKE_ASYNC(GLOBAL_PROC, .proc/hierophant_burst, null, get_turf(src), 10)
-		..()
-=======
 		for(var/mob/living/L in view(7,src))
 			stored_nearby += L // store the people to grant the achievements to once we die
 		hierophant_burst(null, get_turf(src), 10)
 		..(force_grant = stored_nearby)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /mob/living/simple_animal/hostile/megafauna/hierophant/Destroy()
 	qdel(spawned_beacon)

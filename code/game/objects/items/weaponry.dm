@@ -91,11 +91,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/claymore/highlander/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, HIGHLANDER)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, HIGHLANDER)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	START_PROCESSING(SSobj, src)
 
 /obj/item/claymore/highlander/Destroy()
@@ -259,11 +255,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		user.put_in_hands(S)
 		to_chat(user, "<span class='notice'>You fasten the glass shard to the top of the rod with the cable.</span>")
 
-<<<<<<< HEAD
-	else if(istype(I, /obj/item/assembly/igniter) && !(I.has_trait(TRAIT_NODROP)))
-=======
 	else if(istype(I, /obj/item/assembly/igniter) && !(HAS_TRAIT(I, TRAIT_NODROP)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/obj/item/melee/baton/cattleprod/P = new /obj/item/melee/baton/cattleprod
 
 		remove_item_from_storage(user)

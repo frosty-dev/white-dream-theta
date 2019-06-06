@@ -67,10 +67,6 @@
 	air_contents.assert_gases(/datum/gas/oxygen, /datum/gas/nitrogen)
 	air_contents.gases[/datum/gas/oxygen][MOLES] = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD
 	air_contents.gases[/datum/gas/nitrogen][MOLES] = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * N2STANDARD
-<<<<<<< HEAD
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /*
  * Plasma

@@ -8,20 +8,12 @@
 /datum/round_event/wizard/rpgloot/start()
 	var/upgrade_scroll_chance = 0
 	for(var/obj/item/I in world)
-<<<<<<< HEAD
-		if(!(I.flags_1 & INITIALIZED_1))
-			continue
-
-		if(!istype(I.rpg_loot))
-			I.rpg_loot = new(I)
-=======
 		CHECK_TICK
 
 		if(!(I.flags_1 & INITIALIZED_1))
 			continue
 
 		I.AddComponent(/datum/component/fantasy)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 		if(istype(I, /obj/item/storage))
 			var/obj/item/storage/S = I
@@ -53,37 +45,7 @@
 	if(!proximity || !istype(target))
 		return
 
-<<<<<<< HEAD
-	var/datum/rpg_loot/rpg_loot_datum = target.rpg_loot
-	var/turf/T = get_turf(target)
-
-	if(!istype(rpg_loot_datum))
-		var/original_name = "[target]"
-		target.rpg_loot = rpg_loot_datum = new /datum/rpg_loot(target)
-
-		var/span
-		var/effect_description
-		if(target.rpg_loot.quality >= 0)
-			span = "<span class='notice'>"
-			effect_description = "<span class='heavy_brass'>shimmering golden shield</span>"
-		else
-			span = "<span class='danger'>"
-			effect_description = "<span class='umbra_emphasis'>mottled black glow</span>"
-
-		T.visible_message("[span][original_name] is covered by a [effect_description] and then transforms into [target]!</span>")
-
-	else
-		var/quality = rpg_loot_datum.quality
-
-		if(can_backfire && quality > 9 && prob((quality - 9)*10))
-			T.visible_message("<span class='danger'>[target] <span class='inathneq_large'>violently glows blue</span> for a while, then evaporates.</span>")
-			target.burn()
-		else
-			T.visible_message("<span class='notice'>[target] <span class='inathneq_small'>glows blue</span> and seems vaguely \"better\"!</span>")
-			rpg_loot_datum.modify(upgrade_amount)
-=======
 	target.AddComponent(/datum/component/fantasy, upgrade_amount, null, null, can_backfire, TRUE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	if(--uses <= 0)
 		qdel(src)

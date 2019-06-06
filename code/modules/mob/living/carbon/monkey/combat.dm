@@ -132,11 +132,7 @@
 
 /mob/living/carbon/monkey/proc/handle_combat()
 	if(pickupTarget)
-<<<<<<< HEAD
-		if(restrained() || blacklistItems[pickupTarget] || pickupTarget.has_trait(TRAIT_NODROP))
-=======
 		if(IsDeadOrIncap() || restrained() || blacklistItems[pickupTarget] || HAS_TRAIT(pickupTarget, TRAIT_NODROP))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			pickupTarget = null
 		else
 			pickupTimer++

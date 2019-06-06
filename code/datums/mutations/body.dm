@@ -10,11 +10,7 @@
 	power_coeff = 1
 
 /datum/mutation/human/epilepsy/on_life()
-<<<<<<< HEAD
-	if(prob(1) && owner.stat == CONSCIOUS)
-=======
 	if(prob(1 * GET_MUTATION_SYNCHRONIZER(src)) && owner.stat == CONSCIOUS)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		owner.visible_message("<span class='danger'>[owner] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
 		owner.Unconscious(200 * GET_MUTATION_POWER(src))
 		owner.Jitter(1000 * GET_MUTATION_POWER(src))
@@ -62,11 +58,7 @@
 	power_coeff = 1
 
 /datum/mutation/human/cough/on_life()
-<<<<<<< HEAD
-	if(prob(5) && owner.stat == CONSCIOUS)
-=======
 	if(prob(5 * GET_MUTATION_SYNCHRONIZER(src)) && owner.stat == CONSCIOUS)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		owner.drop_all_held_items()
 		owner.emote("cough")
 		if(GET_MUTATION_POWER(src) > 1)
@@ -189,11 +181,7 @@
 
 /datum/mutation/human/race/on_losing(mob/living/carbon/monkey/owner)
 	if(owner && istype(owner) && owner.stat != DEAD && (owner.dna.mutations.Remove(src)))
-<<<<<<< HEAD
-		. = owner.humanize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSE)
-=======
 		. = owner.humanize(TR_KEEPITEMS | TR_KEEPIMPLANTS | TR_KEEPORGANS | TR_KEEPDAMAGE | TR_KEEPVIRUS | TR_KEEPSTUNS | TR_KEEPREAGENTS | TR_KEEPSE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/mutation/human/glow
 	name = "Glowy"
@@ -341,8 +329,6 @@
 	owner.update_transform()
 	owner.visible_message("<span class='danger'>[owner] suddenly shrinks!</span>", "<span class='notice'>Everything around you seems to grow..</span>")
 
-<<<<<<< HEAD
-=======
 /datum/mutation/human/spastic
 	name = "Spastic"
 	desc = "Subject suffers from muscle spasms."
@@ -377,4 +363,3 @@
 			owner.SetStun(owner.AmountStun()*2)
 			owner.visible_message("<span class='danger'>[owner] tries to stand up, but trips!</span>", "<span class='userdanger'>You trip over your own feet!</span>")
 			stun_cooldown = world.time + 300
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

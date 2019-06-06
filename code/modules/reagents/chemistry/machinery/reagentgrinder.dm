@@ -166,11 +166,7 @@
 /obj/machinery/reagentgrinder/ui_interact(mob/user) // The microwave Menu //I am reasonably certain that this is not a microwave
 	. = ..()
 
-<<<<<<< HEAD
-	if(operating || !user.canUseTopic(src))
-=======
 	if(operating || !user.canUseTopic(src, !issilicon(user)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return
 
 	var/list/options = list()

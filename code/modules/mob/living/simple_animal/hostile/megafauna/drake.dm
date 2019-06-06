@@ -318,10 +318,7 @@ Difficulty: Medium
 	swooping |= SWOOP_INVULNERABLE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	sleep(7)
-<<<<<<< HEAD
-=======
 	//badmins please don't kill it while it's invulnerable
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	while(target && loc != get_turf(target))
 		forceMove(get_step(src, get_dir(src, target)))
@@ -513,9 +510,6 @@ Difficulty: Medium
 	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/lesser/grant_achievement(medaltype,scoretype)
-<<<<<<< HEAD
-	return
-=======
 	return
 
 /mob/living/simple_animal/hostile/megafauna/dragon/space_dragon
@@ -590,4 +584,3 @@ Difficulty: Medium
 	..(targets, user, 60)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/space_dragon/AltClickOn(atom/movable/A)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

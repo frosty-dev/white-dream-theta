@@ -86,11 +86,7 @@
 
 /obj/item/storage/toolbox/mechanical/old/heirloom/PopulateContents()
 	return
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/storage/toolbox/mechanical/old/clean
 	name = "toolbox"
 	desc = "A old, blue toolbox, it looks robust."

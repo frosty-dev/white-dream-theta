@@ -43,11 +43,7 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 	candidates = get_candidates(ROLE_ALIEN, null, ROLE_ALIEN)
 
 	// find our chosen mob to breathe life into
-<<<<<<< HEAD
-	// Mobs have to be simple animals, mindless and on station
-=======
 	// Mobs have to be simple animals, mindless, on station, and NOT holograms.
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	// prioritize starter animals that people will recognise
 
 
@@ -60,11 +56,7 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 		var/turf/T = get_turf(L)
 		if(!T || !is_station_level(T.z))
 			continue
-<<<<<<< HEAD
-		if((L in GLOB.player_list) || L.mind)
-=======
 		if((L in GLOB.player_list) || L.mind || (L.flags_1 & HOLOGRAM_1))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			continue
 		if(is_type_in_typecache(L, GLOB.high_priority_sentience))
 			hi_pri += L

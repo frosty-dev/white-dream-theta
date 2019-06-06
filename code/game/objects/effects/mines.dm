@@ -131,11 +131,7 @@
 	var/obj/item/twohanded/required/chainsaw/doomslayer/chainsaw = new(victim.loc)
 	victim.log_message("entered a blood frenzy", LOG_ATTACK)
 
-<<<<<<< HEAD
-	chainsaw.add_trait(TRAIT_NODROP, CHAINSAW_FRENZY_TRAIT)
-=======
 	ADD_TRAIT(chainsaw, TRAIT_NODROP, CHAINSAW_FRENZY_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	victim.drop_all_held_items()
 	victim.put_in_hands(chainsaw, forced = TRUE)
 	chainsaw.attack_self(victim)

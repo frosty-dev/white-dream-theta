@@ -1,9 +1,5 @@
 /datum/surgery/organ_manipulation
-<<<<<<< HEAD
-	name = "organ manipulation"
-=======
 	name = "Organ manipulation"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
 	requires_real_bodypart = 1

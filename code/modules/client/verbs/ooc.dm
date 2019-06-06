@@ -75,18 +75,10 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
 
 			else if(!(key in C.prefs.ignoring))
-<<<<<<< HEAD
-				to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span></font>")
-	if(holder && holder.fakekey)
-		webhook_send_ooc(holder.fakekey,msg)
-	else
-		webhook_send_ooc(key, msg)
-=======
 				if(GLOB.OOC_COLOR)
 					to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 				else
 					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
@@ -361,10 +353,3 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 		pct += delta
 		winset(src, "mainwindow.split", "splitter=[pct]")
-
-/client/verb/bot_token(token as text)
-	set name = "Bot token"
-	set category = "OOC"
-	set desc = "Sends specific token to bot through webhook"
-
-	webhook_send_token(key, token)

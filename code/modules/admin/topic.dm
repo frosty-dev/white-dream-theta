@@ -864,11 +864,7 @@
 
 		message_admins("<span class='danger'>Admin [key_name_admin(usr)] AIized [key_name_admin(H)]!</span>")
 		log_admin("[key_name(usr)] AIized [key_name(H)].")
-<<<<<<< HEAD
-		H.AIize(H.client)
-=======
 		H.AIize(TRUE, H.client)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	else if(href_list["makealien"])
 		if(!check_rights(R_SPAWN))
@@ -1896,12 +1892,9 @@
 		var/ban_id = href_list["unbanlog"]
 		ban_log(ban_id)
 
-<<<<<<< HEAD
-=======
 	else if(href_list["beakerpanel"])
 		beaker_panel_act(href_list)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))
 		return

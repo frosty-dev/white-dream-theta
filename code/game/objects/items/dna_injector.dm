@@ -359,8 +359,6 @@
 	name = "\improper DNA injector (Anti-Shock Touch)"
 	remove_mutations = list(SHOCKTOUCH)
 
-<<<<<<< HEAD
-=======
 /obj/item/dnainjector/spacialinstability
 	name = "\improper DNA injector (Spacial Instability)"
 	add_mutations = list(BADBLINK)
@@ -424,7 +422,6 @@
 /obj/item/dnainjector/antithermal
 	name = "\improper DNA injector (Anti-Thermal Vision)"
 	remove_mutations = list(THERMAL)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/dnainjector/timed
 	var/duration = 600
@@ -434,11 +431,7 @@
 		to_chat(user, "<span class='notice'>You can't modify [M]'s DNA while [M.p_theyre()] dead.</span>")
 		return FALSE
 
-<<<<<<< HEAD
-	if(M.has_dna() && !(M.has_trait(TRAIT_BADDNA)))
-=======
 	if(M.has_dna() && !(HAS_TRAIT(M, TRAIT_BADDNA)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		M.radiation += rand(20/(damage_coeff  ** 2),50/(damage_coeff  ** 2))
 		var/log_msg = "[key_name(user)] injected [key_name(M)] with the [name]"
 		var/endtime = world.time+duration

@@ -314,13 +314,8 @@
 	drop_loot()
 	if(dextrous)
 		drop_all_held_items()
-<<<<<<< HEAD
-	if(!gibbed && !del_on_death)
-		if(deathsound || deathmessage)
-=======
 	if(!gibbed)
 		if(deathsound || deathmessage || !del_on_death)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			emote("deathgasp")
 	if(del_on_death)
 		..()

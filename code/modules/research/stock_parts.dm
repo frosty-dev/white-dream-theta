@@ -90,8 +90,6 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/micro_laser/quadultra(src)
 		new /obj/item/stock_parts/matter_bin/bluespace(src)
 
-<<<<<<< HEAD
-=======
 /obj/item/storage/part_replacer/cargo //used in a cargo crate
 
 /obj/item/storage/part_replacer/cargo/PopulateContents()
@@ -102,7 +100,6 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/micro_laser(src)
 		new /obj/item/stock_parts/matter_bin(src)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/storage/part_replacer/cyborg
 	name = "rapid part exchange device"
 	desc = "Special mechanical module made to store, sort, and apply standard machine parts."

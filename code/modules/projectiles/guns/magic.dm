@@ -33,12 +33,8 @@
 			return
 		else
 			no_den_usage = 0
-<<<<<<< HEAD
-	if(checks_antimagic && user.anti_magic_check(TRUE, FALSE, major = FALSE, self = TRUE))
-=======
 	if(checks_antimagic && user.anti_magic_check(TRUE, FALSE, FALSE, 0, TRUE))
 		add_fingerprint(user)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		to_chat(user, "<span class='warning'>Something is interfering with [src].</span>")
 		return
 	. = ..()

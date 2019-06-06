@@ -37,15 +37,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/heatmod = 1		// multiplier for heat damage
 	var/stunmod = 1		// multiplier for stun duration
 	var/attack_type = BRUTE //Type of damage attack does
-<<<<<<< HEAD
-	var/punchdamagelow = 0       //lowest possible punch damage
-	var/punchdamagehigh = 9      //highest possible punch damage
-	var/punchstunthreshold = 9//damage at which punches from this race will stun //yes it should be to the attacked race but it's not useful that way even if it's logical
-=======
 	var/punchdamagelow = 1       //lowest possible punch damage. if this is set to 0, punches will always miss
 	var/punchdamagehigh = 10      //highest possible punch damage
 	var/punchstunthreshold = 10//damage at which punches from this race will stun //yes it should be to the attacked race but it's not useful that way even if it's logical
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/siemens_coeff = 1 //base electrocution coefficient
 	var/damage_overlay_type = "human" //what kind of damage overlays (if any) appear on our species when wounded?
 	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature["mcolor"]
@@ -80,14 +74,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/obj/item/organ/liver/mutantliver
 	var/obj/item/organ/stomach/mutantstomach
 	var/override_float = FALSE
-<<<<<<< HEAD
-=======
 
 	//Bitflag that controls what in game ways can select this species as a spawnable source
 	//Think magic mirror and pride mirror, slime extract, ERT etc, see defines
 	//in __DEFINES/mobs.dm, defaults to NONE, so people actually have to think about it
 	var/changesource_flags = NONE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 ///////////
 // PROCS //
 ///////////
@@ -870,11 +861,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
 		if(SLOT_L_STORE)
-<<<<<<< HEAD
-			if(I.has_trait(TRAIT_NODROP)) //Pockets aren't visible, so you can't move TRAIT_NODROP items into them.
-=======
 			if(HAS_TRAIT(I, TRAIT_NODROP)) //Pockets aren't visible, so you can't move TRAIT_NODROP items into them.
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				return FALSE
 			if(H.l_store)
 				return FALSE
@@ -890,11 +877,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if( I.w_class <= WEIGHT_CLASS_SMALL || (I.slot_flags & ITEM_SLOT_POCKET) )
 				return TRUE
 		if(SLOT_R_STORE)
-<<<<<<< HEAD
-			if(I.has_trait(TRAIT_NODROP))
-=======
 			if(HAS_TRAIT(I, TRAIT_NODROP))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				return FALSE
 			if(H.r_store)
 				return FALSE
@@ -911,11 +894,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				return TRUE
 			return FALSE
 		if(SLOT_S_STORE)
-<<<<<<< HEAD
-			if(I.has_trait(TRAIT_NODROP))
-=======
 			if(HAS_TRAIT(I, TRAIT_NODROP))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				return FALSE
 			if(H.s_store)
 				return FALSE
@@ -976,13 +955,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return 1
 	return FALSE
 
-/datum/species/proc/handle_speech(message, mob/living/carbon/human/H)
-	return message
-
-//return a list of spans or an empty list
-/datum/species/proc/get_spans()
-	return list()
-
 /datum/species/proc/check_species_weakness(obj/item, mob/living/attacker)
 	return 0 //This is not a boolean, it's the multiplier for the damage that the user takes from the item.It is added onto the check_weakness value of the mob, and then the force of the item is multiplied by this value
 
@@ -991,11 +963,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	////////
 
 /datum/species/proc/handle_digestion(mob/living/carbon/human/H)
-<<<<<<< HEAD
-	if(has_trait(TRAIT_NOHUNGER))
-=======
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return //hunger is for BABIES
 
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
@@ -1116,11 +1084,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	gravity = H.has_gravity()
 
-<<<<<<< HEAD
-	if(!H.has_trait(TRAIT_IGNORESLOWDOWN) && gravity)
-=======
 	if(!HAS_TRAIT(H, TRAIT_IGNORESLOWDOWN) && gravity)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(H.wear_suit)
 			. += H.wear_suit.slowdown
 		if(H.shoes)
@@ -1130,13 +1094,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		for(var/obj/item/I in H.held_items)
 			if(I.item_flags & SLOWS_WHILE_IN_HAND)
 				. += I.slowdown
-<<<<<<< HEAD
-		if(!H.has_trait(TRAIT_IGNOREDAMAGESLOWDOWN))
-			var/health_deficiency = (H.maxHealth - H.health + H.staminaloss)
-=======
 		if(!HAS_TRAIT(H, TRAIT_IGNOREDAMAGESLOWDOWN))
 			var/health_deficiency = max(H.maxHealth - H.health, H.staminaloss)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if(health_deficiency >= 40)
 				if(flight)
 					. += (health_deficiency / 75)
@@ -1157,11 +1116,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/grav_force = min(gravity - STANDARD_GRAVITY,3)
 			. += 1 + grav_force
 
-<<<<<<< HEAD
-		if(H.has_trait(TRAIT_FAT))
-=======
 		if(HAS_TRAIT(H, TRAIT_FAT))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			. += (1.5 - flight)
 		if(H.bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT && !HAS_TRAIT(H, TRAIT_RESISTCOLD))
 			. += (BODYTEMP_COLD_DAMAGE_LIMIT - H.bodytemperature) / COLD_SLOWDOWN_FACTOR
@@ -1171,13 +1126,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 // ATTACK PROCS //
 //////////////////
 
-<<<<<<< HEAD
-//////////////////
-// ATTACK PROCS //
-//////////////////
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/species/proc/spec_updatehealth(mob/living/carbon/human/H)
 	return
 
@@ -1233,11 +1181,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		var/atk_verb = user.dna.species.attack_verb
 		if(!(target.mobility_flags & MOBILITY_STAND))
-<<<<<<< HEAD
-			atk_verb = "kick"
-=======
 			atk_verb = ATTACK_EFFECT_KICK
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 		switch(atk_verb)//this code is really stupid but some genius apparently made "claw" and "slash" two attack types but also the same one so it's needed i guess
 			if(ATTACK_EFFECT_KICK)
@@ -1273,8 +1217,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		target.visible_message("<span class='danger'>[user] has [atk_verb]ed [target]!</span>", \
 					"<span class='userdanger'>[user] has [atk_verb]ed [target]!</span>", null, COMBAT_MESSAGE_RANGE)
-<<<<<<< HEAD
-=======
 
 		target.lastattacker = user.real_name
 		target.lastattackerckey = user.ckey
@@ -1282,7 +1224,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		if(user.limb_destroyer)
 			target.dismembering_strike(user, affecting.body_zone)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 		if(atk_verb == ATTACK_EFFECT_KICK)//kicks deal 1.5x raw damage
 			target.apply_damage(damage*1.5, attack_type, affecting, armor_block)
@@ -1292,17 +1233,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			target.apply_damage(damage*1.5, STAMINA, affecting, armor_block)
 			log_combat(user, target, "punched")
 
-<<<<<<< HEAD
-		if(user.limb_destroyer)
-			target.dismembering_strike(user, affecting.body_zone)
-		target.apply_damage(damage, attack_type, affecting, armor_block)
-		log_combat(user, target, "punched")
-		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
-			target.visible_message("<span class='danger'>[user] has knocked  [target] down!</span>", \
-							"<span class='userdanger'>[user] has knocked [target] down!</span>", null, COMBAT_MESSAGE_RANGE)
-			target.apply_effect(80, EFFECT_KNOCKDOWN, armor_block)
-			target.forcesay(GLOB.hit_appends)
-=======
 		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
 			target.visible_message("<span class='danger'>[user] has knocked  [target] down!</span>", \
 							"<span class='userdanger'>[user] has knocked [target] down!</span>", null, COMBAT_MESSAGE_RANGE)
@@ -1310,7 +1240,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			target.apply_effect(knockdown_duration, EFFECT_KNOCKDOWN, armor_block)
 			target.forcesay(GLOB.hit_appends)
 			log_combat(user, target, "got a stun punch with their previous punch")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		else if(!(target.mobility_flags & MOBILITY_STAND))
 			target.forcesay(GLOB.hit_appends)
 
@@ -1336,19 +1265,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(target.w_uniform)
 			target.w_uniform.add_fingerprint(user)
 		SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, user, user.zone_selected)
-<<<<<<< HEAD
-		var/obj/item/bodypart/affecting = target.get_bodypart(randomized_zone)
-		var/randn = rand(1, 100)
-		if(randn <= 25)
-			playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-			target.visible_message("<span class='danger'>[user] has pushed [target]!</span>",
-				"<span class='userdanger'>[user] has pushed [target]!</span>", null, COMBAT_MESSAGE_RANGE)
-			target.apply_effect(40, EFFECT_PARALYZE, target.run_armor_check(affecting, "melee", "Your armor prevents your fall!", "Your armor softens your fall!"))
-			target.forcesay(GLOB.hit_appends)
-			log_combat(user, target, "pushed over")
-			return
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 		var/turf/target_oldturf = target.loc
 		var/shove_dir = get_dir(user.loc, target_oldturf)
@@ -1435,22 +1351,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(knocked_item)
 					append_message = "causing them to drop [target_held_item]"
 				else
-<<<<<<< HEAD
-					I = null
-			playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-			log_combat(user, target, "disarmed", "[I ? " removing \the [I]" : ""]")
-			return
-
-
-		playsound(target, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-		target.visible_message("<span class='danger'>[user] attempted to disarm [target]!</span>", \
-						"<span class='userdanger'>[user] attempted to disarm [target]!</span>", null, COMBAT_MESSAGE_RANGE)
-		log_combat(user, target, "attempted to disarm")
-
-=======
 					append_message = "loosening their grip on [target_held_item]"
 			log_combat(user, target, "shoved", append_message)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/species/proc/spec_hitby(atom/movable/AM, mob/living/carbon/human/H)
 	return

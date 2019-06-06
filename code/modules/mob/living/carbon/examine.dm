@@ -92,11 +92,7 @@
 
 	msg += common_trait_examine()
 
-<<<<<<< HEAD
-	GET_COMPONENT_FROM(mood, /datum/component/mood, src)
-=======
 	var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(mood)
 		switch(mood.shown_mood)
 			if(-INFINITY to MOOD_LEVEL_SAD4)

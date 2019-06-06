@@ -87,16 +87,9 @@
 		return "no reagents"
 
 	var/list/data = list()
-<<<<<<< HEAD
-	var/seperator
-	for(var/r in reagent_list) //no reagents will be left behind
-		var/datum/reagent/R = r
-		data += "[seperator ? " | " : null][R.id] ([round(R.volume, 0.1)]u)"
-=======
 	for(var/r in reagent_list) //no reagents will be left behind
 		var/datum/reagent/R = r
 		data += "[R.type] ([round(R.volume, 0.1)]u)"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		//Using IDs because SOME chemicals (I'm looking at you, chlorhydrate-beer) have the same names as other chemicals.
 	return english_list(data)
 

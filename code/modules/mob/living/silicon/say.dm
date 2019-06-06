@@ -1,19 +1,15 @@
-
-/mob/living/silicon/get_spans()
-	return ..() | SPAN_ROBOT
-
 /mob/living/proc/robot_talk(message)
 	log_talk(message, LOG_SAY)
 	var/desig = "Default Cyborg" //ezmode for taters
 	if(issilicon(src))
 		var/mob/living/silicon/S = src
 		desig = trim_left(S.designation + " " + S.job)
-	var/message_a = say_quote(message, get_spans())
-	var/rendered = "Бинарный чат, <span class='name'>[name]</span> <span class='message'>[message_a]</span>"
+	var/message_a = say_quote(message)
+	var/rendered = "Robotic Talk, <span class='name'>[name]</span> <span class='message'>[message_a]</span>"
 	for(var/mob/M in GLOB.player_list)
 		if(M.binarycheck())
 			if(isAI(M))
-				var/renderedAI = "<span class='binarysay'>Бинарный чат, <a href='?src=[REF(M)];track=[rhtml_encode(name)]'><span class='name'>[name] ([desig])</span></a> <span class='message'>[message_a]</span></span>"
+				var/renderedAI = "<span class='binarysay'>Robotic Talk, <a href='?src=[REF(M)];track=[html_encode(name)]'><span class='name'>[name] ([desig])</span></a> <span class='message'>[message_a]</span></span>"
 				to_chat(M, renderedAI)
 			else
 				to_chat(M, "<span class='binarysay'>[rendered]</span>")

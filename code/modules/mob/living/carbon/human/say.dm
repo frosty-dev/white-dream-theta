@@ -1,32 +1,9 @@
 /mob/living/carbon/human/say_mod(input, message_mode)
 	verb_say = dna.species.say_mod
 	if(slurring)
-		return "ìåëåò"
+		return "slurs"
 	else
 		. = ..()
-
-/mob/living/carbon/human/treat_message(message)
-	message = dna.species.handle_speech(message,src)
-	if(diseases.len)
-		for(var/datum/disease/pierrot_throat/D in diseases)
-			var/list/temp_message = splittext(message, " ") //List each word in the message
-			var/list/pick_list = list()
-			for(var/i = 1, i <= temp_message.len, i++) //Create a second list for excluding words down the line
-				pick_list += i
-			for(var/i=1, ((i <= D.stage) && (i <= temp_message.len)), i++) //Loop for each stage of the disease or until we run out of words
-				if(prob(3 * D.stage)) //Stage 1: 3% Stage 2: 6% Stage 3: 9% Stage 4: 12%
-					var/H = pick(pick_list)
-					if(findtext(temp_message[H], "*") || findtext(temp_message[H], ";") || findtext(temp_message[H], ":"))
-						continue
-					temp_message[H] = "ÕÎÍÊ"
-					pick_list -= H //Make sure that you dont HONK the same word twice
-				message = jointext(temp_message, " ")
-	message = ..(message)
-	message = dna.mutations_say_mods(message)
-	return message
-
-/mob/living/carbon/human/get_spans()
-	return ..() | dna.mutations_get_spans() | dna.species_get_spans()
 
 /mob/living/carbon/human/GetVoice()
 	if(istype(wear_mask, /obj/item/clothing/mask/chameleon))
@@ -100,7 +77,7 @@
 
 /mob/living/carbon/human/get_alt_name()
 	if(name != GetVoice())
-		return " (êàê [get_id_name("Unknown")])"
+		return " (as [get_id_name("Unknown")])"
 
 /mob/living/carbon/human/proc/forcesay(list/append) //this proc is at the bottom of the file because quote fuckery makes notepad++ cri
 	if(stat == CONSCIOUS)

@@ -71,15 +71,9 @@
 
 /datum/chemical_reaction/zombiepowder
 	name = "Zombie Powder"
-<<<<<<< HEAD
-	id = "zombiepowder"
-	results = list("zombiepowder" = 2)
-	required_reagents = list("carpotoxin" = 5, "morphine" = 5, "copper" = 5)
-=======
 	id = /datum/reagent/toxin/zombiepowder
 	results = list(/datum/reagent/toxin/zombiepowder = 2)
 	required_reagents = list(/datum/reagent/toxin/carpotoxin = 5, /datum/reagent/medicine/morphine = 5, /datum/reagent/copper = 5)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/chemical_reaction/ghoulpowder
 	name = "Ghoul Powder"
@@ -122,15 +116,9 @@
 
 /datum/chemical_reaction/mimesbane
 	name = "Mime's Bane"
-<<<<<<< HEAD
-	id = "mimesbane"
-	results = list("mimesbane" = 3)
-	required_reagents = list("radium" = 1, "mutetoxin" = 1, "nothing" = 1)
-=======
 	id = /datum/reagent/toxin/mimesbane
 	results = list(/datum/reagent/toxin/mimesbane = 3)
 	required_reagents = list(/datum/reagent/uranium/radium = 1, /datum/reagent/toxin/mutetoxin = 1, /datum/reagent/consumable/nothing = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/chemical_reaction/bonehurtingjuice
 	name = "Bone Hurting Juice"

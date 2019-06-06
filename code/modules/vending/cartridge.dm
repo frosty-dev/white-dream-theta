@@ -13,13 +13,6 @@
 					/obj/item/pda/heads = 10,
 					/obj/item/cartridge/captain = 3,
 					/obj/item/cartridge/quartermaster = 10)
-<<<<<<< HEAD
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
-	resistance_flags = FIRE_PROOF
-	default_price = 50
-	extra_price = 100
-	payment_department = ACCOUNT_SRV
-=======
 	refill_canister = /obj/item/vending_refill/cart
 	default_price = 50
 	extra_price = 100
@@ -29,4 +22,3 @@
 	machine_name = "PTech"
 	icon_state = "refill_smoke"
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

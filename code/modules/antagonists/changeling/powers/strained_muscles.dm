@@ -18,11 +18,7 @@
 	if(active)
 		to_chat(user, "<span class='notice'>Our muscles tense and strengthen.</span>")
 	else
-<<<<<<< HEAD
-		user.add_movespeed_modifier(MOVESPEED_ID_CHANGELING_MUSCLES, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
-=======
 		user.remove_movespeed_modifier(MOVESPEED_ID_CHANGELING_MUSCLES)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		to_chat(user, "<span class='notice'>Our muscles relax.</span>")
 		if(stacks >= 10)
 			to_chat(user, "<span class='danger'>We collapse in exhaustion.</span>")

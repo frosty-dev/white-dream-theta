@@ -113,12 +113,9 @@
 
 
 /obj/mecha/bullet_act(obj/item/projectile/Proj) //wrapper
-<<<<<<< HEAD
-=======
 	if (!enclosed && occupant && !silicon_pilot && !Proj.force_hit && (Proj.def_zone == BODY_ZONE_HEAD || Proj.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit the pilot of open-canopy mechs
 		occupant.bullet_act(Proj) //If the sides are open, the occupant can be hit
 		return BULLET_ACT_HIT
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	log_message("Hit by projectile. Type: [Proj.name]([Proj.flag]).", LOG_MECHA, color="red")
 	. = ..()
 

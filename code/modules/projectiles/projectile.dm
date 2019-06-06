@@ -132,11 +132,7 @@
 		return BODY_ZONE_CHEST
 
 /obj/item/projectile/proc/prehit(atom/target)
-<<<<<<< HEAD
-	return BULLET_ACT_HIT
-=======
 	return TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/projectile/proc/on_hit(atom/target, blocked = FALSE)
 	if(fired_from)

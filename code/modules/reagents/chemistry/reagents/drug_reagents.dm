@@ -172,17 +172,10 @@
 
 /datum/reagent/drug/methamphetamine/on_mob_add(mob/living/L)
 	..()
-<<<<<<< HEAD
-	L.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-2, blacklisted_movetypes=(FLYING|FLOATING))
-
-/datum/reagent/drug/methamphetamine/on_mob_delete(mob/living/L)
-	L.remove_movespeed_modifier(id)
-=======
 	L.add_movespeed_modifier(type, update=TRUE, priority=100, multiplicative_slowdown=-2, blacklisted_movetypes=(FLYING|FLOATING))
 
 /datum/reagent/drug/methamphetamine/on_mob_delete(mob/living/L)
 	L.remove_movespeed_modifier(type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /datum/reagent/drug/methamphetamine/on_mob_life(mob/living/carbon/M)
@@ -352,10 +345,6 @@
 
 /datum/reagent/drug/aranesp
 	name = "Aranesp"
-<<<<<<< HEAD
-	id = "aranesp"
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	description = "Amps you up, gets you going, and rapidly restores stamina damage. Side effects include breathlessness and toxicity."
 	reagent_state = LIQUID
 	color = "#78FFF0"

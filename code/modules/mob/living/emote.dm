@@ -60,11 +60,7 @@
 
 /datum/emote/living/cough/can_run_emote(mob/user, status_check = TRUE)
 	. = ..()
-<<<<<<< HEAD
-	if(user.has_trait(TRAIT_SOOTHED_THROAT))
-=======
 	if(HAS_TRAIT(user, TRAIT_SOOTHED_THROAT))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return FALSE
 
 /datum/emote/living/dance
@@ -96,11 +92,7 @@
 			var/mob/living/L = user
 			if(!L.can_speak_vocal() || L.oxyloss >= 50)
 				return //stop the sound if oxyloss too high/cant speak
-<<<<<<< HEAD
-		playsound(user, user.deathsound, 80, 1, 1)
-=======
 		playsound(user, user.deathsound, 200, TRUE, TRUE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/emote/living/drool
 	key = "drool"

@@ -4,11 +4,7 @@
 	desc = "Now that's a nic'e pasta!"
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "spaghetti"
-<<<<<<< HEAD
-	list_reagents = list("nutriment" = 1, "vitamin" = 1)
-=======
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	cooked_type = /obj/item/reagent_containers/food/snacks/spaghetti/boiledspaghetti
 	filling_color = "#F0E68C"
 	tastes = list("pasta" = 1)
@@ -27,13 +23,8 @@
 	desc = "A plain dish of noodles, this needs more ingredients."
 	icon_state = "spaghettiboiled"
 	trash = /obj/item/trash/plate
-<<<<<<< HEAD
-	bonus_reagents = list("nutriment" = 2)
-	list_reagents = list("nutriment" = 2, "vitamin" = 1)
-=======
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	cooked_type = null
 	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/pasta
 
@@ -43,13 +34,8 @@
 	icon_state = "pastatomato"
 	trash = /obj/item/trash/plate
 	bitesize = 4
-<<<<<<< HEAD
-	bonus_reagents = list("nutriment" = 1, "tomatojuice" = 10, "vitamin" = 4)
-	list_reagents = list("nutriment" = 6, "tomatojuice" = 10, "vitamin" = 4)
-=======
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 10, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/tomatojuice = 10, /datum/reagent/consumable/nutriment/vitamin = 4)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	cooked_type = null
 	filling_color = "#DC143C"
 	tastes = list("pasta" = 1, "tomato" = 1)
@@ -61,13 +47,8 @@
 	icon_state = "copypasta"
 	trash = /obj/item/trash/plate
 	bitesize = 4
-<<<<<<< HEAD
-	bonus_reagents = list("nutriment" = 1, "vitamin" = 4)
-	list_reagents = list("nutriment" = 12, "tomatojuice" = 20, "vitamin" = 8)
-=======
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/tomatojuice = 20, /datum/reagent/consumable/nutriment/vitamin = 8)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	cooked_type = null
 	filling_color = "#DC143C"
 	tastes = list("pasta" = 1, "tomato" = 1)
@@ -78,13 +59,8 @@
 	desc = "Now that's a nic'e meatball!"
 	icon_state = "meatballspaghetti"
 	trash = /obj/item/trash/plate
-<<<<<<< HEAD
-	bonus_reagents = list("nutriment" = 1, "vitamin" = 4)
-	list_reagents = list("nutriment" = 8, "vitamin" = 4)
-=======
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 4)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	cooked_type = null
 	tastes = list("pasta" = 1, "tomato" = 1, "meat" = 1)
 	foodtype = GRAIN | MEAT
@@ -94,13 +70,8 @@
 	desc = "A lawyers favourite."
 	icon_state = "spesslaw"
 	trash = /obj/item/trash/plate
-<<<<<<< HEAD
-	bonus_reagents = list("nutriment" = 1, "vitamin" = 6)
-	list_reagents = list("nutriment" = 8, "vitamin" = 6)
-=======
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 6)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 6)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	cooked_type = null
 	tastes = list("pasta" = 1, "tomato" = 1, "meat" = 1)
 
@@ -109,13 +80,8 @@
 	desc = "A nice mix of noodles and fried vegetables."
 	icon_state = "chowmein"
 	trash = /obj/item/trash/plate
-<<<<<<< HEAD
-	bonus_reagents = list("nutriment" = 3, "vitamin" = 4)
-	list_reagents = list("nutriment" = 7, "vitamin" = 6)
-=======
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/nutriment/vitamin = 6)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	cooked_type = null
 	tastes = list("noodle" = 1, "tomato" = 1)
 

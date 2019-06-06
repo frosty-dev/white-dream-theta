@@ -120,11 +120,7 @@
 	if(I.loc != src)
 		I.forceMove(src)
 	modules += I
-<<<<<<< HEAD
-	I.add_trait(TRAIT_NODROP, CYBORG_ITEM_TRAIT)
-=======
 	ADD_TRAIT(I, TRAIT_NODROP, CYBORG_ITEM_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	I.mouse_opacity = MOUSE_OPACITY_OPAQUE
 	if(nonstandard)
 		added_modules += I
@@ -479,10 +475,7 @@
 		/obj/item/razor,
 		/obj/item/rsf,
 		/obj/item/instrument/guitar,
-<<<<<<< HEAD
-=======
 		/obj/item/instrument/piano_synth,
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		/obj/item/reagent_containers/dropper,
 		/obj/item/lighter,
 		/obj/item/storage/bag/tray,

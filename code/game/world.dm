@@ -1,11 +1,6 @@
 #define RESTART_COUNTER_PATH "data/round_counter.txt"
 
 GLOBAL_VAR(restart_counter)
-<<<<<<< HEAD
-//TODO: Replace INFINITY with the version that fixes http://www.byond.com/forum/?post=2407430
-GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_build < INFINITY)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //This happens after the Master subsystem new(s) (it's a global datum)
 //So subsystems globals exist, but are not initialised
@@ -19,11 +14,7 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 
 	make_datum_references_lists()	//initialises global lists for referencing frequently used datums (so that we only ever do it once)
 
-<<<<<<< HEAD
-	TgsNew(new /datum/tgs_event_handler/tg, minimum_required_security_level = TGS_SECURITY_TRUSTED)
-=======
 	TgsNew(minimum_required_security_level = TGS_SECURITY_TRUSTED)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	GLOB.revdata = new
 
@@ -110,12 +101,9 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 
 	GLOB.world_game_log = "[GLOB.log_directory]/game.log"
 	GLOB.world_mecha_log = "[GLOB.log_directory]/mecha.log"
-<<<<<<< HEAD
-=======
 	GLOB.world_virus_log = "[GLOB.log_directory]/virus.log"
 	GLOB.world_cloning_log = "[GLOB.log_directory]/cloning.log"
 	GLOB.world_asset_log = "[GLOB.log_directory]/asset.log"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	GLOB.world_attack_log = "[GLOB.log_directory]/attack.log"
 	GLOB.world_pda_log = "[GLOB.log_directory]/pda.log"
 	GLOB.world_telecomms_log = "[GLOB.log_directory]/telecomms.log"
@@ -222,12 +210,7 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
 		Master.Shutdown()	//run SS shutdowns
 
-<<<<<<< HEAD
-	if(!GLOB.bypass_tgs_reboot)
-		TgsReboot()
-=======
 	TgsReboot()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	if(TEST_RUN_PARAMETER in params)
 		FinishTestRun()
@@ -260,40 +243,27 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 
 /world/proc/update_status()
 
-	//var/list/features = list()
-	var/mode = ""
+	var/list/features = list()
+
 	if(GLOB.master_mode)
-		mode = GLOB.master_mode
+		features += GLOB.master_mode
 
-	//if (!GLOB.enter_allowed)
-	//	features += "closed"
+	if (!GLOB.enter_allowed)
+		features += "closed"
 
-	var/map = SSmapping.config?.map_name || "Loading..."
 	var/s = ""
 	var/hostedby
 	if(config)
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
-			s += "<center><a href=\"https://frosty.space/\"><big><b>[server_name]</b></big><br>"
-		//features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
-		//if(CONFIG_GET(flag/allow_vote_mode))
-		//	features += "vote"
-		//if(CONFIG_GET(flag/allow_ai))
-		//	features += "AI allowed"
+			s += "<b>[server_name]</b> &#8212; "
+		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
+		if(CONFIG_GET(flag/allow_vote_mode))
+			features += "vote"
+		if(CONFIG_GET(flag/allow_ai))
+			features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
-<<<<<<< HEAD
-	s += "<img src=\"https://frosty.space/styles/banner_new.gif\"></a></center>"
-	//s += "Station Name: <b>[station_name()]</b><br>";
-	s += "Map: <b>[map]</b><br>"
-	s += "Mode: <b>[mode]</b><br>"
-	s += "Hosted by: <b>[hostedby]</b><br>"
-
-	//var/n = 0
-	//for (var/mob/M in GLOB.player_list)
-	//	if (M.client)
-	//		n++
-=======
 	s += "<b>[station_name()]</b>";
 	s += " ("
 	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
@@ -314,15 +284,12 @@ GLOBAL_VAR_INIT(bypass_tgs_reboot, world.system_type == UNIX && world.byond_buil
 		features += "[players][popcaptext] player"
 
 	game_state = (CONFIG_GET(number/extreme_popcap) && players >= CONFIG_GET(number/extreme_popcap)) //tells the hub if we are full
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
-	//if (n > 1)
-	//	features += "~[n] players"
-	//else if (n > 0)
-	//	features += "~[n] player"
+	if (!host && hostedby)
+		features += "hosted by <b>[hostedby]</b>"
 
-	//if (features)
-	//	s += ": [jointext(features, ", ")]"
+	if (features)
+		s += ": [jointext(features, ", ")]"
 
 	status = s
 

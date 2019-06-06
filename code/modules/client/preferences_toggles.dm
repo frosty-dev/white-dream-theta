@@ -235,18 +235,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 /datum/verbs/menu/Settings/listen_ooc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_OOC
 
-<<<<<<< HEAD
-TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_discord_ooc)()
-	set name = "Show/Hide Discord OOC"
-	set category = "Preferences"
-	set desc = "Show DOOC Chat"
-	usr.client.prefs.chat_toggles ^= CHAT_MUTED_DISCORD_OOC
-	usr.client.prefs.save_preferences()
-	to_chat(usr, "You will [(usr.client.prefs.chat_toggles & CHAT_MUTED_DISCORD_OOC) ? "no longer" : "now"] see messages on the Discord OOC channel.")
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing DOOC", "[usr.client.prefs.chat_toggles & CHAT_MUTED_DISCORD_OOC ? "Disabled" : "Enabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-/datum/verbs/menu/Settings/listen_discord_ooc/Get_checked(client/C)
-	return !(C.prefs.chat_toggles & CHAT_MUTED_DISCORD_OOC)
-=======
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"
 	set category = "Preferences"
@@ -257,7 +245,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Income Notifications", "[(usr.client.prefs.chat_toggles & CHAT_BANKCARD) ? "Enabled" : "Disabled"]"))
 /datum/verbs/menu/Settings/listen_bank_card/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_BANKCARD
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 
 GLOBAL_LIST_INIT(ghost_forms, list("ghost","ghostking","ghostian2","skeleghost","ghost_red","ghost_black", \
@@ -466,8 +453,4 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		to_chat(src, "Custom Asay color is currently disabled by the server.")
 		return
 	prefs.asaycolor = initial(prefs.asaycolor)
-<<<<<<< HEAD
 	prefs.save_preferences()
-=======
-	prefs.save_preferences()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

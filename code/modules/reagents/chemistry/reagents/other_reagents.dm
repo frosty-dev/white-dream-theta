@@ -717,10 +717,6 @@
 
 /datum/reagent/carbon
 	name = "Carbon"
-<<<<<<< HEAD
-	id = "carbon"
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	description = "A crumbly black solid that, while unexciting on a physical level, forms the base of all known life. Kind of a big deal."
 	reagent_state = SOLID
 	color = "#1C1300" // rgb: 30, 20, 0
@@ -860,11 +856,7 @@
 			var/obj/effect/decal/cleanable/greenglow/GG = locate() in T.contents
 			if(!GG)
 				GG = new/obj/effect/decal/cleanable/greenglow(T)
-<<<<<<< HEAD
-			GG.reagents.add_reagent(id, reac_volume)
-=======
 			GG.reagents.add_reagent(type, reac_volume)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/reagent/uranium/radium
 	name = "Radium"
@@ -913,10 +905,6 @@
 
 /datum/reagent/fuel
 	name = "Welding fuel"
-<<<<<<< HEAD
-	id = "welding_fuel"
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	description = "Required for welders. Flammable."
 	color = "#660000" // rgb: 102, 0, 0
 	taste_description = "gross metal"
@@ -991,7 +979,6 @@
 					if(SEND_SIGNAL(H.shoes, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD))
 						H.update_inv_shoes()
 				H.wash_cream()
-				H.wash_poo()
 			SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
 
 /datum/reagent/space_cleaner/ez_clean
@@ -1203,17 +1190,10 @@
 
 /datum/reagent/nitryl/on_mob_add(mob/living/L)
 	..()
-<<<<<<< HEAD
-	L.add_movespeed_modifier(id, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
-
-/datum/reagent/nitryl/on_mob_delete(mob/living/L)
-	L.remove_movespeed_modifier(id)
-=======
 	L.add_movespeed_modifier(type, update=TRUE, priority=100, multiplicative_slowdown=-1, blacklisted_movetypes=(FLYING|FLOATING))
 
 /datum/reagent/nitryl/on_mob_delete(mob/living/L)
 	L.remove_movespeed_modifier(type)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	..()
 
 /////////////////////////Coloured Crayon Powder////////////////////////////
@@ -1664,10 +1644,6 @@
 
 /datum/reagent/pax
 	name = "Pax"
-<<<<<<< HEAD
-	id = "pax"
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	description = "A colorless liquid that suppresses violence on the subjects."
 	color = "#AAAAAA55"
 	taste_description = "water"

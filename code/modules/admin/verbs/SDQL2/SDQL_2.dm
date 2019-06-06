@@ -1020,13 +1020,10 @@ GLOBAL_DATUM_INIT(sdql2_vv_statobj, /obj/effect/statclick/SDQL2_VV_all, new(null
 			to_chat(usr, "<span class='danger'>Invalid pointer: [expression[start + 1]]</span>")
 			return null
 		start++
-<<<<<<< HEAD
-=======
 		long = start < expression.len
 	else if(expression[start] == "(" && long)
 		v = query.SDQL_expression(source, expression[start + 1])
 		start++
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		long = start < expression.len
 	else if(D != null && (!long || expression[start + 1] == ".") && (expression[start] in D.vars))
 		if(D.can_vv_get(expression[start]) || superuser)

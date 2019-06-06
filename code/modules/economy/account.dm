@@ -7,13 +7,9 @@
 	var/list/bank_cards = list()
 	var/add_to_accounts = TRUE
 	var/account_id
-<<<<<<< HEAD
-	var/welfare = TRUE
-=======
 	var/welfare = FALSE
 	var/being_dumped = FALSE //pink levels are rising
 	var/withdrawDelay = 0
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/bank_account/New(newname, job)
 	if(add_to_accounts)
@@ -65,24 +61,12 @@
 				bank_card_talk("ERROR: Payday aborted, departmental funds insufficient.")
 				return FALSE
 			else
-<<<<<<< HEAD
-				bank_card_talk("Payday processed, account now holds $[account_balance].")		
-=======
 				bank_card_talk("Payday processed, account now holds $[account_balance].")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				return TRUE
 	bank_card_talk("ERROR: Payday aborted, unable to contact departmental account.")
 	return FALSE
 
-<<<<<<< HEAD
-
-/datum/bank_account/proc/add_neetbux()
-	account_job.paycheck += PAYCHECK_WELFARE
-
-/datum/bank_account/proc/bank_card_talk(message)
-=======
 /datum/bank_account/proc/bank_card_talk(message, force)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(!message || !bank_cards.len)
 		return
 	for(var/obj/A in bank_cards)

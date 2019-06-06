@@ -174,9 +174,6 @@
 			return BULLET_ACT_FORCE_PIERCE // complete projectile permutation
 
 	return ..()
-<<<<<<< HEAD
-
-=======
 	
 //////////////////////////Angelic-Juggernaut////////////////////////////
 /mob/living/simple_animal/hostile/construct/armored/angelic
@@ -186,7 +183,6 @@
 
 /mob/living/simple_animal/hostile/construct/armored/noncult
 	
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 ////////////////////////Wraith/////////////////////////////////////////////
 /mob/living/simple_animal/hostile/construct/wraith
 	name = "Wraith"

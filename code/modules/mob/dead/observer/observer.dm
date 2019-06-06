@@ -63,10 +63,6 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	verbs += list(
 		/mob/dead/observer/proc/dead_tele,
 		/mob/dead/observer/proc/open_spawners_menu,
-<<<<<<< HEAD
-		/mob/dead/observer/proc/view_gas,
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		/mob/dead/observer/proc/tray_view)
 
 	if(icon_state in GLOB.ghost_forms_with_directions_list)

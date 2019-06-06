@@ -134,24 +134,6 @@
 	UNSETEMPTY(new_overlay_types)
 	src.atmos_overlay_types = new_overlay_types
 
-<<<<<<< HEAD
-/turf/open/proc/tile_graphic()
-	var/static/list/nonoverlaying_gases = typecache_of_gases_with_no_overlays()
-	if(!air)
-		return
-	. = new /list
-	var/list/gases = air.gases
-	for(var/id in gases)
-		if (nonoverlaying_gases[id])
-			continue
-		var/gas = gases[id]
-		var/gas_meta = gas[GAS_META]
-		var/gas_overlay = gas_meta[META_GAS_OVERLAY]
-		if(gas_overlay && gas[MOLES] > gas_meta[META_GAS_MOLES_VISIBLE])
-			. += gas_overlay[min(FACTOR_GAS_VISIBLE_MAX, CEILING(gas[MOLES] / MOLES_GAS_VISIBLE_STEP, 1))]
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /proc/typecache_of_gases_with_no_overlays()
 	. = list()
 	for (var/gastype in subtypesof(/datum/gas))

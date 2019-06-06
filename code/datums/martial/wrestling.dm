@@ -192,11 +192,7 @@
 		if (T && isturf(T))
 			if (!D.stat)
 				D.emote("scream")
-<<<<<<< HEAD
-			D.throw_at(T, 10, 4, A, TRUE, TRUE, callback = CALLBACK(D, /mob/living/carbon/human/.Paralyze, 20))
-=======
 			D.throw_at(T, 10, 4, A, TRUE, TRUE, callback = CALLBACK(D, /mob/living/carbon/human.proc/Paralyze, 20))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	log_combat(A, D, "has thrown with wrestling")
 	return 0
 

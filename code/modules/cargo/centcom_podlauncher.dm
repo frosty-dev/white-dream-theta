@@ -55,11 +55,7 @@ force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.adm
 
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-<<<<<<< HEAD
-		ui = new(user, src, ui_key, "centcom_podlauncher", "Config/Launch Supplypod", 350, 700, master_ui, state)
-=======
 		ui = new(user, src, ui_key, "centcom_podlauncher", "Config/Launch Supplypod", 700, 700, master_ui, state)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		ui.open()
 
 /datum/centcom_podlauncher/ui_data(mob/user) //Sends info about the pod to the UI.
@@ -297,11 +293,7 @@ force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.adm
 			if (temp_pod.landingDelay != initial(temp_pod.landingDelay)) //If the landing delay has already been changed when we push the "change value" button, then set it to default
 				temp_pod.landingDelay = initial(temp_pod.landingDelay)
 				return
-<<<<<<< HEAD
-			var/timeInput = input("Delay Time", "Enter the time it takes for the pod to land, in seconds", initial(temp_pod.landingDelay) * 0.1) as null|num
-=======
 			var/timeInput = input("Enter the time it takes for the pod to land, in seconds", "Delay Time", initial(temp_pod.landingDelay) * 0.1) as null|num
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if (isnull(timeInput))
 				return
 			if (!isnum(timeInput)) //Sanitize input, if it doesnt check out, error and set to default
@@ -313,11 +305,7 @@ force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.adm
 			if (temp_pod.openingDelay != initial(temp_pod.openingDelay)) //If the opening delay has already been changed when we push the "change value" button, then set it to default
 				temp_pod.openingDelay = initial(temp_pod.openingDelay)
 				return
-<<<<<<< HEAD
-			var/timeInput = input("Delay Time", "Enter the time it takes for the pod to open after landing, in seconds", initial(temp_pod.openingDelay) * 0.1) as null|num
-=======
 			var/timeInput = input("Enter the time it takes for the pod to open after landing, in seconds", "Delay Time", initial(temp_pod.openingDelay) * 0.1) as null|num
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if (isnull(timeInput))
 				return
 			if (!isnum(timeInput)) //Sanitize input
@@ -329,11 +317,7 @@ force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.adm
 			if (temp_pod.departureDelay != initial(temp_pod.departureDelay)) //If the departure delay has already been changed when we push the "change value" button, then set it to default
 				temp_pod.departureDelay = initial(temp_pod.departureDelay)
 				return
-<<<<<<< HEAD
-			var/timeInput = input("Delay Time", "Enter the time it takes for the pod to leave after opening, in seconds", initial(temp_pod.departureDelay) * 0.1) as null|num
-=======
 			var/timeInput = input("Enter the time it takes for the pod to leave after opening, in seconds", "Delay Time", initial(temp_pod.departureDelay) * 0.1) as null|num
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if (isnull(timeInput))
 				return
 			if (!isnum(timeInput))

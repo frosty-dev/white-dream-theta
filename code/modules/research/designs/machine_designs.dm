@@ -400,13 +400,8 @@
 	id = "scanner_gate"
 	build_path = /obj/item/circuitboard/machine/scanner_gate
 	category = list ("Misc. Machinery")
-<<<<<<< HEAD
-	departmental_flags = DEPARTMENTAL_FLAG_ALL	
-	
-=======
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/design/board/holopad
 	name = "Machine Design (AI Holopad Board)"
 	desc = "The circuit board for a holopad."
@@ -575,8 +570,6 @@
 	build_path = /obj/item/circuitboard/machine/paystand
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
-<<<<<<< HEAD
-=======
 
 /datum/design/board/fat_sucker
 	name = "Machine Design (Lipid Extractor)"
@@ -593,4 +586,3 @@
 	build_path = /obj/item/circuitboard/machine/stasis
 	category = list("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

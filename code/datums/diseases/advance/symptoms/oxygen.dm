@@ -66,8 +66,4 @@ Bonus
 	if(!..())
 		return
 	if(A.stage >= 4)
-<<<<<<< HEAD
-		A.affected_mob.remove_trait(TRAIT_NOBREATH, DISEASE_TRAIT)
-=======
 		REMOVE_TRAIT(A.affected_mob, TRAIT_NOBREATH, DISEASE_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

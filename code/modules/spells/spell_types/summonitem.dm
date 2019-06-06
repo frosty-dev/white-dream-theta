@@ -25,13 +25,9 @@
 			for(var/obj/item/item in hand_items)
 				if(item.item_flags & ABSTRACT)
 					continue
-<<<<<<< HEAD
-				if(item.has_trait(TRAIT_NODROP))
-=======
 				if(SEND_SIGNAL(item, COMSIG_ITEM_MARK_RETRIEVAL) & COMPONENT_BLOCK_MARK_RETRIEVAL)
 					continue
 				if(HAS_TRAIT(item, TRAIT_NODROP))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 					message += "Though it feels redundant, "
 				marked_item = 		item
 				message += "You mark [item] for recall.</span>"

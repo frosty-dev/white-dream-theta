@@ -7,13 +7,8 @@
 	desc = "Goes great with robust coffee."
 	icon_state = "donut1"
 	bitesize = 5
-<<<<<<< HEAD
-	bonus_reagents = list("sugar" = 1)
-	list_reagents = list("nutriment" = 3, "sprinkles" = 1, "sugar" = 2)
-=======
 	bonus_reagents = list(/datum/reagent/consumable/sugar = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sprinkles = 1, /datum/reagent/consumable/sugar = 2)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	filling_color = "#D2691E"
 	tastes = list("donut" = 1)
 	foodtype = JUNKFOOD | GRAIN | FRIED | SUGAR
@@ -40,11 +35,7 @@
 	if(last_check_time + 50 < world.time)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
-<<<<<<< HEAD
-			if(H.has_trait(TRAIT_LAW_ENFORCEMENT_METABOLISM) && !H.has_trait(TRAIT_AGEUSIA))
-=======
 			if(HAS_TRAIT(H, TRAIT_LAW_ENFORCEMENT_METABOLISM) && !HAS_TRAIT(H, TRAIT_AGEUSIA))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				to_chat(H,"<span class='notice'>I love this taste!</span>")
 				H.adjust_disgust(-5 + -2.5 * fraction)
 				var/datum/component/mood/mood = H.GetComponent(/datum/component/mood)
@@ -70,13 +61,8 @@
 	desc = "You jelly?"
 	icon_state = "jdonut1"
 	frosted_icon = "jdonut2"
-<<<<<<< HEAD
-	bonus_reagents = list("sugar" = 1, "vitamin" = 1)
-	extra_reagent = "berryjuice"
-=======
 	bonus_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	extra_reagent = /datum/reagent/consumable/berryjuice
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	tastes = list("jelly" = 1, "donut" = 3)
 	foodtype = JUNKFOOD | GRAIN | FRIED | FRUIT | SUGAR
 

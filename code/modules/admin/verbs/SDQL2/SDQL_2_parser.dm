@@ -25,11 +25,7 @@
 //
 //	assignments			:	assignment [',' assignments]
 //	assignment			:	<variable name> '=' expression
-<<<<<<< HEAD
-//	variable			:	<variable name> | <variable name> '.' variable | '[' <hex number> ']' | '[' <hex number> ']' '.' variable
-=======
 //	variable			:	<variable name> | variable '.' variable | variable '[' <list index> ']' | '{' <ref as hex number> '}' | '(' expression ')' | call_function
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 //
 //	bool_expression		:	expression comparitor expression  [bool_operator bool_expression]
 //	expression			:	( unary_expression | '(' expression ')' | value ) [binary_operator expression]
@@ -37,11 +33,7 @@
 //	unary_expression	:	unary_operator ( unary_expression | value )
 //
 //	comparitor			:	'=' | '==' | '!=' | '<>' | '<' | '<=' | '>' | '>='
-<<<<<<< HEAD
-//	value				:	variable | string | number | 'null' | object_type
-=======
 //	value				:	variable | string | number | 'null' | object_type | array | selectors_array
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 //	unary_operator		:	'!' | '-' | '~'
 //	binary_operator		:	comparitor | '+' | '-' | '/' | '*' | '&' | '|' | '^' | '%'
 //	bool_operator		:	'AND' | '&&' | 'OR' | '||'
@@ -505,8 +497,6 @@
 
 	node[++node.len] = expression_list
 
-<<<<<<< HEAD
-=======
 	return i + 1
 
 //selectors_array:	'@[' object_selectors ']'
@@ -524,7 +514,6 @@
 	else
 		parse_error("Expected '@\[' but found '[token(i)]'")
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	return i + 1
 
 //call_function:	<function name> ['(' [arguments] ')']
@@ -618,11 +607,7 @@
 	return i + 1
 
 
-<<<<<<< HEAD
-//value:	variable | string | number | 'null' | object_type
-=======
 //value:	variable | string | number | 'null' | object_type | array | selectors_array
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/SDQL_parser/proc/value(i, list/node)
 	if(token(i) == "null")
 		node += "null"

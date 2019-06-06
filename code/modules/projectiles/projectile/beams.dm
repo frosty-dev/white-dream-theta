@@ -41,7 +41,6 @@
 
 /obj/item/projectile/beam/weak/penetrator
 	armour_penetration = 50
-	speed = 0.7
 
 /obj/item/projectile/beam/practice
 	name = "practice laser"
@@ -70,11 +69,7 @@
 /obj/item/projectile/beam/disabler
 	name = "disabler beam"
 	icon_state = "omnilaser"
-<<<<<<< HEAD
-	damage = 40
-=======
 	damage = 30
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'
@@ -120,7 +115,6 @@
 	damage = 30
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
-	speed = 0.8
 
 /obj/item/projectile/beam/emitter/singularity_pull()
 	return //don't want the emitters to miss
@@ -173,7 +167,6 @@
 	damage_type = BURN
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/purple_laser
 	light_color = LIGHT_COLOR_PURPLE
-	speed = 0.1
 
 /obj/item/projectile/beam/instakill/blue
 	icon_state = "blue_laser"

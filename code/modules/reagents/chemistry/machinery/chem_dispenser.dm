@@ -556,15 +556,9 @@
 /obj/machinery/chem_dispenser/mutagen
 	name = "mutagen dispenser"
 	desc = "Creates and dispenses mutagen."
-<<<<<<< HEAD
-	dispensable_reagents = list("mutagen")
-	upgrade_reagents = null
-	emagged_reagents = list("plasma")
-=======
 	dispensable_reagents = list(/datum/reagent/toxin/mutagen)
 	upgrade_reagents = null
 	emagged_reagents = list(/datum/reagent/toxin/plasma)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 
 /obj/machinery/chem_dispenser/mutagensaltpeter
@@ -573,21 +567,6 @@
 	flags_1 = NODECONSTRUCT_1
 
 	dispensable_reagents = list(
-<<<<<<< HEAD
-		"mutagen",
-		"saltpetre",
-		"eznutriment",
-		"left4zednutriment",
-		"robustharvestnutriment",
-		"water",
-		"plantbgone",
-		"weedkiller",
-		"pestkiller",
-		"cryoxadone",
-		"ammonia",
-		"ash",
-		"diethylamine")
-=======
 		/datum/reagent/toxin/mutagen,
 		/datum/reagent/saltpetre,
 		/datum/reagent/plantnutriment/eznutriment,
@@ -601,7 +580,6 @@
 		/datum/reagent/ammonia,
 		/datum/reagent/ash,
 		/datum/reagent/diethylamine)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	upgrade_reagents = null
 
 /obj/machinery/chem_dispenser/mutagensaltpeter/Initialize()

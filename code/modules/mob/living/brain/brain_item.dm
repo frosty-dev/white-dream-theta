@@ -79,11 +79,7 @@
 		if(!brainmob.stored_dna)
 			brainmob.stored_dna = new /datum/dna/stored(brainmob)
 		C.dna.copy_dna(brainmob.stored_dna)
-<<<<<<< HEAD
-		if(L.has_trait(TRAIT_BADDNA))
-=======
 		if(HAS_TRAIT(L, TRAIT_BADDNA))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			brainmob.status_traits[TRAIT_BADDNA] = L.status_traits[TRAIT_BADDNA]
 		var/obj/item/organ/zombie_infection/ZI = L.getorganslot(ORGAN_SLOT_ZOMBIE)
 		if(ZI)

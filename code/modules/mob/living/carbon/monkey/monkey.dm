@@ -71,11 +71,7 @@
 /mob/living/carbon/monkey/updatehealth()
 	. = ..()
 	var/slow = 0
-<<<<<<< HEAD
-	if(!has_trait(TRAIT_IGNOREDAMAGESLOWDOWN))
-=======
 	if(!HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/health_deficiency = (maxHealth - health)
 		if(health_deficiency >= 45)
 			slow += (health_deficiency / 25)

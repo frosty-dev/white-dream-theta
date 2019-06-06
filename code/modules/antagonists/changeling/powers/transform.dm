@@ -12,11 +12,7 @@
 
 /obj/item/clothing/glasses/changeling/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CHANGELING_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/glasses/changeling/attack_hand(mob/user)
@@ -31,11 +27,7 @@
 
 /obj/item/clothing/under/changeling/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CHANGELING_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/under/changeling/attack_hand(mob/user)
@@ -66,11 +58,7 @@
 
 /obj/item/clothing/head/changeling/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CHANGELING_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/head/changeling/attack_hand(mob/user)
@@ -85,11 +73,7 @@
 
 /obj/item/clothing/shoes/changeling/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CHANGELING_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/shoes/changeling/attack_hand(mob/user)
@@ -104,11 +88,7 @@
 
 /obj/item/clothing/gloves/changeling/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CHANGELING_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/gloves/changeling/attack_hand(mob/user)
@@ -123,11 +103,7 @@
 
 /obj/item/clothing/mask/changeling/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CHANGELING_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/clothing/mask/changeling/attack_hand(mob/user)

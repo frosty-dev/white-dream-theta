@@ -114,26 +114,14 @@ Difficulty: Hard
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	if(istype(src, /mob/living/simple_animal/hostile/megafauna/bubblegum/hallucination))
-		return
-	for(var/mob/living/simple_animal/hostile/megafauna/bubblegum/B in GLOB.mob_living_list)
-		if(B != src)
-			return INITIALIZE_HINT_QDEL //There can be only one
-=======
 	if(true_spawn)
 		for(var/mob/living/simple_animal/hostile/megafauna/bubblegum/B in GLOB.mob_living_list)
 			if(B != src)
 				return INITIALIZE_HINT_QDEL //There can be only one
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/obj/effect/proc_holder/spell/bloodcrawl/bloodspell = new
 	AddSpell(bloodspell)
 	if(istype(loc, /obj/effect/dummy/phased_mob/slaughter))
 		bloodspell.phased = TRUE
-<<<<<<< HEAD
-	internal = new/obj/item/gps/internal/bubblegum(src)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/grant_achievement(medaltype,scoretype)
 	. = ..()
@@ -505,8 +493,4 @@ Difficulty: Hard
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/slaughter/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover, /mob/living/simple_animal/hostile/megafauna/bubblegum))
 		return 1
-<<<<<<< HEAD
 	return 0
-=======
-	return 0
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

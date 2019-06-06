@@ -15,11 +15,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 40
 	STR.max_combined_w_class = 40
-<<<<<<< HEAD
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/holochip))
-=======
 	STR.set_holdable(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/holochip))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/storage/bag/money/vault/PopulateContents()
 	new /obj/item/coin/silver(src)

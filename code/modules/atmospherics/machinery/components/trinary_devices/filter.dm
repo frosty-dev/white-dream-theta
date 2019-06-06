@@ -6,12 +6,7 @@
 	desc = "Very useful for filtering gasses."
 
 	can_unwrench = TRUE
-<<<<<<< HEAD
-
-	var/target_pressure = ONE_ATMOSPHERE
-=======
 	var/transfer_rate = MAX_TRANSFER_RATE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/filter_type = null
 	var/frequency = 0
 	var/datum/radio_frequency/radio_connection
@@ -19,8 +14,6 @@
 	construction_type = /obj/item/pipe/trinary/flippable
 	pipe_state = "filter"
 
-<<<<<<< HEAD
-=======
 /obj/machinery/atmospherics/components/trinary/filter/CtrlClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		on = !on
@@ -33,7 +26,6 @@
 		update_icon()
 	return ..()
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/machinery/atmospherics/components/trinary/filter/proc/set_frequency(new_frequency)
 	SSradio.remove_object(src, frequency)
 	frequency = new_frequency
@@ -90,12 +82,7 @@
 		//No need to transfer if target is already full!
 		return
 
-<<<<<<< HEAD
-	//Calculate necessary moles to transfer using PV=nRT, no need to create a new var that will be used only once (delta)
-	var/transfer_moles = (target_pressure - output_starting_pressure)*air3.volume/(air1.temperature * R_IDEAL_GAS_EQUATION)
-=======
 	var/transfer_ratio = transfer_rate/air1.volume
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	//Actually transfer the gas
 

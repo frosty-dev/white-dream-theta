@@ -42,7 +42,7 @@
 		return 0
 
 /proc/stars(n, pr)
-	n = rhtml_encode(n)
+	n = html_encode(n)
 	if (pr == null)
 		pr = 25
 	if (pr <= 0)
@@ -64,7 +64,7 @@
 	return sanitize(t)
 
 /proc/slur(n)
-	var/phrase = rhtml_decode(n)
+	var/phrase = html_decode(n)
 	var/leng = lentext(phrase)
 	var/counter=lentext(phrase)
 	var/newphrase=""
@@ -82,35 +82,24 @@
 				newletter="oo"
 			if(lowertext(newletter)=="c")
 				newletter="k"
-			//russian alkashi
-			if(r_lowertext(newletter)=="о")	newletter="у"
-			if(r_lowertext(newletter)=="ы")	newletter="i"
-			if(r_lowertext(newletter)=="р")	newletter="r"
-			if(r_lowertext(newletter)=="л")	newletter="ль"
-			if(r_lowertext(newletter)=="з")	newletter="с"
-			if(r_lowertext(newletter)=="в")	newletter="ф"
-			if(r_lowertext(newletter)=="б")	newletter="п"
-			if(r_lowertext(newletter)=="г")	newletter="х"
-			if(r_lowertext(newletter)=="д")	newletter="т"
 		if(rand(1,20)==20)
 			if(newletter==" ")
-				newletter="...о-о-ой..."
+				newletter="...huuuhhh..."
 			if(newletter==".")
-				newletter=" » !"
-		switch(rand(1,16))
-			if(1,3,5,8)		newletter = "[r_lowertext(newletter)]"
-			if(2,4,6,15)	newletter = "[r_uppertext(newletter)]"
-			if(7)			newletter += "'"
-			if(9,10)		newletter = "<b>[newletter]</b>"
-			if(11,12)		newletter = "<big>[newletter]</big>"
-			if(13)			newletter = "<small>[newletter]</small>"
-			if(16)			newletter+="[newletter][newletter]"
+				newletter=" *BURP*."
+		switch(rand(1,20))
+			if(1)
+				newletter+="'"
+			if(10)
+				newletter+="[newletter]"
+			if(20)
+				newletter+="[newletter][newletter]"
 		newphrase+="[newletter]";counter-=1
 	return newphrase
 
 
 /proc/cultslur(n) // Inflicted on victims of a stun talisman
-	var/phrase = rhtml_decode(n)
+	var/phrase = html_decode(n)
 	var/leng = lentext(phrase)
 	var/counter=lentext(phrase)
 	var/newphrase=""
@@ -130,20 +119,6 @@
 				newletter=" NAR "
 			if(lowertext(newletter)=="s")
 				newletter=" SIE "
-			//russian alkashi
-			if(r_lowertext(newletter)=="о")	newletter="у"
-			if(r_lowertext(newletter)=="ы")	newletter="i"
-			if(r_lowertext(newletter)=="р")	newletter="r"
-			if(r_lowertext(newletter)=="л")	newletter="ль"
-			if(r_lowertext(newletter)=="з")	newletter="с"
-			if(r_lowertext(newletter)=="в")	newletter="ф"
-			if(r_lowertext(newletter)=="б")	newletter="п"
-			if(r_lowertext(newletter)=="г")	newletter="х"
-			if(r_lowertext(newletter)=="д")	newletter="т"
-			if(r_lowertext(newletter)=="с")
-				newletter=" Ќј– "
-			if(r_lowertext(newletter)=="т")
-				newletter=" —» "
 		if(rand(1,4)==4)
 			if(newletter==" ")
 				newletter=" no hope... "
@@ -166,7 +141,7 @@
 
 
 /proc/stutter(n)
-	var/te = rhtml_decode(n)
+	var/te = html_decode(n)
 	var/t = ""//placed before the message. Not really sure what it's for.
 	n = length(n)//length of the entire word
 	var/p = null
@@ -230,7 +205,7 @@ The difference with stutter is that this proc can stutter more than 1 letter
 The issue here is that anything that does not have a space is treated as one word (in many instances). For instance, "LOOKING," is a word, including the comma.
 It's fairly easy to fix if dealing with single letters but not so much with compounds of letters./N
 */
-	var/te = rhtml_decode(n)
+	var/te = html_decode(n)
 	var/t = ""
 	n = length(n)
 	var/p = 1
@@ -523,14 +498,3 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 	if(HAS_TRAIT(src, TRAIT_DISSECTED))
 		. += "<span class='notice'>This body has been dissected and analyzed. It is no longer worth experimenting on.</span><br>"
-<<<<<<< HEAD
-
-/mob/has_trait(trait, list/sources, check_mind=TRUE)
-	. = ..(trait, sources)
-	if(.)
-		return
-
-	if(check_mind && istype(mind))
-		return mind.has_trait(trait, sources)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

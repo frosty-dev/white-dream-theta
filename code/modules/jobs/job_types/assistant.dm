@@ -16,10 +16,7 @@ Assistant
 	antag_rep = 7
 	paycheck = PAYCHECK_ASSISTANT // Get a job. Job reassignment changes your paycheck now. Get over it.
 	paycheck_department = ACCOUNT_CIV
-<<<<<<< HEAD
-=======
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/job/assistant/get_access()
 	if(CONFIG_GET(flag/assistants_have_maint_access) || !CONFIG_GET(flag/jobs_have_minimal_access)) //Config has assistant maint access set

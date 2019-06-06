@@ -117,16 +117,6 @@
 
 	if(!M.buckled && !M.has_buckled_mobs())
 		var/mob_swap = FALSE
-<<<<<<< HEAD
-		//the puller can always swap with its victim if on grab intent
-		if(M.pulledby == src && a_intent == INTENT_GRAB)
-			mob_swap = TRUE
-		else if(M.has_trait(TRAIT_NOMOBSWAP) || has_trait(TRAIT_NOMOBSWAP))
-			mob_swap = FALSE
-		//restrained people act if they were on 'help' intent to prevent a person being pulled from being separated from their puller
-		else if((M.restrained() || M.a_intent == INTENT_HELP) && (restrained() || a_intent == INTENT_HELP))
-			mob_swap = TRUE
-=======
 		var/too_strong = (M.move_resist > move_force) //can't swap with immovable objects unless they help us
 		if(!they_can_move) //we have to physically move them
 			if(!too_strong)
@@ -141,7 +131,6 @@
 				(restrained() || a_intent == INTENT_HELP)
 			)
 				mob_swap = TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(mob_swap)
 			//switch our position with M
 			if(loc && !loc.Adjacent(M.loc))
@@ -287,11 +276,7 @@
 		var/mob/M = AM
 
 		log_combat(src, M, "grabbed", addition="passive grab")
-<<<<<<< HEAD
-		if(!supress_message && !(iscarbon(AM) && has_trait(TRAIT_STRONG_GRABBER)))
-=======
 		if(!supress_message && !(iscarbon(AM) && HAS_TRAIT(src, TRAIT_STRONG_GRABBER)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			visible_message("<span class='warning'>[src] has grabbed [M] passively!</span>")
 		if(!iscarbon(src))
 			M.LAssailant = null
@@ -397,13 +382,8 @@
 			to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
 		death()
 
-<<<<<<< HEAD
-/mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE)
-	if(stat || IsUnconscious() || IsStun() || IsParalyzed() || (check_immobilized && IsImmobilized()) || (!ignore_restraints && restrained(ignore_grab)))
-=======
 /mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, ignore_stasis = FALSE)
 	if(stat || IsUnconscious() || IsStun() || IsParalyzed() || (check_immobilized && IsImmobilized()) || (!ignore_restraints && restrained(ignore_grab)) || (!ignore_stasis && IS_IN_STASIS(src)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return TRUE
 
 /mob/living/canUseStorage()
@@ -557,11 +537,7 @@
 	SetUnconscious(0, FALSE)
 	if(should_update_mobility)
 		update_mobility()
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 //proc used to completely heal a mob.
 /mob/living/proc/fully_heal(admin_revive = 0)
 	restore_blood()
@@ -595,10 +571,7 @@
 	if (mood)
 		mood.remove_temp_moods(admin_revive)
 	update_mobility()
-<<<<<<< HEAD
-=======
 	stop_sound_channel(CHANNEL_HEARTBEAT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
 /mob/living/proc/can_be_revived()
@@ -809,11 +782,7 @@
 // The src mob is trying to strip an item from someone
 // Override if a certain type of mob should be behave differently when stripping items (can't, for example)
 /mob/living/stripPanelUnequip(obj/item/what, mob/who, where)
-<<<<<<< HEAD
-	if(what.has_trait(TRAIT_NODROP))
-=======
 	if(!what.canStrip(who))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		to_chat(src, "<span class='warning'>You can't remove \the [what.name], it appears to be stuck!</span>")
 		return
 	who.visible_message("<span class='danger'>[src] tries to remove [who]'s [what.name].</span>", \
@@ -839,11 +808,7 @@
 // Override if a certain mob should be behave differently when placing items (can't, for example)
 /mob/living/stripPanelEquip(obj/item/what, mob/who, where)
 	what = src.get_active_held_item()
-<<<<<<< HEAD
-	if(what && (what.has_trait(TRAIT_NODROP)))
-=======
 	if(what && (HAS_TRAIT(what, TRAIT_NODROP)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		to_chat(src, "<span class='warning'>You can't put \the [what.name] on [who], it's stuck to your hand!</span>")
 		return
 	if(what)
@@ -1030,11 +995,7 @@
 
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 
-<<<<<<< HEAD
-/mob/living/anti_magic_check(magic = TRUE, holy = FALSE, major = TRUE, self = FALSE)
-=======
 /mob/living/anti_magic_check(magic = TRUE, holy = FALSE, tinfoil = FALSE, chargecost = 1, self = FALSE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	. = ..()
 	if(.)
 		return

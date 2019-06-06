@@ -81,18 +81,12 @@
 		var/turf/T = loc
 		T.has_opaque_atom = TRUE // No need to recalculate it in this case, it's guaranteed to be on afterwards anyways.
 
-<<<<<<< HEAD
-	if (canSmoothWith)
-		canSmoothWith = typelist("canSmoothWith", canSmoothWith)
-
-=======
 	if(canSmoothWith)
 		canSmoothWith = typelist("canSmoothWith", canSmoothWith)
 
 	if(datum_outputs)
 		for(var/i in 1 to length(datum_outputs))
 			datum_outputs[i] = SSoutputs.outputs[datum_outputs[i]]
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	ComponentInitialize()
 
 	return INITIALIZE_HINT_NORMAL

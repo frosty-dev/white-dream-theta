@@ -39,10 +39,7 @@
 
 /datum/martial_art/the_sleeping_carp/proc/wristWrench(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D.stat && !D.IsStun() && !D.IsParalyzed())
-<<<<<<< HEAD
-=======
 		log_combat(A, D, "wrist wrenched (Sleeping Carp)")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 		D.visible_message("<span class='warning'>[A] grabs [D]'s wrist and wrenches it sideways!</span>", \
 						  "<span class='userdanger'>[A] grabs your wrist and violently wrenches it to the side!</span>")
@@ -56,17 +53,6 @@
 	return basic_hit(A,D)
 
 /datum/martial_art/the_sleeping_carp/proc/backKick(mob/living/carbon/human/A, mob/living/carbon/human/D)
-<<<<<<< HEAD
-	if(A.dir == D.dir && !D.stat && !D.IsParalyzed())
-		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
-		D.visible_message("<span class='warning'>[A] kicks [D] in the back!</span>", \
-						  "<span class='userdanger'>[A] kicks you in the back, making you stumble and fall!</span>")
-		step_to(D,get_step(D,D.dir),1)
-		D.Paralyze(80)
-		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 50, 1, -1)
-		return 1
-	log_combat(A, D, "back-kicked (Sleeping Carp)")
-=======
 	if(!D.stat && !D.IsParalyzed())
 		if(A.dir == D.dir)
 			log_combat(A, D, "back-kicked (Sleeping Carp)")
@@ -81,15 +67,11 @@
 			log_combat(A, D, "missed a back-kick (Sleeping Carp) on")
 			D.visible_message("<span class='warning'>[A] tries to kick [D] in the back, but misses!</span>", \
 								"<span class='userdanger'>[A] tries to kick you in the back, but misses!</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	return basic_hit(A,D)
 
 /datum/martial_art/the_sleeping_carp/proc/kneeStomach(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!D.stat && !D.IsParalyzed())
-<<<<<<< HEAD
-=======
 		log_combat(A, D, "stomach kneed (Sleeping Carp)")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		A.do_attack_animation(D, ATTACK_EFFECT_KICK)
 		D.visible_message("<span class='warning'>[A] knees [D] in the stomach!</span>", \
 						  "<span class='userdanger'>[A] winds you with a knee in the stomach!</span>")
@@ -115,10 +97,7 @@
 
 /datum/martial_art/the_sleeping_carp/proc/elbowDrop(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!(D.mobility_flags & MOBILITY_STAND))
-<<<<<<< HEAD
-=======
 		log_combat(A, D, "elbow dropped (Sleeping Carp)")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 		D.visible_message("<span class='warning'>[A] elbow drops [D]!</span>", \
 							"<span class='userdanger'>[A] piledrives you with their elbow!</span>")
@@ -136,13 +115,7 @@
 			return TRUE
 		old_grab_state = A.grab_state 
 		D.grabbedby(A, 1)
-<<<<<<< HEAD
-	else
-		A.start_pulling(D, supress_message = TRUE)
-		if(A.pulling)
-=======
 		if(old_grab_state == GRAB_PASSIVE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			D.drop_all_held_items()
 			A.grab_state = GRAB_AGGRESSIVE //Instant agressive grab if on grab intent
 			log_combat(A, D, "grabbed", addition="aggressively")

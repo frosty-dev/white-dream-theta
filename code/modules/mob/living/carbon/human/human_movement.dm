@@ -13,11 +13,7 @@
 		. += dna.species.movement_delay(src)
 
 /mob/living/carbon/human/slip(knockdown_amount, obj/O, lube, paralyze, forcedrop)
-<<<<<<< HEAD
-	if(has_trait(TRAIT_NOSLIPALL))
-=======
 	if(HAS_TRAIT(src, TRAIT_NOSLIPALL))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return 0
 	if (!(lube&GALOSHES_DONT_HELP))
 		if(HAS_TRAIT(src, TRAIT_NOSLIPWATER))
@@ -47,11 +43,6 @@
 
 /mob/living/carbon/human/Move(NewLoc, direct)
 	. = ..()
-<<<<<<< HEAD
-	for(var/datum/mutation/human/HM in dna.mutations)
-		HM.on_move(NewLoc)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	if(shoes)
 		if(mobility_flags & MOBILITY_STAND)

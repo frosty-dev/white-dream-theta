@@ -178,8 +178,4 @@
 	. = ..()
 	updatehealth()
 	if(prob(75) && Proj.damage > 0)
-<<<<<<< HEAD
 		spark_system.start()
-=======
-		spark_system.start()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

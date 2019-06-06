@@ -17,13 +17,10 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/plating,
 /area/maintenance/starboard)
-<<<<<<< HEAD
-=======
 "aae" = (
 /obj/effect/mapping_helpers/dead_body_placer,
 /turf/open/floor/plasteel/dark,
 /area/medical/morgue)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "aaf" = (
 /obj/structure/lattice,
 /turf/open/space,
@@ -334,8 +331,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/security/prison)
-<<<<<<< HEAD
-=======
 "aaU" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -352,7 +347,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "aaV" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/dirt,
@@ -2265,8 +2259,6 @@
 	},
 /turf/open/floor/plating,
 /area/crew_quarters/fitness/recreation)
-<<<<<<< HEAD
-=======
 "aeD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/delivery,
@@ -2274,7 +2266,6 @@
 /obj/structure/closet/secure_closet/atmospherics,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "aeE" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -8837,8 +8828,6 @@
 /obj/item/assembly/flash/handheld,
 /turf/open/floor/plasteel,
 /area/security/main)
-<<<<<<< HEAD
-=======
 "apX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
@@ -8846,7 +8835,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "apY" = (
 /obj/structure/table,
 /obj/item/folder/red,
@@ -18259,11 +18247,7 @@
 	dir = 2;
 	name = "Storage Wing APC";
 	areastring = "/area/construction/storage_wing";
-<<<<<<< HEAD
-	pixel_y = -27
-=======
 	pixel_y = -23
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -53225,20 +53209,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
 /area/maintenance/disposal/incinerator)
-<<<<<<< HEAD
-"bZD" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Incinerator Access";
-	req_access_txt = "12"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/maintenance/starboard)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "bZE" = (
 /turf/closed/wall,
 /area/maintenance/disposal/incinerator)
@@ -54050,21 +54020,6 @@
 	pixel_x = -26;
 	pixel_y = 26
 	},
-<<<<<<< HEAD
-/turf/open/floor/plasteel,
-/area/maintenance/disposal/incinerator)
-"caZ" = (
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk,
-/obj/structure/sign/warning/deathsposal{
-	pixel_y = 32
-	},
-/obj/effect/decal/cleanable/dirt,
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
 "cba" = (
@@ -56873,16 +56828,6 @@
 	icon_state = "platingdmg2"
 	},
 /area/maintenance/starboard/aft)
-<<<<<<< HEAD
-"cgu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/reagent_dispensers/fueltank,
-/obj/item/storage/toolbox/emergency,
-/turf/open/floor/plasteel,
-/area/maintenance/disposal/incinerator)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "cgv" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -82916,13 +82861,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/misc_lab/range)
-<<<<<<< HEAD
-"etr" = (
-/obj/machinery/vr_sleeper,
-/turf/open/floor/plasteel,
-/area/crew_quarters/fitness/recreation)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "eFN" = (
 /obj/structure/bodycontainer/crematorium{
 	id = "crematoriumChapel";
@@ -83238,14 +83176,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/research)
-<<<<<<< HEAD
-"ieW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/turf/open/floor/plasteel,
-/area/maintenance/disposal/incinerator)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "ifN" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -83512,8 +83442,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/misc_lab/range)
-<<<<<<< HEAD
-=======
 "lkf" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -83527,7 +83455,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hydroponics)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "lnO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -83618,8 +83545,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
-<<<<<<< HEAD
-=======
 "mrv" = (
 /obj/machinery/door/airlock/wood{
 	doorClose = 'sound/effects/doorcreaky.ogg';
@@ -83630,7 +83555,6 @@
 	icon_state = "wood-broken6"
 	},
 /area/maintenance/port/aft)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "msD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -83794,8 +83718,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/science/misc_lab/range)
-<<<<<<< HEAD
-=======
 "ofy" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -83806,7 +83728,6 @@
 /obj/machinery/vending/modularpc,
 /turf/open/floor/plasteel/white,
 /area/science/research)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "ogE" = (
 /obj/structure/closet/firecloset,
 /turf/open/floor/plating,
@@ -83874,8 +83795,6 @@
 "pcn" = (
 /turf/open/floor/plasteel,
 /area/science/misc_lab/range)
-<<<<<<< HEAD
-=======
 "pgY" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -83888,7 +83807,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hydroponics)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "pmZ" = (
 /obj/structure/sign/poster/official/random{
 	pixel_y = 32
@@ -84046,8 +83964,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/misc_lab/range)
-<<<<<<< HEAD
-=======
 "qkD" = (
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
@@ -84056,7 +83972,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/hydroponics)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "qom" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -84472,16 +84387,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/department/science)
-<<<<<<< HEAD
-"vlx" = (
-/obj/machinery/vr_sleeper,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/crew_quarters/fitness/recreation)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 "vwi" = (
 /obj/structure/girder,
 /obj/structure/grille,
@@ -123711,15 +123616,9 @@ bYr
 avs
 bZE
 mKO
-<<<<<<< HEAD
-qbK
-ieW
-cgu
-=======
 aaW
 aeD
 apX
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 amV
 bZC
 arF

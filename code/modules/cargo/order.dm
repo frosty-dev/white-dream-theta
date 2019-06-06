@@ -65,17 +65,10 @@
 	P.name = "shipping manifest - [packname?"#[id] ([pack.name])":"(Grouped Item Crate)"]"
 	P.info += "<h2>[command_name()] Shipping Manifest</h2>"
 	P.info += "<hr/>"
-<<<<<<< HEAD
-	if(paying_account)
-		P.info += "Direct purchase from [paying_account.account_holder]<br/>"
-		P.name += " - Purchased by [paying_account.account_holder]"
-	P.info += "Order #[id]<br/>"
-=======
 	if(owner && !(owner == "Cargo"))
 		P.info += "Direct purchase from [owner]<br/>"
 		P.name += " - Purchased by [owner]"
 	P.info += "Order[packname?"":"s"]: [id]<br/>"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	P.info += "Destination: [station_name]<br/>"
 	if(packname)
 		P.info += "Item: [packname]<br/>"
@@ -113,19 +106,7 @@
 	else
 		account_holder = "Cargo"
 	var/obj/structure/closet/crate/C = pack.generate(A, paying_account)
-<<<<<<< HEAD
-	var/obj/item/paper/fluff/jobs/cargo/manifest/M = generateManifest(C)
-
-	if(M.errors & MANIFEST_ERROR_ITEM)
-		if(istype(C, /obj/structure/closet/crate/secure) || istype(C, /obj/structure/closet/crate/large))
-			M.errors &= ~MANIFEST_ERROR_ITEM
-		else
-			var/lost = max(round(C.contents.len / 10), 1)
-			while(--lost >= 0)
-				qdel(pick(C.contents))
-=======
 	generateManifest(C, account_holder, pack)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	return C
 
 /datum/supply_order/proc/generateCombo(var/miscbox, var/misc_own, var/misc_contents)

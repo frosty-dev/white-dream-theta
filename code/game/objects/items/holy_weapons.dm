@@ -494,11 +494,7 @@
 
 /obj/item/nullrod/chainsaw/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	AddComponent(/datum/component/butchering, 30, 100, 0, hitsound)
 
 /obj/item/nullrod/clown
@@ -570,11 +566,7 @@
 
 /obj/item/nullrod/armblade/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	AddComponent(/datum/component/butchering, 80, 70)
 
 /obj/item/nullrod/armblade/tentacle

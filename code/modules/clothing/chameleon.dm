@@ -410,11 +410,7 @@
 
 /obj/item/clothing/head/chameleon/drone/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	chameleon_action.random_look()
 	var/datum/action/item_action/chameleon/drone/togglehatmask/togglehatmask_action = new(src)
 	togglehatmask_action.UpdateButtonIcon()
@@ -469,11 +465,7 @@
 
 /obj/item/clothing/mask/chameleon/drone/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	chameleon_action.random_look()
 	var/datum/action/item_action/chameleon/drone/togglehatmask/togglehatmask_action = new(src)
 	togglehatmask_action.UpdateButtonIcon()

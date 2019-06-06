@@ -60,11 +60,7 @@
 		else
 			if(isliving(target))
 				var/mob/living/L = target
-<<<<<<< HEAD
-				if(!L.anti_magic_check(major = FALSE))
-=======
 				if(!L.anti_magic_check(chargecost = 0))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 					if(isrevenant(L))
 						var/mob/living/simple_animal/revenant/R = L
 						if(R.revealed)

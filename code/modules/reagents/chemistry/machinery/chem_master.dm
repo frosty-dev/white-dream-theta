@@ -143,11 +143,7 @@
 										datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-<<<<<<< HEAD
-		var/datum/asset/assets = get_asset_datum(/datum/asset/simple/pills)
-=======
 		var/datum/asset/assets = get_asset_datum(/datum/asset/spritesheet/simple/pills)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		assets.send(user)
 
 		ui = new(user, src, ui_key, "chem_master", name, 500, 550, master_ui, state)
@@ -185,16 +181,8 @@
 		for(var/datum/reagent/N in reagents.reagent_list)
 			bufferContents.Add(list(list("name" = N.name, "id" = ckey(N.name), "volume" = N.volume))) // ^
 		data["bufferContents"] = bufferContents
-<<<<<<< HEAD
-	var/list/pillStyles = list()
-	for (var/x in 1 to PILL_STYLE_COUNT)
-		var/list/SL = list()
-		SL["id"] = x
-		pillStyles += list(SL)
-=======
 
 	//Calculated at init time as it never changes
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	data["pillStyles"] = pillStyles
 	return data
 

@@ -23,11 +23,7 @@
 	throwforce = 0
 	throw_speed = 3
 	throw_range = 7
-<<<<<<< HEAD
-	grind_results = list("lye" = 10)
-=======
 	grind_results = list(/datum/reagent/lye = 10)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/cleanspeed = 35 //slower than mop
 	force_string = "robust... against germs"
 	var/uses = 100

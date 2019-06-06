@@ -24,11 +24,7 @@
 	if(holder.fakekey)
 		rank_name = pick(strings("admin_nicknames.json", "ranks", "config"))
 		admin_name = pick(strings("admin_nicknames.json", "names", "config"))
-<<<<<<< HEAD
-	var/rendered = "<span class='game deadsay'><span class='prefix'>ÏÐÈÇÐÀÊ:</span> <span class='name'>[rank_name]([admin_name])</span> דמגמנטע, <span class='message'>\"[emoji_parse(msg)]\"</span></span>"
-=======
 	var/rendered = "<span class='game deadsay'><span class='prefix'>DEAD:</span> <span class='name'>[rank_name]([admin_name])</span> says, <span class='message'>\"[emoji_parse(msg)]\"</span></span>"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	for (var/mob/M in GLOB.player_list)
 		if(isnewplayer(M))

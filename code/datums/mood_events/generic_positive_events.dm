@@ -84,12 +84,6 @@
 	timeout = 3 SECONDS
 	hidden = TRUE
 
-<<<<<<< HEAD
-/datum/mood_event/creeping/add_effects(name)
-	description = "<span class='greentext'>I'm so close to [name] and I NEVER want this to end.</span>\n"
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/mood_event/revolution
 	description = "<span class='nicegreen'>VIVA LA REVOLUTION!</span>\n"
 	mood_change = 3
@@ -107,11 +101,7 @@
 /datum/mood_event/goodmusic
 	description = "<span class='nicegreen'>There is something soothing about this music.</span>\n"
 	mood_change = 3
-<<<<<<< HEAD
-	timeout = 600
-=======
 	timeout = 60 SECONDS
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/mood_event/chemical_euphoria
 	description = "<span class='nicegreen'>Heh...hehehe...hehe...</span>\n"
@@ -130,11 +120,8 @@
 /datum/mood_event/religiously_comforted
 	description = "<span class='nicegreen'>You are comforted by the presence of a holy person.</span>\n"
 	mood_change = 3
-<<<<<<< HEAD
-=======
 	timeout = 5 MINUTES
 
 /datum/mood_event/clownshoes
 	description = "<span class='nicegreen'>The shoes are a clown's legacy, I never want to take them off!</span>\n"
 	mood_change = 5
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

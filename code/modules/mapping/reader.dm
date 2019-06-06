@@ -307,11 +307,7 @@
 	index = members.len
 	if(members[index] != /area/template_noop)		
 		var/atype = members[index]
-<<<<<<< HEAD
-		GLOB._preloader.setup(members_attributes[index], atype)//preloader for assigning  set variables on atom creation
-=======
 		world.preloader_setup(members_attributes[index], atype)//preloader for assigning  set variables on atom creation
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/atom/instance = areaCache[atype]
 		if (!instance)
 			instance = GLOB.areas_by_type[atype]

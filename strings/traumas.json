@@ -1,186 +1,132 @@
 {
     "brain_damage": [
-        "@pick(semicolon)Я пони, ИИИГОГО!!!",
-        "без кисларода блоб не растёт?",
-        "@pick(semicolon)ХОС ХУЕСОС",
-        "@pick(semicolon)@pick(faggot_traitor) @pick(george) @pick(mellens) гpифонит меня ПМОГИТЕ!!!",
-        "можешь дать мне @pick(mutations)?",
-        "НАполнен хамоном",
-        "Трапы вобрали в себя ЛУЧШЕЕ ИЗ ОБОИХ ПОЛОВ>",
-        "@pick(semicolon)Я ХАЧУ ТРАХНУТЬ обизьянок",
-        "хорош меня пиздить!!!!",
-        "ПЕРКРАТИ",
-        "шпили-вили!!",
-        "@pick(semicolon)У НАС ПИРАТЫ",
-        "СЛАВА УКРАИНЕ",
-        "ёбаные фурри!",
-        "а ну-ка",
-        ">моё лицо",
-        "полегче!",
-        "ааааагх!!!",
-        "красный поелит быстрей",
-        "ЗА СТАЛЕНА",
-        "ору",
-        "ебучые дворфы братиш, ебучые дворфы",
-        "КОСМАДИСААНТ",
-        "ми сделали эта по приколу",
-        "текстуры как в жизни ;_;",
-        "любовь зла",
-        "СУМКА!!!",
-        "откройте медбэ@pick(y_replacements)!!!!",
-        "Подойди сюда, смотри что у меня есть",
-        "тыназвал её шмарай",
-        "посадили ни зачто",
-        "@pick(semicolon)pray можете @pick(create_verbs) @pick(create_nouns)???",
-        "ОТСТАНЬ ОТ МЕНЯ ГPИФОЗНЫЙ ДОЛБОЕБ!!!!",
-        "ты ёбаный дебил!",
-        "@pick(semicolon)ПОМОГИТЕ, СБ ПИЗДИТ!!!",
-        "что значит @pick(random_gibberish)?????",
-        "@pick(semicolon)ЗОВТТЕ ШАТТЛ!!!!!",
-        "кидть мАТЕРИЮ В СИНГУЛЯРНОСТЬ ниихуева",
-        "@pick(semicolon)ИИ Закон 22 Отрой дверь",
-        "@pick(semicolon)это МЯ стАНция......",
-        "ты что о СЕБЕ вазомнил?!!!!",
-        "съЕБИСЬЬЬЬ",
-        "О Б Н И М А Ю",
-        "@pick(semicolon)РАЗРУШАЮ СТАНЦИЮ ВЫЖИВШИХ НЕТ",
-        "@pick(servers) упал!! @pick(bug)",
-        "ВЖЖУХХ",
-        "ВЫКЛЮЧИТЕ МАТЕРИЮ",
-        "КРАСНЫЕ ПИДРАСЫ В ПРИБЫТИ!!!",
-        "СИНГУЛЯРНОСТЬ ЛУЧШОЯ",
-        "СОЛЯРЫ МОГУТ ПИТАТЬ ВСЮ СТАНЦИЮ @pick(bug)",
-        "на станции люди со странными руками",
-        "@pick(semicolon)У таяра есть крякнутые проги, если есть бабло",
-        "@pick(semicolon)У МЕНЯ СТАЛЬНЫЕ ЯЙЦА",
-        "НЕТ, Я ЗАМОЧУ ТЕБЯ ГОЛЫМИ РУКАМИ В ТОЛЧКЕ",
-        "я похищу её и отведу в дормы",
-        "@pick(semicolon)кажется ии и борги коопятся",
-        "ты только что усложнил кому-то жизнь",
-        "ГДЕ ДИСК СО СКОЛЬЗКИМ ГЕНОМ ГДЕ ОН НАХУЙ?",
-        "@pick(semicolon)Н-НЯЯЯЯ~",
+        "@pick(semicolon)IM A PONY NEEEEEEIIIIIIIIIGH",
+        "without oxigen blob don't evoluate?",
+        "@pick(semicolon)CAPTAINS A COMDOM",
+        "@pick(semicolon)@pick(faggot_traitor) @pick(george) @pick(mellens) is grifing me HALP!!!",
+        "can u give me @pick(mutations)?",
+        "THe saiyans screwed",
+        "Bi is THE BEST OF BOTH WORLDS>",
+        "@pick(semicolon)I WANNA PET TEH monkeyS",
+        "stop grifing me!!!!",
+        "SOTP IT#",
+        "shiggey diggey!!",
+        "@pick(semicolon)A PIRATE APPEAR",
+        "FUS RO DAH",
+        "fucking 4rries!",
+        "stat me",
+        ">my face",
+        "roll it easy!",
+        "waaaaaagh!!!",
+        "red wonz go fasta",
+        "FOR TEH EMPRAH",
+        "lol2cat",
+        "dem dwarfs man, dem dwarfs",
+        "SPESS MAHREENS",
+        "hwee did eet fhor khayosss",
+        "lifelike texture ;_;",
+        "luv can bloooom",
+        "PACKETS!!!",
+        "port ba@pick(y_replacements) med!!!!",
+        "REVIRT GON CHEM!!!!!!!!",
+        "youed call her a toeugh bithc",
+        "closd for merbegging",
+        "@pick(semicolon)pray can u @pick(create_verbs) @pick(create_nouns)???",
+        "GEY AWAY FROM ME U GREIFING PRICK!!!!",
+        "ur a fuckeing autist!",
+        "@pick(semicolon)HELP SHITECIRTY MURDERIN  MEE!!!",
+        "hwat dose tha @pick(random_gibberish) mean?????",
+        "@pick(semicolon)CAL; TEH SHUTTLE!!!!!",
+        "wearnig siNGUARLTY is.... FINE haHAAA",
+        "@pick(semicolon)AI laW 22 Open door",
+        "@pick(semicolon)this SI mY stATIon......",
+        "who the HELL do u thenk u r?!!!!",
+        "geT THE FUCK OUTTTT",
+        "H U G B O X",
+        "@pick(semicolon)CRASHING THIS STTAYTION WITH NIO SURVIVROS",
+        "@pick(servers) is down!! @pick(bug)",
+        "PSHOOOM",
+        "REMOVE SINGULARITY",
+        "INSTLL TEG",
+        "TURBIN IS BEST ENGIENE",
+        "SOLIRS CAN POWER THE HOLE STATION ANEWAY @pick(bug)",
+        "parasteng was best",
+        "@pick(semicolon)Tajaran has warrrres, if you have coin",
+        "@pick(semicolon)I'VE GOT BALLS OF STEEL",
+        "NO I'M ONNA KILL YOU MOTHERFUCKER OLD STYLE",
+        "i will snatch erry motherfucker birthday",
+        "@pick(semicolon)the ai and borgs are mettacomming I think",
+        "u just did the world a little bit more sad place for someone",
+        "WHERES THE SLIP REWRITE WHERE THR FUCK ID IT?",
+        "@pick(semicolon)N-NYAAAAAA~",
         "@pick(bug)",
-<<<<<<< HEAD
-        "@pick(semicolon)какова хуя??????????? @pick(bug)",
-        "@pick(semicolon)я вбежал в супрематерию и исчез @pick(bug)",
-        "НЕ ПРИКОСАЙСЯ КО МНЕ",
-        "@pick(semicolon)ПОМОГИТЕ, @pick(george) @pick(mellens) УБИВАЕТ В ТЕХАХ!!!!",
-        "@pick(semicolon)ГЕНОКРАДЫ НА СТАНЦИИ!!!!!!",
-        "@pick(semicolon)Я ДЕВОЧКА-КРИЧАЛКА!!!!!",
-        "как менять руки",
-        "лoл",
-        "кeк",
-        "@pick(servers) лучше чем @pick(servers)!!!",
-        "@pick(semicolon)Я маленькая девочка лoли!!!",
-        "графика хуета",
-        "@pick(semicolon)adminhelp помогите меня гpифонят!!!",
-        "@pick(semicolon)g кто живой???",
-        "Аниме!!",
-	"Аниме круто!!",
-        "Это что инфинити????",
-        "кто прочитал тот здохнет",
-		"@pick(semicolon)у меня над головой справа летает огромная буква R что это за хуита ПОМОГИТЕ!!",
-		"@pick(semicolon)СБ УБИВАЮТ МЕНЯ ПОМОГИТЕ!!!",
-        "@pick(semicolon)чоза нахуй @pick(bug)",
-        "@pick(semicolon)я забежал в материю и ичез аоа @pick(bug)",
-        "НЕ ТРОГАЙ МЕНЯ, ШО?",
-        "@pick(semicolon)ГАГАГАГА ПОЖИЛАЯ ЧИЧМБА ГАГАГАГ ГОМОЗИГОТА",
-	"@pick(semicolon)КТО ЕРПШЕТЬ В ДОРМАХ ПОЦАНЫ???!!!",
-	"@pick(semicolon)а затем капитан взял в рот сладких член таяряна и сказал, что любит его",
-	"ХОЧУ СЕКСА ПОЙДЕМ В ДОРМЫ!!",
-	"@pick(semicolon)а кааак в генетике гены открывать как???",
-	"@pick(semicolon)ТУТ КООПЕРЫ, ГДЕ ПЕДАЛИ БЛЯТЬ?!!!",
-	"посоветуйте аниме я уже много чего посмотрел смотреть нечего",
-	"@pick(semicolon)ЕРП в дормах",
-	"@pick(semicolon)не туда",
-	"@pick(semicolon)OOC нахуй ты меня убил блять"
-=======
         "@pick(semicolon)wtf??????????? @pick(bug)",
         "@pick(semicolon)i ran into the supermattre ten i dsappeard @pick(bug)",
         "DON'T EVER TUCH ME",
         "@pick(semicolon)GIVE ME FREE ROBUX PLEASE JUST ENOUGH FOR SHIRT AND PANTS",
         "its gonna be like 9/11 all over again but insitaead is gonna be a bitc",
         "@pick(semicolon)How do I set up the. SHow do I set u p the Singu. how I the scrungulartiy????"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
     ],
 
     "mutations": [
-        "телекинез",
-        "халка",
-        "эпелепсею",
-        "невидемасть",
-        "иксрей",
-        "светящуся кожу",
-        "риген",
-        "станящие перчатки"
+        "telikesis",
+        "halk",
+        "eppilapse",
+        "kamelien",
+        "eksrey",
+        "glowey skin",
+        "fungal tb",
+        "stun gloves"
     ],
 
     "george": [
-        "раян",
-        "тамсин",
-        "кали",
-        "ангел"
+        "joerge",
+        "george",
+        "gorge",
+        "gdoruge"
     ],
 
     "mellens": [
-        "меллер",
-        "роуз",
-        "витюков"
+        "mellens",
+        "melons",
+        "mwrlins"
     ],
 
     "faggot_traitor": [
         "",
-        "предатель"
+        "that faggot traitor"
     ],
 
     "random_gibberish": [
-        "G",
-        "кальмар",
-        "R",
-        "CO2"
+        "g",
+        "squid",
+        "r",
+        "carbon dioxide"
     ],
 
     "y_replacements": [
-        "й",
-        "и",
-        "ы"
+        "y",
+        "i",
+        "e"
     ],
 
     "servers": [
-        "белый",
-        "оникс",
-        "жёлтый",
-		"мистер белый",
-		"миссис оникс",
-		"мистер жёлтый",
-	"барсикопараша",
-	"румарины",
-	"моя локалка"
+        "bager",
+        "sybl",
+        "mrs sybil",
+        "mr basil",
+        "mr terry",
+        "berry"
     ],
 
     "create_verbs": [
-<<<<<<< HEAD
-        "заспавнить",
-        "ТРансформировать меня в",
-        "сделат"
-=======
         "spawn",
         "MAke me",
         "creat",
         "tc trade me"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
-    ],
-    "create_nouns": [
-<<<<<<< HEAD
-        "ксенасов",
-        "аленов",
-        "триторов",
-        "щедоулингов",
-        "абдокторов",
-        "ревинаната"
     ],
 
-=======
+    "create_nouns": [
         "zenomorfs",
         "ayleins",
         "treaitors",
@@ -192,14 +138,13 @@
         "bleb"
     ],
 	
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
     "bug": [
         "",
-        "ТАК И ДАЛЖНО БЫТЬ??",
-        "ЭОТ АБГ&",
-        "БАГ!!!"
+        "IS TIS A BUG??",
+        "SI IST A BUGG/",
+        "BUG!!!"
     ],
-
+	
     "semicolon": [
         "",
         ";",

@@ -618,11 +618,7 @@ This is here to make the tiles around the station mininuke change when it's arme
 	if(!fake)
 		return
 
-<<<<<<< HEAD
-	if(isobserver(user) || user.has_trait(TRAIT_DISK_VERIFIER))
-=======
 	if(isobserver(user) || HAS_TRAIT(user, TRAIT_DISK_VERIFIER))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		to_chat(user, "<span class='warning'>The serial numbers on [src] are incorrect.</span>")
 
 /obj/item/disk/nuclear/attackby(obj/item/I, mob/living/user, params)

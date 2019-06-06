@@ -686,11 +686,7 @@
 	materials = list(MAT_METAL = 15000, MAT_GLASS = 15000, MAT_PLASMA = 8000, MAT_URANIUM = 8000)
 	construction_time = 80
 	category = list("Cyborg Upgrade Modules")
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/design/borg_upgrade_piercinghypospray
 	name = "Cyborg Upgrade (Piercing Hypospray)"
 	id = "borg_upgrade_piercinghypospray"

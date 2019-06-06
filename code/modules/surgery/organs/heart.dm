@@ -195,10 +195,5 @@
 		min_next_adrenaline = world.time + rand(250, 600) //anywhere from 4.5 to 10 minutes
 		to_chat(owner, "<span class='userdanger'>You feel yourself dying, but you refuse to give up!</span>")
 		owner.heal_overall_damage(15, 15, 0, BODYPART_ORGANIC)
-<<<<<<< HEAD
-		if(owner.reagents.get_reagent_amount("ephedrine") < 20)
-			owner.reagents.add_reagent("ephedrine", 10)
-=======
 		if(owner.reagents.get_reagent_amount(/datum/reagent/medicine/ephedrine) < 20)
 			owner.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 10)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

@@ -310,11 +310,7 @@
 
 /obj/item/clothing/head/culthood/alt/ghost/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CULT_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/suit/cultrobes/alt
 	name = "cultist robes"
@@ -327,11 +323,7 @@
 
 /obj/item/clothing/suit/cultrobes/alt/ghost/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CULT_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 
 /obj/item/clothing/head/magus
@@ -810,11 +802,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/touchspell_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/touchspell_righthand.dmi'
 	icon_state = "disintegrate"
-<<<<<<< HEAD
-	item_state = null
-=======
 	item_state = "disintegrate"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	item_flags = ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
 	throwforce = 0
@@ -942,16 +930,6 @@
 	if(iscultist(owner))
 		if(istype(hitby, /obj/item/projectile))
 			var/obj/item/projectile/P = hitby
-<<<<<<< HEAD
-			if(P.damage >= 30)
-				var/turf/T = get_turf(owner)
-				T.visible_message("<span class='warning'>The sheer force from [P] shatters the mirror shield!</span>")
-				new /obj/effect/temp_visual/cult/sparks(T)
-				playsound(T, 'sound/effects/glassbr3.ogg', 100)
-				owner.Paralyze(25)
-				qdel(src)
-				return FALSE
-=======
 			if(P.damage_type == BRUTE || P.damage_type == BURN)
 				if(P.damage >= 30)
 					var/turf/T = get_turf(owner)
@@ -961,7 +939,6 @@
 					owner.Paralyze(25)
 					qdel(src)
 					return FALSE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			if(P.reflectable & REFLECT_NORMAL)
 				return FALSE //To avoid reflection chance double-dipping with block chance
 		. = ..()

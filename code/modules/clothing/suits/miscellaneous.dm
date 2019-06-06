@@ -230,11 +230,7 @@
 
 /obj/item/clothing/suit/poncho/ponchoshame/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, SHAMEBRERO_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, SHAMEBRERO_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/suit/whitedress
 	name = "white dress"

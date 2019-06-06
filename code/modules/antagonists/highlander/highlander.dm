@@ -58,11 +58,7 @@
 	W.access += get_all_centcom_access()
 	W.assignment = "Highlander"
 	W.registered_name = H.real_name
-<<<<<<< HEAD
-	W.add_trait(TRAIT_NODROP, HIGHLANDER)
-=======
 	ADD_TRAIT(W, TRAIT_NODROP, HIGHLANDER)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	W.update_label(H.real_name)
 	H.equip_to_slot_or_del(W, SLOT_WEAR_ID)
 

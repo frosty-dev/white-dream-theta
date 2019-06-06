@@ -41,10 +41,7 @@
 			qdel(src)
 			return FALSE
 
-<<<<<<< HEAD
-=======
 		var/datum/antagonist/hivevessel/woke = target.is_wokevessel()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(is_hivemember(target))
 			for(var/datum/antagonist/hivemind/hive in GLOB.antagonists)
 				if(hive.hivemembers.Find(target.mind))
@@ -59,13 +56,10 @@
 			target.apply_status_effect(STATUS_EFFECT_HIVE_RADAR)
 			remove_hivemember(target)
 
-<<<<<<< HEAD
-=======
 		if(woke)
 			woke.one_mind?.remove_member(target.mind)
 			target.mind.remove_antag_datum(/datum/antagonist/hivevessel)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/datum/antagonist/rev/rev = target.mind.has_antag_datum(/datum/antagonist/rev)
 		if(rev)
 			rev.remove_revolutionary(FALSE, user)

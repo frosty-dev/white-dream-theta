@@ -42,13 +42,6 @@
 	actions_types = list()
 	casing_ejector = FALSE
 
-<<<<<<< HEAD
-/obj/item/gun/ballistic/automatic/gyropistol/update_icon()
-	..()
-	icon_state = "[initial(icon_state)][magazine ? "loaded" : ""]"
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/gun/ballistic/rocketlauncher
 	name = "\improper PML-9"
 	desc = "A reusable rocket propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
@@ -107,7 +100,3 @@
 
 
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

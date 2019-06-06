@@ -18,10 +18,7 @@
 	default_price = 20
 	extra_price = 30
 	payment_department = ACCOUNT_SRV
-<<<<<<< HEAD
-=======
 	input_display_header = "Chef's Food Selection"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/vending_refill/snack
 	machine_name = "Getmore Chocolate Corp"

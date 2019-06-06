@@ -51,11 +51,6 @@
 
 	//Population Cap Checking
 	var/extreme_popcap = CONFIG_GET(number/extreme_popcap)
-<<<<<<< HEAD
-	if(!real_bans_only && extreme_popcap && living_player_count() >= extreme_popcap && !admin)
-		log_access("Failed Login: [key] - Population cap reached")
-		return list("reason"="popcap", "desc"= "\nReason: [CONFIG_GET(string/extreme_popcap_message)]")
-=======
 	if(!real_bans_only && !C && extreme_popcap && !admin)
 		var/popcap_value = GLOB.clients.len
 		if(popcap_value >= extreme_popcap && !GLOB.joined_player_list.Find(ckey))
@@ -63,17 +58,12 @@
 				log_access("Failed Login: [key] - Population cap reached")
 				return list("reason"="popcap", "desc"= "\nReason: [CONFIG_GET(string/extreme_popcap_message)]")
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(CONFIG_GET(flag/sql_enabled))
 		if(!SSdbcore.Connect())
 			var/msg = "Ban database connection failure. Key [ckey] not checked"
 			log_world(msg)
-<<<<<<< HEAD
-			message_admins(msg)
-=======
 			if (message)
 				message_admins(msg)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		else
 			var/list/ban_details = is_banned_from_with_details(ckey, address, computer_id, "Server")
 			for(var/i in ban_details)
@@ -94,15 +84,12 @@
 				if(i["expiration_time"])
 					expires = " The ban is for [DisplayTimeText(text2num(i["duration"]) MINUTES)] and expires on [i["expiration_time"]] (server time)."
 				var/desc = {"You, or another user of this computer or connection ([i["key"]]) is banned from playing here.
-				The ban reason is: [ph2up(i["reason"])]
+				The ban reason is: [i["reason"]]
 				This ban (BanID #[i["id"]]) was applied by [i["admin_key"]] on [i["bantime"]] during round ID [i["round_id"]].
 				[expires]"}
 				log_access("Failed Login: [key] [computer_id] [address] - Banned (#[i["id"]])")
 				return list("reason"="Banned","desc"="[desc]")
-<<<<<<< HEAD
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/list/ban = ..()	//default pager ban stuff
 
 	if (ban)

@@ -4,13 +4,6 @@
 #Ranks will match to those with the same name in admin_ranks.txt, if a match isn't found the user won't be adminned.
 #If SQL-based admin loading is enabled, admins listed here will always be loaded first and will override any duplicate entries in the database.
 
-<<<<<<< HEAD
-Qwaszx000 = Coder
-Gargule = Coder
-Maxsc = Host
-Alexs410 = Host
-Valtosss = Host
-=======
 Optimumtact = Host
 CitrusGender = Game Master
 NewSta = Game Master
@@ -142,4 +135,3 @@ Naksuasdf = Game Master
 MrDoomBringer = Game Master
 shizcalev = Game Master
 NicBR = Game Master
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

@@ -423,11 +423,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/wizard/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	AddComponent(/datum/component/anti_magic, TRUE, FALSE, _blocks_self = FALSE)
-=======
 	AddComponent(/datum/component/anti_magic, TRUE, FALSE, FALSE, null, INFINITY, FALSE)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 
 	//Medical hardsuit

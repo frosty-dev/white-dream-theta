@@ -91,11 +91,7 @@
 	endurance = 25
 	mutatelist = list()
 	genes = list(/datum/plant_gene/trait/glow/berry, /datum/plant_gene/trait/repeated_harvest)
-<<<<<<< HEAD
-	reagents_add = list("uranium" = 0.25, "iodine" = 0.2, "vitamin" = 0.04, "nutriment" = 0.1)
-=======
 	reagents_add = list(/datum/reagent/uranium = 0.25, /datum/reagent/iodine = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/berries/glow

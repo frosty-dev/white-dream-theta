@@ -158,13 +158,7 @@
 	P.paused = FALSE
 
 /datum/proximity_monitor/advanced/timestop/proc/freeze_mob(mob/living/L)
-<<<<<<< HEAD
-	if(L.anti_magic_check(check_anti_magic, check_holy))
-		immune += L
-		return
-=======
 	frozen_mobs += L
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	L.Stun(20, 1, 1)
 	walk(L, 0) //stops them mid pathing even if they're stunimmune
 	if(isanimal(L))

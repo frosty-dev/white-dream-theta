@@ -267,13 +267,8 @@
 // Copied from /obj/item/melee/transforming/energy/sword/attackby
 /obj/item/toy/sword/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/toy/sword))
-<<<<<<< HEAD
-		if(W.has_trait(TRAIT_NODROP) || has_trait(TRAIT_NODROP))
-			to_chat(user, "<span class='warning'>\the [has_trait(TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [has_trait(TRAIT_NODROP) ? W : src]!</span>")
-=======
 		if(HAS_TRAIT(W, TRAIT_NODROP) || HAS_TRAIT(src, TRAIT_NODROP))
 			to_chat(user, "<span class='warning'>\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			return
 		else
 			to_chat(user, "<span class='notice'>You attach the ends of the two plastic swords, making a single double-bladed toy! You're fake-cool.</span>")
@@ -685,12 +680,9 @@
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 //ATTACK HAND NOT CALLING PARENT
 /obj/item/toy/cards/deck/attack_hand(mob/user)
-<<<<<<< HEAD
-=======
 	draw_card(user)
 
 /obj/item/toy/cards/deck/proc/draw_card(mob/user)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(isliving(user))
 		var/mob/living/L = user
 		if(!(L.mobility_flags & MOBILITY_PICKUP))

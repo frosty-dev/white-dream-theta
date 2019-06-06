@@ -296,13 +296,6 @@
 	icon_state = "satchel-flat"
 	w_class = WEIGHT_CLASS_NORMAL //Can fit in backpacks itself.
 	level = 1
-<<<<<<< HEAD
-
-/obj/item/storage/backpack/satchel/flat/Initialize()
-	. = ..()
-	add_trait(TRAIT_T_RAY_VISIBLE, TRAIT_GENERIC)
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/storage/backpack/satchel/flat/ComponentInitialize()
 	. = ..()

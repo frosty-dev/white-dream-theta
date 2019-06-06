@@ -85,18 +85,11 @@
 
 /obj/item/clothing/shoes/clown_shoes/equipped(mob/user, slot)
 	. = ..()
-<<<<<<< HEAD
-	if(slot == SLOT_SHOES && enabled_waddle)
-		waddle = user.AddComponent(/datum/component/waddling)
-	if(user.mind && user.mind.assigned_role == "Clown")
-		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "noshoes")
-=======
 	if(slot == SLOT_SHOES)
 		if(enabled_waddle)
 			waddle = user.AddComponent(/datum/component/waddling)
 		if(user.mind && user.mind.assigned_role == "Clown")
 			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "clownshoes", /datum/mood_event/clownshoes)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/shoes/clown_shoes/dropped(mob/user)
 	. = ..()
@@ -189,11 +182,7 @@
 
 /obj/item/clothing/shoes/cult/alt/ghost/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, CULT_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/shoes/cyborg
 	name = "cyborg boots"

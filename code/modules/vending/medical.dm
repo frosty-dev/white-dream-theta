@@ -41,10 +41,7 @@
 	default_price = 25
 	extra_price = 100
 	payment_department = ACCOUNT_MED
-<<<<<<< HEAD
-=======
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/vending_refill/medical
 	machine_name = "NanoMed Plus"
 	icon_state = "refill_medical"

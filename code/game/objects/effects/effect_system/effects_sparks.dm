@@ -34,12 +34,8 @@
 	var/turf/T = loc
 	if(isturf(T))
 		T.hotspot_expose(1000,100)
-<<<<<<< HEAD
-	QDEL_IN(src, 20)
-=======
 	sleep(20)
 	qdel(src)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/effect/particle_effect/sparks/Destroy()
 	var/turf/T = loc

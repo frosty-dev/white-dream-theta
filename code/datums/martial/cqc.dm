@@ -10,12 +10,8 @@
 	help_verb = /mob/living/carbon/human/proc/CQC_help
 	block_chance = 75
 	var/just_a_cook = FALSE
-<<<<<<< HEAD
-
-=======
 	var/old_grab_state = null
 	
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/martial_art/cqc/under_siege
 	name = "Close Quarters Cooking"
 	just_a_cook = TRUE
@@ -77,10 +73,7 @@
 		D.apply_damage(10, A.dna.species.attack_type)
 		log_combat(A, D, "kicked (CQC)")
 	if(D.IsParalyzed() && !D.stat)
-<<<<<<< HEAD
-=======
 		log_combat(A, D, "knocked out (Head kick)(CQC)")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		D.visible_message("<span class='warning'>[A] kicks [D]'s head, knocking [D.p_them()] out!</span>", \
 					  		"<span class='userdanger'>[A] kicks your head, knocking you out!</span>")
 		playsound(get_turf(A), 'sound/weapons/genhit1.ogg', 50, 1, -1)
@@ -134,16 +127,9 @@
 			return TRUE
 		old_grab_state = A.grab_state 
 		D.grabbedby(A, 1)
-<<<<<<< HEAD
-	else
-		A.start_pulling(D, supress_message = TRUE)
-		if(A.pulling)
-			D.stop_pulling()
-=======
 		if(old_grab_state == GRAB_PASSIVE)
 			D.drop_all_held_items()
 			A.grab_state = GRAB_AGGRESSIVE //Instant agressive grab if on grab intent
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			log_combat(A, D, "grabbed", addition="aggressively")
 			D.visible_message("<span class='warning'>[A] violently grabs [D]!</span>", \
 								"<span class='userdanger'>[A] violently grabs you!</span>")

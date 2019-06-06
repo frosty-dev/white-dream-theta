@@ -30,35 +30,6 @@
 	if(select == 1)
 		add_overlay("[initial(icon_state)]_burst")
 
-<<<<<<< HEAD
-/obj/item/gun/ballistic/automatic/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if(.)
-		return
-	if(istype(A, /obj/item/ammo_box/magazine))
-		var/obj/item/ammo_box/magazine/AM = A
-		if(istype(AM, mag_type))
-			var/obj/item/ammo_box/magazine/oldmag = magazine
-			if(user.transferItemToLoc(AM, src))
-				magazine = AM
-				if(oldmag)
-					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
-					oldmag.dropped()
-					oldmag.forceMove(get_turf(src.loc))
-					oldmag.update_icon()
-				else
-					to_chat(user, "<span class='notice'>You insert the magazine into \the [src].</span>")
-
-				playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
-				chamber_round()
-				A.update_icon()
-				update_icon()
-				return 1
-			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/gun/ballistic/automatic/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle_firemode))
 		burst_select()
@@ -106,17 +77,6 @@
 	. = ..()
 	update_icon()
 
-<<<<<<< HEAD
-/obj/item/gun/ballistic/automatic/c20r/afterattack()
-	. = ..()
-	empty_alarm()
-
-/obj/item/gun/ballistic/automatic/c20r/update_icon()
-	..()
-	icon_state = "c20r[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/gun/ballistic/automatic/wt550
 	name = "security auto rifle"
 	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 Automatic Rifle."
@@ -243,58 +203,13 @@
 	burst_size = 3
 	fire_delay = 1
 
-<<<<<<< HEAD
-// Bulldog shotgun //
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog
-	name = "\improper Bulldog Shotgun"
-	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed 'Bulldog' by boarding parties. Compatible only with specialized 8-round drum magazines."
-	icon_state = "bulldog"
-	item_state = "bulldog"
-	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
-	mag_type = /obj/item/ammo_box/magazine/m12g
-	fire_sound = 'sound/weapons/shotgunshot.ogg'
-	vary_fire_sound = FALSE
-	fire_sound_volume = 90
-	can_suppress = FALSE
-	burst_size = 1
-	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
-	actions_types = list()
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/Initialize()
-	. = ..()
-	update_icon()
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/update_icon()
-	cut_overlays()
-	if(magazine)
-		add_overlay("[magazine.icon_state]")
-	icon_state = "bulldog[chambered ? "" : "-e"]"
-
-/obj/item/gun/ballistic/automatic/shotgun/bulldog/afterattack()
-	. = ..()
-	empty_alarm()
-	return
-
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 // L6 SAW //
 
 /obj/item/gun/ballistic/automatic/l6_saw
 	name = "\improper L6 SAW"
 	desc = "A heavily modified 7.12x82mm light machine gun, designated 'L6 SAW'. Has 'Aussec Armoury - 2531' engraved on the receiver below the designation."
-<<<<<<< HEAD
-	icon_state = "l6closed100"
-=======
 	icon_state = "l6"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	item_state = "l6closedmag"
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = 0

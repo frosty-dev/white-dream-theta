@@ -43,15 +43,10 @@
 		S.output_attempt = TRUE
 		S.update_icon()
 		S.power_change()
-<<<<<<< HEAD
-	for(var/area/A in world)
-		if(!istype(A, /area/space) && !istype(A, /area/shuttle))
-=======
 	for(var/area/A in GLOB.the_station_areas)
 		if(!A.requires_power || A.always_unpowered)
 			continue
 		if(!istype(A, /area/shuttle))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			A.power_light = TRUE
 			A.power_equip = TRUE
 			A.power_environ = TRUE

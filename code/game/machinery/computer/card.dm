@@ -151,7 +151,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		dat += " || Confirm Identity: "
 		var/S
 		if(scan)
-			S = rhtml_encode(scan.name)
+			S = html_encode(scan.name)
 		else
 			S = "--------"
 		dat += "<a href='?src=[REF(src)];choice=scan'>[S]</a>"
@@ -225,21 +225,21 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		var/target_owner
 		var/target_rank
 		if(modify)
-			target_name = rhtml_encode(modify.name)
+			target_name = html_encode(modify.name)
 		else
 			target_name = "--------"
 		if(modify && modify.registered_name)
-			target_owner = rhtml_encode(modify.registered_name)
+			target_owner = html_encode(modify.registered_name)
 		else
 			target_owner = "--------"
 		if(modify && modify.assignment)
-			target_rank = rhtml_encode(modify.assignment)
+			target_rank = html_encode(modify.assignment)
 		else
 			target_rank = "Unassigned"
 
 		var/scan_name
 		if(scan)
-			scan_name = rhtml_encode(scan.name)
+			scan_name = html_encode(scan.name)
 		else
 			scan_name = "--------"
 
@@ -436,11 +436,6 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						return
 					if(modify.registered_account)
 						modify.registered_account.account_job = jobdatum // this is a terrible idea and people will grief but sure whatever
-<<<<<<< HEAD
-						if(modify.registered_account.welfare)
-							modify.registered_account.add_neetbux()
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 					modify.access = ( istype(src, /obj/machinery/computer/card/centcom) ? get_centcom_access(t1) : jobdatum.get_access() )
 				if (modify)

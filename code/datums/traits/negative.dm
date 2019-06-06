@@ -236,10 +236,7 @@
 	mob_trait = TRAIT_LIGHT_DRINKER
 	gain_text = "<span class='notice'>Just the thought of drinking alcohol makes your head spin.</span>"
 	lose_text = "<span class='danger'>You're no longer severely affected by alcohol.</span>"
-<<<<<<< HEAD
-=======
 	medical_record_text = "Patient demonstrates a low tolerance for alcohol. (Wimp)"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/quirk/nearsighted //t. errorage
 	name = "Nearsighted"
@@ -288,14 +285,6 @@
 	lose_text = "<span class='notice'>You think you can defend yourself again.</span>"
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
 
-<<<<<<< HEAD
-/datum/quirk/nonviolent/on_process()
-	if(quirk_holder.mind && LAZYLEN(quirk_holder.mind.antag_datums))
-		to_chat(quirk_holder, "<span class='boldannounce'>Your antagonistic nature has caused you to renounce your pacifism.</span>")
-		qdel(src)
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/quirk/paraplegic
 	name = "Paraplegic"
 	desc = "Your legs do not function. Nothing will ever fix this. But hey, free wheelchair!"
@@ -330,10 +319,6 @@
 		if(I.fingerprintslast == quirk_holder.ckey)
 			quirk_holder.put_in_hands(I)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/quirk/poor_aim
 	name = "Poor Aim"
 	desc = "You're terrible with guns and can't line up a straight shot to save your life. Dual-wielding is right out."
@@ -406,17 +391,6 @@
 	to_chat(quirk_holder, "<span class='big bold info'>Please note that your dissociation syndrome does NOT give you the right to attack people or otherwise cause any interference to \
 	the round. You are not an antagonist, and the rules will treat you the same as other crewmembers.</span>")
 
-<<<<<<< HEAD
-/datum/quirk/obstructive
-	name = "Physically Obstructive"
-	desc = "You somehow manage to always be in the way. You can't swap places with other people."
-	value = -1
-	mob_trait = TRAIT_NOMOBSWAP
-	gain_text = "<span class='danger'>You feel like you're in the way.</span>"
-	lose_text = "<span class='notice'>You feel less like you're in the way.</span>"
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/quirk/social_anxiety
 	name = "Social Anxiety"
 	desc = "Talking to people is very difficult for you, and you often stutter or even lock up."
@@ -554,8 +528,6 @@
 			SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "wrong_cigs")
 			return
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "wrong_cigs", /datum/mood_event/wrong_brand)
-<<<<<<< HEAD
-=======
 
 /datum/quirk/unstable
 	name = "Unstable"
@@ -565,4 +537,3 @@
 	gain_text = "<span class='danger'>There's a lot on your mind right now.</span>"
 	lose_text = "<span class='notice'>Your mind finally feels calm.</span>"
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

@@ -165,15 +165,9 @@
 /obj/item/pen/sleepy/Initialize()
 	. = ..()
 	create_reagents(45, OPENCONTAINER)
-<<<<<<< HEAD
-	reagents.add_reagent("chloralhydratedelayed", 20)
-	reagents.add_reagent("mutetoxin", 15)
-	reagents.add_reagent("tirizene", 10)
-=======
 	reagents.add_reagent(/datum/reagent/toxin/chloralhydrate, 20)
 	reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 15)
 	reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 10)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /*
  * (Alan) Edaggers

@@ -1362,30 +1362,6 @@
 	group = "Science"
 	crate_type = /obj/structure/closet/crate/science
 
-<<<<<<< HEAD
-/datum/supply_pack/science/robotics/mecha_odysseus
-	name = "Circuit Crate (Odysseus)"
-	desc = "Ever wanted to build your own giant medical robot? Well, now you can! Contains the Odysseus main control board and Odysseus peripherals board. Requires Robotics access to open."
-	cost = 2500
-	access = ACCESS_ROBOTICS
-	contains = list(/obj/item/circuitboard/mecha/odysseus/peripherals,
-					/obj/item/circuitboard/mecha/odysseus/main)
-	crate_name = "\improper Odysseus circuit crate"
-	crate_type = /obj/structure/closet/crate/secure/science
-
-/datum/supply_pack/science/robotics/mecha_ripley
-	name = "Circuit Crate (Ripley APLU)"
-	desc = "Rip apart rocks and xenomorphs alike with the Ripley APLU. Contains the Main Ripley control board, as well as the Ripley Peripherals board. Requires Robotics access to open."
-	cost = 3000
-	access = ACCESS_ROBOTICS
-	contains = list(/obj/item/book/manual/ripley_build_and_repair,
-					/obj/item/circuitboard/mecha/ripley/main,
-					/obj/item/circuitboard/mecha/ripley/peripherals)
-	crate_name = "\improper APLU Ripley circuit crate"
-	crate_type = /obj/structure/closet/crate/secure/science
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/supply_pack/science/plasma
 	name = "Plasma Assembly Crate"
 	desc = "Everything you need to burn something to the ground, this contains three plasma assembly sets. Each set contains a plasma tank, igniter, proximity sensor, and timer! Warranty void if exposed to high temperatures. Requires Toxins access to open."
@@ -1866,28 +1842,6 @@
 	crate_name = "seeds crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
-<<<<<<< HEAD
-/datum/supply_pack/organic/exoticseeds
-	name = "Exotic Seeds Crate"
-	desc = "Any entrepreneuring botanist's dream. Contains fourteen different seeds, including three replica-pod seeds and two mystery seeds!"
-	cost = 1500
-	contains = list(/obj/item/seeds/nettle,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/replicapod,
-					/obj/item/seeds/plump,
-					/obj/item/seeds/liberty,
-					/obj/item/seeds/amanita,
-					/obj/item/seeds/reishi,
-					/obj/item/seeds/banana,
-					/obj/item/seeds/eggplant/eggy,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/rainbow_bunch,
-					/obj/item/seeds/random,
-					/obj/item/seeds/random)
-	crate_name = "exotic seeds crate"
-	crate_type = /obj/structure/closet/crate/hydroponics
-=======
 /datum/supply_pack/organic/randomized/chef/vegetables
 	name = "Vegetables Crate"
 	desc = "Grown in vats."
@@ -1910,7 +1864,6 @@
 	contains = list(/obj/item/vending_refill/hydroseeds,
 					/obj/item/vending_refill/hydronutrients)
 	crate_name = "hydroponics supply crate"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Livestock /////////////////////////////////////

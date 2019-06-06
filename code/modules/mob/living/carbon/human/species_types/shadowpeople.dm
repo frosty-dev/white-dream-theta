@@ -59,11 +59,7 @@
 			H.visible_message("<span class='danger'>[H] dances in the shadows, evading [P]!</span>")
 			playsound(T, "bullet_miss", 75, 1)
 			return BULLET_ACT_FORCE_PIERCE
-<<<<<<< HEAD
-	return BULLET_ACT_HIT
-=======
 	return ..()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/species/shadow/nightmare/check_roundstart_eligible()
 	return FALSE
@@ -176,11 +172,7 @@
 
 /obj/item/light_eater/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	AddComponent(/datum/component/butchering, 80, 70)
 
 /obj/item/light_eater/afterattack(atom/movable/AM, mob/user, proximity)

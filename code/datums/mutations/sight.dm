@@ -34,45 +34,27 @@
 	owner.cure_blind(GENETIC_MUTATION)
 
 
-<<<<<<< HEAD
-//X-ray Vision lets you see through walls.
-/datum/mutation/human/x_ray
-	name = "X Ray Vision"
-	desc = "A strange genome that allows the user to see between the spaces of walls." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
-=======
 /datum/mutation/human/thermal
 	name = "Thermal Vision"
 	desc = "The user of this genome can visually percieve the unique human thermal signature."
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	quality = POSITIVE
 	difficulty = 18
 	text_gain_indication = "<span class='notice'>You can see the heat rising off of your skin...</span>"
 	time_coeff = 2
 	instability = 25
-<<<<<<< HEAD
-=======
 	var/visionflag = TRAIT_THERMAL_VISION
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/mutation/human/thermal/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
 		return
 
-<<<<<<< HEAD
-	owner.add_trait(TRAIT_XRAY_VISION, GENETIC_MUTATION)
-=======
 	ADD_TRAIT(owner, visionflag, GENETIC_MUTATION)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	owner.update_sight()
 
 /datum/mutation/human/thermal/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
-<<<<<<< HEAD
-	owner.remove_trait(TRAIT_XRAY_VISION, GENETIC_MUTATION)
-=======
 	REMOVE_TRAIT(owner, visionflag, GENETIC_MUTATION)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	owner.update_sight()
 
 //X-ray Vision lets you see through walls.
@@ -97,12 +79,8 @@
 
 /datum/mutation/human/laser_eyes/New(class_ = MUT_OTHER, timer, datum/mutation/human/copymut)
 	..()
-<<<<<<< HEAD
-	visual_indicators |= mutable_appearance('icons/effects/genetics.dmi', "lasereyes", -FRONT_MUTATIONS_LAYER)
-=======
 	if(!(type in visual_indicators))
 		visual_indicators[type] = list(mutable_appearance('icons/effects/genetics.dmi', "lasereyes", -FRONT_MUTATIONS_LAYER))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/mutation/human/laser_eyes/get_visual_indicator()
 	return visual_indicators[type][1]

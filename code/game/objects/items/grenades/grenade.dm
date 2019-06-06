@@ -83,9 +83,6 @@
 		M.dropItemToGround(src)
 
 /obj/item/grenade/attackby(obj/item/W, mob/user, params)
-<<<<<<< HEAD
-	if(W.tool_behaviour == TOOL_SCREWDRIVER)
-=======
 	if(!active)
 		if(W.tool_behaviour == TOOL_MULTITOOL)
 			var/newtime = text2num(stripped_input(user, "Please enter a new detonation time", name))
@@ -108,24 +105,15 @@
 		det_time = round(CLAMP(time * 10, 0, 50))
 	else
 		var/previous_time = det_time
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		switch(det_time)
 			if (0)
 				det_time = 30
 			if (30)
 				det_time = 50
 			if (50)
-<<<<<<< HEAD
-				det_time = 1
-				to_chat(user, "<span class='notice'>You set the [name] for instant detonation.</span>")
-		add_fingerprint(user)
-	else
-		return ..()
-=======
 				det_time = 0
 		if(det_time == previous_time)
 			det_time = 50
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/grenade/attack_paw(mob/user)
 	return attack_hand(user)

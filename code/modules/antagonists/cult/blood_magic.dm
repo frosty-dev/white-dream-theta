@@ -176,11 +176,7 @@
 
 /datum/action/innate/cult/blood_spell/construction
 	name = "Twisted Construction"
-<<<<<<< HEAD
-	desc = "<u>A sinister spell used to convert:</u><br>Plasteel into runed metal<br>50 metal into a construct shell<br>Cyborgs directly into constructs<br>Cyborg shells into construct shells<br>Airlocks into runed airlocks (harm intent)"
-=======
 	desc = "Empowers your hand to corrupt certain metalic objects.<br><u>Converts:</u><br>Plasteel into runed metal<br>50 metal into a construct shell<br>Living cyborgs into constructs after a delay<br>Cyborg shells into construct shells<br>Airlocks into brittle runed airlocks after a delay (harm intent)"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	button_icon_state = "transmute"
 	magic_path = "/obj/item/melee/blood_magic/construction"
 	health_cost = 12
@@ -344,11 +340,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/touchspell_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/touchspell_righthand.dmi'
 	icon_state = "disintegrate"
-<<<<<<< HEAD
-	item_state = null
-=======
 	item_state = "disintegrate"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	item_flags = NEEDS_PERMIT | ABSTRACT | DROPDEL
 
 	w_class = WEIGHT_CLASS_HUGE
@@ -415,10 +407,7 @@
 //Stun
 /obj/item/melee/blood_magic/stun
 	name = "Stunning Aura"
-<<<<<<< HEAD
-=======
 	desc = "Will stun and mute a victim on contact."
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	color = RUNE_COLOR_RED
 	invocation = "Fuu ma'jin!"
 

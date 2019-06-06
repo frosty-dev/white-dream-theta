@@ -692,17 +692,6 @@
 
 /datum/chemical_reaction/branca_menta
 	name = "Branca Menta"
-<<<<<<< HEAD
-	id = "branca_menta"
-	results = list("branca_menta" = 3)
-	required_reagents = list("fernet" = 1, "creme_de_menthe" = 1, "ice" = 1)
-
-/datum/chemical_reaction/blank_paper
-	name = "Blank Paper"
-	id = "blank_paper"
-	results = list("blank_paper" = 3)
-	required_reagents = list("silencer" = 1, "nothing" = 1, "nuka_cola" = 1)
-=======
 	id = /datum/reagent/consumable/ethanol/branca_menta
 	results = list(/datum/reagent/consumable/ethanol/branca_menta = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/fernet = 1, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/ice = 1)
@@ -792,4 +781,3 @@
 	id = /datum/reagent/consumable/red_queen
 	results = list(/datum/reagent/consumable/red_queen = 10)
 	required_reagents = list(/datum/reagent/consumable/tea = 6, /datum/reagent/mercury = 2, /datum/reagent/consumable/blackpepper = 1, /datum/reagent/growthserum = 1)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

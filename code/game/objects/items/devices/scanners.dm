@@ -7,10 +7,7 @@ HEALTH ANALYZER
 GAS ANALYZER
 SLIME SCANNER
 NANITE SCANNER
-<<<<<<< HEAD
-=======
 GENE SCANNER
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 */
 /obj/item/t_scanner
@@ -64,11 +61,7 @@ GENE SCANNER
 		if(O.level != 1)
 			continue
 
-<<<<<<< HEAD
-		if(O.invisibility == INVISIBILITY_MAXIMUM || O.has_trait(TRAIT_T_RAY_VISIBLE))
-=======
 		if(O.invisibility == INVISIBILITY_MAXIMUM || HAS_TRAIT(O, TRAIT_T_RAY_VISIBLE))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			var/image/I = new(loc = get_turf(O))
 			var/mutable_appearance/MA = new(O)
 			MA.alpha = 128
@@ -263,11 +256,8 @@ GENE SCANNER
 		var/ldamage = H.return_liver_damage()
 		if(ldamage > 10)
 			to_chat(user, "\t<span class='alert'>[ldamage > 45 ? "Severe" : "Minor"] liver damage detected.</span>")
-<<<<<<< HEAD
-=======
 		if(advanced && H.has_dna())
 			to_chat(user, "\t<span class='info'>Genetic Stability: [H.dna.stability]%.</span>")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	// Body part damage report
 	if(iscarbon(M) && mode == 1)
@@ -731,9 +721,6 @@ GENE SCANNER
 			to_chat(user, "<span class='notice'>[get_display_name(A)]</span>")
 
 
-<<<<<<< HEAD
-		to_chat(user, "<span class='boldnotice'>- [mut_name] > [display]</span>")
-=======
 /obj/item/sequence_scanner/proc/display_sequence(mob/living/user)
 	if(!LAZYLEN(buffer) || !ready)
 		return
@@ -774,4 +761,3 @@ GENE SCANNER
 		return  "[HM.name] ([HM.alias])"
 	else
 		return HM.alias
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

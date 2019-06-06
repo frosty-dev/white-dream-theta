@@ -246,11 +246,7 @@
 		if(verbose)
 			to_chat(user, "<span class='warning'>[target] is not compatible with our biology.</span>")
 		return
-<<<<<<< HEAD
-	if(target.has_trait(TRAIT_BADDNA))
-=======
 	if(HAS_TRAIT(target, TRAIT_BADDNA))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(verbose)
 			to_chat(user, "<span class='warning'>DNA of [target] is ruined beyond usability!</span>")
 		return

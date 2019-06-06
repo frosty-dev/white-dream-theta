@@ -27,13 +27,8 @@
 
 	for(var/line in testmerge)
 		var/datum/tgs_revision_information/test_merge/tm = line
-<<<<<<< HEAD
-		msg += "Test merge active of PR #[tm.number] commit [tm.commit]"
-		SSblackbox.record_feedback("associative", "testmerged_prs", 1, list("number" = "[tm.number]", "commit" = "[tm.commit]", "title" = "[tm.title]", "author" = "[tm.author]"))
-=======
 		msg += "Test merge active of PR #[tm.number] commit [tm.pull_request_commit]"
 		SSblackbox.record_feedback("associative", "testmerged_prs", 1, list("number" = "[tm.number]", "commit" = "[tm.pull_request_commit]", "title" = "[tm.title]", "author" = "[tm.author]"))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	if(commit && commit != originmastercommit)
 		msg += "HEAD: [commit]"
@@ -49,7 +44,7 @@
 	for(var/line in testmerge)
 		var/datum/tgs_revision_information/test_merge/tm = line
 		var/cm = tm.pull_request_commit
-		var/details = ": '" + rhtml_encode(tm.title) + "' by " + rhtml_encode(tm.author) + " at commit " + rhtml_encode(copytext(cm, 1, min(length(cm), 11)))
+		var/details = ": '" + html_encode(tm.title) + "' by " + html_encode(tm.author) + " at commit " + html_encode(copytext(cm, 1, min(length(cm), 11)))
 		if(details && findtext(details, "\[s\]") && (!usr || !usr.client.holder))
 			continue
 		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][details]</a><br>"
@@ -65,8 +60,8 @@
 		msg += "<b>Round ID:</b> [GLOB.round_id]"
 
 	msg += "<b>BYOND Version:</b> [world.byond_version].[world.byond_build]"
-	if(DM_VERSION != world.byond_version )
-		msg += "<b>Compiled with BYOND Version:</b> [DM_VERSION]"
+	if(DM_VERSION != world.byond_version || DM_BUILD != world.byond_build)
+		msg += "<b>Compiled with BYOND Version:</b> [DM_VERSION].[DM_BUILD]"
 
 	// Revision information
 	var/datum/getrev/revdata = GLOB.revdata

@@ -24,19 +24,12 @@
 															//"heartbeat sensor" = 10,
 															//"projection array" = 15,
 															"medical HUD" = 20,
-<<<<<<< HEAD
-															"universal translator" = 35,
-															//"projection array" = 15
-															"remote signaller" = 5,
-															"loudness booster" = 25
-=======
 															"security HUD" = 20,
 															"loudness booster" = 20,
 															"newscaster" = 20,
 															"door jack" = 25,
 															"encryption keys" = 25,
 															"universal translator" = 35
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 															)
 
 /mob/living/silicon/pai/proc/paiInterface()
@@ -85,12 +78,9 @@
 				left_part = softwareSignal()
 			if("loudness")
 				left_part = softwareLoudness()
-<<<<<<< HEAD
-=======
 			if("hostscan")
 				left_part = softwareHostScan()
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	//usr << browse_rsc('windowbak.png')		// This has been moved to the mob's Login() proc
 
@@ -222,81 +212,6 @@
 						CheckDNA(card.loc, src) //you should only be able to check when directly in hand, muh immersions?
 					else
 						to_chat(src, "You are not being carried by anyone!")
-<<<<<<< HEAD
-						return 0
-				spawn CheckDNA(M, src)
-
-		if("pdamessage")
-			if(!isnull(pda))
-				if(href_list["toggler"])
-					pda.toff = !pda.toff
-				else if(href_list["ringer"])
-					pda.silent = !pda.silent
-				else if(href_list["target"])
-					if(silent)
-						return alert("Communications circuits remain uninitialized.")
-
-					var/target = locate(href_list["target"]) in GLOB.PDAs
-					pda.create_message(src, target)
-
-		// Accessing medical records
-		if("medicalrecord")
-			if(subscreen == 1)
-				medicalActive1 = find_record("id", href_list["med_rec"], GLOB.data_core.general)
-				if(medicalActive1)
-					medicalActive2 = find_record("id", href_list["med_rec"], GLOB.data_core.medical)
-				if(!medicalActive2)
-					medicalActive1 = null
-					temp = "Unable to locate requested security record. Record may have been deleted, or never have existed."
-
-		if("securityrecord")
-			if(subscreen == 1)
-				securityActive1 = find_record("id", href_list["sec_rec"], GLOB.data_core.general)
-				if(securityActive1)
-					securityActive2 = find_record("id", href_list["sec_rec"], GLOB.data_core.security)
-				if(!securityActive2)
-					securityActive1 = null
-					temp = "Unable to locate requested security record. Record may have been deleted, or never have existed."
-		if("securityhud")
-			if(href_list["toggle"])
-				secHUD = !secHUD
-				if(secHUD)
-					var/datum/atom_hud/sec = GLOB.huds[sec_hud]
-					sec.add_hud_to(src)
-				else
-					var/datum/atom_hud/sec = GLOB.huds[sec_hud]
-					sec.remove_hud_from(src)
-		if("medicalhud")
-			if(href_list["toggle"])
-				medHUD = !medHUD
-				if(medHUD)
-					var/datum/atom_hud/med = GLOB.huds[med_hud]
-					med.add_hud_to(src)
-				else
-					var/datum/atom_hud/med = GLOB.huds[med_hud]
-					med.remove_hud_from(src)
-		if("translator")
-			if(href_list["toggle"])
-				grant_all_languages(TRUE)
-					// this is PERMAMENT.
-		if("doorjack")
-			if(href_list["jack"])
-				if(cable && cable.machine)
-					hackdoor = cable.machine
-					hackloop()
-			if(href_list["cancel"])
-				hackdoor = null
-			if(href_list["cable"])
-				var/turf/T = get_turf(loc)
-				cable = new /obj/item/pai_cable(T)
-				T.visible_message("<span class='warning'>A port on [src] opens to reveal [cable], which promptly falls to the floor.</span>", "<span class='italics'>You hear the soft click of something light and hard falling to the ground.</span>")
-		if("loudness")
-			internal_instrument.interact(src)
-
-	//updateUsrDialog()		We only need to account for the single mob this is intended for, and he will *always* be able to call this window
-	paiInterface()		 // So we'll just call the update directly rather than doing some default checks
-	return
-=======
 						return 0 // FALSE ? If you return here you won't call paiinterface() below
 
 			if("pdamessage")
@@ -385,7 +300,6 @@
 					internal_instrument.selectInstrument()
 
 		paiInterface()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 // MENUS
 
@@ -739,11 +653,7 @@
 /mob/living/silicon/pai/proc/softwareLoudness()
 	if(!internal_instrument)
 		internal_instrument = new(src)
-<<<<<<< HEAD
-	return "<h3>Sound Synthetizer</h3>"
-=======
 	var/dat = "<h3>Sound Synthesizer</h3>"
 	dat += "<a href='byond://?src=[REF(src)];software=loudness;sub=1'>Open Synthesizer Interface</a><br>"
 	dat += "<a href='byond://?src=[REF(src)];software=loudness;sub=2'>Choose Instrument Type</a>"
 	return dat
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

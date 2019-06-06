@@ -60,10 +60,7 @@
 					H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
 				else
 					H.easy_randmut(POSITIVE)
-<<<<<<< HEAD
-=======
 				H.randmuti()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				H.domutcheck()
 			else
 				H.adjustFireLoss(rand(5,15))

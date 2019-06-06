@@ -119,11 +119,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/lastHolder = null
 	var/smoketime = 180 // 1 is 2 seconds, so a single cigarette will last 6 minutes.
 	var/chem_volume = 30
-<<<<<<< HEAD
-	var/list/list_reagents = list("nicotine" = 15)
-=======
 	var/list/list_reagents = list(/datum/reagent/drug/nicotine = 15)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer.</span>")
@@ -295,22 +291,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/uplift
 	desc = "An Uplift Smooth brand cigarette."
-<<<<<<< HEAD
-	list_reagents = list("nicotine" = 13, "menthol" = 5)
-=======
 	list_reagents = list(/datum/reagent/drug/nicotine = 13, /datum/reagent/consumable/menthol = 5)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/mask/cigarette/robust
 	desc = "A Robust brand cigarette."
 
 /obj/item/clothing/mask/cigarette/robustgold
 	desc = "A Robust Gold brand cigarette."
-<<<<<<< HEAD
-	list_reagents = list("nicotine" = 15, "gold" = 3) // Just enough to taste a hint of expensive metal.
-=======
 	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/gold = 3) // Just enough to taste a hint of expensive metal.
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/mask/cigarette/carp
 	desc = "A Carp Classic brand cigarette."
@@ -358,11 +346,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	list_reagents = list(/datum/reagent/drug/space_drugs = 15, /datum/reagent/toxin/lipolicide = 35)
 
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
-<<<<<<< HEAD
-	list_reagents = list("mindbreaker" = 35, "lipolicide" = 15)
-=======
 	list_reagents = list(/datum/reagent/toxin/mindbreaker = 35, /datum/reagent/toxin/lipolicide = 15)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/cigbutt/roach
 	name = "roach"
@@ -389,11 +373,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "cigaroff"
 	smoketime = 300 // 11 minutes
 	chem_volume = 40
-<<<<<<< HEAD
-	list_reagents = list("nicotine" = 25)
-=======
 	list_reagents = list(/datum/reagent/drug/nicotine = 25)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/mask/cigarette/cigar/cohiba
 	name = "\improper Cohiba Robusto cigar"
@@ -403,11 +383,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "cigar2off"
 	smoketime = 600 // 20 minutes
 	chem_volume = 80
-<<<<<<< HEAD
-	list_reagents =list("nicotine" = 40)
-=======
 	list_reagents =list(/datum/reagent/drug/nicotine = 40)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/mask/cigarette/cigar/havana
 	name = "premium Havanian cigar"
@@ -417,11 +393,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon_off = "cigar2off"
 	smoketime = 900 // 30 minutes
 	chem_volume = 50
-<<<<<<< HEAD
-	list_reagents =list("nicotine" = 15)
-=======
 	list_reagents =list(/datum/reagent/drug/nicotine = 15)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/cigbutt
 	name = "cigarette butt"
@@ -780,11 +752,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/vape/Initialize(mapload, param_color)
 	. = ..()
 	create_reagents(chem_volume, NO_REACT)
-<<<<<<< HEAD
-	reagents.add_reagent("nicotine", 50)
-=======
 	reagents.add_reagent(/datum/reagent/drug/nicotine, 50)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	if(!icon_state)
 		if(!param_color)
 			param_color = pick("red","blue","black","white","green","purple","yellow","orange")

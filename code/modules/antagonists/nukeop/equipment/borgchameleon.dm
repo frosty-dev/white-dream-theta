@@ -79,10 +79,7 @@
 				f = user.filters[start+i]
 				animate(f)
 		user.filters = null
-<<<<<<< HEAD
-=======
 		animation_playing = FALSE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/borg_chameleon/process()
 	if (user)

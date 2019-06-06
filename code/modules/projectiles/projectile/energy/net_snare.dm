@@ -58,11 +58,7 @@
 /obj/item/projectile/energy/trap
 	name = "energy snare"
 	icon_state = "e_snare"
-<<<<<<< HEAD
-	nodamage = 1
-=======
 	nodamage = TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	hitsound = 'sound/weapons/taserhit.ogg'
 	range = 4
 
@@ -81,11 +77,7 @@
 /obj/item/projectile/energy/trap/cyborg
 	name = "Energy Bola"
 	icon_state = "e_snare"
-<<<<<<< HEAD
-	nodamage = 1
-=======
 	nodamage = TRUE
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	paralyze = 0
 	hitsound = 'sound/weapons/taserhit.ogg'
 	range = 10

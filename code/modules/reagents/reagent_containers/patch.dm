@@ -36,11 +36,7 @@
 /obj/item/reagent_containers/pill/patch/silver_sulf
 	name = "burn patch"
 	desc = "Helps with burn injuries."
-<<<<<<< HEAD
-	list_reagents = list("silver_sulfadiazine" = 20)
-=======
 	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 20)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "bandaid_burn"
 
 /obj/item/reagent_containers/pill/patch/synthflesh

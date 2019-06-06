@@ -51,12 +51,6 @@
 	to_chat(user, "<span class='warning'>You are unable to attach [src] to [M]!</span>")
 	return FALSE
 
-<<<<<<< HEAD
-/obj/item/mecha_parts/mecha_equipment/proc/critfail()
-	log_message("Critical failure", LOG_MECHA, color="red")
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/mecha_parts/mecha_equipment/proc/get_equip_info()
 	if(!chassis)
 		return

@@ -162,20 +162,6 @@
 	H.equip_to_slot_or_del(new /obj/item/storage/fancy/candle_box(H), SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/matches(H), SLOT_IN_BACKPACK)
 
-<<<<<<< HEAD
-/datum/quirk/spiritual/on_process()
-	var/comforted = FALSE
-	for(var/mob/living/L in oview(5, quirk_holder))
-		if(L.mind && L.mind.isholy && L.stat == CONSCIOUS)
-			comforted = TRUE
-			break
-	if(comforted)
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "religious_comfort", /datum/mood_event/religiously_comforted)
-	else
-		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "religious_comfort")
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/quirk/tagger
 	name = "Tagger"
 	desc = "You're an experienced artist. While drawing graffiti, you can get twice as many uses out of drawing supplies."
@@ -199,10 +185,7 @@
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = "<span class='notice'>You feel HONGRY.</span>"
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
-<<<<<<< HEAD
-=======
 	medical_record_text = "Patient demonstrates a disturbing capacity for eating."
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/quirk/neet
 	name = "NEET"
@@ -220,9 +203,6 @@
 	if(!D) //if their current mob doesn't have a bank account, likely due to them being a special role (ie nuke op)
 		return
 	D.welfare = TRUE
-<<<<<<< HEAD
-	D.add_neetbux()
-=======
 
 /datum/quirk/neet/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -230,4 +210,3 @@
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "NEET", /datum/mood_event/happy_neet)
 	else
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "NEET")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

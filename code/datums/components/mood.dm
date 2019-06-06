@@ -191,18 +191,6 @@
 		if(9)
 			setSanity(sanity+0.4, maximum=INFINITY)
 
-<<<<<<< HEAD
-	if(owner.has_trait(TRAIT_DEPRESSION))
-		if(prob(0.05))
-			add_event(null, "depression", /datum/mood_event/depression)
-			clear_event(null, "jolly")
-	if(owner.has_trait(TRAIT_JOLLY))
-		if(prob(0.05))
-			add_event(null, "jolly", /datum/mood_event/jolly)
-			clear_event(null, "depression")
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	HandleNutrition(owner)
 	HandleHygiene(owner)
 

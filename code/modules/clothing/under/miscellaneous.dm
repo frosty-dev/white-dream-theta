@@ -395,11 +395,7 @@
 
 /obj/item/clothing/under/kilt/highlander/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	add_trait(TRAIT_NODROP, HIGHLANDER)
-=======
 	ADD_TRAIT(src, TRAIT_NODROP, HIGHLANDER)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/item/clothing/under/sexymime
 	name = "sexy mime outfit"

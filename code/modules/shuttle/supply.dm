@@ -118,9 +118,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		SSshuttle.shoppinglist -= SO
 		SSshuttle.orderhistory += SO
 
-<<<<<<< HEAD
-		SO.generate(pick_n_take(empty_turfs))
-=======
 		if(SO.pack.small_item) //small_item means it gets piled in the miscbox
 			if(SO.paying_account)
 				if(!miscboxes.len || !miscboxes[D.account_holder]) //if there's no miscbox for this person
@@ -145,7 +142,6 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		else
 			SO.generate(pick_n_take(empty_turfs))
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		SSblackbox.record_feedback("nested tally", "cargo_imports", 1, list("[SO.pack.cost]", "[SO.pack.name]"))
 		investigate_log("Order #[SO.id] ([SO.pack.name], placed by [key_name(SO.orderer_ckey)]), paid by [D.account_holder] has shipped.", INVESTIGATE_CARGO)
 		if(SO.pack.dangerous)

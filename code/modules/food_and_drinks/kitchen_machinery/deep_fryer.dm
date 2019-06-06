@@ -53,11 +53,7 @@ God bless America.
 /obj/machinery/deepfryer/Initialize()
 	. = ..()
 	create_reagents(50, OPENCONTAINER)
-<<<<<<< HEAD
-	reagents.add_reagent("cooking_oil", 25)
-=======
 	reagents.add_reagent(/datum/reagent/consumable/cooking_oil, 25)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	component_parts = list()
 	component_parts += new /obj/item/circuitboard/machine/deep_fryer(null)
 	component_parts += new /obj/item/stock_parts/micro_laser(null)
@@ -101,11 +97,7 @@ God bless America.
 	else if(default_deconstruction_screwdriver(user, "fryer_off", "fryer_off" ,I))	//where's the open maint panel icon?!
 		return
 	else
-<<<<<<< HEAD
-		if(is_type_in_typecache(I, deepfry_blacklisted_items) || I.has_trait(TRAIT_NODROP) || (I.item_flags & (ABSTRACT | DROPDEL)))
-=======
 		if(is_type_in_typecache(I, deepfry_blacklisted_items) || HAS_TRAIT(I, TRAIT_NODROP) || (I.item_flags & (ABSTRACT | DROPDEL)))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			return ..()
 		else if(!frying && user.transferItemToLoc(I, src))
 			to_chat(user, "<span class='notice'>You put [I] into [src].</span>")

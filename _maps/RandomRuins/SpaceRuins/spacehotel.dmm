@@ -2624,11 +2624,7 @@
 /area/ruin/space/has_grav/hotel)
 "hS" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-<<<<<<< HEAD
-/obj/structure/cable{
-=======
 /obj/structure/cable/yellow{
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{

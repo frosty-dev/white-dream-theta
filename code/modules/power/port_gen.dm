@@ -71,10 +71,6 @@
 	..()
 	to_chat(user, "It is[!active?"n't":""] running.")
 
-<<<<<<< HEAD
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /////////////////
 // P.A.C.M.A.N //
 /////////////////
@@ -166,15 +162,9 @@
 		qdel(src)
 
 /obj/machinery/power/port_gen/pacman/handleInactive()
-<<<<<<< HEAD
-
-	if (current_heat > 0)
-		current_heat = max(current_heat - 2, 0)
-=======
 	current_heat = max(current_heat - 2, 0)
 	if(current_heat == 0)
 		STOP_PROCESSING(SSmachines, src)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /obj/machinery/power/port_gen/pacman/proc/overheat()
 	explosion(src.loc, 2, 5, 2, -1)

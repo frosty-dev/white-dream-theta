@@ -28,11 +28,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	var/datum/blobstrain/blobstrain
 	var/list/blob_mobs = list()
 	var/list/resource_blobs = list()
-<<<<<<< HEAD:code/modules/antagonists/blob/blob/overmind.dm
-	var/free_chem_rerolls = 1 //one free chemical reroll
-=======
 	var/free_strain_rerolls = 1 //one free strain reroll
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c:code/modules/antagonists/blob/overmind.dm
 	var/last_reroll_time = 0 //time since we last rerolled, used to give free rerolls
 	var/nodes_required = 1 //if the blob needs nodes to place resource and factory blobs
 	var/placed = 0
@@ -115,15 +111,9 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 		max_blob_points = INFINITY
 		blob_points = INFINITY
 		addtimer(CALLBACK(src, .proc/victory), 450)
-<<<<<<< HEAD:code/modules/antagonists/blob/blob/overmind.dm
-	else if(!free_chem_rerolls && (last_reroll_time + BLOB_REROLL_TIME<world.time))
-		to_chat(src, "<b><span class='big'><font color=\"#EE4000\">You have gained another free chemical re-roll.</font></span></b>")
-		free_chem_rerolls = 1
-=======
 	else if(!free_strain_rerolls && (last_reroll_time + BLOB_REROLL_TIME<world.time))
 		to_chat(src, "<b><span class='big'><font color=\"#EE4000\">You have gained another free strain re-roll.</font></span></b>")
 		free_strain_rerolls = 1
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c:code/modules/antagonists/blob/overmind.dm
 
 	if(!victory_in_progress && max_count < blobs_legit.len)
 		max_count = blobs_legit.len
@@ -220,7 +210,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 
 	if (src.client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "Вы не можете говорить в IC (мут).")
+			to_chat(src, "You cannot send IC messages (muted).")
 			return
 		if (src.client.handle_spam_prevention(message,MUTE_IC))
 			return
@@ -239,12 +229,8 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 
 	src.log_talk(message, LOG_SAY)
 
-	var/message_a = say_quote(message, get_spans())
-<<<<<<< HEAD:code/modules/antagonists/blob/blob/overmind.dm
-	var/rendered = "<span class='big'><font color=\"#EE4000\"><b>\[Телепатия Блоба\] [name](<font color=\"[blob_reagent_datum.color]\">[blob_reagent_datum.name]</font>)</b> [message_a]</font></span>"
-=======
+	var/message_a = say_quote(message)
 	var/rendered = "<span class='big'><font color=\"#EE4000\"><b>\[Blob Telepathy\] [name](<font color=\"[blobstrain.color]\">[blobstrain.name]</font>)</b> [message_a]</font></span>"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c:code/modules/antagonists/blob/overmind.dm
 
 	for(var/mob/M in GLOB.mob_list)
 		if(isovermind(M) || istype(M, /mob/living/simple_animal/hostile/blob))

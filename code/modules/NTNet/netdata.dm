@@ -11,24 +11,19 @@
 
 	var/list/passkey
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /datum/netdata/proc/standard_format_data(primary, secondary, passkey)
 	data["data"] = primary
 	data["data_secondary"] = secondary
 	data["encrypted_passkey"] = passkey
 
 /datum/netdata/proc/json_to_data(json)
-	data = r_json_decode(json)
+	data = json_decode(json)
 
 /datum/netdata/proc/json_append_to_data(json)
-	data |= r_json_decode(json)
+	data |= json_decode(json)
 
 /datum/netdata/proc/data_to_json()
-	return r_json_encode(data)
+	return json_encode(data)
 
 /datum/netdata/proc/json_list_generation_admin()	//for admin logs and such.
 	. = list()
@@ -46,4 +41,4 @@
 	.["data_list"] = data
 
 /datum/netdata/proc/generate_netlog()
-	return "[r_json_encode(json_list_generation_netlog())]"
+	return "[json_encode(json_list_generation_netlog())]"

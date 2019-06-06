@@ -53,11 +53,7 @@
 
 /obj/structure/destructible/clockwork/taunting_trail/proc/affect_mob(mob/living/L)
 	if(istype(L) && !is_servant_of_ratvar(L))
-<<<<<<< HEAD
-		if(!L.anti_magic_check(major = FALSE))
-=======
 		if(!L.anti_magic_check(chargecost = 0))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			L.confused = min(L.confused + 15, 50)
 			L.dizziness = min(L.dizziness + 15, 50)
 			if(L.confused >= 25)

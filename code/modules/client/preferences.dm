@@ -14,13 +14,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
-<<<<<<< HEAD
-	var/ooccolor = null
-	var/asaycolor = null
-=======
 	var/ooccolor = "#c43b23"
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	var/enable_tips = TRUE
 	var/tip_delay = 500 //tip delay in milliseconds
 
@@ -108,10 +103,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/menuoptions
 
 	var/action_buttons_screen_locs = list()
-	var/be_catman
-	var/be_loly
 
-	var/list/loly_lovers = list("qwaszx000", "shruman", "rebolution228", "bb-8", "hellr0le")
 /datum/preferences/New(client/C)
 	parent = C
 
@@ -190,10 +182,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
 			dat += "<a href='?_src_=prefs;preference=name;task=random'>Random Name</A> "
 			dat += "<a href='?_src_=prefs;preference=name'>Always Random Name: [be_random_name ? "Yes" : "No"]</a><BR>"
-			if(lowertext(user.ckey) in loly_lovers)
-				dat += "<a href='?_src_=prefs;preference=loly'>Be loly: [be_loly ? "Yes" : "No"]</a>"//<------------------
-
-			dat += "<a href='?_src_=prefs;preference=cat'>Be cat man: [be_catman ? "Yes" : "No"]</a><BR>"
 
 			dat += "<b>Name:</b> "
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
@@ -265,11 +253,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
 
-<<<<<<< HEAD
-			if((EYECOLOR in pref_species.species_traits) && !(NOEYES in pref_species.species_traits))
-=======
 			if((EYECOLOR in pref_species.species_traits) && !(NOEYESPRITES in pref_species.species_traits))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 				if(!use_skintones && !mutant_colors)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -606,8 +590,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(CONFIG_GET(flag/allow_admin_asaycolor))
 					dat += "<br>"
 					dat += "<b>ASAY Color:</b> <span style='border: 1px solid #161616; background-color: [asaycolor ? asaycolor : "#FF4500"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=asaycolor;task=input'>Change</a><br>"
-<<<<<<< HEAD
-=======
 
 				//deadmin
 				dat += "<h2>Deadmin While Playing</h2>"
@@ -637,7 +619,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						else
 							dat += "<b>As Silicon:</b> FORCED<br>"
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				dat += "</td>"
 			dat += "</tr></table>"
 
@@ -714,11 +695,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/available_in_days = job.available_in_days(user.client)
 				HTML += "<font color=red>[rank]</font></td><td><font color=red> \[IN [(available_in_days)] DAYS\]</font></td></tr>"
 				continue
-<<<<<<< HEAD
-			if((job_civilian_low & overflow.flag) && (rank != SSjob.overflow_role) && !is_banned_from(user.ckey, SSjob.overflow_role))
-=======
 			if((job_preferences[SSjob.overflow_role] == JP_LOW) && (rank != SSjob.overflow_role) && !is_banned_from(user.ckey, SSjob.overflow_role))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 				HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 				continue
 			if((rank in GLOB.command_positions) || (rank == "AI"))//Bold head jobs
@@ -1043,7 +1020,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					backbag = pick(GLOB.backbaglist)
 				if("all")
 					random_character()
-				//<-----------------------------------------------------------------------------
 
 		if("input")
 
@@ -1346,7 +1322,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
 
-
 		else
 			switch(href_list["preference"])
 				if("publicity")
@@ -1393,8 +1368,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					user.client.toggle_hear_radio()
 				if("toggle_prayers")
 					user.client.toggleprayers()
-<<<<<<< HEAD
-=======
 				if("toggle_deadmin_always")
 					toggles ^= DEADMIN_ALWAYS
 				if("toggle_deadmin_antag")
@@ -1406,7 +1379,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("toggle_deadmin_silicon")
 					toggles ^= DEADMIN_POSITION_SILICON
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 				if("be_special")
 					var/be_special_type = href_list["be_special_type"]
@@ -1497,12 +1469,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("tab")
 					if (href_list["tab"])
 						current_tab = text2num(href_list["tab"])
-
-				if("cat")
-					be_catman = !be_catman
-
-				if("loly")
-					be_loly = !be_loly//---------------------------------
 
 	ShowChoices(user)
 	return 1

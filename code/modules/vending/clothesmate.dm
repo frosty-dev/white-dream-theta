@@ -122,13 +122,10 @@
 	default_price = 50
 	extra_price = 75
 	payment_department = NO_FREEBIES
-<<<<<<< HEAD
-=======
 
 /obj/machinery/vending/clothing/canLoadItem(obj/item/I,mob/user)
 	return (I.type in products)
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/vending_refill/clothing
 	machine_name = "ClothesMate"
 	icon_state = "refill_clothes"

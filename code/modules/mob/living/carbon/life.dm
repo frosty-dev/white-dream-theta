@@ -77,11 +77,7 @@
 	var/datum/gas_mixture/breath
 
 	if(!getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-<<<<<<< HEAD
-		if(health <= HEALTH_THRESHOLD_FULLCRIT || (pulledby && pulledby.grab_state >= GRAB_KILL) || has_trait(TRAIT_MAGIC_CHOKE))
-=======
 		if(health <= HEALTH_THRESHOLD_FULLCRIT || (pulledby && pulledby.grab_state >= GRAB_KILL) || HAS_TRAIT(src, TRAIT_MAGIC_CHOKE))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 			losebreath++  //You can't breath at all when in critical or when being choked, so you're going to miss a breath
 
 		else if(health <= crit_threshold)
@@ -132,11 +128,7 @@
 /mob/living/carbon/proc/check_breath(datum/gas_mixture/breath)
 	if(status_flags & GODMODE)
 		return
-<<<<<<< HEAD
-	if(has_trait(TRAIT_NOBREATH))
-=======
 	if(HAS_TRAIT(src, TRAIT_NOBREATH))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return
 
 	var/lungs = getorganslot(ORGAN_SLOT_LUNGS)
@@ -390,26 +382,6 @@
 	if(radiation > RAD_MOB_SAFE)
 		adjustToxLoss(log(radiation-RAD_MOB_SAFE)*RAD_TOX_COEFFICIENT)
 
-<<<<<<< HEAD
-/mob/living/carbon/handle_stomach()
-	set waitfor = 0
-	for(var/mob/living/M in stomach_contents)
-		if(M.loc != src)
-			stomach_contents.Remove(M)
-			continue
-		if(iscarbon(M) && stat != DEAD)
-			if(M.stat == DEAD)
-				M.death(1)
-				stomach_contents.Remove(M)
-				qdel(M)
-				continue
-			if(SSmobs.times_fired%3==1)
-				if(!(M.status_flags & GODMODE))
-					M.adjustBruteLoss(5)
-				adjust_nutrition(10)
-
-=======
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /*
 Alcohol Poisoning Chart
@@ -589,13 +561,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					Sleeping(900)
 
 		if(drunkenness >= 101)
-<<<<<<< HEAD
-			adjustToxLoss(4) //Let's be honest you shouldn't be alive by now
-	else
-		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
-=======
 			adjustToxLoss(2) //Let's be honest you shouldn't be alive by now
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //used in human and monkey handle_environment()
 /mob/living/carbon/proc/natural_bodytemperature_stabilization()
@@ -615,11 +581,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 /mob/living/carbon/proc/handle_liver()
 	var/obj/item/organ/liver/liver = getorganslot(ORGAN_SLOT_LIVER)
-<<<<<<< HEAD
-	if((!dna || !liver) || (NOLIVER in dna.species.species_traits))
-=======
 	if((!dna && !liver) || (NOLIVER in dna.species.species_traits))
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		return
 	if(liver)
 		if(liver.damage >= liver.maxHealth)

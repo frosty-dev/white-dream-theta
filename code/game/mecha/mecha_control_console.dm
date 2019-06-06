@@ -40,14 +40,9 @@
 			M.occupant_message(message)
 		return
 	if(href_list["shock"])
-<<<<<<< HEAD
-		var/obj/item/mecha_parts/mecha_tracking/MT = afilter.getObj("shock")
-		MT.shock()
-=======
 		var/obj/item/mecha_parts/mecha_tracking/MT = locate(href_list["shock"])
 		if (istype(MT))
 			MT.shock()
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 	updateUsrDialog()
 	return

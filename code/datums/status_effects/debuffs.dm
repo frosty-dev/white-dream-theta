@@ -82,8 +82,6 @@
 	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
 	icon_state = "asleep"
 
-<<<<<<< HEAD
-=======
 //STASIS
 /datum/status_effect/incapacitating/stasis
         id = "stasis"
@@ -121,7 +119,6 @@
         name = "Stasis"
         desc = "Your biological functions have halted. You could live forever this way, but it's pretty boring."
         icon_state = "stasis"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 //GOLEM GANG
 
@@ -231,11 +228,7 @@
 
 /datum/status_effect/belligerent/proc/do_movement_toggle(force_damage)
 	var/number_legs = owner.get_num_legs(FALSE)
-<<<<<<< HEAD
-	if(iscarbon(owner) && !is_servant_of_ratvar(owner) && !owner.anti_magic_check(major = FALSE) && number_legs)
-=======
 	if(iscarbon(owner) && !is_servant_of_ratvar(owner) && !owner.anti_magic_check(chargecost = 0) && number_legs)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		if(force_damage || owner.m_intent != MOVE_INTENT_WALK)
 			if(GLOB.ratvar_awakens)
 				owner.Paralyze(20)
@@ -328,11 +321,7 @@
 		if(owner.confused)
 			owner.confused = 0
 		severity = 0
-<<<<<<< HEAD
-	else if(!owner.anti_magic_check(major = FALSE) && owner.stat != DEAD && severity)
-=======
 	else if(!owner.anti_magic_check(chargecost = 0) && owner.stat != DEAD && severity)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		var/static/hum = get_sfx('sound/effects/screech.ogg') //same sound for every proc call
 		if(owner.getToxLoss() > MANIA_DAMAGE_TO_CONVERT)
 			if(is_eligible_servant(owner))
@@ -636,15 +625,9 @@
 	return ..()
 
 /datum/status_effect/gonbolaPacify/on_remove()
-<<<<<<< HEAD
-	owner.remove_trait(TRAIT_PACIFISM, "gonbolaPacify")
-	owner.remove_trait(TRAIT_MUTE, "gonbolaMute")
-	owner.remove_trait(TRAIT_JOLLY, "gonbolaJolly")
-=======
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "gonbolaPacify")
 	REMOVE_TRAIT(owner, TRAIT_MUTE, "gonbolaMute")
 	REMOVE_TRAIT(owner, TRAIT_JOLLY, "gonbolaJolly")
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 
 /datum/status_effect/trance
 	id = "trance"
@@ -699,8 +682,6 @@
 	addtimer(CALLBACK(C, /mob/living/carbon.proc/gain_trauma, /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, raw_message), 10)
 	addtimer(CALLBACK(C, /mob/living.proc/Stun, 60, TRUE, TRUE), 15) //Take some time to think about it
 	qdel(src)
-<<<<<<< HEAD
-=======
 
 /datum/status_effect/spasms
 	id = "spasms"
@@ -803,4 +784,3 @@
 	name = "TO THE STARS AND BEYOND!"
 	desc = "I must go, my people need me!"
 	icon_state = "high"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c

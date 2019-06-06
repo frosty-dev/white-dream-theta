@@ -131,7 +131,7 @@
 		var/json_file = file("data/npc_saves/Runtime.json")
 		if(!fexists(json_file))
 			return
-		var/list/json = r_json_decode(file2text(json_file))
+		var/list/json = json_decode(file2text(json_file))
 		family = json["family"]
 	if(isnull(family))
 		family = list()
@@ -150,7 +150,7 @@
 				family[C.type] = 1
 	file_data["family"] = family
 	fdel(json_file)
-	WRITE_FILE(json_file, r_json_encode(file_data))
+	WRITE_FILE(json_file, json_encode(file_data))
 
 /mob/living/simple_animal/pet/cat/Runtime/proc/Deploy_The_Cats()
 	cats_deployed = 1
@@ -238,13 +238,9 @@
 			if(M && stat != DEAD)
 				new /obj/effect/temp_visual/heart(loc)
 				emote("me", 1, "purrs!")
-<<<<<<< HEAD
-				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, name, /datum/mood_event/pet_animal, name)
-=======
 				if(flags_1 & HOLOGRAM_1)
 					return
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, src, /datum/mood_event/pet_animal, src)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 		else
 			if(M && stat != DEAD)
 				emote("me", 1, "hisses!")

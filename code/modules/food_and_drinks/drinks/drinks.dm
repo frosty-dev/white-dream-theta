@@ -241,11 +241,7 @@
 /obj/item/reagent_containers/food/drinks/mug/coco
 	name = "Dutch hot coco"
 	desc = "Made in Space South America."
-<<<<<<< HEAD
-	list_reagents = list("hot_coco" = 15, "sugar" = 5)
-=======
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
 	custom_price = 42
@@ -253,11 +249,7 @@
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
-<<<<<<< HEAD
-	desc = "Just add 5ml of water, self heats! A taste that reminds you of your school years."
-=======
 	desc = "Just add 5ml of water, self heats! A taste that reminds you of your school years. Now new with salty flavour!"
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	icon_state = "ramen"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 15, /datum/reagent/consumable/sodiumchloride = 3)
 	foodtype = GRAIN
@@ -446,8 +438,6 @@
 		qdel(src)
 	..()
 
-<<<<<<< HEAD
-=======
 /obj/item/reagent_containers/food/drinks/soda_cans/bullet_act(obj/item/projectile/P)
 	. = ..()
 	if(!(P.nodamage) && P.damage_type == BRUTE && !QDELETED(src))
@@ -458,7 +448,6 @@
 		qdel(src)
 		return
 
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 /obj/item/reagent_containers/food/drinks/soda_cans/proc/open_soda(mob/user)
 	to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
 	ENABLE_BITFIELD(reagents.flags, OPENCONTAINER)

@@ -136,11 +136,7 @@
 		return
 	update_icon()
 	if(sticky)
-<<<<<<< HEAD
-		add_trait(TRAIT_NODROP, HOT_POTATO_TRAIT)
-=======
 		ADD_TRAIT(src, TRAIT_NODROP, HOT_POTATO_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	name = "primed [name]"
 	activation_time = timer + world.time
 	detonation_timerid = addtimer(CALLBACK(src, .proc/detonate), delay, TIMER_STOPPABLE)
@@ -154,11 +150,7 @@
 /obj/item/hot_potato/proc/deactivate()
 	update_icon()
 	name = initial(name)
-<<<<<<< HEAD
-	remove_trait(TRAIT_NODROP, HOT_POTATO_TRAIT)
-=======
 	REMOVE_TRAIT(src, TRAIT_NODROP, HOT_POTATO_TRAIT)
->>>>>>> cab74f9fac62079727d832be21546cf15fca2d8c
 	deltimer(detonation_timerid)
 	STOP_PROCESSING(SSfastprocess, src)
 	detonation_timerid = null
