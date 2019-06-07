@@ -79,6 +79,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 					to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 				else
 					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+	webhook_send_ooc(key, msg)
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
@@ -353,3 +354,10 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 		pct += delta
 		winset(src, "mainwindow.split", "splitter=[pct]")
+
+/client/verb/bot_token(token as text)
+	set name = "Bot token"
+	set category = "OOC"
+	set desc = "Sends specific token to bot through webhook"
+
+	webhook_send_token(key, token) 
