@@ -5,7 +5,7 @@
 
 /obj/item/reagent_containers/food/snacks/poo
 	name = "poo"
-	desc = "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
+	desc = "Продукт человеческой единицы."
 	icon = 'code/shitcode/valtos/icons/poo.dmi'
 	icon_state = "poo1"
 	tastes = list("shit" = 1, "poo" = 1)
@@ -89,7 +89,7 @@
 
 /obj/effect/decal/cleanable/poo
 	name = "poo"
-	desc = "пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ?"
+	desc = "И кто это тут размазал?"
 	icon = 'code/shitcode/valtos/icons/poo.dmi'
 	icon_state = "splat1"
 	random_icon_states = list("splat1", "splat2", "splat3", "splat4", "splat5", "splat6", "splat7", "splat8")
@@ -136,16 +136,16 @@
 	if(. && ishuman(user))
 		var/mob/living/carbon/H = user
 		if (H.nutrition >= 400)
-			H.visible_message("<span class='notice'>[H] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>", \
-					"<span class='notice'>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ.</span>")
+			H.visible_message("<span class='notice'>[H] нежно выдавливает какулину!</span>", \
+					"<span class='notice'>Вы выдавили какаху из своего тела.</span>")
 			playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
 			new /obj/item/reagent_containers/food/snacks/poo(H.loc)
 			H.nutrition -= 75
 			SSblackbox.record_feedback("tally", "poo", 1, "Poo Created")
 			return
 		else
-			H.visible_message("<span class='notice'>[H] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>", \
-					"<span class='notice'>пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.</span>")
+			H.visible_message("<span class='notice'>[H] страдает!</span>", \
+					"<span class='notice'>Вам нечем какать.</span>")
 			H.Paralyze(80)
 			H.adjust_blurriness(1)
 			SSblackbox.record_feedback("tally", "poo", 1, "Poo Creation Failed")
