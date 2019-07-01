@@ -254,9 +254,9 @@ GLOBAL_VAR(restart_counter)
 	var/players = GLOB.clients.len
 
 	if(GLOB.master_mode)
-		s += "<b>Mode:</b> [GLOB.master_mode]"
+		s += "<b>Mode:</b> [GLOB.master_mode]</br>"
 
-	s += "<b>Players:</b> [players] /60"
+	s += "<b>Players:</b> [players]/60</br>"
 
 	if (!host && hostedby)
 		s += "Host: <b>[hostedby]</b>"
