@@ -12,7 +12,7 @@
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
-	. = "<span class='info'>*---------*\nЭто же <EM>[!obscure_name ? name : "Unknown"]</EM>!\n"
+	. = list("<span class='info'>*---------*\nЭто же <EM>[!obscure_name ? name : "Unknown"]</EM>!")
 
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
@@ -26,72 +26,72 @@
 			if(U.attached_accessory)
 				accessory_msg += " с [icon2html(U.attached_accessory, user)] \a [U.attached_accessory]"
 
-		. += "На н[t_na] [w_uniform.get_examine_string(user)][accessory_msg].\n"
+		. += "На н[t_na] [w_uniform.get_examine_string(user)][accessory_msg]."
 	//head
 	if(head)
-		. += "У н[t_ego] на голове [head.get_examine_string(user)].\n"
+		. += "У н[t_ego] на голове [head.get_examine_string(user)]."
 	//suit/armor
 	if(wear_suit)
-		. += "На н[t_na] [wear_suit.get_examine_string(user)].\n"
+		. += "На н[t_na] [wear_suit.get_examine_string(user)]."
 		//suit/armor storage
 		if(s_store && !(SLOT_S_STORE in obscured))
-			. += "Имеет [s_store.get_examine_string(user)] прикреплённый к [t_ego] [wear_suit.name].\n"
+			. += "Имеет [s_store.get_examine_string(user)] прикреплённый к [t_ego] [wear_suit.name]."
 	//back
 	if(back)
-		. += "На спине у н[t_ego] [back.get_examine_string(user)].\n"
+		. += "На спине у н[t_ego] [back.get_examine_string(user)]."
 
 	//Hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
-			. += "[ru_ego(TRUE)] [get_held_index_name(get_held_index_of_item(I))] держит [I.get_examine_string(user)].\n"
+			. += "[ru_ego(TRUE)] [get_held_index_name(get_held_index_of_item(I))] держит [I.get_examine_string(user)]."
 
 	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
 	//gloves
 	if(gloves && !(SLOT_GLOVES in obscured))
-		. += "На руках у н[t_ego] [gloves.get_examine_string(user)].\n"
+		. += "На руках у н[t_ego] [gloves.get_examine_string(user)]."
 	else if(FR && length(FR.blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)
-			. += "<span class='warning'>[ru_ego(TRUE)] рук[hand_number > 1 ? "и" : "а"] в крови!</span>\n"
+			. += "<span class='warning'>[ru_ego(TRUE)] рук[hand_number > 1 ? "и" : "а"] в крови!</span>"
 
 	//handcuffed?
 
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан!</span>\n"
+			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан!</span>"
 		else
-			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
+			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>"
 
 	//belt
 	if(belt)
-		. += "На поясе у н[t_ego] [belt.get_examine_string(user)].\n"
+		. += "На поясе у н[t_ego] [belt.get_examine_string(user)]."
 
 	//shoes
 	if(shoes && !(SLOT_SHOES in obscured))
-		. += "На [t_ego] ногах надеты [shoes.get_examine_string(user)].\n"
+		. += "На [t_ego] ногах надеты [shoes.get_examine_string(user)]."
 
 	//mask
 	if(wear_mask && !(SLOT_WEAR_MASK in obscured))
-		. += "[t_on] имеет [wear_mask.get_examine_string(user)] на [t_ego] лице.\n"
+		. += "[t_on] имеет [wear_mask.get_examine_string(user)] на [t_ego] лице."
 
 	if(wear_neck && !(SLOT_NECK in obscured))
-		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)].\n"
+		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)]."
 
 	//eyes
 	if(!(SLOT_GLASSES in obscured))
 		if(glasses)
-			. += "На н[t_na] [glasses.get_examine_string(user)].\n"
+			. += "На н[t_na] [glasses.get_examine_string(user)]."
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
-			. += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>\n"
+			. += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>"
 
 	//ears
 	if(ears && !(SLOT_EARS in obscured))
-		. += "В ушах у н[t_ego] [ears.get_examine_string(user)].\n"
+		. += "В ушах у н[t_ego] [ears.get_examine_string(user)]."
 
 	//ID
 	if(wear_id)
-		. += "Также у н[t_ego] есть [wear_id.get_examine_string(user)].\n"
+		. += "Также у н[t_ego] есть [wear_id.get_examine_string(user)]."
 
 	//Status effects
 	. += status_effect_examines()
@@ -99,27 +99,26 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_on] бьётся в судорогах!</B></span>\n"
+			. += "<span class='warning'><B>[t_on] бьётся в судорогах!</B></span>"
 		if(200 to 300)
-			. += "<span class='warning'>[t_on] нервно дёргается.</span>\n"
+			. += "<span class='warning'>[t_on] нервно дёргается.</span>"
 		if(100 to 200)
-			. += "<span class='warning'>[t_on] дрожит.</span>\n"
+			. += "<span class='warning'>[t_on] дрожит.</span>"
 
 	var/appears_dead = 0
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
 		if(suiciding)
-			. += "<span class='warning'>[t_on] выглядит как суицидник... это уже невозможно спасти.</span>\n"
+			. += "<span class='warning'>[t_on] выглядит как суицидник... это уже невозможно спасти.</span>"
 		if(hellbound)
-			. += "<span class='warning'>[ru_ego(TRUE)] душа выглядит оторванной от [t_ego] тела. Реанимация бесполезна.</span>\n"
-		. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни"
+			. += "<span class='warning'>[ru_ego(TRUE)] душа выглядит оторванной от [t_ego] тела. Реанимация бесполезна.</span>"
 		if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
 			. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни и души...</span>"
 		else
 			. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни...</span>"
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
-		. += "<span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>\n"
+		. += "<span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>"
 
 	var/temp = getBruteLoss() //no need to calculate each of these twice
 

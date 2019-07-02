@@ -188,18 +188,6 @@
 		if(PLURAL)
 			. = "แ๛๋"
 
-/mob/ru_was(temp_gender)
-	if(!temp_gender)
-		temp_gender = gender
-	. = "ธ์"
-	switch(temp_gender)
-		if(FEMALE)
-			. = "ๅ้"
-		if(MALE)
-			. = "ธ์"
-		if(PLURAL)
-			. = "ธ์"
-
 /mob/ru_have(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender

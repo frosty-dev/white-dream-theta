@@ -248,18 +248,18 @@ GLOBAL_VAR(restart_counter)
 	if(config)
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>[server_name] presents:</b></big> [station_name()]</br>"
+	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>/tg/frosty presents:</b></big> [station_name()]</br>"
 	s += "<img src=\"https://i.imgur.com/MvtrYMc.png\"></a>"
 
 	var/players = GLOB.clients.len
 
 	if(GLOB.master_mode)
-		s += "<b>Mode:</b> [GLOB.master_mode]"
+		s += "<b>Mode:</b> [GLOB.master_mode]</br>"
 
-	s += "<b>Players:</b> [players] /60"
+	s += "<b>Players:</b> [players]/60</br>"
 
 	if (!host && hostedby)
-		features += "Host: <b>[hostedby]</b>"
+		s += "Host: <b>[hostedby]</b>"
 
 	status = s
 
