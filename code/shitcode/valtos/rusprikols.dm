@@ -8,6 +8,7 @@
 	strip_delay = 50
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
+	can_adjust = FALSE
 
 /obj/item/clothing/under/rank/omon/green
 	icon_state = "omon-2"
@@ -23,7 +24,7 @@
 /obj/item/clothing/suit/armor/bulletproof/omon
 	name = "bulletproof omon armor"
 	desc = "If you wear it, then obviously you are going to kill people."
-	icon_state = "omon-armor"
+	icon_state = "omon_armor"
 
 
 /datum/job/officer/omon

@@ -1050,12 +1050,19 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "acw" = (
-/obj/structure/sign/warning/securearea{
-	pixel_y = -32
+/obj/effect/turf_decal/tile/red{
+	dir = 8
 	},
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/space/nearstation)
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/structure/closet/secure_closet/security/sec,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel,
+/area/security/main)
 "acx" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
@@ -1530,6 +1537,15 @@
 /obj/structure/cable,
 /turf/open/space/basic,
 /area/solar/port/fore)
+"adv" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
 "adw" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
@@ -1721,6 +1737,18 @@
 /area/ai_monitored/security/armory)
 "adR" = (
 /turf/closed/wall/r_wall,
+/area/security/main)
+"adS" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/structure/bed,
+/obj/item/bedsheet,
+/turf/open/floor/plasteel,
 /area/security/main)
 "adT" = (
 /obj/structure/lattice/catwalk,
@@ -2051,17 +2079,26 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aeA" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk,
-/obj/effect/turf_decal/stripes/line{
-	dir = 5
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/security/sec,
+/obj/effect/turf_decal/bot,
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/security/main)
 "aeB" = (
-/obj/structure/table,
-/obj/item/stack/packageWrap,
-/obj/item/pen,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/structure/bed,
+/obj/item/bedsheet,
 /turf/open/floor/plasteel,
 /area/security/main)
 "aeC" = (
@@ -2416,24 +2453,22 @@
 /turf/open/floor/plasteel,
 /area/security/main)
 "afl" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
+/obj/machinery/door/airlock/command/glass{
+	name = "Russian Quarters";
+	req_access_txt = "1"
 	},
 /turf/open/floor/plasteel,
 /area/security/main)
 "afm" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/security/main)
@@ -2747,11 +2782,8 @@
 /turf/open/floor/plasteel,
 /area/security/main)
 "aga" = (
-/obj/structure/sign/warning/pods{
-	pixel_x = 32
-	},
 /obj/effect/turf_decal/stripes/line{
-	dir = 6
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/security/main)
@@ -3944,15 +3976,11 @@
 /turf/open/floor/plasteel,
 /area/security/main)
 "aiv" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/red{
-	dir = 8
+/obj/structure/disposalpipe/segment{
+	dir = 10
 	},
 /turf/open/floor/plasteel,
 /area/security/main)
@@ -4811,6 +4839,35 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"aki" = (
+/obj/structure/sign/warning/pods{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
+"akj" = (
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/item/pen,
+/obj/item/stack/packageWrap,
+/turf/open/floor/plasteel,
+/area/security/main)
 "akk" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -5106,6 +5163,27 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"akP" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/turf/closed/wall,
+/area/security/main)
+"akQ" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/table,
+/obj/item/clothing/suit/armor/riot/omon,
+/obj/item/clothing/under/rank/omon/green,
+/obj/item/clothing/suit/armor/bulletproof/omon,
+/turf/open/floor/plasteel,
+/area/security/main)
 "akR" = (
 /obj/machinery/door/window/brigdoor/security/cell{
 	id = "Cell 2";
@@ -5118,6 +5196,17 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/security/brig)
+"akS" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/structure/table,
+/obj/item/clothing/suit/armor/riot/omon,
+/obj/item/clothing/under/rank/omon/green,
+/obj/item/clothing/suit/armor/bulletproof/omon,
+/turf/open/floor/plasteel,
+/area/security/main)
 "akT" = (
 /obj/machinery/door/window/brigdoor/security/cell{
 	id = "Cell 3";
@@ -5137,6 +5226,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
+"akV" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/turf/closed/wall/r_wall,
+/area/security/main)
 "akW" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/door/airlock/security/glass{
@@ -5171,6 +5267,36 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"akY" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/structure/closet/secure_closet/security/sec,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/tile/red,
+/turf/open/floor/plasteel,
+/area/security/main)
+"akZ" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/machinery/recharger,
+/turf/open/floor/plasteel,
+/area/security/main)
+"ala" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
 "alb" = (
 /obj/structure/chair{
 	dir = 4;
@@ -5226,6 +5352,19 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
+"alg" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
 "alh" = (
 /obj/machinery/door/airlock/external{
 	name = "Solar Maintenance";
@@ -5300,6 +5439,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/security/processing)
+"als" = (
+/obj/effect/turf_decal/tile/red,
+/turf/open/floor/plasteel,
+/area/security/main)
 "alt" = (
 /obj/structure/reagent_dispensers/peppertank,
 /turf/closed/wall/r_wall,
@@ -5318,6 +5461,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/nuke_storage)
+"alv" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/structure/bed,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/turf/open/floor/plasteel,
+/area/security/main)
 "alw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -5455,6 +5610,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/courtroom)
+"alK" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
 "alL" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/power/apc{
@@ -5511,6 +5675,16 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/fore)
+"alT" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
 "alU" = (
 /turf/closed/wall,
 /area/maintenance/port/fore)
@@ -5717,6 +5891,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
+"amu" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/structure/mirror{
+	icon_state = "mirror_broke";
+	pixel_y = 28
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
 "amv" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/door/airlock/external{
@@ -5753,6 +5940,17 @@
 "amA" = (
 /turf/open/floor/plating,
 /area/maintenance/solars/port/fore)
+"amB" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
 "amC" = (
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
@@ -5799,6 +5997,22 @@
 /obj/item/trash/plate,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
+"amI" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red,
+/obj/machinery/shower{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/security/main)
+"amJ" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = -32
+	},
+/turf/closed/wall/r_wall,
+/area/security/main)
 "amK" = (
 /obj/structure/sign/warning/docking,
 /turf/closed/wall,
@@ -5837,6 +6051,12 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
+"amO" = (
+/obj/effect/decal/cleanable/crayon{
+	icon_state = "cyka"
+	},
+/turf/closed/wall,
+/area/security/main)
 "amQ" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "Secure Gate";
@@ -86049,11 +86269,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaf
+gXs
+adR
+abo
+abp
+abo
 abq
 abW
 abk
@@ -86066,7 +86286,7 @@ afZ
 agE
 ahh
 ahM
-aiv
+akj
 abp
 ajk
 ajQ
@@ -86306,11 +86526,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+gXs
+abo
+acw
+aeA
+akY
 abq
 abq
 abq
@@ -86559,23 +86779,23 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaf
-abo
-aeB
+gXs
+gXs
+gXs
+gXs
+gXs
+abp
+amu
+afU
+ala
+alK
+alK
+alK
+alK
+alT
+afl
 afm
+alg
 agb
 agG
 ahi
@@ -86820,20 +87040,20 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaf
-aaf
-aaf
-abo
-aeA
-afl
+gXs
+abp
+adv
+afU
+als
+amB
+amI
+akQ
+akS
+akZ
+amO
 aga
+aiv
+aki
 abp
 ahj
 abp
@@ -87077,15 +87297,15 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-acw
-abp
+gXs
+abo
+adS
+aeB
+alv
+akP
+adR
+amJ
+adR
 abp
 adR
 abp
@@ -87329,17 +87549,17 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+gXs
+gXs
+gXs
+gXs
+gXs
+gXs
+adR
+abo
+akP
+abo
+akV
 aaf
 aag
 acU
