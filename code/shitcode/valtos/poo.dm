@@ -121,7 +121,6 @@
 			pooverlay.icon_state = "suitpoo"
 			H.add_overlay(pooverlay)
 			H.pooed = TRUE
-			H.hygiene -= 200
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "creampie", /datum/mood_event/creampie)
 			SSblackbox.record_feedback("tally", "poo", 1, "Poo Splats")
 	qdel(src)
