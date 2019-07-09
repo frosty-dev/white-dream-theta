@@ -311,15 +311,15 @@
 					var/cyberimp_detect
 					for(var/obj/item/organ/cyberimp/CI in internal_organs)
 						if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
-							cyberimp_detect += "[name] модифицировано [CI.name].<br>"
+							cyberimp_detect += "[name] модифицировано [CI.name]."
 					if(cyberimp_detect)
-						. += "Обнаружены кибернетические модификации:<br>"
+						. += "Обнаружены кибернетические модификации:"
 						. += cyberimp_detect
 					if(R)
 						var/health_r = R.fields["p_stat"]
 						. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
 						health_r = R.fields["m_stat"]
-						. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a><br>"
+						. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
 					R = find_record("name", perpname, GLOB.data_core.medical)
 					if(R)
 						. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
