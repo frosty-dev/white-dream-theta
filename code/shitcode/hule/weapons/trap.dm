@@ -37,7 +37,7 @@
 			return
 		if(ishuman(AM))
 			var/mob/living/carbon/human/H = AM
-			if(H.m_intent == MOVE_INTENT_WALK && H.has_trait(TRAIT_LIGHT_STEP))
+			if(H.m_intent == MOVE_INTENT_WALK)
 				return
 	activate()
 
