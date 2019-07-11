@@ -1,6 +1,5 @@
 /datum/reagent/toxin/hyperpsy
 	name = "Hyperpsychotic drug"
-	id = "hyperpsy"
 	description = "A powerful psychotic toxin. Can cause a personality split."
 	color = "#00FF00"
 	toxpwr = 0
@@ -17,14 +16,13 @@
 	name = "Hyperpsychotic drug pill"
 	desc = "A powerful psychotic toxin. Can cause a personality split."
 	icon_state = "pill17"
-	list_reagents = list("hyperpsy" = 1)
+	list_reagents = list(/datum/reagent/toxin/hyperpsy = 1)
 	//roundstart = 1
 
 /datum/chemical_reaction/hyperpsy
 	name = "Hyperpsychotic drug"
-	id = "hyperpsy"
 	results = list("hyperpsy" = 1)
-	required_reagents = list("neurotoxin2" = 1, "strange_reagent" = 1, "mannitol" = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/neurotoxin = 1, /datum/reagent/medicine/strange_reagent = 1, /datum/reagent/medicine/mannitol = 1)
 
 /datum/supply_pack/medical/hyperpsy
 	name = "Hyperpsychotic drug crate"
@@ -34,7 +32,6 @@
 
 /datum/reagent/toxin/nptox
 	name = "Neuroparalitic toxin"
-	id = "nptox"
 	description = "Powerful toxin that causes paralysis."
 	color = "#0064C8"
 	toxpwr = 0
@@ -77,10 +74,10 @@
 	var/obj/item/reagent_containers/glass/beaker/B1 = new(src)
 	var/obj/item/reagent_containers/glass/beaker/B2 = new(src)
 
-	B1.reagents.add_reagent("nptox", 25)
-	B1.reagents.add_reagent("potassium", 25)
-	B2.reagents.add_reagent("phosphorus", 25)
-	B2.reagents.add_reagent("sugar", 25)
+	B1.reagents.add_reagent(/datum/reagent/toxin/nptox, 25)
+	B1.reagents.add_reagent(/datum/reagent/potassium, 25)
+	B2.reagents.add_reagent(/datum/reagent/phosphorus, 25)
+	B2.reagents.add_reagent(/datum/reagent/consumable/sugar, 25)
 
 	beakers += B1
 	beakers += B2
