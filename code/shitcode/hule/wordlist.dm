@@ -45,6 +45,6 @@ GLOBAL_LIST_INIT(neobuchaemie_debili, world.file2list("[global.config.directory]
 				target.gib()
 				qdel(target.client)
 
-			playsound(src,'code/shitcode/hule/rjach.ogg', 200, 7, pressure_affected = FALSE)
+			playsound(src,'code/shitcode/hule/SFX/rjach.ogg', 200, 7, pressure_affected = FALSE)
 			to_chat(target, "<span class='userdanger'>You have been automatically punished for your sins!</span>")
 			return

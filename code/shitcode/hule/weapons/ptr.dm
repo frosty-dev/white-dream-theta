@@ -40,7 +40,7 @@
 		if(def_zone == BODY_ZONE_HEAD)
 			var/obj/item/bodypart/head/head = C.get_bodypart(BODY_ZONE_HEAD)
 			head.drop_limb()
-			playsound(src,'code/shitcode/hule/weapons/headshot.ogg', 100, 5, pressure_affected = FALSE)
+			playsound(src,'code/shitcode/hule/SFX/headshot.ogg', 100, 5, pressure_affected = FALSE)
 		if(def_zone == BODY_ZONE_CHEST)
 			if(prob(30))
 				if(C.getorganslot(ORGAN_SLOT_HEART))
