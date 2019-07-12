@@ -138,7 +138,7 @@
 	clothes_req = FALSE
 	invocation = "V GOLOVU"
 	invocation_type = "shout"
-	sound = 'code/shitcode/hule/magic/prikol.ogg'
+	sound = 'code/shitcode/hule/SFX/anekdot_delimiter.ogg'
 	action_icon_state = "shield"
 	range = -1
 	include_user = TRUE
