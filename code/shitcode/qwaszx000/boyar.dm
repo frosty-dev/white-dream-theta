@@ -1,6 +1,5 @@
 /datum/reagent/consumable/ethanol/boyarka
 	name = "Boyarka"
-	id = "boyar"
 	description = "Boyarka"
 	color = "#880000"
 	nutriment_factor = 1 * REAGENTS_METABOLISM
@@ -11,14 +10,15 @@
 
 /datum/reagent/consumable/ethanol/boyarka/on_mob_life(mob/living/M)
 	M.reagents.add_reagent(get_random_reagent_id(),1)
-	M.reagents.add_reagent("rotatium",1)
+	M.reagents.add_reagent(/datum/reagent/toxin/rotatium,1)
 	..()
 
 /datum/reagent/consumable/ethanol/boyarka/traitor
-	id = "boyar_tr"
+	boozepwr = 80
+
 /datum/reagent/consumable/ethanol/boyarka/traitor/on_mob_life(mob/living/M)
 	M.reagents.add_reagent(get_random_reagent_id(),100)
-	M.reagents.add_reagent("rotatium",2)
+	M.reagents.add_reagent(/datum/reagent/toxin/rotatium,2)
 	spawn(0)
 		new /datum/hallucination/delusion(M, TRUE, "demon",600,0)
 	to_chat(M, "<span class='warning'>KILL THEM ALL</span>")
@@ -27,7 +27,7 @@
 	name = "true boyar pill"
 	desc = "TRUE BOYAR."
 	icon_state = "pill5"
-	list_reagents = list("boyar_tr" = 50)
+	list_reagents = list(/datum/reagent/consumable/ethanol/boyarka/traitor = 50)
 	//roundstart = 1
 
 /datum/uplink_item/stealthy_weapons/boyar_t_pill
@@ -39,5 +39,13 @@
 /datum/chemical_reaction/boyar
 	name = "Boyar"
 	id = "boyar"
-	results = list("boyar" = 10)
-	required_reagents = list("vodka" = 10, "berryjuice" = 1)
+	results = list(/datum/reagent/consumable/ethanol/boyarka = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 10, /datum/reagent/consumable/berryjuice = 1)
+
+/obj/item/reagent_containers/food/drinks/boyarka
+	name = "Boyarka"
+	desc = "Твой новый лучший друг"
+	icon = 'code/shitcode/hule/boyarka/boyarka.dmi'
+	icon_state = "boyarka"
+	list_reagents = list(/datum/reagent/consumable/ethanol/boyarka = 30)
+	foodtype = ALCOHOL | FRUIT
