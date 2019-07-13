@@ -124,7 +124,7 @@
 	// Save modified name
 	if(initial(name) != name)
 		assembly_params["name"] = name
-	
+
 	// Save modified description
 	if(initial(desc) != desc)
 		assembly_params["desc"] = desc
@@ -151,7 +151,7 @@
 	// Load modified name, if any.
 	if(assembly_params["name"])
 		name = assembly_params["name"]
-		
+
 	// Load modified description, if any.
 	if(assembly_params["desc"])
 		desc = assembly_params["desc"]
@@ -216,7 +216,7 @@
 	if(wires.len)
 		blocks["wires"] = wires
 
-	return json_encode(blocks)
+	return r_json_encode(blocks)
 
 
 
@@ -226,7 +226,7 @@
 // The following parameters area calculated during validation and added to the returned save list:
 // "requires_upgrades", "unsupported_circuit", "metal_cost", "complexity", "max_complexity", "used_space", "max_space"
 /datum/controller/subsystem/processing/circuit/proc/validate_electronic_assembly(program)
-	var/list/blocks = json_decode(program)
+	var/list/blocks = r_json_decode(program)
 	if(!blocks)
 		return
 
