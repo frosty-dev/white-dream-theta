@@ -2890,6 +2890,7 @@
 #include "code\shitcode\jammer312\keybindings_rebind.dm"
 #include "code\shitcode\jammer312\text_ru.dm"
 #include "code\shitcode\other\give.dm"
+#include "code\shitcode\qwaszx000\boyar.dm"
 #include "code\shitcode\qwaszx000\winners.dm"
 #include "code\shitcode\qwaszx000\loly\loly.dm"
 #include "code\shitcode\valtos\custom.dm"
