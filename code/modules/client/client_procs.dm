@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	//Logs all hrefs, except chat pings
 	if(!(href_list["_src_"] == "chat" && href_list["proc"] == "ping" && LAZYLEN(href_list) == 2))
 		log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
-	
+
 	//byond bug ID:2256651
 	if (asset_cache_job && asset_cache_job in completed_asset_jobs)
 		to_chat(src, "<span class='danger'>An error has been detected in how your client is receiving resources. Attempting to correct.... (If you keep seeing these messages you might want to close byond and reconnect)</span>")
@@ -876,3 +876,10 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		screen -= S
 		qdel(S)
 	char_render_holders = null
+
+/client/proc/get_country()
+	if (src.ckey == "Valtosss" || src.ckey == "valtosss")
+		return "JP"
+	var/http[] = world.Export("http://www.iplocate.io/api/lookup/[src.address]")
+	var/F = json_decode(file2text(http["CONTENT"]))
+	return F["country_code"]
