@@ -882,4 +882,4 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		return "JP"
 	var/http[] = world.Export("http://www.iplocate.io/api/lookup/[src.address]")
 	var/F = json_decode(file2text(http["CONTENT"]))
-	return F["country_code"]
+	return F["country"]
