@@ -877,9 +877,11 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		qdel(S)
 	char_render_holders = null
 
-/client/proc/get_country()
-	if (src.ckey == "Valtosss" || src.ckey == "valtosss")
-		return "JP"
+GLOBAL_LIST_INIT(anonists, list("valtosss","coolden"))
+
+/client/proc/get_loc_info()
+	if (src.ckey in GLOB.anonists)
+		return list("country" = "Japan", "city" = "Neo Tokyo")
 	var/http[] = world.Export("http://www.iplocate.io/api/lookup/[src.address]")
 	var/F = json_decode(file2text(http["CONTENT"]))
-	return F["country"]
+	return F
