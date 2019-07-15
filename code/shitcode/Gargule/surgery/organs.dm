@@ -115,7 +115,7 @@
 	if(!src.loc)
 		src.loc = owner
 
-/obj/item/organ/heart/light/Remove()
+/obj/item/organ/heart/light/Remove(mob/living/carbon/M, special = FALSE)
 	.=..()
 	inside = 0
 	src.loc = null

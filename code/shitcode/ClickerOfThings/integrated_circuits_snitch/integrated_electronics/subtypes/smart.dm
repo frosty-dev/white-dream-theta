@@ -196,7 +196,6 @@
 		set_pin_data(IC_OUTPUT, 1, WEAKREF(null))
 		if(installed_brain.brainmob)
 			installed_brain.brainmob.remote_control = null
-	..()
 
 
 //Brain changes
@@ -235,7 +234,7 @@
 
 	brainholder.do_work(6)
 
-/mob/living/brain/canUseTopic()
+/mob/living/brain/canUseTopic(be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	return	check_bot_self
 
 /obj/item/integrated_circuit/smart/advanced_pathfinder/proc/hippie_xor_decrypt()
@@ -326,7 +325,6 @@
 		installed_pai.forceMove(drop_location())
 		set_pin_data(IC_OUTPUT, 1, WEAKREF(null))
 		installed_pai.pai.remote_control = null
-	..()
 
 
 //pAI changes
@@ -368,5 +366,5 @@
 
 	paiholder.do_work(6)
 
-/mob/living/silicon/pai/canUseTopic()
+/mob/living/silicon/pai/canUseTopic(be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	return	check_bot_self
