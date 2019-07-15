@@ -2922,6 +2922,7 @@
 #include "code\shitcode\ClickerOfThings\integrated_circuits_snitch\integrated_electronics\subtypes\time.dm"
 #include "code\shitcode\ClickerOfThings\integrated_circuits_snitch\integrated_electronics\subtypes\trig.dm"
 #include "code\shitcode\ClickerOfThings\shitspawn_deck\shitspawn_deck.dm"
+#include "code\shitcode\ClickerOfThings\steklotara\punkt_priema.dm"
 #include "code\shitcode\fogmann\donations.dm"
 #include "code\shitcode\fogmann\fogmann.dm"
 #include "code\shitcode\fogmann\funmote.dm"
