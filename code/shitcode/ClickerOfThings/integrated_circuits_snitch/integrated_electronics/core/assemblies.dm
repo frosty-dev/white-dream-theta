@@ -363,7 +363,7 @@
 			component.rename_component(usr)
 			if(component.assembly)
 				component.assembly.add_allowed_scanner(usr.ckey)
-		
+
 		if(href_list["interact"])
 			var/obj/item/I = usr.get_active_held_item()
 			if(istype(I))
@@ -1037,3 +1037,7 @@
 			pixel_x = -31
 		if(WEST)
 			pixel_x = 31
+
+/obj/item/electronic_assembly/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
+	if(over == usr)
+		interact(usr)
