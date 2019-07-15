@@ -6001,6 +6001,10 @@
 	},
 /turf/closed/wall,
 /area/security/main)
+"amP" = (
+/obj/machinery/priem_steklotara,
+/turf/open/floor/plasteel,
+/area/crew_quarters/bar)
 "amQ" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "Secure Gate";
@@ -89404,7 +89408,7 @@ aac
 aQc
 aXk
 aQc
-aQc
+amP
 aJC
 aYV
 aYV

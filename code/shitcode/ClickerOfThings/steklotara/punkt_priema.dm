@@ -23,6 +23,8 @@
 		say("Бутылка обнаружена! Подождите...")
 		processing = TRUE
 		addtimer(CALLBACK(src, .proc/drop_money, btl), bottle_process_time)
+	else
+		return ..()
 
 
 /obj/machinery/priem_steklotara/proc/drop_money(obj/item/reagent_containers/food/drinks/bottle/btl)
