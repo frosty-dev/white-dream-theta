@@ -738,3 +738,30 @@
 			push_data()
 
 	activate_pin(3)
+
+/obj/item/integrated_circuit/manipulation/attackby_module
+	name = "advanced manipulation module"
+	desc = "Uses item in ref on the object"
+	icon_state = "grabber"
+	extended_desc = "Privet ya rebolution228."
+	w_class = WEIGHT_CLASS_SMALL
+	size = 3
+	cooldown_per_use = 5
+	complexity = 40
+	inputs = list("target object" = IC_PINTYPE_REF, "item" = IC_PINTYPE_REF)
+	activators = list("pulse in" = IC_PINTYPE_PULSE_IN,"pulse out" = IC_PINTYPE_PULSE_OUT)
+	spawn_flags = IC_SPAWN_RESEARCH
+	action_flags = IC_ACTION_COMBAT
+	power_draw_per_use = 20
+
+/obj/item/integrated_circuit/manipulation/attackby_module/do_work()
+	var/obj/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj)
+	var/obj/item/item = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
+	if(!target_obj || !item)
+		return
+
+	var/distance = get_dist(get_turf(src),get_turf(target_obj))
+	if(distance > 1 || distance < 0)
+		return
+
+	target_obj.attackby(item, src)
