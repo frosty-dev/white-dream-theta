@@ -9,10 +9,10 @@
 	var/bottle_process_time = 30
 
 /obj/machinery/priem_steklotara/attackby(obj/item/I, mob/living/user, params)
-	if (processing)
-		to_chat(user, "<span class='warning'>Пункт приёма стеклотары обрабатывает бутылку, подождите!</span>")
-		return
 	if (istype(I, /obj/item/reagent_containers/food/drinks/bottle))
+		if (processing)
+			to_chat(user, "<span class='warning'>Пункт приёма стеклотары обрабатывает бутылку, подождите!</span>")
+			return
 		var/obj/item/reagent_containers/food/drinks/bottle/btl = I
 		if (btl.reagents.reagent_list.len != 0)
 			to_chat(user, "<span class='warning'>Бутылка должна быть пуста!</span>")
