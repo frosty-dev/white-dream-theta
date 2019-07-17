@@ -3,6 +3,8 @@
 // what the fuck now are you retarded?
 /////////////////////////////////////
 
+#define TRAIT_LIGHT_POOER		"legkoserya"
+
 /obj/item/reagent_containers/food/snacks/poo
 	name = "poo"
 	desc = "Продукт человеческой единицы."
@@ -134,7 +136,18 @@
 	. = ..()
 	if(. && ishuman(user))
 		var/mob/living/carbon/H = user
-		if (H.nutrition >= 400)
+		if(HAS_TRAIT(H, TRAIT_LIGHT_POOER) && H.nutrition >= 350)
+			H.visible_message("<span class='notice'>[H] профессионально выдавливает остроконечный снаряд!</span>", \
+					"<span class='notice'>Вы выдавили какаху из своего тела.</span>")
+			playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
+			var/obj/item/reagent_containers/food/snacks/poo/P = new(get_turf(H))
+			H.put_in_hands(P)
+			if(!H.in_throw_mode)
+				H.throw_mode_on()
+			H.nutrition -= 50
+			SSblackbox.record_feedback("tally", "poo", 1, "Poo Created")
+			return
+		else if (H.nutrition >= 400)
 			H.visible_message("<span class='notice'>[H] нежно выдавливает какулину!</span>", \
 					"<span class='notice'>Вы выдавили какаху из своего тела.</span>")
 			playsound(H, 'code/shitcode/fogmann/fart.ogg', 50, 1)
@@ -159,3 +172,12 @@
 		cut_overlay(mutable_appearance('code/shitcode/valtos/icons/poo.dmi', "uniformpoo"))
 		cut_overlay(mutable_appearance('code/shitcode/valtos/icons/poo.dmi', "suitpoo"))
 		pooed = FALSE
+
+/datum/quirk/legkoserya
+	name = "Light Pooer"
+	desc = "You poo right in your hands and prepare to throw."
+	value = 2
+	mob_trait = TRAIT_LIGHT_POOER
+	gain_text = "<span class='notice'>You know ancient defecation techniques.</span>"
+	lose_text = "<span class='danger'>You forget how to poo professionally.</span>"
+	medical_record_text = "Patient's defecation skills are on another level." //prikol

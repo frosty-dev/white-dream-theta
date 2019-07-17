@@ -2946,6 +2946,7 @@
 #include "code\shitcode\hule\magic\magicthrow\magicthrow.dm"
 #include "code\shitcode\hule\magic\pomoyka\pomoyka.dm"
 #include "code\shitcode\hule\reagents\reagents.dm"
+#include "code\shitcode\hule\traits\programmer.dm"
 #include "code\shitcode\hule\weapons\bombshot.dm"
 #include "code\shitcode\hule\weapons\books.dm"
 #include "code\shitcode\hule\weapons\prikol.dm"
