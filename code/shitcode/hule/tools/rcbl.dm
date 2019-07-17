@@ -2,6 +2,8 @@
 	name = "Rapid Conveyor Belt Layer"
 	desc = "A device used to rapidly construct conveyor lines.\n<span class='notice'>Use a multitool to change conveyor ID.</span>"
 	icon = 'icons/obj/tools.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	icon_state = "rcd"
 	flags_1 = CONDUCT_1
 	force = 10
@@ -42,26 +44,36 @@
 /obj/item/rcbl/attack_self(mob/user)
 	playsound(src.loc, 'sound/effects/pop.ogg', 50, 0)
 	switch(mode)
-		if(2)
+		if(3)
 			mode = 1
 			to_chat(user, "Changed mode to 'Conveyor belt'")
 		if(1)
 			mode = 2
-			to_chat(user, "Changed dispensing mode to 'Conveyor switch'")
-	// Change mode
+			to_chat(user, "Changed mode to 'Conveyor switch'")
+		if(2)
+			mode = 3
+			to_chat(user, "Changed mode to 'Deconstruction'")
 
 /obj/item/rcbl/afterattack(atom/A, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
 
-	if(istype(A, /obj/machinery/conveyor))
-		var/obj/machinery/conveyor/C = A
-		C.id = c_id
-		return
-	else if(istype(A, /obj/machinery/conveyor_switch))
-		var/obj/machinery/conveyor_switch/C = A
-		C.id = c_id
+	var/bres = istype(A, /obj/machinery/conveyor)
+	var/sres = istype(A, /obj/machinery/conveyor_switch)
+	if(mode != 3)
+		if(bres)
+			var/obj/machinery/conveyor/C = A
+			C.id = c_id
+			return
+		else if(sres)
+			var/obj/machinery/conveyor_switch/C = A
+			C.id = c_id
+			return
+	else if(bres||sres)
+		matter++
+		qdel(A)
+		to_chat(user, "Deconstructing [A.name]...")
 		return
 
 	if (matter < 1)
@@ -76,6 +88,8 @@
 			var/obj/machinery/conveyor/B = new(T)
 			B.id = c_id
 			B.dir = user.dir
+			B.movedir = user.dir
+			LAZYADD(GLOB.conveyors_by_id[B.id], B)
 		if(2)
 			to_chat(user, "Constructing Conveyor Switch...")
 			var/obj/machinery/conveyor_switch/S = new(T)
