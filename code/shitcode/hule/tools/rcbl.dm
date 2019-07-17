@@ -2,6 +2,8 @@
 	name = "Rapid Conveyor Belt Layer"
 	desc = "A device used to rapidly construct conveyor lines.\n<span class='notice'>Use a multitool to change conveyor ID.</span>"
 	icon = 'icons/obj/tools.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	icon_state = "rcd"
 	flags_1 = CONDUCT_1
 	force = 10
@@ -76,6 +78,8 @@
 			var/obj/machinery/conveyor/B = new(T)
 			B.id = c_id
 			B.dir = user.dir
+			b.movedir = user.dir
+			LAZYADD(GLOB.conveyors_by_id[id], B)
 		if(2)
 			to_chat(user, "Constructing Conveyor Switch...")
 			var/obj/machinery/conveyor_switch/S = new(T)
