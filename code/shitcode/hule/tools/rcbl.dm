@@ -64,7 +64,10 @@
 	if(mode != 3)
 		if(bres)
 			var/obj/machinery/conveyor/C = A
+			if(C.id && GLOB.conveyors_by_id[C.id])
+				LAZYREMOVE(GLOB.conveyors_by_id[C.id], C)
 			C.id = c_id
+			LAZYADD(GLOB.conveyors_by_id[C.id], C)
 			return
 		else if(sres)
 			var/obj/machinery/conveyor_switch/C = A
