@@ -1,5 +1,5 @@
 /obj/item/rcbl
-	name = "Rapid Conveyor Belt Layer"
+	name = "Rapid Conveyor Belt Layer (RCBL)"
 	desc = "A device used to rapidly construct conveyor lines.\n<span class='notice'>Use a multitool to change conveyor ID.</span>"
 	icon = 'icons/obj/tools.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -96,3 +96,11 @@
 			S.id = c_id
 	matter--
 	to_chat(user, "<span class='notice'>The RCBL now holds [matter]/[mattermax] fabrication-units.</span>")
+
+/datum/design/rcbl
+	name = "Rapid Conveyor Belt Layer (RCBL)"
+	id = "rcbl"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 50000)
+	build_path = /obj/item/rcbl
+	category = list("hacked", "Construction")
