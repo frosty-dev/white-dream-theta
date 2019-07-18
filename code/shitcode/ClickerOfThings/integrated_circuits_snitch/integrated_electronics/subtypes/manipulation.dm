@@ -804,7 +804,7 @@
 		return
 
 	for(var/obj/item/I in M.held_items)
-		if(!HAS_TRAIT(I,TRAIT_NODROP, "flextape"))
+		if(!HAS_TRAIT_FROM(I,TRAIT_NODROP, "flextape"))
 			ADD_TRAIT(I,TRAIT_NODROP, "flextape")
 
 
@@ -825,7 +825,7 @@
 		return
 
 	for(var/obj/item/I in M.held_items)
-		if(HAS_TRAIT(I,TRAIT_NODROP, "flextape"))
+		if(HAS_TRAIT_FROM(I,TRAIT_NODROP, "flextape"))
 			REMOVE_TRAIT(I,TRAIT_NODROP, "flextape")
 
 
