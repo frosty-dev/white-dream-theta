@@ -745,7 +745,7 @@
 	name = "monkey manipulation module"
 	desc = "Forces monkey to use item in its hands on the atom."
 	icon_state = "grabber"
-	extended_desc = "Privet ya rebolution228. Mode 0 - Monkey will use selected item on atom; Mode 1 - Monkey will use that item (similar to double click on it); Mode 2 - Monkey will pick up selected item; Mode 3 - Monkey will drop items in its hands."
+	extended_desc = "Privet ya rebolution228.\nMode 0 - Monkey will use selected item on atom;\nMode 1 - Monkey will use that item (similar to double click on it);\nMode 2 - Monkey will pick up selected item;\nMode 3 - Monkey will drop items in its hands."
 	w_class = WEIGHT_CLASS_SMALL
 	size = 2
 	cooldown_per_use = 5
@@ -760,7 +760,7 @@
 /obj/item/integrated_circuit/manipulation/monkey_manipulator/do_work()
 	var/obj/item/I = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
 	var/mob/living/carbon/monkey/M = get_pin_data_as_type(IC_INPUT, 3, /mob/living/carbon/monkey)
-	if(!M)
+	if(!M || M.mind)
 		return
 
 	var/dSM = get_dist(get_turf(src),get_turf(M))
