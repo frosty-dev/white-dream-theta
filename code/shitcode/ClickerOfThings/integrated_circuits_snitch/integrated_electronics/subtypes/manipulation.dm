@@ -739,29 +739,58 @@
 
 	activate_pin(3)
 
-/obj/item/integrated_circuit/manipulation/attackby_module
-	name = "advanced manipulation module"
-	desc = "Uses item in ref on the object"
+////////////////////////kostil development in progress///////////////////////
+
+/obj/item/integrated_circuit/manipulation/monkey_manipulator
+	name = "monkey manipulation module"
+	desc = "Forces monkey to use item in its hands on the atom."
 	icon_state = "grabber"
-	extended_desc = "Privet ya rebolution228."
+	extended_desc = "Privet ya rebolution228. Mode 0 - Monkey will use selected item on atom; Mode 1 - Monkey will use that item (similar to double click on it); Mode 2 - Monkey will pick up selected item; Mode 3 - Monkey will drop items in its hands."
 	w_class = WEIGHT_CLASS_SMALL
-	size = 3
+	size = 2
 	cooldown_per_use = 5
 	complexity = 40
-	inputs = list("target object" = IC_PINTYPE_REF, "item" = IC_PINTYPE_REF)
+	inputs = list("target atom" = IC_PINTYPE_REF, "item" = IC_PINTYPE_REF, "monkey" = IC_PINTYPE_REF, "mode" = IC_PINTYPE_NUMBER)
+	outputs = list("held items" = IC_PINTYPE_LIST)
 	activators = list("pulse in" = IC_PINTYPE_PULSE_IN,"pulse out" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_RESEARCH
 	action_flags = IC_ACTION_COMBAT
-	power_draw_per_use = 20
+	power_draw_per_use = 200
 
-/obj/item/integrated_circuit/manipulation/attackby_module/do_work()
-	var/obj/target_obj = get_pin_data_as_type(IC_INPUT, 1, /obj)
-	var/obj/item/item = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
-	if(!target_obj || !item)
+/obj/item/integrated_circuit/manipulation/monkey_manipulator/do_work()
+	var/obj/item/I = get_pin_data_as_type(IC_INPUT, 2, /obj/item)
+	var/mob/living/carbon/monkey/M = get_pin_data_as_type(IC_INPUT, 3, /mob/living/carbon/monkey)
+	if(!M)
 		return
 
-	var/distance = get_dist(get_turf(src),get_turf(target_obj))
-	if(distance > 1 || distance < 0)
+	var/dSM = get_dist(get_turf(src),get_turf(M))
+	if(dSM > 1 || dSM < 0)
 		return
 
-	target_obj.attackby(item, src)
+	var/mode = get_pin_data(IC_INPUT, 4)
+	switch(mode)
+		if(0)
+			var/atom/A = get_pin_data_as_type(IC_INPUT, 1, /atom)
+			if(M.is_holding(I)&&A)
+				A.attackby(I,M)
+		if(1)
+			if(M.is_holding(I))
+				I.attack_self(M)
+				I.update_icon()
+		if(2)
+			var/dMI = get_dist(get_turf(M),get_turf(I))
+			if(M.can_equip(I, SLOT_HANDS)&& (dMI > 1 || dMI < 0))
+				M.put_in_hands(I)
+		if(3)
+			M.drop_all_held_items()
+
+	set_pin_data(IC_OUTPUT, 1, M.held_items)
+	activate_pin(2)
+
+/obj/item/flextape
+	name = "Flex tape"
+	desc = "Use on a monkey holding an item to tape item to its hands."
+
+/obj/item/flextape_remover
+	name = "Superglue superremover"
+	desc = "Use on a monkey to remove any type of glue from its hands."
