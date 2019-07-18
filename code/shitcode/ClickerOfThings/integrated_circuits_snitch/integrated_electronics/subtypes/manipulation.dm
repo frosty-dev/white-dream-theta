@@ -791,6 +791,41 @@
 	name = "Flex tape"
 	desc = "Use on a monkey holding an item to tape item to its hands."
 
+/obj/item/flextape/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+
+	if(!istype(A, /mob/living/carbon/monkey))
+		return
+
+	var/mob/living/carbon/monkey/M = A
+	if(M.mind)
+		return
+
+	for(var/obj/item/I in M.held_items)
+		if(!HAS_TRAIT(I,TRAIT_NODROP, "flextape"))
+			ADD_TRAIT(I,TRAIT_NODROP, "flextape")
+
+
 /obj/item/flextape_remover
 	name = "Superglue superremover"
 	desc = "Use on a monkey to remove any type of glue from its hands."
+
+/obj/item/flextape_remover/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+
+	if(!istype(A, /mob/living/carbon/monkey))
+		return
+
+	var/mob/living/carbon/monkey/M = A
+	if(M.mind)
+		return
+
+	for(var/obj/item/I in M.held_items)
+		if(HAS_TRAIT(I,TRAIT_NODROP, "flextape"))
+			REMOVE_TRAIT(I,TRAIT_NODROP, "flextape")
+
+
