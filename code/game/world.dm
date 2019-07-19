@@ -248,7 +248,7 @@ GLOBAL_VAR(restart_counter)
 	if(config)
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>[RU] White Dream presents:</b></big> [station_name()]</br>"
+	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>\[RU\] White Dream presents:</b></big> [station_name()]</br>"
 	s += "<img src=\"https://i.imgur.com/lmUGFYa.png\"></a>"
 
 	var/players = GLOB.clients.len
