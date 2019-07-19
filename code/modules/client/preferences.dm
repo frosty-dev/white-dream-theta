@@ -94,8 +94,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/parallax
 
 	var/ambientocclusion = TRUE
-	var/auto_fit_viewport = FALSE
-	var/widescreenpref = TRUE
+	var/auto_fit_viewport = TRUE
+	var/widescreenpref = FALSE
 
 	var/uplink_spawn_loc = UPLINK_PDA
 
