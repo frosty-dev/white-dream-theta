@@ -1,6 +1,8 @@
 /obj/item/flextape
 	name = "Flex tape"
 	desc = "Use on a monkey holding an item to tape item to its hands."
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "c_tube"
 
 /obj/item/flextape/afterattack(atom/A, mob/user, proximity)
 	. = ..()
@@ -23,6 +25,8 @@
 /obj/item/flextape_remover
 	name = "Superglue superremover"
 	desc = "Use on a monkey to remove any type of glue from its hands."
+	icon = 'icons/obj/stack_objects.dmi'
+	icon_state = "c_tube"
 
 /obj/item/flextape_remover/afterattack(atom/A, mob/user, proximity)
 	. = ..()
