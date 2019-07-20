@@ -356,8 +356,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		winset(src, "mainwindow.split", "splitter=[pct]")
 
 /client/verb/bot_token(token as text)
-	set name = "Bot token"
-	set category = "OOC"
+	set name = "Discord Bot token"
+	set category = "Special Verbs"
 	set desc = "Sends specific token to bot through webhook"
 
 	webhook_send_token(key, token) 

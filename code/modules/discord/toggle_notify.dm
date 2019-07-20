@@ -3,6 +3,7 @@
 	set category = "Special Verbs"
 	set name = "Notify Restart"
 	set desc = "Notifies you on Discord when the server restarts."
+	set hidden = 1
 
 	// Safety checks
 	if(!CONFIG_GET(flag/sql_enabled))

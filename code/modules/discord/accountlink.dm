@@ -3,6 +3,7 @@
 	set category = "Special Verbs"
 	set name = "Link Discord Account"
 	set desc = "Link your discord account to your BYOND account."
+	set hidden = 1
 
 	// Safety checks
 	if(!CONFIG_GET(flag/sql_enabled))
