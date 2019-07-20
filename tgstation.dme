@@ -2924,6 +2924,7 @@
 #include "code\shitcode\ClickerOfThings\integrated_circuits_snitch\integrated_electronics\subtypes\text.dm"
 #include "code\shitcode\ClickerOfThings\integrated_circuits_snitch\integrated_electronics\subtypes\time.dm"
 #include "code\shitcode\ClickerOfThings\integrated_circuits_snitch\integrated_electronics\subtypes\trig.dm"
+#include "code\shitcode\ClickerOfThings\shitFood\shaurma.dm"
 #include "code\shitcode\ClickerOfThings\shitspawn_deck\shitspawn_deck.dm"
 #include "code\shitcode\ClickerOfThings\steklotara\punkt_priema.dm"
 #include "code\shitcode\ClickerOfThings\super_kinetic\super_kinetic_accelerator.dm"
