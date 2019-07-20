@@ -1,9 +1,15 @@
 ## White Dream: New Hope
 
 **Website:** https://www.frosty.space
+
 **Code:** https://github.com/daxsc/White-Tgstation
+
 **Wiki:** https://tgstation13.org/wiki/Main_Page
+
 **Discord**: https://discord.gg/BNUgzsT
+
+**main /tg/ repo**: http://github.com/tgstation/tgstation
+
 
 ## MAPS
 
