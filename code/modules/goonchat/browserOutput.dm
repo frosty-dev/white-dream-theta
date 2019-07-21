@@ -217,8 +217,9 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("tmp/iconCache.sav")) //Cache of ico
 		message = replacetext(message, "\improper", "")
 		message = replacetext(message, "\proper", "")
 		message = replacetext(message, "\n", "<br>")
-		message = replacetext(message, "\t", "[GLOB.TAB][GLOB.TAB]")
+		message = replacetext(message, "\t", "[FOURSPACES][FOURSPACES]")
 		message = up2ph(message)
+
 
 	if(islist(target))
 		// Do the double-encoding outside the loop to save nanoseconds
