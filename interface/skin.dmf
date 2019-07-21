@@ -62,7 +62,7 @@ window "mainwindow"
 	elem "split"
 		type = CHILD
 		pos = 3,0
-		size = 634x456
+		size = 634x432
 		anchor1 = 0,0
 		anchor2 = 100,100
 		saved-params = "splitter"
