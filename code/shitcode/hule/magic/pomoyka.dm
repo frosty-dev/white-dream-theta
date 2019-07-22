@@ -1,6 +1,6 @@
 /turf/open/floor/plating/conc
 	name = "Магический бетон"
-	icon = 'code/shitcode/hule/magic/pomoyka/pomoyka.dmi'
+	icon = 'code/shitcode/hule/icons/obj/pomoyka.dmi'
 	icon_plating = "concrete0"
 	icon_state = "concrete0"
 
@@ -23,7 +23,7 @@
 
 /obj/structure/tyre
 	name = "Покрышка от ПАЗика"
-	icon = 'code/shitcode/hule/magic/pomoyka/pomoyka.dmi'
+	icon = 'code/shitcode/hule/icons/obj/pomoyka.dmi'
 	icon_state = "shina0"
 	desc = ""
 	resistance_flags = FLAMMABLE
@@ -44,7 +44,7 @@
 
 /obj/structure/tbin
 	name = "Мусорка"
-	icon = 'code/shitcode/hule/magic/pomoyka/pomoyka.dmi'
+	icon = 'code/shitcode/hule/icons/obj/pomoyka.dmi'
 	icon_state = "yashik_musor0"
 	resistance_flags = FIRE_PROOF
 	max_integrity = 400
@@ -153,7 +153,7 @@
 /obj/structure/pomoyka
 	name = "Сердце Помойки"
 	desc = ""
-	icon = 'code/shitcode/hule/magic/pomoyka/pomoyka.dmi'
+	icon = 'code/shitcode/hule/icons/obj/pomoyka.dmi'
 	icon_state = "fawkes"
 	anchored = TRUE
 	opacity = 0

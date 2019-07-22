@@ -1,11 +1,11 @@
 /obj/item/gun/ballistic/shotgun/boltaction/ptr
 	name = "AMATR M4ND4"
 	desc = "Ого етож антиматериальное противотанковое ружье M4ND4"
-	icon = 'code/shitcode/hule/weapons/weapons.dmi'
+	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
 	icon_state = "ptr"
 	item_state = "ptr"
-	lefthand_file = 'code/shitcode/hule/weapons/guns96_lefthand.dmi'
-	righthand_file = 'code/shitcode/hule/weapons/guns96_righthand.dmi'
+	lefthand_file = 'code/shitcode/hule/icons/onmob/guns96_l.dmi'
+	righthand_file = 'code/shitcode/hule/icons/onmob/guns96_r.dmi'
 	inhand_x_dimension = -32
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/intmagptr
 	can_bayonet = FALSE
@@ -19,7 +19,7 @@
 /obj/item/ammo_casing/a15mm
 	name = "15mm bullet casing"
 	desc = "A 15mm bullet casing."
-	icon = 'code/shitcode/hule/weapons/weapons.dmi'
+	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
 	icon_state = "15mm-casing"
 	caliber = "15mm"
 	projectile_type = /obj/item/projectile/bullet/a15mm
