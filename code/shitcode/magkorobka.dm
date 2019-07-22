@@ -49,7 +49,7 @@
 /obj/machinery/party/turntable
 	name = "Jukebox"
 	desc = "A jukebox is a partially automated music-playing device, usually a coin-operated machine, that will play a patron's selection from self-contained media."
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'code/shitcode/magkorobka.dmi'
 	icon_state = "jukebox"
 	var/obj/item/card/music/disk
 	var/playing = 0
@@ -74,7 +74,7 @@
 /obj/machinery/party/turntable/attackby(obj/O, mob/user)
 	if(istype(O, /obj/item/card/music) && !disk)
 		user.dropItemToGround(O)
-		O.loc = src
+		O.forceMove(src)
 		disk = O
 		attack_hand(user)
 	else if(istype(O, /obj/item/wrench))
@@ -241,7 +241,7 @@
 
 /obj/machinery/party/musicwriter
 	name = "Memories writer"
-	icon = 'icons/obj/stationobjs.dmi'
+	icon = 'code/shitcode/magkorobka.dmi'
 	icon_state = "writer_off"
 	var/coin = 0
 	//var/obj/item/weapon/disk/music/disk
