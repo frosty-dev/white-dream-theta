@@ -2949,6 +2949,7 @@
 #include "code\shitcode\hule\items\reagents\reagents.dm"
 #include "code\shitcode\hule\items\tools\flextape.dm"
 #include "code\shitcode\hule\items\tools\rcbl.dm"
+#include "code\shitcode\hule\items\weapons\bombshot.dm"
 #include "code\shitcode\hule\items\weapons\books.dm"
 #include "code\shitcode\hule\items\weapons\columbine.dm"
 #include "code\shitcode\hule\items\weapons\ptr.dm"

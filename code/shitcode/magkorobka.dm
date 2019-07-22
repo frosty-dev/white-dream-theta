@@ -1,5 +1,5 @@
 #define TURNTABLE_CHANNEL 10
-/*
+
 /*
 /mob/var/datum/hear_music/hear_music
 #define NONE_MUSIC 0
@@ -51,7 +51,7 @@
 	desc = "A jukebox is a partially automated music-playing device, usually a coin-operated machine, that will play a patron's selection from self-contained media."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "jukebox"
-	var/obj/item/weapon/disk/music/disk
+	var/obj/item/card/music/disk
 	var/playing = 0
 	var/datum/turntable_soundtrack/track = null
 	var/volume = 100
@@ -59,7 +59,7 @@
 	anchored = 1
 	density = 1
 
-/obj/machinery/party/turntable/New()
+/obj/machinery/party/turntable/Initialize()
 	..()
 	for(var/obj/machinery/party/turntable/TT) // NO WAY
 		if(TT != src)
@@ -72,18 +72,18 @@
 
 
 /obj/machinery/party/turntable/attackby(obj/O, mob/user)
-	if(istype(O, /obj/item/weapon/disk/music) && !disk)
-		//user.drop_item()
+	if(istype(O, /obj/item/card/music) && !disk)
+		user.dropItemToGround(O)
 		O.loc = src
 		disk = O
 		attack_hand(user)
 	else if(istype(O, /obj/item/wrench))
 		anchored = !anchored
 
-/obj/machinery/party/turntable/attack_paw(user as mob)
+/obj/machinery/party/turntable/attack_paw(mob/user)
 	return src.attack_hand(user)
 
-/obj/machinery/party/turntable/attack_hand(mob/living/user as mob)
+/obj/machinery/party/turntable/attack_hand(mob/user)
 	if (..())
 		return
 
@@ -168,10 +168,10 @@
 		create_sound(M)
 	update_sound()
 
-	var/area/A = get_area(src)
+	/*var/area/A = get_area(src)
 	for(var/area/RA in A.related)
 		for(var/obj/machinery/party/lasermachine/L in RA)
-			L.turnon(L.dir)
+			L.turnon(L.dir)*/
 
 	playing = 1
 	process()
@@ -184,10 +184,10 @@
 		M << sound(null, channel = TURNTABLE_CHANNEL, wait = 0)
 
 	playing = 0
-	var/area/A = get_area(src)
-	for(var/area/RA in A.related)
+/*	var/area/A = get_area(src)
+	/or(var/area/RA in A.related)
 		for(var/obj/machinery/party/lasermachine/L in RA)
-			L.turnoff()
+			L.turnoff()*/
 
 /obj/machinery/party/turntable/proc/set_volume(var/new_volume)
 	volume = max(0, min(100, new_volume))
@@ -197,25 +197,26 @@
 /obj/machinery/party/turntable/proc/update_sound(update = 0)
 	var/area/A = get_area(src)
 	for(var/mob/M)
-		var/inRange = (get_area(M) in A.related)
-		if(A == "Bar") 							 // kostuli kostulnie
+		var/inRange = get_area(M) //var/inRange = (get_area(M) in A.related)
+		/*if(A == "Bar")
 			var/area/crew_quarters/theatre/T
 			var/area/crew_quarters/kitchen/K
 			inRange+=(get_area(M) in K.related)
-			inRange+=(get_area(M) in T.related)
-		if(!M.music)
-			create_sound(M)
-			continue
-		if(inRange && (M.music.volume != volume || update))
-			//world << "In range. Volume: [M.music.volume]. Update: [update]"
-			M.music.status = SOUND_UPDATE//|SOUND_STREAM
-			M.music.volume = volume
-			M << M.music
-		else if(!inRange && M.music.volume != 0)
-			//world << "!In range. Volume: [M.music.volume]."
-			M.music.status = SOUND_UPDATE//|SOUND_STREAM
-			M.music.volume = 0
-			M << M.music
+			inRange+=(get_area(M) in T.related)*/
+		if(!A.outdoors)
+			if(!M.music)
+				create_sound(M)
+				continue
+			if(inRange && (M.music.volume != volume || update))
+				//world << "In range. Volume: [M.music.volume]. Update: [update]"
+				M.music.status = SOUND_UPDATE//|SOUND_STREAM
+				M.music.volume = volume
+				M << M.music
+			else if(!inRange && M.music.volume != 0)
+				//world << "!In range. Volume: [M.music.volume]."
+				M.music.status = SOUND_UPDATE//|SOUND_STREAM
+				M.music.volume = 0
+				M << M.music
 
 /obj/machinery/party/turntable/proc/create_sound(mob/M)
 	//var/area/A = get_area(src)
@@ -229,6 +230,73 @@
 	S.status = 0 //SOUND_STREAM
 	M.music = S
 	M << S
+
+/obj/item/card/music
+	icon_state = "data_3"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+	w_class = 1.0
+	var/datum/turntable_soundtrack/data
+	var/uploader_ckey
+
+/obj/machinery/party/musicwriter
+	name = "Memories writer"
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "writer_off"
+	var/coin = 0
+	//var/obj/item/weapon/disk/music/disk
+	var/mob/retard //current user
+	var/retard_name
+	var/writing = 0
+
+/obj/machinery/party/musicwriter/attackby(obj/O, mob/user)
+	if(istype(O, /obj/item/coin))
+		user.dropItemToGround(O)
+		qdel(O)
+		coin++
+
+/obj/machinery/party/musicwriter/attack_hand(mob/user)
+	var/dat = ""
+	if(writing)
+		dat += "Memory scan completed. <br>Writing from scan of [retard_name] mind... Please Stand By."
+	else if(!coin)
+		dat += "Please insert a coin."
+	else
+		dat += "<A href='?src=\ref[src];write=1'>Write</A>"
+
+	user << browse(dat, "window=musicwriter;size=200x100")
+	onclose(user, "onclose")
+	return
+
+/obj/machinery/party/musicwriter/Topic(href, href_list)
+	if(href_list["write"])
+		if(!writing && !retard && coin)
+			icon_state = "writer_on"
+			writing = 1
+			retard = usr
+			retard_name = retard.name
+			var/N = sanitize(input("Name of music") as text|null)
+			//retard << "Please stand still while your data is uploading"
+			if(N)
+				var/sound/S = input("Your music file") as sound|null
+				if(S)
+					var/datum/turntable_soundtrack/T = new
+					var/obj/item/card/music/disk = new
+					T.path = S
+					T.f_name = copytext(N, 1, 2)
+					T.name = copytext(N, 2)
+					disk.data = T
+					disk.name = "disk ([N])"
+					disk.loc = src.loc
+					disk.uploader_ckey = retard.ckey
+					var/mob/M = usr
+					message_admins("[M.real_name]([M.ckey]) uploaded <A HREF='?_src_=holder;listensound=\ref[S]'>sound</A> named as [N]. <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
+			icon_state = "writer_off"
+			writing = 0
+			coin -= 1
+			retard = null
+			retard_name = null
+
 
 /*
 /obj/machinery/party/mixer
@@ -371,70 +439,4 @@
 /obj/machinery/party/lasermachine/Move()
 	..()
 	turnon(src.dir)
-
-/obj/item/weapon/disk/music
-	icon = 'icons/obj/clothing.dmi'
-	icon_state = "datadisk2"
-	item_state = "card-id"
-	w_class = 1.0
-
-	var/datum/turntable_soundtrack/data
-	var/uploader_ckey
-*/
-/obj/machinery/party/musicwriter
-	name = "Memories writer"
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "writer"
-	var/coin = 0
-	//var/obj/item/weapon/disk/music/disk
-	var/mob/retard //current user
-	var/retard_name
-	var/writing = 0
-
-/obj/machinery/party/musicwriter/attackby(obj/O, mob/user)
-	if(istype(O, /obj/item/coin))
-		qdel(O)
-		coin++
-
-/obj/machinery/party/musicwriter/attack_hand(mob/user)
-	var/dat = ""
-	if(writing)
-		dat += "Memory scan completed. <br>Writing from scan of [retard_name] mind... Please Stand By."
-	else if(!coin)
-		dat += "Please insert a coin."
-	else
-		dat += "<A href='?src=\ref[src];write=1'>Write</A>"
-
-	user << browse(dat, "window=musicwriter;size=200x100")
-	onclose(user, "onclose")
-	return
-
-/obj/machinery/party/musicwriter/Topic(href, href_list)
-	if(href_list["write"])
-		if(!writing && !retard && coin)
-			icon_state = "writer"
-			writing = 1
-			retard = usr
-			retard_name = retard.name
-			var/N = sanitize(input("Name of music") as text|null)
-			//retard << "Please stand still while your data is uploading"
-			if(N)
-				var/sound/S = input("Your music file") as sound|null
-				if(S)
-					var/datum/turntable_soundtrack/T = new()
-					var/obj/item/weapon/disk/music/disk = new()
-					T.path = S
-					T.f_name = copytext(N, 1, 2)
-					T.name = copytext(N, 2)
-					disk.data = T
-					disk.name = "disk ([N])"
-					disk.loc = src.loc
-					disk.uploader_ckey = retard.ckey
-					var/mob/M = usr
-					message_admins("[M.real_name]([M.ckey]) uploaded <A HREF='?_src_=holder;listensound=\ref[S]'>sound</A> named as [N]. <A HREF='?_src_=holder;wipedata=\ref[disk]'>Wipe</A> data.")
-			icon_state = "writer"
-			writing = 0
-			coin -= 1
-			retard = null
-			retard_name = null
 */
