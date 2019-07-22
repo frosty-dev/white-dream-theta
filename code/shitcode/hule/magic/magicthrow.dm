@@ -84,7 +84,7 @@
 
 /obj/item/projectile/magic/tileacc
 	name = "spinning tile"
-	icon = 'code/shitcode/hule/magic/magicthrow/magicthrow.dmi'
+	icon = 'code/shitcode/hule/icons/projectiles/magicthrow.dmi'
 	icon_state = "tile"
 	damage = 20
 	damage_type = BRUTE
