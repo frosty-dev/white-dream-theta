@@ -289,8 +289,8 @@
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	add_fingerprint(user)
 
-	if(semicd)
-		return
+	//if(semicd)
+	//	return
 
 	var/sprd = 0
 	var/randomized_gun_spread = 0
@@ -502,8 +502,8 @@
 	if(!ishuman(user) || !ishuman(target))
 		return
 
-	if(semicd)
-		return
+	//if(semicd)
+	//	return
 
 	if(user == target)
 		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
