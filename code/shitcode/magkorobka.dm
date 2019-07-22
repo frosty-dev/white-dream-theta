@@ -1,5 +1,5 @@
 #define TURNTABLE_CHANNEL 10
-
+/*
 /*
 /mob/var/datum/hear_music/hear_music
 #define NONE_MUSIC 0
@@ -437,3 +437,4 @@
 			coin -= 1
 			retard = null
 			retard_name = null
+*/
