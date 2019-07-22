@@ -1,44 +1,5 @@
 #define TURNTABLE_CHANNEL 10
 
-/*
-/mob/var/datum/hear_music/hear_music
-#define NONE_MUSIC 0
-#define UPLOADING 1
-#define PLAYING 2
-/datum/hear_music
-	var/mob/target = null
-	//var/sound/sound
-	var/status = NONE_MUSIC
-	var/stop = 0
-	proc/play(sound/S)
-		status = NONE_MUSIC
-		if(!target)
-			return
-		if(!S)
-			return
-		status = UPLOADING
-		target << browse_rsc(S)
-		//sound = S
-		if(target.hear_music != src)
-			qdel(src)
-		if(!stop)
-			target << S
-			status = PLAYING
-		else
-			qdel(src)
-	proc/stop()
-		if(!target)
-			return
-		if(status == PLAYING)
-			var/sound/S = sound(null)
-			S.channel = 10
-			S.wait = 1
-			target << S
-			qdel(src)
-		else if(status == UPLOADING)
-			stop = 1
-		target.hear_music = null
-*/
 /mob/var/sound/music
 
 /datum/turntable_soundtrack
@@ -90,7 +51,7 @@
 	usr.set_machine(src)
 	src.add_fingerprint(usr)
 
-	var/t = "<body background='turntable_back.jpg'><br><br><br><div align='center'><table border='0'><B><font color='maroon' size='6'>J</font><font size='5' color='purple'>uke Box</font> <font size='5' color='green'>Interface</font></B><br><br><br><br>"
+	var/t = "<body background=''><br><br><br><div align='center'><table border='0'><B><font color='maroon' size='6'>J</font><font size='5' color='purple'>uke Box</font> <font size='5' color='green'>Interface</font></B><br><br><br><br>"
 	t += "<A href='?src=\ref[src];on=1'>On</A><br>"
 	if(disk)
 		t += "<A href='?src=\ref[src];eject=1'>Eject disk</A><br>"
@@ -197,22 +158,22 @@
 /obj/machinery/party/turntable/proc/update_sound(update = 0)
 	var/area/A = get_area(src)
 	for(var/mob/M)
-		var/inRange = get_area(M) //var/inRange = (get_area(M) in A.related)
+		var/area/inRange = get_area(M) //var/inRange = (get_area(M) in A.related)
 		/*if(A == "Bar")
 			var/area/crew_quarters/theatre/T
 			var/area/crew_quarters/kitchen/K
 			inRange+=(get_area(M) in K.related)
 			inRange+=(get_area(M) in T.related)*/
-		if(!A.outdoors)
+		if(!A.outdoors && !inRange.outdoors)
 			if(!M.music)
 				create_sound(M)
 				continue
-			if(inRange && (M.music.volume != volume || update))
+			if(inRange == A && (M.music.volume != volume || update))
 				//world << "In range. Volume: [M.music.volume]. Update: [update]"
 				M.music.status = SOUND_UPDATE//|SOUND_STREAM
 				M.music.volume = volume
 				M << M.music
-			else if(!inRange && M.music.volume != 0)
+			else if(inRange != A && M.music.volume != 0)
 				//world << "!In range. Volume: [M.music.volume]."
 				M.music.status = SOUND_UPDATE//|SOUND_STREAM
 				M.music.volume = 0
@@ -439,4 +400,45 @@
 /obj/machinery/party/lasermachine/Move()
 	..()
 	turnon(src.dir)
+*/
+
+
+/*
+/mob/var/datum/hear_music/hear_music
+#define NONE_MUSIC 0
+#define UPLOADING 1
+#define PLAYING 2
+/datum/hear_music
+	var/mob/target = null
+	//var/sound/sound
+	var/status = NONE_MUSIC
+	var/stop = 0
+	proc/play(sound/S)
+		status = NONE_MUSIC
+		if(!target)
+			return
+		if(!S)
+			return
+		status = UPLOADING
+		target << browse_rsc(S)
+		//sound = S
+		if(target.hear_music != src)
+			qdel(src)
+		if(!stop)
+			target << S
+			status = PLAYING
+		else
+			qdel(src)
+	proc/stop()
+		if(!target)
+			return
+		if(status == PLAYING)
+			var/sound/S = sound(null)
+			S.channel = 10
+			S.wait = 1
+			target << S
+			qdel(src)
+		else if(status == UPLOADING)
+			stop = 1
+		target.hear_music = null
 */
