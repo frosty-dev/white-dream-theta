@@ -51,7 +51,7 @@
 
 /obj/item/projectile/magic/rodacc
 	name = "accelerating rod"
-	icon = 'code/shitcode/hule/magic/magicthrow/magicthrow.dmi'
+	icon = 'code/shitcode/hule/icons/projectiles/magicthrow.dmi'
 	icon_state = "rod"
 	range = 500
 	damage = 10

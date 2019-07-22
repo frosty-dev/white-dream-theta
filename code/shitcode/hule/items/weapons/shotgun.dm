@@ -1,7 +1,7 @@
 /obj/item/gun/ballistic/automatic/shotgun/small
 	name = "netu"
 	desc = "netu"
-	icon = 'code/shitcode/hule/weapons/weapons.dmi'
+	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
 	icon_state = "smshotgun"
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
@@ -33,7 +33,7 @@
 /obj/item/ammo_box/magazine/m4s12g
 	name = "shotgun magazine"
 	desc = "A shotgun magazine."
-	icon = 'code/shitcode/hule/weapons/weapons.dmi'
+	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
 	icon_state = "m4s12g"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"

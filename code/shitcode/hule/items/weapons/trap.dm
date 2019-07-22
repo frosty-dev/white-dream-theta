@@ -13,7 +13,7 @@
 	name = "–астяжка ебать"
 	desc = "ѕиздец, не подходи - убьет!"
 	icon_state = "boobytrap"
-	icon = 'code/shitcode/hule/weapons/weapons.dmi'
+	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
 	anchored = TRUE
 	can_buckle = TRUE
 	buckle_lying = TRUE
