@@ -10,6 +10,20 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/intmagptr
 	can_bayonet = FALSE
 
+/obj/item/gun/ballistic/rifle/boltaction/ptr/examine(mob/user)
+	. = ..()
+	var/HC = 0
+	for(var/obj/item/bodypart/head/H in contents)
+		HC++
+	. += "<span class='notice'>Ружье поглотило [HC] голов.\nИспользуйте монтировку для экстракции голов.</span>"
+
+/obj/item/gun/ballistic/rifle/boltaction/ptr/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(istype(W, /obj/item/crowbar))
+		to_chat(user, "Вы опустошаете головохранилище винтовки.")
+		var/turf/T = get_turf(user)
+		for(var/obj/item/bodypart/head/H in contents)
+			H.forceMove(T)
 
 /obj/item/ammo_box/magazine/internal/boltaction/intmagptr
 	max_ammo = 1
@@ -33,6 +47,8 @@
 
 /obj/item/projectile/bullet/a15mm/on_hit(atom/target)
 	. = ..()
+	var/obj/item/gun/ballistic/rifle/boltaction/ptr/G = fired_from
+
 	if(istype(target, /obj/mecha))
 		target.ex_act(EXPLODE_HEAVY)
 		playsound(src,'code/shitcode/hule/SFX/probitie.ogg', 100, 5, pressure_affected = FALSE)
@@ -40,9 +56,11 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
 		if(def_zone == BODY_ZONE_HEAD)
-			var/obj/item/bodypart/head/head = C.get_bodypart(BODY_ZONE_HEAD)
-			head.drop_limb()
 			playsound(src,'code/shitcode/hule/SFX/headshot.ogg', 100, 5, pressure_affected = FALSE)
+			var/obj/item/bodypart/head/H = C.get_bodypart(BODY_ZONE_HEAD)
+			H.drop_limb()
+			H.forceMove(G)
+			to_chat(C, "<span class='userdanger'>Вашу голову поглотило антиматериальное противотанковое ружье M4ND4!</span>")
 		if(def_zone == BODY_ZONE_CHEST)
 			if(prob(30))
 				if(C.getorganslot(ORGAN_SLOT_HEART))
@@ -76,7 +94,7 @@
 	suit = /obj/item/clothing/suit/space/hostile_environment
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat/maggloves
-	head = /obj/item/clothing/head/helmet/space/hostile_environment
+	head = /obj/item/clothing/head/soft/black
 	mask = /obj/item/clothing/mask/gas/anonist
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
 	r_hand = /obj/item/gun/ballistic/rifle/boltaction/ptr

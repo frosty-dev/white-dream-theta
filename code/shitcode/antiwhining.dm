@@ -8,10 +8,10 @@
 /proc/whiningcheck(var/client/C, var/msg)
 	msg = lowertext(msg)
 
-	var/list/T1I = list("новотг","тг","тгшники","вайт","дизарм","дня")
+	var/list/T1I = list("новотг","тг","тгшники","вайт","дизарм","дня","билд")
 	var/list/T1W = list("гринотг","гринтг","тгрин","грин")
 
-	var/list/T2I = list("говно","ссанина","менять","пиздец")
+	var/list/T2I = list("говно","ссанина","менять","пиздец","параша")
 	var/list/T2W = list("лучше","раньше")
 
 	var/list/ML = splittext(msg, " ")
