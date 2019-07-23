@@ -35,6 +35,8 @@
 	. = ..()
 	if(istype(target, /obj/mecha))
 		target.ex_act(EXPLODE_HEAVY)
+		playsound(src,'code/shitcode/hule/SFX/probitie.ogg', 100, 5, pressure_affected = FALSE)
+
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
 		if(def_zone == BODY_ZONE_HEAD)
