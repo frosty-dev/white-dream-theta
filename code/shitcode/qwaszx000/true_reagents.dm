@@ -1579,33 +1579,30 @@ Realistic chem by qwaszx000
 //to work with elem do new(name)
 /proc/getMetalElements()
 	var/list/rl = subtypesof(/datum/reagent/tru) - /datum/reagent/tru
-	var/metals = new/list()
 	for(var/r in rl)
 		var/datum/reagent/tru/R = new r
 		R.create_data()
 		if(R.isMetal)
-			metals += r
+			GLOB.metals += r
 		del(R)
-	return metals
+	return
 
 //returns list of string.
 //string is name(/datum/reagent/tru/*)
 //to work with elem do new(name)
 /proc/getNonMetalElements()
 	var/list/rl = subtypesof(/datum/reagent/tru)
-	var/nonMetals = new/list()
 	for(var/r in rl)
 		var/datum/reagent/tru/R = new(r)
 		R.create_data()
 		if(!R.isMetal)
-			nonMetals += r
+			GLOB.nonMetals += r
 		del(R)
-	return nonMetals
+	return
 
 //-----------------------------------------------
-var/metals 	  = getMetalElements()
-var/nonMetals = getNonMetalElements()
-var/allReagents = metals + nonMetals
+GLOBAL_LIST_EMPTY(metals) 	 = getMetalElements()
+GLOBAL_LIST_EMPTY(nonMetals) = getNonMetalElements()
 //-------------conteiners-----------------
 /obj/item/reagent_containers/glass/bottle/carbon_tru
 	name = "Carbon bottle"

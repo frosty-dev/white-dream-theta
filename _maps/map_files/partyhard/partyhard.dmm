@@ -2018,7 +2018,6 @@
 /obj/machinery/button/door{
 	id = "xenobiomain";
 	name = "Containment Blast Doors";
-	pixel_x = 0;
 	pixel_y = 28;
 	req_access_txt = "55"
 	},
@@ -3696,7 +3695,6 @@
 	id = "robotics";
 	name = "Shutters Control Button";
 	pixel_x = -24;
-	pixel_y = 0;
 	req_access_txt = "29"
 	},
 /obj/machinery/aug_manipulator,
