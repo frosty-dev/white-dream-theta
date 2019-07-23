@@ -1,4 +1,4 @@
-/obj/item/gun/ballistic/shotgun/boltaction/ptr
+/obj/item/gun/ballistic/rifle/boltaction/ptr
 	name = "AMATR M4ND4"
 	desc = "Ого етож антиматериальное противотанковое ружье M4ND4"
 	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
@@ -61,6 +61,34 @@
 	suit = /obj/item/clothing/suit/armor/vest/leather
 	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/soft/black
-	suit_store = /obj/item/gun/ballistic/shotgun/boltaction/ptr
+	suit_store = /obj/item/gun/ballistic/rifle/boltaction/ptr
 	l_pocket = /obj/item/switchblade
+	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(/obj/item/ammo_box/a15mm = 3, /obj/item/grenade/syndieminibomb/concussion = 2, /obj/item/grenade/plastic/c4 = 1)
+
+/datum/outfit/asshunter
+	name = "Okhotnik Na Pedikov"
+
+	glasses = /obj/item/clothing/glasses/sunglasses
+	uniform = /obj/item/clothing/under/syndicate
+	suit = /obj/item/clothing/suit/space/hostile_environment
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat/maggloves
+	head = /obj/item/clothing/head/helmet/space/hostile_environment
+	mask = /obj/item/clothing/mask/gas/anonist
+	suit_store = /obj/item/tank/internals/emergency_oxygen/double
+	r_hand = /obj/item/gun/ballistic/rifle/boltaction/ptr
+	id = /obj/item/card/id/silver/reaper
+	l_pocket = /obj/item/switchblade
+	back = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(	/obj/item/ammo_box/a15mm = 3,
+								/obj/item/grenade/syndieminibomb/concussion = 2,
+								/obj/item/grenade/plastic/c4 = 1,
+								/obj/item/book/granter/spell/knock = 1,
+								/obj/item/book/granter/spell/summonitem = 1,
+								/obj/item/book/granter/martial/cqc = 1,
+								/obj/item/tank/internals/emergency_oxygen/double = 1
+
+
+
+								)

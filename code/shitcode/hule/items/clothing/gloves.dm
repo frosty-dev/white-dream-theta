@@ -11,7 +11,7 @@
 	active = !active
 	if(active)
 		for(var/obj/item/I in usr.held_items)
-			if(!(I.has_trait(TRAIT_NODROP)))
+			if(!(HAS_TRAIT(I,TRAIT_NODROP)))
 				stored_items += I
 
 		var/list/L = usr.get_empty_held_indexes()
@@ -22,7 +22,7 @@
 		else
 			for(var/obj/item/I in stored_items)
 				to_chat(usr, "<span class='notice'>Your [usr.get_held_index_name(usr.get_held_index_of_item(I))]'s grip tightens.</span>")
-				I.add_trait(TRAIT_NODROP)
+				ADD_TRAIT(I,TRAIT_NODROP, "mag-grip")
 
 	else
 		release_items()
@@ -30,7 +30,7 @@
 
 /obj/item/clothing/gloves/combat/maggloves/proc/release_items()
 	for(var/obj/item/I in stored_items)
-		I.remove_trait(TRAIT_NODROP)
+		REMOVE_TRAIT(I,TRAIT_NODROP, "mag-grip")
 	stored_items = list()
 
 /obj/item/clothing/gloves/combat/maggloves/dropped(mob/user)
