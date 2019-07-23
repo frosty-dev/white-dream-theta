@@ -59,4 +59,22 @@
 
 
 
+/*
+possible quest items
+/obj/item/organ/tongue/zombie - box whiteship
+/obj/item/kitchen/knife/envy
+/obj/item/clockwork/weapon/ratvarian_spear
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate
+/obj/item/gun/energy/laser/retro
+/obj/item/toy/plush/awakenedplushie
+/obj/item/stack/ore/bananium
+/obj/item/hilbertshotel
+/obj/item/paper/guides/antag/abductor
+/obj/item/circuitboard/machine/clonepod/experimental
+/obj/item/clothing/under/rank/centcom_officer
+/obj/item/coin/bananium
+/obj/item/gun/ballistic/automatic/pistol/m1911
 
+
+
+*/
