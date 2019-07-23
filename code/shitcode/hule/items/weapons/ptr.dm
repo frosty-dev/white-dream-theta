@@ -46,15 +46,7 @@
 		if(def_zone == BODY_ZONE_CHEST)
 			if(prob(30))
 				if(C.getorganslot(ORGAN_SLOT_HEART))
-					var/list/elligible_organs = list()
-					for(var/obj/item/organ/O in internal_organs) //make sure we dont get an implant or cavity item
-						elligible_organs += O
-					if(elligible_organs.len)
-						var/obj/item/organ/O = pick(elligible_organs)
-						O.Remove(src)
-						O.forceMove(drop_location())
-						if(prob(20))
-							O.animate_atom_living()
+					C.getorganslot(ORGAN_SLOT_HEART).Remove(special = 1)
 
 /obj/item/ammo_box/a15mm
 	name = "ammo box (15mm)"
