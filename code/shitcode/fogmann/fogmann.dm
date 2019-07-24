@@ -106,7 +106,7 @@ obj/item/banner/engineering/atmos/mundane
 	desc = "Dryed fish with tomatoes. S vodoi v samiy raz."
 	icon = 'code/shitcode/pieceofcrap.dmi'
 	icon_state = "roasted"
-	list_reagents = list("nutriment" = 5, "carpotoxin" = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/toxin/carpotoxin = 3)
 	bitesize = 2
 	filling_color = "#000000"
 	tastes = list("fish" = 1, "tomato" = 1)
@@ -117,7 +117,7 @@ obj/item/banner/engineering/atmos/mundane
 	desc = "Just dryed fish. S pivkom v samiy raz."
 	icon = 'code/shitcode/pieceofcrap.dmi'
 	icon_state = "dry"
-	list_reagents = list("nutriment" = 1, "carpotoxin" = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/carpotoxin = 1)
 	bitesize = 2
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1)
