@@ -253,9 +253,3 @@ proc/build_prizes_list()
 		D.show()
 	else
 		to_chat(src,"<span class='warning'>You have not donated or donations database is inaccessible.</span>")
-
-
-//SPECIAL ITEMS
-/obj/item/reagent_containers/food/drinks/drinkingglass/threemileisland/New()
-	..()
-	reagents.add_reagent("threemileisland", 50)
