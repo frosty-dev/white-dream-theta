@@ -1,4 +1,4 @@
-GLOBAL_VAR_INIT(webhook_can_fire, 1)
+GLOBAL_VAR_INIT(webhook_can_fire, 0)
 
 /proc/webhook_send_roundstatus(var/status, var/extraData)
 	var/list/query = list("status" = status)
