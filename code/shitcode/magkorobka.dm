@@ -19,7 +19,6 @@
 	var/list/turntable_soundtracks = list()
 	var/time = 0
 	var/cooldown = 0
-	var/rang = 14
 	anchored = 1
 	density = 1
 
