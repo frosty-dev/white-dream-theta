@@ -100,6 +100,7 @@
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
 	r_hand = /obj/item/gun/ballistic/rifle/boltaction/ptr
 	id = /obj/item/card/id/silver/reaper
+	can_be_admin_equipped = FALSE
 	l_pocket = /obj/item/switchblade
 	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(	/obj/item/ammo_box/a15mm = 3,
