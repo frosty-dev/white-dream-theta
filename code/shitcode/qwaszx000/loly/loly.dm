@@ -60,8 +60,10 @@
 	name = "Loly"
 	id = "loly"
 	limbs_id = "loly"
-	mutant_bodyparts = list(/obj/item/bodypart/chest/loly, /obj/item/bodypart/head/loly, /obj/item/bodypart/l_arm/loly,
-/obj/item/bodypart/r_arm/loly, /obj/item/bodypart/r_leg/loly, /obj/item/bodypart/l_leg/loly)
+
+	changesource_flags = MIRROR_BADMIN
+
+	mutant_bodyparts = list(/obj/item/bodypart/chest/loly, /obj/item/bodypart/head/loly, /obj/item/bodypart/l_arm/loly, /obj/item/bodypart/r_arm/loly, /obj/item/bodypart/r_leg/loly, /obj/item/bodypart/l_leg/loly)
 
 	var/list/hand_mutaparts = list(/obj/item/bodypart/l_arm/loly, /obj/item/bodypart/r_arm/loly)
 
