@@ -279,6 +279,9 @@ Example config:
 			policy = parsed
 
 /datum/controller/configuration/proc/loadmaplist(filename)
+
+	GLOB.webhook_cant_fire = 1 //lazy motherfucker
+
 	log_config("Loading config file [filename]...")
 	filename = "[directory]/[filename]"
 	var/list/Lines = world.file2list(filename)

@@ -1,3 +1,5 @@
+GLOBAL_VAR_INIT(webhook_cant_fire, 1)
+
 /proc/webhook_send_roundstatus(var/status, var/extraData)
 	var/list/query = list("status" = status)
 
@@ -39,7 +41,9 @@
 	webhook_send("status_update", query)
 
 /proc/webhook_send(var/method, var/data)
-	if(!CONFIG_GET(string/webhook_address) || !CONFIG_GET(string/webhook_key))
+	if (GLOB.webhook_cant_fire)
+		return
+	if (!CONFIG_GET(string/webhook_address) || !CONFIG_GET(string/webhook_key))
 		return
 	var/query = "[CONFIG_GET(string/webhook_address)]?key=[CONFIG_GET(string/webhook_key)]&method=[method]&data=[url_encode(r_json_encode(data))]"
 	spawn(-1)
