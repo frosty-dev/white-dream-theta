@@ -13,7 +13,6 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "e" = (
-/obj/effect/mob_spawn/human/doom_slayer,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "f" = (
@@ -47,7 +46,6 @@
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "m" = (
-/obj/item/twohanded/required/kinetic_crusher,
 /turf/open/floor/pod/dark,
 /area/ruin/powered)
 "n" = (
