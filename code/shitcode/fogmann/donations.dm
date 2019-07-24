@@ -36,7 +36,6 @@ Premium Havanian Cigar:/obj/item/clothing/mask/cigarette/cigar/havana:130
 E-Cigarette:/obj/item/clothing/mask/vape:150
 Beer bottle:/obj/item/reagent_containers/food/drinks/beer:80
 Captain flask:/obj/item/reagent_containers/food/drinks/flask:200
-Three Mile Island Ice Tea:/obj/item/reagent_containers/food/drinks/drinkingglass/threemileisland:100
 Red glasses:/obj/item/clothing/glasses/red:180
 Waistcoat:/obj/item/clothing/tie/waistcoat:85
 Cloak:/obj/item/clothing/neck/cloak:190
