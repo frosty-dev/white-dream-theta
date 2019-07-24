@@ -1,4 +1,4 @@
-GLOBAL_VAR_INIT(webhook_cant_fire, 1)
+GLOBAL_VAR_INIT(webhook_can_fire, 1)
 
 /proc/webhook_send_roundstatus(var/status, var/extraData)
 	var/list/query = list("status" = status)
@@ -41,7 +41,7 @@ GLOBAL_VAR_INIT(webhook_cant_fire, 1)
 	webhook_send("status_update", query)
 
 /proc/webhook_send(var/method, var/data)
-	if (GLOB.webhook_cant_fire)
+	if (!GLOB.webhook_can_fire)
 		return
 	if (!CONFIG_GET(string/webhook_address) || !CONFIG_GET(string/webhook_key))
 		return

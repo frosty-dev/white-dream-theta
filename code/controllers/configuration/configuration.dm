@@ -280,7 +280,7 @@ Example config:
 
 /datum/controller/configuration/proc/loadmaplist(filename)
 
-	GLOB.webhook_cant_fire = 1 //lazy motherfucker
+	GLOB.webhook_can_fire = 1 //lazy motherfucker
 
 	log_config("Loading config file [filename]...")
 	filename = "[directory]/[filename]"
