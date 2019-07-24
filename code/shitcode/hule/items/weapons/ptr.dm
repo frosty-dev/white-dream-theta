@@ -51,16 +51,17 @@
 
 	if(istype(target, /obj/mecha))
 		target.ex_act(EXPLODE_HEAVY)
+		playsound(G,'code/shitcode/hule/SFX/probitie.ogg', 100, 5, pressure_affected = FALSE)
 		playsound(src,'code/shitcode/hule/SFX/probitie.ogg', 100, 5, pressure_affected = FALSE)
 
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
 		if(def_zone == BODY_ZONE_HEAD)
-			playsound(src,'code/shitcode/hule/SFX/headshot.ogg', 100, 5, pressure_affected = FALSE)
 			var/obj/item/bodypart/head/H = C.get_bodypart(BODY_ZONE_HEAD)
+			to_chat(C, "<span class='userdanger'>Вашу голову поглотило антиматериальное противотанковое ружье M4ND4!</span>")
 			H.drop_limb()
 			H.forceMove(G)
-			to_chat(C, "<span class='userdanger'>Вашу голову поглотило антиматериальное противотанковое ружье M4ND4!</span>")
+			playsound(G,'code/shitcode/hule/SFX/headshot.ogg', 100, 5, pressure_affected = FALSE)
 		if(def_zone == BODY_ZONE_CHEST)
 			if(prob(30))
 				if(C.getorganslot(ORGAN_SLOT_HEART))

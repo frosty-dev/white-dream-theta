@@ -18,8 +18,8 @@
 	var/volume = 100
 	var/list/turntable_soundtracks = list()
 	var/time = 0
-	var/range = 10
-	var/cooldown = 50
+	var/cooldown = 0
+	var/rang = 14
 	anchored = 1
 	density = 1
 
@@ -117,9 +117,14 @@
 			disk = null
 
 /obj/machinery/party/turntable/process()
-	time++
-	if(playing && time == cooldown)
-		time = 0
+	if(cooldown)
+		time++
+		if(time >= cooldown)
+			time = 0
+		else
+			return
+
+	if(playing)
 		update_sound()
 
 /obj/machinery/party/turntable/proc/turn_on(var/datum/turntable_soundtrack/selected)
@@ -162,35 +167,28 @@
 
 /obj/machinery/party/turntable/proc/update_sound(update = 0)
 	var/area/A = get_area(src)
-
-	if(A.outdoors)
-		return
-
-	var/list/rng = range(range)
 	for(var/mob/M)
-		//var/area/MArea = get_area(M) //var/inRange = (get_area(M) in A.related)
-		/*if(A == "Bar")
-			var/area/crew_quarters/theatre/T
-			var/area/crew_quarters/kitchen/K
-			inRange+=(get_area(M) in K.related)
-			inRange+=(get_area(M) in T.related)*/
-		if(!M.mind)
-			return
+		if(!M.client)
+			continue
 
 		if(!M.music)
 			create_sound(M)
 			continue
 
-		if((M in rng) && (M.music.volume != volume || update))
-			//world << "In range. Volume: [M.music.volume]. Update: [update]"
+		var/area/MA = get_area(M)
+
+		if(MA == A && (M.music.volume != volume || update))
+			to_chat(M, "<span class='notice'>In range. Volume: [M.music.volume]. Update: [update]</span>")
 			M.music.status = SOUND_UPDATE//|SOUND_STREAM
 			M.music.volume = volume
 			SEND_SOUND(M, M.music)
-		else if(M.music.volume != 0)
-			//world << "!In range. Volume: [M.music.volume]."
+
+		else if(MA != A && M.music.volume != 0)
+			to_chat(M, "<span class='notice'>!In range. Volume: [M.music.volume].</span>")
 			M.music.status = SOUND_UPDATE//|SOUND_STREAM
 			M.music.volume = 0
 			SEND_SOUND(M, M.music)
+
 
 /obj/machinery/party/turntable/proc/create_sound(mob/M)
 	//var/area/A = get_area(src)
