@@ -823,6 +823,6 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 //json decode that will return null on parse error instead of runtiming.
 /proc/safe_json_decode(data)
 	try
-		return json_decode(data)
+		return r_json_decode(data)
 	catch
 		return
