@@ -74,6 +74,7 @@ possible quest items
 /obj/item/clothing/under/rank/centcom_officer
 /obj/item/coin/bananium
 /obj/item/gun/ballistic/automatic/pistol/m1911
+/obj/item/paper/secretrecipe
 
 
 

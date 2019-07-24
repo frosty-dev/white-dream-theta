@@ -17,6 +17,8 @@
 	var/datum/turntable_soundtrack/track = null
 	var/volume = 100
 	var/list/turntable_soundtracks = list()
+	var/time = 0
+	var/cooldown = 0
 	anchored = 1
 	density = 1
 
@@ -114,6 +116,13 @@
 			disk = null
 
 /obj/machinery/party/turntable/process()
+	if(cooldown)
+		time++
+		if(time >= cooldown)
+			time = 0
+		else
+			return
+
 	if(playing)
 		update_sound()
 
@@ -142,7 +151,7 @@
 		return
 	for(var/mob/M)
 		M.music = null
-		M << sound(null, channel = TURNTABLE_CHANNEL, wait = 0)
+		SEND_SOUND(M, sound(null, channel = TURNTABLE_CHANNEL, wait = 0))
 
 	playing = 0
 /*	var/area/A = get_area(src)
@@ -158,26 +167,27 @@
 /obj/machinery/party/turntable/proc/update_sound(update = 0)
 	var/area/A = get_area(src)
 	for(var/mob/M)
-		var/area/inRange = get_area(M) //var/inRange = (get_area(M) in A.related)
-		/*if(A == "Bar")
-			var/area/crew_quarters/theatre/T
-			var/area/crew_quarters/kitchen/K
-			inRange+=(get_area(M) in K.related)
-			inRange+=(get_area(M) in T.related)*/
-		if(!A.outdoors && !inRange.outdoors)
-			if(!M.music)
-				create_sound(M)
-				continue
-			if(inRange == A && (M.music.volume != volume || update))
-				//world << "In range. Volume: [M.music.volume]. Update: [update]"
-				M.music.status = SOUND_UPDATE//|SOUND_STREAM
-				M.music.volume = volume
-				M << M.music
-			else if(inRange != A && M.music.volume != 0)
-				//world << "!In range. Volume: [M.music.volume]."
-				M.music.status = SOUND_UPDATE//|SOUND_STREAM
-				M.music.volume = 0
-				M << M.music
+		if(!M.client)
+			continue
+
+		if(!M.music)
+			create_sound(M)
+			continue
+
+		var/area/MA = get_area(M)
+
+		if(MA == A && (M.music.volume != volume || update))
+			to_chat(M, "<span class='notice'>In range. Volume: [M.music.volume]. Update: [update]</span>")
+			M.music.status = SOUND_UPDATE//|SOUND_STREAM
+			M.music.volume = volume
+			SEND_SOUND(M, M.music)
+
+		else if(MA != A && M.music.volume != 0)
+			to_chat(M, "<span class='notice'>!In range. Volume: [M.music.volume].</span>")
+			M.music.status = SOUND_UPDATE//|SOUND_STREAM
+			M.music.volume = 0
+			SEND_SOUND(M, M.music)
+
 
 /obj/machinery/party/turntable/proc/create_sound(mob/M)
 	//var/area/A = get_area(src)
@@ -190,7 +200,7 @@
 	S.volume = 0
 	S.status = 0 //SOUND_STREAM
 	M.music = S
-	M << S
+	SEND_SOUND(M, S)
 
 /obj/item/card/music
 	icon_state = "data_3"
