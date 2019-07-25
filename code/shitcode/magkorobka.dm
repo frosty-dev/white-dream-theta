@@ -177,13 +177,13 @@
 		var/area/MA = get_area(M)
 
 		if(MA == A && (M.music.volume != volume || update))
-			to_chat(M, "<span class='notice'>In range. Volume: [M.music.volume]. Update: [update]</span>")
+			//to_chat(M, "<span class='notice'>In range. Volume: [M.music.volume]. Update: [update]</span>")
 			M.music.status = SOUND_UPDATE//|SOUND_STREAM
 			M.music.volume = volume
 			SEND_SOUND(M, M.music)
 
 		else if(MA != A && M.music.volume != 0)
-			to_chat(M, "<span class='notice'>!In range. Volume: [M.music.volume].</span>")
+			//to_chat(M, "<span class='notice'>!In range. Volume: [M.music.volume].</span>")
 			M.music.status = SOUND_UPDATE//|SOUND_STREAM
 			M.music.volume = 0
 			SEND_SOUND(M, M.music)
