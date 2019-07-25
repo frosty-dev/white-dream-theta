@@ -43,7 +43,7 @@
 	//Hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
-			. += "[ru_ego(TRUE)] [get_held_index_name(get_held_index_of_item(I))] держит [I.get_examine_string(user)]."
+			. += "В [ru_ego] [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.get_examine_string(user)]."
 
 	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
 	//gloves
