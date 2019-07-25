@@ -98,8 +98,8 @@ Santa Bag:/obj/item/storage/backpack/santabag:600
 Bible:/obj/item/storage/book/bible:100
 Inovations
 Casino Cards:/obj/item/toy/cards/deck/shitspawn_deck:500
-Jukebox: /obj/machinery/party/turntable:1200
-Writer: /obj/machinery/party/musicwriter:1000
+Jukebox (Only one can exist): /obj/machinery/party/turntable:100
+Writer: /obj/machinery/party/musicwriter:900
 
 "}
 
