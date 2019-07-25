@@ -39,6 +39,10 @@ map donutstation
 	votable
 endmap
 
+map kilostation
+	minplayers 10
+endmap
+
 map runtimestation
 endmap
 
