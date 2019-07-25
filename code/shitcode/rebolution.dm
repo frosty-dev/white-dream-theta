@@ -5,7 +5,9 @@
 	var/zashkvareno = 0
 
 /obj/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
 	if(user.client && user.client.petukh && !zashkvareno)
 		zashkvareno = 1
 		name = "petushinii " + name
-	..()
