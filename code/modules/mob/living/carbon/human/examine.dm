@@ -29,16 +29,16 @@
 		. += "На н[t_na] [w_uniform.get_examine_string(user)][accessory_msg]."
 	//head
 	if(head)
-		. += "У н[t_ego] на голове [head.get_examine_string(user)]."
+		. += "На голове у н[t_ego] [head.get_examine_string(user)]."
 	//suit/armor
 	if(wear_suit)
-		. += "На н[t_na] [wear_suit.get_examine_string(user)]."
+		. += "На н[t_ego] [wear_suit.get_examine_string(user)]."
 		//suit/armor storage
 		if(s_store && !(SLOT_S_STORE in obscured))
-			. += "Имеет [s_store.get_examine_string(user)] прикреплённый к [t_ego] [wear_suit.name]."
+			. += "И к нему прикреплён [s_store.get_examine_string(user)]."
 	//back
 	if(back)
-		. += "На спине у н[t_ego] [back.get_examine_string(user)]."
+		. += "На [t_ego] спине [back.get_examine_string(user)]."
 
 	//Hands
 	for(var/obj/item/I in held_items)
@@ -59,7 +59,7 @@
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан!</span>"
+			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан[t_a]!</span>"
 		else
 			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>"
 
@@ -111,7 +111,7 @@
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
 		if(suiciding)
-			. += "<span class='warning'>[t_on] выглядит как суицидник... это уже невозможно спасти.</span>"
+			. += "<span class='warning'>[t_on] выглядит как суицидник... [t_ego] уже невозможно спасти.</span>"
 		if(hellbound)
 			. += "<span class='warning'>[ru_ego(TRUE)] душа выглядит оторванной от [t_ego] тела. Реанимация бесполезна.</span>"
 		. += ""

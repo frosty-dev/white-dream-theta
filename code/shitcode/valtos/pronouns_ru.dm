@@ -152,6 +152,20 @@
 	if(capitalized)
 		. = capitalize(.)
 
+/mob/ru_na(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "ธ์"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "ๅ้"
+		if(MALE)
+			. = "ธ์"
+		if(PLURAL)
+			. = "ธ์"
+	if(capitalized)
+		. = capitalize(.)
+
 /mob/ru_kon(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
@@ -164,7 +178,7 @@
 		if(PLURAL)
 			. = "๎ๅ"
 
-/mob/ru_kon(temp_gender)
+/mob/ru_a(temp_gender)
 	if(!temp_gender)
 		temp_gender = gender
 	. = ""
