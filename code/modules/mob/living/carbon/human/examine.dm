@@ -32,7 +32,7 @@
 		. += "На голове у н[t_ego] [head.get_examine_string(user)]."
 	//suit/armor
 	if(wear_suit)
-		. += "На н[t_ego] [wear_suit.get_examine_string(user)]."
+		. += "На н[t_na] [wear_suit.get_examine_string(user)]."
 		//suit/armor storage
 		if(s_store && !(SLOT_S_STORE in obscured))
 			. += "И к нему прикреплён [s_store.get_examine_string(user)]."
