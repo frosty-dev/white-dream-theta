@@ -17,7 +17,7 @@
 	boozepwr = 80
 
 /datum/reagent/consumable/ethanol/boyarka/traitor/on_mob_life(mob/living/M)
-	M.reagents.add_reagent(get_random_reagent_id(),100)
+	M.reagents.add_reagent(get_random_reagent_id(),10)
 	M.reagents.add_reagent(/datum/reagent/toxin/rotatium,2)
 	spawn(0)
 		new /datum/hallucination/delusion(M, TRUE, "demon",600,0)
