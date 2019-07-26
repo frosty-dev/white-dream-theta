@@ -2,7 +2,8 @@
 #define TARGET_TO_SOURCE 1
 #define PUMP_EFFICIENCY 0.6
 #define TANK_FAILURE_PRESSURE (ONE_ATMOSPHERE*25)
-#define PUMP_MAX_VOLUME 100
+#define INTEGRATED_PUMP_MAX_PRESSURE (ONE_ATMOSPHERE*24)
+#define INTEGRATED_PUMP_MAX_VOLUME 100
 
 
 /obj/item/integrated_circuit/atmospherics
@@ -54,7 +55,7 @@
 			"on transfer" = IC_PINTYPE_PULSE_OUT
 			)
 	var/direction = SOURCE_TO_TARGET
-	var/target_pressure = PUMP_MAX_PRESSURE
+	var/target_pressure = INTEGRATED_PUMP_MAX_PRESSURE
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/atmospherics/pump/Initialize()
@@ -62,7 +63,7 @@
 	extended_desc += " Use negative pressure to move air from target to source. \
 					Note that only part of the gas is moved on each transfer, \
 					so multiple activations will be necessary to achieve target pressure. \
-					The pressure limit for circuit pumps is [round(PUMP_MAX_PRESSURE)] kPa."
+					The pressure limit for circuit pumps is [round(INTEGRATED_PUMP_MAX_PRESSURE)] kPa."
 	. = ..()
 
 // This proc gets the direction of the gas flow depending on its value, by calling update target
@@ -78,7 +79,7 @@
 		direction = TARGET_TO_SOURCE
 	else
 		direction = SOURCE_TO_TARGET
-	target_pressure = min(round(PUMP_MAX_PRESSURE),abs(new_amount))
+	target_pressure = min(round(INTEGRATED_PUMP_MAX_PRESSURE),abs(new_amount))
 
 /obj/item/integrated_circuit/atmospherics/pump/do_work()
 	var/obj/source = get_pin_data_as_type(IC_INPUT, 1, /obj)
@@ -121,7 +122,7 @@
 /obj/item/integrated_circuit/atmospherics/pump/proc/move_gas(datum/gas_mixture/source_air, datum/gas_mixture/target_air)
 
 	// No moles = nothing to pump
-	if(source_air.total_moles() <= 0  || target_air.return_pressure() >= PUMP_MAX_PRESSURE)
+	if(source_air.total_moles() <= 0  || target_air.return_pressure() >= INTEGRATED_PUMP_MAX_PRESSURE)
 		return
 
 	// Negative Kelvin temperatures should never happen and if they do, normalize them
@@ -152,7 +153,7 @@
 			"on transfer" = IC_PINTYPE_PULSE_OUT
 			)
 	direction = SOURCE_TO_TARGET
-	var/transfer_rate = PUMP_MAX_VOLUME
+	var/transfer_rate = INTEGRATED_PUMP_MAX_VOLUME
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/atmospherics/pump/volume/update_target(new_amount)
@@ -163,7 +164,7 @@
 		direction = TARGET_TO_SOURCE
 	else
 		direction = SOURCE_TO_TARGET
-	target_pressure = min(PUMP_MAX_VOLUME,abs(new_amount))
+	target_pressure = min(INTEGRATED_PUMP_MAX_VOLUME,abs(new_amount))
 
 /obj/item/integrated_circuit/atmospherics/pump/volume/move_gas(datum/gas_mixture/source_air, datum/gas_mixture/target_air)
 	// No moles = nothing to pump
@@ -174,11 +175,11 @@
 	if(source_air.temperature < TCMB)
 		source_air.temperature = TCMB
 
-	if((source_air.return_pressure() < 0.01) || (target_air.return_pressure() >= PUMP_MAX_PRESSURE))
+	if((source_air.return_pressure() < 0.01) || (target_air.return_pressure() >= INTEGRATED_PUMP_MAX_PRESSURE))
 		return
 
 	//The second part of the min caps the pressure built by the volume pumps to the max pump pressure
-	var/transfer_ratio = min(transfer_rate,target_air.volume*PUMP_MAX_PRESSURE/source_air.return_pressure())/source_air.volume
+	var/transfer_ratio = min(transfer_rate,target_air.volume*INTEGRATED_PUMP_MAX_PRESSURE/source_air.return_pressure())/source_air.volume
 
 	var/datum/gas_mixture/removed = source_air.remove_ratio(transfer_ratio * PUMP_EFFICIENCY)
 
@@ -308,7 +309,7 @@ obj/item/integrated_circuit/atmospherics/connector/proc/portableConnectorReturnA
 
 /obj/item/integrated_circuit/atmospherics/pump/filter/on_data_written()
 	var/amt = get_pin_data(IC_INPUT, 5)
-	target_pressure = CLAMP(amt, 0, PUMP_MAX_PRESSURE)
+	target_pressure = CLAMP(amt, 0, INTEGRATED_PUMP_MAX_PRESSURE)
 
 /obj/item/integrated_circuit/atmospherics/pump/filter/do_work()
 	activate_pin(2)
@@ -344,7 +345,7 @@ obj/item/integrated_circuit/atmospherics/connector/proc/portableConnectorReturnA
 	if(!contaminated_air)
 		contaminated_air = air_contents
 
-	if(contaminated_air.return_pressure() >= PUMP_MAX_PRESSURE || filtered_air.return_pressure() >= PUMP_MAX_PRESSURE)
+	if(contaminated_air.return_pressure() >= INTEGRATED_PUMP_MAX_PRESSURE || filtered_air.return_pressure() >= INTEGRATED_PUMP_MAX_PRESSURE)
 		return
 
 	var/pressure_delta = target_pressure - contaminated_air.return_pressure()
@@ -392,7 +393,7 @@ obj/item/integrated_circuit/atmospherics/connector/proc/portableConnectorReturnA
 	extended_desc = "Remember to properly spell and capitalize the filtered gas name. \
 					Note that only part of the gas is moved on each transfer, \
 					so multiple activations will be necessary to achieve target pressure. \
-					The pressure limit for circuit pumps is [round(PUMP_MAX_PRESSURE)] kPa."
+					The pressure limit for circuit pumps is [round(INTEGRATED_PUMP_MAX_PRESSURE)] kPa."
 
 
 // - gas mixer - // **works**
@@ -435,7 +436,7 @@ obj/item/integrated_circuit/atmospherics/connector/proc/portableConnectorReturnA
 	if(!source_1_gases || !source_2_gases || !output_gases)
 		return
 
-	if(output_gases.return_pressure() >= PUMP_MAX_PRESSURE)
+	if(output_gases.return_pressure() >= INTEGRATED_PUMP_MAX_PRESSURE)
 		return
 
 	if(source_1_gases.return_pressure() <= 0 || source_2_gases.return_pressure() <= 0)
@@ -757,5 +758,5 @@ obj/item/integrated_circuit/atmospherics/connector/proc/portableConnectorReturnA
 #undef TARGET_TO_SOURCE
 #undef PUMP_EFFICIENCY
 #undef TANK_FAILURE_PRESSURE
-#undef PUMP_MAX_PRESSURE
-#undef PUMP_MAX_VOLUME
+#undef INTEGRATED_PUMP_MAX_PRESSURE
+#undef INTEGRATED_PUMP_MAX_VOLUME

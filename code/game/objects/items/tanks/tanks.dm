@@ -228,7 +228,8 @@
 
 /obj/item/tank/process()
 	//Allow for reactions
-	air_contents.react()
+	if(air_contents)
+		air_contents.react()
 	check_status()
 
 /obj/item/tank/proc/check_status()

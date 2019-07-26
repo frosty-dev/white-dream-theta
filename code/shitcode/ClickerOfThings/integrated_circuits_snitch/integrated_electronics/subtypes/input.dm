@@ -1025,10 +1025,8 @@
 
 /obj/item/integrated_circuit/input/obj_scanner/attackby_react(var/atom/A,var/mob/user,intent)
 	if(intent!=INTENT_HELP)
-		to_chat(user, "<span class='notice'>debug 1</span>")
 		return FALSE
 	if(!check_then_do_work())
-		to_chat(user, "<span class='notice'>debug 2</span>")
 		return FALSE
 	var/pu = get_pin_data(IC_INPUT, 1)
 	if(pu)
