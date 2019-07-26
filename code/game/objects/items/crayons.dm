@@ -471,7 +471,7 @@
 	reagent_contents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/colorful_reagent = 1)
 	drawtype = RANDOM_ANY // just the default starter.
 
-	charges = -1
+	charges = 100
 
 /obj/item/toy/crayon/rainbow/afterattack(atom/target, mob/user, proximity, params)
 	paint_color = rgb(rand(0,255), rand(0,255), rand(0,255))
