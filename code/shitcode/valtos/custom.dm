@@ -98,6 +98,18 @@
 	ambientsounds = MINING
 	outdoors = TRUE
 
+/area/partyhard/outdoors/unexplored
+	icon_state = "2f"
+	name = "far away"
+	always_unpowered = TRUE
+	poweralm = FALSE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
+	requires_power = TRUE
+	ambientsounds = MINING
+	outdoors = TRUE
+
 /area/partyhard/odin
 	icon_state = "1f"
 	name = "1st floor"
@@ -146,3 +158,29 @@
 /obj/effect/turf_decal/partyhard/lines
 	icon = 'code/shitcode/valtos/icons/decals.dmi'
 	icon_state = "s-1"
+
+/turf/open/floor/plating/partyhard
+	icon = 'icons/turf/mining.dmi'
+	gender = PLURAL
+	name = "ash"
+	icon_state = "ash"
+	smooth = SMOOTH_MORE|SMOOTH_BORDER
+	var/smooth_icon = 'icons/turf/floors/ash.dmi'
+	desc = "The ground is covered in volcanic ash."
+	baseturfs = /turf/open/floor/plating/partyhard
+	initial_gas_mix = KITCHEN_COLDROOM_ATMOS
+	planetary_atmos = TRUE
+	attachment_holes = FALSE
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+
+/turf/open/floor/plating/partyhard/Initialize()
+	if(smooth)
+		var/matrix/M = new
+		M.Translate(-4, -4)
+		transform = M
+		icon = smooth_icon
+	. = ..()

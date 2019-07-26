@@ -43,6 +43,9 @@ map kilostation
 	minplayers 10
 endmap
 
+map partyhard
+endmap
+
 map runtimestation
 endmap
 
