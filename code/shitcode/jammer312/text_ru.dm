@@ -157,9 +157,12 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	return replacetext(t, UPC, PHC)
 
 /proc/sanitize_russian_list(list) //recursive variant
-	for(var/i in list)
-		if(islist(i))
-			sanitize_russian_list(i)
+	var/i = 0
+	for(var/L in list)
+		i++
+		if(islist(L))
+			sanitize_russian_list(L)
+
 
 		if(list[i])
 			if(istext(list[i]))
