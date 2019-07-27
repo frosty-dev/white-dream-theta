@@ -1,7 +1,7 @@
 /client/verb/update_ping(time as num)
 	set instant = TRUE
 	set name = ".update_ping"
-	var/ping = pingfromtime(time)
+	var/ping = (pingfromtime(time)/4) //MASTERMIND
 	lastping = ping
 	if (!avgping)
 		avgping = ping
