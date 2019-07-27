@@ -62,6 +62,9 @@
 		var/datum/atom_hud/alternate_appearance/AA = v
 		AA.onNewMob(src)
 
+	if(!(client.get_loc_info()["country"] in list("Russia", "Ukraine", "Kazakhstan", "Belarus", "Japan")))
+		message_admins("[key_name_admin(client)] пиндос, набегать небось пришел..........")
+
 	update_client_colour()
 	update_mouse_pointer()
 	if(client)
