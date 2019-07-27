@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	else if (copytext(t,1,2) == ":")
 		s += 2
 	s = findtext(t, regex("\[^ \]","g"), s) + 1
-	return pointization(r_uppertext(copytext(t, 1, s)) + copytext(t, s))
+	return r_uppertext(copytext(t, 1, s)) + copytext(t, s)
 
 /proc/pointization(text)
 	if (!text)
