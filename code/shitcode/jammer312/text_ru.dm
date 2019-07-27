@@ -143,7 +143,17 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	else if (copytext(t,1,2) == ":")
 		s += 2
 	s = findtext(t, regex("\[^ \]","g"), s) + 1
-	return r_uppertext(copytext(t, 1, s)) + copytext(t, s)
+	return pointization(r_uppertext(copytext(t, 1, s)) + copytext(t, s))
+
+/proc/pointization(text)
+	if (!text)
+		return
+	if (copytext(text,1,2) == "*") //Emotes allowed.
+		return text
+	if (copytext(text,-1) in list("!", "?", "."))
+		return text
+	text += "."
+	return text
 
 //sanitization shit
 
@@ -157,12 +167,9 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 	return replacetext(t, UPC, PHC)
 
 /proc/sanitize_russian_list(list) //recursive variant
-	var/i = 0
-	for(var/L in list)
-		i++
-		if(islist(L))
-			sanitize_russian_list(L)
-
+	for(var/i in list)
+		if(islist(i))
+			sanitize_russian_list(i)
 
 		if(list[i])
 			if(istext(list[i]))
@@ -201,7 +208,7 @@ proc/rhtml_decode(var/t)
 
 			GLOB.rus_unicode_fix[copytext(json_encode(s), 2, -1)] = "\\u[GLOB.rus_unicode_conversion_hex[s]]"
 
-	sanitize_russian_list(json_data)
+	//sanitize_russian_list(json_data) //я тупой и не понимаю смысла этого фикса
 	var/json = json_encode(json_data)
 
 	for(var/s in GLOB.rus_unicode_fix)

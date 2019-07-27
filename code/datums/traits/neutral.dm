@@ -2,21 +2,21 @@
 //MAKE SURE THESE DO NOT MAJORLY IMPACT GAMEPLAY. those should be positive or negative traits.
 
 /datum/quirk/no_taste
-	name = "Ageusia"
-	desc = "You can't taste anything! Toxic food will still poison you."
+	name = "Потеря вкуса"
+	desc = "Вы не чувствуете вкус еды! Токсичная пища все равно отравит вас."
 	value = 0
 	mob_trait = TRAIT_AGEUSIA
-	gain_text = "<span class='notice'>You can't taste anything!</span>"
-	lose_text = "<span class='notice'>You can taste again!</span>"
-	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
+	gain_text = "<span class='notice'>Вы больше не чувствуете вкус еды!</span>"
+	lose_text = "<span class='notice'>Вы чувствуете вкусы снова!</span>"
+	medical_record_text = "Пациент страдает от агезии и не способен дегустировать пищу или реагенты."
 
 /datum/quirk/vegetarian
-	name = "Vegetarian"
-	desc = "You find the idea of eating meat morally and physically repulsive."
+	name = "Вегетарианец"
+	desc = "Вы находите идею есть мясо морально и физически отталкивающим."
 	value = 0
-	gain_text = "<span class='notice'>You feel repulsion at the idea of eating meat.</span>"
-	lose_text = "<span class='notice'>You feel like eating meat isn't that bad.</span>"
-	medical_record_text = "Patient reports a vegetarian diet."
+	gain_text = "<span class='notice'>Вы чувствуете отвращение к идее есть мясо.</span>"
+	lose_text = "<span class='notice'>Вы чувствуете, что есть мясо не так уж плохо.</span>"
+	medical_record_text = "Пациент сообщает о вегетарианской диете."
 
 /datum/quirk/vegetarian/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -34,12 +34,12 @@
 			species.disliked_food &= ~MEAT
 
 /datum/quirk/pineapple_liker
-	name = "Ananas Affinity"
-	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"
+	name = "Ананасофил"
+	desc = "Вы обнаружите, что наслаждаетесь фруктами рода ананас. Кажется, вы никогда не получите достаточно их сладкой мякотки!"
 	value = 0
-	gain_text = "<span class='notice'>You feel an intense craving for pineapple.</span>"
-	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
-	medical_record_text = "Patient demonstrates a pathological love of pineapple."
+	gain_text = "<span class='notice'>Вы чувствуете сильную тягу к ананасу.</span>"
+	lose_text = "<span class='notice'>Ваши чувства к ананасам, кажется, возвращаются к теплой форме.</span>"
+	medical_record_text = "Пациент демонстрирует патологическую любовь к ананасу."
 
 /datum/quirk/pineapple_liker/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -53,12 +53,12 @@
 		species.liked_food &= ~PINEAPPLE
 
 /datum/quirk/pineapple_hater
-	name = "Ananas Aversion"
-	desc = "You find yourself greatly detesting fruits of the ananas genus. Serious, how the hell can anyone say these things are good? And what kind of madman would even dare putting it on a pizza!?"
+	name = "Ананасофоб"
+	desc = "Вы обнаружите, что сильно ненавидите плоды рода ананас. Серьезно, как, черт возьми, кто-нибудь может сказать, что это вкусно? И что за сумасшедший даже посмел бы положить его на пиццу!?"
 	value = 0
-	gain_text = "<span class='notice'>You find yourself pondering what kind of idiot actually enjoys pineapples...</span>"
-	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
-	medical_record_text = "Patient is correct to think that pineapple is disgusting."
+	gain_text = "<span class='notice'>Вы задумываетесь над тем, какой идиот на самом деле любит ананасы...</span>"
+	lose_text = "<span class='notice'>Ваши чувства к ананасам, кажется, возвращаются к теплой форме.</span>"
+	medical_record_text = "Пациент думает, что ананасы отвратительны."
 
 /datum/quirk/pineapple_hater/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -72,12 +72,12 @@
 		species.disliked_food &= ~PINEAPPLE
 
 /datum/quirk/deviant_tastes
-	name = "Deviant Tastes"
-	desc = "You dislike food that most people enjoy, and find delicious what they don't."
+	name = "Девиантные Вкусы"
+	desc = "Вам не нравится еда, которая нравится большинству людей, и вы находите вкусные блюда, которые им не нравятся."
 	value = 0
-	gain_text = "<span class='notice'>You start craving something that tastes strange.</span>"
-	lose_text = "<span class='notice'>You feel like eating normal food again.</span>"
-	medical_record_text = "Patient demonstrates irregular nutrition preferences."
+	gain_text = "<span class='notice'>Вы начинаете жаждать чего-то странного на вкус.</span>"
+	lose_text = "<span class='notice'>Вам хочется снова есть нормальную еду.</span>"
+	medical_record_text = "Пациент демонстрирует нерегулярные предпочтения в питании."
 
 /datum/quirk/deviant_tastes/add()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -94,17 +94,17 @@
 		species.disliked_food = initial(species.disliked_food)
 
 /datum/quirk/monochromatic
-	name = "Monochromacy"
-	desc = "You suffer from full colorblindness, and perceive nearly the entire world in blacks and whites."
+	name = "Цветовая слепота"
+	desc = "Вы страдаете от дальтонизма и воспринимаете почти весь мир в черном и белом."
 	value = 0
-	medical_record_text = "Patient is afflicted with almost complete color blindness."
+	medical_record_text = "Пациент страдает почти полным дальтонизмом."
 
 /datum/quirk/monochromatic/add()
 	quirk_holder.add_client_colour(/datum/client_colour/monochrome)
 
 /datum/quirk/monochromatic/post_add()
 	if(quirk_holder.mind.assigned_role == "Detective")
-		to_chat(quirk_holder, "<span class='boldannounce'>Mmm. Nothing's ever clear on this station. It's all shades of gray...</span>")
+		to_chat(quirk_holder, "<span class='boldannounce'>Ммм. На этой станции что-то не чисто. Всё в оттенках серого...</span>")
 		quirk_holder.playsound_local(quirk_holder, 'sound/ambience/ambidet1.ogg', 50, FALSE)
 
 /datum/quirk/monochromatic/remove()
