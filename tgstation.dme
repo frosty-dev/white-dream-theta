@@ -2947,6 +2947,7 @@
 #include "code\shitcode\Gargule\surgery\organs.dm"
 #include "code\shitcode\Gargule\surgery\table.dm"
 #include "code\shitcode\Gargule\virology\symptoms\old.dm"
+#include "code\shitcode\hule\anonism.dm"
 #include "code\shitcode\hule\items\cookbook.dm"
 #include "code\shitcode\hule\items\clothing\gloves.dm"
 #include "code\shitcode\hule\items\clothing\masks.dm"
