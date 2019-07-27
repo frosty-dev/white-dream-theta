@@ -63,7 +63,9 @@
 		AA.onNewMob(src)
 
 	if(!(client.get_loc_info()["country"] in list("Russia", "Ukraine", "Kazakhstan", "Belarus", "Japan")))
-		message_admins("[key_name_admin(client)] пиндос, набегать небось пришел..........")
+		to_chat(client, "<span class='danger'>Our system detected that you are probably a pendos. Admins are notified. Killing people 4NR will get you gibbed.</span>")
+		message_admins("[key_name(src)] пиндос, набегать небось пришел..........")
+
 
 	update_client_colour()
 	update_mouse_pointer()
