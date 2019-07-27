@@ -1,0 +1,127 @@
+"aa" = (/turf/template_noop,/area/template_noop)
+"ab" = (/turf/closed/mineral/random,/area/ruin/space/has_grav/abandonedzoo)
+"ac" = (/turf/open/floor/plating/asteroid,/area/ruin/space/has_grav/abandonedzoo)
+"ad" = (/turf/open/floor/holofloor/asteroid,/area/ruin/space/has_grav/abandonedzoo)
+"ae" = (/mob/living/simple_animal/hostile/retaliate/bat,/turf/open/floor/plating/asteroid,/area/ruin/space/has_grav/abandonedzoo)
+"af" = (/turf/closed/mineral/random/high_chance,/area/ruin/space/has_grav/abandonedzoo)
+"ag" = (/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"ah" = (/obj/structure/flora/grass/jungle,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"ai" = (/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aj" = (/obj/structure/flora/grass/jungle/b,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"ak" = (/obj/structure/flora/grass/jungle,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"al" = (/obj/structure/flora/tree/palm,/obj/structure/flora/grass/jungle/b,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"am" = (/turf/open/floor/plating/beach/sand,/area/ruin/space/has_grav/abandonedzoo)
+"an" = (/turf/open/floor/holofloor/beach,/area/ruin/space/has_grav/abandonedzoo)
+"ao" = (/turf/open/floor/plating/beach/coastline_t/sandwater_inner,/area/ruin/space/has_grav/abandonedzoo)
+"ap" = (/turf/open/floor/plating/beach/coastline_t,/area/ruin/space/has_grav/abandonedzoo)
+"aq" = (/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/plating/beach/coastline_t,/area/ruin/space/has_grav/abandonedzoo)
+"ar" = (/obj/structure/flora/rock/pile/largejungle,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/plating/beach/coastline_t,/area/ruin/space/has_grav/abandonedzoo)
+"as" = (/obj/structure/flora/tree/palm,/turf/open/floor/plating/beach/coastline_t,/area/ruin/space/has_grav/abandonedzoo)
+"at" = (/turf/open/floor/plating/beach/coastline_t/sandwater_inner{icon_state = "sandwater_inner"; dir = 8},/area/ruin/space/has_grav/abandonedzoo)
+"au" = (/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/holofloor/beach,/area/ruin/space/has_grav/abandonedzoo)
+"av" = (/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aw" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"ax" = (/obj/structure/flora/tree/palm,/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 6},/area/ruin/space/has_grav/abandonedzoo)
+"ay" = (/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 9},/area/ruin/space/has_grav/abandonedzoo)
+"az" = (/turf/open/floor/plating/beach/coastline_b,/area/ruin/space/has_grav/abandonedzoo)
+"aA" = (/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 5},/area/ruin/space/has_grav/abandonedzoo)
+"aB" = (/obj/structure/flora/rock/pile/largejungle,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 8},/area/ruin/space/has_grav/abandonedzoo)
+"aC" = (/turf/open/floor/holofloor/beach,/area/space)
+"aD" = (/obj/structure/flora/ausbushes/ywflowers,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aE" = (/obj/structure/flora/grass/jungle,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aF" = (/obj/structure/flora/grass/jungle,/mob/living/simple_animal/hostile/retaliate/goose,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aG" = (/obj/structure/flora/ausbushes/ywflowers,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aH" = (/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 6},/area/ruin/space/has_grav/abandonedzoo)
+"aI" = (/turf/open/floor/plating/beach/water,/area/ruin/space/has_grav/abandonedzoo)
+"aJ" = (/mob/living/simple_animal/hostile/retaliate/frog,/turf/open/floor/plating/beach/water,/area/ruin/space/has_grav/abandonedzoo)
+"aK" = (/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 8},/area/ruin/space/has_grav/abandonedzoo)
+"aL" = (/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 8},/area/ruin/space/has_grav/abandonedzoo)
+"aM" = (/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aN" = (/mob/living/simple_animal/hostile/retaliate/goose{gender = "female"},/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aO" = (/mob/living/simple_animal/hostile/retaliate/goose{gender = "female"},/turf/open/floor/holofloor/beach,/area/ruin/space/has_grav/abandonedzoo)
+"aP" = (/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 4},/area/ruin/space/has_grav/abandonedzoo)
+"aQ" = (/obj/structure/flora/tree/palm,/turf/open/floor/holofloor/beach,/area/ruin/space/has_grav/abandonedzoo)
+"aR" = (/obj/structure/flora/junglebush/large,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aS" = (/obj/structure/flora/grass/jungle,/obj/structure/flora/grass/jungle,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aT" = (/obj/structure/flora/tree/palm,/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 4},/area/ruin/space/has_grav/abandonedzoo)
+"aU" = (/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 4},/area/ruin/space/has_grav/abandonedzoo)
+"aV" = (/mob/living/carbon/monkey,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aW" = (/obj/item/reagent_containers/food/snacks/grown/banana,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aX" = (/obj/item/reagent_containers/food/snacks/grown/banana,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aY" = (/mob/living/simple_animal/hostile/retaliate/goose,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"aZ" = (/obj/structure/flora/rock/jungle,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"ba" = (/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 10},/area/ruin/space/has_grav/abandonedzoo)
+"bb" = (/turf/open/floor/plating/beach/coastline_b{icon_state = "sandwater_b"; dir = 1},/area/ruin/space/has_grav/abandonedzoo)
+"bc" = (/turf/closed/wall/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bd" = (/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/abandonedzoo)
+"be" = (/obj/structure/flora/tree/jungle,/obj/item/reagent_containers/food/snacks/grown/banana,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bf" = (/turf/open/floor/plating/beach/coastline_t/sandwater_inner{icon_state = "sandwater_inner"; dir = 1},/area/ruin/space/has_grav/abandonedzoo)
+"bg" = (/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 1},/area/ruin/space/has_grav/abandonedzoo)
+"bh" = (/turf/open/floor/plating/beach/coastline_t{icon_state = "sandwater_t"; dir = 5},/area/ruin/space/has_grav/abandonedzoo)
+"bi" = (/turf/closed/wall/mineral/titanium/nodiagonal,/area/ruin/space/has_grav/abandonedzoo)
+"bj" = (/obj/machinery/light{dir = 1},/obj/structure/closet/crate,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bk" = (/obj/structure/window/plasma/reinforced{icon_state = "plasmarwindow"; dir = 8},/obj/structure/shuttle/engine/heater{dir = 4},/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bl" = (/obj/structure/shuttle/engine/propulsion{dir = 4},/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bm" = (/obj/structure/flora/tree/dead,/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/abandonedzoo)
+"bn" = (/obj/item/reagent_containers/food/snacks/grown/banana,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bo" = (/obj/item/reagent_containers/food/snacks/grown/banana,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bp" = (/obj/structure/flora/grass/jungle,/mob/living/simple_animal/hostile/retaliate/goose{gender = "female"},/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bq" = (/obj/machinery/light{dir = 1},/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"br" = (/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bs" = (/obj/structure/chair/comfy/shuttle,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bt" = (/mob/living/simple_animal/hostile/retaliate/goose,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bu" = (/obj/structure/flora/rock/jungle,/turf/open/floor/plating/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bv" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bw" = (/obj/machinery/computer/shuttle{icon_state = "computer"; dir = 4},/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bx" = (/obj/structure/chair/comfy/shuttle{dir = 8},/obj/effect/mob_spawn/human/commander,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"by" = (/obj/structure/closet/crate/coffin{icon_state = "coffinopen"},/obj/effect/mob_spawn/human/doctor,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bz" = (/obj/machinery/door/airlock/titanium/glass,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bA" = (/obj/structure/flora/tree/jungle/small,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bB" = (/obj/structure/flora/junglebush/large,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bC" = (/obj/machinery/light,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bD" = (/obj/structure/chair/comfy/shuttle{dir = 1},/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bE" = (/obj/machinery/light,/obj/structure/closet/crate,/obj/item/organ/cyberimp/arm/gun/laser,/turf/open/floor/mineral/titanium,/area/ruin/space/has_grav/abandonedzoo)
+"bF" = (/obj/structure/flora/rock/jungle,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bG" = (/turf/open/floor/holofloor/beach/water,/area/ruin/space/has_grav/abandonedzoo)
+"bH" = (/mob/living/simple_animal/hostile/retaliate/goose/vomit,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bI" = (/obj/structure/flora/tree/jungle/small,/obj/structure/flora/ausbushes/brflowers,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bJ" = (/mob/living/simple_animal/hostile/jungle/leaper,/turf/open/floor/holofloor/beach/water,/area/ruin/space/has_grav/abandonedzoo)
+"bK" = (/mob/living/simple_animal/hostile/gorilla,/turf/open/floor/plating/asteroid,/area/ruin/space/has_grav/abandonedzoo)
+"bL" = (/obj/effect/spawner/structure/window,/turf/open/floor/plating/asteroid,/area/ruin/space/has_grav/abandonedzoo)
+"bM" = (/obj/structure/flora/tree/jungle,/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bN" = (/obj/structure/flora/ausbushes/brflowers,/mob/living/simple_animal/hostile/retaliate/goose{gender = "female"},/turf/open/floor/grass,/area/ruin/space/has_grav/abandonedzoo)
+"bO" = (/mob/living/simple_animal/hostile/retaliate/goose/vomit,/turf/open/floor/plating/asteroid,/area/ruin/space/has_grav/abandonedzoo)
+"bP" = (/mob/living/simple_animal/hostile/retaliate/bat,/turf/closed/mineral/random,/area/ruin/space/has_grav/abandonedzoo)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaabababababababababababababababababababaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaabababacacacacacacacacadadadadadadadabababababaaaaaaaaaaaaaaaa
+aaaaaaabababacacaeafafafafafafacacacadadadadadadadadababaaaaaaaaaaaaaa
+aaaaabababacacafafafafafafafafafafafacacacadadadadadababaaaaaaaaaaaaaa
+aaabababacacaeafafafafagagagahagaiafafafafacacacadadadababaaaaaaaaaaaa
+aaabacacacafafafafafagagajakahajalamamamafafafafafafafadababaaaaaaaaaa
+aaabacacafafafafagagaiagananaoapaqaparapapapasapatauafafababaaaaaaaaaa
+aaabacafafafafavavavavawanaoaxayazazazazazazazaAaBanaCafadababaaaaaaaa
+ababacafafacavaDavaEaFaGaoaHayaIaJaIaIaIaIaIaIaKaLananafadababaaaaaaaa
+ababacafacavavaMawaMaNaOaPayaIaJaJaIaJaJaIaIaIaKaLaQauafafadababaaaaaa
+ababacafacaRavavavaSagaOaTaUaIaJaJaJaJaIaIaIaIaKaLafafafafadadabaaaaaa
+ababacafacaVaWaWaXaYaZaOaPbabbbbbbbbbbbbbbbbbcbcbcbcbdbdbdbdbdbdaaaaaa
+abacacafacaMaWbeaXaYagaNbfbgbhbcbcbcbcbcbcbcbibjbkblbdbdbdbmbdbdaaaaaa
+abacacacacavbnbnboahbpaNanaQbcbcbqbrbrbrbsbsbrbrbkblbdbmbdbdbdbdbdaaaa
+aaabacafafavagavbtbuaNaYananbvbrbrbrbrbrbrbrbrbrbcbcbdbdbdbmbdbdaaaaaa
+aaabacacafacagagagbtaMaEahanbvbwbxbrbrbrbybybrbrbzbdbdbdbdbdbdbdbdaaaa
+aaababaeafacacbAahagaSbBagahbvbrbrbrbrbrbrbrbrbrbcbcbdbdbdbdbdbdaaaaaa
+aaababacacafacavavagaYagaZagbcbcbCbrbrbrbDbDbrbrbkblbdbdbdbdbdbdbdaaaa
+aaabababacafafacacaVagaiahagagbcbcbcbcbcbcbcbibEbkblbdbdbmbdbdbdbdaaaa
+aaaaabababacafafacacbBaiaYagahagbBagaNagahagbcbcbcbcbdbdbdbdbdafababaa
+aaaaabababacafafafacacagagaiaiagagagbFaYagaSagafafafafafafafafafababab
+aaaaaaabababacacafafafagagbAagagagagbBagagagahafafafafbGbGbGbGbGababab
+aaaaaaaaabababacacafafafacagagbHagagagbHbIaYaZagahagafbGbJbGbGababaaaa
+aaaaaaaaababbKbLabacafafafacagagbMaiaYaZagagagakaZagafbGbGbGababaaaaaa
+aaaaaaaaaaababababacacafafafafagbHagagagagbAagagbNagafbJbGababaaaaaaaa
+aaaaaaaaaaaaabababacaeacafafafafafafacacbOacacagagafbGbGababaaaaaaaaaa
+aaaaaaaaaaaaaaababababacaeaeacafafafafafafacafafafbGbGababaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaabababaebPacacaeacacacacabababababababaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaababababababababababaaaaaaaaaaaaaaaaaaaaaaaa
+"}
