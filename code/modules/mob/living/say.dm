@@ -32,31 +32,31 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	//kinda localization -- rastaf0
 	//same keys as above, but on russian keyboard layout. This file uses cp1251 as encoding.
 	// Location
-	"Ãª" = MODE_R_HAND,
-	"Ã¤" = MODE_L_HAND,
-	"Ã¸" = MODE_INTERCOM,
+	":ê" = MODE_R_HAND,
+	":ä" = MODE_L_HAND,
+	":ø" = MODE_INTERCOM,
 
 	// Department
-	"Ã°" = MODE_DEPARTMENT,
-	"Ã±" = RADIO_CHANNEL_COMMAND,
-	"Ã²" = RADIO_CHANNEL_SCIENCE,
-	"Ã¼" = RADIO_CHANNEL_MEDICAL,
-	"Ã³" = RADIO_CHANNEL_ENGINEERING,
-	"Ã»" = RADIO_CHANNEL_SECURITY,
-	"Ã£" = RADIO_CHANNEL_SUPPLY,
-	"Ã¬" = RADIO_CHANNEL_SERVICE,
+	":ð" = MODE_DEPARTMENT,
+	":ñ" = RADIO_CHANNEL_COMMAND,
+	":ò" = RADIO_CHANNEL_SCIENCE,
+	":ü" = RADIO_CHANNEL_MEDICAL,
+	":ó" = RADIO_CHANNEL_ENGINEERING,
+	":û" = RADIO_CHANNEL_SECURITY,
+	":ã" = RADIO_CHANNEL_SUPPLY,
+	":ì" = RADIO_CHANNEL_SERVICE,
 
 	// Faction
-	"Ã¥" = RADIO_CHANNEL_SYNDICATE,
-	"Ã­" = RADIO_CHANNEL_CENTCOM,
+	":å" = RADIO_CHANNEL_SYNDICATE,
+	":í" = RADIO_CHANNEL_CENTCOM,
 
 	// Admin
-	"Ã§" = MODE_ADMIN,
-	"Ã¢" = MODE_ADMIN,
+	":ç" = MODE_ADMIN,
+	":â" = MODE_DEADMIN,
 
 	// Misc
-	"Ã¹" = RADIO_CHANNEL_AI_PRIVATE,
-	"Ã·" = MODE_VOCALCORDS
+	":ù" = RADIO_CHANNEL_AI_PRIVATE,
+	":÷" = MODE_VOCALCORDS
 ))
 
 /mob/living/proc/Ellipsis(original_msg, chance = 50, keep_words)
