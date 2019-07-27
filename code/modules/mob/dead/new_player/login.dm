@@ -32,3 +32,7 @@
 		else
 			postfix = "soon"
 		to_chat(src, "Please set up your character and select \"Ready\". The game will start [postfix].")
+
+	if(!(client.get_loc_info()["country"] in list("Russia", "Ukraine", "Kazakhstan", "Belarus", "Japan")) && GAME_STATE_PLAYING)
+		to_chat(client, "<span class='danger'>Our system detected that you are probably a pendos. Admins are notified. Killing people 4NR will get you gibbed.</span>")
+		message_admins("[key_name(src)] пиндос, набегать небось пришел..........")
