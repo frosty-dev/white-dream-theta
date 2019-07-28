@@ -6014,6 +6014,21 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/security/brig)
+"amR" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 5
+	},
+/obj/structure/lattice,
+/turf/open/space,
+/area/space/nearstation)
+"amS" = (
+/obj/machinery/reagent_material_manipulator,
+/turf/open/floor/plasteel,
+/area/construction)
 "amT" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -6156,6 +6171,13 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/solars/port/fore)
+"ani" = (
+/obj/machinery/reagent_forge{
+	step_x = 16;
+	step_y = 17
+	},
+/turf/open/floor/plating,
+/area/construction)
 "anj" = (
 /obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
 	dir = 8
@@ -6199,6 +6221,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
+"anq" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/engine/supermatter)
 "ans" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -45037,13 +45066,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
-"csA" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/engine/supermatter)
 "csD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -47676,10 +47698,6 @@
 /area/construction)
 "cCd" = (
 /turf/open/floor/plasteel,
-/area/construction)
-"cCe" = (
-/obj/structure/closet/crate,
-/turf/open/floor/plating,
 /area/construction)
 "cCf" = (
 /obj/machinery/disposal/bin,
@@ -50761,13 +50779,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
-"mRR" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/turf/open/space,
-/area/space/nearstation)
 "mSf" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -78638,7 +78649,7 @@ bFa
 bKt
 bLx
 bCs
-cCe
+bNJ
 bRl
 apV
 bLC
@@ -78895,8 +78906,8 @@ bFa
 bFa
 bLz
 bCs
-cCe
 bNJ
+ani
 apV
 xhV
 gWd
@@ -79923,7 +79934,7 @@ bJm
 bFa
 bHO
 bCs
-cCd
+amS
 cCd
 aYg
 cjL
@@ -80216,7 +80227,7 @@ cqU
 cEf
 cEt
 cEM
-csA
+anq
 cEg
 cFK
 cGe
@@ -89187,7 +89198,7 @@ bVu
 bVu
 bVu
 bVu
-mRR
+amR
 aaf
 aaf
 aaf
