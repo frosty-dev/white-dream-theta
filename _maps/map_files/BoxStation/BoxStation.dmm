@@ -6172,10 +6172,7 @@
 /turf/open/floor/plating,
 /area/maintenance/solars/port/fore)
 "ani" = (
-/obj/machinery/reagent_forge{
-	step_x = 16;
-	step_y = 17
-	},
+/obj/machinery/reagent_forge,
 /turf/open/floor/plating,
 /area/construction)
 "anj" = (
