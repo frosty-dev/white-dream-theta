@@ -282,7 +282,7 @@
 		var/datum/reagent/R = reagent
 		if(QDELETED(R.holder))
 			continue
-		
+
 		if(!C)
 			C = R.holder.my_atom
 
@@ -370,7 +370,7 @@
 		var/datum/reagent/R = reagent
 		R.on_update (A)
 	update_total()
-
+/* hippiecode
 /datum/reagents/proc/handle_reactions()
 	if(flags & NO_REACT)
 		return //Yup, no reactions here. No siree.
@@ -489,7 +489,7 @@
 	while(reaction_occurred)
 	update_total()
 	return 0
-
+*/
 /datum/reagents/proc/isolate_reagent(reagent)
 	var/list/cached_reagents = reagent_list
 	for(var/_reagent in cached_reagents)
