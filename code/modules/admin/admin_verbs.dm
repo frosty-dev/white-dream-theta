@@ -169,7 +169,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
-GLOBAL_LIST_INIT(admin_verbs_permissions, list(/client/proc/edit_admin_permissions))
+GLOBAL_LIST_INIT(admin_verbs_permissions, list(/client/proc/edit_admin_permissions, /client/proc/de_admin))
 GLOBAL_PROTECT(admin_verbs_permissions)
 GLOBAL_LIST_INIT(admin_verbs_poll, list(/client/proc/create_poll))
 GLOBAL_PROTECT(admin_verbs_poll)
@@ -659,8 +659,8 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			message_admins("[key_name_admin(src)][msg]")
 			log_admin_private("[key_name(src)][msg]")
 			return
-
-	A.associate(src)
+	if(!(A in de_admined))
+		A.associate(src)
 
 	if (!holder)
 		return //This can happen if an admin attempts to vv themself into somebody elses's deadmin datum by getting ref via brute force
