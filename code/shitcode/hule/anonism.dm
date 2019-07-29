@@ -1,4 +1,4 @@
-GLOBAL_LIST_INIT(anonists, list("valtosss","coolden"))
+GLOBAL_LIST_INIT(anonists, list("valtosss","coolden","maxsc"))
 
 /client/proc/get_loc_info()
 	if(src.ckey in GLOB.anonists)
