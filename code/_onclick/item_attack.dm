@@ -140,7 +140,7 @@
 		return
 	var/message_hit_area = ""
 	if(hit_area)
-		message_hit_area = "по [hit_area]"
+		message_hit_area = "в [hit_area]"
 	var/attack_message = "[src] [message_verb] [I] [message_hit_area]."
 	if(user in viewers(src, null))
 		attack_message = "[src] [message_verb] [I] [user] [message_hit_area]!"
