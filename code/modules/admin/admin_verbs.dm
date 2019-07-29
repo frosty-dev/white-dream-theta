@@ -650,6 +650,10 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set category = "Admin"
 	set desc = "Regain your admin powers."
 
+	if(src.ckey in GLOB.de_admined)
+		to_chat(src, "<span class='interface'>You are not allowed to readmin in this round.</span>")
+		return
+
 	var/datum/admins/A = GLOB.deadmins[ckey]
 
 	if(!A)
@@ -659,16 +663,15 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			message_admins("[key_name_admin(src)][msg]")
 			log_admin_private("[key_name(src)][msg]")
 			return
+	A.associate(src)
 
 	if (!holder)
 		return //This can happen if an admin attempts to vv themself into somebody elses's deadmin datum by getting ref via brute force
 
-	if(!(A in de_admined))
-		A.associate(src)
-		to_chat(src, "<span class='interface'>You are now an admin.</span>")
-		message_admins("[src] re-adminned themselves.")
-		log_admin("[src] re-adminned themselves.")
-		SSblackbox.record_feedback("tally", "admin_verb", 1, "Readmin")
+	to_chat(src, "<span class='interface'>You are now an admin.</span>")
+	message_admins("[src] re-adminned themselves.")
+	log_admin("[src] re-adminned themselves.")
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Readmin")
 
 /client/proc/populate_world(amount = 50 as num)
 	set name = "Populate World"

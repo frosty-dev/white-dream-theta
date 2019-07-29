@@ -1,4 +1,4 @@
-var/list/datum/de_admined = list()
+GLOBAL_LIST_EMPTY(de_admined)
 
 /client/proc/de_admin()
 	set name = "De_admin"
@@ -20,12 +20,13 @@ var/list/datum/de_admined = list()
 		to_chat(src, "You can't deadmin yourself.")
 		return
 	var/client/C = selected
-	if(C.ckey in de_admined)
+	if(C.ckey in GLOB.de_admined)
 		to_chat(src, "[selected] is already deadmined!")
 		return
 
 	else
-		de_admined.Add(C.ckey)
+		C.holder.deactivate()
+		GLOB.de_admined.Add(C.ckey)
 		to_chat(C, "<span class='interface'>You were deadmined for this round by [src].</span>")
 		log_admin("[src] deadmined [C] for this round.")
 		message_admins("[src] deadmined [C] for this round..")
