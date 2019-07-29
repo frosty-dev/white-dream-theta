@@ -711,6 +711,14 @@ Turf and target are separate in case you want to teleport some distance from a t
 		return "левую ступню"
 	else if (zone == "right foot")
 		return "правую ступню"
+	else if (zone == "chest")
+		return "грудь"
+	else if (zone == "mouth")
+		return "рот"
+	else if (zone == "groin")
+		return "пах"
+	else if (zone == "head")
+		return "голову"
 	else
 		return zone
 
