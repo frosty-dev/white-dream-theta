@@ -3,7 +3,7 @@
 	desc = "This is the special coder plush, do not steal."
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "debug"
-	attack_verb = list("thumped", "whomped", "bumped")
+	attack_verb = list("бьётенькает", "шепчетенькает", "плюшит")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 	var/list/squeak_override //Weighted list; If you want your plush to have different squeak sounds use this
@@ -364,14 +364,14 @@
 	desc = "An adorable stuffed toy that resembles a space carp."
 	icon_state = "carpplush"
 	item_state = "carp_plushie"
-	attack_verb = list("bitten", "eaten", "fin slapped")
+	attack_verb = list("кусает", "пожирает", "шлёпает плавничком")
 	squeak_override = list('sound/weapons/bite.ogg'=1)
 
 /obj/item/toy/plush/bubbleplush
 	name = "\improper Bubblegum plushie"
 	desc = "The friendly red demon that gives good miners gifts."
 	icon_state = "bubbleplush"
-	attack_verb = list("rent")
+	attack_verb = list("арендует")
 	squeak_override = list('sound/magic/demon_attack1.ogg'=1)
 
 /obj/item/toy/plush/plushvar
@@ -478,7 +478,7 @@
 	desc = "An adorable stuffed toy that resembles a lizardperson."
 	icon_state = "plushie_lizard"
 	item_state = "plushie_lizard"
-	attack_verb = list("clawed", "hissed", "tail slapped")
+	attack_verb = list("рвёт когтишками", "шипит", "шлёпает хвостиком")
 	squeak_override = list('sound/weapons/slash.ogg' = 1)
 
 /obj/item/toy/plush/snakeplushie
@@ -486,7 +486,7 @@
 	desc = "An adorable stuffed toy that resembles a snake. Not to be mistaken for the real thing."
 	icon_state = "plushie_snake"
 	item_state = "plushie_snake"
-	attack_verb = list("bitten", "hissed", "tail slapped")
+	attack_verb = list("кусает", "шипит", "шлёпает хвостиком")
 	squeak_override = list('sound/weapons/bite.ogg' = 1)
 
 /obj/item/toy/plush/nukeplushie
@@ -494,7 +494,7 @@
 	desc = "A stuffed toy that resembles a syndicate nuclear operative. The tag claims operatives to be purely fictitious."
 	icon_state = "plushie_nuke"
 	item_state = "plushie_nuke"
-	attack_verb = list("shot", "nuked", "detonated")
+	attack_verb = list("застреливает", "взрывает", "детонирует")
 	squeak_override = list('sound/effects/hit_punch.ogg' = 1)
 
 /obj/item/toy/plush/slimeplushie
@@ -502,7 +502,7 @@
 	desc = "An adorable stuffed toy that resembles a slime. It is practically just a hacky sack."
 	icon_state = "plushie_slime"
 	item_state = "plushie_slime"
-	attack_verb = list("blorbled", "slimed", "absorbed")
+	attack_verb = list("болтает", "слаймит", "посасывает")
 	squeak_override = list('sound/effects/blobattack.ogg' = 1)
 	gender = FEMALE	//given all the jokes and drawings, I'm not sure the xenobiologists would make a slimeboy
 	squeak_override = list('sound/effects/blobattack.ogg' = 1)
@@ -522,6 +522,6 @@
 	desc = "A cute toy that resembles an even cuter bee."
 	icon_state = "plushie_h"
 	item_state = "plushie_h"
-	attack_verb = list("stung")
+	attack_verb = list("жалит")
 	gender = FEMALE
 	squeak_override = list('sound/voice/moth/scream_moth.ogg'=1)

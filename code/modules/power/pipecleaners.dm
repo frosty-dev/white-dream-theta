@@ -197,7 +197,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	materials = list(MAT_METAL=10, MAT_GLASS=5)
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
-	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
+	attack_verb = list("хлыстает", "принуждает", "учит", "лупит")
 	singular_name = "pipe cleaner piece"
 	full_w_class = WEIGHT_CLASS_SMALL
 	grind_results = list("copper" = 2) //2 copper per pipe_cleaner in the coil

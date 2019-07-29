@@ -165,7 +165,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	materials = list(MAT_METAL=10, MAT_GLASS=10)
-	attack_verb = list("struck", "pistol whipped", "hit", "bashed")
+	attack_verb = list("атакует", "пистолетирует", "бьёт", "колотит")
 	var/bullets = 7
 
 /obj/item/toy/gun/examine(mob/user)
@@ -241,7 +241,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	var/active = 0
 	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("attacked", "struck", "hit")
+	attack_verb = list("атакует", "вмазывает", "бьёт")
 	var/hacked = FALSE
 
 /obj/item/toy/sword/attack_self(mob/user)
@@ -303,7 +303,7 @@
 	item_state = "arm_blade"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
-	attack_verb = list("pricked", "absorbed", "gored")
+	attack_verb = list("протыкает", "пожирает", "унижает")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 
@@ -317,7 +317,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/toolbox_righthand.dmi'
 	var/active = FALSE
 	icon = 'icons/obj/items_and_weapons.dmi'
-	attack_verb = list("robusted")
+	attack_verb = list("робастит")
 
 /obj/item/toy/windupToolbox/attack_self(mob/user)
 	if(!active)
@@ -344,7 +344,7 @@
 	throw_range = 5
 	force_unwielded = 0
 	force_wielded = 0
-	attack_verb = list("attacked", "struck", "hit")
+	attack_verb = list("атакует", "struck", "бьёт")
 
 /obj/item/twohanded/dualsaber/toy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	return 0
@@ -365,7 +365,7 @@
 	force = 5
 	throwforce = 5
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
+	attack_verb = list("атакует", "режет", "втыкает", "рубит")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /*
@@ -627,7 +627,7 @@
 	var/card_throwforce = 0
 	var/card_throw_speed = 3
 	var/card_throw_range = 7
-	var/list/card_attack_verb = list("attacked")
+	var/list/card_attack_verb = list("атакует")
 
 /obj/item/toy/cards/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
@@ -980,7 +980,7 @@
 	card_throwforce = 10
 	card_throw_speed = 3
 	card_throw_range = 7
-	card_attack_verb = list("attacked", "sliced", "diced", "slashed", "cut")
+	card_attack_verb = list("атакует", "режет", "нарезает", "рубит", "режет")
 	resistance_flags = NONE
 
 /*

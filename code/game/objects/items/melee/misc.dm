@@ -21,7 +21,7 @@
 	force = 10
 	throwforce = 7
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	attack_verb = list("порит", "шлёпает", "лупит", "учит")
 	hitsound = 'sound/weapons/chainhit.ogg'
 	materials = list(MAT_METAL = 1000)
 
@@ -41,7 +41,7 @@
 	force = 20
 	throwforce = 10
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb = list("атакует", "режет", "протыкает", "нарезает", "рвёт", "разрывает", "кромсает", "разрезает")
 	sharpness = IS_SHARP
 
 /obj/item/melee/synthetic_arm_blade/Initialize()
@@ -63,7 +63,7 @@
 	block_chance = 50
 	armour_penetration = 75
 	sharpness = IS_SHARP
-	attack_verb = list("slashed", "cut")
+	attack_verb = list("нежно резанул", "изысканно рубанул")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	materials = list(MAT_METAL = 1000)
 
@@ -144,7 +144,7 @@
 	throwforce = 10
 	block_chance = 20
 	armour_penetration = 65
-	attack_verb = list("slashed", "stung", "prickled", "poked")
+	attack_verb = list("режет", "жалит", "колит", "тычет")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 /obj/item/melee/beesword/afterattack(atom/target, mob/user, proximity = TRUE)
@@ -359,7 +359,7 @@
 		item_state = on_item_state
 		w_class = weight_class_on
 		force = force_on
-		attack_verb = list("smacked", "struck", "cracked", "beaten")
+		attack_verb = list("унижает", "бьёт", "ломает", "атакует")
 	else
 		to_chat(user, desc["local_off"])
 		icon_state = off_icon_state
@@ -367,7 +367,7 @@
 		slot_flags = ITEM_SLOT_BELT
 		w_class = WEIGHT_CLASS_SMALL
 		force = force_off
-		attack_verb = list("hit", "poked")
+		attack_verb = list("тычет", "указывает")
 
 	playsound(src.loc, on_sound, 50, 1)
 	add_fingerprint(user)
@@ -513,7 +513,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("flogged", "whipped", "lashed", "disciplined")
+	attack_verb = list("порит", "взбивает", "ударяет", "учит")
 	hitsound = 'sound/weapons/whip.ogg'
 
 /obj/item/melee/curator_whip/afterattack(target, mob/user, proximity_flag)
@@ -532,7 +532,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	item_flags = NONE
 	force = 0
-	attack_verb = list("hit", "poked")
+	attack_verb = list("бьёт", "тычет")
 	var/obj/item/reagent_containers/food/snacks/sausage/held_sausage
 	var/static/list/ovens
 	var/on = FALSE

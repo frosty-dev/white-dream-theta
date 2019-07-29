@@ -13,7 +13,7 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_SMALL
 	materials = list(MAT_METAL=80)
-	attack_verb = list("pinched", "nipped")
+	attack_verb = list("кусает", "прокусывает")
 	hitsound = 'sound/items/wirecutter.ogg'
 	usesound = 'sound/items/wirecutter.ogg'
 

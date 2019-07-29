@@ -11,7 +11,7 @@
 	materials = list(MAT_METAL=60)
 	item_color = "cargo"
 	pressure_resistance = 2
-	attack_verb = list("stamped")
+	attack_verb = list("штампует")
 
 /obj/item/stamp/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] stamps 'VOID' on [user.p_their()] forehead, then promptly falls over, dead.</span>")

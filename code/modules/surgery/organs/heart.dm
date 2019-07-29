@@ -7,7 +7,7 @@
 	// Heart attack code is in code/modules/mob/living/carbon/human/life.dm
 	var/beating = 1
 	var/icon_base = "heart"
-	attack_verb = list("beat", "thumped")
+	attack_verb = list("битбоксит", "тычет")
 	var/beat = BEAT_NONE//is this mob having a heatbeat sound played? if so, which?
 
 /obj/item/organ/heart/update_icon()

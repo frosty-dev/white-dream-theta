@@ -124,7 +124,7 @@
 	if(I.attack_verb && I.attack_verb.len)
 		message_verb = "[pick(I.attack_verb)]"
 	else if(I.force)
-		message_verb = "attacked"
+		message_verb = "атакует"
 
 	var/attack_message = "[src] has been [message_verb] with [I]."
 	if(user)
@@ -168,7 +168,7 @@
 				visible_message("<span class='danger'>[M] has punched [src]!</span>", \
 						"<span class='userdanger'>[M] has punched [src]!</span>")
 				adjustBruteLoss(damage)
-				log_combat(M, src, "attacked")
+				log_combat(M, src, "атакует")
 				updatehealth()
 			if ("disarm")
 				if (!(mobility_flags & MOBILITY_STAND) && !ascended) //No stealing the arch devil's pitchfork.

@@ -20,7 +20,7 @@
 			"<span class='userdanger'>[M] [response_harm] [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 			playsound(loc, attacked_sound, 25, 1, -1)
 			attack_threshold_check(harm_intent_damage)
-			log_combat(M, src, "attacked")
+			log_combat(M, src, "атакует")
 			updatehealth()
 			return TRUE
 
@@ -61,7 +61,7 @@
 					"<span class='userdanger'>[M] has slashed at [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 			playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
 			attack_threshold_check(damage)
-			log_combat(M, src, "attacked")
+			log_combat(M, src, "атакует")
 		return 1
 
 /mob/living/simple_animal/attack_larva(mob/living/carbon/alien/larva/L)

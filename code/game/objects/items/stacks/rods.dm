@@ -19,7 +19,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	throw_range = 7
 	materials = list(MAT_METAL=1000)
 	max_amount = 50
-	attack_verb = list("hit", "bludgeoned", "whacked")
+	attack_verb = list("בü¸ע", "ןנמעûךאוע", "רכ¸ןאוע")
 	hitsound = 'sound/weapons/grenadelaunch.ogg'
 	novariants = TRUE
 

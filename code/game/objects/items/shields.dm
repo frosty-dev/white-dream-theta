@@ -21,7 +21,7 @@
 	throw_range = 3
 	w_class = WEIGHT_CLASS_BULKY
 	materials = list(MAT_GLASS=7500, MAT_METAL=1000)
-	attack_verb = list("shoved", "bashed")
+	attack_verb = list("толкает", "бьёт")
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 	transparent = TRUE
 	max_integrity = 75
@@ -185,7 +185,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	w_class = WEIGHT_CLASS_TINY
-	attack_verb = list("shoved", "bashed")
+	attack_verb = list("толкает", "бьёт")
 	throw_range = 5
 	force = 3
 	throwforce = 3

@@ -8,7 +8,7 @@
 	zone = BODY_ZONE_HEAD
 	slot = ORGAN_SLOT_BRAIN
 	vital = TRUE
-	attack_verb = list("attacked", "slapped", "whacked")
+	attack_verb = list("атакует", "шлёпает", "вмазывает")
 	var/suicided = FALSE
 	var/mob/living/brain/brainmob = null
 	var/brain_death = FALSE //if the brainmob was intentionally killed by attacking the brain after removal, or by severe braindamage

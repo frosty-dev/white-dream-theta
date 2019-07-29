@@ -14,7 +14,7 @@
 	icon = 'icons/obj/items_and_weapons.dmi'
 	w_class = WEIGHT_CLASS_GIGANTIC
 	force = 12
-	attack_verb = list("robusted")
+	attack_verb = list("робастит")
 	hitsound = 'sound/weapons/smash.ogg'
 	var/awakened = FALSE
 	var/bloodthirst = HIS_GRACE_SATIATED

@@ -28,7 +28,7 @@
 
 	item_color = "red"
 	w_class = WEIGHT_CLASS_TINY
-	attack_verb = list("attacked", "coloured")
+	attack_verb = list("בü¸ע", "לאזוע")
 	grind_results = list()
 	var/paint_color = "#FF0000" //RGB
 

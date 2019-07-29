@@ -3,7 +3,7 @@
 /datum/species/ethereal
 	name = "Ethereal"
 	id = "ethereal"
-	attack_verb = "burn"
+	attack_verb = "æã¸ò"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ethereal

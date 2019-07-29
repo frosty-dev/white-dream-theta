@@ -4,7 +4,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_STOMACH
-	attack_verb = list("gored", "squished", "slapped", "digested")
+	attack_verb = list("выжимает", "выдавливает", "шлёпает", "кормит")
 	desc = "Onaka ga suite imasu."
 	var/disgust_metabolism = 1
 

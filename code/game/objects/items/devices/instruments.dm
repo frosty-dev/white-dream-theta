@@ -85,7 +85,7 @@
 	icon_state = "guitar"
 	item_state = "guitar"
 	instrumentExt = "ogg"
-	attack_verb = list("played metal on", "serenaded", "crashed", "smashed")
+	attack_verb = list("играет метал", "серенадирует", "инструментирует", "применяет по делу")
 	hitsound = 'sound/weapons/stringsmash.ogg'
 	instrumentId = "guitar"
 
@@ -95,7 +95,7 @@
 	icon_state = "eguitar"
 	item_state = "eguitar"
 	force = 12
-	attack_verb = list("played metal on", "shredded", "crashed", "smashed")
+	attack_verb = list("играет метал", "серенадирует", "инструментирует", "применяет по делу")
 	hitsound = 'sound/weapons/stringsmash.ogg'
 	instrumentId = "eguitar"
 	instrumentExt = "ogg"
@@ -128,7 +128,7 @@
 	item_state = "trombone"
 	force = 0
 	instrumentId = "trombone"
-	attack_verb = list("played","jazzed","trumpeted","mourned","dooted","spooked")
+	attack_verb = list("играет","джаззует","трампетирует","горнирует","дудит","спукает")
 
 /obj/item/instrument/trumpet/spectral/Initialize()
 	. = ..()
@@ -152,7 +152,7 @@
 	item_state = "saxophone"
 	instrumentId = "saxophone"
 	force = 0
-	attack_verb = list("played","jazzed","saxxed","mourned","dooted","spooked")
+	attack_verb = list("играет","саксирует","горнирует","дудит","спукает")
 
 /obj/item/instrument/saxophone/spectral/Initialize()
 	. = ..()
@@ -176,7 +176,7 @@
 	icon_state = "trombone"
 	item_state = "trombone"
 	force = 0
-	attack_verb = list("played","jazzed","tromboned","mourned","dooted","spooked")
+	attack_verb = list("играет","тромбирует","дудит","спукает")
 
 /obj/item/instrument/trombone/spectral/Initialize()
 	. = ..()
@@ -225,7 +225,7 @@
 	item_state = "bike_horn"
 	lefthand_file = 'icons/mob/inhands/equipment/horns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/horns_righthand.dmi'
-	attack_verb = list("beautifully honks")
+	attack_verb = list("невероятно красиво ХОНКАЕТ")
 	instrumentId = "bikehorn"
 	instrumentExt = "ogg"
 	w_class = WEIGHT_CLASS_TINY

@@ -66,7 +66,7 @@
 	stabby = TRANSFER_SHARP
 	w_class = WEIGHT_CLASS_SMALL
 	sharpness = IS_SHARP_ACCURATE
-	attack_verb = list("poked", "prodded", "stabbed", "pierced", "gashed", "punctured")
+	attack_verb = list("тычет", "протыкает", "втыкает", "нанизывает", "гопстопает", "пробивает")
 
 
 /obj/item/forged/melee/sword
@@ -81,7 +81,7 @@
 	stabby = TRANSFER_SHARPER
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = IS_SHARP
-	attack_verb = list("slashed", "sliced", "stabbed", "pierced", "diced", "run-through")
+	attack_verb = list("рубит", "режет", "втыкает", "нарезает", "нарезает", "пробивает")
 
 
 /obj/item/forged/melee/mace
@@ -96,7 +96,7 @@
 	stabby = TRANSFER_PARTIALLY_BLUNT
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = IS_BLUNT
-	attack_verb = list("beaten", "bludgeoned")
+	attack_verb = list("бьёт", "ударяет")
 	armour_penetration = 5
 
 
@@ -173,7 +173,7 @@
 	stabby = TRANSFER_SHARPEST
 	w_class = WEIGHT_CLASS_HUGE
 	sharpness = IS_SHARP
-	attack_verb = list("gored", "impaled", "stabbed", "slashed", "torn", "run-through")
+	attack_verb = list("нанизывает", "пробивает", "втыкает", "рубит", "кромсает", "протыкает")
 
 
 /obj/item/twohanded/forged/greatsword/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
@@ -194,7 +194,7 @@
 	stabby = TRANSFER_BLUNT
 	w_class = WEIGHT_CLASS_HUGE
 	sharpness = IS_BLUNT
-	attack_verb = list("crushed", "flattened", "bludgeoned", "pulverised", "shattered")
+	attack_verb = list("уничтожает", "молотит", "ударяет", "долбит", "разбивает")
 	armour_penetration = 10
 
 /obj/item/twohanded/forged/warhammer/update_icon()

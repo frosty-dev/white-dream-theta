@@ -12,7 +12,7 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_BULKY
 	materials = list(MAT_METAL = 500)
-	attack_verb = list("robusted")
+	attack_verb = list("робастит")
 	hitsound = 'sound/weapons/smash.ogg'
 	var/latches = "single_latch"
 	var/has_latches = TRUE
@@ -182,7 +182,7 @@
 	has_latches = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	w_class = WEIGHT_CLASS_HUGE
-	attack_verb = list("robusted", "crushed", "smashed")
+	attack_verb = list("робастит", "уничтожает", "размазывает")
 	var/fabricator_type = /obj/item/clockwork/replica_fabricator/scarab
 
 /obj/item/storage/toolbox/brass/ComponentInitialize()

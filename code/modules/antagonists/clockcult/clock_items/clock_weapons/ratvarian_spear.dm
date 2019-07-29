@@ -9,7 +9,7 @@
 	throwforce = 25
 	armour_penetration = 10
 	sharpness = IS_SHARP_ACCURATE
-	attack_verb = list("stabbed", "poked", "slashed")
+	attack_verb = list("втыкает", "тычет", "протыкает")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	var/bonus_burn = 5

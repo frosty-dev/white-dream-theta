@@ -18,7 +18,7 @@
 	armour_penetration = 10
 	materials = list(MAT_METAL=1150, MAT_GLASS=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
+	attack_verb = list("размазывает", "уничтожает", "разрубает", "рубит", "ударяет")
 	sharpness = IS_SHARP
 	actions_types = list(/datum/action/item_action/toggle_light)
 	var/list/trophies = list()

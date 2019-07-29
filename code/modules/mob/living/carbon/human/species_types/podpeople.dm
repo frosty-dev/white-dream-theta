@@ -5,7 +5,7 @@
 	default_color = "59CE00"
 	species_traits = list(MUTCOLORS,EYECOLOR)
 	inherent_traits = list(TRAIT_ALWAYS_CLEAN)
-	attack_verb = "slash"
+	attack_verb = "цапает"
 	attack_sound = 'sound/weapons/slice.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	burnmod = 1.25

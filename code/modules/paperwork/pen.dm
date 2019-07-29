@@ -116,7 +116,7 @@
 				to_chat(M, "<span class='danger'>You feel a tiny prick!</span>")
 			. = 1
 
-		log_combat(user, M, "stabbed", src)
+		log_combat(user, M, "втыкает", src)
 
 	else
 		. = ..()
@@ -173,7 +173,7 @@
  * (Alan) Edaggers
  */
 /obj/item/pen/edagger
-	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut") //these wont show up if the pen is off
+	attack_verb = list("рубит", "втыкает", "разрезает", "кромсает", "разрывает", "нарезает", "режет") //these wont show up if the pen is off
 	var/on = FALSE
 
 /obj/item/pen/edagger/Initialize()

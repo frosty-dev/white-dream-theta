@@ -12,7 +12,7 @@
 	throw_range = 7
 	force = 10
 	materials = list(MAT_METAL = 90)
-	attack_verb = list("slammed", "whacked", "bashed", "thunked", "battered", "bludgeoned", "thrashed")
+	attack_verb = list("ху€рит", "ебошит", "устраивает развал", "баллонит", "грейтайдит", "петушит", "учит летать")
 	dog_fashion = /datum/dog_fashion/back
 	resistance_flags = FIRE_PROOF
 	var/max_water = 50

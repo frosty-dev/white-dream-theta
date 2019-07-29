@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/list/inherent_traits = list()
 	var/list/inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 
-	var/attack_verb = "punch"	// punch-specific attack verb
+	var/attack_verb = "áü¸ò"	// punch-specific attack verb
 	var/sound/attack_sound = 'sound/weapons/punch1.ogg'
 	var/sound/miss_sound = 'sound/weapons/punchmiss.ogg'
 

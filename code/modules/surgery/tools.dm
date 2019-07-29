@@ -28,7 +28,7 @@
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
 	w_class = WEIGHT_CLASS_TINY
-	attack_verb = list("attacked", "pinched")
+	attack_verb = list("атакует", "прокусывает")
 
 
 /obj/item/hemostat/augment
@@ -39,7 +39,7 @@
 	materials = list(MAT_METAL=5000, MAT_GLASS=2500)
 	w_class = WEIGHT_CLASS_TINY
 	toolspeed = 0.5
-	attack_verb = list("attacked", "pinched")
+	attack_verb = list("атакует", "прокусывает")
 
 
 /obj/item/cautery
@@ -51,7 +51,7 @@
 	flags_1 = CONDUCT_1
 	item_flags = SURGICAL_TOOL
 	w_class = WEIGHT_CLASS_TINY
-	attack_verb = list("burnt")
+	attack_verb = list("прожигает")
 
 
 /obj/item/cautery/augment
@@ -62,7 +62,7 @@
 	materials = list(MAT_METAL=2500, MAT_GLASS=750)
 	w_class = WEIGHT_CLASS_TINY
 	toolspeed = 0.5
-	attack_verb = list("burnt")
+	attack_verb = list("прожигает")
 
 
 /obj/item/surgicaldrill
@@ -78,7 +78,7 @@
 	item_flags = SURGICAL_TOOL
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("drilled")
+	attack_verb = list("дырявит")
 
 
 /obj/item/surgicaldrill/augment
@@ -91,7 +91,7 @@
 	force = 10
 	w_class = WEIGHT_CLASS_SMALL
 	toolspeed = 0.5
-	attack_verb = list("drilled")
+	attack_verb = list("дырявит")
 
 
 /obj/item/scalpel
@@ -110,7 +110,7 @@
 	throw_speed = 3
 	throw_range = 5
 	materials = list(MAT_METAL=4000, MAT_GLASS=1000)
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb = list("атакует", "рубит", "втыкает", "разрезает", "кромсает", "разрывает", "нарезает", "режет")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP_ACCURATE
 
@@ -129,7 +129,7 @@
 	throw_speed = 3
 	throw_range = 5
 	materials = list(MAT_METAL=4000, MAT_GLASS=1000)
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb = list("атакует", "рубит", "втыкает", "разрезает", "кромсает", "разрывает", "нарезает", "режет")
 	toolspeed = 0.5
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP_ACCURATE
@@ -156,7 +156,7 @@
 	throw_speed = 2
 	throw_range = 5
 	materials = list(MAT_METAL=10000, MAT_GLASS=6000)
-	attack_verb = list("attacked", "slashed", "sawed", "cut")
+	attack_verb = list("атакует", "рубит", "пилит", "режет")
 	sharpness = IS_SHARP
 
 /obj/item/circular_saw/Initialize()
@@ -177,7 +177,7 @@
 	throw_range = 5
 	materials = list(MAT_METAL=10000, MAT_GLASS=6000)
 	toolspeed = 0.5
-	attack_verb = list("attacked", "slashed", "sawed", "cut")
+	attack_verb = list("атакует", "рубит", "пилит", "режет")
 	sharpness = IS_SHARP
 
 /obj/item/surgical_drapes
@@ -186,7 +186,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "surgical_drapes"
 	w_class = WEIGHT_CLASS_TINY
-	attack_verb = list("slapped")
+	attack_verb = list("шлёпает")
 
 /obj/item/surgical_drapes/attack(mob/living/M, mob/user)
 	if(!attempt_initiate_surgery(src, M, user))

@@ -41,7 +41,7 @@
 	force = 30
 	throwforce = 10
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "rended")
+	attack_verb = list("атакует", "рубит", "втыкает", "разрезает", "кромсает", "разрубает", "нарезает", "культирует")
 
 /obj/item/melee/cultblade/Initialize()
 	. = ..()
@@ -95,7 +95,7 @@
 	throw_range = 3
 	sharpness = IS_SHARP
 	light_color = "#ff0000"
-	attack_verb = list("cleaved", "slashed", "torn", "hacked", "ripped", "diced", "carved")
+	attack_verb = list("разрубает", "рубит", "кромсает", "уничтожает", "разрывает", "нарезает", "режет")
 	icon_state = "cultbastard"
 	item_state = "cultbastard"
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -665,7 +665,7 @@
 	throw_speed = 2
 	armour_penetration = 30
 	block_chance = 30
-	attack_verb = list("attacked", "impaled", "stabbed", "torn", "gored")
+	attack_verb = list("атакует", "протыкает", "втыкает", "кромсает", "насаживает")
 	sharpness = IS_SHARP
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/datum/action/innate/cult/spear/spear_act
@@ -923,7 +923,7 @@
 	throw_speed = 1
 	throw_range = 4
 	w_class = WEIGHT_CLASS_BULKY
-	attack_verb = list("bumped", "prodded")
+	attack_verb = list("тычет", "стукает")
 	hitsound = 'sound/weapons/smash.ogg'
 	var/illusions = 2
 

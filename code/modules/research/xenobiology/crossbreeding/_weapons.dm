@@ -33,19 +33,19 @@ Slimecrossing Weapons
 	switch(damtype)
 		if(BRUTE)
 			hitsound = 'sound/weapons/bladeslice.ogg'
-			attack_verb = list("slashed","sliced","cut")
+			attack_verb = list("режет","рубит","кромсает")
 		if(BURN)
 			hitsound = 'sound/weapons/sear.ogg'
-			attack_verb = list("burned","singed","heated")
+			attack_verb = list("жгёт","поджигает","даёт прикурить")
 		if(TOX)
 			hitsound = 'sound/weapons/pierce.ogg'
-			attack_verb = list("poisoned","dosed","toxified")
+			attack_verb = list("отравляет","накачивает","токсифицирует")
 		if(OXY)
 			hitsound = 'sound/effects/space_wind.ogg'
-			attack_verb = list("suffocated","winded","vacuumed")
+			attack_verb = list("душит","ветрит","вакуумирет")
 		if(CLONE)
 			hitsound = 'sound/items/geiger/ext1.ogg'
-			attack_verb = list("irradiated","mutated","maligned")
+			attack_verb = list("радиацинирует","мутирует","чернобылит")
 	return ..()
 
 //Adamantine shield - Chilling Adamantine
@@ -62,7 +62,7 @@ Slimecrossing Weapons
 	throw_range = 1 //How far do you think you're gonna throw a solid crystalline shield...?
 	throw_speed = 2
 	force = 15 //Heavy, but hard to wield.
-	attack_verb = list("bashed","pounded","slammed")
+	attack_verb = list("колотит","лупит","ломает")
 	item_flags = SLOWS_WHILE_IN_HAND
 
 //Bloodchiller - Chilling Green
