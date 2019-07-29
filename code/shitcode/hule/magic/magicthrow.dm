@@ -109,4 +109,4 @@
 			var/mob/living/carbon/C = target
 			var/obj/item/bodypart/head/head = C.get_bodypart(BODY_ZONE_HEAD)
 			head.drop_limb()
-			playsound(src,'code/shitcode/hule/SFX/headshot.ogg', 100, 5, pressure_affected = FALSE)
+			playsound(src,'code/shitcode/hule/SFX/csSFX/headshot.wav', 100, 5, pressure_affected = FALSE)
