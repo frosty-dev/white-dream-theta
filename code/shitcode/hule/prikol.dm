@@ -70,9 +70,6 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 		if(9)
 			playsound(T,'code/shitcode/hule/SFX/csSFX/holyshit.wav', 150, 5, pressure_affected = FALSE)
 
-
-
-
 /client/proc/toggle_prikol()
 	set category = "Fun"
 	set name = "Toggle P.R.I.K.O.L"
@@ -93,7 +90,7 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 		message_admins("[key] toggled P.R.I.K.O.L mode off.")
 
 /proc/secure_kill(var/mob/living/victim, var/mob/living/carbon/frabber, var/obj/weapon) // PRIKOL
-	if(istype(victim, /mob/living))
+	if(!istype(victim, /mob/living))
 		return
 	var/hpnow = victim.health
 	if(hpnow <= -100)
