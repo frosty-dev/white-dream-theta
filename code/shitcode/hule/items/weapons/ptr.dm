@@ -51,7 +51,6 @@
 
 	if(istype(target, /obj/mecha))
 		target.ex_act(EXPLODE_HEAVY)
-		playsound(G,'code/shitcode/hule/SFX/probitie.ogg', 100, 5, pressure_affected = FALSE)
 		playsound(src,'code/shitcode/hule/SFX/probitie.ogg', 100, 5, pressure_affected = FALSE)
 
 	if(iscarbon(target))
