@@ -245,9 +245,6 @@ proc/build_prizes_list()
 		to_chat(src,"<span class='warning'>Please wait until game is set up!</span>")
 		return
 
-	if (!GLOB.donators[ckey]) //It doesn't exist yet
-		load_donator(ckey)
-
 	var/datum/donator/D = GLOB.donators[ckey]
 	if(D)
 		D.show()
