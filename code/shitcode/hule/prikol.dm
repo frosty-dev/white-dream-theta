@@ -17,21 +17,15 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 	var/maxkillstreak = 0
 	var/time4kill = 150
 	var/timer = 0
-	var/processing = FALSE
 
-/datum/cs_killcounter/proc/start()
-	processing = TRUE
+/datum/cs_killcounter/Initialize()
+	. = ..()
 	START_PROCESSING(SSobj, src)
-
-/datum/cs_killcounter/proc/stop()
-	processing = FALSE
-	maxkillstreak = killstreak
-	STOP_PROCESSING(SSobj, src)
 
 /datum/cs_killcounter/Destroy()
 	. = ..()
-	if(processing)
-		stop()
+	maxkillstreak = killstreak
+	STOP_PROCESSING(SSobj, src)
 
 /datum/cs_killcounter/process()
 	if(timer)
@@ -43,7 +37,7 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 /datum/cs_killcounter/proc/count_kill(var/headshot = FALSE)
 	killcount++
 
-	if(!processing)
+	if(!GLOB.prikol_mode)
 		return
 
 	killstreak++
@@ -80,12 +74,8 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 	GLOB.prikol_mode = !GLOB.prikol_mode
 
 	if(GLOB.prikol_mode)
-		for(var/mob/living/carbon/M in GLOB.carbon_list)
-			M.killcounter.start()
 		message_admins("[key] toggled P.R.I.K.O.L mode on.")
 	else
-		for(var/mob/living/carbon/M in GLOB.carbon_list)
-			M.killcounter.stop()
 		message_admins("[key] toggled P.R.I.K.O.L mode off.")
 
 /proc/secure_kill(var/mob/living/victim, var/mob/living/carbon/frabber, var/obj/weapon) // PRIKOL

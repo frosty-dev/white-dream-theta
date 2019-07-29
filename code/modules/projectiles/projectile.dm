@@ -191,6 +191,10 @@
 				playsound(loc, hitsound, volume, 1, -1)
 			L.visible_message("<span class='danger'>[L] is hit by \a [src][organ_hit_text]!</span>", \
 					"<span class='userdanger'>[L] is hit by \a [src][organ_hit_text]!</span>", null, COMBAT_MESSAGE_RANGE)
+
+		if(def_zone == BODY_ZONE_HEAD && GLOB.prikol_mode)
+			playsound(src,'code/shitcode/hule/SFX/csSFX/headshot.wav', 100, 5, pressure_affected = FALSE)
+
 		L.on_hit(src)
 
 	var/reagent_note
