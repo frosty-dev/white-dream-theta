@@ -16,11 +16,13 @@
 	tiled_dirt = FALSE
 
 
-/turf/open/floor/mineral/Initialize()
+/turf/open/floor/mineral/Initialize(mapload)
 	if(!broken_states)
 		broken_states = list("[initial(icon_state)]_dam")
 	. = ..()
 	icons = typelist("icons", icons)
+	if (mapload)
+		initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 
 
 /turf/open/floor/mineral/update_icon()
