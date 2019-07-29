@@ -93,6 +93,8 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 		message_admins("[key] toggled P.R.I.K.O.L mode off.")
 
 /proc/secure_kill(var/mob/living/victim, var/mob/living/carbon/frabber, var/obj/weapon) // PRIKOL
+	if(istype(victim, /mob/living))
+		return
 	var/hpnow = victim.health
 	if(hpnow <= -100)
 		if(istype(weapon, /obj/item/projectile))
