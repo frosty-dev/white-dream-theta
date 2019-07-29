@@ -7,7 +7,7 @@ var/list/datum/de_admined = list()
 
 	var/list/choices = list()
 	for(var/client/A in GLOB.admins)
-		if(check_rights(R_PERMISSIONS))
+		if(check_rights_for(A, R_PERMISSIONS))
 			return
 		else
 			choices[A] = A
