@@ -44,7 +44,7 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 	timer += time4kill
 
 	if(headshot)
-		addtimer(CALLBACK(src, .proc/killsound), 30)
+		addtimer(CALLBACK(src, .proc/killsound), 25)
 	else
 		killsound()
 
@@ -61,14 +61,28 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 			playsound(T,'code/shitcode/hule/SFX/csSFX/killingspree.wav', 150, 5, pressure_affected = FALSE)
 		if(5)
 			playsound(T,'code/shitcode/hule/SFX/csSFX/godlike.wav', 150, 5, pressure_affected = FALSE)
+		if(6)
+			playsound(T,'code/shitcode/hule/SFX/csSFX/monsterkill.wav', 150, 5, pressure_affected = FALSE)
+		if(7)
+			playsound(T,'code/shitcode/hule/SFX/csSFX/multikill.wav', 150, 5, pressure_affected = FALSE)
+		if(8)
+			playsound(T,'code/shitcode/hule/SFX/csSFX/multikill.wav', 150, 5, pressure_affected = FALSE)
+		if(9)
+			playsound(T,'code/shitcode/hule/SFX/csSFX/holyshit.wav', 150, 5, pressure_affected = FALSE)
 
 
-/client/verb/toggle_prikol()
-	set category = "OOC"
+
+
+/client/proc/toggle_prikol()
+	set category = "Fun"
 	set name = "Toggle P.R.I.K.O.L"
 
+/*
 	if(!(usr.ckey in GLOB.anonists))
 		to_chat(usr, "<span class='userdanger'>Сорри, но ето бекдор, вам нельзя.........</span>")
+		return
+*/
+	if(!check_rights())
 		return
 
 	GLOB.prikol_mode = !GLOB.prikol_mode
