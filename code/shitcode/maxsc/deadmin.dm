@@ -10,8 +10,7 @@ GLOBAL_LIST_EMPTY(de_admined)
 		if(check_rights_for(A, R_PERMISSIONS))
 			return
 		else
-			choices[A] = A
-	choices = sortList(choices)
+			choices.Add(A)
 	var/selected = input("Please, select an admin!", "Deadmin", null , null) as null|anything in choices
 	if(!selected || !(selected in choices))
 		return
