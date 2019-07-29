@@ -694,6 +694,26 @@ Turf and target are separate in case you want to teleport some distance from a t
 	else
 		return zone
 
+/proc/ru_parse_zone(zone)
+	if(zone == "right hand")
+		return "правую кисть"
+	else if (zone == "left hand")
+		return "левую кисть"
+	else if (zone == "left arm")
+		return "левую руку"
+	else if (zone == "right arm")
+		return "правую руку"
+	else if (zone == "left leg")
+		return "левую руку"
+	else if (zone == "right leg")
+		return "правую руку"
+	else if (zone == "left foot")
+		return "левую ступню"
+	else if (zone == "right foot")
+		return "правую ступню"
+	else
+		return zone
+
 /*
 
  Gets the turf this atom's *ICON* appears to inhabit
