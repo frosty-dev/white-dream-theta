@@ -141,9 +141,9 @@
 	var/message_hit_area = ""
 	if(hit_area)
 		message_hit_area = "в [hit_area]"
-	var/attack_message = "[src] [message_verb] [I] [message_hit_area]."
+	var/attack_message = "[I] [message_verb] [message_hit_area]."
 	if(user in viewers(src, null))
-		attack_message = "[src] [message_verb] [I] [user] [message_hit_area]!"
+		attack_message = "[user] [message_verb] при помощи [I] [src] [message_hit_area]!"
 	visible_message("<span class='danger'>[attack_message]</span>",\
 		"<span class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
