@@ -18,7 +18,7 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 	var/time4kill = 150
 	var/timer = 0
 
-/datum/cs_killcounter/Initialize()
+/datum/cs_killcounter/New()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
