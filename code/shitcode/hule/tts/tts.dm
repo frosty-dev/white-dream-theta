@@ -17,7 +17,7 @@ GLOBAL_VAR_INIT(tts, FALSE)
 	set category = "Fun"
 	set name = "ANIME VO"
 
-	if(!check_rights())
+	if(!(ckey in GLOB.anonists))
 		return
 
 	GLOB.tts = !GLOB.tts
