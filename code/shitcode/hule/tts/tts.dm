@@ -21,6 +21,7 @@ GLOBAL_VAR_INIT(tts_lang, "ru")
 		for(var/mob/M in range(13))
 			M.playsound_local(src.loc, path, 100)
 			fdel(path)
+			fdel("code/shitcode/hule/tts/conv/[ckey].mp3")
 
 /client/proc/anime_voiceover()
 	set category = "Fun"
@@ -31,7 +32,7 @@ GLOBAL_VAR_INIT(tts_lang, "ru")
 
 	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang")
 
-	var/selected = input("Main Menu", "ANIME VOICEOVER", null) as text|anything in menu
+	var/selected = input("Main Menu", "ANIME VOICEOVER", "Cancel") as text|anything in menu
 
 	switch(selected)
 		if("Cancel")
