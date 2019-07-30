@@ -9,6 +9,8 @@
 		return
 	if(message)
 		say(message)
+		if(isliving(src) && GLOB.tts)
+			tts(message)
 
 ///Whisper verb
 /mob/verb/whisper_verb(message as text)
