@@ -59,7 +59,7 @@
 	medical_record_text = "Пациент имеет паразита в своей голове, который медленно пожирает его мозг, что в скором будущем может привести к гибели пациента." 
 
 /datum/quirk/brainproblems/on_process()
-	quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
+	quirk_holder.adjustBrainLoss(0.2)
 
 /datum/quirk/deafness
 	name = "Глухонемой"
