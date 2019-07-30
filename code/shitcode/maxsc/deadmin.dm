@@ -5,10 +5,13 @@ GLOBAL_LIST_EMPTY(de_admined)
 	set category = "Admin"
 	set desc = "Deadmin an administrator for a round."
 
+	if(!check_rights())
+		return
+
 	var/list/choices = list()
 	for(var/client/A in GLOB.admins)
 		if(check_rights_for(A, R_PERMISSIONS))
-			return
+			continue
 		else
 			choices.Add(A)
 	var/selected = input("Please, select an admin!", "Deadmin", null , null) as null|anything in choices
