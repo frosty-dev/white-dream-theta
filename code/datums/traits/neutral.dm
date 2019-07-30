@@ -109,4 +109,4 @@
 
 /datum/quirk/monochromatic/remove()
 	if(quirk_holder)
-		quirk_holder.remove_client_colour(/datum/client_colour/monochrome
+		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
