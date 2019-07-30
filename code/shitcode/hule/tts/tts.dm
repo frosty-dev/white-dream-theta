@@ -6,7 +6,7 @@ GLOBAL_VAR_INIT(tts, FALSE)
 	if(!isliving(src))
 		return
 
-	msg = trim(ph2up_hex(msg), 16) //sasai kudosai
+	msg = trim(ph2up(msg), 16) //sasai kudosai
 	//msg = trim(rhtml_encode(msg), 16)
 
 	world.shelleo("python3 code/shitcode/hule/tts/tts.py \"[ckey]\" \"[msg]\"")
