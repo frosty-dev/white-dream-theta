@@ -82,7 +82,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 					else
 						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
 
-			else if (GLOB.donators[key])
+			else if (GLOB.donators[keyname])
 				to_chat(C, "<font color='[prefs.ooccolor]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 			else if(!(key in C.prefs.ignoring))
 				if(GLOB.OOC_COLOR)
