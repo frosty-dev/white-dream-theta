@@ -171,9 +171,9 @@
 		/obj/item/dice/d20)
 	heirloom = new heirloom_type(get_turf(quirk_holder))
 	var/list/slots = list(
-		"in your left pocket" = SLOT_L_STORE,
-		"in your right pocket" = SLOT_R_STORE,
-		"in your backpack" = SLOT_IN_BACKPACK
+		"в вашем левом кармане" = SLOT_L_STORE,
+		"в вашем правом кармане" = SLOT_R_STORE,
+		"в вашей сумке" = SLOT_IN_BACKPACK
 	)
 	where = H.equip_in_one_of_slots(heirloom, slots, FALSE) || "у ваших ног"
 
@@ -182,7 +182,7 @@
 		var/mob/living/carbon/human/H = quirk_holder
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 
-	//to_chat(quirk_holder, "<span class='boldnotice'>Существует семейная реликвия, это [heirloom.name], которая находится [where], передающиеся из поколения в поколение. Держите это в безопасности, и никому не отдавайте!</span>")
+	to_chat(quirk_holder, "<span class='boldnotice'>Существует семейная реликвия, это [heirloom.name], которая находится [where], передающиеся из поколения в поколение. Держите это в безопасности, и никому не отдавайте!</span>")
 
 	var/list/names = splittext(quirk_holder.real_name, " ")
 	var/family_name = names[names.len]
@@ -275,7 +275,7 @@
 
 /datum/quirk/nyctophobia/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	if(H.dna.species.id in list("тень", "кошмар"))
+	if(H.dna.species.id in list("shadow", "nightmare"))
 		return //we're tied with the dark, so we don't get scared of it; don't cleanse outright to avoid cheese
 	var/turf/T = get_turf(quirk_holder)
 	var/lums = T.get_lumcount()
@@ -359,7 +359,7 @@
 	switch(limb_slot)
 		if(BODY_ZONE_L_ARM)
 			prosthetic = new/obj/item/bodypart/l_arm/robot/surplus(quirk_holder)
-			slot_string = "левая рука" // а работает ли Я?
+			slot_string = "левая рука"
 		if(BODY_ZONE_R_ARM)
 			prosthetic = new/obj/item/bodypart/r_arm/robot/surplus(quirk_holder)
 			slot_string = "правая рука"
@@ -407,9 +407,9 @@
 
 /datum/quirk/insanity/post_add() //I don't /think/ we'll need this but for newbies who think "roleplay as insane" = "license to kill" it's probably a good thing to have
 	if(!quirk_holder.mind || quirk_holder.mind.special_role)
-		return 
+		return
 	to_chat(quirk_holder, "<span class='big bold info'>Учтите, что ваш синдром диссоциации НЕ даёт вам права нападать на других людей, или каким-нибудь образом портить раунд окружающим. \
-	Вы не антагонист, и правила игры все еще действуют на вас, как на остальных игроков..</span>")
+Вы не антагонист, и правила игры все еще действуют на вас, как на остальных игроков..</span>")
 
 /datum/quirk/social_anxiety
 	name = "Социальная тревожность"
@@ -445,21 +445,23 @@
 	lose_text = "<span class='notice'>Мне стоит бросить принимать наркотики, подумали вы.</span>"
 	medical_record_text = "Пациент страдает от зависимости и тяжелых наркотиков."
 	var/drug_list = list(/datum/reagent/drug/crank, /datum/reagent/drug/krokodil, /datum/reagent/medicine/morphine, /datum/reagent/drug/happiness, /datum/reagent/drug/methamphetamine) //List of possible IDs
-	var/datum/reagent/reagent_type //!If this is defined, reagent_id will be unused and the defined reagent type will be instead.
-	var/datum/reagent/reagent_instance //! actual instanced version of the reagent
-	var/where_drug //! Where the drug spawned
-	var/obj/item/drug_container_type //! If this is defined before pill generation, pill generation will be skipped. This is the type of the pill bottle.
-	var/obj/item/drug_instance //! instanced version of the container
-	var/where_accessory //! where the accessory spawned
-	var/obj/item/accessory_type //! If this is null, an accessory won't be spawned.
-	var/obj/item/accessory_instance //! instanced version of the accessory
-	var/process_interval = 30 SECONDS //! how frequently the quirk processes
-	var/next_process = 0 //! ticker for processing
+	var/reagent_id //ID picked from list
+	var/datum/reagent/reagent_type //If this is defined, reagent_id will be unused and the defined reagent type will be instead.
+	var/datum/reagent/reagent_instance
+	var/where_drug
+	var/obj/item/drug_container_type //If this is defined before pill generation, pill generation will be skipped. This is the type of the pill bottle.
+	var/obj/item/drug_instance
+	var/where_accessory
+	var/obj/item/accessory_type //If this is null, it won't be spawned.
+	var/obj/item/accessory_instance
+	var/tick_counter = 0
 
 /datum/quirk/junkie/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
+	reagent_id = pick(drug_list)
 	if (!reagent_type)
-		reagent_type = pick(drug_list)
+		var/datum/reagent/prot_holder = GLOB.chemical_reagents_list[reagent_id]
+		reagent_type = prot_holder.type
 	reagent_instance = new reagent_type()
 	H.reagents.addiction_list.Add(reagent_instance)
 	var/current_turf = get_turf(quirk_holder)
@@ -471,14 +473,14 @@
 		for(var/i in 1 to 7)
 			var/obj/item/reagent_containers/pill/P = new(drug_instance)
 			P.icon_state = pill_state
-			P.reagents.add_reagent(reagent_type, 1)
+			P.reagents.add_reagent(reagent_id, 1)
 
 	if (accessory_type)
 		accessory_instance = new accessory_type(current_turf)
 	var/list/slots = list(
 		"в вашем левом кармане" = SLOT_L_STORE,
 		"в вашем правом кармане" = SLOT_R_STORE,
-		"в вашем рюкзаке" = SLOT_IN_BACKPACK
+		"в вашей сумке" = SLOT_IN_BACKPACK
 	)
 	where_drug = H.equip_in_one_of_slots(drug_instance, slots, FALSE) || "у ваших ног"
 	if (accessory_instance)
@@ -486,24 +488,28 @@
 	announce_drugs()
 
 /datum/quirk/junkie/post_add()
-	if(where_drug == "в вашем рюкзаке" || where_accessory == "в вашем рюкзаке")
+	if(where_drug == "в вашей сумке" || where_accessory == "в вашей сумке")
 		var/mob/living/carbon/human/H = quirk_holder
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 
 /datum/quirk/junkie/proc/announce_drugs()
-	//to_chat(quirk_holder, "<span class='boldnotice'>У вас имеется [drug_instance.name], [reagent_instance.name], [where_drug]. Стоит надеяться, что это не кончится...</span>")
+	to_chat(quirk_holder, "<span class='boldnotice'>У вас имеется [drug_instance.name], [reagent_instance.name], [where_drug]. Стоит надеяться, что это не кончится...</span>")
 
 /datum/quirk/junkie/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
-	if(world.time > next_process)
-		next_process = world.time + process_interval
-		if(!H.reagents.addiction_list.Find(reagent_instance))
-			if(!reagent_instance)
-				reagent_instance = new reagent_type()
-			else
-				reagent_instance.addiction_stage = 0
+	if (tick_counter == 60) //Halfassed optimization, increase this if there's slowdown due to this quirk
+		var/in_list = FALSE
+		for (var/datum/reagent/entry in H.reagents.addiction_list)
+			if(istype(entry, reagent_type))
+				in_list = TRUE
+				break
+		if(!in_list)
 			H.reagents.addiction_list += reagent_instance
-			to_chat(quirk_holder, "<span class='danger'>Вы почувствовали, что наконец таки бросили! Но вдруг, вы стали снова нуждаться в [reagent_instance.name]...</span>")
+			reagent_instance.addiction_stage = 0
+			to_chat(quirk_holder, "<span class='danger'>Вы внезапно хотите [reagent_instance.name] снова...</span>")
+		tick_counter = 0
+	else
+		++tick_counter
 
 /datum/quirk/junkie/smoker
 	name = "Курильщик"

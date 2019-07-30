@@ -36,7 +36,7 @@
 	gain_text = "<span class='notice'>Вы чувствуете, что алкоголь может принести вам пользу.</span>"
 	lose_text = "<span class='danger'>Вы больше не можете чувствовать, как алкоголь исцеляет ваши раны.</span>"
 	medical_record_text = "Пациент имеет необычную эффективность метаболизма печени лечить его от ран, употребляя алкогольные напитки."
-				
+
 /datum/quirk/empath
 	name = "Эмпатия"
 	desc = "Будь то шестым чувством, или просто тщательное изучение языка тела, но вам достаточно взгляда на кого-нибудь, чтобы понять, что он чувствует." 
@@ -118,7 +118,7 @@
 	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
 	if(!eyes || eyes.lighting_alpha)
 		return
-	eyes.Insert(H) //обновить их глаз видение и видение
+	eyes.Insert(H)
 
 /datum/quirk/photographer
 	name = "Фотограф"
