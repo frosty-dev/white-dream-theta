@@ -203,12 +203,7 @@ GLOBAL_LIST_EMPTY(donators)
 	var/category = "Debug"
 
 proc/load_donator(ckey)
-//	var/DBConnection/dbcon2 = new()
-//	dbcon2.doConnect("dbi:mysql:forum2:[global.sqladdress]:[global.sqlport]","[global.sqlfdbklogin]","[global.sqlfdbkpass]") //pidorasy
-
 	if(!SSdbcore.IsConnected())
-//		world.log << "Failed to connect to database [dbcon2.ErrorMsg()] in load_donator([ckey])."
-//		world.log << "Failed to connect to database in load_donator([ckey])."
 		return 0
 
 	var/datum/DBQuery/query_donators = SSdbcore.NewQuery("SELECT round(sum) FROM donations WHERE byond='[ckey]'")
@@ -216,7 +211,7 @@ proc/load_donator(ckey)
 	while(query_donators.NextRow())
 		var/money = round(text2num(query_donators.item[1]))
 		new /datum/donator(ckey, money)
-//	dbcon2.Disconnect()
+	qdel(query_donators)
 	return 1
 
 proc/build_prizes_list()
@@ -242,11 +237,11 @@ proc/build_prizes_list()
 
 
 	if(!SSticker || SSticker.current_state < GAME_STATE_PLAYING)
-		to_chat(src,"<span class='warning'>Please wait until game is set up!</span>")
+		to_chat(src,"<span class='warning'>Не так быстро, игра ещё не началась!</span>")
 		return
 
 	var/datum/donator/D = GLOB.donators[ckey]
 	if(D)
 		D.show()
 	else
-		to_chat(src,"<span class='warning'>You have not donated or donations database is inaccessible.</span>")
+		to_chat(src,"<span class='warning'>Вы не донатили, извините</span>")
