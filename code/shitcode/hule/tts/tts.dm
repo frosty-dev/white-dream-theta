@@ -5,7 +5,7 @@ GLOBAL_VAR_INIT(tts, FALSE)
 /mob/proc/tts(var/msg)
 	msg = ph2up(msg)
 
-	shell("python code/shitcode/hule/tts/tts.py \"[src.ckey]\" \"[msg]\"")
+	world.shelleo("python code/shitcode/hule/tts/tts.py \"[src.ckey]\" \"[msg]\"")
 	//shell("python code/shitcode/hule/tts/tts.py \"debug\" \"проект каво\"")
 
 	//spawn(10)
