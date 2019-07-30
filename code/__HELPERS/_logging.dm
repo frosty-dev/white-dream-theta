@@ -179,11 +179,13 @@
 /* Log to the logfile only. */
 /proc/log_runtime(text)
 	WRITE_LOG(GLOB.world_runtime_log, text)
+	webhook_send_runtime(text)
 
 /* Rarely gets called; just here in case the config breaks. */
 /proc/log_config(text)
 	WRITE_LOG(GLOB.config_error_log, text)
 	SEND_TEXT(world.log, text)
+	webhook_send_runtime(text)
 
 /proc/log_mapping(text)
 	WRITE_LOG(GLOB.world_map_error_log, text)
