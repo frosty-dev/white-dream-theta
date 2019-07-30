@@ -2965,6 +2965,7 @@
 #include "code\shitcode\hule\magic\magicthrow.dm"
 #include "code\shitcode\hule\magic\pomoyka.dm"
 #include "code\shitcode\hule\shuttles\adv_nav.dm"
+#include "code\shitcode\hule\shuttles\bearcat.dm"
 #include "code\shitcode\hule\traits\programmer.dm"
 #include "code\shitcode\hule\tts\tts.dm"
 #include "code\shitcode\jammer312\keybindings_rebind.dm"
