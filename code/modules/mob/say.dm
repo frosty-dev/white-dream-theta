@@ -9,7 +9,7 @@
 		return
 	if(message)
 		say(message)
-		if(isliving(src) && GLOB.tts)
+		if(GLOB.tts)
 			tts(message)
 
 ///Whisper verb
