@@ -31,11 +31,11 @@
 	message["head"] = trim(message["head"])
 	message["content"] = trim(message["content"])
 
-	if(!msg || !msghead)
+	if(!message["head"] || !message["content"])
 		to_chat(src, "Подумайте.")
 		return
 
-	var/formattedmessage = "Header: [message["head"]]\nContent: [message["content"]]\nCoords: [AREACOORD(src)]"
+	var/formattedmessage = "Header: [message["head"]]\nContent: [message["content"]]\nCoords: [AREACOORD(usr)]"
 
 	text2file(formattedmessage, "data/feedbacksystem.log")
 
