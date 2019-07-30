@@ -23,6 +23,24 @@ GLOBAL_VAR_INIT(tts_lang, "ru")
 			fdel(path)
 			fdel("code/shitcode/hule/tts/conv/[ckey].mp3")
 
+/mob/living
+	var/datum/tts = new
+
+/datum/tts
+	var/cooldown = 0
+
+/datum/tts/New()
+	. = ..()
+	START_PROCESSING(SSobj, src)
+
+/datum/tts/Destroy()
+	. = ..()
+	STOP_PROCESSING(SSobj, src)
+
+/datum/cs_killcounter/process()
+	if(cooldown > 0)
+		cooldown--
+
 /client/proc/anime_voiceover()
 	set category = "Fun"
 	set name = "ANIME VO"
@@ -32,7 +50,7 @@ GLOBAL_VAR_INIT(tts_lang, "ru")
 
 	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang")
 
-	var/selected = input("Main Menu", "ANIME VOICEOVER", "Cancel") as text|anything in menu
+	var/selected = input("Main Menu", "ANIME VOICEOVER", "Cancel") as null|anything in menu
 
 	switch(selected)
 		if("Cancel")
@@ -48,7 +66,7 @@ GLOBAL_VAR_INIT(tts_lang, "ru")
 		if("Change Lang")
 			var/list/langlist = list("Cancel", "ru", "en", "en-gb", "ja", "fr")
 
-			var/selectedlang = input("Main Menu", "ANIME VOICEOVER", null) as text|anything in langlist
+			var/selectedlang = input("Main Menu", "ANIME VOICEOVER", null) as null|anything in langlist
 			if(selectedlang == "Cancel")
 				return
 
