@@ -10,17 +10,15 @@ GLOBAL_LIST_EMPTY(de_admined)
 
 	var/list/choices = list()
 	for(var/client/A in GLOB.admins)
-		if(check_rights_for(A, R_PERMISSIONS))
-			continue
-		else
+		if(!check_rights_for(A, R_PERMISSIONS))
 			choices.Add(A)
 
-	var/selected = input("Please, select an admin!", "Deadmin", null) as null|anything in choices
+	var/selected = input("Please, select an admin!", "Admin", FALSE) in choices
 
 	if(!selected || !(selected in choices))
 		return
 
-	var/client/C = choices[selected]
+	var/client/C = selected
 
 	if(C.ckey in GLOB.de_admined)
 		to_chat(src, "[selected] is already deadmined!")
