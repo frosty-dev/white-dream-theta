@@ -182,7 +182,7 @@
 		var/mob/living/carbon/human/H = quirk_holder
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 
-	to_chat(quirk_holder, "<span class='boldnotice'>Существует семейная реликвия, это [heirloom.name], которая находится [where], передающиеся из поколения в поколение. Держите это в безопасности, и никому не отдавайте!</span>")
+	to_chat(quirk_holder, "<span class='boldnotice'>Дорогая для вас реликвия [heirloom.name] [where], передавалась из поколения в поколение. Хранить в безопасности!</span>")
 
 	var/list/names = splittext(quirk_holder.real_name, " ")
 	var/family_name = names[names.len]
@@ -493,7 +493,7 @@
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 
 /datum/quirk/junkie/proc/announce_drugs()
-	to_chat(quirk_holder, "<span class='boldnotice'>У вас имеется [drug_instance.name], [reagent_instance.name], [where_drug]. Стоит надеяться, что это не кончится...</span>")
+	to_chat(quirk_holder, "<span class='boldnotice'>Вы пронесли [drug_instance.name] из [reagent_instance.name] [where_drug]. Скоро он закончится...</span>")
 
 /datum/quirk/junkie/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
