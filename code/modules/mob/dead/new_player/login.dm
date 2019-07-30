@@ -33,8 +33,8 @@
 			postfix = "soon"
 		to_chat(src, "Please set up your character and select \"Ready\". The game will start [postfix].")
 
-	if (!GLOB.donators[key_name(src)]) //It doesn't exist yet
-		load_donator(key_name(src))
+	if (!GLOB.donators[ckey]) //It doesn't exist yet
+		load_donator(ckey)
 
 	if(!(client.get_loc_info()["country"] in list("Russia", "Ukraine", "Kazakhstan", "Belarus", "Japan", "HTTP Is Not Received")) && SSticker.current_state == GAME_STATE_PLAYING)
 		to_chat(client, "<span class='danger'>Our system detected that you are probably a pendos. Admins are notified. Killing people 4NR will get you gibbed.</span>")

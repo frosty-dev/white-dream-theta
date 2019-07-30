@@ -240,8 +240,8 @@ proc/build_prizes_list()
 		to_chat(src,"<span class='warning'>Не так быстро, игра ещё не началась!</span>")
 		return
 
-	if (!GLOB.donators[key_name(src)]) //If it doesn't exist yet
-		load_donator(key_name(src))
+	if (!GLOB.donators[ckey]) //If it doesn't exist yet
+		load_donator(ckey)
 
 	var/datum/donator/D = GLOB.donators[ckey]
 	if(D)
