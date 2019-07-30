@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(de_admined)
 		if(!check_rights_for(A, R_PERMISSIONS))
 			choices.Add(A)
 
-	var/selected = input("Please, select an admin!", "Admin", FALSE) in choices
+	var/selected = input("Please, select an admin!", "Admin", null) as null|anything in choices
 
 	if(!selected || !(selected in choices))
 		return
