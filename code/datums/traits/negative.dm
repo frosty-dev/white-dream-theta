@@ -56,7 +56,7 @@
 	value = -3
 	gain_text = "<span class='danger'>Вы чувствуете боль в голове.</span>"
 	lose_text = "<span class='notice'>Вы чувствуете, что голова перестала болеть.</span>"
-	medical_record_text = "Пациент имеет паразита в своей голове, который медленно пожирает его мозг, что в скором будущем может привести к гибели пациента." 
+	medical_record_text = "Пациент имеет паразита в своей голове, который медленно пожирает его мозг, что в скором будущем может привести к гибели пациента."
 
 /datum/quirk/brainproblems/on_process()
 	quirk_holder.adjustBrainLoss(0.2)
@@ -268,7 +268,7 @@
 	H.regenerate_icons() //this is to remove the inhand icon, which persists even if it's not in their hands
 
 /datum/quirk/nyctophobia
-	name = "Боязнь темноты"  
+	name = "Боязнь темноты"
 	desc = "Насколько вы помните, вы всегда боялись темноты. Будучи в темноте без света, вы будете чувствовать страх и вести себя аккуратно"
 	value = -1
 	medical_record_text = "Пациент демонстрирует страх к темноте."
@@ -338,7 +338,7 @@
 	medical_record_text = "У пациента сильная дрожь в обеих руках."
 
 /datum/quirk/prosopagnosia
-	name = "Прозопагнозия" 
+	name = "Прозопагнозия"
 	desc = "Вы имеете психическое расстройство, которое мешает вам распознавать лица."
 	value = -1
 	mob_trait = TRAIT_PROSOPAGNOSIA
@@ -431,7 +431,7 @@
 	else if(prob(min(3, nearby_people)) && !H.silent)
 		to_chat(H, "<span class='danger'>Вы решаете просто немного помолчать. Вам <i>совсем</i> не хочется разговаривать.</span>")
 		H.silent = max(10, H.silent)
-	else if(prob(0.5) && dumb_thing) 
+	else if(prob(0.5) && dumb_thing)
 		to_chat(H, "<span class='userdanger'>Вы вспоминаете дурацкую вещь, которую сказали давным давно и внутренне кричите.</span>")
 		dumb_thing = FALSE //only once per life
 		if(prob(1))
@@ -505,7 +505,8 @@
 				break
 		if(!in_list)
 			H.reagents.addiction_list += reagent_instance
-			reagent_instance.addiction_stage = 0
+			if(reagent_instance)
+				reagent_instance.addiction_stage = 0
 			to_chat(quirk_holder, "<span class='danger'>Вы внезапно хотите [reagent_instance.name] снова...</span>")
 		tick_counter = 0
 	else
@@ -549,7 +550,7 @@
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "wrong_cigs", /datum/mood_event/wrong_brand)
 
 /datum/quirk/unstable
-	name = "Неустойчивый" 
+	name = "Неустойчивый"
 	desc = "В связи с прошлыми проблемами, вы больше не сможете вернуть свою психику, если вдруг станете психопатом. Будьте очень осторожным и повышайте свое настроение!"
 	value = -2
 	mob_trait = TRAIT_UNSTABLE

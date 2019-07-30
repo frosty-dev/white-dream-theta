@@ -11,11 +11,11 @@
   * Unsets the focus var
   *
   * Clears alerts for this mob
-  * 
+  *
   * Resets all the observers perspectives to the tile this mob is on
-  * 
+  *
   * qdels any client colours in place on this mob
-  * 
+  *
   * Ghostizes the client attached to this mob
   *
   * Parent call
@@ -48,7 +48,7 @@
   *
   * Sends global signal COMSIG_GLOB_MOB_CREATED
   *
-  * Adds to global lists 
+  * Adds to global lists
   * * GLOB.mob_list
   * * GLOB.mob_directory (by tag)
   * * GLOB.dead_mob_list - if mob is dead
@@ -134,7 +134,7 @@
 /mob/proc/get_photo_description(obj/item/camera/camera)
 	return "a ... thing?"
 
-/** 
+/**
   * Show a message to this mob (visual)
   */
 /mob/proc/show_message(msg, type, alt_msg, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
@@ -169,7 +169,7 @@
 
 /**
   * Generate a visible message from this atom
-  * 
+  *
   * Show a message to all player mobs who sees this atom
   *
   * Show a message to the src mob (if the src is a mob)
@@ -325,7 +325,7 @@
 	return
 
 /**
-  * Equip an item to the slot or delete 
+  * Equip an item to the slot or delete
   *
   * This is just a commonly used configuration for the equip_to_slot_if_possible() proc, used to
   * equip people when the round starts and when events happen and such.
@@ -426,7 +426,8 @@
 
 	face_atom(A)
 	var/list/result = A.examine(src)
-	to_chat(src, result.Join("\n"))
+	if(result)
+		to_chat(src, result.Join("\n"))
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 /**
@@ -669,7 +670,7 @@
 		return
 	if(isAI(M))
 		return
-/** 
+/**
   * Handle the result of a click drag onto this mob
   *
   * For mobs this just shows the inventory
@@ -686,7 +687,7 @@
 
 /**
   * Output an update to the stat panel for the client
-  * 
+  *
   * calculates client ping, round id, server time, time dilation and other data about the round
   * and puts it in the mob status panel on a regular loop
   */
@@ -1004,7 +1005,7 @@
   * Fully update the name of a mob
   *
   * This will update a mob's name, real_name, mind.name, GLOB.data_core records, pda, id and traitor text
-  * 
+  *
   * Calling this proc without an oldname will only update the mob and skip updating the pda, id and records ~Carn
   */
 /mob/proc/fully_replace_character_name(oldname,newname)
