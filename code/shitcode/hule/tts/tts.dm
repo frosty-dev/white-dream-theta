@@ -16,7 +16,7 @@ GLOBAL_VAR_INIT(tts, FALSE)
 	var/path = "code/shitcode/hule/tts/lines/[ckey].ogg"
 	if(fexists(path))
 		for(var/mob/M in range(13))
-			M.playsound_local(src.loc, "code/shitcode/hule/tts/lines/[ckey].ogg", 100)
+			M.playsound_local(src.loc, path, 100)
 			//fdel(path)
 
 /client/proc/anime_voiceover()
