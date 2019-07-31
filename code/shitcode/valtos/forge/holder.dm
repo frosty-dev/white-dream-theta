@@ -19,7 +19,7 @@
 				random_reagents += RT.type
 	var/picked_reagent = pick(random_reagents)
 	return picked_reagent
-
+/* hippiecode sucks
 /datum/reagents/proc/handle_reactions()
 	if(!QDELETED(src))	//don't call the proc if the container doesn't exist
 		var/list/cached_reagents = reagent_list
@@ -199,3 +199,4 @@
 				if(R.reagent_state != SOLID)
 					R.reaction_obj(A, R.volume * volume_modifier, show_message)
 				R.handle_state_change(get_turf(A), R.volume * special_modifier, cached_my_atom)
+*/
