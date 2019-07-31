@@ -130,7 +130,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set category = "Preferences"
 
 	if(!holder || !check_rights_for(src, R_ADMIN))
-		if(!is_content_unlocked() || !GLOB.donators[keyname])
+		if(!is_content_unlocked() || !GLOB.donators[src.ckey])
 			return
 
 	var/new_ooccolor = input(src, "Please select your OOC color.", "OOC color", prefs.ooccolor) as color|null
@@ -146,7 +146,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set category = "Preferences"
 
 	if(!holder || !check_rights_for(src, R_ADMIN))
-		if(!is_content_unlocked() || !GLOB.donators[keyname])
+		if(!is_content_unlocked() || !GLOB.donators[src.ckey])
 			return
 
 		prefs.ooccolor = initial(prefs.ooccolor)
