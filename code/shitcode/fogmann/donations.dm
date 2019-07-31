@@ -156,7 +156,7 @@ GLOBAL_LIST_EMPTY(donators)
 	var/ownerkey
 	var/money = 0
 	var/maxmoney = 0
-	var/allowed_num_items = 15
+	var/allowed_num_items = 10
 
 /datum/donator/New(ckey, money)
 	..()
@@ -244,6 +244,7 @@ GLOBAL_LIST_EMPTY(donators)
 	money -= prize.cost
 	allowed_num_items--
 
+	ShowPanel(user)
 	return
 
 proc/load_donator(ckey)
