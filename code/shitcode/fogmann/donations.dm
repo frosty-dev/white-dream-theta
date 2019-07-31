@@ -233,8 +233,10 @@ GLOBAL_LIST_EMPTY(donators)
 	)
 
 	var/obj/spawned = new prize.path_to(user.loc)
+	var/where = null
+
 	if (ishuman(user))
-		var/where = user.equip_in_one_of_slots(spawned, slots, qdel_on_fail=0)
+		where = user.equip_in_one_of_slots(spawned, slots, qdel_on_fail=0)
 
 	if (!where)
 		to_chat(user,"<span class='info'>Ваш [prize.name] был создан!</span>")
