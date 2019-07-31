@@ -78,7 +78,7 @@
 	name = "securistan banner"
 	desc = "The banner of Securistan, ruling the station with an iron fist."
 	icon_state = "banner_security"
-	job_loyalties = list("Security Officer", "Warden", "Detective", "Head of Security")
+	job_loyalties = list("Russian Officer", "International Officer", "Warden", "Detective", "Head of Security")
 	warcry = "EVERYONE DOWN ON THE GROUND!!"
 
 /obj/item/banner/security/mundane

@@ -567,7 +567,7 @@
 		if("infinite_sec")
 			if(!check_rights(R_DEBUG))
 				return
-			var/datum/job/J = SSjob.GetJob("Security Officer")
+			var/datum/job/J = SSjob.GetJob("Russian Officer")
 			if(!J)
 				return
 			J.total_positions = -1

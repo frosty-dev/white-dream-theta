@@ -167,7 +167,7 @@
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier
 	name = "Nanotrasen Private Security Officer"
 	id_job = "Private Security Force"
-	id_access = "Security Officer"
+	id_access = "Russian Officer"
 	outfit = /datum/outfit/nanotrasensoldiercorpse2
 	hair_style = "Bald"
 	facial_hair_style = "Shaved"
