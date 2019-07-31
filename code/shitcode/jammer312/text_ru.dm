@@ -98,6 +98,11 @@ GLOBAL_LIST_INIT(rus_unicode_fix,null)
 
 	return text
 
+/proc/ph2up_hex(text) //dumb as fuck but necessary
+	for(var/s in GLOB.rus_unicode_conversion_hex)
+		text = replacetext(text, "&#[GLOB.rus_unicode_conversion_hex[s]];",s)
+	return text
+
 /proc/ph2up(text) //dumb as fuck but necessary
 	for(var/s in GLOB.rus_unicode_conversion)
 		text = replacetext(text, "&#[GLOB.rus_unicode_conversion[s]];",s)

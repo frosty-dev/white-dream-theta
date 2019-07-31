@@ -7,7 +7,7 @@ client = sys.argv[1]
 msg = sys.argv[2]
 lng = sys.argv[3]
 
-msg = msg.encode('cp1251').decode('utf8')
+#msg = msg.encode('cp1251').decode('utf8')
 
 tts = gTTS(msg, lang=lng)
 tts.save("code/shitcode/hule/tts/conv/" + str(client) + ".mp3")
