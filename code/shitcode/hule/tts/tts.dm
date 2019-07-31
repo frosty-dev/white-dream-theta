@@ -29,7 +29,7 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 	var/createtts = 0 //create tts on hear
 
 	var/charcd = 3 //ds for one char
-	var/maxlen = 64 //sasai kudosai
+	var/maxchars = 100 //sasai kudosai
 
 /datum/tts/New()
 	. = ..()
@@ -45,8 +45,10 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 
 /datum/tts/proc/generate_tts(msg)
 	if(cooldown <= 0)
-		msg = trim(msg, maxlen)
+		msg = trim(msg, maxchars)
 		cooldown = length(msg)*charcd
+		if(!GLOB.tts_os_unix)
+			to_chat(owner, "Trimmed to: [msg], CD: [cooldown]")
 		tts(owner, msg)
 
 
