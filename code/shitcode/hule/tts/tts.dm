@@ -28,7 +28,7 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 	var/cooldown = 0
 	var/createtts = 0 //create tts on hear
 
-	var/charcd = 1 //ds for one char
+	var/charcd = 0.25 //ticks for one char
 	var/maxchars = 100 //sasai kudosai
 
 /datum/tts/New()
