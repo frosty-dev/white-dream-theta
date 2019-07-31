@@ -156,7 +156,7 @@ GLOBAL_LIST_EMPTY(donators)
 	var/ownerkey
 	var/money = 0
 	var/maxmoney = 0
-	var/allowed_num_items = 10
+	var/allowed_num_items = 20
 
 /datum/donator/New(ckey, money)
 	..()
@@ -233,7 +233,10 @@ GLOBAL_LIST_EMPTY(donators)
 	)
 
 	var/obj/spawned = new prize.path_to(user.loc)
-	var/where = user.equip_in_one_of_slots(spawned, slots, qdel_on_fail=0)
+	if (ishuman(user))
+		var/where = user.equip_in_one_of_slots(spawned, slots, qdel_on_fail=0)
+	else
+		new user.path_to(get_turf(user), 1)
 
 	if (!where)
 		to_chat(user,"<span class='info'>Ваш [prize.name] был создан!</span>")
