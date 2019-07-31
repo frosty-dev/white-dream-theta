@@ -11,6 +11,9 @@
 	GLOB.mob_living_list += src
 	initialize_footstep()
 
+	if(client)
+		grant_tts()
+
 /mob/living/proc/initialize_footstep()
 	AddComponent(/datum/component/footstep)
 
