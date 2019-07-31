@@ -11,8 +11,6 @@
 	GLOB.mob_living_list += src
 	initialize_footstep()
 
-	TTS.owner = src
-
 /mob/living/proc/initialize_footstep()
 	AddComponent(/datum/component/footstep)
 
