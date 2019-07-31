@@ -51,7 +51,7 @@
 				return
 			if(atom && istype(atom, /obj/effect/particle_effect))
 				volume = volume * GAS_PARTICLE_EFFECT_EFFICIENCY//big nerf to smoke and foam duping
-
+			/*
 			var/turf/open/O = T
 			if(istype(O))
 				var/obj/effect/particle_effect/vapour/foundvape = locate() in T//if there's an existing vapour of the same type it just adds volume otherwise it creates a new instance
@@ -69,6 +69,7 @@
 						else
 							qdel(RR)
 				log_game("Reagent vapour of type [src] was released at [COORD(T)] Last Fingerprint: [touch_msg] ")
+			*/
 
 
 		if(src.reagent_state == LIQUID) //LIQUID
@@ -76,7 +77,7 @@
 				return
 			if(atom && istype(atom, /obj/effect/particle_effect))
 				volume = volume * LIQUID_PARTICLE_EFFECT_EFFICIENCY//big nerf to smoke and foam duping
-
+			/*
 			for(var/obj/effect/decal/cleanable/chempile/c in T.contents)//handles merging existing chempiles
 				if(c.reagents)
 					if(touch_msg)
@@ -95,6 +96,7 @@
 				C.reagents.add_reagent(src.type, volume)
 				var/mixcolor = mix_color_from_reagents(C.reagents.reagent_list)
 				C.add_atom_colour(mixcolor, FIXED_COLOUR_PRIORITY)
+			*/
 
 		if(src.reagent_state == SOLID) //SOLID
 			if(is_type_in_typecache(src, GLOB.solidchange_reagent_blacklist))
