@@ -248,3 +248,12 @@ proc/build_prizes_list()
 		D.show()
 	else
 		to_chat(src,"<span class='warning'>Вы не донатили, извините</span>")
+
+proc/check_donations(ckey)
+	if (!GLOB.donators[ckey]) //If it doesn't exist yet
+		load_donator(ckey)
+	var/datum/donator/D = GLOB.donators[ckey]
+	if(D)
+		return 1
+	else
+		return 0
