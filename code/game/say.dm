@@ -31,7 +31,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 /atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 
-	if(!radio_freq && src.TTS && speaker.TTS && src.TTS.createtts)
+	if(!radio_freq && TTS && speaker.TTS && TTS.createtts)
 		speaker.TTS.generate_tts(raw_message)
 
 /atom/movable/proc/can_speak()
@@ -42,10 +42,6 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM
 		AM.Hear(rendered, src, message_language, message, , spans, message_mode)
-
-	if(src.TTS && GLOB.tts)
-		src.TTS.generate_tts(message)
-
 
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE)
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
