@@ -877,7 +877,7 @@
 	var/datum/netdata/data = new
 	data.recipient_ids = splittext(target_address, ";")
 	data.data = message
-	//data.passkey = assembly.access_card.access
+	data.passkey = assembly.access_card.access
 	ntnet_send(data)
 
 /obj/item/integrated_circuit/input/ntnet_advanced/ntnet_receive(datum/netdata/data)
