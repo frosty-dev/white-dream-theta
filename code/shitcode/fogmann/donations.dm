@@ -183,7 +183,7 @@ GLOBAL_LIST_EMPTY(donators)
 	dat += "</div>"
 
 	var/datum/browser/popup = new(user, "miningvendor", "Donations Panel", 450, 700)
-	popup.set_content(dat)
+	popup.set_content(dat.Join())
 	popup.open()
 
 /datum/donator/proc/GetIconForProduct(datum/donate_info/P)
