@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
 	var/namae
-	if(!ismob(src)) // potom mb zavezu dlya drugih
+	if(!ismob(src))
 		namae = name
 	else
 		var/mob/etot = src
@@ -122,4 +122,5 @@ GLOBAL_LIST_EMPTY(tts_datums)
 				message_admins("[key] toggled living only tts on.")
 			else
 				message_admins("[key] toggled living only tts off.")
+
 
