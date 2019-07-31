@@ -5,11 +5,7 @@ GLOBAL_VAR_INIT(tts_lang, "ru")
 GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 
 /proc/tts(var/mob/M, var/msg, var/lang=GLOB.tts_lang)
-	if(!isliving(M))
-		return
-
 	msg = ph2up(msg)
-	//msg = trim(rhtml_encode(msg), 16)
 
 	if(GLOB.tts_os_unix)
 		world.shelleo("python3 code/shitcode/hule/tts/tts.py \"[M.ckey]\" \"[msg]\" \"[lang]\" ")
@@ -17,23 +13,23 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 		var/list/output = world.shelleo("python code/shitcode/hule/tts/tts.py \"[M.ckey]\" \"[msg]\" \"[lang]\" ")
 		to_chat(M, output)
 
-	//spawn(10)
 	var/path = "code/shitcode/hule/tts/lines/[M.ckey].ogg"
 	if(fexists(path))
-		for(var/mob/MB in range(13))
+		for(var/mob/MB in range(11))
 			MB.playsound_local(get_turf(M), path, 100)
 			fdel(path)
 			fdel("code/shitcode/hule/tts/conv/[M.ckey].mp3")
 
 /mob/living
-	var/datum/tts = new
+	var/datum/tts/TTS = new
 
 /datum/tts
 	var/mob/living/owner
 	var/cooldown = 0
-	var/cdincrease = 3 //ds for one char
+	var/createtts = 0 //create tts on hear
+
+	var/charcd = 3 //ds for one char
 	var/maxlen = 64 //sasai kudosai
-	var/cTSS = 0 //create tts on hear
 
 /datum/tts/New()
 	. = ..()
@@ -50,7 +46,7 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 /datum/tts/proc/generate_tts(msg)
 	if(!cooldown)
 		msg = trim(msg, maxlen)
-		cooldown = length(msg)
+		cooldown = length(msg)*charcd
 		tts(owner, msg)
 
 
