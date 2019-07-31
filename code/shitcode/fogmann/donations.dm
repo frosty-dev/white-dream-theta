@@ -167,14 +167,12 @@ GLOBAL_LIST_EMPTY(donators)
 
 
 /datum/donator/proc/ShowPanel(mob/user)
-	if(!user || !user.client)
-		return
 	var/list/dat = list("<center>")
 	dat += "Пожертвования в материю!"
 	dat += "</center>"
 
 	dat += "<HR>"
-	dat += "<h3>МАШИНА ДОНАТОВ</h3>"
+	dat += "<h3>МАШИНА ДОНАТОВ. Баланс: [money]</h3>"
 	dat += "<div class='statusDisplay'>"
 	dat += "<table>"
 	for(var/L in GLOB.donations_list)
