@@ -44,7 +44,7 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 		cooldown--
 
 /datum/tts/proc/generate_tts(msg)
-	if(!cooldown)
+	if(cooldown <= 0)
 		msg = trim(msg, maxlen)
 		cooldown = length(msg)*charcd
 		tts(owner, msg)
