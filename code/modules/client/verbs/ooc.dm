@@ -130,7 +130,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set category = "Preferences"
 
 	if(!holder || !check_rights_for(src, R_ADMIN))
-		if(!check_donations(keyname))
+		if(!check_donations(ckey))
 			if(!is_content_unlocked())
 				return
 
@@ -147,7 +147,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set category = "Preferences"
 
 	if(!holder || !check_rights_for(src, R_ADMIN))
-		if(!check_donations(keyname))
+		if(!check_donations(ckey))
 			if(!is_content_unlocked())
 				return
 
