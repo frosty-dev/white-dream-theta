@@ -182,7 +182,7 @@ GLOBAL_LIST_EMPTY(donators)
 	dat += "</table>"
 	dat += "</div>"
 
-	var/datum/browser/popup = new(user, "miningvendor", "Donations Panel", 450, 700)
+	var/datum/browser/popup = new(user, "miningvendor", "Donations Panel", 340, 700)
 	popup.set_content(dat.Join())
 	popup.open()
 
