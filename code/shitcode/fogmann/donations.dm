@@ -1,115 +1,156 @@
-#define DONATIONS_STUFF {"
-Hats
-Collectable Pete hat:/obj/item/clothing/head/collectable/petehat:150
-Collectable Xeno hat:/obj/item/clothing/head/collectable/xenom:110
-Collectable Top hat:/obj/item/clothing/head/collectable/tophat:120
-Kitty Ears:/obj/item/clothing/head/kitty:100
-Ushanka:/obj/item/clothing/head/ushanka:200
-Beret:/obj/item/clothing/head/beret:150
-Witch Wig:/obj/item/clothing/head/witchwig:135
-Marisa hat:/obj/item/clothing/head/witchwig:130
-Cake-hat:/obj/item/clothing/head/hardhat/cakehat:100
-Wizard hat:/obj/item/clothing/head/wizard/fake:100
-Flat-cap:/obj/item/clothing/head/flatcap:120
-Collectable rabbit ears:/obj/item/clothing/head/collectable/rabbitears:120
-Cardborg helment:/obj/item/clothing/head/cardborg:20
-Bear pelt:/obj/item/clothing/head/bearpelt:200
-Masks
-Fake Moustache:/obj/item/clothing/mask/fakemoustache:100
-Pig Mask:/obj/item/clothing/mask/spig:150
-Cow Mask:/obj/item/clothing/mask/cowmask:150
-Horse Head Mask:/obj/item/clothing/mask/horsehead:150
-Carp Mask:/obj/item/clothing/mask/gas/carp:150
-Plague Doctor Mask:/obj/item/clothing/mask/gas/plaguedoctor:180
-Monkey Mask:/obj/item/clothing/mask/gas/monkeymask:180
-Owl Mask:/obj/item/clothing/mask/gas/owl_mask:180
-Personal Stuff
-Eye patch:/obj/item/clothing/glasses/eyepatch:130
-Orange glasses:/obj/item/clothing/glasses/orange:130
-Heat goggles:/obj/item/clothing/glasses/heat:130
-Cold goggles:/obj/item/clothing/glasses/cold:130
-Cane:/obj/item/weapon/cane:130
-Zippo:/obj/item/lighter:130
-Cigarette packet:/obj/item/storage/fancy/cigarettes:20
-DromedaryCo packet:/obj/item/storage/fancy/cigarettes/dromedaryco:50
-Premium Havanian Cigar:/obj/item/clothing/mask/cigarette/cigar/havana:130
-E-Cigarette:/obj/item/clothing/mask/vape:150
-Beer bottle:/obj/item/reagent_containers/food/drinks/beer:80
-Captain flask:/obj/item/reagent_containers/food/drinks/flask:200
-Red glasses:/obj/item/clothing/glasses/red:180
-Waistcoat:/obj/item/clothing/tie/waistcoat:85
-Cloak:/obj/item/clothing/neck/cloak:190
-Donut Box:/obj/item/storage/fancy/donut_box:450
-Shoes
-Clown Shoes:/obj/item/clothing/shoes/clown_shoes:130
-Cyborg Shoes:/obj/item/clothing/shoes/cyborg:130
-Laceups Shoes:/obj/item/clothing/shoes/laceup:130
-Wooden Sandals:/obj/item/clothing/shoes/sandal:80
-Brown Shoes:/obj/item/clothing/shoes/sneakers/brown:130
-Jackboots:/obj/item/clothing/shoes/jackboots:170
-Coats
-Leather Coat:/obj/item/clothing/suit/jacket/leather/overcoat:160
-Pirate Coat:/obj/item/clothing/suit/pirate:120
-Red poncho:/obj/item/clothing/suit/poncho/red:140
-Green poncho:/obj/item/clothing/suit/poncho/green:150
-Puffer jacket:/obj/item/clothing/suit/jacket/puffer:120
-Winter coat:/obj/item/clothing/suit/hooded/wintercoat:130
-Cardborg:/obj/item/clothing/suit/cardborg:50
-Jumpsuits
-Vice Policeman:/obj/item/clothing/under/rank/vice:180
-Pirate outfit:/obj/item/clothing/under/pirate:130
-Waiter outfit:/obj/item/clothing/under/waiter:120
-Black suit:/obj/item/clothing/under/lawyer/blacksuit:150
-Central Command officer:/obj/item/clothing/under/rank/centcom_officer:390
-Jeans:/obj/item/clothing/under/pants/jeans:160
-Rainbow Suit:/obj/item/clothing/under/color/rainbow:130
-Grim Jacket:/obj/item/clothing/under/suit_jacket:130
-Executive Suit:/obj/item/clothing/under/suit_jacket/really_black:130
-Schoolgirl Uniform:/obj/item/clothing/under/schoolgirl:130
-Tacticool Turtleneck:/obj/item/clothing/under/syndicate/tacticool:130
-Soviet Uniform:/obj/item/clothing/under/soviet:130
-Kilt:/obj/item/clothing/under/kilt:100
-Gladiator uniform:/obj/item/clothing/under/gladiator:100
-Assistant's formal uniform:/obj/item/clothing/under/assistantformal:100
-Psychedelic jumpsuit:/obj/item/clothing/under/rank/psyche:220
-Gloves
-White Gloves:/obj/item/clothing/gloves/color/white:130
-Rainbow Gloves:/obj/item/clothing/gloves/color/rainbow:200
-Black Gloves:/obj/item/clothing/gloves/color/black:160
-Boxing Gloves:/obj/item/clothing/gloves/boxing:120
-Green Gloves:/obj/item/clothing/gloves/color/green:100
-Latex Gloves:/obj/item/clothing/gloves/color/latex:150
-Fingerless Gloves:/obj/item/clothing/gloves/fingerless:90
-Bedsheets
-Clown Bedsheet:/obj/item/bedsheet/clown:100
-Mime Bedsheet:/obj/item/bedsheet/mime:100
-Rainbow Bedsheet:/obj/item/bedsheet/rainbow:100
-Captain Bedsheet:/obj/item/bedsheet/captain:120
-Cosmos Bedsheet:/obj/item/bedsheet/cosmos:200
-Toys
-Rubber Duck:/obj/item/bikehorn/rubberducky:200
-Champion Belt:/obj/item/storage/belt/champion:200
-Toy pistol:/obj/item/toy/gun:150
-Toy dualsaber:/obj/item/twohanded/dualsaber/toy:300
-Toy katana:/obj/item/toy/katana:200
-Rainbow crayon:/obj/item/toy/crayon/rainbow:250
-Special Stuff
-Santa Bag:/obj/item/storage/backpack/santabag:600
-Bible:/obj/item/storage/book/bible:100
-Inovations
-Casino Cards:/obj/item/toy/cards/deck/shitspawn_deck:500
-Jukebox (Only one can exist): /obj/machinery/party/turntable:100
-Writer: /obj/machinery/party/musicwriter:900
+////////////////////////////////
+//
+// Donations. Reworked for /tg/ by valtos
+//
+////////////////////////////////
 
-"}
+GLOBAL_LIST_INIT(donations_list, list(
+	"Hats" = list(
+		new /datum/donate_info("Collectable Pete hat",		/obj/item/clothing/head/collectable/petehat, 	150),
+		new /datum/donate_info("Collectable Xeno hat",		/obj/item/clothing/head/collectable/xenom,		110),
+		new /datum/donate_info("Collectable Top hat",		/obj/item/clothing/head/collectable/tophat,		120),
+		new /datum/donate_info("Kitty Ears",				/obj/item/clothing/head/kitty,					100),
+		new /datum/donate_info("Ushanka",					/obj/item/clothing/head/ushanka,				200),
+		new /datum/donate_info("Beret",						/obj/item/clothing/head/beret,					150),
+		new /datum/donate_info("Witch Wig",					/obj/item/clothing/head/witchwig,				135),
+		new /datum/donate_info("Marisa hat",				/obj/item/clothing/head/witchwig,				130),
+		new /datum/donate_info("Cake-hat",					/obj/item/clothing/head/hardhat/cakehat,		100),
+		new /datum/donate_info("Wizard hat",				/obj/item/clothing/head/wizard/fake,			100),
+		new /datum/donate_info("Flat-cap",					/obj/item/clothing/head/flatcap,				120),
+		new /datum/donate_info("Collectable rabbit ears",	/obj/item/clothing/head/collectable/rabbitears,	120),
+		new /datum/donate_info("Cardborg helment",			/obj/item/clothing/head/cardborg,				20),
+		new /datum/donate_info("Bear pelt",					/obj/item/clothing/head/bearpelt,				200),
+	),
+	"Masks" = list(
+		new /datum/donate_info("Fake Moustache",			/obj/item/clothing/mask/fakemoustache,			100),
+		new /datum/donate_info("Pig Mask",					/obj/item/clothing/mask/pig,					150),
+		new /datum/donate_info("Cow Mask",					/obj/item/clothing/mask/cowmask,				150),
+		new /datum/donate_info("Horse Head Mask",			/obj/item/clothing/mask/horsehead,				150),
+		new /datum/donate_info("Carp Mask",					/obj/item/clothing/mask/gas/carp,				150),
+		new /datum/donate_info("Plague Doctor Mask",		/obj/item/clothing/mask/gas/plaguedoctor,		180),
+		new /datum/donate_info("Monkey Mask",				/obj/item/clothing/mask/gas/monkeymask,			180),
+		new /datum/donate_info("Owl Mask",					/obj/item/clothing/mask/gas/owl_mask,			180),
+	),
+	"Personal Stuff" = list(
+		new /datum/donate_info("Eye patch",					/obj/item/clothing/glasses/eyepatch,			130),
+		new /datum/donate_info("Orange glasses",			/obj/item/clothing/glasses/orange,				130),
+		new /datum/donate_info("Heat goggles",				/obj/item/clothing/glasses/heat,				130),
+		new /datum/donate_info("Cold goggles",				/obj/item/clothing/glasses/cold,				130),
+		new /datum/donate_info("Cane",						/obj/item/cane,									130),
+		new /datum/donate_info("Zippo",						/obj/item/lighter,								130),
+		new /datum/donate_info("Cigarette packet",			/obj/item/storage/fancy/cigarettes,				20),
+		new /datum/donate_info("DromedaryCo packet",		/obj/item/storage/fancy/cigarettes/dromedaryco,	50),
+		new /datum/donate_info("Premium Havanian Cigar",	/obj/item/clothing/mask/cigarette/cigar/havana,	130),
+		new /datum/donate_info("E-Cigarette",				/obj/item/clothing/mask/vape,					150),
+		new /datum/donate_info("Beer bottle",				/obj/item/reagent_containers/food/drinks/beer,	80),
+		new /datum/donate_info("Captain flask",				/obj/item/reagent_containers/food/drinks/flask,	200),
+		new /datum/donate_info("Red glasses",				/obj/item/clothing/glasses/red,					180),
+		new /datum/donate_info("Waistcoat",					/obj/item/clothing/accessory/waistcoat,			85),
+		new /datum/donate_info("Cloak",						/obj/item/clothing/neck/cloak,					190),
+		new /datum/donate_info("Donut Box",					/obj/item/storage/fancy/donut_box,				450),
+	),
+	"Shoes" = list(
+		new /datum/donate_info("Clown Shoes",				/obj/item/clothing/shoes/clown_shoes,			130),
+		new /datum/donate_info("Cyborg Shoes",				/obj/item/clothing/shoes/cyborg,				130),
+		new /datum/donate_info("Laceups Shoes",				/obj/item/clothing/shoes/laceup,				130),
+		new /datum/donate_info("Wooden Sandals",			/obj/item/clothing/shoes/sandal,				80),
+		new /datum/donate_info("Brown Shoes",				/obj/item/clothing/shoes/sneakers/brown,		130),
+		new /datum/donate_info("Jackboots",					/obj/item/clothing/shoes/jackboots,				170),
+	),
+	"Coats" = list(
+		new /datum/donate_info("Leather Coat",				/obj/item/clothing/suit/jacket/leather/overcoat,160),
+		new /datum/donate_info("Pirate Coat",				/obj/item/clothing/suit/pirate,					120),
+		new /datum/donate_info("Red poncho",				/obj/item/clothing/suit/poncho/red,				140),
+		new /datum/donate_info("Green poncho",				/obj/item/clothing/suit/poncho/green,			150),
+		new /datum/donate_info("Puffer jacket",				/obj/item/clothing/suit/jacket/puffer,			120),
+		new /datum/donate_info("Winter coat",				/obj/item/clothing/suit/hooded/wintercoat,		130),
+		new /datum/donate_info("Cardborg",					/obj/item/clothing/suit/cardborg,				50),
+	),
+	"Jumpsuits" = list(
+		new /datum/donate_info("Vice Policeman",			/obj/item/clothing/under/rank/vice,				180),
+		new /datum/donate_info("Pirate outfit",				/obj/item/clothing/under/pirate,				130),
+		new /datum/donate_info("Waiter outfit",				/obj/item/clothing/under/waiter,				120),
+		new /datum/donate_info("Black suit",				/obj/item/clothing/under/lawyer/blacksuit,		150),
+		new /datum/donate_info("Central Command officer",	/obj/item/clothing/under/rank/centcom_officer,	390),
+		new /datum/donate_info("Jeans",						/obj/item/clothing/under/pants/jeans,			160),
+		new /datum/donate_info("Rainbow Suit",				/obj/item/clothing/under/color/rainbow,			130),
+		new /datum/donate_info("Grim Jacket",				/obj/item/clothing/under/suit_jacket,			130),
+		new /datum/donate_info("Executive Suit",			/obj/item/clothing/under/suit_jacket/really_black,130),
+		new /datum/donate_info("Schoolgirl Uniform",		/obj/item/clothing/under/schoolgirl,			130),
+		new /datum/donate_info("Tacticool Turtleneck",		/obj/item/clothing/under/syndicate/tacticool,	130),
+		new /datum/donate_info("Soviet Uniform",			/obj/item/clothing/under/soviet,				130),
+		new /datum/donate_info("Kilt",						/obj/item/clothing/under/kilt,					100),
+		new /datum/donate_info("Gladiator uniform",			/obj/item/clothing/under/gladiator,				100),
+		new /datum/donate_info("Assistant's formal uniform",/obj/item/clothing/under/assistantformal,		100),
+		new /datum/donate_info("Psychedelic jumpsuit",		/obj/item/clothing/under/rank/psyche,			220),
+	),
+	"Gloves" = list(
+		new /datum/donate_info("White Gloves",				/obj/item/clothing/gloves/color/white,			130),
+		new /datum/donate_info("Rainbow Gloves",			/obj/item/clothing/gloves/color/rainbow,		200),
+		new /datum/donate_info("Black Gloves",				/obj/item/clothing/gloves/color/black,			160),
+		new /datum/donate_info("Boxing Gloves",				/obj/item/clothing/gloves/boxing,				120),
+		new /datum/donate_info("Green Gloves",				/obj/item/clothing/gloves/color/green,			100),
+		new /datum/donate_info("Latex Gloves",				/obj/item/clothing/gloves/color/latex,			150),
+		new /datum/donate_info("Fingerless Gloves",			/obj/item/clothing/gloves/fingerless,			90),
+	),
+	"Bedsheets" = list(
+		new /datum/donate_info("Clown Bedsheet",			/obj/item/bedsheet/clown,						100),
+		new /datum/donate_info("Mime Bedsheet",				/obj/item/bedsheet/mime,						100),
+		new /datum/donate_info("Rainbow Bedsheet",			/obj/item/bedsheet/rainbow,						100),
+		new /datum/donate_info("Captain Bedsheet",			/obj/item/bedsheet/captain,						120),
+		new /datum/donate_info("Cosmos Bedsheet",			/obj/item/bedsheet/cosmos,						200),
+	),
+	"Toys" = list(
+		new /datum/donate_info("Rubber Duck",				/obj/item/bikehorn/rubberducky,					200),
+		new /datum/donate_info("Champion Belt",				/obj/item/storage/belt/champion,				200),
+		new /datum/donate_info("Toy pistol",				/obj/item/toy/gun,								150),
+		new /datum/donate_info("Toy dualsaber",				/obj/item/twohanded/dualsaber/toy,				300),
+		new /datum/donate_info("Toy katana",				/obj/item/toy/katana,							200),
+		new /datum/donate_info("Rainbow crayon",			/obj/item/toy/crayon/rainbow,					250),
+	),
+	"Special Stuff" = list(
+		new /datum/donate_info("Santa Bag",					/obj/item/storage/backpack/santabag,			600),
+		new /datum/donate_info("Bible",						/obj/item/storage/book/bible,					100),
+	),
+	"Inovations" = list(
+		new /datum/donate_info("Casino Cards",				/obj/item/toy/cards/deck/shitspawn_deck,		500),
+		new /datum/donate_info("Jukebox (Only one)",		/obj/machinery/party/turntable,					100),
+		new /datum/donate_info("Music Writer",				/obj/machinery/party/musicwriter,				900),
+	)
+))
+
+/datum/donate_info
+	var/name
+	var/path_to
+	var/cost = 0
+
+/datum/donate_info/New(name, path, cost)
+	src.name = name
+	src.path_to = path
+	src.cost = cost
+
+/client/verb/new_donates_panel()
+	set name = "Donations panel"
+	set category = "Special Verbs"
 
 
-GLOBAL_LIST_EMPTY(prizes)
+	if(!SSticker || SSticker.current_state < GAME_STATE_PLAYING)
+		to_chat(src,"<span class='warning'>Не так быстро, игра ещё не началась!</span>")
+		return
+
+	if (!GLOB.donators[ckey]) //If it doesn't exist yet
+		load_donator(ckey)
+
+	var/datum/donator/D = GLOB.donators[ckey]
+	if(D)
+		D.ShowPanel(src)
+	else
+		to_chat(src,"<span class='warning'>Вы не донатили, извините.</span>")
+
+GLOBAL_LIST_EMPTY(donate_icon_cache)
 GLOBAL_LIST_EMPTY(donators)
 
 #define DONATIONS_SPAWN_WINDOW 6000
-// You can spawn donation items for 10 minutes without area limits.
-
 
 /datum/donator
 	var/ownerkey
@@ -124,49 +165,60 @@ GLOBAL_LIST_EMPTY(donators)
 	maxmoney = money
 	GLOB.donators[ckey] = src
 
-/datum/donator/proc/show()
-	var/dat = "<title>Donations panel</title>"
-	dat += "You have [money] / [maxmoney]<br>"
-	dat += "You can spawn [allowed_num_items ? allowed_num_items : "no"] more items.<br><br>"
 
-	if (allowed_num_items)
-		if (!GLOB.prizes.len)
-			build_prizes_list()
+/datum/donator/proc/ShowPanel(mob/user)
+	if(!user || !user.client)
+		return
+	var/list/dat = list("<center>")
+	dat += "Пожертвования в материю!"
+	dat += "</center>"
 
-		var/cur_cat = "None"
+	dat += "<HR>"
+	dat += "<h3>МАШИНА ДОНАТОВ</h3>"
+	dat += "<div class='statusDisplay'>"
+	dat += "<table>"
+	for(var/L in GLOB.donations_list)
+		dat += "<tr><td></td><td><center><b>[L]</b></center></td><td></td><td></td></tr>"
+		for(var/datum/donate_info/prize in GLOB.donations_list[L])
+			dat += "<tr><td><img src='data:image/jpeg;base64,[GetIconForProduct(prize)]'/></td><td>[prize.name]</td><td>[prize.cost]</td><td><A href='?src=\ref[src];getdonate=\ref[prize]'>Получить</A></td></tr>"
+	dat += "</table>"
+	dat += "</div>"
 
-		for(var/p in GLOB.prizes)
-			var/datum/donator_prize/prize = p
+	var/datum/browser/popup = new(user, "miningvendor", "Donations Panel", 450, 700)
+	popup.set_content(dat)
+	popup.open()
 
-			if (cur_cat != prize.category)
-				dat += "<hr><b>[prize.category]</b><br>"
-				cur_cat = prize.category
+/datum/donator/proc/GetIconForProduct(datum/donate_info/P)
+	if(GLOB.donate_icon_cache[P.path_to])
+		return GLOB.donate_icon_cache[P.path_to]
 
-			dat += "<a href='?src=\ref[src];item=\ref[prize]'>[prize.item_name] : [prize.cost]</a><br>"
-	usr << browse(dat, "window=donatorpanel;size=250x400")
+	var/product = new P.path_to()
+	GLOB.donate_icon_cache[P.path_to] = icon2base64(getFlatIcon(product, no_anim = TRUE))
+	qdel(product)
+	return GLOB.donate_icon_cache[P.path_to]
 
 /datum/donator/Topic(href, href_list)
-	var/datum/donator_prize/prize = locate(href_list["item"])
+	var/datum/donate_info/prize = locate(href_list["getdonate"])
 	var/mob/living/carbon/human/user = usr
 
 	if(!SSticker || SSticker.current_state < 3)
-		to_chat(user,"<span class='warning'>Please wait until game setting up!</span>")
+		to_chat(user,"<span class='warning'>Игра ещё не началась!</span>")
 		return 0
 
 	if((world.time-SSticker.round_start_time)>DONATIONS_SPAWN_WINDOW && !istype(get_area(user), /area/shuttle/arrival))
-		to_chat(user,"<span class='warning'>You must be on arrival shuttle to spawn items.</span>")
+		to_chat(user,"<span class='warning'>Вам нужно быть на шаттле прибытия.</span>")
 		return 0
 
 	if(prize.cost > money)
-		to_chat(user,"<span class='warning'>You don't have enough funds.</span>")
+		to_chat(user,"<span class='warning'>У вас недостаточно баланса.</span>")
 		return 0
 
 	if(!allowed_num_items)
-		to_chat(user,"<span class='warning'>You have reached maximum amount of spawned items.</span>")
+		to_chat(user,"<span class='warning'>Вы достигли максимума. Молодец.</span>")
 		return 0
 
 	if(!user)
-		to_chat(user,"<span class='warning'>You must be a human to use this.</span>")
+		to_chat(user,"<span class='warning'>Вам нужно быть живым.</span>")
 		return 0
 
 	if(!ispath(prize.path_to))
@@ -175,32 +227,26 @@ GLOBAL_LIST_EMPTY(donators)
 	if(user.stat)
 		return 0
 
-
 	var/list/slots = list(
-		"backpack" = SLOT_IN_BACKPACK,
-		"left pocket" = SLOT_L_STORE,
-		"right pocket" = SLOT_R_STORE,
-		"hand" = SLOT_GENERC_DEXTROUS_STORAGE
+		"сумке" = SLOT_IN_BACKPACK,
+		"левом кармане" = SLOT_L_STORE,
+		"правом кармане" = SLOT_R_STORE,
+		"руке" = SLOT_GENERC_DEXTROUS_STORAGE
 	)
 
 	var/obj/spawned = new prize.path_to(user.loc)
 	var/where = user.equip_in_one_of_slots(spawned, slots, qdel_on_fail=0)
 
 	if (!where)
-		to_chat(user,"<span class='info'>Your [prize.item_name] has been spawned!</span>")
+		to_chat(user,"<span class='info'>Ваш [prize.name] был создан!</span>")
+		spawned.anchored = FALSE
 	else
-		to_chat(user,"<span class='info'>Your [prize.item_name] has been spawned in your [where]!</span>")
+		to_chat(user,"<span class='info'>Ваш [prize.name] был создан в [where]!</span>")
 
 	money -= prize.cost
 	allowed_num_items--
 
-	show()
-
-/datum/donator_prize
-	var/item_name = "Nothing"
-	var/path_to = null
-	var/cost = 0
-	var/category = "Debug"
+	return
 
 proc/load_donator(ckey)
 	if(!SSdbcore.IsConnected())
@@ -213,41 +259,6 @@ proc/load_donator(ckey)
 		new /datum/donator(ckey, money)
 	qdel(query_donators)
 	return 1
-
-proc/build_prizes_list()
-	var/list/strings = splittext ( DONATIONS_STUFF, "\n" )
-	var/cur_cat = "Miscellaneous"
-	for (var/string in strings)
-		if (string) //It's not a delimiter between
-			var/list/item_info = splittext ( string, ":" )
-			if (item_info.len==3)
-				var/datum/donator_prize/prize = new
-				prize.item_name = item_info[1]
-				prize.path_to = text2path(item_info[2])
-				prize.cost = text2num(item_info[3])
-				prize.category = cur_cat
-				GLOB.prizes += prize
-			else
-				cur_cat = item_info[1]
-
-
-/client/verb/cmd_donations_panel()
-	set name = "Donations panel"
-	set category = "OOC"
-
-
-	if(!SSticker || SSticker.current_state < GAME_STATE_PLAYING)
-		to_chat(src,"<span class='warning'>Не так быстро, игра ещё не началась!</span>")
-		return
-
-	if (!GLOB.donators[ckey]) //If it doesn't exist yet
-		load_donator(ckey)
-
-	var/datum/donator/D = GLOB.donators[ckey]
-	if(D)
-		D.show()
-	else
-		to_chat(src,"<span class='warning'>Вы не донатили, извините</span>")
 
 proc/check_donations(ckey)
 	if (!GLOB.donators[ckey]) //If it doesn't exist yet
