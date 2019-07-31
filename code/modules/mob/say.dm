@@ -9,8 +9,7 @@
 		return
 	if(message)
 		say(message)
-		if(GLOB.tts)
-			tts(message)
+
 
 ///Whisper verb
 /mob/verb/whisper_verb(message as text)
