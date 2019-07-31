@@ -2,11 +2,6 @@
 
 GLOBAL_VAR_INIT(tts, FALSE)
 GLOBAL_LIST_INIT(tts_settings, list("ru", 1, 1))//1-lang, 2-os, 3-livingonly
-/*
-GLOBAL_VAR_INIT(tts_lang, "ru")
-GLOBAL_VAR_INIT(tts_os_unix, TRUE)
-GLOBAL_VAR_INIT(tts_atoms, FALSE)
-*/
 GLOBAL_LIST_EMPTY(tts_datums)
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
@@ -27,8 +22,9 @@ GLOBAL_LIST_EMPTY(tts_datums)
 
 	var/path = "code/shitcode/hule/tts/lines/[namae].ogg"
 	if(fexists(path))
-		for(var/mob/M in range(11))
-			M.playsound_local(loc, path, 100)
+		for(var/mob/M in range(13))
+			var/turf/T = get_turf(src)
+			M.playsound_local(T, path, 100)
 			fdel(path)
 			fdel("code/shitcode/hule/tts/conv/[namae].mp3")
 
