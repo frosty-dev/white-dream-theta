@@ -4,7 +4,12 @@ GLOBAL_VAR_INIT(tts, FALSE)
 GLOBAL_VAR_INIT(tts_lang, "ru")
 GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 
-/proc/tts(var/mob/M, var/msg, var/lang=GLOB.tts_lang)
+/atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_lang)
+	if(!isliving(src)) // potom mb zavezu dlya drugih
+		return
+
+	var/mob/M = src
+
 	msg = ph2up(msg)
 
 	if(GLOB.tts_os_unix)
@@ -16,7 +21,7 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 	var/path = "code/shitcode/hule/tts/lines/[M.ckey].ogg"
 	if(fexists(path))
 		for(var/mob/MB in range(11))
-			MB.playsound_local(get_turf(M), path, 100)
+			MB.playsound_local(loc, path, 100)
 			fdel(path)
 			fdel("code/shitcode/hule/tts/conv/[M.ckey].mp3")
 
@@ -49,7 +54,7 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 		cooldown = length(msg)*charcd
 		if(!GLOB.tts_os_unix)
 			to_chat(owner, "Trimmed to: [msg], CD: [cooldown]")
-		tts(owner, msg)
+		owner.tts(msg)
 
 
 /client/proc/anime_voiceover()
