@@ -63,7 +63,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 /datum/tts/proc/generate_tts(msg)
 	if(!isliving(owner) && GLOB.tts_settings[3])
 		return
-	if(cooldown + 5 <= 0)
+	if(cooldown + 3 <= 0)
 		msg = trim(msg, maxchars)
 		cooldown = length(msg)*charcd
 		if(!GLOB.tts_settings[2])
