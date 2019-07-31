@@ -5,7 +5,7 @@ GLOBAL_VAR_INIT(tts_lang, "ru")
 GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_lang)
-	if(!isliving) // potom mb zavezu dlya drugih
+	if(!isliving(src)) // potom mb zavezu dlya drugih
 		return
 
 	var/mob/M = src
