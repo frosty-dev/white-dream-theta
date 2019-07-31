@@ -44,7 +44,7 @@
 /obj/item/reagent_containers/food/snacks/solid_reagent/afterattack(obj/target, mob/user , proximity)
 	if(!proximity)
 		return
-	if(target.is_open_container() || istype(target, /obj/effect/decal/cleanable/chempile) && target.reagents)
+	if(target.is_open_container()/* || istype(target, /obj/effect/decal/cleanable/chempile) && target.reagents*/)
 		if(!target.reagents.total_volume)
 			to_chat(user, "<span class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
 			return

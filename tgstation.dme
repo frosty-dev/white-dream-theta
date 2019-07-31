@@ -2985,7 +2985,6 @@
 #include "code\shitcode\valtos\forge\__reagent_states.dm"
 #include "code\shitcode\valtos\forge\_def.dm"
 #include "code\shitcode\valtos\forge\_techweb.dm"
-#include "code\shitcode\valtos\forge\chem.dm"
 #include "code\shitcode\valtos\forge\chemistry.dm"
 #include "code\shitcode\valtos\forge\density.dm"
 #include "code\shitcode\valtos\forge\effects_smoke.dm"
