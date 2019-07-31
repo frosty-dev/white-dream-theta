@@ -6026,7 +6026,9 @@
 /turf/open/space,
 /area/space/nearstation)
 "amS" = (
-/obj/machinery/reagent_material_manipulator,
+/obj/structure/table,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plasteel,
 /area/construction)
 "amT" = (
@@ -6218,13 +6220,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
-"anq" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/engine/supermatter)
 "ans" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -19740,13 +19735,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port)
-"aYg" = (
-/obj/effect/landmark/xeno_spawn,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/construction)
 "aYh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -34080,9 +34068,7 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bJu" = (
-/obj/structure/light_construct{
-	dir = 4
-	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel,
 /area/construction)
 "bJx" = (
@@ -34102,21 +34088,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"bJz" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 1
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/hallway/primary/aft)
 "bJA" = (
 /obj/effect/landmark/blobstart,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -34597,15 +34568,13 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bKU" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Construction Area";
-	req_access_txt = "32"
-	},
-/obj/effect/mapping_helpers/airlock/abandoned,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/machinery/door/airlock/public/glass{
+	name = "Public Autolathe"
+	},
+/turf/open/floor/plasteel,
 /area/construction)
 "bKV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -35544,12 +35513,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/quartermaster/office)
-"bNL" = (
-/obj/machinery/airalarm{
-	pixel_y = 23
-	},
-/turf/open/floor/plating,
-/area/construction)
 "bNN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable,
@@ -35561,6 +35524,9 @@
 	},
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark/corner,
 /area/hallway/primary/aft)
@@ -36471,10 +36437,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
-"bQc" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/turf/open/floor/plating,
-/area/construction)
 "bQd" = (
 /obj/structure/table,
 /obj/item/folder/blue,
@@ -36836,6 +36798,7 @@
 /obj/structure/light_construct{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plating,
 /area/construction)
 "bRm" = (
@@ -37251,16 +37214,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
-"bSv" = (
-/obj/machinery/camera{
-	c_tag = "Construction Area";
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/construction)
 "bSw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -37276,7 +37229,9 @@
 /area/construction)
 "bSz" = (
 /obj/structure/table,
-/turf/open/floor/plating,
+/obj/item/multitool,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plasteel,
 /area/construction)
 "bSA" = (
 /obj/structure/disposalpipe/segment,
@@ -47686,12 +47641,19 @@
 	amount = 5
 	},
 /obj/item/flashlight,
-/turf/open/floor/plating,
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/obj/machinery/light/small,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
 /area/construction)
 "cCc" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/hazardvest,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/construction)
 "cCd" = (
 /turf/open/floor/plasteel,
@@ -49769,6 +49731,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/vacant_room/commissary)
+"eHS" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/construction)
 "eIE" = (
 /obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
@@ -49940,6 +49908,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/nanite)
+"goh" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plasteel,
+/area/construction)
 "gpE" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/wiki/security_space_law,
@@ -50041,8 +50013,15 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
 /area/science/lab)
+"gNT" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/construction)
 "gWd" = (
 /obj/structure/cable,
+/obj/machinery/reagent_sheet,
 /turf/open/floor/plating,
 /area/construction)
 "gXs" = (
@@ -50153,6 +50132,10 @@
 	},
 /turf/open/floor/engine,
 /area/science/misc_lab)
+"iBa" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/turf/open/floor/plasteel,
+/area/construction)
 "iBZ" = (
 /obj/machinery/power/smes,
 /obj/structure/cable,
@@ -50188,6 +50171,17 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"iSs" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Construction Area";
+	req_access_txt = "32"
+	},
+/obj/effect/mapping_helpers/airlock/abandoned,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/construction)
 "iTt" = (
 /obj/item/radio/intercom{
 	desc = "Talk through this. It looks like it has been modified to not broadcast.";
@@ -50839,6 +50833,7 @@
 	pixel_y = -24
 	},
 /obj/structure/cable,
+/obj/machinery/reagent_material_manipulator,
 /turf/open/floor/plating,
 /area/construction)
 "nzh" = (
@@ -51002,6 +50997,13 @@
 /obj/item/storage/fancy/candle_box,
 /turf/open/floor/plasteel/dark,
 /area/chapel/main)
+"oBD" = (
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/open/floor/plasteel,
+/area/construction)
 "oDF" = (
 /obj/machinery/light,
 /turf/open/floor/plating,
@@ -51196,6 +51198,14 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/disposal)
+"pLZ" = (
+/obj/structure/cable,
+/obj/machinery/chem_heater,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/construction)
 "pOJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -51359,6 +51369,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"rEm" = (
+/obj/machinery/autolathe,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/construction)
 "rHZ" = (
 /obj/structure/rack,
 /obj/item/wrench,
@@ -51808,6 +51825,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/research)
+"uKL" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/engine/supermatter)
 "uPT" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -52059,6 +52082,10 @@
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/storage/tools)
+"wzR" = (
+/obj/structure/closet/toolcloset,
+/turf/open/floor/plating,
+/area/construction)
 "wBd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -52265,6 +52292,10 @@
 	},
 /turf/closed/wall,
 /area/vacant_room/commissary)
+"yfW" = (
+/obj/machinery/light/small,
+/turf/open/floor/engine,
+/area/engine/supermatter)
 "yiW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/disposal/bin,
@@ -78646,9 +78677,9 @@ bFa
 bKt
 bLx
 bCs
-bNJ
+wzR
 bRl
-apV
+bKA
 bLC
 cCf
 bNI
@@ -79163,8 +79194,8 @@ bCs
 bNJ
 bNJ
 bKx
-cjL
-gWd
+rKP
+pLZ
 bNI
 bUz
 bVJ
@@ -79417,7 +79448,7 @@ bFa
 bFa
 bFa
 bCs
-bNL
+bNJ
 bNJ
 apV
 cjL
@@ -79674,11 +79705,11 @@ bJk
 bFa
 bLA
 bCs
-cCd
-bQc
-bKA
-rKP
-bSv
+bNI
+bNI
+iSs
+cnB
+bNI
 bNI
 bUB
 bVJ
@@ -79932,9 +79963,9 @@ bFa
 bHO
 bCs
 amS
-cCd
-aYg
-cjL
+oBD
+bSx
+gNT
 cCc
 bNI
 bEP
@@ -80188,10 +80219,10 @@ bJl
 bHh
 bHN
 bCs
-cjo
+rEm
 cCd
 bSx
-cjL
+eHS
 cCb
 bNI
 bEP
@@ -80224,7 +80255,7 @@ cqU
 cEf
 cEt
 cEM
-anq
+cEt
 cEg
 cFK
 cGe
@@ -80447,7 +80478,7 @@ bHQ
 bCs
 cjo
 bJu
-bSx
+iBa
 cmX
 bSz
 bNI
@@ -80481,7 +80512,7 @@ cqU
 cMD
 cEu
 cEz
-cMH
+yfW
 cMD
 cFL
 cGf
@@ -80702,8 +80733,8 @@ bCs
 bLD
 bCs
 bCs
-bNI
-bNI
+goh
+goh
 bKU
 cnB
 bNI
@@ -80960,7 +80991,7 @@ bHk
 bHR
 bIe
 bFd
-bJz
+bFd
 bRp
 cav
 bSA
@@ -82021,7 +82052,7 @@ cDw
 cDE
 cEa
 cMD
-cMH
+uKL
 cEz
 cMH
 cMD

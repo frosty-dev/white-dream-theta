@@ -1,35 +1,49 @@
  //needs gtts module and ffmpeg
 
 GLOBAL_VAR_INIT(tts, FALSE)
+GLOBAL_LIST_INIT(tts_settings, list("ru", 1, 1))//1-lang, 2-os, 3-livingonly
+/*
 GLOBAL_VAR_INIT(tts_lang, "ru")
 GLOBAL_VAR_INIT(tts_os_unix, TRUE)
+GLOBAL_VAR_INIT(tts_atoms, FALSE)
+*/
+GLOBAL_LIST_EMPTY(tts_datums)
 
-/atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_lang)
-	if(!isliving(src)) // potom mb zavezu dlya drugih
-		return
-
-	var/mob/M = src
+/atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
+	var/namae
+	if(!ismob(src)) // potom mb zavezu dlya drugih
+		namae = name
+	else
+		var/mob/etot = src
+		namae = etot.ckey
 
 	msg = ph2up(msg)
 
-	if(GLOB.tts_os_unix)
-		world.shelleo("python3 code/shitcode/hule/tts/tts.py \"[M.ckey]\" \"[msg]\" \"[lang]\" ")
+	if(GLOB.tts_settings[2])
+		world.shelleo("python3 code/shitcode/hule/tts/tts.py \"[namae]\" \"[msg]\" \"[lang]\" ")
 	else
-		var/list/output = world.shelleo("python code/shitcode/hule/tts/tts.py \"[M.ckey]\" \"[msg]\" \"[lang]\" ")
-		to_chat(M, output)
+		var/list/output = world.shelleo("python code/shitcode/hule/tts/tts.py \"[namae]\" \"[msg]\" \"[lang]\" ")
+		to_chat(src, output)
 
-	var/path = "code/shitcode/hule/tts/lines/[M.ckey].ogg"
+	var/path = "code/shitcode/hule/tts/lines/[namae].ogg"
 	if(fexists(path))
-		for(var/mob/MB in range(11))
-			MB.playsound_local(loc, path, 100)
+		for(var/mob/M in range(11))
+			M.playsound_local(loc, path, 100)
 			fdel(path)
-			fdel("code/shitcode/hule/tts/conv/[M.ckey].mp3")
+			fdel("code/shitcode/hule/tts/conv/[namae].mp3")
 
-/mob/living
-	var/datum/tts/TTS = new
+/atom/movable
+	var/datum/tts/TTS
+
+/atom/movable/proc/grant_tts()
+	TTS = new /datum/tts
+	TTS.owner = src
+
+/atom/movable/proc/remove_tts()
+	qdel(TTS)
 
 /datum/tts
-	var/mob/living/owner
+	var/atom/movable/owner
 	var/cooldown = 0
 	var/createtts = 0 //create tts on hear
 
@@ -38,24 +52,27 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 
 /datum/tts/New()
 	. = ..()
+	GLOB.tts_datums += src
 	START_PROCESSING(SSobj, src)
 
 /datum/tts/Destroy()
-	. = ..()
+	GLOB.tts_datums -= src
 	STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 /datum/tts/process()
 	if(cooldown > 0)
 		cooldown--
 
 /datum/tts/proc/generate_tts(msg)
+	if(!isliving(owner) && GLOB.tts_settings[3])
+		return
 	if(cooldown <= 0)
 		msg = trim(msg, maxchars)
 		cooldown = length(msg)*charcd
-		if(!GLOB.tts_os_unix)
+		if(!GLOB.tts_settings[2])
 			to_chat(owner, "Trimmed to: [msg], CD: [cooldown]")
 		owner.tts(msg)
-
 
 /client/proc/anime_voiceover()
 	set category = "Fun"
@@ -64,7 +81,7 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 	if(!(ckey in GLOB.anonists))
 		return
 
-	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang", "OS Settings")
+	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang", "OS Settings", "Toggle Living Only")
 
 	var/selected = input("Main Menu", "ANIME VOICEOVER", "Cancel") as null|anything in menu
 
@@ -88,13 +105,21 @@ GLOBAL_VAR_INIT(tts_os_unix, TRUE)
 				return
 
 			message_admins("[key] sets anime voiceover lang to \"[selectedlang]\"")
-			GLOB.tts_lang = selectedlang
+			GLOB.tts_settings[1] = selectedlang
 
 		if("OS Settings")
-			GLOB.tts_os_unix = !GLOB.tts_os_unix
+			GLOB.tts_settings[2] = !GLOB.tts_settings[2]
 
-			if(GLOB.tts_os_unix)
+			if(GLOB.tts_settings[2])
 				message_admins("[key] sets anime voiceover OS to Unix")
 			else
 				message_admins("[key] sets anime voiceover OS to Windows (Debug)")
+
+		if("Toggle Living Only")
+			GLOB.tts_settings[3] = !GLOB.tts_settings[3]
+
+			if(GLOB.tts_settings[3])
+				message_admins("[key] toggled living only tts on.")
+			else
+				message_admins("[key] toggled living only tts off.")
 
