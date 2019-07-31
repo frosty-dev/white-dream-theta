@@ -25,8 +25,8 @@ GLOBAL_LIST_EMPTY(tts_datums)
 		for(var/mob/M in range(13))
 			var/turf/T = get_turf(src)
 			M.playsound_local(T, path, 100)
-			fdel(path)
-			fdel("code/shitcode/hule/tts/conv/[namae].mp3")
+		fdel(path)
+		fdel("code/shitcode/hule/tts/conv/[namae].mp3")
 
 /atom/movable
 	var/datum/tts/TTS
