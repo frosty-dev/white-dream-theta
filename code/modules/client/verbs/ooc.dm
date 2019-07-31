@@ -62,9 +62,6 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
 			keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
-	if(check_donations(keyname))
-		keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[keyname]</font>"
-		msg = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[msg]</font>"
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/C in GLOB.clients)
 		if(src.shadowbanned_ooc)
@@ -84,6 +81,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 						to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 					else
 						to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message linkify'>[msg]</span></span>")
+				if(check_donations(keyname))
+					to_chat(C, "<font style='text-shadow: 0 0 1px black' color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 
 			else if(!(key in C.prefs.ignoring))
 				if(GLOB.OOC_COLOR)
