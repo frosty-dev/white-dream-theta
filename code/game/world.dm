@@ -245,10 +245,12 @@ GLOBAL_VAR(restart_counter)
 
 	var/s = ""
 	var/hostedby
+	var/server_name = "piss"
 	if(config)
 		hostedby = CONFIG_GET(string/hostedby)
+		server_name = CONFIG_GET(string/servername)
 
-	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>\[RU\] White Dream presents:</b></big> [station_name()]</br>"
+	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>[server_name] presents:</b></big> [station_name()]</br>"
 	s += "<img src=\"https://i.imgur.com/lmUGFYa.png\"></a>"
 
 	var/players = GLOB.clients.len
@@ -256,7 +258,7 @@ GLOBAL_VAR(restart_counter)
 	if(GLOB.master_mode)
 		s += "<b>Mode:</b> [GLOB.master_mode]</br>"
 
-	s += "<b>Players:</b> [players]/200</br>"
+	s += "<b>Players:</b> [players]/60</br>"
 
 	if (!host && hostedby)
 		s += "<b>Host:</b> [hostedby]"
