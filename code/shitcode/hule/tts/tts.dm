@@ -61,8 +61,8 @@ GLOBAL_LIST_EMPTY(tts_datums)
 	var/createtts = 0 //create tts on hear
 	var/lang
 
-	var/charcd = 0.4 //ticks for one char
-	var/maxchars = 64 //sasai kudosai
+	var/charcd = 0.3 //ticks for one char
+	var/maxchars = 128 //sasai kudosai
 
 /datum/tts/New()
 	. = ..()
