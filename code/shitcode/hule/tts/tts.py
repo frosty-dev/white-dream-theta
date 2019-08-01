@@ -3,7 +3,9 @@ import sys
 import subprocess
 from urllib.parse import unquote_plus
 
-file = open("code/shitcode/hule/tts/voicequeue.txt")
+path = sys.argv[1]
+
+file = open(str(path)+"/voiceq.txt")
 
 params = list()
 
@@ -17,11 +19,8 @@ file.close()
 msg = params[0]
 client = params[1]
 lng = params[2]
-path = params[3]
 
 msg = unquote_plus(msg, 'cp1251')
-
-path = unquote_plus(path, 'cp1251')
 
 tts = gTTS(msg, lang=lng)
 tts.save(str(path)+"/conv/"+str(client)+".mp3")
