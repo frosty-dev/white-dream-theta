@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 		var/mob/etot = src
 		namae = etot.ckey
 
-	//msg = ph2up(msg)
+	msg = ph2up(msg)
 
 	if(GLOB.tts_settings[2])
 		world.shelleo("python3 code/shitcode/hule/tts/tts.py \"[namae]\" \"[msg]\" \"[lang]\" ")
