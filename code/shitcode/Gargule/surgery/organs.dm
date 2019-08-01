@@ -78,7 +78,7 @@
 /obj/item/organ/heart/light
 	name = "heart of Light"
 	desc = "Full of Light essence."
-	synthetic = TRUE //floral power prevents heart attacks
+	//synthetic = TRUE //floral power prevents heart attacks
 	actions_types = list(/datum/action/item_action/toggle_light)
 	icon = 'code/shitcode/Gargule/icons.dmi'
 	icon_state = "heartlight-on"

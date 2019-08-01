@@ -357,5 +357,5 @@
 		else if(isobj(A))
 			source.reagent_type.reaction_obj(A, type, amount)
 
-#define REAGENT_FORGE	256//smelts reagent materials to make designs 
+#define REAGENT_FORGE	256//smelts reagent materials to make designs
 #define MAT_REAGENT "$reagent"

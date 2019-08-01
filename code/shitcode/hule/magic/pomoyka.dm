@@ -184,9 +184,9 @@
 /obj/structure/pomoyka/process()
 	desc = "Пипец пафосное название прямо как в анимэ \nВремя: [time] / [timemul ** radius] \nРадиус: [radius] \nЭнергия: [bdmgacc] / [radius * bdmgmul]"
 	for(var/mob/living/carbon/human/H in range(radius, src))
-		var/bhp = 200 - H.getBrainLoss()
+		var/bhp = 200 - H.getOrganLoss(ORGAN_SLOT_BRAIN)
 		if(bhp > bdmg)
-			H.adjustBrainLoss(bdmg)
+			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, bdmg)
 			bdmgacc += bdmg
 		/*else if(bhp > 0)
 			H.adjustBrainLoss(bhp)

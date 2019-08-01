@@ -120,7 +120,7 @@
 
 /obj/effect/mob_spawn/human/bearcatcrew/eng
 	mob_name = "an engineer"
-	uniform = /obj/item/clothing/under/rank/engineer
+	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/yellow
@@ -132,7 +132,7 @@
 
 /obj/effect/mob_spawn/human/bearcatcrew/atmos
 	mob_name = "an atmostech"
-	uniform = /obj/item/clothing/under/rank/atmospheric_technician
+	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/black

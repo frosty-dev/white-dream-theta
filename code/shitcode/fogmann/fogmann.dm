@@ -16,7 +16,7 @@ obj/item/banner/engineering/atmos/mundane
 	result = /obj/item/banner/engineering/atmos/mundane
 	time = 40
 	reqs = list(/obj/item/stack/rods = 2,
-				/obj/item/clothing/under/rank/atmospheric_technician = 1)
+				/obj/item/clothing/under/rank/engineering/atmospheric_technician = 1)
 	category = CAT_MISC
 
 /obj/item/stack/tile/carpet/peaks

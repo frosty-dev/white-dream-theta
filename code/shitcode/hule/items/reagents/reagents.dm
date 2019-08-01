@@ -46,7 +46,7 @@
 
 /datum/reagent/toxin/nptox/on_mob_life(mob/living/M)
 	M.drowsyness += 3
-	M.adjustBrainLoss(2)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.Sleeping(10, 0)
 
 /datum/crafting_recipe/npgrenade

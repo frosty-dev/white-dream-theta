@@ -390,20 +390,20 @@
 		for(var/reagent in cached_reagents)
 			var/datum/reagent/R = reagent
 			//priv
-			switch(R.reagent_state)
-				if(SOLID)
-					if(chem_temp > R.melting_point)
-						R.reagent_state = LIQUID
-						if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.HasRoundStarted())
-							for(var/mob/M in range(3))
-								to_chat(M, ("<span class='notice'>[icon2html(cached_my_atom, viewers(cached_my_atom))] The solid chemicals melt into a liquid!</span>"))
-				if(LIQUID)
-					if(chem_temp < R.melting_point && !is_type_in_typecache(R, GLOB.solidchange_reagent_blacklist))
-						R.reagent_state = SOLID
-						if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.HasRoundStarted())
-							for(var/mob/M in range(3))
-								to_chat(M, ("<span class='notice'>[icon2html(cached_my_atom, viewers(cached_my_atom))] The solution solidifies!</span>"))
-			//
+			//switch(R.reagent_state)
+			//	if(SOLID)
+			//		if(chem_temp > R.melting_point)
+			//			R.reagent_state = LIQUID
+			//			if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.HasRoundStarted())
+			//				for(var/mob/M in range(3))
+			//					to_chat(M, ("<span class='notice'>[icon2html(cached_my_atom, viewers(cached_my_atom))] The solid chemicals melt into a liquid!</span>"))
+			//	if(LIQUID)
+			//		if(chem_temp < R.melting_point && !is_type_in_typecache(R, GLOB.solidchange_reagent_blacklist))
+			//			R.reagent_state = SOLID
+			//			if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.HasRoundStarted())
+			//				for(var/mob/M in range(3))
+			//					to_chat(M, ("<span class='notice'>[icon2html(cached_my_atom, viewers(cached_my_atom))] The solution solidifies!</span>"))
+			//pok
 			for(var/reaction in cached_reactions[R.type]) // Was a big list but now it should be smaller since we filtered it with our reagent id
 				if(!reaction)
 					continue
