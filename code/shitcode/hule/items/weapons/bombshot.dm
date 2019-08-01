@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/shotgun/bombslug
 	name = "FRAGZ-5-10-15 slug"
-	desc = "A high explosive round for a 12 gauge shotgun."
+	desc = "A highly explosive round for a 12 gauge shotgun."
 	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
 	icon_state = "bombslug"
 	projectile_type = /obj/item/projectile/bullet/shotgun_bombslug
