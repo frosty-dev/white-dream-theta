@@ -14,11 +14,25 @@ GLOBAL_LIST_EMPTY(tts_datums)
 
 	msg = ph2up(msg)
 
+	var/list/voiceslist = list()
+
+	voiceslist["msg"] = msg
+	voiceslist["name"] = namae
+	voiceslist["lang"] = lang
+	var/params = list2params(voiceslist)
+
+	params = replacetext(params, "&", "\n")
+
+	text2file(params,"code/shitcode/hule/tts/voicequeue.txt")
+
 	if(GLOB.tts_settings[2])
-		world.shelleo("python3 code/shitcode/hule/tts/tts.py \"[namae]\" \"[msg]\" \"[lang]\" ")
+		world.shelleo("python3 code/shitcode/hule/tts/tts.py")
 	else
-		var/list/output = world.shelleo("python code/shitcode/hule/tts/tts.py \"[namae]\" \"[msg]\" \"[lang]\" ")
+		var/list/output = world.shelleo("python code/shitcode/hule/tts/tts.py")
 		to_chat(src, output)
+
+	if(fexists("scripts/voicequeue.txt"))
+		fdel("scripts/voicequeue.txt")
 
 	var/path = "code/shitcode/hule/tts/lines/[namae].ogg"
 	if(fexists(path))
