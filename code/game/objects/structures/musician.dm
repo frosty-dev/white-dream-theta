@@ -268,8 +268,7 @@
 
 	else if(href_list["play"])
 		playing = TRUE
-		spawn()
-			playsong(usr)
+		INVOKE_ASYNC(src, .proc/playsong, usr)
 
 	else if(href_list["newline"])
 		var/newline = rhtml_encode(input("Enter your line: ", instrumentObj.name) as text|null)

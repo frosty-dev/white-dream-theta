@@ -140,7 +140,7 @@
 		if(client.prefs.muted & MUTE_IC)
 			to_chat(src, "�� �� ������ �������� � IC (���).")
 			return
-		if (src.client.handle_spam_prevention(message,MUTE_IC))
+		if (!(ignore_spam || forced) && src.client.handle_spam_prevention(message,MUTE_IC))
 			return
 
 	friend_talk(message)
