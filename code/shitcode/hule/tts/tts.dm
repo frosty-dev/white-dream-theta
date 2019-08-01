@@ -31,7 +31,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 	text2file(params,"[path]/voiceq.txt")
 
 	if(GLOB.tts_settings[2])
-		world.shelleo("[path]/tts.py [shellparams]")
+		world.shelleo("python3 [path]/tts.py [shellparams]")
 	else
 		var/list/output = world.shelleo("python [path]/tts.py [shellparams]")
 		to_chat(src, output)
@@ -61,7 +61,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 	var/createtts = 0 //create tts on hear
 	var/lang
 
-	var/charcd = 0.3 //ticks for one char
+	var/charcd = 0.4 //ticks for one char
 	var/maxchars = 64 //sasai kudosai
 
 /datum/tts/New()
