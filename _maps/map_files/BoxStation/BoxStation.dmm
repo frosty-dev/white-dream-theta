@@ -6176,7 +6176,6 @@
 /turf/open/floor/plating,
 /area/maintenance/solars/port/fore)
 "ani" = (
-/obj/machinery/reagent_forge,
 /turf/open/floor/plating,
 /area/construction)
 "anj" = (
@@ -49942,7 +49941,6 @@
 /area/construction)
 "gWd" = (
 /obj/structure/cable,
-/obj/machinery/reagent_sheet,
 /turf/open/floor/plating,
 /area/construction)
 "gXs" = (
@@ -50818,7 +50816,6 @@
 	pixel_y = -24
 	},
 /obj/structure/cable,
-/obj/machinery/reagent_material_manipulator,
 /turf/open/floor/plating,
 /area/construction)
 "nzh" = (
