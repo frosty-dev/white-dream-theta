@@ -6,6 +6,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
 	var/path = "code/shitcode/hule/tts" // in case komuto nado budet spizdit
+	var/shellparams = "[path]"
 
 	var/namae
 	if(!ismob(src))
@@ -14,25 +15,25 @@ GLOBAL_LIST_EMPTY(tts_datums)
 		var/mob/etot = src
 		namae = etot.ckey
 
-	//msg = ph2up(msg)
+	if(fexists("[path]/voiceq.txt"))
+		fdel("[path]/voiceq.txt")
 
 	var/list/paramslist = list()
 
 	paramslist["msg"] = msg
 	paramslist["name"] = namae
 	paramslist["lang"] = lang
-	paramslist["path"] = path
 
 	var/params = list2params(paramslist)
 
 	params = replacetext(params, "&", "\n")
 
-	text2file(params,"[path]/voicequeue.txt")
+	text2file(params,"[path]/voiceq.txt")
 
 	if(GLOB.tts_settings[2])
-		world.shelleo("[path]/tts.py")
+		world.shelleo("[path]/tts.py [shellparams]")
 	else
-		var/list/output = world.shelleo("python [path]/tts.py")
+		var/list/output = world.shelleo("python [path]/tts.py [shellparams]")
 		to_chat(src, output)
 
 	if(fexists("[path]/lines/[namae].ogg"))
@@ -42,8 +43,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 		fdel("[path]/lines/[namae].ogg")
 		fdel("[path]/conv/[namae].mp3")
 
-	if(fexists("[path]/voicequeue.txt"))
-		fdel("[path]/voicequeue.txt")
+
 
 /atom/movable
 	var/datum/tts/TTS
@@ -61,7 +61,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 	var/createtts = 0 //create tts on hear
 	var/lang
 
-	var/charcd = 0.5 //ticks for one char
+	var/charcd = 0.3 //ticks for one char
 	var/maxchars = 64 //sasai kudosai
 
 /datum/tts/New()
