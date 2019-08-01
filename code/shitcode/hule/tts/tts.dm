@@ -5,6 +5,8 @@ GLOBAL_LIST_INIT(tts_settings, list("ru", 1, 1))//1-lang, 2-os, 3-livingonly
 GLOBAL_LIST_EMPTY(tts_datums)
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
+	var/path = "code/shitcode/hule/tts" // in case komuto nado budet spizdit
+
 	var/namae
 	if(!ismob(src))
 		namae = name
@@ -12,35 +14,36 @@ GLOBAL_LIST_EMPTY(tts_datums)
 		var/mob/etot = src
 		namae = etot.ckey
 
-	msg = ph2up(msg)
+	//msg = ph2up(msg)
 
-	var/list/voiceslist = list()
+	var/list/paramslist = list()
 
-	voiceslist["msg"] = msg
-	voiceslist["name"] = namae
-	voiceslist["lang"] = lang
-	var/params = list2params(voiceslist)
+	paramslist["msg"] = msg
+	paramslist["name"] = namae
+	paramslist["lang"] = lang
+	paramslist["path"] = path
+
+	var/params = list2params(paramslist)
 
 	params = replacetext(params, "&", "\n")
 
-	text2file(params,"code/shitcode/hule/tts/voicequeue.txt")
+	text2file(params,"[path]/voicequeue.txt")
 
 	if(GLOB.tts_settings[2])
-		world.shelleo("python3 code/shitcode/hule/tts/tts.py")
+		world.shelleo("[path]/tts.py")
 	else
-		var/list/output = world.shelleo("python code/shitcode/hule/tts/tts.py")
+		var/list/output = world.shelleo("python [path]/tts.py")
 		to_chat(src, output)
 
-	if(fexists("scripts/voicequeue.txt"))
-		fdel("scripts/voicequeue.txt")
-
-	var/path = "code/shitcode/hule/tts/lines/[namae].ogg"
-	if(fexists(path))
+	if(fexists("[path]/lines/[namae].ogg"))
 		for(var/mob/M in range(13))
 			var/turf/T = get_turf(src)
-			M.playsound_local(T, path, 100)
-		fdel(path)
-		fdel("code/shitcode/hule/tts/conv/[namae].mp3")
+			M.playsound_local(T, "[path]/lines/[namae].ogg", 100)
+		fdel("[path]/lines/[namae].ogg")
+		fdel("[path]/conv/[namae].mp3")
+
+	if(fexists("[path]/voicequeue.txt"))
+		fdel("[path]/voicequeue.txt")
 
 /atom/movable
 	var/datum/tts/TTS
@@ -56,6 +59,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 	var/atom/movable/owner
 	var/cooldown = 0
 	var/createtts = 0 //create tts on hear
+	var/lang
 
 	var/charcd = 0.5 //ticks for one char
 	var/maxchars = 64 //sasai kudosai
@@ -82,7 +86,10 @@ GLOBAL_LIST_EMPTY(tts_datums)
 		cooldown = length(msg)*charcd
 		if(!GLOB.tts_settings[2])
 			to_chat(owner, "Trimmed to: [msg], CD: [cooldown]")
-		owner.tts(msg)
+		if(lang)
+			owner.tts(msg, lang)
+		else
+			owner.tts(msg)
 
 /client/proc/anime_voiceover()
 	set category = "Fun"
