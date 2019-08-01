@@ -26,7 +26,6 @@
 			to_chat(M, ("<span class='warning'>[icon2html(src, viewers(src))] The [src] boils away in the extreme heat!</span>"))
 		new girder_type(src)
 		ChangeTurf(/turf/open/floor/plasteel)
-	..()
 
 /turf/closed/wall/mineral/reagent/proc/reagent_act(atom/A)
 	if(prob(90) && reagent_type)
