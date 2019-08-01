@@ -226,7 +226,7 @@
 		else if(!build_type in SScircuit.circuit_fabricator_recipe_list["Tools"])
 			return
 
-		//var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 
 		if(!debug && !materials.use_amount_mat(cost, /datum/material/iron))
 			to_chat(usr, "<span class='warning'>You need [cost] metal to build that!</span>")
@@ -299,14 +299,14 @@
 					to_chat(usr, "<span class='warning'>This program uses components not supported by the specified assembly. Please change the assembly type in the save file to a supported one.</span>")
 					return
 				else if(fast_clone)
-					//var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+					var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 					if(debug || materials.use_amount_mat(program["metal_cost"], /datum/material/iron))
 						cloning = TRUE
 						print_program(usr)
 					else
 						to_chat(usr, "<span class='warning'>You need [program["metal_cost"]] metal to build that!</span>")
 				else
-					//var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+					var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 					if(!materials.use_amount_mat(program["metal_cost"], /datum/material/iron))
 						to_chat(usr, "<span class='warning'>You need [program["metal_cost"]] metal to build that!</span>")
 						return
@@ -324,7 +324,7 @@
 
 				to_chat(usr, "<span class='notice'>Cloning has been canceled. Metal cost has been refunded.</span>")
 				cloning = FALSE
-				//var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+				var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 				materials.use_amount_mat(-program["metal_cost"], /datum/material/iron) //use negative amount to regain the cost
 
 
