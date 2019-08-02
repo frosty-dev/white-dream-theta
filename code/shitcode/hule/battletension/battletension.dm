@@ -8,11 +8,8 @@
 PROCESSING_SUBSYSTEM_DEF(btension)
 	name = "Battle Tension"
 	priority = 15
-	//flags = SS_NO_INIT //если раскоментить то игроки не будут знать что у нас есть крутые подсистемы..........
+	flags = SS_NO_INIT
 	wait = 20
-
-/datum/controller/subsystem/processing/btension/Initialize()
-	. = ..()
 
 /mob/living
 	var/datum/btension/battletension

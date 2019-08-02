@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(tts_datums)
 PROCESSING_SUBSYSTEM_DEF(tts)
 	name = "Text To Speech"
 	priority = 15
-	//flags = SS_NO_INIT //если раскоментить то игроки не будут знать что у нас есть крутые подсистемы..........
+	flags = SS_NO_INIT
 	wait = 20
 
 /datum/controller/subsystem/processing/tts/Initialize()
