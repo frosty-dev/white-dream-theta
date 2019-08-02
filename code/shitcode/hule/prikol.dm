@@ -96,10 +96,20 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 	if(hpnow <= -100)
 		if(istype(weapon, /obj/item/projectile))
 			var/obj/item/projectile/P = weapon
+
+			if(victim != frabber && !victim.stat && victim.mind)
+				victim.create_tension(P.damage/4)
+				frabber.create_tension(P.damage/4)
+
 			if(P.damage + hpnow > -100)
 				frabber.killcounter.count_kill()
 
 		else if(istype(weapon, /obj))
 			var/obj/O = weapon
+
+			if(victim != frabber && !victim.stat && victim.mind)
+				victim.create_tension(O.force/2)
+				frabber.create_tension(O.force/2)
+
 			if(O.force + hpnow > -100)
 				frabber.killcounter.count_kill()
