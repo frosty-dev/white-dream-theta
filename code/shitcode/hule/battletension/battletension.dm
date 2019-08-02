@@ -9,7 +9,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 	name = "Battle Tension"
 	priority = 15
 	flags = SS_NO_INIT
-	wait = 20
+	wait = 10
 
 /mob/living
 	var/datum/btension/battletension
