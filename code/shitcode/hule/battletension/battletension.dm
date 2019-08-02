@@ -24,7 +24,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 
 /*
 /mob/living/proc/remove_btension()
-	qdel(TTS)
+	qdel(battletension)
 */
 
 /datum/btension
