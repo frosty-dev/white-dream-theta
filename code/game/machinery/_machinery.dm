@@ -582,7 +582,7 @@ Class Procs:
 	if(inserted_prisoner_id)
 		to_chat(user, "<span class='warning'>There's already an ID card in the console!</span>")
 		return
-	var/obj/item/card/id/prisoner/I = user.get_active_held_item()
+	var/obj/item/card/id/I = user.get_active_held_item() // cocksucker
 	if(istype(I))
 		if(!user.transferItemToLoc(I, src))
 			return
