@@ -78,6 +78,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Executive Suit",			/obj/item/clothing/under/suit/black_really,		130),
 		new /datum/donate_info("Schoolgirl Uniform",		/obj/item/clothing/under/costume/schoolgirl,	130),
 		new /datum/donate_info("Tacticool Turtleneck",		/obj/item/clothing/under/syndicate/tacticool,	130),
+		new /datum/donate_info("Tacticool Skirtleneck",		/obj/item/clothing/under/syndicate/tacticool/skirt,130),
 		new /datum/donate_info("Soviet Uniform",			/obj/item/clothing/under/costume/soviet,		130),
 		new /datum/donate_info("Kilt",						/obj/item/clothing/under/costume/kilt,			100),
 		new /datum/donate_info("Gladiator uniform",			/obj/item/clothing/under/costume/gladiator,		100),
