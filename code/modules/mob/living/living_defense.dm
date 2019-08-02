@@ -96,13 +96,14 @@
 			var/armor = run_armor_check(zone, "melee", "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].",I.armour_penetration)
 			apply_damage(I.throwforce, dtype, zone, armor)
 
-			if(I.thrownby && istype(I.thrownby, /mob/living) && mind && !stat)
-				var/mob/living/frabber = I.thrownby
-				frabber.create_tension(I.throwforce/2)
-				create_tension(I.throwforce/2)
-
 			if(I.thrownby)
 				log_combat(I.thrownby, src, "threw and hit", I)
+
+				if(mind && !stat)
+					var/mob/living/frabber = I.thrownby
+					frabber.create_tension(I.throwforce* 1.5)
+					create_tension(I.throwforce* 1.5)
+
 		else
 			return 1
 	else

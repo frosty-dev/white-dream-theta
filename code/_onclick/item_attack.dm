@@ -93,9 +93,9 @@
 	if(I.force)
 		apply_damage(I.force, I.damtype)
 
-		if(user && mind && !stat)
-			user.create_tension(I.force/2)
-			create_tension(I.force/2)
+		if(mind && !stat)
+			user.create_tension(I.force * 1.2)
+			create_tension(I.force * 1.2)
 
 		if(I.damtype == BRUTE)
 			if(prob(33))
