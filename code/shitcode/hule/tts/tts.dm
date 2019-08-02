@@ -1,13 +1,36 @@
  //needs gtts module and ffmpeg
 
+#define TTS_PATH "code/shitcode/hule/tts"
+
 GLOBAL_VAR_INIT(tts, FALSE)
 GLOBAL_LIST_INIT(tts_settings, list("ru", 1, 1))//1-lang, 2-os, 3-livingonly
 GLOBAL_LIST_EMPTY(tts_datums)
 
-/atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
-	var/path = "code/shitcode/hule/tts" // in case komuto nado budet spizdit
-	var/shellparams = "[path]"
+/proc/tts_core(var/msg, var/filename, var/lang)
+	var/shellparams = "[TTS_PATH]"
 
+	if(fexists("[TTS_PATH]/voiceq.txt"))
+		fdel("[TTS_PATH]/voiceq.txt")
+
+	var/list/paramslist = list()
+
+	paramslist["msg"] = msg
+	paramslist["name"] = filename
+	paramslist["lang"] = lang
+
+	var/params = list2params(paramslist)
+
+	params = replacetext(params, "&", "\n")
+
+	text2file(params,"[TTS_PATH]/voiceq.txt")
+
+	if(GLOB.tts_settings[2])
+		world.shelleo("python3 [TTS_PATH]/tts.py [shellparams]")
+	else
+		var/list/output = world.shelleo("python [TTS_PATH]/tts.py [shellparams]")
+		to_chat(src, output)
+
+/atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
 	var/namae
 	if(!ismob(src))
 		namae = name
@@ -15,35 +38,14 @@ GLOBAL_LIST_EMPTY(tts_datums)
 		var/mob/etot = src
 		namae = etot.ckey
 
-	if(fexists("[path]/voiceq.txt"))
-		fdel("[path]/voiceq.txt")
+	tts_core(msg, namae, lang)
 
-	var/list/paramslist = list()
-
-	paramslist["msg"] = msg
-	paramslist["name"] = namae
-	paramslist["lang"] = lang
-
-	var/params = list2params(paramslist)
-
-	params = replacetext(params, "&", "\n")
-
-	text2file(params,"[path]/voiceq.txt")
-
-	if(GLOB.tts_settings[2])
-		world.shelleo("python3 [path]/tts.py [shellparams]")
-	else
-		var/list/output = world.shelleo("python [path]/tts.py [shellparams]")
-		to_chat(src, output)
-
-	if(fexists("[path]/lines/[namae].ogg"))
+	if(fexists("[TTS_PATH]/lines/[namae].ogg"))
 		for(var/mob/M in range(13))
 			var/turf/T = get_turf(src)
-			M.playsound_local(T, "[path]/lines/[namae].ogg", 100)
-		fdel("[path]/lines/[namae].ogg")
-		fdel("[path]/conv/[namae].mp3")
-
-
+			M.playsound_local(T, "[TTS_PATH]/lines/[namae].ogg", 100)
+		fdel("[TTS_PATH]/lines/[namae].ogg")
+		fdel("[TTS_PATH]/conv/[namae].mp3")
 
 /atom/movable
 	var/datum/tts/TTS
@@ -141,3 +143,4 @@ GLOBAL_LIST_EMPTY(tts_datums)
 				message_admins("[key] toggled living only tts off.")
 
 
+#undef TTS_PATH
