@@ -67,7 +67,7 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 			playsound(T,'code/shitcode/hule/SFX/csSFX/multikill.wav', 150, 5, pressure_affected = FALSE)
 		if(8)
 			playsound(T,'code/shitcode/hule/SFX/csSFX/multikill.wav', 150, 5, pressure_affected = FALSE)
-		if(9)
+		if(9 to INFINITY)
 			playsound(T,'code/shitcode/hule/SFX/csSFX/holyshit.wav', 150, 5, pressure_affected = FALSE)
 
 /client/proc/toggle_prikol()
