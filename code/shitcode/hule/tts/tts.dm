@@ -9,8 +9,11 @@ GLOBAL_LIST_EMPTY(tts_datums)
 PROCESSING_SUBSYSTEM_DEF(tts)
 	name = "Text To Speech"
 	priority = 15
-	flags = SS_NO_INIT
+	//flags = SS_NO_INIT //если раскоментить то игроки не будут знать что у нас есть крутые подсистемы..........
 	wait = 20
+
+/datum/controller/subsystem/processing/tts/Initialize()
+	. = ..()
 
 /proc/tts_core(var/msg, var/filename, var/lang)
 	if(fexists("[TTS_PATH]/voiceq.txt"))
@@ -55,11 +58,13 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	var/datum/tts/TTS
 
 /atom/movable/proc/grant_tts()
-	TTS = new /datum/tts
-	TTS.owner = src
+	if(!TTS)
+		TTS = new /datum/tts
+		TTS.owner = src
 
 /atom/movable/proc/remove_tts()
-	qdel(TTS)
+	if(TTS)
+		qdel(TTS)
 
 /datum/tts
 	var/atom/movable/owner
