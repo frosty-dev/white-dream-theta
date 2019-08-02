@@ -34,7 +34,7 @@
 	var/escape_in_progress = FALSE
 	var/message_cooldown
 	var/breakout_time = 300
-	fair_market_price = 10
+	fair_market_price = 1
 	payment_department = ACCOUNT_MED
 
 
