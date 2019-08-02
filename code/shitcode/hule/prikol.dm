@@ -97,7 +97,7 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 		if(istype(weapon, /obj/item/projectile))
 			var/obj/item/projectile/P = weapon
 
-			if(victim != frabber && !victim.stat && victim.mind)
+			if(victim != frabber && hpnow > -50 && victim.mind)
 				victim.create_tension(P.damage/4)
 				frabber.create_tension(P.damage/4)
 
@@ -107,7 +107,7 @@ GLOBAL_VAR_INIT(prikol_mode, FALSE)
 		else if(istype(weapon, /obj))
 			var/obj/O = weapon
 
-			if(victim != frabber && !victim.stat && victim.mind)
+			if(victim != frabber && hpnow > -50 && victim.mind)
 				victim.create_tension(O.force/2)
 				frabber.create_tension(O.force/2)
 
