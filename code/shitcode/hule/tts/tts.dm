@@ -6,6 +6,12 @@ GLOBAL_VAR_INIT(tts, FALSE)
 GLOBAL_LIST_INIT(tts_settings, list("ru", 1, 1))//1-lang, 2-os, 3-livingonly
 GLOBAL_LIST_EMPTY(tts_datums)
 
+PROCESSING_SUBSYSTEM_DEF(tts)
+	name = "Text To Speech"
+	priority = 15
+	flags = SS_NO_INIT
+	wait = 20
+
 /proc/tts_core(var/msg, var/filename, var/lang)
 	if(fexists("[TTS_PATH]/voiceq.txt"))
 		fdel("[TTS_PATH]/voiceq.txt")
@@ -67,11 +73,11 @@ GLOBAL_LIST_EMPTY(tts_datums)
 /datum/tts/New()
 	. = ..()
 	GLOB.tts_datums += src
-	START_PROCESSING(SSobj, src)
+	START_PROCESSING(SStts, src)
 
 /datum/tts/Destroy()
 	GLOB.tts_datums -= src
-	STOP_PROCESSING(SSobj, src)
+	STOP_PROCESSING(SStts, src)
 	. = ..()
 
 /datum/tts/process()
