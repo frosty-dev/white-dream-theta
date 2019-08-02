@@ -7,8 +7,6 @@ GLOBAL_LIST_INIT(tts_settings, list("ru", 1, 1))//1-lang, 2-os, 3-livingonly
 GLOBAL_LIST_EMPTY(tts_datums)
 
 /proc/tts_core(var/msg, var/filename, var/lang)
-	var/shellparams = "[TTS_PATH]"
-
 	if(fexists("[TTS_PATH]/voiceq.txt"))
 		fdel("[TTS_PATH]/voiceq.txt")
 
@@ -25,9 +23,9 @@ GLOBAL_LIST_EMPTY(tts_datums)
 	text2file(params,"[TTS_PATH]/voiceq.txt")
 
 	if(GLOB.tts_settings[2])
-		world.shelleo("python3 [TTS_PATH]/tts.py [shellparams]")
+		world.shelleo("python3 [TTS_PATH]/tts.py")
 	else
-		var/list/output = world.shelleo("python [TTS_PATH]/tts.py [shellparams]")
+		var/list/output = world.shelleo("python [TTS_PATH]/tts.py")
 		to_chat(src, output)
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])

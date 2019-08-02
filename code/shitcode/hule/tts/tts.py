@@ -3,7 +3,9 @@ import sys
 import subprocess
 from urllib.parse import unquote_plus
 
-path = sys.argv[1]
+path = sys.argv[0]
+
+path = path[:-6]
 
 file = open(str(path)+"/voiceq.txt")
 
