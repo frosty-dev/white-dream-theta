@@ -1,4 +1,4 @@
-#define TURNTABLE_CHANNEL 10
+#define TURNTABLE_CHANNEL 1021 //jukebox channel
 
 /mob/var/sound/music
 
