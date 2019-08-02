@@ -47,6 +47,12 @@
 	var/on_hit_state = P.on_hit(src, armor)
 	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK)
 		apply_damage(P.damage, P.damage_type, def_zone, armor)
+
+		if(istype(P.firer, /mob/living) && mind && !stat)
+			var/mob/living/frabber = P.firer
+			frabber.create_tension(P.damage/4)
+			create_tension(P.damage/4)
+
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, FALSE, P.stamina, P.jitter, P.paralyze, P.immobilize)
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
@@ -89,6 +95,12 @@
 							"<span class='userdanger'>[src] has been hit by [I].</span>")
 			var/armor = run_armor_check(zone, "melee", "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].",I.armour_penetration)
 			apply_damage(I.throwforce, dtype, zone, armor)
+
+			if(I.thrownby && istype(I.thrownby, /mob/living) && mind && !stat)
+				var/mob/living/frabber = I.thrownby
+				frabber.create_tension(I.throwforce/2)
+				create_tension(I.throwforce/2)
+
 			if(I.thrownby)
 				log_combat(I.thrownby, src, "threw and hit", I)
 		else

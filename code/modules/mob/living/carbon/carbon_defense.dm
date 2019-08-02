@@ -75,6 +75,11 @@
 	send_item_attack_message(I, user, affecting.name)
 	if(I.force)
 		apply_damage(I.force, I.damtype, affecting)
+
+		if(user && mind && !stat)
+			user.create_tension(I.force/2)
+			create_tension(I.force/2)
+
 		if(I.damtype == BRUTE && affecting.status == BODYPART_ORGANIC)
 			if(prob(33))
 				I.add_mob_blood(src)

@@ -31,6 +31,8 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 	START_PROCESSING(SSbtension, src)
 
 /datum/btension/Destroy()
+	if(bm)
+		bm = null
 	STOP_PROCESSING(SSbtension, src)
 	. = ..()
 

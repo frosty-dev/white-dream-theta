@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/rifle/boltaction/ptr
 	name = "AMATR M4ND4"
-	desc = "Ого етож антиматериальное противотанковое ружье M4ND4"
+	desc = "Цельтесь В ГОЛОВУ."
 	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
 	icon_state = "ptr"
 	item_state = "ptr"
