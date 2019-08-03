@@ -121,7 +121,7 @@
 			if((obj_flags & EMAGGED)||!ishuman(AM))
 
 				var/mob/living/L = AM
-				if(AM.stat == 0)
+				if(L.stat == 0)
 					frabbs++
 					if(frabbs == 5)
 						GLOB.ooc_allowed = 0
