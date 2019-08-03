@@ -4,10 +4,11 @@
 	icon_state = "mecha_bananamrtr"
 	projectile = /obj/item/reagent_containers/food/snacks/poo
 	fire_sound = 'sound/items/bikehorn.ogg'
-	//projectiles = 15
-	//missile_speed = 1.5
 	projectile_energy_cost = 100
 	equip_cooldown = 20
+	projectiles = 12
+	projectiles_cache = 12
+	projectiles_cache_max = 128
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/poo_mortar/can_attach(obj/mecha/M)
 	if(..()) //combat mech

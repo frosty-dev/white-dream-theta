@@ -21,7 +21,10 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 		battletension = new /datum/btension
 		battletension.owner = src
 
-	battletension.tension += amount
+	if(battletension.tension)
+		battletension.tension += amount
+	else
+		battletension.tension = amount
 
 /datum/btension
 	var/mob/living/owner
