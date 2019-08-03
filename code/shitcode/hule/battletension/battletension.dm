@@ -14,7 +14,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 /mob/living
 	var/datum/btension/battletension
 
-//nasral na living_defense.dm i item_attack.dm
+//nasral na living_defense.dm & item_attack.dm & carbon_defense.dm
 
 /mob/living/proc/create_tension(var/amount)
 	if(mind && !battletension)
