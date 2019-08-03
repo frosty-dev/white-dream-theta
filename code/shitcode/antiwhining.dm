@@ -14,6 +14,12 @@
 	var/list/T2I = list("говно","ссанина","менять","пиздец","параша")
 	var/list/T2W = list("лучше","раньше")
 
+	var/list/rjach = list("вот вайт при моде", "вот вайт при чудце")
+
+	for(var/L in rjach)
+		if(findtext(msg, L) && !(C.ckey in GLOB.petushiniy_list))
+			GLOB.petushiniy_list += C.ckey
+
 	var/list/ML = splittext(msg, " ")
 
 	for(var/W in ML)
