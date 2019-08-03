@@ -119,11 +119,13 @@
 			emergency_stop(AM)
 		else if(isliving(AM))
 			if((obj_flags & EMAGGED)||!ishuman(AM))
-				crush_living(AM)
 
-				frabbs++
-				if(frabbs == 5)
-					GLOB.ooc_allowed = 0
+				if(AM.stat == 0)
+					frabbs++
+					if(frabbs == 5)
+						GLOB.ooc_allowed = 0
+
+				crush_living(AM)
 			else
 				emergency_stop(AM)
 		else if(istype(AM, /obj/item))
