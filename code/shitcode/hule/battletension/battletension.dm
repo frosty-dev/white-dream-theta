@@ -47,7 +47,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 /datum/btension/process()
 	if(!bm && tension > 0)
 		var/sound/S = sound(pick(get_sound_list()))
-		if(!S && !S.file)
+		if(!S || !S.file)
 			return
 		S.repeat = 1
 		S.channel = CHANNEL_BATTLE
@@ -60,7 +60,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 		SEND_SOUND(owner, bm)
 		bm.status = SOUND_STREAM
 
-	if(!bm && !bm.file)
+	if(!bm || !bm.file)
 		return
 
 	switch(tension)
