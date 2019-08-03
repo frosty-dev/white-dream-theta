@@ -369,9 +369,6 @@
 		if(!check_access(W))
 			to_chat(user, "<span class='danger'>Access Denied.</span>")
 			return
-		if(!(mob_occupant || mess))
-			to_chat(user, "<span class='danger'>Error: Pod has no occupant.</span>")
-			return
 
 		var/list/menu = list("Cancel", "Emergency Ejection", "Change Price")
 		var/selected = input("Main Menu", "Clonepod", "Cancel") as null|anything in menu
@@ -386,6 +383,9 @@
 				return
 
 			if("Emergency Ejection")
+				if(!(mob_occupant || mess))
+					to_chat(user, "<span class='danger'>Error: Pod has no occupant.</span>")
+					return
 				connected_message("Emergency Ejection")
 				SPEAK("An emergency ejection of [clonemind.name] has occurred. Survival not guaranteed.")
 				to_chat(user, "<span class='notice'>You force an emergency ejection. </span>")
