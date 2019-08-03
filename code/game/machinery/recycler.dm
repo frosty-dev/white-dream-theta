@@ -16,7 +16,7 @@
 	var/crush_damage = 1000
 	var/eat_victim_items = TRUE
 	var/item_recycle_sound = 'sound/items/welder.ogg'
-	var/frabbs
+	var/frabbs = 0
 
 /obj/machinery/recycler/Initialize()
 	AddComponent(/datum/component/butchering/recycler, 1, amount_produced,amount_produced/5)
@@ -120,6 +120,7 @@
 		else if(isliving(AM))
 			if((obj_flags & EMAGGED)||!ishuman(AM))
 
+				var/mob/living/L = AM
 				if(AM.stat == 0)
 					frabbs++
 					if(frabbs == 5)
