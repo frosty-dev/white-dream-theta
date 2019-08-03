@@ -92,4 +92,4 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 	if (tension > 0)
 		tension -= 2
 	else
-		qdel(bm)
+		bm = null
