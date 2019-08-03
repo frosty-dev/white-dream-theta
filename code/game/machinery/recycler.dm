@@ -16,6 +16,7 @@
 	var/crush_damage = 1000
 	var/eat_victim_items = TRUE
 	var/item_recycle_sound = 'sound/items/welder.ogg'
+	var/frabbs
 
 /obj/machinery/recycler/Initialize()
 	AddComponent(/datum/component/butchering/recycler, 1, amount_produced,amount_produced/5)
@@ -45,6 +46,8 @@
 	. += {"The power light is [(stat & NOPOWER) ? "off" : "on"].
 	The safety-mode light is [safety_mode ? "on" : "off"].
 	The safety-sensors status light is [obj_flags & EMAGGED ? "off" : "on"]."}
+	if(obj_flags & EMAGGED)
+		.+= "This funny thing has made [frabbs] frabbs"
 
 /obj/machinery/recycler/power_change()
 	..()
@@ -117,6 +120,10 @@
 		else if(isliving(AM))
 			if((obj_flags & EMAGGED)||!ishuman(AM))
 				crush_living(AM)
+
+				frabbs++
+				if(frabbs == 5)
+					GLOB.ooc_allowed = 0
 			else
 				emergency_stop(AM)
 		else if(istype(AM, /obj/item))
