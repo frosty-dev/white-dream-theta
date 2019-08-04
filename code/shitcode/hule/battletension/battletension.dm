@@ -24,7 +24,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 	if(!battletension)
 		return
 
-	if(battletension.tension)
+	if(battletension.tension && amount > 0)
 		battletension.tension += amount
 	else
 		battletension.tension = amount
@@ -67,7 +67,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 	bm.status = SOUND_STREAM
 
 /datum/btension/process()
-	if(tension <= 0 || !bm || !bm.file)
+	if(tension < 1 || !bm || !bm.file)
 		return
 
 	switch(tension)

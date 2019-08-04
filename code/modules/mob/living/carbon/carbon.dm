@@ -10,7 +10,7 @@
 	killcounter = new /datum/cs_killcounter
 	killcounter.owner = src
 
-	create_tension(0)
+	create_tension(-1)
 
 	grant_tts()
 
