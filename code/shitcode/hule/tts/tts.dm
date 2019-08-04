@@ -12,9 +12,6 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	flags = SS_NO_INIT
 	wait = 20
 
-/datum/controller/subsystem/processing/tts/Initialize()
-	. = ..()
-
 /proc/tts_core(var/msg, var/filename, var/lang)
 	if(fexists("[TTS_PATH]/voiceq.txt"))
 		fdel("[TTS_PATH]/voiceq.txt")

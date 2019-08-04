@@ -12,6 +12,8 @@
 
 	create_tension(0)
 
+	grant_tts()
+
 /mob/living/carbon/Destroy()
 	//This must be done first, so the mob ghosts correctly before DNA etc is nulled
 	. =  ..()
