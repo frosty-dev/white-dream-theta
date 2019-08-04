@@ -1,14 +1,15 @@
 /atom/proc/ru_get_examine_name(mob/user)
-	switch (prob(100))
-		if (0 to 3)
-			. = "непримечательный [src]"
-		if (4 to 12)
-			. = "обычный [src]"
-		else
-			. = "[src]"
+	//switch (prob(100))
+	//	if (0 to 3)
+	//		. = "непримечательный [src]"
+	//	if (4 to 12)
+	//		. = "обычный [src]"
+	//	else
+	//		. = "[src]"
+	. = "[src]"
 	var/list/override = list(gender == PLURAL ? " " : " ", " ", "[name]")
 	if(article)
-		. = "[article] [src]"
+		. = "[src]"
 		override[EXAMINE_POSITION_ARTICLE] = article
 	if(SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, override) & COMPONENT_EXNAME_CHANGED)
 		. = override.Join("")
