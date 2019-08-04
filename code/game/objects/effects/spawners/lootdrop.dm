@@ -269,8 +269,23 @@
 				/obj/item/circuitboard/machine/microwave,
 				/obj/item/circuitboard/machine/chem_dispenser/drinks,
 				/obj/item/circuitboard/machine/chem_dispenser/drinks/beer,
-				/obj/item/circuitboard/computer/slot_machine
+				/obj/item/circuitboard/computer/slot_machine,
+				/obj/item/circuitboard/machine/smoke_machine,
+				/obj/item/storage/box/chemdisp
 				)
+/obj/item/storage/box/chemdisp
+	name = "chem dispenser kit"
+	desc = "A box of parts for a chem dispenser assembly."
+	illustration = "writing"
+
+/obj/item/storage/box/chemdisp/PopulateContents()
+	new /obj/item/circuitboard/machine/chem_dispenser(src)
+	new /obj/item/stock_parts/matter_bin(src)
+	new /obj/item/stock_parts/matter_bin(src)
+	new /obj/item/stock_parts/capacitor(src)
+	new /obj/item/stock_parts/manipulator(src)
+	new /obj/item/stack/sheet/glass(src)
+	new /obj/item/stock_parts/cell/super(src)
 
 /obj/effect/spawner/lootdrop/techstorage/rnd
 	name = "RnD circuit board spawner"
