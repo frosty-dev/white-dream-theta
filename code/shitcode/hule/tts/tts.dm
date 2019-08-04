@@ -72,8 +72,8 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	var/createtts = 0 //create tts on hear
 	var/lang
 
-	var/charcd = 0.3 //ticks for one char
-	var/maxchars = 128 //sasai kudosai
+	var/charcd = 0.1 //ticks for one char
+	var/maxchars = 512 //sasai kudosai
 
 /datum/tts/New()
 	. = ..()
