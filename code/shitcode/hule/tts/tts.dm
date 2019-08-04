@@ -72,8 +72,8 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	var/createtts = 0 //create tts on hear
 	var/lang
 
-	var/charcd = 0.3 //ticks for one char
-	var/maxchars = 128 //sasai kudosai
+	var/charcd = 0.1 //ticks for one char
+	var/maxchars = 256 //sasai kudosai
 
 /datum/tts/New()
 	. = ..()
@@ -106,7 +106,11 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	set category = "Fun"
 	set name = "ANIME VO"
 
+/*
 	if(!(ckey in GLOB.anonists))
+		return
+*/
+	if(!check_rights())
 		return
 
 	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang", "OS Settings", "Toggle Living Only")

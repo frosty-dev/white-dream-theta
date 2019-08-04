@@ -1,6 +1,5 @@
 /obj/machinery/computer/camera_advanced/shuttle_docker/adv
 	name = "advanced navigation computer"
-	var/list/forbiddenZ = list(2,13)
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/adv/GrantActions(mob/living/user)
 	jump_action = new /datum/action/innate/camera_jump/shuttle_docker_adv
@@ -22,7 +21,7 @@
 
 	var/list/P = splittext(input("Input position as x;y;z", "Where we are going to?", null) as null|text, ";")
 
-	if(text2num(P[3]) in console.forbiddenZ)
+	if(!(text2num(P[3]) in console.z_lock))
 		playsound(console, 'sound/machines/terminal_prompt_deny.ogg', 25, 0)
 		return
 
