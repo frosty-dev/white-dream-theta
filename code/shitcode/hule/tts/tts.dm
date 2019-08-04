@@ -3,7 +3,7 @@
 #define TTS_PATH "code/shitcode/hule/tts"
 
 GLOBAL_VAR_INIT(tts, FALSE)
-GLOBAL_LIST_INIT(tts_settings, list("ru", 1, 1))//1-lang, 2-os, 3-livingonly
+GLOBAL_LIST_INIT(tts_settings, list("ru", 1))//1-lang, 2-livingonly
 GLOBAL_LIST_EMPTY(tts_datums)
 
 PROCESSING_SUBSYSTEM_DEF(tts)
@@ -31,7 +31,7 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 
 	text2file(params,"[TTS_PATH]/voiceq.txt")
 
-	if(GLOB.tts_settings[2])
+	if(world.system_type == UNIX)
 		world.shelleo("python3 [TTS_PATH]/tts.py")
 	else
 		var/list/output = world.shelleo("python [TTS_PATH]/tts.py")
@@ -90,13 +90,11 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 		cooldown--
 
 /datum/tts/proc/generate_tts(msg)
-	if(!isliving(owner) && GLOB.tts_settings[3])
+	if(!isliving(owner) && GLOB.tts_settings[2])
 		return
 	if(cooldown <= 0)
 		msg = trim(msg, maxchars)
 		cooldown = length(msg)*charcd
-		if(!GLOB.tts_settings[2])
-			to_chat(owner, "Trimmed to: [msg], CD: [cooldown]")
 		if(lang)
 			owner.tts(msg, lang)
 		else
@@ -113,7 +111,7 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	if(!check_rights())
 		return
 
-	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang", "OS Settings", "Toggle Living Only")
+	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang", "Toggle Living Only")
 
 	var/selected = input("Main Menu", "ANIME VOICEOVER", "Cancel") as null|anything in menu
 
@@ -139,18 +137,10 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 			message_admins("[key] sets anime voiceover lang to \"[selectedlang]\"")
 			GLOB.tts_settings[1] = selectedlang
 
-		if("OS Settings")
+		if("Toggle Living Only")
 			GLOB.tts_settings[2] = !GLOB.tts_settings[2]
 
 			if(GLOB.tts_settings[2])
-				message_admins("[key] sets anime voiceover OS to Unix")
-			else
-				message_admins("[key] sets anime voiceover OS to Windows (Debug)")
-
-		if("Toggle Living Only")
-			GLOB.tts_settings[3] = !GLOB.tts_settings[3]
-
-			if(GLOB.tts_settings[3])
 				message_admins("[key] toggled living only tts on.")
 			else
 				message_admins("[key] toggled living only tts off.")
