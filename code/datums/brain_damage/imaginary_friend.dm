@@ -138,7 +138,7 @@
 
 	if (src.client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ IC (пїЅпїЅпїЅ).")
+			to_chat(src, "сосеш.")
 			return
 		if (!(ignore_spam || forced) && src.client.handle_spam_prevention(message,MUTE_IC))
 			return
@@ -157,7 +157,7 @@
 	src.log_talk(message, LOG_SAY, tag="imaginary friend")
 
 	var/rendered = "<span class='game say'><span class='name'>[name]</span> <span class='message'>[say_quote(message)]</span></span>"
-	var/dead_rendered = "<span class='game say'><span class='name'>[name] (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ [owner])</span> <span class='message'>[say_quote(message)]</span></span>"
+	var/dead_rendered = "<span class='game say'><span class='name'>[name] (Воображаемый друг [owner])</span> <span class='message'>[say_quote(message)]</span></span>"
 
 	to_chat(owner, "[rendered]")
 	to_chat(src, "[rendered]")

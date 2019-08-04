@@ -14,14 +14,17 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 /mob/living
 	var/datum/btension/battletension
 
-//nasral na living_defense.dm i item_attack.dm
+//nasral na living_defense.dm & item_attack.dm & carbon_defense.dm
 
 /mob/living/proc/create_tension(var/amount)
 	if(mind && !battletension)
 		battletension = new /datum/btension
 		battletension.owner = src
 
-	battletension.tension += amount
+	if(battletension.tension)
+		battletension.tension += amount
+	else
+		battletension.tension = amount
 
 /datum/btension
 	var/mob/living/owner
@@ -34,7 +37,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 
 /datum/btension/Destroy()
 	if(bm)
-		bm = null
+		qdel(bm)
 	STOP_PROCESSING(SSbtension, src)
 	. = ..()
 
@@ -47,7 +50,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 /datum/btension/process()
 	if(!bm && tension > 0)
 		var/sound/S = sound(pick(get_sound_list()))
-		if(!S.file)
+		if(!S || !S.file)
 			return
 		S.repeat = 1
 		S.channel = CHANNEL_BATTLE
@@ -60,7 +63,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 		SEND_SOUND(owner, bm)
 		bm.status = SOUND_STREAM
 
-	if(!bm.file)
+	if(!bm || !bm.file)
 		return
 
 	switch(tension)

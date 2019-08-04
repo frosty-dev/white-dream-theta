@@ -255,7 +255,7 @@
 			connected_message("Clone Ejected: Loss of power.")
 
 	else if(mob_occupant && (mob_occupant.loc == src))
-		if(SSeconomy.full_ancap && mob_occupant.getCloneLoss() <= 99)
+		if(SSeconomy.full_ancap && mob_occupant.health >= 1)
 			if(!current_insurance)
 				go_out()
 				log_cloning("[key_name(mob_occupant)] ejected from [src] at [AREACOORD(src)] due to invalid bank account.")
@@ -369,17 +369,38 @@
 		if(!check_access(W))
 			to_chat(user, "<span class='danger'>Access Denied.</span>")
 			return
-		if(!(mob_occupant || mess))
-			to_chat(user, "<span class='danger'>Error: Pod has no occupant.</span>")
+
+		var/list/menu = list("Cancel", "Emergency Ejection", "Change Price")
+		var/selected = input("Main Menu", "Clonepod", "Cancel") as null|anything in menu
+
+		if(!in_range(user, src))
+			to_chat(user, "<span class='danger'>You are too far.</span>")
 			return
-		else
-			add_fingerprint(user)
-			connected_message("Emergency Ejection")
-			SPEAK("An emergency ejection of [clonemind.name] has occurred. Survival not guaranteed.")
-			to_chat(user, "<span class='notice'>You force an emergency ejection. </span>")
-			go_out()
-			log_cloning("[key_name(user)] manually ejected [key_name(mob_occupant)] from [src] at [AREACOORD(src)].")
-			log_combat(user, mob_occupant, "ejected", W, "from [src]")
+
+		add_fingerprint(user)
+		switch(selected)
+			if("Cancel")
+				return
+
+			if("Emergency Ejection")
+				if(!(mob_occupant || mess))
+					to_chat(user, "<span class='danger'>Error: Pod has no occupant.</span>")
+					return
+				connected_message("Emergency Ejection")
+				SPEAK("An emergency ejection of [clonemind.name] has occurred. Survival not guaranteed.")
+				to_chat(user, "<span class='notice'>You force an emergency ejection. </span>")
+				go_out()
+				log_cloning("[key_name(user)] manually ejected [key_name(mob_occupant)] from [src] at [AREACOORD(src)].")
+				log_combat(user, mob_occupant, "ejected", W, "from [src]")
+
+			if("Change Price")
+				var/proice = input("Please set a fair price", "Clonepod", "Cancel") as null|num
+				if(proice <= 1)
+					to_chat(user, "<span class='danger'>Please kys you fucking commie.</span>")
+					fair_market_price = 1
+				else
+					fair_market_price = proice
+
 	else
 		return ..()
 
