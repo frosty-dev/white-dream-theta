@@ -251,7 +251,7 @@
 
 			//transform the variables in text format into a list (e.g {var1="derp"; var2; var3=7} => list(var1="derp", var2, var3=7))
 			var/list/fields = list()
-
+			/*
 			if(variables_start)//if there's any variable
 				full_def = copytext(full_def,variables_start+1,length(full_def))//removing the last '}'
 				fields = readlist(full_def, ";")
@@ -262,7 +262,7 @@
 						var/value = fields[I]
 						if(istext(value))
 							fields[I] = apply_text_macros(value)
-
+			*/
 			//then fill the members_attributes list with the corresponding variables
 			members_attributes.len++
 			members_attributes[index++] = fields
