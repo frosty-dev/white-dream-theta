@@ -106,7 +106,11 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	set category = "Fun"
 	set name = "ANIME VO"
 
+/*
 	if(!(ckey in GLOB.anonists))
+		return
+*/
+	if(!check_rights())
 		return
 
 	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang", "OS Settings", "Toggle Living Only")
