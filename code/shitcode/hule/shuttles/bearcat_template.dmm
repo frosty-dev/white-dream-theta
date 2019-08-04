@@ -20,7 +20,7 @@
 "at" = (/turf/open/floor/plasteel,/area/shuttle/bearcat/bridge)
 "au" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel,/area/shuttle/bearcat/bridge)
 "av" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{name = "scrubbers pipe l1"; piping_layer = 1; pixel_x = -5; pixel_y = -5},/obj/machinery/atmospherics/pipe/simple/supply/hidden,/obj/machinery/light{dir = 4},/obj/structure/cable,/turf/open/floor/plasteel,/area/shuttle/bearcat/bridge)
-"aw" = (/obj/machinery/light{dir = 8},/obj/structure/closet/secure_closet/captains{locked = 0},/obj/item/storage/box/lethalshot,/obj/item/clothing/gloves/combat/maggloves,/obj/machinery/airalarm{pixel_y = 26; req_access = null; req_access_txt = "204"},/turf/open/floor/wood,/area/shuttle/bearcat/captain)
+"aw" = (/obj/machinery/light{dir = 8},/obj/item/storage/box/lethalshot,/obj/item/clothing/gloves/combat/maggloves,/obj/machinery/airalarm{pixel_y = 26; req_access = null; req_access_txt = "204"},/turf/open/floor/wood,/area/shuttle/bearcat/captain)
 "ax" = (/obj/structure/bed,/obj/item/bedsheet/captain,/obj/effect/mob_spawn/human/skeleton,/turf/open/floor/wood,/area/shuttle/bearcat/captain)
 "ay" = (/obj/structure/table/wood,/obj/item/paper_bin,/obj/item/pen/fountain,/obj/machinery/button/door{id = "bearcat_captain"; name = "Shutters"; pixel_x = 0; pixel_y = 26; req_access_txt = "0"},/turf/open/floor/wood,/area/shuttle/bearcat/captain)
 "az" = (/obj/machinery/modular_computer/console/preset/command{dir = 4},/turf/open/floor/plasteel,/area/shuttle/bearcat/bridge)
@@ -299,8 +299,8 @@
 "fM" = (/obj/structure/closet/secure_closet/engineering_welding{locked = 0},/obj/structure/disposalpipe/segment{dir = 4},/obj/structure/cable,/turf/open/floor/plasteel,/area/shuttle/bearcat/engineering)
 "fN" = (/obj/structure/disposalpipe/segment{dir = 9},/obj/structure/reagent_dispensers/fueltank,/obj/structure/cable,/turf/open/floor/plasteel,/area/shuttle/bearcat/engineering)
 "fO" = (/turf/open/floor/plating,/area/shuttle/bearcat/engineering)
-"fP" = (/obj/machinery/power/smes/engineering,/turf/open/floor/plating,/area/shuttle/bearcat/engineering)
-"fQ" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable,/turf/open/floor/plating,/area/shuttle/bearcat/engineering)
+"fP" = (/obj/machinery/power/smes/engineering,/obj/structure/cable,/turf/open/floor/plating,/area/shuttle/bearcat/engineering)
+"fQ" = (/obj/machinery/power/terminal{dir = 8},/turf/open/floor/plating,/area/shuttle/bearcat/engineering)
 "fR" = (/turf/closed/wall/mineral/plastitanium/overspace,/area/shuttle/bearcat/engineering)
 "fS" = (/obj/structure/window/plastitanium,/obj/structure/grille,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{name = "scrubbers pipe l1"; piping_layer = 1; pixel_x = -5; pixel_y = -5},/obj/machinery/door/poddoor/preopen{id = "bearcat_windows"},/turf/open/floor/plating,/area/shuttle/bearcat/engineering)
 "fT" = (/obj/structure/disposalpipe/segment,/turf/closed/wall/mineral/plastitanium,/area/shuttle/bearcat/engineering)
@@ -310,6 +310,7 @@
 "fX" = (/obj/structure/cable,/turf/open/floor/plating,/area/shuttle/bearcat/engines)
 "fY" = (/obj/machinery/airalarm{pixel_y = 26; req_access = null; req_access_txt = "204"},/turf/open/floor/plating,/area/shuttle/bearcat/engines)
 "fZ" = (/obj/machinery/portable_atmospherics/canister/toxins,/turf/open/floor/plating,/area/shuttle/bearcat/engines)
+"ga" = (/obj/structure/cable,/obj/machinery/power/apc/auto_name/south,/turf/open/floor/plating,/area/shuttle/bearcat/engines)
 "gb" = (/obj/machinery/portable_atmospherics/canister/oxygen,/turf/open/floor/plating,/area/shuttle/bearcat/engines)
 "gc" = (/turf/closed/wall/mineral/plastitanium/nodiagonal,/area/shuttle/bearcat/engines)
 "gd" = (/obj/machinery/portable_atmospherics/canister/tritium,/turf/open/floor/plating,/area/shuttle/bearcat/engines)
@@ -352,11 +353,11 @@ aaaaaaaaaaeGeveHeIeJdQdRdRdRdSdRdRdRcxeKdUdUeLdLaaaaaaaaaa
 aaaaaaaaaaeoeveMeNepeOePeQeQeReSeQeTeUeDdUeVeFdLaaaaaaaaaa
 aaaaaaaaaaeWeXeYeYeYeYeZfafafbfafafaeYeYeYeYeXfcaaaaaaaaaa
 aaaaaaaaaaaafdfefffgeYfhfifjfkflfmfneYfofpfqfdaaaaaaaaaaaa
-aaaaaaaaaaaafrfsftfufvfwfxfxfyfzfzfAfBfCfCfCfraaaaaaaaaaaa
+aaaaaaaaaaaafrfsftfufvfwfxfxfyfzfzfAfBfCfCfOfraaaaaaaaaaaa
 aaaaaaaaaaaafdfDfEfFfGfHfIfJfKfLfMfNeYfOfPfQfdaaaaaaaaaaaa
 aaaaaaaaaaaafRfdfSfTeXfBeYeYeYeYeYeYeXfdfrfdfRaaaaaaaaaaaa
 aaaaaaaaaaaaaafUfVfWcUfXfYdhdidhdhfZcUfUfUfUaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaafUcUfXdhdhdhdhdhgbcUfUaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaafUcUgadhdhdhdhdhgbcUfUaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaacTgcdhdhdhdhgdgccTaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaacUdEdEdEdEdEcUaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaacTgegegegegecTaaaaaaaaaaaaaaaaaaaaaa
