@@ -73,7 +73,7 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	var/lang
 
 	var/charcd = 0.1 //ticks for one char
-	var/maxchars = 512 //sasai kudosai
+	var/maxchars = 256 //sasai kudosai
 
 /datum/tts/New()
 	. = ..()
