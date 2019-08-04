@@ -1,8 +1,8 @@
 /atom/proc/ru_get_examine_name(mob/user)
-	switch (prob(25))
-		if (0 to 12)
+	switch (prob(100))
+		if (0 to 3)
 			. = "непримечательный [src]"
-		if (13 to 25)
+		if (4 to 12)
 			. = "обычный [src]"
 		else
 			. = "[src]"
