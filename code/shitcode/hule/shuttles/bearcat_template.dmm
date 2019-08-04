@@ -317,6 +317,8 @@
 "ge" = (/obj/structure/shuttle/engine/propulsion,/turf/open/floor/plating,/area/shuttle/bearcat/engines)
 "gf" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3,/turf/open/floor/plasteel,/area/shuttle/bearcat/hallway)
 "gg" = (/obj/machinery/light/small{dir = 4},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3,/turf/open/floor/plasteel,/area/shuttle/bearcat/hallway)
+"gh" = (/obj/machinery/atmospherics/components/binary/volume_pump/layer1,/turf/closed/wall/mineral/plastitanium,/area/shuttle/bearcat/engineering)
+"gi" = (/obj/structure/lattice,/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer1{icon_state = "inje_map-1"; dir = 1},/turf/template_noop,/area/shuttle/bearcat/engineering)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaabababaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -357,8 +359,8 @@ aaaaaaaaaaeWeXeYeYeYeYeZfafaeafafafaeYeYeYeYeXfcaaaaaaaaaa
 aaaaaaaaaaaafdenfOeAeYfhfifjfxflfmfneYfofpfqfdaaaaaaaaaaaa
 aaaaaaaaaaaafreyeTeUeJeOePePeRfzfzfAfBfCfCfOfraaaaaaaaaaaa
 aaaaaaaaaaaafdeSfufFfGfHfIfJfDfLfMfNeYfOfPfQfdaaaaaaaaaaaa
-aaaaaaaaaaaafRfdfkfTeXfBeYeYeYeYeYeYeXfdfrfdfRaaaaaaaaaaaa
-aaaaaaaaaaaaaafUfUfWcUfXeMdhdidhdhfZcUfUfUfUaaaaaaaaaaaaaa
+aaaaaaaaaaaafRghfkfTeXfBeYeYeYeYeYeYeXfdfrfdfRaaaaaaaaaaaa
+aaaaaaaaaaaaaagifUfWcUfXeMdhdidhdhfZcUfUfUfUaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaafUcUgadhdhdhdhdhgbcUfUaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaacTgcdhdhdhdhgdgccTaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaacUdEdEdEdEdEcUaaaaaaaaaaaaaaaaaaaaaa

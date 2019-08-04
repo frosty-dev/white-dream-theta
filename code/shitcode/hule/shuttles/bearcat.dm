@@ -117,6 +117,7 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
+	assignedrole = "CSV Bearcat Crew"
 	flavour_text = "<font size=3>You are a member of CSV Bearcat crew."
 
 /obj/effect/mob_spawn/human/bearcatcrew/eng
@@ -125,8 +126,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/yellow
-	assignedrole = "CSV Bearcat Crew"
-	id_access_list = list(205,204)
+	id_access_list = list(205,204,24,11)
 
 /obj/effect/mob_spawn/human/bearcat/eng/Destroy()
 	return ..()
@@ -137,7 +137,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	id = /obj/item/card/id
 	gloves = /obj/item/clothing/gloves/color/black
-	id_access_list = list(205,204)
+	id_access_list = list(205,204,24,11)
 
 /obj/effect/mob_spawn/human/bearcat/atmos/Destroy()
 	return ..()
@@ -147,7 +147,7 @@
 	uniform = /obj/item/clothing/under/syndicate/camo
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	id = /obj/item/card/id
-	id_access_list = list(205,204,203)
+	id_access_list = list(205,204,203,24,11)
 
 /obj/effect/mob_spawn/human/bearcat/pilot/Destroy()
 	return ..()
