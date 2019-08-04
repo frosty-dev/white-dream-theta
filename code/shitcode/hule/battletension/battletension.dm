@@ -21,6 +21,9 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 		battletension = new /datum/btension
 		battletension.owner = src
 
+	if(!battletension)
+		return
+
 	if(battletension.tension)
 		battletension.tension += amount
 	else
