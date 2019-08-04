@@ -258,7 +258,7 @@ GLOBAL_VAR(restart_counter)
 	if(GLOB.master_mode)
 		s += "<b>Mode:</b> [GLOB.master_mode]</br>"
 
-	s += "<b>Players:</b> [players]/60</br>"
+	s += "<b>Players:</b> [players]/150</br>"
 
 	if (!host && hostedby)
 		s += "<b>Host:</b> [hostedby]"
