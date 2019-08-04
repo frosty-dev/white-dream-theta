@@ -104,13 +104,13 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	set category = "Fun"
 	set name = "ANIME VO"
 
-/*
+
 	if(!(ckey in GLOB.anonists))
 		return
-*/
+/*
 	if(!check_rights())
 		return
-
+*/
 	var/list/menu = list("Cancel", "Toggle TTS", "Change Lang", "Toggle Living Only")
 
 	var/selected = input("Main Menu", "ANIME VOICEOVER", "Cancel") as null|anything in menu
