@@ -53,7 +53,7 @@ BONUS
 	if(!..())
 		return
 	var/mob/living/M = A.affected_mob
-	if(!M.mind)
+	if(!M.client)
 		return
 	switch(A.stage)
 		if(1, 2, 3)
