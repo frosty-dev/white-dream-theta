@@ -1,4 +1,4 @@
-GLOBAL_LIST_EMPTY(petushiniy_list)
+GLOBAL_LIST_INIT(petushiniy_list, list("ambrosiafumari"))
 
 /atom
 	var/zashkvareno = 0
@@ -11,3 +11,40 @@ GLOBAL_LIST_EMPTY(petushiniy_list)
 			A.name = "Петушиный " + A.name
 		else
 			A.name = "Зашкваренный " + A.name
+
+		if(istype(A, /obj))
+			var/obj/O = A
+			O.force = 0
+
+		if(istype(A, /obj/item/ammo_box))
+			var/obj/item/ammo_box/AB = A
+			for(var/obj/item/ammo_casing/R in AB.stored_ammo)
+				R.projectile_type = /obj/item/projectile/bullet/pisun
+			return
+
+		if(istype(A, /obj/item/gun/ballistic))
+			var/obj/item/gun/ballistic/B = A
+			if(B.magazine)
+				for(var/obj/item/ammo_casing/R in B.magazine)
+					R.projectile_type = /obj/item/projectile/bullet/pisun
+			return
+
+		if(istype(A, /obj/item/gun/energy))
+			var/obj/item/gun/energy/E = A
+			E.ammo_type = list(/obj/item/ammo_casing/energy/pisun)
+			return
+
+
+
+
+
+
+/obj/item/projectile/bullet/pisun
+	name = "leather bullet"
+	damage = 0
+
+/obj/item/ammo_casing/energy/pisun
+	projectile_type = /obj/item/projectile/bullet/pisun
+	e_cost = 50
+	fire_sound = 'sound/weapons/taser2.ogg'
+	harmful = FALSE
