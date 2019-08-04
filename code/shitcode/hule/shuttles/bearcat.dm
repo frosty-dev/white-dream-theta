@@ -3,7 +3,7 @@
 /datum/map_template/ruin/space/bearcat
 	id = "bearcat"
 	prefix = "code/white/hule/bearcat/"
-	suffix = "bearcat.dmm"
+	suffix = "bearcat_template.dmm"
 	name = "CSV Bearcat"
 
 ///////////////////////////Areas//////////////////////////////////
