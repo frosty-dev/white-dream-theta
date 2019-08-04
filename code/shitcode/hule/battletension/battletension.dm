@@ -33,6 +33,7 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 
 /datum/btension/New()
 	. = ..()
+	pick_sound()
 	START_PROCESSING(SSbtension, src)
 
 /datum/btension/Destroy()
@@ -47,31 +48,33 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 		bmlist += BATTLE_MUSIC_PATH + I
 	return bmlist
 
-/datum/btension/process()
-	if(!bm && tension > 0)
-		var/sound/S = sound(pick(get_sound_list()))
-		if(!S || !S.file)
-			return
-		S.repeat = 1
-		S.channel = CHANNEL_BATTLE
-		S.falloff = 2
-		S.wait = 0
-		S.volume = 0
-		S.status = SOUND_STREAM
-		//S.environment = 0 //че это нахуй в доках нету
-		bm = S
-		SEND_SOUND(owner, bm)
-		bm.status = SOUND_STREAM
+/datum/btension/proc/pick_sound()
+	var/sound/S = sound(pick(get_sound_list()))
+	if(!S || !S.file)
+		return
+	S.repeat = 1
+	S.channel = CHANNEL_BATTLE
+	S.falloff = 2
+	S.wait = 0
+	S.volume = 0
+	S.status = SOUND_STREAM
+	//S.environment = 0 //че это нахуй в доках нету
+	bm = S
+	SEND_SOUND(owner, bm)
+	bm.status = SOUND_STREAM
 
-	if(!bm || !bm.file)
+/datum/btension/process()
+	if(tension <= 0 || !bm || !bm.file)
 		return
 
 	switch(tension)
-		if(-INFINITY to -1)
+	/*
+		if(-INFINITY to 0)
 			bm.volume = 0
 			SEND_SOUND(owner, bm)
 			bm.status = SOUND_UPDATE
-		if(0 to 30)
+	*/
+		if(1 to 30)
 			bm.volume = tension
 			SEND_SOUND(owner, bm)
 			bm.status = SOUND_UPDATE
@@ -92,7 +95,8 @@ PROCESSING_SUBSYSTEM_DEF(btension)
 			SEND_SOUND(owner, bm)
 			bm.status = SOUND_UPDATE
 
-	if (tension > 0)
+	if(tension > 0)
 		tension -= 2
-	else
-		bm = null
+		if(tension <= 0)
+			qdel(bm)
+			pick_sound()
