@@ -266,7 +266,7 @@ proc/load_donator(ckey)
 
 proc/check_donations(ckey)
 	if (!GLOB.donators[ckey]) //If it doesn't exist yet
-		load_donator(ckey)
+		return 0
 	var/datum/donator/D = GLOB.donators[ckey]
 	if(D)
 		return 1
