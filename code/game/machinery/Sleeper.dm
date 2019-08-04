@@ -153,10 +153,11 @@
 	. = ..()
 	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
 
+/*
 /obj/machinery/sleeper/process()
 	..()
 	check_nap_violations()
-
+*/
 /obj/machinery/sleeper/nap_violation(mob/violator)
 	open_machine()
 
@@ -206,7 +207,7 @@
 	if(..())
 		return
 	var/mob/living/mob_occupant = occupant
-	check_nap_violations()
+	//check_nap_violations()
 	switch(action)
 		if("door")
 			if(state_open)
