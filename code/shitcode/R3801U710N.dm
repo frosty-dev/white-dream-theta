@@ -15,18 +15,21 @@ GLOBAL_LIST_INIT(petushiniy_list, list("ambrosiafumari"))
 		if(istype(A, /obj))
 			var/obj/O = A
 			O.force = 0
+			O.throwforce = 0
 
 		if(istype(A, /obj/item/ammo_box))
 			var/obj/item/ammo_box/AB = A
 			for(var/obj/item/ammo_casing/R in AB.stored_ammo)
-				R.projectile_type = /obj/item/projectile/bullet/pisun
+				qdel(R.BB)
+				R.BB = new /obj/item/projectile/bullet/pisun
 			return
 
 		if(istype(A, /obj/item/gun/ballistic))
 			var/obj/item/gun/ballistic/B = A
 			if(B.magazine)
 				for(var/obj/item/ammo_casing/R in B.magazine)
-					R.projectile_type = /obj/item/projectile/bullet/pisun
+					qdel(R.BB)
+					R.BB = new /obj/item/projectile/bullet/pisun
 			return
 
 		if(istype(A, /obj/item/gun/energy))
