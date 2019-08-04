@@ -10,6 +10,8 @@
 	killcounter = new /datum/cs_killcounter
 	killcounter.owner = src
 
+	create_tension(0)
+
 /mob/living/carbon/Destroy()
 	//This must be done first, so the mob ghosts correctly before DNA etc is nulled
 	. =  ..()

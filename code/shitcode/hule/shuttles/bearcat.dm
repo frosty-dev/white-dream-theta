@@ -5,6 +5,7 @@
 	prefix = "code/shitcode/hule/shuttles/"
 	suffix = "bearcat_template.dmm"
 	name = "CSV Bearcat"
+	unpickable = TRUE
 
 ///////////////////////////Areas//////////////////////////////////
 
