@@ -56,7 +56,6 @@ RLD
 		if(silo_link && !silo_mats.on_hold())
 			. += "\A [src]. Remote connection have iron in equivalent to [silo_mats.mat_container.materials[/datum/material/iron]/500] rcd units." // 1 matter for 1 floortile, as 4 tiles are produced from 1 metal
 
-
 /obj/item/construction/Destroy()
 	QDEL_NULL(spark_system)
 	. = ..()
@@ -146,7 +145,6 @@ RLD
 		return TRUE
 
 /obj/item/construction/proc/checkResource(amount, mob/user)
-	. = matter >= amount
 	if(!silo_mats || !silo_link)
 		. = matter >= amount
 	else
@@ -155,12 +153,11 @@ RLD
 				to_chat(user, "Mineral access is on hold, please contact the quartermaster.")
 			return FALSE
 		. = silo_mats.mat_container.has_materials(list(/datum/material/iron = 500), amount)
-	if(user)
+	if(!. && user)
 		to_chat(user, no_ammo_message)
-		return FALSE
-	matter -= amount
-	update_icon()
-	return TRUE
+		if(has_ammobar)
+			flick("[icon_state]_empty", src)	//somewhat hacky thing to make RCDs with ammo counters actually have a blinking yellow light
+	return .
 
 /obj/item/construction/proc/range_check(atom/A, mob/user)
 	if(!(A in view(7, get_turf(user))))
@@ -239,7 +236,6 @@ RLD
 		to_chat(user, "<span class='notice'>You change \the [src]'s storage link state: [silo_link ? "ON" : "OFF"].</span>")
 	else
 		to_chat(user, "<span class='warning'>\the [src] dont have remote storage connection.</span>")
-
 
 
 /obj/item/construction/rcd/proc/change_airlock_access(mob/user)
