@@ -459,7 +459,7 @@
   * Produces a signal COMSIG_PARENT_EXAMINE
   */
 /atom/proc/examine(mob/user)
-	. = list("[get_examine_string(user, TRUE)].")
+	. = list("[ru_get_examine_string(user, TRUE)].")
 
 	if(desc)
 		. += desc
@@ -467,26 +467,26 @@
 	if(custom_materials)
 		for(var/i in custom_materials)
 			var/datum/material/M = i
-			. += "<u>It is made out of [M.name]</u>."
+			. += "<u>Материал похож на [M.name]</u>."
 	if(reagents)
 		if(reagents.flags & TRANSPARENT)
-			. += "It contains:"
+			. += "Он содержит:"
 			if(length(reagents.reagent_list))
 				if(user.can_see_reagents()) //Show each individual reagent
 					for(var/datum/reagent/R in reagents.reagent_list)
-						. += "[R.volume] units of [R.name]"
+						. += "[R.volume] единиц [R.name]"
 				else //Otherwise, just show the total volume
 					var/total_volume = 0
 					for(var/datum/reagent/R in reagents.reagent_list)
 						total_volume += R.volume
-					. += "[total_volume] units of various reagents"
+					. += "[total_volume] единиц различных реагентов"
 			else
-				. += "Nothing."
+				. += "Ничего."
 		else if(reagents.flags & AMOUNT_VISIBLE)
 			if(reagents.total_volume)
-				. += "<span class='notice'>It has [reagents.total_volume] unit\s left.</span>"
+				. += "<span class='notice'>В нём ещё есть [reagents.total_volume] единиц.</span>"
 			else
-				. += "<span class='danger'>It's empty.</span>"
+				. += "<span class='danger'>Он пустой.</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 

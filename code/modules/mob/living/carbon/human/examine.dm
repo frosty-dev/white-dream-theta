@@ -26,29 +26,29 @@
 			if(U.attached_accessory)
 				accessory_msg += " с [icon2html(U.attached_accessory, user)] \a [U.attached_accessory]"
 
-		. += "На н[t_na] [w_uniform.get_examine_string(user)][accessory_msg]."
+		. += "На н[t_na] [w_uniform.ru_get_examine_string(user)][accessory_msg]."
 	//head
 	if(head)
-		. += "На голове у н[t_ego] [head.get_examine_string(user)]."
+		. += "На голове у н[t_ego] [head.ru_get_examine_string(user)]."
 	//suit/armor
 	if(wear_suit)
-		. += "На н[t_na] [wear_suit.get_examine_string(user)]."
+		. += "На н[t_na] [wear_suit.ru_get_examine_string(user)]."
 		//suit/armor storage
 		if(s_store && !(SLOT_S_STORE in obscured))
-			. += "И к нему прикреплён [s_store.get_examine_string(user)]."
+			. += "И к нему прикреплён [s_store.ru_get_examine_string(user)]."
 	//back
 	if(back)
-		. += "На [t_ego] спине [back.get_examine_string(user)]."
+		. += "На [t_ego] спине [back.ru_get_examine_string(user)]."
 
 	//Hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
-			. += "В [t_ego] [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.get_examine_string(user)]."
+			. += "В [t_ego] [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.ru_get_examine_string(user)]."
 
 	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
 	//gloves
 	if(gloves && !(SLOT_GLOVES in obscured))
-		. += "На руках у н[t_ego] [gloves.get_examine_string(user)]."
+		. += "На руках у н[t_ego] [gloves.ru_get_examine_string(user)]."
 	else if(FR && length(FR.blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)
@@ -65,33 +65,33 @@
 
 	//belt
 	if(belt)
-		. += "На поясе у н[t_ego] [belt.get_examine_string(user)]."
+		. += "На поясе у н[t_ego] [belt.ru_get_examine_string(user)]."
 
 	//shoes
 	if(shoes && !(SLOT_SHOES in obscured))
-		. += "На [t_ego] ногах надеты [shoes.get_examine_string(user)]."
+		. += "На [t_ego] ногах надеты [shoes.ru_get_examine_string(user)]."
 
 	//mask
 	if(wear_mask && !(SLOT_WEAR_MASK in obscured))
-		. += "[t_on] имеет [wear_mask.get_examine_string(user)] на [t_ego] лице."
+		. += "[t_on] имеет [wear_mask.ru_get_examine_string(user)] на [t_ego] лице."
 
 	if(wear_neck && !(SLOT_NECK in obscured))
-		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)]."
+		. += "На шее у н[t_ego] [wear_neck.ru_get_examine_string(user)]."
 
 	//eyes
 	if(!(SLOT_GLASSES in obscured))
 		if(glasses)
-			. += "На н[t_na] [glasses.get_examine_string(user)]."
+			. += "На н[t_na] [glasses.ru_get_examine_string(user)]."
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
 			. += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>"
 
 	//ears
 	if(ears && !(SLOT_EARS in obscured))
-		. += "В ушах у н[t_ego] [ears.get_examine_string(user)]."
+		. += "В ушах у н[t_ego] [ears.ru_get_examine_string(user)]."
 
 	//ID
 	if(wear_id)
-		. += "Также у н[t_ego] есть [wear_id.get_examine_string(user)]."
+		. += "Также у н[t_ego] есть [wear_id.ru_get_examine_string(user)]."
 
 	//Status effects
 	var/list/status_examines = status_effect_examines()
