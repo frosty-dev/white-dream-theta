@@ -35,5 +35,5 @@
 	category = "Devices and Tools"
 	desc = "Очень интересная и познавательная книга."
 	item = /obj/item/book/cookbook
-	cost = 5
+	cost = 1
 	surplus = 10
