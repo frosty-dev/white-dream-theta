@@ -1,5 +1,5 @@
 PROCESSING_SUBSYSTEM_DEF(reagent_states)
-	name = "Reagents"
+	name = "Reagent States"
 	priority = 40
 	flags = SS_NO_INIT|SS_BACKGROUND
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
