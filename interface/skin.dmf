@@ -50,7 +50,7 @@ menu "menu"
 window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
-		pos = 372,0
+		pos = 281,0
 		size = 640x440
 		anchor1 = none
 		anchor2 = none
@@ -113,7 +113,7 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 372,0
+		pos = 281,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -230,7 +230,7 @@ window "preferences_window"
 window "statwindow"
 	elem "statwindow"
 		type = MAIN
-		pos = 372,0
+		pos = 281,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -239,7 +239,7 @@ window "statwindow"
 	elem "stat"
 		type = INFO
 		pos = 0,0
-		size = 636x418
+		size = 636x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		is-default = true
