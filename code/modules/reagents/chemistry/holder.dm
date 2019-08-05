@@ -394,13 +394,13 @@
 				if(SOLID)
 					if(chem_temp > R.melting_point)
 						R.reagent_state = LIQUID
-						if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.HasRoundStarted())
+						if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.current_state == GAME_STATE_PLAYING)
 							for(var/mob/M in range(3))
 								to_chat(M, ("<span class='notice'>[icon2html(cached_my_atom, viewers(cached_my_atom))] The solid chemicals melt into a liquid!</span>"))
 				if(LIQUID)
 					if(chem_temp < R.melting_point && !is_type_in_typecache(R, GLOB.solidchange_reagent_blacklist))
 						R.reagent_state = SOLID
-						if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.HasRoundStarted())
+						if(!is_type_in_typecache(cached_my_atom, GLOB.no_reagent_message_typecache) && SSticker.current_state == GAME_STATE_PLAYING)
 							for(var/mob/M in range(3))
 								to_chat(M, ("<span class='notice'>[icon2html(cached_my_atom, viewers(cached_my_atom))] The solution solidifies!</span>"))
 			//pok
