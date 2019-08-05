@@ -26,6 +26,6 @@
 	name = "Funny Mask"
 	id = "anonist"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 1000)
+	materials = list(/datum/material/iron = 1000)
 	build_path = /obj/item/clothing/mask/gas/anonist
 	category = list("initial", "Misc")

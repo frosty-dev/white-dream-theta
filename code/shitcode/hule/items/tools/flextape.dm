@@ -49,7 +49,7 @@
 	name = "Flextape"
 	id = "flextape"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 12000, MAT_GLASS=8000)
+	materials = list(/datum/material/iron = 12000, /datum/material/glass = 8000)
 	build_path = /obj/item/flextape
 	category = list("hacked", "Misc")
 
@@ -57,6 +57,6 @@
 	name = "Flextape Remover"
 	id = "flextape_r"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 12000, MAT_GLASS=8000)
+	materials = list(/datum/material/iron = 12000, /datum/material/glass = 8000)
 	build_path = /obj/item/flextape_remover
 	category = list("hacked", "Misc")
