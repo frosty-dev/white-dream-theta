@@ -8,7 +8,8 @@
 	req_access = list()
 	products = list(/obj/item/book/cookbook = 1)
 	contraband = list(/obj/item/reagent_containers/pill/morphine = 4)
-	premium = list(/obj/item/book/cookbook = 3)
+	premium = list(	/obj/item/book/cookbook = 3,
+					/obj/item/book/granter/martial/cqc = 1)
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	default_price = 1000
