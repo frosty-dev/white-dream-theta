@@ -3041,6 +3041,8 @@
 #include "code\shitcode\valtos\forge\solid_reagent.dm"
 #include "code\shitcode\valtos\forge\tile_mineral.dm"
 #include "code\shitcode\valtos\forge\typecache.dm"
+#include "code\shitcode\valtos\trading\_defines.dm"
+#include "code\shitcode\valtos\trading\terminal.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
