@@ -32,6 +32,8 @@
 	</html>"}
 */
 
+#define CAT_COOKBOOK	"Cookbook"
+
 /obj/item/book/granter/crafting_recipe/cookbook
 	name = "generic russian cookbook"
 	desc = "Обычная книга с надписью <<Русская кухня>> - Содержит пошаговые инструкции сборки различного самодельного снаряжения из металла, клея и бутылки водки."
@@ -52,6 +54,8 @@
 
 /datum/crafting_recipe/cookbook
 	always_availible = FALSE
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/cookbook/mshotgun
 	name = "Makeshift Shotgun"
@@ -62,7 +66,6 @@
 				/obj/item/stack/rods = 5)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_WRENCH)
 	time = 300
-	category = CAT_COOKBOOK
 
 /datum/crafting_recipe/cookbook/mshotgunmag
 	name = "Makeshift Shotgun magazine"
@@ -71,6 +74,7 @@
 				/obj/item/stack/rods = 4)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
 	time = 100
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/cookbook/npgrenade
 	name = "Neuroparalitic gas grenade"

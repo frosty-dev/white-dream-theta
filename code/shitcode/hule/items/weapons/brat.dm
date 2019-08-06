@@ -33,7 +33,7 @@
 				/obj/item/stack/sheet/metal = 1)
 	tools = list(TOOL_WIRECUTTER)
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/glassslug
 	name = "makeshift glass slug"
@@ -47,4 +47,4 @@
 				/obj/item/stack/sheet/metal = 1)
 	tools = list(TOOL_WIRECUTTER)
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_AMMO
