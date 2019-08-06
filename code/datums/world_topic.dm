@@ -27,8 +27,10 @@
 
 /datum/world_topic/proc/TryRun(list/input)
 	key_valid = config && (CONFIG_GET(string/comms_key) == input["key"])
+	key_cvalid = config && (CONFIG_GET(string/cross_key) == input["key"])
 	if(require_comms_key && !key_valid)
-		return "Bad Key"
+		if(!key_cvalid) //хочу спать
+			return "Bad Key"
 	input -= "key"
 	. = Run(input)
 	if(islist(.))
@@ -86,7 +88,7 @@
 	require_comms_key = TRUE
 
 /datum/world_topic/comms_console/Run(list/input)
-	minor_announce(input["message"], "Incoming message from [input["message_sender"]]")
+	minor_announce(input["message"], "¬ход€щее сообщение от [input["message_sender"]]")
 	for(var/obj/machinery/computer/communications/CM in GLOB.machines)
 		CM.overrideCooldown()
 

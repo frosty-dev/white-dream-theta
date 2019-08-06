@@ -136,7 +136,7 @@
 					return
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 				send2otherserver("[station_name()]", input,"Comms_Console")
-				minor_announce(input, title = "Outgoing message to allied station")
+				minor_announce(input, title = "Исходящее сообщение для союзной станции")
 				usr.log_talk(input, LOG_SAY, tag="message to the other server")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] has sent a message to the other server.")
 				deadchat_broadcast(" has sent an outgoing message to the other station(s).</span>", "<span class='bold'>[usr.real_name]", usr)
