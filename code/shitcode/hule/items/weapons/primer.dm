@@ -7,7 +7,7 @@
 	if(!..())
 		return FALSE//Cooldown check
 
-	if(!istype(holder.loc, /obj/item/storage))
+	if(!holder || !istype(holder.loc, /obj/item/storage))
 		return
 
 	for(var/obj/item/grenade/G in holder.loc.contents)
