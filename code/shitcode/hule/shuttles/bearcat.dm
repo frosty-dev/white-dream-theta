@@ -94,7 +94,7 @@
 /obj/machinery/computer/shuttle/bearcat
 	name = "CSV Bearcat console"
 	shuttleId = "bearcat"
-	possible_destinations = "bearcat_away;bearcat_home;bearcat_custom"
+	possible_destinations = "bearcat_custom"
 
 /obj/docking_port/mobile/bearcat
 	name = "CSV Bearcat"
