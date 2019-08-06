@@ -37,7 +37,8 @@
 	crafting_recipe_types = list(
 								/datum/crafting_recipe/mshotgun,
 								/datum/crafting_recipe/mshotgunmag,
-								/datum/crafting_recipe/npgrenade
+								/datum/crafting_recipe/npgrenade,
+								/datum/crafting_recipe/grenadeprimer
 
 								)
 /datum/uplink_item/cookbook
@@ -48,10 +49,10 @@
 	cost = 2
 	surplus = 10
 
+/datum/crafting_recipe/cookbook
+	always_availible = FALSE
 
-
-
-/datum/crafting_recipe/mshotgun
+/datum/crafting_recipe/cookbook/mshotgun
 	name = "Makeshift Shotgun"
 	result = /obj/item/gun/ballistic/automatic/shotgun/small/makeshift
 	reqs = list(/obj/item/weaponcrafting/receiver = 1,
@@ -63,7 +64,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/mshotgunmag
+/datum/crafting_recipe/cookbook/mshotgunmag
 	name = "Makeshift Shotgun magazine"
 	result = /obj/item/ammo_box/magazine/m4s12g
 	reqs = list(/obj/item/stack/sheet/metal = 5,
@@ -73,7 +74,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/npgrenade
+/datum/crafting_recipe/cookbook/npgrenade
 	name = "Neuroparalitic gas grenade"
 	result = /obj/item/grenade/chem_grenade/npgrenade
 	reqs = list(/datum/reagent/toxin/mindbreaker = 10,
@@ -86,7 +87,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/grenadeprimer
+/datum/crafting_recipe/cookbook/grenadeprimer
 	name = "Grenade primer"
 	result = /obj/item/assembly/primer
 	reqs = list(/obj/item/assembly/igniter = 1,
