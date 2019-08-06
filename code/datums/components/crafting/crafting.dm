@@ -21,7 +21,8 @@
 				CAT_MISC,
 				CAT_PRIMAL,
 				CAT_FOOD,
-				CAT_CLOTHING)
+				CAT_CLOTHING,
+				CAT_COOKBOOK)
 	var/list/subcategories = list(
 						list(	//Weapon subcategories
 							CAT_WEAPON,
