@@ -35,7 +35,7 @@
 		to_chat(src, "Подумайте.")
 		return
 
-	var/formattedmessage = "Header: [message["head"]]```[message["content"]]```Coords: [AREACOORD(usr)]"
+	var/formattedmessage = "Header: [message["head"]]```[message["content"]]```Coords: [AREACOORD(usr)] [ckey]"
 
 	text2file(formattedmessage, "data/feedbacksystem.log")
 
