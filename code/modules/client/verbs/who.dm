@@ -49,6 +49,8 @@
 		for(var/client/C in GLOB.clients)
 			if(C.holder && C.holder.fakekey)
 				Lines += "[C.holder.fakekey] ([round(C.avgping, 1)]ms)"
+			else if(C.ckey in GLOB.anonists)
+				continue
 			else
 				Lines += "[C.key] ([round(C.avgping, 1)]ms)"
 
