@@ -21,7 +21,7 @@
 	damage = 4
 	stamina = 2
 
-/datum/crafting_recipe/maggloves
+/datum/crafting_recipe/plasmaslug
 	name = "makeshift plasmaglass slug"
 	result = /obj/item/ammo_casing/shotgun/diyslug/plasma
 	time = 25
@@ -35,7 +35,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/maggloves
+/datum/crafting_recipe/glassslug
 	name = "makeshift glass slug"
 	result = /obj/item/ammo_casing/shotgun/diyslug
 	time = 25
