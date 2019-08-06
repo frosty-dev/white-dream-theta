@@ -7,10 +7,10 @@
 	if(!..())
 		return FALSE//Cooldown check
 
-	if(!holder || !istype(holder.loc, /obj/item/storage))
+	if(!holder || !istype(loc.loc, /obj/item/storage))
 		return
 
-	for(var/obj/item/grenade/G in holder.loc.contents)
+	for(var/obj/item/grenade/G in loc.loc.contents)
 		G.prime()
 
 	return TRUE
