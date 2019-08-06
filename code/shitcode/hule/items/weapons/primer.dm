@@ -10,7 +10,7 @@
 	if(!istype(loc.loc, /obj/item/storage))
 		return
 
-	for(var/obj/item/grenade/G in loc.contents)
+	for(var/obj/item/grenade/G in loc.loc.contents)
 		G.prime()
 
 	return TRUE
