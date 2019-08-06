@@ -38,10 +38,10 @@
 	name = "generic russian cookbook"
 	desc = "Обычная книга с надписью <<Русская кухня>> - Содержит пошаговые инструкции сборки различного самодельного снаряжения из металла, клея и бутылки водки."
 	crafting_recipe_types = list(
-								/datum/crafting_recipe/mshotgun,
-								/datum/crafting_recipe/mshotgunmag,
-								/datum/crafting_recipe/npgrenade,
-								/datum/crafting_recipe/grenadeprimer
+								/datum/crafting_recipe/cookbook/mshotgun,
+								/datum/crafting_recipe/cookbook/mshotgunmag,
+								/datum/crafting_recipe/cookbook/npgrenade,
+								/datum/crafting_recipe/cookbook/grenadeprimer
 
 								)
 /datum/uplink_item/cookbook
