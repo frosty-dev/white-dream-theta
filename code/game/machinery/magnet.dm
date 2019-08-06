@@ -311,12 +311,12 @@
 					path = newpath
 					pathpos = 1 // reset position
 					filter_path() // renders rpath
-
+/*
 			if("togglemoving")
 				moving = !moving
 				if(moving)
 					INVOKE_ASYNC(src, .proc/MagnetMove)
-
+*/
 
 	updateUsrDialog()
 
