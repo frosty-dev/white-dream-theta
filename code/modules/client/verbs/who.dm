@@ -41,6 +41,8 @@
 				var/entry = "\t[C.key]"
 				if(C.holder && C.holder.fakekey)
 					entry += " <i>(as [C.holder.fakekey])</i>"
+				if(C.ckey in GLOB.anonists)
+					continue
 				entry += " ([round(C.avgping, 1)]ms)"
 				Lines += entry
 	else
@@ -55,7 +57,7 @@
 
 	msg += "<b>Total Players: [length(Lines)]</b>"
 	to_chat(src, msg)
-
+/*
 /client/verb/adminwho()
 	set category = "Admin"
 	set name = "Adminwho"
@@ -86,4 +88,5 @@
 				msg += "\t[C] is a [C.holder.rank]\n"
 		msg += "<span class='info'>Adminhelps are also sent to IRC. If no admins are available in game adminhelp anyways and an admin on IRC will see it and respond.</span>"
 	to_chat(src, msg)
+*/
 
