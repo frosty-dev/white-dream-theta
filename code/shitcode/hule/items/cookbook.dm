@@ -32,8 +32,6 @@
 	</html>"}
 */
 
-#define CAT_COOKBOOK	"Cookbook"
-
 /obj/item/book/granter/crafting_recipe/cookbook
 	name = "generic russian cookbook"
 	desc = "Обычная книга с надписью <<Русская кухня>> - Содержит пошаговые инструкции сборки различного самодельного снаряжения из металла, клея и бутылки водки."
