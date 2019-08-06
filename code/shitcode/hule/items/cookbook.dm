@@ -1,3 +1,4 @@
+/*
 #define TOOL_COOKBOOK 		"cookbook"
 
 /obj/item/book/cookbook
@@ -29,11 +30,70 @@
 	<img src=https://pp.userapi.com/c319529/v319529481/227a/g0QZqwKnwIM.jpg>
 	</body>
 	</html>"}
+*/
+/obj/item/book/granter/crafting_recipe/cookbook
+	name = "generic russian cookbook"
+	desc = "Обычная книга с надписью <<Русская кухня>> - Содержит пошаговые инструкции сборки различного самодельного снаряжения из металла, клея и бутылки водки."
+	crafting_recipe_types = list(
+								/datum/crafting_recipe/mshotgun,
+								/datum/crafting_recipe/mshotgunmag,
+								/datum/crafting_recipe/npgrenade
 
+								)
 /datum/uplink_item/cookbook
 	name = "Cookbook"
 	category = "Devices and Tools"
 	desc = "Очень интересная и познавательная книга."
-	item = /obj/item/book/cookbook
-	cost = 1
+	item = /obj/item/book/granter/crafting_recipe/cookbook
+	cost = 2
 	surplus = 10
+
+
+
+
+/datum/crafting_recipe/mshotgun
+	name = "Makeshift Shotgun"
+	result = /obj/item/gun/ballistic/automatic/shotgun/small/makeshift
+	reqs = list(/obj/item/weaponcrafting/receiver = 1,
+				/obj/item/pipe = 1,
+				/obj/item/stack/sheet/metal = 20,
+				/obj/item/stack/rods = 5)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_WRENCH)
+	time = 300
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/mshotgunmag
+	name = "Makeshift Shotgun magazine"
+	result = /obj/item/ammo_box/magazine/m4s12g
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/rods = 4)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/npgrenade
+	name = "Neuroparalitic gas grenade"
+	result = /obj/item/grenade/chem_grenade/npgrenade
+	reqs = list(/datum/reagent/toxin/mindbreaker = 10,
+				/datum/reagent/drug/krokodil = 10,
+				/datum/reagent/consumable/ethanol/vodka = 5,
+				/obj/item/grenade/smokebomb = 1)
+//	parts = list()
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_WRENCH)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/grenadeprimer
+	name = "Grenade primer"
+	result = /obj/item/assembly/primer
+	reqs = list(/obj/item/assembly/igniter = 1,
+				/obj/item/stock_parts/manipulator = 2,
+				/obj/item/stack/cable_coil = 20)
+//	parts = list()
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON

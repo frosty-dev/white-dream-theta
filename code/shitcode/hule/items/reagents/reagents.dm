@@ -49,19 +49,6 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.Sleeping(10, 0)
 
-/datum/crafting_recipe/npgrenade
-	name = "Neuroparalitic gas grenade"
-	result = /obj/item/grenade/chem_grenade/npgrenade
-	reqs = list(/datum/reagent/toxin/mindbreaker = 10,
-				/datum/reagent/drug/krokodil = 10,
-				/datum/reagent/consumable/ethanol/vodka = 5,
-				/obj/item/grenade/smokebomb = 1)
-//	parts = list()
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_WRENCH, TOOL_COOKBOOK)
-	time = 200
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /obj/item/grenade/chem_grenade/npgrenade
 	name = "smoke grenade"
 	desc = "The word 'утбябтрднвллк' is scribbled on it in crayon. You'd better don't try to disassemble this."

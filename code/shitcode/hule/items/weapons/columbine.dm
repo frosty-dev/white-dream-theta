@@ -2,7 +2,7 @@
 	name = "Space Hipoint 995"
 	desc = "Brooks, I like you now. Get out of here. Go home now."
 	icon = 'code/shitcode/hule/icons/obj/weapons.dmi'
-	icon_state = "icon"
+	icon_state = "hipoint"
 	item_state = "carbine"
 	lefthand_file = 'code/shitcode/hule/icons/onmob/ballistic_l.dmi'
 	righthand_file = 'code/shitcode/hule/icons/onmob/ballistic_r.dmi'

@@ -2989,6 +2989,7 @@
 #include "code\shitcode\hule\items\weapons\brat.dm"
 #include "code\shitcode\hule\items\weapons\columbine.dm"
 #include "code\shitcode\hule\items\weapons\poomortar.dm"
+#include "code\shitcode\hule\items\weapons\primer.dm"
 #include "code\shitcode\hule\items\weapons\ptr.dm"
 #include "code\shitcode\hule\items\weapons\shotgun.dm"
 #include "code\shitcode\hule\items\weapons\trap.dm"

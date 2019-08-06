@@ -57,25 +57,3 @@
 		if(!magazine)
 			jammed = FALSE
 			to_chat(user, "<span class='notice'>fixed ebat'</span>")
-
-/datum/crafting_recipe/mshotgun
-	name = "Makeshift Shotgun"
-	result = /obj/item/gun/ballistic/automatic/shotgun/small/makeshift
-	reqs = list(/obj/item/weaponcrafting/receiver = 1,
-				/obj/item/pipe = 1,
-				/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/rods = 5)
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER, TOOL_WRENCH, TOOL_COOKBOOK)
-	time = 600
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/mshotgunmag
-	name = "Makeshift Shotgun magazine"
-	result = /obj/item/ammo_box/magazine/m4s12g
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/rods = 4)
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_COOKBOOK)
-	time = 100
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
