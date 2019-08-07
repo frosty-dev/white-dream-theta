@@ -2989,4 +2989,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "THETA\code\modules\client\client_procs.dm"
 // END_INCLUDE
