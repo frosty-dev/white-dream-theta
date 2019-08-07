@@ -29,3 +29,14 @@
 /obj/item/circuitboard/computer/telesci_console
 	name = "Telescience Console (Computer Board)"
 	build_path = /obj/machinery/computer/telescience
+
+//////////////////////////////////////////////////////////
+
+/datum/techweb_node/adv_datatheory
+	id = "telesci"
+	display_name = "Prikol/Time Manipulation"
+	description = "Allows for advaced prikol construction."
+	prereq_ids = list("adv_datatheory")
+	design_ids = list("telepad", "telesci_console")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	export_price = 5000
