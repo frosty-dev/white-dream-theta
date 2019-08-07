@@ -60,7 +60,6 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	requires_power = TRUE
 	valid_territory = FALSE
 
-
 /datum/map_template/shuttle/capsule/diyshuttle
 	name = "Autism Shuttle"
 	description = "Priv"
