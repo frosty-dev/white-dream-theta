@@ -31,8 +31,7 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	if(world.system_type == UNIX)
 		world.shelleo("python3 [TTS_PATH]/tts.py")
 	else
-		var/list/output = world.shelleo("python [TTS_PATH]/tts.py")
-		to_chat(src, output)
+		world.shelleo("python [TTS_PATH]/tts.py")
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
 	var/namae
@@ -46,7 +45,7 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 
 	if(fexists("[TTS_PATH]/lines/[namae].ogg"))
 		for(var/mob/M in range(13))
-			var/turf/T = get_turf(M)
+			var/turf/T = get_turf(src)
 			M.playsound_local(T, "[TTS_PATH]/lines/[namae].ogg", 100)
 		fdel("[TTS_PATH]/lines/[namae].ogg")
 		fdel("[TTS_PATH]/conv/[namae].mp3")
