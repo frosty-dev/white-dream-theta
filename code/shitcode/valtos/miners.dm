@@ -38,7 +38,7 @@
 			idle_power_usage = 40
 			mining = FALSE
 		playsound(src, 'code/shitcode/valtos/sounds/ping.ogg', 100, 1)
-		coins += tier * 4
+		coins += tier
 		if(prob(50))
 			diff -= rand(1, 3) //lol //balanced maybe
 		else
