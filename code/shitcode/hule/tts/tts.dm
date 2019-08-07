@@ -46,7 +46,7 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 
 	if(fexists("[TTS_PATH]/lines/[namae].ogg"))
 		for(var/mob/M in range(13))
-			var/turf/T = get_turf(src)
+			var/turf/T = get_turf(M)
 			M.playsound_local(T, "[TTS_PATH]/lines/[namae].ogg", 100)
 		fdel("[TTS_PATH]/lines/[namae].ogg")
 		fdel("[TTS_PATH]/conv/[namae].mp3")
