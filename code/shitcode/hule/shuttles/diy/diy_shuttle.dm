@@ -72,7 +72,7 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	name = "bluespace shuttle capsule"
 	desc = "Priva."
 	template_id = "autism"
-	template = /datum/map_template/shuttle/capsule/diyshuttle
+	template = new /datum/map_template/shuttle/capsule/diyshuttle
 
 /obj/item/shuttlespawner/diyshuttle/Initialize()
 	. = ..()
