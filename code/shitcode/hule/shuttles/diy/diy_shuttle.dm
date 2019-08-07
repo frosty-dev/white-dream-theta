@@ -22,8 +22,8 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	dheight = 23
 
 /obj/docking_port/mobile/diy/Initialize()
-	. = ..()
 	id += "[GLOB.diy_shuttle_count]"
+	. = ..()
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/adv/diy
 	name = "Do-It-Yourself shuttle navigation console"
@@ -37,9 +37,9 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	z_lock = list(2,3,4,7,8,9,10,12)
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/adv/diy/Initialize()
-	. = ..()
 	shuttleId += "[GLOB.diy_shuttle_count]"
 	shuttlePortId += "[GLOB.diy_shuttle_count]"
+	. = ..()
 	GLOB.jam_on_wardec += src
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/adv/diy/Destroy()
@@ -53,8 +53,9 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	dir = 1
 
 /obj/machinery/computer/shuttle/diy/Initialize()
-	. = ..()
+	shuttleId = += "[GLOB.diy_shuttle_count]"
 	possible_destinations += "[GLOB.diy_shuttle_count]"
+	. = ..()
 
 /obj/docking_port/stationary/diy
 	name = "DIY stationary"
