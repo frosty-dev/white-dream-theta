@@ -1,16 +1,5 @@
 GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 
-/datum/map_template/shelter/diyshuttle
-	name = "Autism Shuttle"
-	shelter_id = "autism"
-	description = "Priv"
-	mappath = "code/shitcode/hule/shuttles/diy/diy_autism.dmm"
-
-/datum/map_template/shelter/alpha/New()
-	. = ..()
-	whitelisted_turfs = typecacheof(/turf/open/space/basic)
-	banned_objects = typecacheof(/obj/structure/stone_tile)
-
 /obj/docking_port/mobile/diy
 	name = "DIY"
 	id = "diy_autism"
@@ -75,6 +64,19 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	valid_territory = FALSE
 	icon_state = "shuttle"
 	unique = FALSE
+
+
+
+/datum/map_template/shelter/diyshuttle
+	name = "Autism Shuttle"
+	shelter_id = "autism"
+	description = "Priv"
+	mappath = "code/shitcode/hule/shuttles/diy/diy_autism.dmm"
+
+/datum/map_template/shelter/diyshuttle/New()
+	. = ..()
+	whitelisted_turfs = typecacheof(/turf/open/space/basic)
+	banned_objects = typecacheof(/obj/structure/stone_tile)
 
 /obj/item/survivalcapsule/diyshuttle
 	name = "bluespace shuttle capsule"
