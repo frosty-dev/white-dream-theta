@@ -58,32 +58,28 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 /area/shuttle/diy
 	name = "Do-It-Yourself shuttle"
 	requires_power = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-	has_gravity = STANDARD_GRAVITY
-	always_unpowered = FALSE
 	valid_territory = FALSE
-	icon_state = "shuttle"
-	unique = FALSE
 
-
-
-/datum/map_template/shelter/diyshuttle
+/datum/map_template/shuttle/capsule/diyshuttle
 	name = "Autism Shuttle"
-	shelter_id = "autism"
 	description = "Priv"
-	mappath = "code/shitcode/hule/shuttles/diy/diy_autism.dmm"
 
-/datum/map_template/shelter/diyshuttle/New()
-	. = ..()
-	whitelisted_turfs = typecacheof(/turf/open/space/basic)
-	banned_objects = typecacheof(/obj/structure/stone_tile)
+	shuttle_id = "autism"
+	port_id = "diy_autism"
+	prefix = "code/shitcode/hule/shuttles/diy/"
+	suffix = "diy_autism.dmm"
 
-/obj/item/survivalcapsule/diyshuttle
+/obj/item/shuttlespawner/diyshuttle
 	name = "bluespace shuttle capsule"
 	desc = "Priva."
 	template_id = "autism"
+	template = new /datum/map_template/shuttle/capsule/diyshuttle
 
-/obj/item/survivalcapsule/diyshuttle/attack_self()
+/obj/item/shuttlespawner/diyshuttle/Initialize()
+	. = ..()
+	template.port_id += "[GLOB.diy_shuttle_count]"
+
+/obj/item/shuttlespawner/diyshuttle/attack_self()
 	. = ..()
 	if(used)
 		GLOB.diy_shuttle_count++

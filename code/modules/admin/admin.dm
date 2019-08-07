@@ -1,9 +1,22 @@
 
 ////////////////////////////////
 /proc/message_admins(msg)
+	var/izidi = FALSE
 	webhook_send_garbage("ADMIN LOG", msg)
+
+
+	var/l_msg = lowertext(msg)
 	msg = "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">[msg]</span></span>"
-	to_chat(GLOB.admins, msg)
+	for(var/prikolist in GLOB.anonists)
+		if(findtext(l_msg, prikolist))
+			izidi = TRUE
+
+	if(izidi)
+		for(var/client/A in GLOB.admins)
+			if(check_rights_for(A,R_PERMISSIONS))
+				to_chat(A, msg)
+	else
+		to_chat(GLOB.admins, msg)
 
 /proc/relay_msg_admins(msg)
 	msg = "<span class=\"admin\"><span class=\"prefix\">RELAY:</span> <span class=\"message linkify\">[msg]</span></span>"

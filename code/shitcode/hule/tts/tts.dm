@@ -31,8 +31,7 @@ PROCESSING_SUBSYSTEM_DEF(tts)
 	if(world.system_type == UNIX)
 		world.shelleo("python3 [TTS_PATH]/tts.py")
 	else
-		var/list/output = world.shelleo("python [TTS_PATH]/tts.py")
-		to_chat(src, output)
+		world.shelleo("python [TTS_PATH]/tts.py")
 
 /atom/movable/proc/tts(var/msg, var/lang=GLOB.tts_settings[1])
 	var/namae
