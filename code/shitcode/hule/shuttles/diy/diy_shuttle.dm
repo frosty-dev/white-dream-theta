@@ -24,10 +24,6 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 /obj/docking_port/mobile/diy/Initialize()
 	. = ..()
 	id += "[GLOB.diy_shuttle_count]"
-	addtimer(CALLBACK(src, .proc/increment_count), 100)
-
-/obj/docking_port/mobile/diy/proc/increment_count()
-	GLOB.diy_shuttle_count++
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/adv/diy
 	name = "Do-It-Yourself shuttle navigation console"
@@ -83,3 +79,8 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	name = "bluespace shuttle capsule"
 	desc = "Priva."
 	template_id = "autism"
+
+/obj/item/survivalcapsule/diyshuttle/attack_self()
+	. = ..()
+	if(used)
+		GLOB.diy_shuttle_count++
