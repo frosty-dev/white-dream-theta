@@ -124,7 +124,7 @@
 	contains = list(/obj/machinery/spaceminer,
 					/obj/item/wrench)
 	crate_name = "coinminer tier 1 crate"
-
+/*
 /datum/supply_pack/misc/spaceminer2
 	name = "Spacecoin Miner Tier 2"
 	desc = "Ping!"
@@ -148,7 +148,7 @@
 	contains = list(/obj/machinery/spaceminer/tier4,
 					/obj/item/wrench)
 	crate_name = "coinminer tier 4 crate"
-
+*/
 /datum/supply_pack/misc/minerchallenge
 	name = "You can do it! The Miner Challenge"
 	desc = "Pong!"
