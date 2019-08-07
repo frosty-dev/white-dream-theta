@@ -48,6 +48,7 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Waistcoat",					/obj/item/clothing/accessory/waistcoat,			85),
 		new /datum/donate_info("Cloak",						/obj/item/clothing/neck/cloak,					190),
 		new /datum/donate_info("Donut Box",					/obj/item/storage/fancy/donut_box,				450),
+		new /datum/donate_info("Red Armband",				/obj/item/clothing/accessory/armband,			100),
 	),
 	"Shoes" = list(
 		new /datum/donate_info("Clown Shoes",				/obj/item/clothing/shoes/clown_shoes,			130),
