@@ -33,6 +33,6 @@
 /datum/species/fly/check_species_weakness(obj/item/weapon, mob/living/attacker)
 	if(istype(weapon, /obj/item/melee/flyswatter))
 		return 29 //Flyswatters deal 30x damage to flypeople.
-	if(istype(weapon, /obj/item/book/ruchinese))
-		return 6
+	//if(istype(weapon, /obj/item/book/ruchinese))
+	//	return 6
 	return 0

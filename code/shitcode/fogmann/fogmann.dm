@@ -1,4 +1,4 @@
-
+/*
 /obj/item/banner/engineering/atmos
 	name = "Kazakhstan banner"
 	desc = "Áàííåð ïðîñëàâëÿþùèé âåëèêóþ ìîùü Åëáàñû."
@@ -18,6 +18,7 @@ obj/item/banner/engineering/atmos/mundane
 	reqs = list(/obj/item/stack/rods = 2,
 				/obj/item/clothing/under/rank/engineering/atmospheric_technician = 1)
 	category = CAT_MISC
+
 
 /obj/item/stack/tile/carpet/peaks
 	name = "peaks carpet"
@@ -59,7 +60,7 @@ obj/item/banner/engineering/atmos/mundane
 	flags_1 = CONDUCT_1
 	materials = list()
 	anchored = TRUE
-
+*/
 /obj/structure/statue/sandstone/venus/afrodita
 	name = "Afrodita"
 	desc = "An ancient marble statue. The subject is depicted with a floor-length braid. By Jove, it's easily the most gorgeous depiction of a woman you've ever seen. The artist must truly be a master of his craft. Shame about the broken arm, though."
@@ -93,6 +94,7 @@ obj/item/banner/engineering/atmos/mundane
 	else
 		cut_overlay(armresttp)
 
+/*
 /area/ruin/redroom
 	name = "The Red Room "
 
@@ -221,7 +223,7 @@ obj/item/banner/engineering/atmos/mundane
 	cost = 1000
 	contains = list(/mob/living/simple_animal/pet/dog/jack, /mob/living/simple_animal/pet/dog/pug/chi)
 	crate_name = "doggies crate"
-
+*/
 //doggo sprites by Arkblader
 
 /obj/item/gun/ballistic/shotgun/sniper
@@ -262,7 +264,7 @@ obj/item/banner/engineering/atmos/mundane
 /obj/item/storage/box/sleeping/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/dart/sleeping(src)
-
+/*
 /obj/item/book/ruchinese
 	name = "Russian-chinese dictionary"
 	desc = "Apply to the moths and flies."
@@ -313,3 +315,4 @@ obj/item/banner/engineering/atmos/mundane
 				return
 			var/blyad = pick('code/shitcode/fogmann/blyead.ogg')
 			playsound(user, blyad, 25, 1, -1)
+*/

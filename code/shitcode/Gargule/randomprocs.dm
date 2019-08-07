@@ -38,7 +38,7 @@ mob/living/carbon/human/species/lizard/Initialize()
 	if(src.dna.features["tail_lizard"] == "Alien")
 		src.dna.features["tail_lizard"] = "Smooth"
 		update_body()
-
+/*
 /obj/item/slapper/Initialize() //nemnogo zabagovano
 	var/mob/living/carbon/human/H = loc
 	if(istype(H))
@@ -48,7 +48,7 @@ mob/living/carbon/human/species/lizard/Initialize()
 		qdel(src)
 		del(src)
 	..()
-
+*/
 /mob/living/carbon/human/can_see_reagents()//to do, create NORMAL system for this /tg/ shit
 	.=..()
 	if(src.internal_organs_slot[ORGAN_SLOT_HUD])

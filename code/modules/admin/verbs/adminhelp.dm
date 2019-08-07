@@ -518,11 +518,11 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			current_ticket.AddInteraction("[key_name_admin(usr)] opened a new ticket.")
 			current_ticket.Close()
 		webhook_send_ahelp(src.ckey, msg)
-
+/*
 	if(ckey in GLOB.petushiniy_list)
 		to_chat(src, "<span class='notice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>")
 		return
-
+*/
 	new /datum/admin_help(msg, src, FALSE)
 
 //

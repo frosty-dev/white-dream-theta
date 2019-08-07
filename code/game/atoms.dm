@@ -160,7 +160,7 @@
 
 		custom_materials = null //Null the list to prepare for applying the materials properly
 		set_custom_materials(temp_list)
-		
+
 
 	ComponentInitialize()
 
@@ -1128,7 +1128,7 @@
 	if(object)
 		sobject = " with [object]"
 
-		secure_kill(living_target, user, object) //prikl
+		//secure_kill(living_target, user, object) //prikl
 
 	var/saddition = ""
 	if(addition)

@@ -101,7 +101,7 @@
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/card/id/departmental_budget/sec(src)
-	new /obj/item/clothing/head/HoS/dermal(src)
+	new /obj/item/clothing/head/HoS/beret(src)
 
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"

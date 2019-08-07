@@ -115,10 +115,10 @@ GLOBAL_LIST_INIT(donations_list, list(
 		new /datum/donate_info("Bible",						/obj/item/storage/book/bible,					100),
 	),
 	"Inovations" = list(
-		new /datum/donate_info("Casino Cards",				/obj/item/toy/cards/deck/shitspawn_deck,		500),
+		//new /datum/donate_info("Casino Cards",				/obj/item/toy/cards/deck/shitspawn_deck,		500),
 		new /datum/donate_info("Jukebox (Only one)",		/obj/machinery/party/turntable,					100),
-		new /datum/donate_info("Music Writer",				/obj/machinery/party/musicwriter,				450),
-		new /datum/donate_info("TTS ears",					/obj/item/organ/ears/cat/tts,                   500)
+		new /datum/donate_info("Music Writer",				/obj/machinery/party/musicwriter,				450)
+		//new /datum/donate_info("TTS ears",					/obj/item/organ/ears/cat/tts,                   500)
 	)
 ))
 

@@ -22,7 +22,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		if(prefs.muted & MUTE_OOC)
 			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
 			return
-	if(is_banned_from(ckey, "OOC") && !src.shadowbanned_ooc)
+	if(is_banned_from(ckey, "OOC"))// && !src.shadowbanned_ooc
 		to_chat(src, "<span class='danger'>You have been banned from OOC.</span>")
 		return
 	if(QDELETED(src))
@@ -52,10 +52,10 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(!(prefs.chat_toggles & CHAT_OOC))
 		to_chat(src, "<span class='danger'>You have OOC muted.</span>")
 		return
-
+/*
 	if(!src.shadowbanned_ooc)
 		whiningcheck(src, msg)
-
+*/
 	mob.log_talk(raw_msg, LOG_OOC)
 
 	var/keyname = key
@@ -64,11 +64,13 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/C in GLOB.clients)
+		/*
 		if(src.shadowbanned_ooc)
 			if(!(C == src))
 				continue
 			else
 				message_admins("[key_name_admin(src)] is shadowbanned and has attempted to send message in OOC: [msg]")
+		*/
 		if(C.prefs.chat_toggles & CHAT_OOC)
 			if(holder)
 				if(!holder.fakekey || C.holder)
@@ -89,8 +91,10 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 					to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 				else
 					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+	/*
 	if(src.shadowbanned_ooc)
 		return
+	*/
 	webhook_send_ooc(key, msg)
 
 /proc/toggle_ooc(toggle = null)

@@ -21,7 +21,7 @@
 
 /obj/item/rcbl/Initialize()
 	. = ..()
-	c_id = "RCBL[rand(0,999)]"
+	c_id = "RCBL [rand(0,999)]"
 
 /obj/item/rcbl/examine(mob/user)
 	. = ..()

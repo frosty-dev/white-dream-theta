@@ -31,8 +31,8 @@ GLOBAL_LIST_INIT(freqtospan, list(
 /atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 
-	if(!radio_freq && TTS && speaker.TTS && TTS.createtts)
-		speaker.TTS.generate_tts(raw_message)
+	//if(!radio_freq && TTS && speaker.TTS && TTS.createtts)
+	//	speaker.TTS.generate_tts(raw_message)
 
 /atom/movable/proc/can_speak()
 	return 1

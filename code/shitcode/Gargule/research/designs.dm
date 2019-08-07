@@ -8,7 +8,7 @@
 	build_path = /obj/item/organ/cyberimp/arm/surgery/alien
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
+/*
 /datum/design/circular_saw_folding
 	name = "Folding Bone Saw"
 	id = "circular_saw_folding"
@@ -24,14 +24,14 @@
 	materials = list(MAT_METAL = 3000)
 	build_path = /obj/item/optable
 	category = list("initial", "Medical")
-
+*/
 /datum/design/cyberimp_science_hud
 	name = "Science HUD Implant"
 	desc = "Cybernetic eye implants with an analyzer for scanning items and reagents."
 	id = "ci-scihud"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 50
-	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 500, MAT_GOLD = 500)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 500)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/science
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -42,7 +42,7 @@
 	id = "ci-diaghud"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 50
-	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 500, MAT_GOLD = 500)
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 500)
 	build_path = /obj/item/organ/cyberimp/eyes/hud/diagnostic
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
