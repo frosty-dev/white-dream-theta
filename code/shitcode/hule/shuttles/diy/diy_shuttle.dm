@@ -53,7 +53,7 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 	dir = 1
 
 /obj/machinery/computer/shuttle/diy/Initialize()
-	shuttleId = += "[GLOB.diy_shuttle_count]"
+	shuttleId += "[GLOB.diy_shuttle_count]"
 	possible_destinations += "[GLOB.diy_shuttle_count]"
 	. = ..()
 
