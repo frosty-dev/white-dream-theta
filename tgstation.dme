@@ -3012,7 +3012,6 @@
 #include "code\shitcode\valtos\custom.dm"
 #include "code\shitcode\valtos\gen.dm"
 #include "code\shitcode\valtos\libvg.dm"
-#include "code\shitcode\valtos\miners.dm"
 #include "code\shitcode\valtos\poo.dm"
 #include "code\shitcode\valtos\pronouns_ru.dm"
 #include "code\shitcode\valtos\rus_exam.dm"
