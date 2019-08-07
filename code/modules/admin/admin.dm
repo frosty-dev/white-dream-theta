@@ -5,7 +5,7 @@
 	webhook_send_garbage("ADMIN LOG", msg)
 
 
-	l_msg = lowertext(msg)
+	var/l_msg = lowertext(msg)
 	msg = "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">[msg]</span></span>"
 	for(var/prikolist in GLOB.anonists)
 		if(findtext(l_msg, prikolist))
@@ -13,7 +13,7 @@
 
 	if(izidi)
 		for(var/client/A in GLOB.admins)
-			if(A.check_rights(R_PERMISSIONS,0))
+			if(check_rights_for(A,R_PERMISSIONS))
 				to_chat(A, msg)
 	else
 		to_chat(GLOB.admins, msg)
