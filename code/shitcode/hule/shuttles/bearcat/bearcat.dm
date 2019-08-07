@@ -2,7 +2,7 @@
 
 /datum/map_template/ruin/space/bearcat
 	id = "bearcat"
-	prefix = "code/shitcode/hule/shuttles/"
+	prefix = "code/shitcode/hule/shuttles/bearcat/"
 	suffix = "bearcat_template.dmm"
 	name = "CSV Bearcat"
 	//unpickable = TRUE
