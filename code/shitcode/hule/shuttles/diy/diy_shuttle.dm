@@ -58,12 +58,8 @@ GLOBAL_VAR_INIT(diy_shuttle_count, 0)
 /area/shuttle/diy
 	name = "Do-It-Yourself shuttle"
 	requires_power = TRUE
-	dynamic_lighting = DYNAMIC_LIGHTING_ENABLED
-	has_gravity = STANDARD_GRAVITY
-	always_unpowered = FALSE
 	valid_territory = FALSE
-	icon_state = "shuttle"
-	unique = FALSE
+
 
 /datum/map_template/shuttle/capsule/diyshuttle
 	name = "Autism Shuttle"
