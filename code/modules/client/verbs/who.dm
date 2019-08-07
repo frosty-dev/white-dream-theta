@@ -41,7 +41,7 @@
 				var/entry = "\t[C.key]"
 				if(C.holder && C.holder.fakekey)
 					entry += " <i>(as [C.holder.fakekey])</i>"
-				if(C.ckey in GLOB.anonists)
+				if(C.ckey in GLOB.anonists && !check_rights(R_PERMISSIONS,0))
 					continue
 				entry += " ([round(C.avgping, 1)]ms)"
 				Lines += entry
