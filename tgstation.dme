@@ -2997,6 +2997,7 @@
 #include "code\shitcode\hule\magic\magicthrow.dm"
 #include "code\shitcode\hule\magic\pomoyka.dm"
 #include "code\shitcode\hule\shuttles\adv_nav.dm"
+#include "code\shitcode\hule\shuttles\shuttle_spawner.dm"
 #include "code\shitcode\hule\shuttles\bearcat\bearcat.dm"
 #include "code\shitcode\hule\shuttles\diy\diy_shuttle.dm"
 #include "code\shitcode\hule\traits\programmer.dm"
