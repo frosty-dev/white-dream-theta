@@ -242,9 +242,10 @@
 
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC) // ooc ignore
-			if(!(C.prefs.chat_toggles)||input["isadmin"]) // discord ooc ignore, bypassed by admins
-				if(!(input["ckey"] in C.prefs.ignoring)) //ckey ignore
-					to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>DISCORD OOC:</span> <EM>[input["ckey"]]:</EM> <span class='message'>[input["ooc"]]</span></span></font>")
+			if(holder) // admins receives dooc always
+				to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>DOOC:</span> <EM>[input["ckey"]]:</EM> <span class='message'>[input["ooc"]]</span></span></font>")
+			else if(!(key in C.prefs.ignoring))
+				to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>DOOC:</span> <EM>[input["ckey"]]:</EM> <span class='message'>[input["ooc"]]</span></span></font>")
 
 /datum/world_topic/ahelp
 	keyword = "adminhelp"
