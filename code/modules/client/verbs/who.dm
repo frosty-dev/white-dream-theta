@@ -70,27 +70,27 @@
 					entry += " - <b>AFK: [C.inactivity2text()]</b>"
 				entry += " (<A HREF='?_src_=holder;adminmoreinfo=\ref[C.mob]'>?</A>)"
 				Lines += entry
-	else
-		for(var/client/C in GLOB.clients)
-			if(TRUE)	// !C.is_stealthed()
-				var/entry = "[C.key]"
-				switch(C.mob.stat)
-					if(DEAD)
-						if(isobserver(C.mob))
-							var/mob/dead/observer/O = C.mob
-							if(O.started_as_observer)
-								entry += " - <font color='gray'><b>Observing</b></font>"
-							else
-								entry += " - <font color='green'><b>Playing</b></font>"
-						else if(isnewplayer(C.mob))
-							entry += " - <font color='#006400'><b>In Lobby</b></font>"
-					else
-						entry += " - <font color='green'><b>Playing</b></font>"
+		else
+			for(var/client/C in GLOB.clients)
+				if(TRUE)	// !C.is_stealthed()
+					var/entry = "[C.key]"
+					switch(C.mob.stat)
+						if(DEAD)
+							if(isobserver(C.mob))
+								var/mob/dead/observer/O = C.mob
+								if(O.started_as_observer)
+									entry += " - <font color='gray'><b>Observing</b></font>"
+								else
+									entry += " - <font color='green'><b>Playing</b></font>"
+							else if(isnewplayer(C.mob))
+								entry += " - <font color='#006400'><b>In Lobby</b></font>"
+						else
+							entry += " - <font color='green'><b>Playing</b></font>"
 
-				if(C.is_afk())
-					entry += " - <b>AFK: [C.inactivity2text()]</b>"
+					if(C.is_afk())
+						entry += " - <b>AFK: [C.inactivity2text()]</b>"
 
-				Lines += entry
+					Lines += entry
 
 	for(var/line in sortList(Lines))
 		msg += "[line]\n"
