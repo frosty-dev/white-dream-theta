@@ -111,6 +111,10 @@
 	else
 		uniform = /obj/item/clothing/under/color/jumpskirt/lightbrown
 
+/datum/job/assistant/cargo/after_spawn(mob/living/carbon/human/H, mob/M)
+	var/obj/item/clothing/under/U = H.w_uniform
+	U.attach_accessory(new /obj/item/clothing/accessory/armband/cargo)
+
 /datum/job/assistant/engineer
 	title = "Engineer Trainee"
 	flag = ASSISTANT
@@ -142,6 +146,10 @@
 		uniform = /obj/item/clothing/under/color/yellow
 	else
 		uniform = /obj/item/clothing/under/color/jumpskirt/yellow
+
+/datum/job/assistant/engineer/after_spawn(mob/living/carbon/human/H, mob/M)
+	var/obj/item/clothing/under/U = H.w_uniform
+	U.attach_accessory(new /obj/item/clothing/accessory/armband/engine)
 
 /datum/job/assistant/medic
 	title = "Nurse"
@@ -175,6 +183,10 @@
 	else
 		uniform = /obj/item/clothing/under/color/jumpskirt/white
 
+/datum/job/assistant/medic/after_spawn(mob/living/carbon/human/H, mob/M)
+	var/obj/item/clothing/under/U = H.w_uniform
+	U.attach_accessory(new /obj/item/clothing/accessory/armband/medblue)
+
 /datum/job/assistant/science
 	title = "Science Assistant"
 	flag = ASSISTANT
@@ -207,6 +219,10 @@
 	else
 		uniform = /obj/item/clothing/under/color/jumpskirt/lightpurple
 
+/datum/job/assistant/science/after_spawn(mob/living/carbon/human/H, mob/M)
+	var/obj/item/clothing/under/U = H.w_uniform
+	U.attach_accessory(new /obj/item/clothing/accessory/armband/science)
+
 /datum/job/assistant/security
 	title = "Cadet"
 	flag = ASSISTANT
@@ -238,3 +254,7 @@
 		uniform = /obj/item/clothing/under/color/red
 	else
 		uniform = /obj/item/clothing/under/color/jumpskirt/red
+
+/datum/job/assistant/security/after_spawn(mob/living/carbon/human/H, mob/M)
+	var/obj/item/clothing/under/U = H.w_uniform
+	U.attach_accessory(new /obj/item/clothing/accessory/armband/deputy)
