@@ -10,7 +10,8 @@ GLOBAL_LIST_INIT(command_positions, list(
 GLOBAL_LIST_INIT(engineering_positions, list(
 	"Chief Engineer",
 	"Station Engineer",
-	"Atmospheric Technician"))
+	"Atmospheric Technician",
+	"Engineer Trainee"))
 
 
 GLOBAL_LIST_INIT(medical_positions, list(
@@ -18,20 +19,23 @@ GLOBAL_LIST_INIT(medical_positions, list(
 	"Medical Doctor",
 	"Geneticist",
 	"Virologist",
-	"Chemist"))
+	"Chemist",
+	"Nurse"))
 
 
 GLOBAL_LIST_INIT(science_positions, list(
 	"Research Director",
 	"Scientist",
-	"Roboticist"))
+	"Roboticist",
+	"Science Assistant"))
 
 
 GLOBAL_LIST_INIT(supply_positions, list(
 	"Head of Personnel",
 	"Quartermaster",
 	"Cargo Technician",
-	"Shaft Miner"))
+	"Shaft Miner",
+	"Carrier"))
 
 
 GLOBAL_LIST_INIT(civilian_positions, list(
@@ -51,7 +55,8 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Head of Security",
 	"Warden",
 	"Detective",
-	"Security Officer"))
+	"Security Officer",
+	"Cadet"))
 
 
 GLOBAL_LIST_INIT(nonhuman_positions, list(
