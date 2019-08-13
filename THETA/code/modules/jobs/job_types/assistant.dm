@@ -188,7 +188,7 @@
 	U.attach_accessory(new /obj/item/clothing/accessory/armband/medblue)
 
 /datum/job/assistant/science
-	title = "Science Assistant"
+	title = "Junior Researcher"
 	flag = ASSISTANT
 	department_flag = CIVILIAN
 	faction = "Station"
@@ -203,10 +203,10 @@
 	paycheck = PAYCHECK_ASSISTANT // Get a job. Job reassignment changes your paycheck now. Get over it.
 	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ROBOTICIST + 0.5
-	department = "Science"
+	department = "Research"
 
 /datum/outfit/job/assistant/science
-	name = "Assistant (Science Assistant)"
+	name = "Assistant (Junior Researcher)"
 	jobtype = /datum/job/assistant/science
 
 	ears = /obj/item/radio/headset/headset_sci
