@@ -1,16 +1,32 @@
 //Speech verbs.
 
+
 ///Say verb
-/mob/verb/say_verb(message as text)
+/mob/verb/say_verb()
 	set name = "Say"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
+
+	var/list/listening = get_hearers_in_view(9, src)
+	var/list/speech_bubble_recipients = list()
+	for(var/mob/M in listening)
+		if(M.client)
+			speech_bubble_recipients.Add(M.client)
+	var/image/I = image('icons/mob/talk.dmi', src, "default0", FLY_LAYER)
+	I.appearance_flags = APPEARANCE_UI
+	I.alpha = 200
+
+	for(var/client/C in speech_bubble_recipients)
+		C.images += I
+
+	var/message = input("","Say") as text
+
+	remove_images_from_clients(I,speech_bubble_recipients)
+
 	if(message)
 		say(message)
-		//if(TTS && GLOB.tts)
-		//	TTS.generate_tts(message)
 
 ///Whisper verb
 /mob/verb/whisper_verb(message as text)
@@ -49,7 +65,7 @@
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
-	var/jb = is_banned_from(ckey, "OOC")
+	var/jb = is_banned_from(ckey, "Deadchat")
 	if(QDELETED(src))
 		return
 
