@@ -5640,9 +5640,8 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/item/clothing/suit/armor/riot/omon,
-/obj/item/clothing/under/rank/omon/green,
-/obj/item/clothing/suit/armor/bulletproof/omon,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/bulletproof,
 /turf/open/floor/plasteel,
 /area/security/main)
 "alU" = (
@@ -5951,9 +5950,8 @@
 	},
 /obj/effect/turf_decal/tile/red,
 /obj/structure/table,
-/obj/item/clothing/suit/armor/riot/omon,
-/obj/item/clothing/under/rank/omon/green,
-/obj/item/clothing/suit/armor/bulletproof/omon,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/suit/armor/bulletproof,
 /turf/open/floor/plasteel,
 /area/security/main)
 "amJ" = (
