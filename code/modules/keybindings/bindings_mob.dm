@@ -8,7 +8,7 @@
 			if(client.keys_held["Shift"])
 				whisper_verb(verbtextinput("Whisper"))
 			else
-				say_verb(verbtextinput("Say"))
+				say_verb(/*verbtextinput("Say")*/)
 			return
 		if("M")
 			me_verb(verbtextinput("Me"))
