@@ -1,4 +1,4 @@
-![fuck](https://travis-ci.com/daxsc/White-Tgstation.svg?branch=master)
+[![fuck](https://travis-ci.com/daxsc/White-Tgstation.svg?branch=master)](https://travis-ci.com/daxsc/White-Tgstation)
 ## White Dream: New Hope
 
 **Website:** https://www.frosty.space
