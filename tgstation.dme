@@ -2991,4 +2991,6 @@
 #include "interface\skin.dmf"
 #include "THETA\code\modules\client\client_procs.dm"
 #include "THETA\code\modules\jobs\job_types\assistant.dm"
+#include "THETA\code\modules\admin\admin.dm"
+#include "THETA\code\modules\client\verbs\looc.dm"
 // END_INCLUDE
