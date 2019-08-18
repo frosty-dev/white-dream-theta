@@ -260,6 +260,7 @@ Doesn't work on other aliens/AI.*/
 	check_turf = TRUE
 	var/list/structures = list(
 		"resin wall" = /obj/structure/alien/resin/wall,
+		"resin door" = /obj/machinery/door/xenodoor, //Gargulecode may cause conflicts with merges
 		"resin membrane" = /obj/structure/alien/resin/membrane,
 		"resin nest" = /obj/structure/bed/nest)
 

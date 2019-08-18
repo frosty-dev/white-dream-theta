@@ -54,6 +54,13 @@
 	locked = FALSE
 	color_src = 0
 
+/obj/item/organ/alien/hivenoder
+	name = "Exalted queen's sac"
+	icon_state = "eggsac"
+	zone = BODY_ZONE_PRECISE_GROIN
+	slot = "eggsac"
+	alien_powers = list(/obj/effect/proc_holder/alien/hivenoder)
+
 /////Implants/////
 /obj/item/organ/cyberimp/arm/surgery/alien
 	icon = 'code/shitcode/Gargule/icons.dmi'

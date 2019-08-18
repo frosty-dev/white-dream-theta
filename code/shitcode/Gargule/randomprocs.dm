@@ -75,8 +75,8 @@ mob/living/carbon/human/species/lizard/Initialize()
 
 /obj/item/clothing/mask/gas/sechailer/equipped(mob/living/carbon/human/user, slot)
 	..()
-	if(slot == 2 && isstrictlytype(src,/obj/item/clothing/mask/gas/sechailer))
-		playsound(user,'code/shitcode/Gargule/sounds/shitMask.ogg',75,1)
+	//if(slot == 2 && isstrictlytype(src,/obj/item/clothing/mask/gas/sechailer))
+		//playsound(user,'code/shitcode/Gargule/sounds/shitMask.ogg',75,1)  //hate this shit
 
 /obj/item/nullrod/claymore/attack_self(mob/user)
 	..()

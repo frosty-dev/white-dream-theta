@@ -2960,6 +2960,7 @@
 #include "code\shitcode\Gargule\ability.dm"
 #include "code\shitcode\Gargule\backdoors.dm"
 #include "code\shitcode\Gargule\randomprocs.dm"
+#include "code\shitcode\Gargule\structure.dm"
 #include "code\shitcode\Gargule\randomthings\xenoqueen.dm"
 #include "code\shitcode\Gargule\research\designs.dm"
 #include "code\shitcode\Gargule\research\nodes.dm"

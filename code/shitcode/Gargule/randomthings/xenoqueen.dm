@@ -8,6 +8,10 @@ mob/living/carbon/alien/humanoid/royal/queen/tamed
 		if(istype(I,/obj/item/organ/alien/eggsac))
 			I.Remove(src)
 			qdel(I)
+	var/obj/item/organ/alien/hivenoder/sac = new
+	sac.Insert(src)
+	faction += "neutral"
+	faction -= "Xenomorph"
 	grant_language(/datum/language/common)
 	name = "Smarty"
 	real_name = "Smarty"

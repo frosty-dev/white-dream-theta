@@ -112,6 +112,7 @@ Bonus
 
 
 //			NEED REWORK 		    //
+//it really sucks cuz of changed genetics
 
 /*
 /datum/symptom/heal/dna
@@ -140,11 +141,12 @@ Bonus
 		archived_dna = M.dna.unique_enzymes
 		archived_id = M.dna.uni_identity
 
-/datum/symptom/heal/dna/Heal(mob/living/carbon/M, datum/disease/advance/A)
+/datum/symptom/heal/dna/Heal(mob/living/carbon/M, datum/disease/advance/A, actual_power)
 	var/amt_healed = 2 * power
 	M.adjustBrainLoss(-amt_healed)
 	//Non-power mutations, excluding race, so the virus does not force monkey -> human transformations.
-	var/list/unclean_mutations = (GLOB.not_good_mutations|GLOB.bad_mutations) - GLOB.mutations_list[RACEMUT]
+	//var/list/unclean_mutations = (GLOB.bad_mutations | GLOB.not_good_mutations) - GLOB.all_mutations[RACEMUT]
+	var/list/unclean_mutations = (GLOB.all_mutations - GLOB.good_mutations) - GLOB.all_mutations[RACEMUT]
 	M.dna.remove_mutation_group(unclean_mutations)
 	M.radiation = max(M.radiation - (2 * amt_healed), 0)
 
@@ -158,5 +160,4 @@ Bonus
 			M.domutcheck()
 
 	return 1
-
 */
