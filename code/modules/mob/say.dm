@@ -2,7 +2,7 @@
 
 
 ///Say verb
-/mob/verb/say_verb()
+/mob/verb/say_verb(message as text)
 	set name = "Say"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
@@ -21,7 +21,8 @@
 	for(var/client/C in speech_bubble_recipients)
 		C.images += I
 
-	var/message = input("","Say") as text
+	if(!message)
+		message = input("","Say")
 
 	remove_images_from_clients(I,speech_bubble_recipients)
 
