@@ -823,7 +823,8 @@
 /obj/item/electronic_assembly/hook
 	name = "type-e electronic assembly"
 	icon_state = "setup_small_hook"
-	desc = "It's a case, for building small electronics with. This one looks like it has a belt clip, but it's purely decorative."
+	desc = "It's a case, for building small electronics with. This one looks like it has a belt clip."
+	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/electronic_assembly/pda
 	name = "type-f electronic assembly"
@@ -840,11 +841,12 @@
 
 /obj/item/electronic_assembly/small/default
 	name = "type-a electronic device"
+	desc = "It's a case, for building tiny-sized electronics with. This one looks like pill."
 
 /obj/item/electronic_assembly/small/cylinder
 	name = "type-b electronic device"
 	icon_state = "setup_device_cylinder"
-	desc = "It's a case, for building tiny-sized electronics with. This one has a cylindrical design."
+	desc = "It's a case, for building tiny-sized electronics with. This one looks like small pill."
 
 /obj/item/electronic_assembly/small/scanner
 	name = "type-c electronic device"
@@ -854,12 +856,13 @@
 /obj/item/electronic_assembly/small/hook
 	name = "type-d electronic device"
 	icon_state = "setup_device_hook"
-	desc = "It's a case, for building tiny-sized electronics with. This one looks like it has a belt clip, but it's purely decorative."
+	desc = "It's a case, for building tiny-sized electronics with. This one looks like pen with a belt clip."
+	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/electronic_assembly/small/box
 	name = "type-e electronic device"
 	icon_state = "setup_device_box"
-	desc = "It's a case, for building tiny-sized electronics with. This one has a boxy design."
+	desc = "It's a case, for building tiny-sized electronics with. This one looks like dice."
 
 /obj/item/electronic_assembly/medium
 	name = "electronic mechanism"
@@ -1037,6 +1040,25 @@
 			pixel_x = -31
 		if(WEST)
 			pixel_x = 31
+
+/obj/item/electronic_assembly/backpack
+	name = "electronic backpack"
+	desc = "It's a case, for building large electronics with."
+	icon_state = "setup_backpack"
+	item_state = "setup_backpack"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK	//yep, u can wear this assembly on the back
+	resistance_flags = FIRE_PROOF
+	can_fire_equipped = TRUE
+	icon = 'THETA/icons/obj/assemblies/electronic setups.dmi'
+
+/obj/item/electronic_assembly/large
+	name = "electronic machine"
+	icon_state = "setup_large"
+	desc = "It's a case, for building large electronics with."
+	w_class = WEIGHT_CLASS_BULKY
+	max_components = IC_MAX_SIZE_BASE * 4
+	max_complexity = IC_COMPLEXITY_BASE * 4
 
 /obj/item/electronic_assembly/MouseDrop(atom/over, src_location, over_location, src_control, over_control, params)
 	if(over == usr)

@@ -17,7 +17,10 @@
 		"target Y rel" = IC_PINTYPE_NUMBER,
 		"mode"         = IC_PINTYPE_BOOLEAN
 		)
-	outputs = list("reference to gun" = IC_PINTYPE_REF)
+	outputs = list(
+		"reference to gun" = IC_PINTYPE_REF,
+		"reference to cell" = IC_PINTYPE_REF
+		)
 	activators = list(
 		"fire" = IC_PINTYPE_PULSE_IN
 
@@ -58,12 +61,13 @@
 		lethal_projectile = gun_properties["lethal_projectile"]
 		lethal_projectile_sound = gun_properties["lethal_projectile_sound"]
 		if(gun_properties["shot_delay"])
-			cooldown_per_use = gun_properties["shot_delay"]*10
-		if(cooldown_per_use<30)
-			cooldown_per_use = 30
+			cooldown_per_use = gun_properties["shot_delay"]
+		else
+			cooldown_per_use = 1
 		if(gun_properties["reqpower"])
 			power_draw_per_use = gun_properties["reqpower"]
 		set_pin_data(IC_OUTPUT, 1, WEAKREF(installed_gun))
+		set_pin_data(IC_OUTPUT, 2, WEAKREF(installed_gun.cell))
 		push_data()
 	else
 		..()
@@ -787,3 +791,83 @@
 
 	set_pin_data(IC_OUTPUT, 1, M.held_items)
 	activate_pin(2)
+
+/obj/item/integrated_circuit/manipulation/thrower
+	name = "thrower"
+	desc = "A compact launcher to throw things from inside or nearby tiles."
+	extended_desc = "The first and second inputs need to be numbers which correspond to the coordinates to throw objects at relative to the machine itself. \
+	The 'fire' activator will cause the mechanism to attempt to throw objects at the coordinates, if possible. Note that the \
+	projectile needs to be inside the machine, or on an adjacent tile, and must not be bigger than assembly. The assembly \
+	must also be a gun if you wish to throw something while the assembly is in hand."
+	complexity = 25
+	w_class = WEIGHT_CLASS_SMALL
+	size = 2
+	cooldown_per_use = 1
+	ext_cooldown = 1
+	inputs = list(
+		"target X rel" = IC_PINTYPE_NUMBER,
+		"target Y rel" = IC_PINTYPE_NUMBER,
+		"projectile" = IC_PINTYPE_REF
+		)
+	outputs = list()
+	activators = list(
+		"fire" = IC_PINTYPE_PULSE_IN
+	)
+	spawn_flags = IC_SPAWN_RESEARCH
+	action_flags = IC_ACTION_COMBAT
+	power_draw_per_use = 50
+
+/obj/item/integrated_circuit/manipulation/thrower/do_work()
+	var/max_w_class = assembly.w_class
+	var/target_x_rel = round(get_pin_data(IC_INPUT, 1))
+	var/target_y_rel = round(get_pin_data(IC_INPUT, 2))
+	var/obj/item/A = get_pin_data_as_type(IC_INPUT, 3, /obj/item)
+
+	if(!A || A.anchored || A.throwing)
+		return
+
+	if(max_w_class && (A.w_class > max_w_class) && !istype(A, /obj/item/twohanded/))
+		return
+
+	if(!assembly.can_fire_equipped && ishuman(assembly.loc))
+		return
+
+	// Is the target inside the assembly or close to it?
+	if(!check_target(A, exclude_components = TRUE))
+		return
+
+	var/turf/T = get_turf(get_object())
+	if(!T)
+		return
+
+	// If the item is in mob's inventory, try to remove it from there.
+	if(ismob(A.loc))
+		var/mob/living/M = A.loc
+		if(!M.temporarilyRemoveItemFromInventory(A))
+			return
+
+	// If the item is in a grabber circuit we'll update the grabber's outputs after we've thrown it.
+	var/obj/item/integrated_circuit/manipulation/grabber/G = A.loc
+
+	var/x_abs = CLAMP(T.x + target_x_rel, 0, world.maxx)
+	var/y_abs = CLAMP(T.y + target_y_rel, 0, world.maxy)
+	var/range = round(CLAMP(sqrt(target_x_rel*target_x_rel+target_y_rel*target_y_rel),0,8),1)
+	/*remove damage //Gargule:formennoe peedorstvo
+	A.throwforce = 0
+	A.embedding = list("embed_chance" = 0)
+	*///throw it
+	assembly.visible_message("<span class='danger'>[assembly] has thrown [A]!</span>")
+	log_attack("[assembly] [REF(assembly)] has thrown [A].")
+	A.forceMove(drop_location())
+	A.throw_at(locate(x_abs, y_abs, T.z), range, 3, , , , CALLBACK(src, .proc/post_throw, A))
+
+	// If the item came from a grabber now we can update the outputs since we've thrown it.
+	if(istype(G))
+		G.update_outputs()
+
+/obj/item/integrated_circuit/manipulation/thrower/proc/post_throw(obj/item/A) //wtf??? is this nerf, shitcode, or something?
+	/*return damage
+	A.throwforce = initial(A.throwforce)
+	A.embedding = initial(A.embedding)
+	*/
+	return
