@@ -2950,6 +2950,7 @@
 #include "THETA\code\modules\client\client_procs.dm"
 #include "THETA\code\modules\client\verbs\looc.dm"
 #include "THETA\code\modules\integrated_electronics\data_huds.dm"
+#include "THETA\code\modules\integrated_electronics\NTnetBYpass.dm"
 #include "THETA\code\modules\integrated_electronics\receiver.dm"
 #include "THETA\code\modules\integrated_electronics\core\analyzer.dm"
 #include "THETA\code\modules\integrated_electronics\core\assemblies.dm"
