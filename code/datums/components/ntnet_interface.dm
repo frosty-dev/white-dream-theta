@@ -40,6 +40,9 @@
 
 /datum/component/ntnet_interface/proc/__network_send(datum/netdata/data, netid)			//Do not directly proccall!
 
+	// Process data before sending it IC need this
+	data.pre_send(src)
+
 	if(netid)
 		if(networks_connected_by_id[netid])
 			var/datum/ntnet/net = networks_connected_by_id[netid]
