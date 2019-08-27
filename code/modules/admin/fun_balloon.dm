@@ -1,7 +1,7 @@
 /obj/effect/fun_balloon
 	name = "fun balloon"
 	desc = "This is going to be a laugh riot."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/balloons.dmi'
 	icon_state = "syndballoon"
 	anchored = TRUE
 	var/popped = FALSE
@@ -27,7 +27,7 @@
 	return
 
 /obj/effect/fun_balloon/proc/pop()
-	visible_message("[src] pops!")
+	visible_message("<span class='notice'>[src] pops!</span>")
 	playsound(get_turf(src), 'sound/items/party_horn.ogg', 50, 1, -1)
 	qdel(src)
 

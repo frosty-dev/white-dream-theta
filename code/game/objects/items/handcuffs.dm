@@ -58,7 +58,7 @@
 	if(!C.handcuffed)
 		if(C.get_num_arms(FALSE) >= 2 || C.get_arm_ignore())
 			C.visible_message("<span class='danger'>[user] is trying to put [src.name] on [C]!</span>", \
-								"<span class='userdanger'>[user] is trying to put [src.name] on [C]!</span>")
+								"<span class='userdanger'>[user] is trying to put [src.name] on you!</span>")
 
 			playsound(loc, cuffsound, 30, 1, -2)
 			if(do_mob(user, C, 30) && (C.get_num_arms(FALSE) >= 2 || C.get_arm_ignore()))
@@ -66,7 +66,8 @@
 					apply_cuffs(C, user, TRUE)
 				else
 					apply_cuffs(C, user)
-				to_chat(user, "<span class='notice'>You handcuff [C].</span>")
+				C.visible_message("<span class='notice'>[user] handcuffs [C].</span>", \
+									"<span class='userdanger'>[user] handcuffs you.</span>")
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 
 				log_combat(user, C, "handcuffed")
@@ -103,15 +104,13 @@
 	icon_state = "sinewcuff"
 	item_state = "sinewcuff"
 	materials = null
-	item_color = "white"
-	color = "#000000"
+	color = null
 
 /obj/item/restraints/handcuffs/cable
 	name = "cable restraints"
 	desc = "Looks like some cables tied together. Could be used to tie something up."
 	icon_state = "cuff"
 	item_state = "coil"
-	item_color = "red"
 	color = "#ff0000"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
@@ -119,45 +118,29 @@
 	breakouttime = 30 SECONDS
 	cuffsound = 'sound/weapons/cablecuff.ogg'
 
-/obj/item/restraints/handcuffs/cable/Initialize(mapload, param_color)
-	. = ..()
-
-	update_icon()
-
-/obj/item/restraints/handcuffs/cable/update_icon()
-	color = null
-	add_atom_colour(item_color, FIXED_COLOUR_PRIORITY)
-
 /obj/item/restraints/handcuffs/cable/red
-	item_color = "red"
 	color = "#ff0000"
 
 /obj/item/restraints/handcuffs/cable/yellow
-	item_color = "yellow"
 	color = "#ffff00"
 
 /obj/item/restraints/handcuffs/cable/blue
-	item_color = "blue"
 	color = "#1919c8"
 
 /obj/item/restraints/handcuffs/cable/green
-	item_color = "green"
 	color = "#00aa00"
 
 /obj/item/restraints/handcuffs/cable/pink
-	item_color = "pink"
 	color = "#ff3ccd"
 
 /obj/item/restraints/handcuffs/cable/orange
-	item_color = "orange"
 	color = "#ff8000"
 
 /obj/item/restraints/handcuffs/cable/cyan
-	item_color = "cyan"
 	color = "#00ffff"
 
 /obj/item/restraints/handcuffs/cable/white
-	item_color = "white"
+	color = null
 
 /obj/item/restraints/handcuffs/alien
 	icon_state = "handcuffAlien"
@@ -207,7 +190,7 @@
 	materials = list()
 	breakouttime = 45 SECONDS
 	trashtype = /obj/item/restraints/handcuffs/cable/zipties/used
-	item_color = "white"
+	color = null
 
 /obj/item/restraints/handcuffs/cable/zipties/used
 	desc = "A pair of broken zipties."
@@ -359,7 +342,7 @@
 		C.update_inv_legcuffed()
 		SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 		to_chat(C, "<span class='userdanger'>\The [src] ensnares you!</span>")
-		C.Paralyze(knockdown)
+		C.Knockdown(knockdown)
 		playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 
 /obj/item/restraints/legcuffs/bola/tactical//traitor variant
@@ -367,7 +350,7 @@
 	desc = "A strong bola, made with a long steel chain. It looks heavy, enough so that it could trip somebody."
 	icon_state = "bola_r"
 	breakouttime = 70
-	knockdown = 20
+	knockdown = 35
 
 /obj/item/restraints/legcuffs/bola/energy //For Security
 	name = "energy bola"

@@ -9,7 +9,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	throw_speed = 3
 	throw_range = 7
-	attack_verb = list("пермабанит")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
@@ -24,9 +24,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 */
 /obj/item/banhammer/attack(mob/M, mob/user)
 	if(user.zone_selected == BODY_ZONE_HEAD)
-		M.visible_message("<span class='danger'>[user] are stroking the head of [M] with a bangammer</span>", "<span class='userdanger'>[user] are stroking the head with a bangammer</span>", "you hear a bangammer stroking a head");
+		M.visible_message("<span class='danger'>[user] is stroking the head of [M] with a banhammer.</span>", "<span class='userdanger'>[user] is stroking your head with a banhammer.</span>", "<span class='italics'>You hear a banhammer stroking a head.</span>")
 	else
-		M.visible_message("<span class='danger'>[M] has been banned FOR NO REISIN by [user]</span>", "<span class='userdanger'>You have been banned FOR NO REISIN by [user]</span>", "you hear a banhammer banning someone")
+		M.visible_message("<span class='danger'>[M] has been banned FOR NO REISIN by [user]!</span>", "<span class='userdanger'>You have been banned FOR NO REISIN by [user]!</span>", "<span class='italics'>You hear a banhammer banning someone.</span>")
 	playsound(loc, 'sound/effects/adminhelp.ogg', 15) //keep it at 15% volume so people don't jump out of their skin too much
 	if(user.a_intent != INTENT_HELP)
 		return ..(M, user)
@@ -43,7 +43,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 1
 	w_class = WEIGHT_CLASS_NORMAL
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("атакует", "рубит", "втыкает", "разрубает", "кромсает", "разрывает", "нарезает", "режет")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ")
 
 /obj/item/sord/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty.</span>", \
@@ -63,7 +63,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 40
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("атакует", "рубит", "втыкает", "прорезает", "кромсает", "подрезает", "нарезает", "режет")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ")
 	block_chance = 50
 	sharpness = IS_SHARP
 	max_integrity = 200
@@ -85,7 +85,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	slot_flags = null
 	block_chance = 0 //RNG WON'T HELP YOU NOW, PANSY
 	light_range = 3
-	attack_verb = list("бруталлирует", "потрошит", "уничтожает", "проламывает", "унижает", "разрубает") //ONLY THE MOST VISCERAL ATTACK VERBS
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ") //ONLY THE MOST VISCERAL ATTACK VERBS
 	var/notches = 0 //HOW MANY PEOPLE HAVE BEEN SLAIN WITH THIS BLADE
 	var/obj/item/disk/nuclear/nuke_disk //OUR STORED NUKE DISK
 
@@ -216,7 +216,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	w_class = WEIGHT_CLASS_HUGE
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("атакует", "рубит", "втыкает", "разрубает", "кромсает", "разрывает", "нарезает", "режет")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ")
 	block_chance = 50
 	sharpness = IS_SHARP
 	max_integrity = 200
@@ -240,7 +240,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	materials = list(/datum/material/iron=1150, /datum/material/glass=75)
-	attack_verb = list("бьёт", "ударяет", "вмазывает", "тычет")
+	attack_verb = list("пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ")
 
 /obj/item/wirerod/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/shard))
@@ -294,7 +294,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 25 //kills regular carps in one hit
 	force = 10
 	throw_range = 0 //throwing these invalidates the speargun
-	attack_verb = list("втыкает", "рубит", "протыкает", "накалывает")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 	embedding = list("embedded_pain_multiplier" = 8, "embed_chance" = 100, "embedded_fall_chance" = 0, "embedded_impact_pain_multiplier" = 15) //55 damage+embed on hit
 
 /obj/item/switchblade
@@ -311,7 +311,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_range = 6
 	materials = list(/datum/material/iron=12000)
 	hitsound = 'sound/weapons/genhit.ogg'
-	attack_verb = list("бьёт", "протыкает")
+	attack_verb = list("пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 	resistance_flags = FIRE_PROOF
 	var/extended = 0
 
@@ -323,7 +323,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		w_class = WEIGHT_CLASS_NORMAL
 		throwforce = 23
 		icon_state = "switchblade_ext"
-		attack_verb = list("рубит", "втыкает", "врезает", "кромсает", "разрывает", "нарезает", "режет")
+		attack_verb = list("пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ")
 		hitsound = 'sound/weapons/bladeslice.ogg'
 		sharpness = IS_SHARP
 	else
@@ -331,7 +331,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		w_class = WEIGHT_CLASS_SMALL
 		throwforce = 5
 		icon_state = "switchblade"
-		attack_verb = list("стукает", "тычет")
+		attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ")
 		hitsound = 'sound/weapons/genhit.ogg'
 		sharpness = IS_BLUNT
 
@@ -349,7 +349,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_speed = 3
 	throw_range = 4
 	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("вызывает", "звонит")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ")
 	hitsound = 'sound/weapons/ring.ogg'
 
 /obj/item/phone/suicide_act(mob/user)
@@ -371,7 +371,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 5
 	w_class = WEIGHT_CLASS_SMALL
 	materials = list(/datum/material/iron=50)
-	attack_verb = list("ударяет", "вмазывает", "учит", "лупит")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ")
 
 /obj/item/staff
 	name = "wizard staff"
@@ -386,7 +386,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
 	armour_penetration = 100
-	attack_verb = list("ударяет", "вмазывает", "учит")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅ")
 	resistance_flags = FLAMMABLE
 
 /obj/item/staff/broom
@@ -439,7 +439,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throw_range = 0
 	throw_speed = 0
 	sharpness = IS_SHARP
-	attack_verb = list("пилит", "кромсает", "режет", "рубит", "нарезает")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 
 /obj/item/mounted_chainsaw/Initialize()
@@ -467,7 +467,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	throw_speed = 5
 	throw_range = 2
-	attack_verb = list("долбит")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅ")
 	var/impressiveness = 45
 
 /obj/item/statuebust/Initialize()
@@ -488,7 +488,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 1 // why are you throwing a club do you even weapon
 	throw_speed = 1
 	throw_range = 1
-	attack_verb = list("долбит", "ударяет")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 
 /obj/item/melee/chainofcommand/tailwhip
 	name = "liz o' nine tails"
@@ -502,18 +502,43 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	icon_state = "catwhip"
 
 /obj/item/melee/skateboard
-	name = "skateboard"
+	name = "improvised skateboard"
 	desc = "A skateboard. It can be placed on its wheels and ridden, or used as a strong weapon."
 	icon_state = "skateboard"
 	item_state = "skateboard"
 	force = 12
 	throwforce = 4
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("лупит", "вмазывает", "хреначит", "размазывает")
+	attack_verb = list("smacked", "whacked", "slammed", "smashed")
+	///The vehicle counterpart for the board
+	var/board_item_type = /obj/vehicle/ridden/scooter/skateboard
 
 /obj/item/melee/skateboard/attack_self(mob/user)
-	new /obj/vehicle/ridden/scooter/skateboard(get_turf(user))
+	new board_item_type(get_turf(user))
 	qdel(src)
+
+/obj/item/melee/skateboard/pro
+	name = "skateboard"
+	desc = "A RaDSTORMz brand professional skateboard. It looks sturdy and well made."
+	icon_state = "skateboard2"
+	item_state = "skateboard2"
+	board_item_type = /obj/vehicle/ridden/scooter/skateboard/pro
+	custom_premium_price = 300
+
+/obj/item/melee/skateboard/hoverboard
+	name = "hoverboard"
+	desc = "A blast from the past, so retro!"
+	icon_state = "hoverboard_red"
+	item_state = "hoverboard_red"
+	board_item_type = /obj/vehicle/ridden/scooter/skateboard/hoverboard
+	custom_premium_price = 2015
+
+/obj/item/melee/skateboard/hoverboard/admin
+	name = "\improper Board Of Directors"
+	desc = "The engineering complexity of a spaceship concentrated inside of a board. Just as expensive, too."
+	icon_state = "hoverboard_nt"
+	item_state = "hoverboard_nt"
+	board_item_type = /obj/vehicle/ridden/scooter/skateboard/hoverboard/admin
 
 /obj/item/melee/baseball_bat
 	name = "baseball bat"
@@ -525,7 +550,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 10
 	throwforce = 12
-	attack_verb = list("бьёт", "вмазывает")
+	attack_verb = list("пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 	w_class = WEIGHT_CLASS_HUGE
 	var/homerun_ready = 0
 	var/homerun_able = 0
@@ -590,7 +615,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 1
 	throwforce = 1
-	attack_verb = list("шлёпает", "прихлопывает")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
 	hitsound = 'sound/effects/snap.ogg'
 	w_class = WEIGHT_CLASS_SMALL
 	//Things in this list will be instantly splatted.  Flyman weakness is handled in the flyman species weakness proc.
@@ -625,7 +650,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 0
 	throwforce = 0
 	item_flags = DROPDEL | ABSTRACT
-	attack_verb = list("шлёпает")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅ")
 
 /obj/item/slapper
 	name = "slapper"
@@ -635,7 +660,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 0
 	throwforce = 0
 	item_flags = DROPDEL | ABSTRACT
-	attack_verb = list("шлёпает")
+	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅ")
 	hitsound = 'sound/effects/snap.ogg'
 
 /obj/item/slapper/attack(mob/M, mob/living/carbon/human/user)
@@ -647,7 +672,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	playsound(M, 'sound/weapons/slap.ogg', 50, 1, -1)
 	user.visible_message("<span class='danger'>[user] slaps [M]!</span>",
 	"<span class='notice'>You slap [M]!</span>",\
-	"You hear a slap.")
+	"<span class='italics'>You hear a slap.</span>")
 	return
 /obj/item/proc/can_trigger_gun(mob/living/user)
 	if(!user.can_use_guns(src))
