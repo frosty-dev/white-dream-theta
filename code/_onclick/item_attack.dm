@@ -140,5 +140,5 @@
 	if(user in viewers(src, null))
 		attack_message = "[user] [message_verb] ��� ������ [I] [src] [message_hit_area]!"
 	visible_message("<span class='danger'>[attack_message]</span>",\
-		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
+		"<span class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
