@@ -64,7 +64,7 @@
 	user.do_attack_animation(M)
 	M.attacked_by(src, user)
 
-	log_combat(user, M, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
+	log_combat(user, M, "атакует", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
 
 
@@ -83,10 +83,9 @@
 
 /obj/attacked_by(obj/item/I, mob/living/user)
 	if(I.force)
-		user.visible_message("<span class='danger'>[user] hits [src] with [I]!</span>", \
-					"<span class='danger'>You hit [src] with [I]!</span>", null, COMBAT_MESSAGE_RANGE)
+		visible_message("<span class='danger'>[user] бьёт [src] [I]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 		//only witnesses close by and the victim see a hit message.
-		log_combat(user, src, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", I)
+		log_combat(user, src, "атакует", I)
 	take_damage(I.force, I.damtype, "melee", 1)
 
 /mob/living/attacked_by(obj/item/I, mob/living/user)
@@ -128,17 +127,17 @@
 			return CLAMP(w_class * 6, 10, 100) // Multiply the item's weight class by 6, then clamp the value between 10 and 100
 
 /mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area)
-	var/message_verb = "пїЅпїЅпїЅпїЅ"
+	var/message_verb = "бьёт"
 	if(I.attack_verb && I.attack_verb.len)
 		message_verb = "[pick(I.attack_verb)]"
 	else if(!I.force)
 		return
 	var/message_hit_area = ""
 	if(hit_area)
-		message_hit_area = "пїЅ [ru_parse_zone(hit_area)]"
+		message_hit_area = "в [ru_parse_zone(hit_area)]"
 	var/attack_message = "[message_verb] [I] [message_hit_area]."
 	if(user in viewers(src, null))
-		attack_message = "[user] [message_verb] пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ [I] [src] [message_hit_area]!"
+		attack_message = "[user] [message_verb] при помощи [I] [src] [message_hit_area]!"
 	visible_message("<span class='danger'>[attack_message]</span>",\
 		"<span class='userdanger'>[attack_message]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
