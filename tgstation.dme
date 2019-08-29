@@ -2963,6 +2963,7 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "THETA\code\game\areas\ThetaMiningArea.dm"
 #include "THETA\code\game\objects\effects\portals.dm"
 #include "THETA\code\game\objects\items\devices\multitool.dm"
 #include "THETA\code\modules\admin\admin.dm"
