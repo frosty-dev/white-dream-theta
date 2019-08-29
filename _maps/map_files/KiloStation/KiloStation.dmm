@@ -23307,10 +23307,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/power/terminal{
-	icon_state = "term";
-	dir = 4
-	},
 /turf/open/floor/plasteel/dark,
 /area/maintenance/disposal/incinerator)
 "aIw" = (
@@ -63172,6 +63168,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
 "bKZ" = (
@@ -80494,9 +80493,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
 "cjs" = (
@@ -82757,6 +82753,9 @@
 	network = list("ss13","engine")
 	},
 /obj/effect/turf_decal/box,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/maintenance/disposal/incinerator)
 "cnc" = (
@@ -84059,6 +84058,9 @@
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
@@ -91143,6 +91145,9 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 1
+	},
+/obj/machinery/power/terminal{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
@@ -101290,6 +101295,22 @@
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"hVG" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/maintenance/disposal/incinerator)
 "lCM" = (
 /obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/dark,
@@ -129004,7 +129025,7 @@ amY
 aIv
 aIH
 bKY
-bKY
+hVG
 cpi
 aFK
 aFQ
