@@ -3014,4 +3014,7 @@
 #include "THETA\code\modules\jobs\job_types\assistant.dm"
 #include "THETA\code\modules\research\designs\electronics_designs.dm"
 #include "THETA\code\modules\research\techweb\all_nodes.dm"
+#include "THETA\code\modules\shuttle\adv_nav.dm"
+#include "THETA\code\modules\shuttle\shuttle.dm"
+#include "THETA\code\modules\shuttle\shuttle_spawners.dm"
 // END_INCLUDE
