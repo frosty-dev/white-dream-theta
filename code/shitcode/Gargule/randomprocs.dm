@@ -85,7 +85,7 @@ mob/living/carbon/human/species/lizard/Initialize()
 
 /obj/allowed(mob/M)
 	.=..()
-	if(isalienadult(M))
+	if(isstrictlytype(M, /mob/living/carbon/alien/humanoid/royal/queen/tamed))
 		var/mob/living/carbon/alien/humanoid/H = M
 		if(check_access(H.get_active_held_item()) || check_access(H.wear_id))
 			return 1

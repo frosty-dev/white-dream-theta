@@ -1,5 +1,7 @@
-mob/living/carbon/alien/humanoid/royal/queen/tamed
+mob/living/carbon/alien/humanoid/royal/queen/tamed //defines etc.
+	var/account_id
 	has_fine_manipulation = 1
+	icon = 'THETA/icons/mob/Smarty.dmi'
 
 /mob/living/carbon/alien/humanoid/royal/queen/tamed/Initialize()
 	..()
