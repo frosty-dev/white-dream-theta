@@ -53,7 +53,7 @@ mob/living/carbon/human/species/lizard/Initialize()
 	.=..()
 	if(src.internal_organs_slot[ORGAN_SLOT_HUD])
 		var/obj/item/organ/cyberimp/eyes/hud/science/H = src.internal_organs_slot[ORGAN_SLOT_HUD]
-		if(H.scan_reagents)
+		if(istype(H) && H.scan_reagents)
 			return 1
 
 /obj/item/organ/heart/attackby(obj/item/F, mob/user)
