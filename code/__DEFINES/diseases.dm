@@ -1,6 +1,6 @@
 
 #define DISEASE_LIMIT		1
-#define VIRUS_SYMPTOM_LIMIT	6
+#define VIRUS_SYMPTOM_LIMIT	13 //has been 6, increased cuz of CrazySim. (idk, how to do it without conflictabilty, so i did it here. Also, it's balance test and i will rework it later)
 
 //Visibility Flags
 #define HIDDEN_SCANNER	(1<<0)
