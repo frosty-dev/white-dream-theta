@@ -1,4 +1,4 @@
-//If you need to add some shit into mining vendor, do it here, PEEEEEDOR!!!
+//If you need to add some shit into mining vendor, do it here, PEEEEEDOR!!! (Gargulecode)
 
 /obj/machinery/mineral/equipment_vendor/Initialize()
 	. = ..()
