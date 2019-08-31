@@ -3013,6 +3013,7 @@
 #include "THETA\code\modules\integrated_electronics\subtypes\time.dm"
 #include "THETA\code\modules\integrated_electronics\subtypes\trig.dm"
 #include "THETA\code\modules\jobs\job_types\assistant.dm"
+#include "THETA\code\modules\mining\machine_vending.dm"
 #include "THETA\code\modules\research\designs\electronics_designs.dm"
 #include "THETA\code\modules\research\techweb\all_nodes.dm"
 #include "THETA\code\modules\shuttle\adv_nav.dm"
