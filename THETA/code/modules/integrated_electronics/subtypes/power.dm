@@ -52,8 +52,8 @@
 		if(A.Adjacent(B))
 			if(AM.loc != assembly)
 				transfer_amount *= 0.8 // Losses due to distance.
-			var/list/U=A.GetAllContents(/obj/item/integrated_circuit/power/transmitter)
-			transfer_amount *= 1 / U.len
+//			var/list/U=A.GetAllContents(/obj/item/integrated_circuit/power/transmitter)
+//			transfer_amount *= 1 / U.len //bez obid, no eto pisos. Tak chto raznerf
 			set_pin_data(IC_OUTPUT, 1, cell.charge)
 			set_pin_data(IC_OUTPUT, 2, cell.maxcharge)
 			set_pin_data(IC_OUTPUT, 3, cell.percent())
@@ -158,7 +158,7 @@
 			push_data()
 			activate_pin(5)
 			return
-	
+
 		var/obj/structure/cable/foundcable = locate() in get_turf(src)
 		// If no connector can't connect
 		if(!foundcable || foundcable.invisibility != 0)
