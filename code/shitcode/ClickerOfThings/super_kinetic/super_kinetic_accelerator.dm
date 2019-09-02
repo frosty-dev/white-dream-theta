@@ -13,7 +13,8 @@
 	/obj/item/borg/upgrade/modkit/chassis_mod,
 	/obj/item/borg/upgrade/modkit/chassis_mod/orange,
 	/obj/item/borg/upgrade/modkit/tracer,
-	/obj/item/borg/upgrade/modkit/tracer/adjustable)
+	/obj/item/borg/upgrade/modkit/tracer/adjustable,
+	/obj/item/borg/upgrade/modkit/indoors)//Gargulecode (Ah-ha-ha-ha-ha!!!)
 
 /obj/item/gun/energy/kinetic_accelerator/super_kinetic_accelerator/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/borg/upgrade/modkit))

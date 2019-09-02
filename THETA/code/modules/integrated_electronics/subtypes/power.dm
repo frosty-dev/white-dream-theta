@@ -5,7 +5,7 @@
 	name = "power transmission circuit"
 	desc = "This can wirelessly transmit electricity from an assembly's battery towards a nearby machine."
 	icon_state = "power_transmitter"
-	extended_desc = "This circuit transmits 5 kJ of electricity every time the activator pin is pulsed. The input pin must be \
+	extended_desc = "This circuit transmits 10 kJ of electricity every time the activator pin is pulsed. The input pin must be \
 	a reference to a machine to send electricity to. This can be a battery, or anything containing a battery. The machine can exist \
 	inside the assembly, or adjacent to it. The power is sourced from the assembly's power cell. If the target is outside of the assembly, \
 	some power is lost due to ineffiency."
@@ -19,21 +19,20 @@
 		)
 	activators = list("transmit" = IC_PINTYPE_PULSE_IN, "on transmit" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_RESEARCH
-	power_draw_per_use = 500 // Inefficency has to come from somewhere.
-	var/amount_to_move = 5000
+	power_draw_per_use = 1000 // Inefficency has to come from somewhere.
+	var/amount_to_move = 10000 //well, raznerf is here
 
 /obj/item/integrated_circuit/power/transmitter/large
 	name = "large power transmission circuit"
 	desc = "This can wirelessly transmit a lot of electricity from an assembly's battery towards a nearby machine. <b>Warning:</b> Do not operate in flammable environments."
-	extended_desc = "This circuit transmits 20 kJ of electricity every time the activator pin is pulsed. The input pin must be \
+	extended_desc = "This circuit transmits 40 kJ of electricity every time the activator pin is pulsed. The input pin must be \
 	a reference to a machine to send electricity to. This can be a battery, or anything containing a battery. The machine can exist \
 	inside the assembly, or adjacent to it. The power is sourced from the assembly's power cell. If the target is outside of the assembly, \
-	some power is lost due to ineffiency. Warning! Don't stack more than 1 power transmitter, as it becomes less efficient for every other \
-	transmission circuit in its own assembly and other nearby ones."
+	some power is lost due to ineffiency."
 	w_class = WEIGHT_CLASS_BULKY
 	complexity = 32
-	power_draw_per_use = 2000
-	amount_to_move = 20000
+	power_draw_per_use = 4000
+	amount_to_move = 40000
 
 /obj/item/integrated_circuit/power/transmitter/do_work()
 
@@ -52,8 +51,8 @@
 		if(A.Adjacent(B))
 			if(AM.loc != assembly)
 				transfer_amount *= 0.8 // Losses due to distance.
-			var/list/U=A.GetAllContents(/obj/item/integrated_circuit/power/transmitter)
-			transfer_amount *= 1 / U.len
+//			var/list/U=A.GetAllContents(/obj/item/integrated_circuit/power/transmitter)
+//			transfer_amount *= 1 / U.len //bez obid, no eto pisos. Tak chto raznerf
 			set_pin_data(IC_OUTPUT, 1, cell.charge)
 			set_pin_data(IC_OUTPUT, 2, cell.maxcharge)
 			set_pin_data(IC_OUTPUT, 3, cell.percent())
@@ -62,7 +61,7 @@
 			if(cell.charge == cell.maxcharge)
 				return FALSE
 			if(transfer_amount && assembly.draw_power(amount_to_move)) // CELLRATE is already handled in draw_power()
-				cell.give(transfer_amount * GLOB.CELLRATE)
+				cell.give(transfer_amount * GLOB.CELLRATE) //how eto works?
 				if(istype(AM, /obj/item))
 					var/obj/item/I = AM
 					I.update_icon()
@@ -158,7 +157,7 @@
 			push_data()
 			activate_pin(5)
 			return
-	
+
 		var/obj/structure/cable/foundcable = locate() in get_turf(src)
 		// If no connector can't connect
 		if(!foundcable || foundcable.invisibility != 0)
