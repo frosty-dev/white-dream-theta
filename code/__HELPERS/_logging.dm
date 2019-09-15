@@ -77,6 +77,7 @@
 	WRITE_LOG(GLOB.world_asset_log, "ASSET: [text]")
 
 /proc/log_access(text)
+	log_world("ACCESS: [text]")
 	if (CONFIG_GET(flag/log_access))
 		WRITE_LOG(GLOB.world_game_log, "ACCESS: [text]")
 
