@@ -95,8 +95,8 @@ class Main(tk.Frame):
 		labels_color = "#56595f"
 		labels_color_font = "#ffffff"
 
-		#label_warn_start_merge = tk.Label(self, text = '''Merge Started, check terminal.''', bg = labels_color, fg = labels_color_font)
-		#label_warn_start_merge.pack()
+		label_warn_start_merge = tk.Label(self, text = '''Merge Started, check terminal.''', bg = labels_color, fg = labels_color_font)
+		label_warn_start_merge.pack()
 
 		if(self.update_mode): print("Update Mode Enabled. Starting Updating.")
 		print("Starting Proccess")
