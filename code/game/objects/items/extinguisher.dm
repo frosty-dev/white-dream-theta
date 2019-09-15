@@ -110,7 +110,7 @@
 		var/transferred = W.reagents.trans_to(src, max_water, transfered_by = user)
 		if(transferred > 0)
 			to_chat(user, "<span class='notice'>\The [src] has been refilled by [transferred] units.</span>")
-			playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
+			playsound(src.loc, 'sound/effects/refill.ogg', 50, TRUE, -6)
 			for(var/datum/reagent/water/R in reagents.reagent_list)
 				R.cooling_temperature = cooling_power
 		else
@@ -142,7 +142,7 @@
 
 		src.last_use = world.time
 
-		playsound(src.loc, 'sound/effects/extinguish.ogg', 75, 1, -3)
+		playsound(src.loc, 'sound/effects/extinguish.ogg', 75, TRUE, -3)
 
 		var/direction = get_dir(src,target)
 
@@ -221,6 +221,9 @@
 
 /obj/item/extinguisher/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!user.is_holding(src))
+		to_chat(user, "<span class='notice'>You must be holding the [src] in your hands do this!</span>")
 		return
 	EmptyExtinguisher(user)
 
