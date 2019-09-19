@@ -246,8 +246,8 @@
 	if(locked)
 		return
 	locked = TRUE
-	playsound(src,boltDown,30,0,3)
-	audible_message("<span class='italics'>You hear a click from the bottom of the door.</span>", null,  1)
+	playsound(src,boltDown,30,FALSE,3)
+	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null,  1)
 	update_icon()
 
 /obj/machinery/door/airlock/unlock()
@@ -257,8 +257,8 @@
 	if(!locked)
 		return
 	locked = FALSE
-	playsound(src,boltUp,30,0,3)
-	audible_message("<span class='italics'>You hear a click from the bottom of the door.</span>", null,  1)
+	playsound(src,boltUp,30,FALSE,3)
+	audible_message("<span class='hear'>You hear a click from the bottom of the door.</span>", null,  1)
 	update_icon()
 
 /obj/machinery/door/airlock/narsie_act()
@@ -621,7 +621,7 @@
 		if("deny")
 			if(!stat)
 				update_icon(AIRLOCK_DENY)
-				playsound(src,doorDeni,50,0,3)
+				playsound(src,doorDeni,50,FALSE,3)
 				sleep(6)
 				update_icon(AIRLOCK_CLOSED)
 
@@ -846,7 +846,7 @@
 							return
 						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
 										"<span class='notice'>You cut through \the [src]'s shielding.</span>",
-										"<span class='italics'>You hear welding.</span>")
+										"<span class='hear'>You hear welding.</span>")
 						security_level = AIRLOCK_SECURITY_NONE
 						spawn_atom_to_turf(/obj/item/stack/sheet/metal, user.loc, 2)
 						update_icon()
@@ -878,7 +878,7 @@
 							return
 						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
 										"<span class='notice'>You cut through \the [src]'s shielding.</span>",
-										"<span class='italics'>You hear welding.</span>")
+										"<span class='hear'>You hear welding.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_I_S
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL_O_S)
@@ -904,7 +904,7 @@
 							return
 						user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
 										"<span class='notice'>You cut through \the [src]'s shielding.</span>",
-										"<span class='italics'>You hear welding.</span>")
+										"<span class='hear'>You hear welding.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL_O_S
 					return
 			if(AIRLOCK_SECURITY_PLASTEEL)
@@ -962,7 +962,7 @@
 				return
 			user.visible_message("<span class='notice'>[user] is [welded ? "unwelding":"welding"] the airlock.</span>", \
 							"<span class='notice'>You begin [welded ? "unwelding":"welding"] the airlock...</span>", \
-							"<span class='italics'>You hear welding.</span>")
+							"<span class='hear'>You hear welding.</span>")
 			if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 				welded = !welded
 				user.visible_message("<span class='notice'>[user.name] has [welded? "welded shut":"unwelded"] [src].</span>", \
@@ -974,7 +974,7 @@
 					return
 				user.visible_message("<span class='notice'>[user] is welding the airlock.</span>", \
 								"<span class='notice'>You begin repairing the airlock...</span>", \
-								"<span class='italics'>You hear welding.</span>")
+								"<span class='hear'>You hear welding.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
 					stat &= ~BROKEN
@@ -1049,7 +1049,7 @@
 		if(obj_flags & EMAGGED)
 			return FALSE
 		use_power(50)
-		playsound(src, doorOpen, 30, 1)
+		playsound(src, doorOpen, 30, TRUE)
 		if(closeOther != null && istype(closeOther, /obj/machinery/door/airlock/) && !closeOther.density)
 			closeOther.close()
 	else
@@ -1249,7 +1249,7 @@
 	var/time_to_open = 5
 	if(hasPower())
 		time_to_open = 50 //Powered airlocks take longer to open, and are loud.
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, 1)
+		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
 
 
 	if(do_after(user, time_to_open, TRUE, src))

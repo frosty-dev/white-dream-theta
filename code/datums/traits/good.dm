@@ -39,7 +39,7 @@
 
 /datum/quirk/empath
 	name = "Эмпатия"
-	desc = "Будь то шестым чувством, или просто тщательное изучение языка тела, но вам достаточно взгляда на кого-нибудь, чтобы понять, что он чувствует." 
+	desc = "Будь то шестым чувством, или просто тщательное изучение языка тела, но вам достаточно взгляда на кого-нибудь, чтобы понять, что он чувствует."
 	value = 2
 	mob_trait = TRAIT_EMPATH
 	gain_text = "<span class='notice'>Вы чувствуете себя в гармонии с теми, кто окружает вас.</span>"
@@ -47,7 +47,7 @@
 	medical_record_text = "Пациент очень восприимчив и чувствителен к социальным сигналам, или возможно имеет экстрасенсорные способности. Необходима дальнейшая проверка."
 
 /datum/quirk/freerunning
-	name = "Паркурист" 
+	name = "Паркурист"
 	desc = "Вы хорошо преодолеваете препятствия! Вы быстрее залезаете на столы."
 	value = 2
 	mob_trait = TRAIT_FREERUNNING
@@ -67,7 +67,7 @@
 
 /datum/quirk/jolly
 	name = "Оптимист"
-	desc = "Иногда вы чувствуете себя счастливым, без ведомой на то причины." 
+	desc = "Иногда вы чувствуете себя счастливым, без ведомой на то причины."
 	value = 1
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
@@ -131,6 +131,15 @@
 
 /datum/quirk/photographer/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/storage/photo_album/photo_album = new(get_turf(H))
+	var/list/album_slots = list (
+		"backpack" = SLOT_IN_BACKPACK,
+		"hands" = SLOT_HANDS
+	)
+	H.equip_in_one_of_slots(photo_album, album_slots , qdel_on_fail = TRUE)
+	photo_album.persistence_id = "personal_[H.mind.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
+	photo_album.persistence_load()
+	photo_album.name = "[H.real_name]'s photo album"
 	var/obj/item/camera/camera = new(get_turf(H))
 	H.put_in_hands(camera)
 	H.equip_to_slot(camera, SLOT_NECK)
@@ -153,7 +162,7 @@
 /datum/quirk/spiritual
 	name = "Религиозный"
 	desc = "Вы придерживаетесь веры, может быть, в Бога, в природу или в тайные правила Вселенной, но вы чувствуете себя комфортнее от присутствия чего-то святого, и верите в то, что ваши молитвы особенны."
-	value = 1 	
+	value = 1
 	mob_trait = TRAIT_SPIRITUAL
 	gain_text = "<span class='notice'>Теперь вы верите в высшую силу.</span>"
 	lose_text = "<span class='danger'>Вы больше не веруете!</span>"

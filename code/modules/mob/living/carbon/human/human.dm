@@ -28,6 +28,8 @@
 	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_ACT, .proc/clean_blood)
 	AddComponent(/datum/component/personal_crafting)
 
+	GLOB.human_list += src
+
 /mob/living/carbon/human/proc/setup_human_dna()
 	//initialize dna. for spawned humans; overwritten by other code
 	create_dna(src)
@@ -41,6 +43,7 @@
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
+	GLOB.human_list -= src
 	return ..()
 
 
@@ -597,10 +600,10 @@
 //Used for new human mobs created by cloning/goleming/podding
 /mob/living/carbon/human/proc/set_cloned_appearance()
 	if(gender == MALE)
-		facial_hair_style = "Full Beard"
+		facial_hairstyle = "Full Beard"
 	else
-		facial_hair_style = "Shaved"
-	hair_style = pick("Bedhead", "Bedhead 2", "Bedhead 3")
+		facial_hairstyle = "Shaved"
+	hairstyle = pick("Bedhead", "Bedhead 2", "Bedhead 3")
 	underwear = "Nude"
 	update_body()
 	update_hair()
@@ -1140,6 +1143,9 @@
 
 /mob/living/carbon/human/species/golem/durathread
 	race = /datum/species/golem/durathread
+	
+/mob/living/carbon/human/species/golem/snow
+	race = /datum/species/golem/snow
 
 /mob/living/carbon/human/species/golem/clockwork
 	race = /datum/species/golem/clockwork

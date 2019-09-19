@@ -2023,8 +2023,7 @@
 /obj/effect/turf_decal/tile/neutral,
 /obj/structure/table,
 /obj/machinery/computer/security/telescreen/minisat{
-	dir = 4;
-	pixel_x = 0
+	dir = 4
 	},
 /obj/machinery/light{
 	dir = 8
@@ -38280,8 +38279,7 @@
 	},
 /obj/machinery/chem_master/condimaster{
 	desc = "Used to separate out liquids - useful for purifying botanical extracts. Also dispenses condiments.";
-	name = "BrewMaster 2199";
-	pixel_x = 0
+	name = "BrewMaster 2199"
 	},
 /obj/machinery/light_switch{
 	pixel_y = 24
@@ -38524,8 +38522,7 @@
 	},
 /obj/effect/turf_decal/tile/red,
 /obj/machinery/chem_master/condimaster{
-	name = "CondiMaster Neo";
-	pixel_x = 0
+	name = "CondiMaster Neo"
 	},
 /turf/open/floor/plasteel/kitchen_coldroom/freezerfloor,
 /area/crew_quarters/kitchen)
@@ -55087,8 +55084,7 @@
 "bAB" = (
 /obj/machinery/chem_master/condimaster{
 	desc = "Used to separate out liquids - useful for purifying botanical extracts. Also dispenses condiments.";
-	name = "BrewMaster 2199";
-	pixel_x = 0
+	name = "BrewMaster 2199"
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/bot,

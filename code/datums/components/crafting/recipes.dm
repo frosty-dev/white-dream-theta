@@ -39,7 +39,7 @@
 	result = /obj/item/twohanded/spear
 	reqs = list(/obj/item/twohanded/spear = 1,
 				/obj/item/grenade = 1)
-	blacklist = list(/obj/item/twohanded/spear/explosive)
+	blacklist = list(/obj/item/twohanded/spear/explosive, /obj/item/twohanded/spear/bonespear)
 	parts = list(/obj/item/twohanded/spear = 1,
 				/obj/item/grenade = 1)
 	time = 15
@@ -400,6 +400,19 @@
 	time = 100
 	category = CAT_MISC
 
+/datum/crafting_recipe/motorized_wheelchair
+	name = "Motorized Wheelchair"
+	result = /obj/vehicle/ridden/wheelchair/motorized
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+		/obj/item/stack/rods = 8,
+		/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stock_parts/capacitor = 1)
+	parts = list(/obj/item/stock_parts/manipulator = 2,
+		/obj/item/stock_parts/capacitor = 1)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WRENCH)
+	time = 200
+	category = CAT_MISC
+
 /datum/crafting_recipe/mousetrap
 	name = "Mouse Trap"
 	result = /obj/item/assembly/mousetrap
@@ -571,7 +584,7 @@
 
 /datum/crafting_recipe/bonespear
 	name = "Bone Spear"
-	result = /obj/item/twohanded/bonespear
+	result = /obj/item/twohanded/spear/bonespear
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				 /obj/item/stack/sheet/sinew = 1)
@@ -613,16 +626,17 @@
 				/obj/item/bodypart/head = 1)
 	parts = list(/obj/item/bodypart/head = 1,
 			/obj/item/twohanded/spear = 1)
+	blacklist = list(/obj/item/twohanded/spear/explosive, /obj/item/twohanded/spear/bonespear)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
 	time = 65
-	reqs = list(/obj/item/twohanded/bonespear = 1,
+	reqs = list(/obj/item/twohanded/spear/bonespear = 1,
 				/obj/item/bodypart/head = 1)
 	parts = list(/obj/item/bodypart/head = 1,
-			/obj/item/twohanded/bonespear = 1)
+			/obj/item/twohanded/spear/bonespear = 1)
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
 

@@ -290,9 +290,6 @@
 			else if(!client)
 				msg += "[t_on] имеет пустой, рассеянный взгляд и кажется совершенно не реагирующим ни на что. [t_on] может выйти из этого в ближайшее время.\n"
 
-		if(digitalcamo)
-			msg += "[t_on] двигает своим тело в неестественной и явно нечеловеческой манере.\n"
-
 	if (length(msg))
 		. += "<span class='warning'>[msg.Join("")]</span>"
 
@@ -311,7 +308,7 @@
 			var/cyberimp_detect
 			for(var/obj/item/organ/cyberimp/CI in internal_organs)
 				if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
-					cyberimp_detect += "[name] модифицировано [CI.name]."
+					cyberimp_detect += "[name] модифицировано [CI.name].<br>"
 			if(cyberimp_detect)
 				. += "Обнаружены кибернетические модификации:"
 				. += cyberimp_detect

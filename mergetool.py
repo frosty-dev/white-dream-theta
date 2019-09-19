@@ -160,7 +160,8 @@ ______________________________''')
 ''', bg = labels_color, fg = labels_color_font)
 			label_warn_2.pack()
 			return
-		if(label_warn_start_merge): label_warn_start_merge.destroy()
+		if(label_warn_start_merge):
+			label_warn_start_merge.destroy()
 
 
 if __name__ == "__main__":

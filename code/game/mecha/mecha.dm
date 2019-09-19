@@ -158,33 +158,15 @@
 			AI = M //AIs are loaded into the mech computer itself. When the mech dies, so does the AI. They can be recovered with an AI card from the wreck.
 		else
 			M.forceMove(loc)
-	if(wreckage)
-		var/obj/structure/mecha_wreckage/WR = new wreckage(loc, AI)
-		for(var/obj/item/mecha_parts/mecha_equipment/E in equipment)
-			if(E.salvageable && prob(30))
-				WR.crowbar_salvage += E
-				E.detach(WR) //detaches from src into WR
-				E.equip_ready = 1
-			else
-				E.detach(loc)
-				qdel(E)
-		if(cell)
-			WR.crowbar_salvage += cell
-			cell.forceMove(WR)
-			cell.charge = rand(0, cell.charge)
-		if(internal_tank)
-			WR.crowbar_salvage += internal_tank
-			internal_tank.forceMove(WR)
-	else
-		for(var/obj/item/mecha_parts/mecha_equipment/E in equipment)
-			E.detach(loc)
-			qdel(E)
-		if(cell)
-			qdel(cell)
-		if(internal_tank)
-			qdel(internal_tank)
-		if(AI)
-			AI.gib() //No wreck, no AI to recover
+	for(var/obj/item/mecha_parts/mecha_equipment/E in equipment)
+		E.detach(loc)
+		qdel(E)
+	if(cell)
+		qdel(cell)
+	if(internal_tank)
+		qdel(internal_tank)
+	if(AI)
+		AI.gib() //No wreck, no AI to recover
 	STOP_PROCESSING(SSobj, src)
 	GLOB.poi_list.Remove(src)
 	equipment.Cut()
@@ -509,6 +491,11 @@
 ////////  Movement procs  ////////
 //////////////////////////////////
 
+///Plays the mech step sound effect. Split from movement procs so that other mechs (HONK) can override this one specific part.
+/obj/mecha/proc/play_stepsound()
+	if(stepsound)
+		playsound(src,stepsound,40,1)
+
 /obj/mecha/Move(atom/newloc, direct)
 	. = ..()
 	if (internal_tank?.disconnect()) // Something moved us and broke connection
@@ -579,7 +566,7 @@
 /obj/mecha/proc/mechturn(direction)
 	setDir(direction)
 	if(turnsound)
-		playsound(src,turnsound,40,1)
+		playsound(src,turnsound,40,TRUE)
 	return 1
 
 /obj/mecha/proc/mechstep(direction)
@@ -587,14 +574,14 @@
 	var/result = step(src,direction)
 	if(strafe)
 		setDir(current_dir)
-	if(result && stepsound)
-		playsound(src,stepsound,40,1)
+	if(result)
+		play_stepsound()
 	return result
 
 /obj/mecha/proc/mechsteprand()
 	var/result = step_rand(src)
-	if(result && stepsound)
-		playsound(src,stepsound,40,1)
+	if(result)
+		play_stepsound()
 	return result
 
 /obj/mecha/Bump(var/atom/obstacle)
@@ -766,7 +753,7 @@
 	silicon_pilot = TRUE
 	icon_state = initial(icon_state)
 	update_icon()
-	playsound(src, 'sound/machines/windowdoor.ogg', 50, 1)
+	playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 	if(!internal_damage)
 		SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
 	AI.cancel_camera()
@@ -894,7 +881,7 @@
 		log_message("[H] moved in as pilot.", LOG_MECHA)
 		icon_state = initial(icon_state)
 		setDir(dir_in)
-		playsound(src, 'sound/machines/windowdoor.ogg', 50, 1)
+		playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 		if(!internal_damage)
 			SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
 		return 1
@@ -1115,7 +1102,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 						gun.projectiles = gun.projectiles + ammo_needed
 					else
 						gun.projectiles_cache = gun.projectiles_cache + ammo_needed
-					playsound(get_turf(user),A.load_audio,50,1)
+					playsound(get_turf(user),A.load_audio,50,TRUE)
 					to_chat(user, "<span class='notice'>You add [ammo_needed] [A.round_term][ammo_needed > 1?"s":""] to the [gun.name]</span>")
 					A.rounds = A.rounds - ammo_needed
 					A.update_name()
@@ -1126,7 +1113,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 						gun.projectiles = gun.projectiles + A.rounds
 					else
 						gun.projectiles_cache = gun.projectiles_cache + A.rounds
-					playsound(get_turf(user),A.load_audio,50,1)
+					playsound(get_turf(user),A.load_audio,50,TRUE)
 					to_chat(user, "<span class='notice'>You add [A.rounds] [A.round_term][A.rounds > 1?"s":""] to the [gun.name]</span>")
 					A.rounds = 0
 					A.update_name()
