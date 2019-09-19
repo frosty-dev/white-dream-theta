@@ -6,7 +6,7 @@
 
 #Ignore byond config folder.
 /cfg/**/*
-/config/*
+/config/**
 
 
 
