@@ -67,7 +67,6 @@
 
 	_key = rkeyconvert(_key)
 
-	keys_held -= _key
 	//Can't just do a remove because it would alter the length of the rolling buffer, instead search for the key then null it out if it exists
 	for(var/i in 1 to HELD_KEY_BUFFER_LENGTH)
 		if(keys_held[i] == _key)
