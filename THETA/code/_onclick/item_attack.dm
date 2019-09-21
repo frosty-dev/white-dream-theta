@@ -8,11 +8,22 @@ GLOBAL_LIST_INIT(ru_dictionary, list(
 	"absorbed"					= "пожирает",
 	"gored"						= "унижает",
 	"robusted"					= "робастит",
-	"slashed"					= "режет",
+	"slashed"					= "кромсает",
 	"stabbed"					= "втыкает",
 	"sliced"					= "рубит",
 	"diced"						= "нарезает",
 	"cut"						= "нарезает",
+	"stabbed"					= "протыкает",
+	"poked"						= "дырявит",
+	"torn"						= "тычет",
+	"ripped"					= "рвёт",
+	"cleaved"					= "мясует",
+	"shanked"					= "тычет",
+	"shivved"					= "насаживает",
+	"battered"					= "колошматит",
+	"bludgeoned"				= "месит",
+	"thrashed"					= "учит готовить",
+	"whacked"					= "раскатывает",
 	"bashed"					= "колотит"
 	))
 /proc/ru_attack_verb(var/attack_verb, var/item)
