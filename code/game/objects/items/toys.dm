@@ -189,7 +189,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	materials = list(/datum/material/iron=10, /datum/material/glass=10)
-	attack_verb = list("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ")
+	attack_verb = list("struck", "pistol whipped", "hit", "bashed")
 	var/bullets = 7
 
 /obj/item/toy/gun/examine(mob/user)
@@ -227,14 +227,14 @@
 		return
 	src.add_fingerprint(user)
 	if (src.bullets < 1)
-		user.show_message("<span class='warning'>*пїЅпїЅпїЅпїЅ*</span>", MSG_AUDIBLE)
+		user.show_message("<span class='warning'>*click*</span>", MSG_AUDIBLE)
 		playsound(src, 'sound/weapons/gun_dry_fire.ogg', 30, TRUE)
 		return
 	playsound(user, 'sound/weapons/gunshot.ogg', 100, TRUE)
 	src.bullets--
-	user.visible_message("<span class='danger'><b>[user]</b> пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ <b>[src.name]</b> пїЅ <b>[target]</b>!</span>", \
-						"<span class='danger'>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ <b>[src.name]</b> пїЅ <b>[target]</b>!</span>", \
-						 "<span class='italics'>пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!</span>")
+	user.visible_message("<span class='danger'><b>[user]</b> стреляет из <b>[src.name]</b> по <b>[target]</b>!</span>", \
+						"<span class='danger'>Ты стреляешь из <b>[src.name]</b> в <b>[target]</b>!</span>", \
+						 "<span class='italics'>Ты слышишь выстрел!</span>")
 
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"

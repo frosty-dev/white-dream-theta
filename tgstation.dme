@@ -2974,6 +2974,7 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "THETA\code\_onclick\item_attack.dm"
 #include "THETA\code\datums\traits\programmer.dm"
 #include "THETA\code\game\areas\ThetaMiningArea.dm"
 #include "THETA\code\game\objects\effects\portals.dm"
