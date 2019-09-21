@@ -265,7 +265,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	var/active = 0
 	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("�������", "���������", "����")
+	attack_verb = list("attacked", "struck", "hit")
 	var/hacked = FALSE
 	var/saber_color
 
@@ -328,7 +328,7 @@
 	item_state = "arm_blade"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
-	attack_verb = list("���������", "��������", "�������")
+	attack_verb = list("pricked", "absorbed", "gored")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 
@@ -343,7 +343,7 @@
 	var/active = FALSE
 	icon = 'icons/obj/items_and_weapons.dmi'
 	hitsound = 'sound/weapons/smash.ogg'
-	attack_verb = list("��������")
+	attack_verb = list("robusted")
 
 /obj/item/toy/windupToolbox/attack_self(mob/user)
 	if(!active)
@@ -390,7 +390,7 @@
 	throw_range = 5
 	force_unwielded = 0
 	force_wielded = 0
-	attack_verb = list("�������", "struck", "����")
+	attack_verb = list("attacked", "struck", "hit")
 
 /obj/item/twohanded/dualsaber/toy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	return 0
@@ -411,7 +411,7 @@
 	force = 5
 	throwforce = 5
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("�������", "�����", "�������", "�����")
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /*
@@ -678,7 +678,7 @@
 	var/card_throwforce = 0
 	var/card_throw_speed = 3
 	var/card_throw_range = 7
-	var/list/card_attack_verb = list("�������")
+	var/list/card_attack_verb = list("attacked")
 
 /obj/item/toy/cards/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
@@ -1017,7 +1017,7 @@
 	card_throwforce = 10
 	card_throw_speed = 3
 	card_throw_range = 7
-	card_attack_verb = list("�������", "�����", "��������", "�����", "�����")
+	card_attack_verb = list("attacked", "sliced", "diced", "slashed", "cut")
 	resistance_flags = NONE
 
 /*
