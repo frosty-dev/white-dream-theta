@@ -264,15 +264,16 @@ GLOBAL_VAR(restart_counter)
 		hostedby = CONFIG_GET(string/hostedby)
 		server_name = CONFIG_GET(string/servername)
 
-	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>[server_name] presents:</b></big> [station_name()]</br>"
-	s += "<img src=\"https://i.imgur.com/lmUGFYa.png\"></a>"
+	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>[server_name] Main</b></big></br>"
+	s += "<img src=\"https://i.imgur.com/tmxrtV0.png\"></a>"
 
 	var/players = GLOB.clients.len
 
-	if(GLOB.master_mode)
-		s += "<b>Mode:</b> [GLOB.master_mode]</br>"
+	s += "<b>Map:</b> [SSmapping.config?.map_name || "Loading..."]</br>"
 
-	s += "<b>Players:</b> [players]/150</br>"
+	s += "<b>Players:</b> [players]/80</br>"
+
+	s += "<b>Time:</b> [worldtime2text()]</br>"
 
 	if (!host && hostedby)
 		s += "<b>Host:</b> [hostedby]"
