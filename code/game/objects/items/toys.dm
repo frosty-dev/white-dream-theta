@@ -189,7 +189,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	materials = list(/datum/material/iron=10, /datum/material/glass=10)
-	attack_verb = list("атакует", "пистолетирует", "бьёт", "колотит")
+	attack_verb = list("struck", "pistol whipped", "hit", "bashed")
 	var/bullets = 7
 
 /obj/item/toy/gun/examine(mob/user)
@@ -227,12 +227,12 @@
 		return
 	src.add_fingerprint(user)
 	if (src.bullets < 1)
-		user.show_message("<span class='warning'>*щёлк*</span>", 2)
+		user.show_message("<span class='warning'>*click*</span>", MSG_AUDIBLE)
 		playsound(src, 'sound/weapons/gun_dry_fire.ogg', 30, TRUE)
 		return
 	playsound(user, 'sound/weapons/gunshot.ogg', 100, TRUE)
 	src.bullets--
-	user.visible_message("<span class='danger'><b>[user]</b> стреляет из <b>[src.name]</b> в <b>[target]</b>!</span>", \
+	user.visible_message("<span class='danger'><b>[user]</b> стреляет из <b>[src.name]</b> по <b>[target]</b>!</span>", \
 						"<span class='danger'>Ты стреляешь из <b>[src.name]</b> в <b>[target]</b>!</span>", \
 						 "<span class='italics'>Ты слышишь выстрел!</span>")
 
@@ -265,7 +265,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	var/active = 0
 	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("атакует", "вмазывает", "бьёт")
+	attack_verb = list("attacked", "struck", "hit")
 	var/hacked = FALSE
 	var/saber_color
 
@@ -328,7 +328,7 @@
 	item_state = "arm_blade"
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
-	attack_verb = list("протыкает", "пожирает", "унижает")
+	attack_verb = list("pricked", "absorbed", "gored")
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = FLAMMABLE
 
@@ -343,7 +343,7 @@
 	var/active = FALSE
 	icon = 'icons/obj/items_and_weapons.dmi'
 	hitsound = 'sound/weapons/smash.ogg'
-	attack_verb = list("робастит")
+	attack_verb = list("robusted")
 
 /obj/item/toy/windupToolbox/attack_self(mob/user)
 	if(!active)
@@ -390,7 +390,7 @@
 	throw_range = 5
 	force_unwielded = 0
 	force_wielded = 0
-	attack_verb = list("атакует", "struck", "бьёт")
+	attack_verb = list("attacked", "struck", "hit")
 
 /obj/item/twohanded/dualsaber/toy/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	return 0
@@ -411,7 +411,7 @@
 	force = 5
 	throwforce = 5
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("атакует", "режет", "втыкает", "рубит")
+	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /*
@@ -476,6 +476,7 @@
 	var/timer = 0
 	var/cooldown = 30
 	var/quiet = 0
+	w_class = WEIGHT_CLASS_SMALL
 
 //all credit to skasi for toy mech fun ideas
 /obj/item/toy/prize/attack_self(mob/user)
@@ -612,6 +613,7 @@
 	name = "toy AI"
 	desc = "A little toy model AI core with real law announcing action!"
 	icon_state = "AI"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/toy/talking/AI/generate_messages()
 	return list(generate_ion_law())
@@ -649,6 +651,7 @@
 	messages = list("You won't get away this time, Griffin!", "Stop right there, criminal!", "Hoot! Hoot!", "I am the night!")
 	chattering = TRUE
 	phomeme = "owl"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/toy/talking/griffin
 	name = "griffin action figure"
@@ -657,6 +660,7 @@
 	messages = list("You can't stop me, Owl!", "My plan is flawless! The vault is mine!", "Caaaawwww!", "You will never catch me!")
 	chattering = TRUE
 	phomeme = "griffin"
+	w_class = WEIGHT_CLASS_SMALL
 
 /*
 || A Deck of Cards for playing various games of chance ||
@@ -674,7 +678,7 @@
 	var/card_throwforce = 0
 	var/card_throw_speed = 3
 	var/card_throw_range = 7
-	var/list/card_attack_verb = list("атакует")
+	var/list/card_attack_verb = list("attacked")
 
 /obj/item/toy/cards/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
@@ -1013,7 +1017,7 @@
 	card_throwforce = 10
 	card_throw_speed = 3
 	card_throw_range = 7
-	card_attack_verb = list("атакует", "режет", "нарезает", "рубит", "режет")
+	card_attack_verb = list("attacked", "sliced", "diced", "slashed", "cut")
 	resistance_flags = NONE
 
 /*
@@ -1212,6 +1216,7 @@
 	var/cooldown = 0
 	var/toysay = "What the fuck did you do?"
 	var/toysound = 'sound/machines/click.ogg'
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/toy/figure/Initialize()
 	. = ..()

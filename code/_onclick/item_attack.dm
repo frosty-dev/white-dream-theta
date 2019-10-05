@@ -14,11 +14,7 @@
 		return
 	if(target.attackby(src,user, params))
 		return
-	if(QDELETED(src))
-		stack_trace("An item got deleted while performing an item attack and did not stop melee_attack_chain.")
-		return
-	if(QDELETED(target))
-		stack_trace("The target of an item attack got deleted and melee_attack_chain was not stopped.")
+	if(QDELETED(src) || QDELETED(target))
 		return
 	afterattack(target, user, TRUE, params)
 
@@ -136,7 +132,7 @@
 /mob/living/proc/send_item_attack_message(obj/item/I, mob/living/user, hit_area)
 	var/message_verb = "áü¸ò"
 	if(I.attack_verb && I.attack_verb.len)
-		message_verb = "[pick(I.attack_verb)]"
+		message_verb = "[ru_attack_verb(pick(I.attack_verb), I)]"
 	else if(!I.force)
 		return
 	var/message_hit_area = ""

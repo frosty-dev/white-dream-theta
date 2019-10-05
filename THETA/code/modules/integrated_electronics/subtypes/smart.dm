@@ -237,6 +237,9 @@
 /mob/living/brain/canUseTopic(be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	return	check_bot_self
 
+/mob/living/brain/IsAdvancedToolUser()
+	return	check_bot_self
+
 /obj/item/integrated_circuit/smart/advanced_pathfinder/proc/hippie_xor_decrypt()
 	var/Ps = get_pin_data(IC_INPUT, 4)
 	if(!Ps)
@@ -275,6 +278,7 @@
 	demands_object_input = TRUE
 
 	var/obj/item/paicard/installed_pai
+	var/can_holo			// Store masters command
 
 /obj/item/integrated_circuit/input/pAI_connector/attackby(var/obj/item/paicard/O, var/mob/user)
 	if(!istype(O,/obj/item/paicard))
@@ -288,6 +292,10 @@
 	can_be_asked_input = FALSE
 	to_chat(user, "<span class='notice'>You slowly connect the circuit's pins to the [installed_pai].</span>")
 	to_chat(O, "<span class='notice'>You are slowly being connected to the pAI connector.</span>")
+	can_holo = O.pai.canholo
+	if(O.pai.canholo)
+		O.pai.canholo = FALSE
+		to_chat(O, "<span class='notice'>pAI connector override and disable your holoprojectors.</span>")
 	O.pai.remote_control=src
 	set_pin_data(IC_OUTPUT, 1, O)
 
@@ -314,7 +322,6 @@
 	push_data()
 	activate_pin(n)
 
-
 /obj/item/integrated_circuit/input/pAI_connector/Destroy()
 	RemovepAI()
 	..()
@@ -325,7 +332,9 @@
 		installed_pai.forceMove(drop_location())
 		set_pin_data(IC_OUTPUT, 1, WEAKREF(null))
 		installed_pai.pai.remote_control = null
-
+		if(can_holo)
+			installed_pai.pai.canholo = can_holo
+			to_chat(installed_pai, "<span class='notice'>Your holoprojectors is under your's control again</span>")
 
 //pAI changes
 /mob/living/silicon/pai/var/check_bot_self = FALSE
@@ -367,4 +376,7 @@
 	paiholder.do_work(6)
 
 /mob/living/silicon/pai/canUseTopic(be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
+	return	check_bot_self
+
+/mob/living/silicon/pai/IsAdvancedToolUser()
 	return	check_bot_self

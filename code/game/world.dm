@@ -2,8 +2,22 @@
 
 GLOBAL_VAR(restart_counter)
 
-//This happens after the Master subsystem new(s) (it's a global datum)
-//So subsystems globals exist, but are not initialised
+/**
+  * World creation
+  *
+  * Here is where a round itself is actually begun and setup, lots of important config changes happen here
+  * * db connection setup
+  * * config loaded from files
+  * * loads admins
+  * * Sets up the dynamic menu system
+  * * and most importantly, calls initialize on the master subsystem, starting the game loop that causes the rest of the game to begin processing and setting up
+  *
+  * Note this happens after the Master subsystem is created (as that is a global datum), this means all the subsystems exist,
+  * but they have not been Initialized at this point, only their New proc has run
+  * 
+  * Nothing happens until something moves. ~Albert Einstein 
+  * 
+  */
 /world/New()
 
 	log_world("World loaded at [time_stamp()]!")
@@ -250,15 +264,16 @@ GLOBAL_VAR(restart_counter)
 		hostedby = CONFIG_GET(string/hostedby)
 		server_name = CONFIG_GET(string/servername)
 
-	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>[server_name] presents:</b></big> [station_name()]</br>"
-	s += "<img src=\"https://i.imgur.com/lmUGFYa.png\"></a>"
+	s += "<a href=\"https://discord.gg/BNUgzsT\"><big><b>[server_name] Theta</b></big></br>"
+	s += "<img src=\"https://i.imgur.com/tmxrtV0.png\"></a>"
 
 	var/players = GLOB.clients.len
 
-	if(GLOB.master_mode)
-		s += "<b>Mode:</b> [GLOB.master_mode]</br>"
+	s += "<b>Map:</b> [SSmapping.config?.map_name || "Loading..."]</br>"
 
-	s += "<b>Players:</b> [players]/150</br>"
+	s += "<b>Players:</b> [players]/80</br>"
+
+	s += "<b>Time:</b> [worldtime2text()]</br>"
 
 	if (!host && hostedby)
 		s += "<b>Host:</b> [hostedby]"
