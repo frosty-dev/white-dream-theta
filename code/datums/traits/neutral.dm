@@ -35,7 +35,7 @@
 
 /datum/quirk/pineapple_liker
 	name = "Любитель ананасов"
-	desc = "Вы очень сильно любите ананасы. Вы никогда ими не наедитесь!"  
+	desc = "Вы очень сильно любите ананасы. Вы никогда ими не наедитесь!"
 	value = 0
 	gain_text = "<span class='notice'>Вы чувствуете, что испытываете сильную тягу к ананасам..</span>"
 	lose_text = "<span class='notice'>Ваша любовь к ананасам медленно угасает..</span>"
@@ -56,11 +56,11 @@
 	name = "Отвращение к ананасам"
 	desc = "Вы ненавидите ананасы. Серьёзно, кто, чёрт возьми, в здравом уме скажет, что они вкусные? И какой психопат посмел бы положить это в ПИЦЦУ?!"
 	value = 0
-	gain_text = "<span class='notice'>Вы думаете над тем, какой кусок идиота любит ананасы...</span>" 
+	gain_text = "<span class='notice'>Вы думаете над тем, какой кусок идиота любит ананасы...</span>"
 	lose_text = "<span class='notice'>Ваша ненависть к ананасам медленнно угасает...</span>"
 	medical_record_text = "Пациент считает, что ананасы отвратительны."
 
-/datum/quirk/pineapple_hater/add() 
+/datum/quirk/pineapple_hater/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species
 	species.disliked_food |= PINEAPPLE
@@ -110,3 +110,18 @@
 /datum/quirk/monochromatic/remove()
 	if(quirk_holder)
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
+
+/datum/quirk/phobia
+	name = "Фобия"
+	desc = "У тебя есть нерациональный страх чего-то"
+	value = 0
+	medical_record_text = "Пациент имеет склонность к нелогичному страху чего-то."
+
+/datum/quirk/phobia/post_add()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(new /datum/brain_trauma/mild/phobia(H.client.prefs.phobia), TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/phobia/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.cure_trauma_type(/datum/brain_trauma/mild/phobia, TRAUMA_RESILIENCE_ABSOLUTE)

@@ -45,6 +45,8 @@ GLOBAL_LIST_INIT(ru_dictionary, list(
 	"clubbed"					= "долбит",
 	"busted"					= "долбит",
 	"swatted"					= "шлёпает",
+	"pounded"					= "лупит",
+	"slammed"					= "ломает",
 	"bashed"					= "колотит"
 	))
 /proc/ru_attack_verb(var/attack_verb, var/item)
