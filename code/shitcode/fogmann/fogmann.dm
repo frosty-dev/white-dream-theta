@@ -246,7 +246,7 @@ obj/item/banner/engineering/atmos/mundane
 	name = "shotgun dart"
 	desc = "A dart for use in shotguns. Filled with tranquilizers."
 	icon_state = "cshell"
-	projectile_type = /obj/item/projectile/bullet/dart
+	projectile_type = /obj/projectile/bullet/dart
 
 /obj/item/ammo_casing/shotgun/dart/sleeping/Initialize()
 	. = ..()
