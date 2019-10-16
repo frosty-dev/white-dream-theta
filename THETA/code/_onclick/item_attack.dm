@@ -46,6 +46,7 @@ GLOBAL_LIST_INIT(ru_dictionary, list(
 	"busted"					= "долбит",
 	"swatted"					= "шлёпает",
 	"pounded"					= "лупит",
+	"pinched"					= "щиплет",
 	"slammed"					= "ломает",
 	"bashed"					= "колотит"
 	))
