@@ -991,3 +991,4 @@
 	materials = list(/datum/material/iron = 500)
 	build_path = /obj/item/stack/ducts
 	category = list("initial", "Construction")
+	maxstack = 50

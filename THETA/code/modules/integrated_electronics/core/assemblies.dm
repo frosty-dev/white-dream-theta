@@ -81,9 +81,9 @@
 			D.open()
 
 /obj/item/electronic_assembly/Initialize()
+	custom_materials[/datum/material/iron] = round((max_complexity + max_components) / 4) * SScircuit.cost_multiplier
 	.=..()
 	START_PROCESSING(SScircuit, src)
-	custom_materials[/datum/material/iron] = round((max_complexity + max_components) / 4) * SScircuit.cost_multiplier
 
 	//sets up diagnostic hud view
 	prepare_huds()
