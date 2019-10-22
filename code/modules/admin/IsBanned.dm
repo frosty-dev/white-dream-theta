@@ -44,10 +44,10 @@
 	if(!real_bans_only && !C && IsGuestKey(key))
 		if (CONFIG_GET(flag/guest_ban))
 			log_access("Failed Login: [key] - Guests not allowed")
-			return list("reason"="guest", "desc"="\nГости не разрешены.")
+			return list("reason"="guest", "desc"="\nпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.")
 		if (CONFIG_GET(flag/panic_bunker) && SSdbcore.Connect())
 			log_access("Failed Login: [key] - Guests not allowed during panic bunker")
-			return list("reason"="guest", "desc"="\nОверпоп, заходите позже.")
+			return list("reason"="guest", "desc"="\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.")
 
 	//Population Cap Checking
 	var/extreme_popcap = CONFIG_GET(number/extreme_popcap)
@@ -80,10 +80,10 @@
 							message_admins(msg)
 							addclientmessage(ckey,"<span class='adminnotice'>Admin [key] has been allowed to bypass a matching non-admin ban on [i["key"]] [i["ip"]]-[i["computerid"]].</span>")
 						continue
-				var/expires = "Навсегда."
+				var/expires = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ."
 				if(i["expiration_time"])
-					expires = "Блокировка на [DisplayTimeText(text2num(i["duration"]) MINUTES)] заканчивается в [i["expiration_time"]]."
-				var/desc = {"Доступ запрещён, ([i["key"]]). Метка: [ph2up(i["reason"])]. Блокировка #[i["id"]]) выдана [i["admin_key"]] в [i["bantime"]] во время раунда [i["round_id"]]. [expires]"}
+					expires = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ [DisplayTimeText(text2num(i["duration"]) MINUTES)] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ [i["expiration_time"]]."
+				var/desc = {"пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, ([i["key"]]). пїЅпїЅпїЅпїЅпїЅ: [ph2up(i["reason"])]. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ #[i["id"]]) пїЅпїЅпїЅпїЅпїЅпїЅ [i["admin_key"]] пїЅ [i["bantime"]] пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ [i["round_id"]]. [expires]"}
 				log_access("Failed Login: [key] [computer_id] [address] - Banned (#[i["id"]])")
 				return list("reason"="Banned","desc"="[desc]")
 	if (admin)
@@ -204,9 +204,9 @@
 			return null
 
 		if (C) //user is already connected!.
-			to_chat(C, "Возможно у вас проблемы. Если повторилось, то @Valtos#7828 поможет решить проблему.")
+			to_chat(C, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ @Valtos#7828 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.")
 
-		var/desc = "\nПопробуйте лучше, ([bannedckey]). Метка:\n[ph2up(ban["message"])]\nВыдан [ban["admin"]]\n"
+		var/desc = "\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, ([bannedckey]). пїЅпїЅпїЅпїЅпїЅ:\n[ph2up(ban["message"])]\nпїЅпїЅпїЅпїЅпїЅ [ban["admin"]]\n"
 		. = list("reason" = "Stickyban", "desc" = desc)
 		log_access("Failed Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
 
