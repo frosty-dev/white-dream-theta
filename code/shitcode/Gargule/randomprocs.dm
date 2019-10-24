@@ -64,7 +64,7 @@ mob/living/carbon/human/species/lizard/Initialize()
 		var/obj/item/seeds/berry/S = FT.seed
 		if(S.get_gene(/datum/plant_gene/trait/glow))
 			pow = S.potency*2/100//if trait any of biolums
-			if(S.get_gene(/datum/plant_gene/trait/glow/berry))
+			if(S.get_gene(/datum/plant_gene/trait/glow/strong))
 				pow += 1//if trait glow-berry
 			if(pow > 0)
 				var/obj/item/organ/heart/light/N = new(user.loc)
@@ -72,6 +72,11 @@ mob/living/carbon/human/species/lizard/Initialize()
 				N.brightness_on = 4+pow
 				qdel(F)
 				qdel(src)
+
+/datum/plant_gene/trait/glow/strong
+	name = "Strong Bioluminescence"
+	rate = 0.05
+	glow_color = null
 
 /obj/item/clothing/mask/gas/sechailer/equipped(mob/living/carbon/human/user, slot)
 	..()
