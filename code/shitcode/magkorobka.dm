@@ -93,7 +93,9 @@
 	return
 
 /obj/machinery/party/turntable/power_change()
-	turn_off()
+	. = ..()
+	if(. && (stat & NOPOWER))
+		turn_off()
 
 /obj/machinery/party/turntable/Topic(href, href_list)
 	if(..())
