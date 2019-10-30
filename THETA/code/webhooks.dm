@@ -61,7 +61,7 @@
 /datum/world_topic/ahelp/Run(list/input)
 	var/r_ckey = ckey(input["ckey"])
 	var/s_admin = input["admin"]
-	var/msg = sanitize_russian(input["response"])
+	var/msg = sanitize(input["response"])
 	var/keywordparsedmsg = keywords_lookup(msg)
 	var/client/recipient = GLOB.directory[r_ckey]
 	if(!recipient)
@@ -81,7 +81,7 @@
 	log_admin_private("PM: IRC -> [r_ckey]: [sanitize(msg)]")
 	for(var/client/X in GLOB.admins)
 		to_chat(X, "<font color='blue'><B>PM: DISCORD([s_admin]) -&gt; [key_name(recipient, X, 0)]</B> [keywordparsedmsg]</font>")
-	webhook_send_ahelp("[sanitize_russian(input["admin"])] -> [ckey(input["ckey"])]", sanitize_russian(input["response"]))
+	webhook_send_ahelp("[sanitize(input["admin"])] -> [ckey(input["ckey"])]", sanitize(input["response"]))
 
 /datum/config_entry/string/webhook_address
 	protection = CONFIG_ENTRY_HIDDEN
@@ -133,7 +133,7 @@ GLOBAL_VAR_INIT(webhook_can_fire, 0)
 	var/list/query = list("ckey" = ckey, "token" = token)
 	webhook_send("token", query)
 
-/proc/webhook_send_status_update(var/event,var/data)
+/proc/webhook_send_status_update(var/event, var/data)
 	var/list/query = list("event" = event, "data" = data)
 	webhook_send("status_update", query)
 
@@ -142,6 +142,6 @@ GLOBAL_VAR_INIT(webhook_can_fire, 0)
 		return
 	if (!CONFIG_GET(string/webhook_address) || !CONFIG_GET(string/webhook_key))
 		return
-	var/query = "[CONFIG_GET(string/webhook_address)]?key=[CONFIG_GET(string/webhook_key)]&method=[method]&data=[url_encode(r_json_encode(data))]"
+	var/query = "[CONFIG_GET(string/webhook_address)]?key=[CONFIG_GET(string/webhook_key)]&method=[method]&data=[url_encode(json_encode(data))]"
 	spawn(-1)
 		world.Export(query)
