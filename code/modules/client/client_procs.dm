@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
  * Handles checking for duplicate messages and people sending messages too fast
  *
  * The first checks are if you're sending too fast, this is defined as sending
- * SPAM_TRIGGER_AUTOMUTE messages in 
+ * SPAM_TRIGGER_AUTOMUTE messages in
  * 5 seconds, this will start supressing your messages,
  * if you send 2* that limit, you also get muted
  *
@@ -165,7 +165,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(cache >= SPAM_TRIGGER_AUTOMUTE * 2)
 		total_message_count = 0
 		total_count_reset = 0
-		cmd_admin_mute(src, mute_type, 1)	
+		cmd_admin_mute(src, mute_type, 1)
 		return 1
 
 	//Otherwise just supress the message
@@ -256,6 +256,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 	var/full_version = "[byond_version].[byond_build ? byond_build : "xxx"]"
 	log_access("Login: [key_name(src)] from [address ? address : "localhost"]-[computer_id] || BYOND v[full_version]")
+	webhook_send_status_update("client_login","[src.key]")
 
 	var/alert_mob_dupe_login = FALSE
 	if(CONFIG_GET(flag/log_access))
@@ -456,6 +457,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	if(credits)
 		QDEL_LIST(credits)
 	log_access("Logout: [key_name(src)]")
+	webhook_send_status_update("client_logoff","[src.key]")
 	if(holder)
 		adminGreet(1)
 		holder.owner = null
@@ -479,7 +481,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			send2irc("Server", "[cheesy_message] (No admins online)")
 
 	player_details.achievements.save()
-	
+
 	GLOB.ahelp_tickets.ClientLogout(src)
 	GLOB.directory -= ckey
 	GLOB.clients -= src

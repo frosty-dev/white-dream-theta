@@ -206,6 +206,8 @@
 			if(X.key!=key && X.key!=recipient.key)	//check client/X is an admin and isn't the sender or recipient
 				to_chat(X, "<span class='notice'><B>PM: [key_name(src, X, 0)]-&gt;[key_name(recipient, X, 0)]:</B> [keywordparsedmsg]</span>" )
 
+	webhook_send_ahelp("PM: [key_name(src)]->[key_name(recipient)]", msg)
+
 /client/proc/popup_admin_pm(client/recipient, msg)
 	var/sender = src
 	var/sendername = key
