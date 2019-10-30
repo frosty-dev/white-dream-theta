@@ -84,6 +84,10 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 					to_chat(C, "<font color='[GLOB.OOC_COLOR]'><b><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></b></font>")
 				else
 					to_chat(C, "<span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message linkify'>[msg]</span></span>")
+	if(holder && holder.fakekey)
+		webhook_send_ooc(holder.fakekey,msg)
+	else
+		webhook_send_ooc(key, msg)
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc
