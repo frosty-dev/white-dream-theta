@@ -1,0 +1,6 @@
+SPIZDIL S HIPPIESTATION AS GOOD AS I COULD
+BY CLICKER
+ALL BUGS SHOULD BE SENT TO ClickerOfThings#3371
+
+sper s TG another kuski
+	Gargule
