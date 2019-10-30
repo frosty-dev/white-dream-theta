@@ -2919,4 +2919,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "THETA\code\localization.dm"
 // END_INCLUDE
