@@ -81,6 +81,8 @@
   * Makes you speak like you're drunk
   */
 /proc/slur(n)
+	return ru_slur(n)
+	/*
 	var/phrase = html_decode(n)
 	var/leng = length(phrase)
 	var/counter=length(phrase)
@@ -113,6 +115,7 @@
 				newletter+="[newletter][newletter]"
 		newphrase+="[newletter]";counter-=1
 	return newphrase
+	*/
 
 /// Makes you talk like you got cult stunned, which is slurring but with some dark messages
 /proc/cultslur(n) // Inflicted on victims of a stun talisman

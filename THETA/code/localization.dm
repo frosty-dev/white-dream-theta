@@ -14,3 +14,37 @@
 			continue
 		t += ascii2text(a - 32)
 	return uppertext(t)
+
+/proc/ru_slur(n)
+	var/phrase = html_decode(n)
+	var/leng = lentext(phrase)
+	var/counter=lentext(phrase)
+	var/newphrase=""
+	var/newletter=""
+	while(counter>=1)
+		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
+		if(rand(1,3)==3)
+			if(lowertext(newletter)=="д")
+				newletter="т"
+			if(lowertext(newletter)=="ш")
+				newletter="щ"
+			if(lowertext(newletter)=="а")
+				newletter="ах"
+			if(lowertext(newletter)=="ч")
+				newletter="щ"
+			if(lowertext(newletter)=="з")
+				newletter="с"
+		if(rand(1,20)==20)
+			if(newletter==" ")
+				newletter="...ууууххххххх..."
+			if(newletter==".")
+				newletter=" *ИК*."
+		switch(rand(1,20))
+			if(1)
+				newletter+="'"
+			if(10)
+				newletter+="[newletter]"
+			if(20)
+				newletter+="[newletter][newletter]"
+		newphrase+="[newletter]";counter-=1
+	return newphrase

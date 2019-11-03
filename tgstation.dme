@@ -2930,7 +2930,7 @@
 #include "THETA\code\_globalvars\configuration.dm"
 #include "THETA\code\_globalvars\misc.dm"
 #include "THETA\code\_globalvars\lists\objects.dm"
-#include "THETA\code\datums\traits\programmer.dm"
+#include "THETA\code\datums\traits\positive.dm"
 #include "THETA\code\game\objects\items\devices\multitool.dm"
 #include "THETA\code\modules\admin\admin.dm"
 #include "THETA\code\modules\client\client_procs.dm"
@@ -2983,9 +2983,4 @@
 #include "THETA\code\modules\projectiles\guns\energy\super_kinetic_accelerator.dm"
 #include "THETA\code\modules\research\designs\electronics_designs.dm"
 #include "THETA\code\modules\research\techweb\all_nodes.dm"
-#include "THETA\code\modules\shuttle\adv_nav.dm"
-#include "THETA\code\modules\shuttle\shuttle.dm"
-#include "THETA\code\modules\shuttle\shuttle_spawners.dm"
-#include "THETA\code\modules\shuttle\DIY\diy_big.dmm"
-#include "THETA\code\modules\shuttle\DIY\diy_normal.dmm"
 // END_INCLUDE
