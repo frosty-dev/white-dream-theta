@@ -61,6 +61,10 @@
 
 	//multiz lool
 	while(dmmRegex.Find(tfile, stored_index))
+		// FUCK YOU LUMMOX!!!
+		#if DM_VERSION == 513 && DM_BUILD == 1495
+		dmmRegex.next += length(dmmRegex.match)
+		#endif
 		stored_index = dmmRegex.next
 
 		// "aa" = (/type{vars=blah})
@@ -305,7 +309,7 @@
 	//The next part of the code assumes there's ALWAYS an /area AND a /turf on a given tile
 	//first instance the /area and remove it from the members list
 	index = members.len
-	if(members[index] != /area/template_noop)		
+	if(members[index] != /area/template_noop)
 		var/atype = members[index]
 		world.preloader_setup(members_attributes[index], atype)//preloader for assigning  set variables on atom creation
 		var/atom/instance = areaCache[atype]

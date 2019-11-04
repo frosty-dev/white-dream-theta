@@ -137,6 +137,10 @@ GLOBAL_PROTECT(protected_ranks)
 	var/datum/admin_rank/previous_rank
 	var/regex/admin_ranks_regex = new(@"^Name\s*=\s*(.+?)\s*\n+Include\s*=\s*([\l @]*?)\s*\n+Exclude\s*=\s*([\l @]*?)\s*\n+Edit\s*=\s*([\l @]*?)\s*\n*$", "gm")
 	while(admin_ranks_regex.Find(ranks_text))
+		// FUCK YOU LUMMOX!!!
+		#if DM_VERSION == 513 && DM_BUILD == 1495
+		admin_ranks_regex.next += length(admin_ranks_regex.match)
+		#endif
 		var/datum/admin_rank/R = new(admin_ranks_regex.group[1])
 		if(!R)
 			continue
@@ -230,6 +234,10 @@ GLOBAL_PROTECT(protected_ranks)
 	var/admins_text = file2text("[global.config.directory]/admins.txt")
 	var/regex/admins_regex = new(@"^(?!#)(.+?)\s+=\s+(.+)", "gm")
 	while(admins_regex.Find(admins_text))
+		// FUCK YOU LUMMOX!!!
+		#if DM_VERSION == 513 && DM_BUILD == 1495
+		admins_regex.next += length(admins_regex.match)
+		#endif
 		new /datum/admins(rank_names[admins_regex.group[2]], ckey(admins_regex.group[1]), FALSE, TRUE)
 	if(!CONFIG_GET(flag/admin_legacy_system) || dbfail)
 		var/datum/DBQuery/query_load_admins = SSdbcore.NewQuery("SELECT ckey, `rank` FROM [format_table_name("admin")] ORDER BY `rank`")
