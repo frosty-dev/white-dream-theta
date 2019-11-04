@@ -81,7 +81,7 @@
   * Makes you speak like you're drunk
   */
 /proc/slur(n)
-	return ru_slur(n)
+	return r_slur(n)
 	/*
 	var/phrase = html_decode(n)
 	var/leng = length(phrase)
@@ -161,6 +161,8 @@
 
 ///Adds stuttering to the message passed in
 /proc/stutter(n)
+	return r_stutter(n)
+/*
 	var/te = html_decode(n)
 	var/t = ""//placed before the message. Not really sure what it's for.
 	n = length(n)//length of the entire word
@@ -182,6 +184,7 @@
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
 	return copytext(sanitize(t),1,MAX_MESSAGE_LEN)
+*/
 
 ///Convert a message to derpy speak
 /proc/derpspeech(message, stuttering)
