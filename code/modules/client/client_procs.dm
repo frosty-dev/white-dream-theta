@@ -301,6 +301,11 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			else
 				qdel(src)
 				return
+	// THETA BEGIN
+	if (byond_version < 513)
+		to_chat(src, "<span class='userdanger'>All text will be fucked. Update BYOND to version 513!</span>")
+		to_chat(src, "<span class='danger'>You are currently using [byond_version] BYOND version, but our server using UTF-8 to handle game. I recommend you to update it at least 513 version - first, where BYOND provides UTF-8 support.</span>")
+	// THETA END
 
 	if(SSinput.initialized)
 		set_macros()
