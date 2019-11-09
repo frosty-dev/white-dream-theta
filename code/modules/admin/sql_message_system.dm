@@ -524,6 +524,7 @@
 	if(!query_get_message_output.warn_execute())
 		qdel(query_get_message_output)
 		return
+	output+="<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>"
 	while(query_get_message_output.NextRow())
 		var/message_id = query_get_message_output.item[1]
 		var/admin_key = query_get_message_output.item[2]

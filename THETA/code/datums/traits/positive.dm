@@ -2,6 +2,7 @@
 
 /obj/item/integrated_circuit_printer/upgraded/prog
 	name = "Advanced ICP"
+	icon = 'THETA/icons/obj/assemblies/electronic_tools.dmi'
 	icon_state = "adv_icp"
 	w_class = WEIGHT_CLASS_NORMAL
 
