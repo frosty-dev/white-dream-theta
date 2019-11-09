@@ -15,7 +15,7 @@
 	set hidden = TRUE
 	var/message = input("", "Say \"text\"") as null|text
 	say_verb(message)
-	
+
 ///Whisper verb
 /mob/verb/whisper_verb(message as text)
 	set name = "Whisper"
@@ -28,7 +28,7 @@
 ///whisper a message
 /mob/proc/whisper(message, datum/language/language=null)
 	say(message, language) //only living mobs actually whisper, everything else just talks
-	
+
 ///The me emote verb
 /mob/verb/me_verb(message as text)
 	set name = "Me"
