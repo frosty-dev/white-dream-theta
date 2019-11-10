@@ -1,13 +1,13 @@
 /datum/world_topic/players
 	keyword = "players"
-	log = FALSE
+//	log = FALSE
 
 /datum/world_topic/players/Run(list/input)
 	return GLOB.player_list.len
-
+/*
 /datum/world_topic/adminwho
 	keyword = "adminwho"
-	log = FALSE
+//	log = FALSE
 
 /datum/world_topic/adminwho/Run(list/input)
 	var/msg = "Current Admins:\n"
@@ -17,10 +17,10 @@
 			msg += "\t[C] is a [C.holder.rank]"
 			msg += "\n"
 	return msg
-
+*/
 /datum/world_topic/who
 	keyword = "who"
-	log = FALSE
+//	log = FALSE
 
 /datum/world_topic/who/Run(list/input)
 	var/msg = "Current Players:\n"
