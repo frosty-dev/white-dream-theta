@@ -15,6 +15,8 @@
 		t += ascii2text(a - 32)
 	return uppertext(t)
 
+//513 TEXT PROCS (copytext_char and so on)
+#if DM_VERSION >= 513 && DM_BUILD >= 1493
 /proc/r_slur(n)
 	var/phrase = html_decode(n)
 	var/leng = length(phrase)
@@ -71,3 +73,4 @@
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
 	return copytext_char(sanitize(t),1,MAX_MESSAGE_LEN)
+#endif
