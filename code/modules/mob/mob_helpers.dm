@@ -81,8 +81,9 @@
   * Makes you speak like you're drunk
   */
 /proc/slur(n)
+	#if DM_VERSION > 513
 	return r_slur(n)
-	/*
+	#endif
 	var/phrase = html_decode(n)
 	var/leng = length(phrase)
 	var/counter=length(phrase)
@@ -115,7 +116,6 @@
 				newletter+="[newletter][newletter]"
 		newphrase+="[newletter]";counter-=1
 	return newphrase
-	*/
 
 /// Makes you talk like you got cult stunned, which is slurring but with some dark messages
 /proc/cultslur(n) // Inflicted on victims of a stun talisman
@@ -161,8 +161,9 @@
 
 ///Adds stuttering to the message passed in
 /proc/stutter(n)
+	#if DM_VERSION > 513
 	return r_stutter(n)
-/*
+	#endif
 	var/te = html_decode(n)
 	var/t = ""//placed before the message. Not really sure what it's for.
 	n = length(n)//length of the entire word
@@ -184,7 +185,6 @@
 		t = text("[t][n_letter]")//since the above is ran through for each letter, the text just adds up back to the original word.
 		p++//for each letter p is increased to find where the next letter will be.
 	return copytext(sanitize(t),1,MAX_MESSAGE_LEN)
-*/
 
 ///Convert a message to derpy speak
 /proc/derpspeech(message, stuttering)
