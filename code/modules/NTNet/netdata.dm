@@ -9,13 +9,13 @@
 
 	var/list/data = list()
 
-	var/list/passkey
+	var/list/passkey = list()
 
 /datum/netdata/proc/standard_format_data(primary, secondary, passkey)
 	data["data"] = primary
 	data["data_secondary"] = secondary
 	data["encrypted_passkey"] = passkey
-	data.passkey = passkey
+	data.passkey += passkey
 
 /datum/netdata/proc/json_to_data(json)
 	data = json_decode(json)
