@@ -1,7 +1,7 @@
 [![fuck](https://travis-ci.com/frosty-dev/white-dream-theta.svg?branch=theta)](https://travis-ci.com/frosty-dev/white-dream-theta)
 ## White Dream: New Hope
 
-* **Website:** https://www.frosty.space
+* **Website:** https://station13.ru
 * **Code:** https://github.com/frosty-dev/white-dream-theta
 * **Wiki** https://tgstation13.org/wiki/Main_Page
 * **Codedocs:** https://codedocs.tgstation13.org/
