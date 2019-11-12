@@ -11,10 +11,10 @@
 
 	var/list/passkey
 
-/datum/netdata/proc/standard_format_data(primary, secondary, passkey)
+/datum/netdata/proc/standard_format_data(primary, secondary, key)
 	data["data"] = primary
 	data["data_secondary"] = secondary
-	data["encrypted_passkey"] = passkey
+	data["encrypted_passkey"] = key
 
 /datum/netdata/proc/json_to_data(json)
 	data = json_decode(json)
