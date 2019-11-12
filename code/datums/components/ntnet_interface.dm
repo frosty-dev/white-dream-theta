@@ -9,6 +9,7 @@
 	var/datum/component/ntnet_interface/NIC = GetComponent(/datum/component/ntnet_interface)
 	if(!NIC)
 		return FALSE
+	data.pre_send(NIC)//THETA
 	return NIC.__network_send(data, netid)
 
 /datum/component/ntnet_interface
