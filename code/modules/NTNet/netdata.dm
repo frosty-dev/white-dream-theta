@@ -15,7 +15,6 @@
 	data["data"] = primary
 	data["data_secondary"] = secondary
 	data["encrypted_passkey"] = passkey
-	passkey += passkey
 
 /datum/netdata/proc/json_to_data(json)
 	data = json_decode(json)
