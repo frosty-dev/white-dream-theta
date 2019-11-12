@@ -9,7 +9,7 @@
 
 	var/list/data = list()
 
-	var/list/passkey = list()
+	var/list/passkey
 
 /datum/netdata/proc/standard_format_data(primary, secondary, passkey)
 	data["data"] = primary
