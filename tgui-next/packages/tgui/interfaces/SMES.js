@@ -6,16 +6,7 @@ export const SMES = props => {
   const { state } = props;
   const { config, data } = state;
   const { ref } = config;
-  let capacityPercentState;
-  if (data.capacityPercent > 50) {
-    capacityPercentState = "good";
-  }
-  else if (data.capacityPercent > 15) {
-    capacityPercentState = "average";
-  }
-  else {
-    capacityPercentState = "bad";
-  }
+
   let inputState;
   if (data.capacityPercent >= 100) {
     inputState = "good";
@@ -41,8 +32,12 @@ export const SMES = props => {
     <Fragment>
       <Section title="Stored Energy">
         <ProgressBar
-          value={data.capacityPercent*0.01}
-          color={capacityPercentState} />
+          value={data.capacityPercent * 0.01}
+          ranges={{
+            good: [0.5, Infinity],
+            average: [0.15, 0.5],
+            bad: [-Infinity, 0.15],
+          }} />
       </Section>
       <Section title="Input">
         <LabeledList>
