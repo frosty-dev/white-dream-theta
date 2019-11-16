@@ -16,8 +16,6 @@
 			warning("[WT] has keyword 'key'! Ignoring...")
 		else
 			.[keyword] = WT
-			world << "1: [WT] == [keyword]"
-			warning("2: [WT] == [keyword]")
 
 // DATUM
 
