@@ -2935,6 +2935,8 @@
 #include "THETA\code\modules\admin\admin.dm"
 #include "THETA\code\modules\client\client_procs.dm"
 #include "THETA\code\modules\client\verbs\looc.dm"
+#include "THETA\code\modules\hydroponics\biogenerator.dm"
+#include "THETA\code\modules\hydroponics\grown\random.dm"
 #include "THETA\code\modules\integrated_electronics\data_huds.dm"
 #include "THETA\code\modules\integrated_electronics\NTnetBYpass.dm"
 #include "THETA\code\modules\integrated_electronics\receiver.dm"
@@ -2981,6 +2983,7 @@
 #include "THETA\code\modules\mining\machine_vending.dm"
 #include "THETA\code\modules\mob\living\simple_animal\hostile\headcrab.dm"
 #include "THETA\code\modules\projectiles\guns\energy\super_kinetic_accelerator.dm"
+#include "THETA\code\modules\research\designs\biogenerator_designs.dm"
 #include "THETA\code\modules\research\designs\electronics_designs.dm"
 #include "THETA\code\modules\research\techweb\all_nodes.dm"
 // END_INCLUDE
