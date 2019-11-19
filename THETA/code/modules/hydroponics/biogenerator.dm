@@ -1,3 +1,3 @@
 /obj/machinery/biogenerator
-	show_categories = list("Food", "Botany Chemicals", "Organic Materials", "Leather and Cloth", "Special") //Added special category
-	timesFiveCategories = list("Food", "Botany Chemicals", "Organic Materials", "Leather and Cloth", "Special")
+	show_categories = list("Food", "Botany Chemicals", "Organic Materials", "Special") //Added special category
+	timesFiveCategories = list("Food", "Botany Chemicals", "Organic Materials", "Special")

@@ -2937,6 +2937,7 @@
 #include "THETA\code\modules\client\client_procs.dm"
 #include "THETA\code\modules\client\verbs\looc.dm"
 #include "THETA\code\modules\hydroponics\biogenerator.dm"
+#include "THETA\code\modules\hydroponics\plant_genes.dm"
 #include "THETA\code\modules\hydroponics\grown\random.dm"
 #include "THETA\code\modules\integrated_electronics\data_huds.dm"
 #include "THETA\code\modules\integrated_electronics\NTnetBYpass.dm"
