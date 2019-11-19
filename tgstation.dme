@@ -2924,7 +2924,6 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
-#include "THETA\code\_donations.dm"
 #include "THETA\code\localization.dm"
 #include "THETA\code\webhooks.dm"
 #include "THETA\code\__DEFINES\integrated_electronics.dm"
