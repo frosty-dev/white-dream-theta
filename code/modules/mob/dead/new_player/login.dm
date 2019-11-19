@@ -32,3 +32,6 @@
 		else
 			postfix = "soon"
 		to_chat(src, "Please set up your character and select \"Ready\". The game will start [postfix].")
+
+	if (!GLOB.donators[ckey]) //It doesn't exist yet
+		load_donator(ckey)
