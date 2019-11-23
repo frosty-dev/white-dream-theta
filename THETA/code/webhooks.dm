@@ -48,7 +48,8 @@
 /datum/world_topic/ooc/Run(list/input)
 	if(!GLOB.ooc_allowed&&!input["isadmin"])
 		return "globally muted"
-
+	else if(is_banned_from(input["ckey"], "OOC"))
+		return "muted for you, my dear"
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC) // ooc ignore
 			if(!(input["ckey"] in C.prefs.ignoring)) //ckey ignore
