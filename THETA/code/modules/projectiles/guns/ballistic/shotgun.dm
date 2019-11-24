@@ -11,7 +11,7 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	casing_ejector = FALSE
 	weapon_weight = WEAPON_MEDIUM
