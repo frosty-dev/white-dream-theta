@@ -241,11 +241,9 @@ GLOBAL_LIST_EMPTY(donators)
 
 	var/list/slots = list(
 		"сумке" = ITEM_SLOT_BACKPACK,
-		"кармане" = ITEM_SLOT_POCKET,	//ебать конем ТГ
-		"руке" = ITEM_SLOT_HANDS
-	//	"левом кармане" = SLOT_L_STORE,
-	//	"правом кармане" = SLOT_R_STORE,
-	//	"руке" = SLOT_GENERC_DEXTROUS_STORAGE
+		"левом кармане" = ITEM_SLOT_LPOCKET,
+		"правом кармане" = ITEM_SLOT_RPOCKET,
+		"руке" = ITEM_SLOT_DEX_STORAGE
 	)
 
 	prize.stock--
