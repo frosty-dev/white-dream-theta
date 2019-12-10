@@ -57,7 +57,6 @@ import { NuclearBomb } from './interfaces/NuclearBomb';
 import { OperatingComputer } from './interfaces/OperatingComputer';
 import { OreBox } from './interfaces/OreBox';
 import { OreRedemptionMachine } from './interfaces/OreRedemptionMachine';
-import { OreBox } from './interfaces/OreBox';
 import { PersonalCrafting } from './interfaces/PersonalCrafting';
 import { PortableGenerator } from './interfaces/PortableGenerator';
 import { PowerMonitor } from './interfaces/PowerMonitor';
