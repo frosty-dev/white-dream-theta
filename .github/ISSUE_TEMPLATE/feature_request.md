@@ -1,7 +1,17 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: Запрос фичи
+about: Предложите идею для развития нашего проекта
+title: '[ФИЧА]'
+labels: 'Фича'
+assignees: 'Archemagus'
 
 ---
 
-Feature requests are not handled in the repository. The best place to discuss these ideas would be on the /tg/station 13 forums here: https://tgstation13.org/phpBB/viewforum.php?f=9&sid=5153c1c704a4fb1006bf7a265e45e03f
+<!-- Суть вашего предложения, кратко. Например что это, и для чего? -->
+## Основная идея: 
+
+<!-- Как это изменит игру? Поможет антагам или наоборот станции, какое разнообразие внесет в раунды по вашему представлению. Зачем это нужно вообще? -->
+## Влияние на геймплей:
+
+<!-- Тут можете полностью расписать свою фичу, способности, иконки, механики и так далее по списку. -->
+## Подробное описание
