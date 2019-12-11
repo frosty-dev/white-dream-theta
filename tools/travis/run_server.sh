@@ -2,7 +2,7 @@
 set -euo pipefail
 
 tools/deploy.sh travis_test
-mkdir travis_test/config
+mkdir travis_test/cfg
 
 #test config
 cp tools/travis/travis_config.txt travis_test/cfg/config.txt
