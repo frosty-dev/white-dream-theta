@@ -16,4 +16,5 @@ jobs:
         stale-pr-message: "Дарова. Кажется это никто пилить не будет, по этому давай я помечу это в списочек на удаление, ладно? Спасибо, милашка!"
         days-before-stale: 31
         stale-pr-label: 'Залежалось'
-        exempt-pr-label: 'КРАСНАЯ ЧЕРТА'
+        exempt-pr-label: 'Не удалять'
+        exempt-issue-label: 'Не удалять'
