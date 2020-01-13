@@ -1027,10 +1027,10 @@
 	if(gotwallitem(T, ndir))
 		to_chat(user, "<span class='warning'>There's already an item on this wall!</span>")
 		return
-	playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
-	user.visible_message("[user.name] attaches [src] to the wall.",
+	playsound(src.loc, 'sound/machines/click.ogg', 75, TRUE)
+	user.visible_message("<span class='notice'>[user.name] attaches [src] to the wall.</span>",
 		"<span class='notice'>You attach [src] to the wall.</span>",
-		"<span class='italics'>You hear clicking.</span>")
+		"<span class='hear'>You hear clicking.</span>")
 	user.dropItemToGround(src)
 	switch(ndir)
 		if(NORTH)

@@ -207,6 +207,14 @@
 		place_poster(W,user)
 		return TRUE
 
+	// THETA BEGIN
+	// Integrated electronics
+	else if(istype(W, /obj/item/electronic_assembly/wallmount))
+		var/obj/item/electronic_assembly/wallmount/FF = W
+		FF.mount_assembly(src, user)
+		return TRUE
+	// THETA END
+
 	return FALSE
 
 /turf/closed/wall/proc/try_decon(obj/item/I, mob/user, turf/T)

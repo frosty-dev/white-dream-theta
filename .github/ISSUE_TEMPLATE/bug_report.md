@@ -1,20 +1,17 @@
 ---
-name: Bug report
-about: Create a report to help reproduce and fix the issue
+name: Отрепортить баг
+about: Создайте отчет, чтобы помочь воспроизвести и исправить проблему.
+title: "[БАГ]"
+labels: Баг
+assignees: Archemagus
 ---
-<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable -->
-## Round ID:
+<!-- Пишите **ПОД ЗАГОЛОВКАМИ** информацию адресованную тому или иному заголовку. Комментарии можете оставить тут, их всё равно не будет видно. -->
 
-<!--- **INCLUDE THE ROUND ID**
-If you discovered this issue from playing tgstation hosted servers:
-[Round ID]: # (It can be found in the Status panel or retrieved from https://atlantaned.space/statbus/round.php ! The round id let's us look up valuable information and logs for the round the bug happened.)-->
+## ID Раунда: 
 
-## Testmerges:
+<!-- **ПРИЛОЖИТЕ ID РАУНДА**
+Если вы обнаружили эту проблему при игре на сервере white-dream-theta:
+[ID РАУНДА]: # (Его можно найти на панели состояния или найти на сайте https://hub.station13.ru/rounds/ ! ID Раунда.)-->
 
-<!-- If you're certain the issue is to be caused by a test merge [OOC tab -> Show Server Revision], report it in the pull request's comment section rather than on the tracker(If you're unsure you can refer to the issue number by prefixing said number with #. The issue number can be found beside the title after submitting it to the tracker).If no testmerges are active, feel free to remove this section. -->
-
-## Reproduction:
-
-<!-- Explain your issue in detail, including the steps to reproduce it. Issues without proper reproduction steps or explanation are open to being ignored/closed by maintainers.-->
-
-<!-- **For Admins:** Oddities induced by var-edits and other admin tools are not necessarily bugs. Verify that your issues occur under regular circumstances before reporting them. -->
+## Как повторить?
+<!-- Подробно объясните проблему, включая шаги по его воспроизведению. Проблемы, не имеющие соответствующих шагов воспроизведения или объяснений, могут быть проигнорированы/закрыты.-->
