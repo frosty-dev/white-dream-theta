@@ -81,18 +81,14 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		user.client.give_award(/datum/award/achievement/misc/pulse, user)
 		return
 
-	if(!contents.len)
-		var/prizeselect
-		if(prize_override)
-			prizeselect = pickweight(prize_override)
-		else
-			prizeselect = pickweight(GLOB.arcade_prize_pool)
-		new prizeselect(src)
-
-	var/atom/movable/the_prize = pick(contents)
+	var/prizeselect
+	if(prize_override)
+		prizeselect = pickweight(prize_override)
+	else
+		prizeselect = pickweight(GLOB.arcade_prize_pool)
+	var/atom/movable/the_prize = new prizeselect(get_turf(src))
+	playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
 	visible_message("<span class='notice'>[src] dispenses [the_prize]!</span>", "<span class='notice'>You hear a chime and a clunk.</span>")
-
-	the_prize.forceMove(get_turf(src))
 
 /obj/machinery/computer/arcade/emp_act(severity)
 	. = ..()
@@ -166,6 +162,11 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		name_part1 = pick_list(ARCADE_FILE, "rpg_adjective_xmas")
 		name_part2 = pick_list(ARCADE_FILE, "rpg_enemy_xmas")
 		weapons = strings(ARCADE_FILE, "rpg_weapon_xmas")
+	else if(SSevents.holidays && SSevents.holidays[VALENTINES])
+		name_action = pick_list(ARCADE_FILE, "rpg_action_valentines")
+		name_part1 = pick_list(ARCADE_FILE, "rpg_adjective_valentines")
+		name_part2 = pick_list(ARCADE_FILE, "rpg_enemy_valentines")
+		weapons = strings(ARCADE_FILE, "rpg_weapon_valentines")
 	else
 		name_action = pick_list(ARCADE_FILE, "rpg_action")
 		name_part1 = pick_list(ARCADE_FILE, "rpg_adjective")
@@ -505,6 +506,8 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		Radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_MEDICAL)
 
 		gamers[gamer] = -1
+
+		gamer.client.give_award(/datum/award/achievement/misc/gamer, gamer) // PSYCH REPORT NOTE: patient kept rambling about how they did it for an "achievement", recommend continued holding for observation
 
 		if(!isnull(GLOB.data_core.general))
 			for(var/datum/data/record/R in GLOB.data_core.general)
