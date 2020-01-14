@@ -367,12 +367,6 @@ const ROUTES = {
     component: () => NtnetRelay,
     scrollable: false,
   },
-  ntos_arcade: {
-    component: () => NtosArcade,
-    wrapper: () => NtosWrapper,
-    scrollable: false,
-    theme: 'ntos',
-  },
   ntos_configuration: {
     component: () => NtosConfiguration,
     wrapper: () => NtosWrapper,
