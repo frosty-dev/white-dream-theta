@@ -126,7 +126,6 @@
 		M.ventcrawler = VENTCRAWLER_ALWAYS
 		M.mind?.language_holder = new M.initial_language_holder(M.mind) // make sure they speak normal monkey
 
-
 /datum/disease/transformation/jungle_fever/stage_act()
 	..()
 	switch(stage)

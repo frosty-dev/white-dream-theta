@@ -57,9 +57,6 @@
 	adjustBruteLoss((levels * 5) ** 1.5)
 	Knockdown(levels * 50)
 
-/mob/living/proc/OpenCraftingMenu()
-	return
-
 //Generic Bump(). Override MobBump() and ObjBump() instead of this.
 /mob/living/Bump(atom/A)
 	if(..()) //we are thrown onto something
@@ -849,6 +846,8 @@
 	else
 		src << browse(null,"window=mob[REF(who)]")
 
+	who.update_equipment_speed_mods() // Updates speed in case stripped speed affecting item
+
 // The src mob is trying to place an item on someone
 // Override if a certain mob should be behave differently when placing items (can't, for example)
 /mob/living/stripPanelEquip(obj/item/what, mob/who, where)
@@ -1039,7 +1038,7 @@
 	var/blocked = getarmor(null, "rad")
 
 	if(amount > RAD_BURN_THRESHOLD)
-		apply_damage(log(amount)*2, BURN, null, blocked)
+		apply_damage(RAD_BURN_CURVE(amount), BURN, null, blocked)
 
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 
@@ -1374,7 +1373,7 @@
 	. = ..()
 	var/refid = REF(src)
 	. += {"
-		<br><font size='1'>[VV_HREF_TARGETREF_1V(refid, VV_HK_BASIC_EDIT, "[ckey || "no ckey"]", NAMEOF(src, ckey))] / [VV_HREF_TARGETREF_1V(refid, VV_HK_BASIC_EDIT, "[real_name || "no real name"]", NAMEOF(src, real_name))]</font>
+		<br><font size='1'>[VV_HREF_TARGETREF(refid, VV_HK_GIVE_DIRECT_CONTROL, "[ckey || "no ckey"]")] / [VV_HREF_TARGETREF_1V(refid, VV_HK_BASIC_EDIT, "[real_name || "no real name"]", NAMEOF(src, real_name))]</font>
 		<br><font size='1'>
 			BRUTE:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=brute' id='brute'>[getBruteLoss()]</a>
 			FIRE:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=fire' id='fire'>[getFireLoss()]</a>

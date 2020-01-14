@@ -707,7 +707,7 @@
 	if(lamp_intensity && (turn_off || stat || low_power_mode))
 		to_chat(src, "<span class='danger'>Your headlamp has been deactivated.</span>")
 		lamp_intensity = 0
-		lamp_cooldown = world.time + cooldown
+		lamp_cooldown = cooldown == BORG_LAMP_CD_RESET ? 0 : max(world.time + cooldown, lamp_cooldown)
 	else
 		set_light(lamp_intensity)
 
@@ -1048,7 +1048,6 @@
 	if(!QDELETED(builtInCamera))
 		builtInCamera.c_tag = real_name	//update the camera name too
 	diag_hud_set_aishell()
-	notify_ai(AI_SHELL)
 
 /mob/living/silicon/robot/proc/revert_shell()
 	if(!shell)
@@ -1172,6 +1171,15 @@
 			riding_datum.unequip_buckle_inhands(user)
 			riding_datum.restore_position(user)
 	. = ..(user)
+
+/mob/living/silicon/robot/resist()
+	. = ..()
+	if(!has_buckled_mobs())
+		return
+	for(var/i in buckled_mobs)
+		var/mob/unbuckle_me_now = i
+		unbuckle_mob(unbuckle_me_now, FALSE)
+
 
 /mob/living/silicon/robot/proc/TryConnectToAI()
 	connected_ai = select_active_ai_with_fewest_borgs()
